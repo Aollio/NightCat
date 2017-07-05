@@ -1,5 +1,10 @@
-<ion-tabs>
-  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>
-  <ion-tab [root]="tab2Root" tabTitle="About" tabIcon="information-circle"></ion-tab>
-  <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>
+<ion-menu [content]="content" [persistent]="false">
+    <com-slidemenu></com-slidemenu>
+</ion-menu>
+
+<ion-tabs #content>
+    <ion-tab [root]="home" tabTitle="首页" tabIcon="home"></ion-tab>
+    <ion-tab [root]="tasks" tabTitle="任务广场" tabIcon="ios-list-box-outline"></ion-tab>
+    <ion-tab [root]="message" tabTitle="消息" tabIcon="ios-chatboxes-outline"></ion-tab>
+    <ion-tab [root]="me" tabTitle="我的" tabIcon="ios-person-outline"></ion-tab>
 </ion-tabs>

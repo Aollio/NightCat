@@ -5,16 +5,13 @@ import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
 
 @Component({
-  templateUrl: 'tabs.html'
+    selector:'com-slidemenu',
+    templateUrl: 'slidemenu.html'
 })
-export class TabsPage {
+export class SlidemenuComponment {
 
-  home = HomePage;
-  tasks = AboutPage;
-  me = AboutPage;
-  message = ContactPage;
 
-  constructor() {
+    constructor() {
 
-  }
+    }
 }
