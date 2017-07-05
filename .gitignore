@@ -1,6 +1,9 @@
 # Compiled class file
 *.class
 
+.DS_Score
+node_modules/
+.idea/
 # Log file
 *.log
 
