@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {RegisterPage} from "../register/register";
 
 /**
  * Generated class for the LoginPage page.
@@ -13,13 +14,23 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 })
 export class LoginPage {
 
-    showNoModifyName: boolean = false
+    //isDesigner
+    isDesigner: boolean = true
+
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {
 
         if (navParams.get('type') === 'employer') {
-            this.showNoModifyName = true
+            this.isDesigner = false
         }
+    }
+
+
+
+    openRegisterPage() {
+        this.navCtrl.push(RegisterPage, {
+            isDesigner: this.isDesigner
+        })
     }
 
     ionViewDidLoad() {

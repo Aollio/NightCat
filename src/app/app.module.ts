@@ -13,6 +13,10 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 import {WelcomePage} from "../pages/welcome/welcome";
 import {LoginPage} from "../pages/login/login";
 import {SlidemenuComponment} from "../pages/slidemenu/slidemenu";
+import {AccountSecurityPage} from "../pages/accountsecurity/accountsecurity";
+import {RegisterPage} from "../pages/register/register";
+import {MessagePage} from "../pages/message/message";
+import {SupportPage} from "../pages/support/support";
 
 
 @NgModule({
@@ -24,7 +28,11 @@ import {SlidemenuComponment} from "../pages/slidemenu/slidemenu";
         TabsPage,
         WelcomePage,
         LoginPage,
-        SlidemenuComponment
+        RegisterPage,
+        SlidemenuComponment,
+        AccountSecurityPage,
+        MessagePage,
+        SupportPage
     ],
     imports: [
         BrowserModule,
@@ -41,7 +49,11 @@ import {SlidemenuComponment} from "../pages/slidemenu/slidemenu";
         TabsPage,
         WelcomePage,
         LoginPage,
-        SlidemenuComponment
+        RegisterPage,
+        SlidemenuComponment,
+        AccountSecurityPage,
+        MessagePage,
+        SupportPage
     ],
     providers: [
         StatusBar,
