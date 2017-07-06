@@ -5,6 +5,7 @@ import {Storage} from '@ionic/storage';
 import {TabsPage} from "../tabs/tabs";
 import {LoginPage} from "../login/login";
 import {RegisterPage} from "../register/register";
+import {OrderListComponent} from "../common/orderlist/orderlist";
 /**
  * Generated class for the WelcomePage page.
  *
@@ -34,6 +35,10 @@ export class WelcomePage {
     }
 
 
+    open() {
+        this.navCtrl.push(OrderListComponent)
+    }
+
 
     /**
      * 打开登录/注册页面
@@ -44,8 +49,8 @@ export class WelcomePage {
         })
     }
 
-    openHome(){
-        this.navCtrl.push(TabsPage,{});
+    openHome() {
+        this.navCtrl.push(TabsPage, {});
     }
 
     ionViewDidLoad() {
