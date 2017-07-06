@@ -17,6 +17,10 @@ import {AccountSecurityPage} from "../pages/accountsecurity/accountsecurity";
 import {RegisterPage} from "../pages/register/register";
 import {MessagePage} from "../pages/message/message";
 import {SupportPage} from "../pages/support/support";
+import {OrderDetailPage} from "../pages/orderdetail/orderdetail";
+import {ModifyPasswordPage} from "../pages/accountsecurity/modifypassword/modifypassword";
+import {ModifyPhonePage} from "../pages/accountsecurity/modifyphone/modifyphone";
+import {OrderListComponent} from "../pages/common/orderlist/orderlist";
 
 
 @NgModule({
@@ -32,7 +36,11 @@ import {SupportPage} from "../pages/support/support";
         SlidemenuComponment,
         AccountSecurityPage,
         MessagePage,
-        SupportPage
+        SupportPage,
+        OrderDetailPage,
+        ModifyPasswordPage,
+        ModifyPhonePage,
+        OrderListComponent
     ],
     imports: [
         BrowserModule,
@@ -53,7 +61,11 @@ import {SupportPage} from "../pages/support/support";
         SlidemenuComponment,
         AccountSecurityPage,
         MessagePage,
-        SupportPage
+        SupportPage,
+        OrderDetailPage,
+        ModifyPasswordPage,
+        ModifyPhonePage,
+        OrderListComponent
     ],
     providers: [
         StatusBar,
