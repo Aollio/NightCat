@@ -37,4 +37,9 @@ export class LoginPage {
         console.log('ionViewDidLoad LoginPage');
     }
 
+//todo
+    login(param){
+        if(param==="login"){ }
+        if(param==="newuser"){ }
+    }
 }
