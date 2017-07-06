@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
 
-import {AboutPage} from '../about/about';
+import {AboutPage} from '../../about/about';
 import {AlertController, NavController, Platform, ToastController} from "ionic-angular";
-import {MessagePage} from "../message/message";
+import {MessagePage} from "../../designer/message/message";
 import {AccountSecurityPage} from "../accountsecurity/accountsecurity";
-import {SupportPage} from "../support/support";
+import {SupportPage} from "../../support/support";
 
 @Component({
     selector: 'page-slidemenu',

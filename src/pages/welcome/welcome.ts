@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
-import {HomePage} from "../home/home";
+import {HomePage} from "../designer/home/home";
 import {Storage} from '@ionic/storage';
-import {TabsPage} from "../tabs/tabs";
+import {TabsPage} from "../designer/tabs/tabs";
 import {LoginPage} from "../login/login";
 import {RegisterPage} from "../register/register";
 import {OrderListComponent} from "../common/orderlist/orderlist";

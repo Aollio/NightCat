@@ -1,11 +1,11 @@
 import {Component} from '@angular/core';
 
-import {AboutPage} from '../about/about';
-import {ContactPage} from '../contact/contact';
+import {AboutPage} from '../../about/about';
+import {ContactPage} from '../../contact/contact';
 import {HomePage} from '../home/home';
 import {NavController, Platform} from "ionic-angular";
-import {AccountSecurityPage} from "../accountsecurity/accountsecurity";
-import {SupportPage} from "../support/support";
+import {AccountSecurityPage} from "../../common/accountsecurity/accountsecurity";
+import {SupportPage} from "../../support/support";
 import {MessagePage} from "../message/message";
 import {SplashScreen} from "@ionic-native/splash-screen";
 import {StatusBar} from "@ionic-native/status-bar";
