@@ -4,6 +4,7 @@ import {HomePage} from "../home/home";
 import {Storage} from '@ionic/storage';
 import {TabsPage} from "../tabs/tabs";
 import {LoginPage} from "../login/login";
+import {RegisterPage} from "../register/register";
 /**
  * Generated class for the WelcomePage page.
  *
@@ -32,8 +33,10 @@ export class WelcomePage {
         // });
     }
 
+
+
     /**
-     * 打开注册页面
+     * 打开登录/注册页面
      * */
     openLogin(typeinfo) {
         this.navCtrl.push(LoginPage, {
