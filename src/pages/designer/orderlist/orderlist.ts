@@ -6,7 +6,7 @@ import {NavController} from 'ionic-angular';
     templateUrl: 'orderlist.html'
 })
 export class OrderListComponent {
-
+// d
     constructor(public navCtrl: NavController) {
 
     }
