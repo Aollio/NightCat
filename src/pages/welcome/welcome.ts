@@ -35,7 +35,7 @@ export class WelcomePage {
     }
 
 
-    open() {
+    openOrderListComponent() {
         this.navCtrl.push(OrderListComponent)
     }
 
