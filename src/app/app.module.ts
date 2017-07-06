@@ -3,24 +3,23 @@ import {BrowserModule} from '@angular/platform-browser';
 import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
 import {MyApp} from './app.component';
 
-import {AboutPage} from '../pages/about/about';
-import {ContactPage} from '../pages/contact/contact';
+import {AboutPage} from '../pages/common/about/about';
 import {HomePage} from '../pages/designer/home/home';
 import {TabsPage} from '../pages/designer/tabs/tabs';
 
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {WelcomePage} from "../pages/welcome/welcome";
-import {LoginPage} from "../pages/login/login";
+import {LoginPage} from "../pages/common/login/login";
 import {SlidemenuComponment} from "../pages/common/slidemenu/slidemenu";
 import {AccountSecurityPage} from "../pages/common/accountsecurity/accountsecurity";
-import {RegisterPage} from "../pages/register/register";
+import {RegisterPage} from "../pages/common/register/register";
 import {MessagePage} from "../pages/designer/message/message";
-import {SupportPage} from "../pages/support/support";
+import {SupportPage} from "../pages/common/support/support";
 import {OrderDetailPage} from "../pages/common/orderdetail/orderdetail";
 import {ModifyPasswordPage} from "../pages/common/accountsecurity/modifypassword/modifypassword";
 import {ModifyPhonePage} from "../pages/common/accountsecurity/modifyphone/modifyphone";
-import {OrderListComponent} from "../pages/common/orderlist/orderlist";
+import {OrderListComponent} from "../pages/designer/orderlist/orderlist";
 import {ResetPasswordPage} from "../pages/common/accountsecurity/resetpassword/resetpassword";
 
 
@@ -28,7 +27,6 @@ import {ResetPasswordPage} from "../pages/common/accountsecurity/resetpassword/r
     declarations: [
         MyApp,
         AboutPage,
-        ContactPage,
         HomePage,
         TabsPage,
         WelcomePage,
@@ -54,7 +52,6 @@ import {ResetPasswordPage} from "../pages/common/accountsecurity/resetpassword/r
     entryComponents: [
         MyApp,
         AboutPage,
-        ContactPage,
         HomePage,
         TabsPage,
         WelcomePage,

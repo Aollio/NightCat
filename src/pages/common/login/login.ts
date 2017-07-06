@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {RegisterPage} from "../register/register";
-import {ResetPasswordPage} from "../common/accountsecurity/resetpassword/resetpassword";
+import {ResetPasswordPage} from "../accountsecurity/resetpassword/resetpassword";
 
 /**
  * Generated class for the LoginPage page.

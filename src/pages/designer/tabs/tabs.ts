@@ -1,11 +1,10 @@
 import {Component} from '@angular/core';
 
-import {AboutPage} from '../../about/about';
-import {ContactPage} from '../../contact/contact';
+import {AboutPage} from '../../common/about/about';
 import {HomePage} from '../home/home';
 import {NavController, Platform} from "ionic-angular";
 import {AccountSecurityPage} from "../../common/accountsecurity/accountsecurity";
-import {SupportPage} from "../../support/support";
+import {SupportPage} from "../../common/support/support";
 import {MessagePage} from "../message/message";
 import {SplashScreen} from "@ionic-native/splash-screen";
 import {StatusBar} from "@ionic-native/status-bar";
@@ -18,7 +17,7 @@ export class TabsPage {
     home = HomePage;
     tasks = AboutPage;
     me = AboutPage;
-    message = ContactPage;
+    message = MessagePage;
 
 
     messagePage: any = MessagePage;
@@ -27,14 +26,13 @@ export class TabsPage {
     aboutPage: any = AboutPage
 
 
-
     constructor(public navCtrl: NavController, public platform: Platform,
                 public statusBar: StatusBar, public splashScreen: SplashScreen) {
         this.initializeApp();
         this.initializeMainPage();
     }
 
-    initializeMainPage(){
+    initializeMainPage() {
     }
 
     initializeApp() {
