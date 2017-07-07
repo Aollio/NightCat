@@ -2,10 +2,13 @@ import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {HomePage} from "../designer/home/home";
 import {Storage} from '@ionic/storage';
-import {TabsPage} from "../designer/tabs/tabs";
+import {DesignerTabsPage} from "../designer/tabs/tabs";
 import {LoginPage} from "../common/login/login";
 import {RegisterPage} from "../common/register/register";
+import {OrderDetailPage} from "../common/orderdetail/orderdetail"
 import {OrderListComponent} from "../designer/orderlist/orderlist";
+import {EmployerModulePage} from "../employer/employer";
+import {DesignerModulePage} from "../designer/designer";
 /**
  * Generated class for the WelcomePage page.
  *
@@ -22,21 +25,24 @@ export class WelcomePage {
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {
 
-        // this.storage.get('firstOpen').then((result) => {
-        //
-        //     if (result) {
-        //         this.rootPage = TabsPage;
-        //     }
-        //     else {
-        //         this.storage.set('firstOpen', true);
-        //         this.rootPage = WelcomePage;
-        //     }
-        // });
+
     }
 
 
-    openOrderListComponent() {
-        this.navCtrl.push(OrderListComponent)
+    /**
+     * 这是主页的快速入口，用于开发
+     * */
+    orderDetailPage: any = OrderDetailPage;
+    orderListComponent: any = OrderListComponent;
+
+    employerHome: any = EmployerModulePage;
+    employerLogin:any = LoginPage;
+    designerLogin:any = LoginPage;
+
+    designerHome: any = DesignerModulePage;
+
+    open(page, option) {
+        this.navCtrl.push(page, option)
     }
 
 
@@ -49,12 +55,17 @@ export class WelcomePage {
         })
     }
 
-    openHome() {
-        this.navCtrl.push(TabsPage, {});
-    }
-
-    ionViewDidLoad() {
-        console.log('ionViewDidLoad WelcomePage');
-    }
 
 }
+
+
+// this.storage.get('firstOpen').then((result) => {
+//
+//     if (result) {
+//         this.rootPage = DesignerTabsPage;
+//     }
+//     else {
+//         this.storage.set('firstOpen', true);
+//         this.rootPage = WelcomePage;
+//     }
+// });

@@ -12,7 +12,7 @@ import {StatusBar} from "@ionic-native/status-bar";
 @Component({
     templateUrl: 'tabs.html'
 })
-export class TabsPage {
+export class DesignerTabsPage {
 
     home = HomePage;
     tasks = AboutPage;
