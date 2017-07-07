@@ -8,6 +8,8 @@ import {DesignerModulePage} from "./designer";
 import {DesignerMePage} from "./me/me";
 import {DesignerWalletPage} from "./wallet/wallet";
 import {PublishTaskPage} from "./publishtask/publishtask";
+import {AuthenticationPage} from "./authentication/authenication";
+import {CommentPage} from "./comment/comment";
 
 @NgModule({
     declarations: [
@@ -17,7 +19,7 @@ import {PublishTaskPage} from "./publishtask/publishtask";
         OrderListComponent,
         DesignerMePage,
         DesignerWalletPage,
-        PublishTaskPage
+        PublishTaskPage, AuthenticationPage, CommentPage
     ],
     entryComponents: [
         DesignerModulePage,
@@ -26,13 +28,13 @@ import {PublishTaskPage} from "./publishtask/publishtask";
         OrderListComponent,
         DesignerMePage,
         DesignerWalletPage,
-        PublishTaskPage
+        PublishTaskPage, AuthenticationPage, CommentPage
     ],
     imports: [
         CommonPageModule,
         IonicPageModule.forChild(DesignerTabsPage)
     ],
-    exports: [DesignerModulePage, DesignerTabsPage,PublishTaskPage]
+    exports: [DesignerModulePage, DesignerTabsPage, PublishTaskPage,DesignerWalletPage]
 })
 export class DesignerModule {
 }

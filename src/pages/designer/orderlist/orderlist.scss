@@ -1,3 +1,34 @@
+
+
+.detail{
+  margin-left: 50%;
+  width: 100%;
+}
+
+ion-card{
+  margin-left: 10%!important;
+  width: 80%;
+}
+
+ion-card-content{
+  display: inline-flex;
+  width: 100%;
+}
+
+.avatar{
+  position: absolute;
+  text-align: center;
+  margin-left: -10%;
+
+  width: 8em;
+  height: 8em;
+  background-color: #d5fffb;
+  border-radius: .5em ;
+  //box-shadow: 0,0,15px,#9E9E9E;
+  box-shadow: 1px 3px 1px #aeaeae;
+
+}
+
 .progress {
   height: 10px;
   margin-bottom: 20px;

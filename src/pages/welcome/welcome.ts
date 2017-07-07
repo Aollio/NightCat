@@ -10,6 +10,8 @@ import {OrderListComponent} from "../designer/orderlist/orderlist";
 import {EmployerModulePage} from "../employer/employer";
 import {DesignerModulePage} from "../designer/designer";
 import {PublishTaskPage} from "../designer/publishtask/publishtask";
+import {DesignerWalletPage} from "../designer/wallet/wallet";
+
 /**
  * Generated class for the WelcomePage page.
  *
@@ -37,11 +39,12 @@ export class WelcomePage {
     orderListComponent: any = OrderListComponent;
 
     employerHome: any = EmployerModulePage;
-    employerLogin:any = LoginPage;
-    designerLogin:any = LoginPage;
+    employerLogin: any = LoginPage;
+    designerLogin: any = LoginPage;
 
     designerHome: any = DesignerModulePage;
     pulishtaskPage: any = PublishTaskPage;
+    designerWalletPage: any = DesignerWalletPage;
 
     open(page, option) {
         this.navCtrl.push(page, option)

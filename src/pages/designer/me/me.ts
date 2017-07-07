@@ -1,16 +1,25 @@
-
 import {Component} from "@angular/core";
 import {NavController} from "ionic-angular";
-@Component({
-    selector:'page-me-designer',
-    templateUrl:'me.html'
-})
-export class DesignerMePage{
+import {DesignerWalletPage} from "../wallet/wallet";
+import {AuthenticationPage} from "../authentication/authenication";
+import {CommentPage} from "../comment/comment";
 
-    constructor(public navCtrl:NavController){
+@Component({
+    selector: 'page-me-designer',
+    templateUrl: 'me.html'
+})
+export class DesignerMePage {
+
+    constructor(public navCtrl: NavController) {
 
     }
 
+    wallet: any = DesignerWalletPage;
+    authenticate: any = AuthenticationPage;
+    comment: any = CommentPage;
 
+    open(page, option) {
+        this.navCtrl.push(page, option)
+    }
 
 }
