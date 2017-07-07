@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .ion-ios-add:before {
   content: "\f102";
 }
@@ -25201,6 +25202,15 @@ ion-navbar.toolbar {
 
 page-login p.a {
   background: center;
+}
+
+page-orderdetail .me {
+  margin-left: 20% !important;
+  padding-left: 20%;
+  float: right;
+  height: auto;
+   width: 80%;
+  word-wrap: break-word;
 }
 
 .progress {

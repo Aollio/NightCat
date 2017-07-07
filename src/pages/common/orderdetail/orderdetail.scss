@@ -1,5 +1,20 @@
-{
-.color{
-  background-color: #ebf1f2;
+page-orderdetail {
+  $colors: (
+          primary:    #488aff,
+          secondary:  #32db64,
+          danger:     #f53d3d,
+          light:      #f4f4f4,
+          dark:       #222,
+          background-color: #ebf1f2
+  );
+.me{
+  margin-left: 20% !important;
+  padding-left: 20%;
+  float:right;
+  height:auto;
+   width:80%;
+  word-wrap:break-word;
+
 }
+
 }

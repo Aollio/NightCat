@@ -4,18 +4,16 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content color="primary">
-
-    页面还没有完成，你点击的订单号是 {{ order_id }}
+<ion-content style="background-color: #ebf1f2">
     <ion-item no-lines>
         <ion-row>
-          <ion-icon name="add"></ion-icon> &nbsp;预计完成：&nbsp;&nbsp;
+            <ion-icon name="add"></ion-icon> &nbsp;预计完成：&nbsp;&nbsp;
         </ion-row>
         <ion-row>
             <ion-icon name="add"></ion-icon>&nbsp;交易状态：&nbsp;&nbsp;
         </ion-row>
-    </ion-item><ion-item-divider h></ion-item-divider>
-
+    </ion-item>
+    <br/>
     <ion-item no-lines>
         <ion-row>
             订单标题：&nbsp;
@@ -36,12 +34,28 @@
             工时：&nbsp;
         </ion-row>
     </ion-item>
-    <ion-item-divider aria-setsize="0.1"></ion-item-divider>
+    <br/>
+    <div style="background-color: #ffffff">
+        <div style="display: inline-flex">
+            <div style="width:20%;">订单详情&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            <div style="width: 80%"> 结构设计要求如下：1.按照所提供的三维模型设计达到指定功能要求。2.复杂完整的模型图。3.根据手绘完成设计图</div>
+        </div>
 
-    <ion-item>
-        订单详情
-    </ion-item>
+    </div>
 
+    <div style="display: flex">
+        &nbsp;
+       <div style="width: 8em;height: 8em;background-color: #2a43a8"></div>&nbsp;
+        <div style="width: 8em;height: 8em;background-color: #48a81f"></div>&nbsp;
+        <div style="width: 8em;height: 8em;background-color: #a81328"></div>&nbsp;
+    </div>
+    <br/>
+    <div style="display: flex;align-content: center;width:100%">
+        &nbsp;
+        <div style="width: 8em;height: 8em;background-color: #2a43a8"></div>&nbsp;
+        <div style="width: 8em;height: 8em;background-color: #48a81f"></div>&nbsp;
+        <!--<div style="width: 8em;height: 8em;background-color: #a81328"></div>-->
+    </div>
 </ion-content>
 
 <ion-footer style="display: inline-flex">
