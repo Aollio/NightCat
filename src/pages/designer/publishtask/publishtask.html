@@ -1,11 +1,40 @@
 <ion-header>
-    <ion-navbar>
+    <ion-navbar color="primary" hideBackButton>
+        <ion-buttons start>
+            <button ion-button  (click)="openModal()">
+                取消
+            </button>
+        </ion-buttons>
         <ion-title>
-            d
+            发布任务
         </ion-title>
+        <ion-buttons end>
+            <button ion-button  (click)="openModal()">
+                发布
+            </button>
+        </ion-buttons>
     </ion-navbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content  style="background-color: #f3f8fb">
+    <ion-item no-lines >
+        <ion-label style="color: #5676FC">* 项目类型</ion-label>
+        <ion-select [(ngModel)]="gaming" input interface="popover" placeholder="请选择您的任务类型">
+            <ion-option value="nes">NES</ion-option>
+            <ion-option value="n64">Nintendo64</ion-option>
+            <ion-option value="ps">PlayStation</ion-option>
+            <ion-option value="genesis">Sega Genesis</ion-option>
+            <ion-option value="saturn">Sega Saturn</ion-option>
+            <ion-option value="snes">SNES</ion-option>
+        </ion-select>
+    </ion-item>
+    <div style="height:10px;width: 100%"></div>
+    <ion-item no-lines>
+        <ion-label style="color: #5676FC">* 项目标题</ion-label>
+        <ion-input smaxlength="10" type="text" value="" placeholder="请输入任务标题"></ion-input>
+    </ion-item>
+    <div style="height:3px;width: 100%"></div>
+    <ion-item no-lines style="height: 30%">
+        <ion-input type="text" value="" placeholder="详细描述一下任务的内容"></ion-input>
+    </ion-item>
 </ion-content>
