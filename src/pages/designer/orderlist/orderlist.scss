@@ -1,30 +1,58 @@
+.like-amount{
+  margin-top: -3%;
+}
 
+.deadtime {
+  font-size: .78em;
+  color: #c9cacf;
+  text-align: right;
+  margin-top: -5%;
+}
 
-.detail{
-  margin-left: 50%;
+.price {
+  font-size: 1.5em !important;
+  color: #FDBC42;
+}
+
+.getorder {
+  font-size: .78em;
+  text-align: right;
+  margin-top: 2%;
+  color: #FB865E;
+}
+
+.detail {
+  margin-left: 6.5em;
   width: 100%;
 }
 
-ion-card{
-  margin-left: 10%!important;
-  width: 80%;
+.detail .title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
-ion-card-content{
+ion-card {
+  margin-left: 10% !important;
+  margin-right: 5% !important;
+  width: 85% !important;
+  height: 10em;
+}
+
+ion-card-content {
   display: inline-flex;
   width: 100%;
 }
 
-.avatar{
+.avatar {
   position: absolute;
-  text-align: center;
-  margin-left: -10%;
-
+  margin-left: -2.5em;
+  //margin-top: 1em;
   width: 8em;
   height: 8em;
-  background-color: #d5fffb;
-  border-radius: .5em ;
-  //box-shadow: 0,0,15px,#9E9E9E;
+  background-color: #3E3E3E;
+  border-radius: .5em;
   box-shadow: 1px 3px 1px #aeaeae;
 
 }

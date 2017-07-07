@@ -10,6 +10,7 @@ import {DesignerWalletPage} from "./wallet/wallet";
 import {PublishTaskPage} from "./publishtask/publishtask";
 import {AuthenticationPage} from "./authentication/authenication";
 import {CommentPage} from "./comment/comment";
+import {WalletModule} from "./wallet/wallet.module";
 
 @NgModule({
     declarations: [
@@ -18,7 +19,6 @@ import {CommentPage} from "./comment/comment";
         MessagePage,
         OrderListComponent,
         DesignerMePage,
-        DesignerWalletPage,
         PublishTaskPage, AuthenticationPage, CommentPage
     ],
     entryComponents: [
@@ -27,14 +27,14 @@ import {CommentPage} from "./comment/comment";
         MessagePage,
         OrderListComponent,
         DesignerMePage,
-        DesignerWalletPage,
         PublishTaskPage, AuthenticationPage, CommentPage
     ],
     imports: [
         CommonPageModule,
+        WalletModule,
         IonicPageModule.forChild(DesignerTabsPage)
     ],
-    exports: [DesignerModulePage, DesignerTabsPage, PublishTaskPage,DesignerWalletPage]
+    exports: [DesignerModulePage, DesignerTabsPage, PublishTaskPage, DesignerWalletPage]
 })
 export class DesignerModule {
 }

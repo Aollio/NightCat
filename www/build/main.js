@@ -17385,7 +17385,7 @@ var /** @type {?} */ DEFAULT_CSS_CLASS = 'ion-page';
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_alert_alert__ = __webpack_require__(61);
 /* unused harmony reexport Alert */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_alert_alert_controller__ = __webpack_require__(128);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_6__components_alert_alert_controller__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_6__components_alert_alert_controller__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_alert_alert_component__ = __webpack_require__(60);
 /* unused harmony reexport AlertCmp */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_app_app__ = __webpack_require__(7);
@@ -17560,7 +17560,7 @@ var /** @type {?} */ DEFAULT_CSS_CLASS = 'ion-page';
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_92__components_toast_toast_component__ = __webpack_require__(95);
 /* unused harmony reexport ToastCmp */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_93__components_toast_toast_controller__ = __webpack_require__(181);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_93__components_toast_toast_controller__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_93__components_toast_toast_controller__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_94__components_toggle_toggle__ = __webpack_require__(183);
 /* unused harmony reexport Toggle */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_95__components_toolbar_toolbar_footer__ = __webpack_require__(185);
@@ -17594,20 +17594,20 @@ var /** @type {?} */ DEFAULT_CSS_CLASS = 'ion-page';
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_108__platform_dom_controller__ = __webpack_require__(9);
 /* unused harmony reexport DomController */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_109__platform_platform__ = __webpack_require__(3);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_109__platform_platform__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_109__platform_platform__["a"]; });
 /* unused harmony reexport setupPlatform */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_110__tap_click_haptic__ = __webpack_require__(38);
 /* unused harmony reexport Haptic */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_111__navigation_deep_linker__ = __webpack_require__(14);
 /* unused harmony reexport DeepLinker */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_112__navigation_ionic_page__ = __webpack_require__(251);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_112__navigation_ionic_page__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_112__navigation_ionic_page__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_113__navigation_nav_controller__ = __webpack_require__(22);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_113__navigation_nav_controller__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_113__navigation_nav_controller__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_114__navigation_nav_controller_base__ = __webpack_require__(48);
 /* unused harmony reexport NavControllerBase */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_115__navigation_nav_params__ = __webpack_require__(15);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_115__navigation_nav_params__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_115__navigation_nav_params__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_116__navigation_nav_util__ = __webpack_require__(23);
 /* unused harmony reexport DeepLinkMetadata */
 /* unused harmony reexport DeepLinkMetadataFactory */
@@ -46029,7 +46029,7 @@ AboutPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
         selector: 'page-about',template:/*ion-inline-start:"/Users/Aollio/NightCat/src/pages/common/about/about.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      About\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/Aollio/NightCat/src/pages/common/about/about.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
 ], AboutPage);
 
 //# sourceMappingURL=about.js.map
@@ -46072,7 +46072,7 @@ AccountSecurityPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
         selector: 'page-accountsecurity',template:/*ion-inline-start:"/Users/Aollio/NightCat/src/pages/common/accountsecurity/accountsecurity.html"*/'<ion-header>\n    <ion-navbar>\n        <ion-title>账号安全</ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding-left padding-right>\n    <ion-item (click)="open(modifypsd)">\n        修改密码\n        <ion-icon name="arrow-forward" item-end></ion-icon>\n    </ion-item>\n\n    <ion-item (click)="open(modifytel)">\n        修改手机号\n        <ion-icon name="arrow-forward" item-end></ion-icon>\n    </ion-item>\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/Aollio/NightCat/src/pages/common/accountsecurity/accountsecurity.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
 ], AccountSecurityPage);
 
 //# sourceMappingURL=accountsecurity.js.map
@@ -46138,7 +46138,7 @@ LoginPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
         selector: 'page-login',template:/*ion-inline-start:"/Users/Aollio/NightCat/src/pages/common/login/login.html"*/'<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n    <ion-navbar>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n    <p class="a"></p>\n    <!--<div style="height: 40%;">-->\n    <img src="/img/cat_03.png"/>\n    <!--</div>-->\n    <br/>\n    <br/>\n    <ion-item padding-left>\n        <ion-icon name="beer" item-start></ion-icon>\n        <ion-input type="text" value="" placeholder="用户名或手机号码"></ion-input>\n    </ion-item>\n\n    <ion-item padding-left>\n        <ion-icon name="beer" item-start></ion-icon>\n        <ion-input type="password" placeholder="请输入密码"></ion-input>\n    </ion-item>\n    <br/>\n    <br/>\n    <button ion-button round full>登陆</button>\n\n    <!--todo -->\n    <button ion-button outline full (click)="openRegisterPage()">注册</button>\n    <button ion-button clear full>\n        忘记密码&nbsp;&nbsp;&nbsp;\n        <ion-icon name="ios-help-circle-outline" end></ion-icon>\n    </button>\n\n</ion-content>\n'/*ion-inline-end:"/Users/Aollio/NightCat/src/pages/common/login/login.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], LoginPage);
 
 //# sourceMappingURL=login.js.map
@@ -46184,7 +46184,7 @@ OrderDetailPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
         selector: 'page-orderdetail',template:/*ion-inline-start:"/Users/Aollio/NightCat/src/pages/common/orderdetail/orderdetail.html"*/'<ion-header>\n    <ion-navbar color="primary">\n        <ion-title>订单详情</ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content style="background-color: #ebf1f2">\n    <ion-item no-lines>\n        <ion-row>\n            <ion-icon name="add"></ion-icon> &nbsp;预计完成：&nbsp;&nbsp;\n        </ion-row>\n        <ion-row>\n            <ion-icon name="add"></ion-icon>&nbsp;交易状态：&nbsp;&nbsp;\n        </ion-row>\n    </ion-item>\n    <br/>\n    <ion-item no-lines>\n        <ion-row>\n            订单标题：&nbsp;\n        </ion-row>\n        <ion-row>\n            订单预算：&nbsp;\n        </ion-row>\n        <ion-row>\n            订单类型：&nbsp;\n        </ion-row>\n        <ion-row>\n            设计面积：&nbsp;\n        </ion-row>\n        <ion-row>\n            设计深度：&nbsp;\n        </ion-row>\n        <ion-row>\n            工时：&nbsp;\n        </ion-row>\n    </ion-item>\n    <br/>\n    <div style="background-color: #ffffff">\n        <div style="display: inline-flex">\n            <div style="width:20%;">订单详情&nbsp;&nbsp;&nbsp;&nbsp;</div>\n            <div style="width: 80%"> 结构设计要求如下：1.按照所提供的三维模型设计达到指定功能要求。2.复杂完整的模型图。3.根据手绘完成设计图</div>\n        </div>\n\n    </div>\n\n    <div style="display: flex">\n        &nbsp;\n       <div style="width: 8em;height: 8em;background-color: #2a43a8"></div>&nbsp;\n        <div style="width: 8em;height: 8em;background-color: #48a81f"></div>&nbsp;\n        <div style="width: 8em;height: 8em;background-color: #a81328"></div>&nbsp;\n    </div>\n    <br/>\n    <div style="display: flex;align-content: center;width:100%">\n        &nbsp;\n        <div style="width: 8em;height: 8em;background-color: #2a43a8"></div>&nbsp;\n        <div style="width: 8em;height: 8em;background-color: #48a81f"></div>&nbsp;\n        <!--<div style="width: 8em;height: 8em;background-color: #a81328"></div>-->\n    </div>\n</ion-content>\n\n<ion-footer style="display: inline-flex">\n    <ion-label class="bottom-left" style="width: 25%">\n        <ion-icon name="add"></ion-icon>\n        已收藏\n    </ion-label>\n    <ion-label style="width: 25%">\n        <ion-icon name="add"></ion-icon>\n        喵喵\n    </ion-label>\n    <button ion-button color="primary" style="width: 50%">立即抢单</button>\n</ion-footer>\n'/*ion-inline-end:"/Users/Aollio/NightCat/src/pages/common/orderdetail/orderdetail.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], OrderDetailPage);
 
 //# sourceMappingURL=orderdetail.js.map
@@ -46228,7 +46228,7 @@ MessagePage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
         selector: 'page-message',template:/*ion-inline-start:"/Users/Aollio/NightCat/src/pages/designer/message/message.html"*/'<ion-header>\n    <ion-navbar color="primary">\n        <ion-title>系统消息</ion-title>\n    </ion-navbar>\n</ion-header>\n\n\n<ion-content>\n    <ion-list>\n        <ion-card>\n            <ion-card-header>\n                <div style="float:left">消息标题</div>\n                <div style="float:right">2017-7-6</div>\n                <!--<div style="float:right">2017-7-6</div>-->\n                <!--<ion-note item></ion-note>-->\n            </ion-card-header>\n            <ion-card-content>\n                订单号<a style="text-decoration:underline" (click)="openOrderDetail(\'100000000\')">100000000</a>张三工程师参与工程厨房设计项目抢单敬请留意\n            </ion-card-content>\n        </ion-card>\n\n        <ion-card>\n            <ion-card-header>\n                <div style="float:left">消息标题</div>\n                <div style="float:right">2017-7-6</div>\n            </ion-card-header>\n            <ion-card-content>\n                张三工程师参与工程厨房设计项目抢单敬请留意\n            </ion-card-content>\n        </ion-card>\n\n    </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/Aollio/NightCat/src/pages/designer/message/message.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
 ], MessagePage);
 
 //# sourceMappingURL=message.js.map
@@ -46240,6 +46240,8 @@ MessagePage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DesignerWalletPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__consumedetail_consumedetail__ = __webpack_require__(288);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -46250,16 +46252,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var DesignerWalletPage = (function () {
-    function DesignerWalletPage() {
+    function DesignerWalletPage(navCtrl) {
+        this.navCtrl = navCtrl;
+        this.showBalance = true;
+        this.consumeDetail = __WEBPACK_IMPORTED_MODULE_2__consumedetail_consumedetail__["a" /* ConsumeDetail */];
     }
+    DesignerWalletPage.prototype.toggleShowBanalce = function () {
+        if (this.showBalance) {
+            this.showBalance = false;
+        }
+        else {
+            this.showBalance = true;
+        }
+    };
+    DesignerWalletPage.prototype.open = function (page, option) {
+        this.navCtrl.push(page, option);
+    };
     return DesignerWalletPage;
 }());
 DesignerWalletPage = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
-        selector: 'page-wallet',template:/*ion-inline-start:"/Users/Aollio/NightCat/src/pages/designer/wallet/wallet.html"*/'<ion-header no-border>\n    <ion-navbar>\n        <ion-title>\n            我的钱包\n        </ion-title>\n        <ion-buttons end>\n            <button ion-button>\n                提现\n            </button>\n        </ion-buttons>\n    </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n    <div class="money-all">\n        <div class="introduce">\n            <div class="unit">钱包余额（元）</div>\n            <div class="icon-show" item-end>\n                <ion-icon name="ios-eye-outline"></ion-icon>\n            </div>\n        </div>\n        <div class="money-amount">0.00</div>\n    </div>\n    <div class="record">\n        <div class="unit">\n            <div class="desc"> 近30天收入\n            </div>\n            <div class="amount">\n                0.00\n            </div>\n        </div>\n        <div class="unit">\n            <div class="desc"> 累计提现\n            </div>\n            <div class="amount">\n                0.00\n            </div>\n        </div>\n    </div>\n\n    <br/>\n    <br/>\n\n    <ion-item no-lines class="money-detail">\n        <ion-icon name="ios-eye-outline" item-start></ion-icon>\n        钱包明细\n        <ion-icon name="arrow-forward" item-end></ion-icon>\n\n    </ion-item>\n\n\n</ion-content>'/*ion-inline-end:"/Users/Aollio/NightCat/src/pages/designer/wallet/wallet.html"*/
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])({
+        name: 'designer-wallet'
     }),
-    __metadata("design:paramtypes", [])
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
+        selector: 'page-wallet',template:/*ion-inline-start:"/Users/Aollio/NightCat/src/pages/designer/wallet/wallet.html"*/'<ion-header no-border>\n    <ion-navbar>\n        <ion-title>\n            我的钱包\n        </ion-title>\n        <ion-buttons end>\n            <button ion-button>\n                提现\n            </button>\n        </ion-buttons>\n    </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n    <div class="money-all">\n        <div class="introduce">\n            <div class="unit">钱包余额（元）</div>\n            <div class="icon-show" item-end>\n                <ion-icon name="ios-eye-outline" *ngIf="showBalance" (click)="toggleShowBanalce()"></ion-icon>\n                <ion-icon name="ios-eye-off-outline" *ngIf="!showBalance" (click)="toggleShowBanalce()"></ion-icon>\n            </div>\n        </div>\n        <div class="money-amount" *ngIf="showBalance">0.00</div>\n        <div class="money-amount" *ngIf="!showBalance">----</div>\n    </div>\n    <div class="record">\n        <div class="unit">\n            <div class="desc"> 近30天收入\n            </div>\n            <div class="amount">\n                0.00\n            </div>\n        </div>\n        <div class="unit">\n            <div class="desc"> 累计提现\n            </div>\n            <div class="amount">\n                0.00\n            </div>\n        </div>\n    </div>\n\n    <br/>\n    <br/>\n\n    <ion-item no-lines class="money-detail" (click)="open(consumeDetail)">\n        <ion-icon name="ios-eye-outline" item-start></ion-icon>\n        钱包明细\n        <ion-icon name="arrow-forward" item-end></ion-icon>\n\n    </ion-item>\n\n\n</ion-content>'/*ion-inline-end:"/Users/Aollio/NightCat/src/pages/designer/wallet/wallet.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
 ], DesignerWalletPage);
 
 //# sourceMappingURL=wallet.js.map
@@ -56953,7 +56974,7 @@ ModifyPasswordPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
         selector: 'page-modifypassword',template:/*ion-inline-start:"/Users/Aollio/NightCat/src/pages/common/accountsecurity/modifypassword/modifypassword.html"*/'<ion-header>\n    <ion-navbar>\n        <ion-title>修改密码</ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding-left padding-right>\n    <ion-item>\n        <ion-label fixed>旧密码</ion-label>\n        <ion-input></ion-input>\n    </ion-item>\n\n    <ion-item>\n        <ion-label fixed>新密码</ion-label>\n        <ion-input></ion-input>\n    </ion-item>\n\n    <ion-item>\n        <ion-label fixed>确认密码</ion-label>\n        <ion-input></ion-input>\n    </ion-item>\n\n</ion-content>\n\n\n<ion-footer>\n    <button ion-button full>确认提交</button>\n</ion-footer>\n'/*ion-inline-end:"/Users/Aollio/NightCat/src/pages/common/accountsecurity/modifypassword/modifypassword.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
 ], ModifyPasswordPage);
 
 //# sourceMappingURL=modifypassword.js.map
@@ -56987,7 +57008,7 @@ ModifyPhonePage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
         selector: 'page-modifyphone',template:/*ion-inline-start:"/Users/Aollio/NightCat/src/pages/common/accountsecurity/modifyphone/modifyphone.html"*/'<ion-header>\n    <ion-navbar>\n        <ion-title>修改手机号</ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding-left padding-right>\n    <ion-item>\n        <ion-label fixed>手机号码</ion-label>\n        <ion-input></ion-input>\n    </ion-item>\n\n    <ion-item>\n        <ion-label fixed>验证码</ion-label>\n        <ion-input></ion-input>\n        <button ion-button item-end>获取验证码</button>\n    </ion-item>\n\n\n</ion-content>\n\n\n<ion-footer>\n    <button ion-button full>确认提交</button>\n</ion-footer>\n'/*ion-inline-end:"/Users/Aollio/NightCat/src/pages/common/accountsecurity/modifyphone/modifyphone.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
 ], ModifyPhonePage);
 
 //# sourceMappingURL=modifyphone.js.map
@@ -57108,7 +57129,7 @@ RegisterPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
         selector: 'page-register',template:/*ion-inline-start:"/Users/Aollio/NightCat/src/pages/common/register/register.html"*/'<ion-header>\n    <ion-navbar>\n        <ion-title>注册</ion-title>\n    </ion-navbar>\n</ion-header>\n<!--todo-->\n<ion-content padding>\n    <ion-item width="100%" style="height: 30%" color="primary">\n        <ion-img left margin-bottom scr="/img/he-White_03.png"></ion-img>\n    </ion-item>\n\n\n    <h3>基本资料</h3><br/>\n    <ion-item>\n        <ion-label fixed>昵称</ion-label>\n        <ion-input type="text" value=""></ion-input>\n    </ion-item>\n    <br/>\n    <ion-item>\n        <ion-label fixed>手机号</ion-label>\n        <ion-input type="text" value=""></ion-input>\n    </ion-item>\n    <br/>\n    <ion-item>\n\n        <ion-label fixed="">验证码</ion-label>\n        <ion-input type="text" value=""></ion-input>\n        <button ion-button item-end>\n            获取验证码\n        </button>\n    </ion-item>\n\n    <br/>\n    <ion-item>\n        <h3>设置密码</h3><br/>\n        <ion-label fixed>密码</ion-label>\n        <ion-input type="password" value=""></ion-input>\n    </ion-item>\n    <br/>\n    <ion-item>\n        <ion-label fixed>确认密码</ion-label>\n        <ion-input type="password" value=""></ion-input>\n    </ion-item>\n    <br/>\n    <!--todo 注册-->\n    <button ion-button round full>注册</button>\n\n    <button ion-button clear full>\n        已有账号，登陆&nbsp;&nbsp;&nbsp;&nbsp;\n        <ion-icon name="ios-help-circle-outline" end></ion-icon>\n    </button>\n\n\n</ion-content>'/*ion-inline-end:"/Users/Aollio/NightCat/src/pages/common/register/register.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], RegisterPage);
 
 //# sourceMappingURL=register.js.map
@@ -57142,7 +57163,7 @@ SupportPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
         selector: 'page-support',template:/*ion-inline-start:"/Users/Aollio/NightCat/src/pages/common/support/support.html"*/'<ion-header>\n    <ion-navbar>\n        <ion-title>Support</ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <h2>Welcome to Ionic!</h2>\n    <p>\n        This starter project comes with simple tabs-based layout for apps\n        that are going to primarily use a Tabbed UI.\n    </p>\n    <p>\n        Take a look at the <code>src/pages/</code> directory to add or change tabs,\n        update any existing page or create new pages.\n    </p>\n</ion-content>\n'/*ion-inline-end:"/Users/Aollio/NightCat/src/pages/common/support/support.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
 ], SupportPage);
 
 //# sourceMappingURL=support.js.map
@@ -57178,7 +57199,7 @@ var AuthenticationPage = (function () {
 AuthenticationPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_6" /* Component */])({template:/*ion-inline-start:"/Users/Aollio/NightCat/src/pages/designer/authentication/authentication.html"*/'<ion-header>\n    <ion-navbar>\n        <ion-title>认证中心</ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content>\n    这是认证中心界面，还没有完成\n</ion-content>'/*ion-inline-end:"/Users/Aollio/NightCat/src/pages/designer/authentication/authentication.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["e" /* NavController */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["f" /* NavController */]])
 ], AuthenticationPage);
 
 //# sourceMappingURL=authenication.js.map
@@ -57232,12 +57253,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__publishtask_publishtask__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__authentication_authenication__ = __webpack_require__(112);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__comment_comment__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__wallet_wallet_module__ = __webpack_require__(287);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -57263,7 +57286,6 @@ DesignerModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__message_message__["a" /* MessagePage */],
             __WEBPACK_IMPORTED_MODULE_3__orderlist_orderlist__["a" /* OrderListComponent */],
             __WEBPACK_IMPORTED_MODULE_7__me_me__["a" /* DesignerMePage */],
-            __WEBPACK_IMPORTED_MODULE_8__wallet_wallet__["a" /* DesignerWalletPage */],
             __WEBPACK_IMPORTED_MODULE_9__publishtask_publishtask__["a" /* PublishTaskPage */], __WEBPACK_IMPORTED_MODULE_10__authentication_authenication__["a" /* AuthenticationPage */], __WEBPACK_IMPORTED_MODULE_11__comment_comment__["a" /* CommentPage */]
         ],
         entryComponents: [
@@ -57272,11 +57294,11 @@ DesignerModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__message_message__["a" /* MessagePage */],
             __WEBPACK_IMPORTED_MODULE_3__orderlist_orderlist__["a" /* OrderListComponent */],
             __WEBPACK_IMPORTED_MODULE_7__me_me__["a" /* DesignerMePage */],
-            __WEBPACK_IMPORTED_MODULE_8__wallet_wallet__["a" /* DesignerWalletPage */],
             __WEBPACK_IMPORTED_MODULE_9__publishtask_publishtask__["a" /* PublishTaskPage */], __WEBPACK_IMPORTED_MODULE_10__authentication_authenication__["a" /* AuthenticationPage */], __WEBPACK_IMPORTED_MODULE_11__comment_comment__["a" /* CommentPage */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_5__common_commonpage_module__["a" /* CommonPageModule */],
+            __WEBPACK_IMPORTED_MODULE_12__wallet_wallet_module__["WalletModule"],
             __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_1__tabs_tabs__["a" /* DesignerTabsPage */])
         ],
         exports: [__WEBPACK_IMPORTED_MODULE_6__designer__["a" /* DesignerModulePage */], __WEBPACK_IMPORTED_MODULE_1__tabs_tabs__["a" /* DesignerTabsPage */], __WEBPACK_IMPORTED_MODULE_9__publishtask_publishtask__["a" /* PublishTaskPage */], __WEBPACK_IMPORTED_MODULE_8__wallet_wallet__["a" /* DesignerWalletPage */]]
@@ -57323,10 +57345,10 @@ var DesignerModulePage = (function () {
     return DesignerModulePage;
 }());
 DesignerModulePage = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* IonicPage */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({template:/*ion-inline-start:"/Users/Aollio/NightCat/src/pages/designer/designer.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/Aollio/NightCat/src/pages/designer/designer.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
 ], DesignerModulePage);
 
 //# sourceMappingURL=designer.js.map
@@ -57360,7 +57382,7 @@ HomePage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
         selector: 'page-home',template:/*ion-inline-start:"/Users/Aollio/NightCat/src/pages/designer/home/home.html"*/'<ion-header>\n    <ion-navbar>\n        <ion-title>Home</ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content>\n    <ion-content style="height: 30%">\n        <ion-slides>\n            <ion-slide style="background-color: #32db64">\n                <h1>Slide 1</h1>\n            </ion-slide>\n            <ion-slide style="background-color: #32db64">\n                <h1>Slide 2</h1>\n            </ion-slide>\n            <ion-slide style="background-color: #32db64">\n                <h1>Slide 3</h1>\n            </ion-slide>\n        </ion-slides>\n    </ion-content>\n</ion-content>\n'/*ion-inline-end:"/Users/Aollio/NightCat/src/pages/designer/home/home.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
 ], HomePage);
 
 //# sourceMappingURL=home.js.map
@@ -57373,9 +57395,8 @@ HomePage = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DesignerMePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__wallet_wallet__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__authentication_authenication__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__comment_comment__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__authentication_authenication__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__comment_comment__ = __webpack_require__(113);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -57389,13 +57410,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var DesignerMePage = (function () {
     function DesignerMePage(navCtrl) {
         this.navCtrl = navCtrl;
-        this.wallet = __WEBPACK_IMPORTED_MODULE_2__wallet_wallet__["a" /* DesignerWalletPage */];
-        this.authenticate = __WEBPACK_IMPORTED_MODULE_3__authentication_authenication__["a" /* AuthenticationPage */];
-        this.comment = __WEBPACK_IMPORTED_MODULE_4__comment_comment__["a" /* CommentPage */];
+        this.wallet = "designer-wallet";
+        this.authenticate = __WEBPACK_IMPORTED_MODULE_2__authentication_authenication__["a" /* AuthenticationPage */];
+        this.comment = __WEBPACK_IMPORTED_MODULE_3__comment_comment__["a" /* CommentPage */];
     }
     DesignerMePage.prototype.open = function (page, option) {
         this.navCtrl.push(page, option);
@@ -57406,7 +57426,7 @@ DesignerMePage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
         selector: 'page-me-designer',template:/*ion-inline-start:"/Users/Aollio/NightCat/src/pages/designer/me/me.html"*/'<ion-header>\n    <div class="me-header">\n        <div center class="me-avatar"></div>\n        <div class="me-name">设计师昵称\n            <span><ion-label>7年，上海交通大学<br/>高级设计师</ion-label></span>\n        </div>\n    </div>\n</ion-header>\n\n\n<ion-content>\n    <ion-list no-lines>\n        <ion-item>我的订单\n            <ion-icon name="arrow-forward" item-end padding-right></ion-icon>\n        </ion-item>\n        <ion-item (click)="open(wallet)">我的钱包\n            <ion-icon name="arrow-forward" item-end padding-right></ion-icon>\n        </ion-item>\n        <ion-item (click)="open(authenticate)">认证中心\n            <ion-icon name="arrow-forward" item-end padding-right></ion-icon>\n        </ion-item>\n        <ion-item (click)="open(comment)">评论中心\n            <ion-icon name="arrow-forward" item-end padding-right></ion-icon>\n        </ion-item>\n        <ion-item>我的收藏\n            <ion-icon name="arrow-forward" item-end padding-right></ion-icon>\n        </ion-item>\n    </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/Aollio/NightCat/src/pages/designer/me/me.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
 ], DesignerMePage);
 
 //# sourceMappingURL=me.js.map
@@ -57439,9 +57459,9 @@ var OrderListComponent = (function () {
 }());
 OrderListComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
-        selector: 'com-orderlist',template:/*ion-inline-start:"/Users/Aollio/NightCat/src/pages/designer/orderlist/orderlist.html"*/'<ion-header>\n    <ion-navbar>\n        <ion-title>\n            订单列表\n        </ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content>\n    <ion-card>\n        <ion-card-content>\n            <div class="avatar"></div>\n            <div class="detail">\n                <ion-row>\n                    <ion-col align-self-center text-center>\n                        <ion-note>\n                            500\n                        </ion-note>\n                    </ion-col>\n                    <ion-col align-self-center text-center>\n                        <ion-note>\n                            马上抢单>\n                        </ion-note>\n                    </ion-col>\n                </ion-row>\n                <ion-row>\n                    <ion-col align-self-center text-center>\n                        <ion-note>\n                            8人关注\n                        </ion-note>\n                    </ion-col>\n                    <ion-col align-self-center text-center>\n                        <ion-note>\n                            6天1小时后截止\n                        </ion-note>\n                    </ion-col>\n                </ion-row>\n                <div class="progress">\n                    <div class="progress-bar  progress-bar-striped11 " style="width: 85%;">\n                    </div>\n                </div>\n            </div>\n        </ion-card-content>\n    </ion-card>\n    <!--<ion-card>-->\n    <!--<ion-card-content class="order">-->\n    <!--<div class="avatar">-->\n    <!---->\n    <!--</div>-->\n    <!--</ion-card-content>-->\n    <!---->\n    <!--</ion-card>-->\n\n</ion-content>\n\n<!--<ion-item class="item">-->\n<!--<ion-avatar item-start>-->\n<!--<img src="/img/he-White_03.png">-->\n<!--</ion-avatar>-->\n<!--<h2 style="">Marty McFlysagdhsgferbehfdcgfsdadfhgrgefgfgfngdgdsf</h2>-->\n\n<!--<ion-row>-->\n<!--<ion-col align-self-center text-center>-->\n<!--<ion-note>-->\n<!--500-->\n<!--</ion-note>-->\n<!--</ion-col>-->\n<!--<ion-col align-self-center text-center>-->\n<!--<ion-note>-->\n<!--马上抢单>-->\n<!--</ion-note>-->\n<!--</ion-col>-->\n<!--</ion-row>-->\n<!--<ion-row>-->\n<!--<ion-col align-self-center text-center>-->\n<!--<ion-note>-->\n<!--8人关注-->\n<!--</ion-note>-->\n<!--</ion-col>-->\n<!--<ion-col align-self-center text-center>-->\n<!--<ion-note>-->\n<!--6天1小时后截止-->\n<!--</ion-note>-->\n<!--</ion-col>-->\n<!--</ion-row>-->\n<!--<div class="progress">-->\n<!--<div class="progress-bar  progress-bar-striped11 " style="width: 85%;">-->\n<!--</div>-->\n<!--</div>-->\n<!--</ion-item>-->\n\n<!--todo-->\n\n<!--<div class="progress">-->\n<!--<div class="progress-bar  progress-bar-striped11 " style="width: 85%;">-->\n<!--</div>-->\n<!--</div>-->\n'/*ion-inline-end:"/Users/Aollio/NightCat/src/pages/designer/orderlist/orderlist.html"*/
+        selector: 'com-orderlist',template:/*ion-inline-start:"/Users/Aollio/NightCat/src/pages/designer/orderlist/orderlist.html"*/'<ion-header>\n    <ion-navbar>\n        <ion-title>\n            订单列表\n        </ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content>\n    <ion-list>\n        <ion-card>\n            <ion-card-content>\n                <div class="avatar"></div>\n                <div class="detail">\n                    <p class="title">园区导视，布点规划，文化导入，精神堡垒，展厅，室内软装设计等许多内容、不一一展示</p>\n                    <ion-row>\n                        <ion-col class="price" align-self-center left>\n                            ¥&nbsp;&nbsp;500\n                        </ion-col>\n                        <ion-col class="getorder" align-self-center right>\n                            马上抢单&nbsp;>\n                        </ion-col>\n                    </ion-row>\n                    <ion-row>\n                        <ion-col class="like-amount" align-self-center left>\n                            8人关注\n                        </ion-col>\n                        <ion-col class="deadtime" align-self-center right>\n                            6天1小时后截止\n                        </ion-col>\n                    </ion-row>\n                    <div class="progress">\n                        <div class="progress-bar  progress-bar-striped11 " style="width: 85%;">\n                        </div>\n                    </div>\n                </div>\n            </ion-card-content>\n        </ion-card>\n        <ion-card>\n            <ion-card-content>\n                <div class="avatar"></div>\n                <div class="detail">\n                    <p class="title">园区导视，布点规划，文化导入，精神堡垒，展厅，室内软装设计等许多内容、不一一展示</p>\n                    <ion-row>\n                        <ion-col class="price" align-self-center left>\n                            ¥&nbsp;&nbsp;500\n                        </ion-col>\n                        <ion-col class="getorder" align-self-center right>\n                            马上抢单&nbsp;>\n                        </ion-col>\n                    </ion-row>\n                    <ion-row>\n                        <ion-col class="like-amount" align-self-center left>\n                            8人关注\n                        </ion-col>\n                        <ion-col class="deadtime" align-self-center right>\n                            6天1小时后截止\n                        </ion-col>\n                    </ion-row>\n                    <div class="progress">\n                        <div class="progress-bar  progress-bar-striped11 " style="width: 85%;">\n                        </div>\n                    </div>\n                </div>\n            </ion-card-content>\n        </ion-card>\n    </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"/Users/Aollio/NightCat/src/pages/designer/orderlist/orderlist.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
 ], OrderListComponent);
 
 //# sourceMappingURL=orderlist.js.map
@@ -57466,7 +57486,7 @@ var PublishTaskPage = (function () {
     return PublishTaskPage;
 }());
 PublishTaskPage = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({template:/*ion-inline-start:"/Users/Aollio/NightCat/src/pages/designer/publishtask/publishtask.html"*/'<ion-header>\n    <ion-navbar color="primary" hideBackButton>\n        <ion-buttons start>\n            <button ion-button  navPop>\n                取消\n            </button>\n        </ion-buttons>\n        <ion-title>\n            发布任务\n        </ion-title>\n        <ion-buttons end>\n            <button ion-button>\n                发布\n            </button>\n        </ion-buttons>\n    </ion-navbar>\n</ion-header>\n\n<ion-content  style="background-color: #f3f8fb">\n    <ion-item no-lines >\n        <ion-label style="color: #5676FC">* 项目类型</ion-label>\n        <ion-select [(ngModel)]="gaming" input interface="popover" placeholder="请选择您的任务类型">\n            <ion-option value="nes">NES</ion-option>\n            <ion-option value="n64">Nintendo64</ion-option>\n            <ion-option value="ps">PlayStation</ion-option>\n            <ion-option value="genesis">Sega Genesis</ion-option>\n            <ion-option value="saturn">Sega Saturn</ion-option>\n            <ion-option value="snes">SNES</ion-option>\n        </ion-select>\n    </ion-item>\n    <div style="height:10px;width: 100%"></div>\n    <ion-item no-lines>\n        <ion-label style="color: #5676FC">* 项目标题</ion-label>\n        <ion-input smaxlength="10" type="text" value="" placeholder="请输入任务标题"></ion-input>\n    </ion-item>\n    <div style="height:3px;width: 100%"></div>\n    <ion-item no-lines style="height: 30%">\n        <ion-input type="text" value="" placeholder="详细描述一下任务的内容"></ion-input>\n    </ion-item>\n</ion-content>'/*ion-inline-end:"/Users/Aollio/NightCat/src/pages/designer/publishtask/publishtask.html"*/
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({template:/*ion-inline-start:"/Users/Aollio/NightCat/src/pages/designer/publishtask/publishtask.html"*/'<ion-header>\n    <ion-navbar color="primary" hideBackButton>\n        <ion-buttons start>\n            <button ion-button  navPop>\n                取消\n            </button>\n        </ion-buttons>\n        <ion-title>\n            发布任务\n        </ion-title>\n        <ion-buttons end>\n            <button ion-button>\n                发布\n            </button>\n        </ion-buttons>\n    </ion-navbar>\n</ion-header>\n\n<ion-content  style="background-color: #f3f8fb">\n    <ion-item no-lines >\n        <ion-label style="color: #5676FC">* 项目类型</ion-label>\n        <ion-select [(ngModel)]="gaming" input interface="popover" placeholder="请选择您的任务类型">\n            <ion-option value="nes">NES</ion-option>\n            <ion-option value="n64">Nintendo64</ion-option>\n            <ion-option value="ps">PlayStation</ion-option>\n            <ion-option value="genesis">Sega Genesis</ion-option>\n            <ion-option value="saturn">Sega Saturn</ion-option>\n            <ion-option value="snes">SNES</ion-option>\n        </ion-select>\n    </ion-item>\n    <div style="height:10px;width: 100%"></div>\n    <ion-item no-lines>\n        <ion-label style="color: #5676FC">* 项目标题</ion-label>\n        <ion-input smaxlength="10" type="text" value="" placeholder="请输入任务标题"></ion-input>\n    </ion-item>\n    <div style="height:3px;width: 100%"></div>\n    <ion-item no-lines style="height: 30%">\n        <ion-input type="text" value="" placeholder="详细描述一下任务的内容"></ion-input>\n    </ion-item>\n    <div style="height:10px;width: 100%"></div>\n    <ion-item no-lines>\n        <ion-label style="color: #5676FC">* 预算</ion-label>\n        <ion-input type="text" value="" placeholder="请输入金额"></ion-input>\n    </ion-item>\n    <div style="height:10px;width: 100%"></div>\n    <ion-item no-lines>\n    <ion-label style="color: #5676FC">* 设计面积</ion-label>\n    <ion-input type="text" value="" ></ion-input>\n    </ion-item>\n    <div style="height:10px;width: 100%"></div>\n    <ion-item no-lines>\n        <ion-row>\n            <ion-col style="float:left; color: #5676FC;width: 25%">\n                * 设计深度\n            </ion-col>\n            <ion-col style="width: 25%">\n                <button ion-button outline style="height: 1em; color: #5676FC">\n                    方案\n                </button>\n            </ion-col>\n            <ion-col style="width: 25%">\n                <button ion-button outline style="height: 1em; color: #5676FC">\n                    扩充\n                </button>\n            </ion-col>\n            <ion-col style="width: 25%">\n                <button ion-button outline style="height: 1em; color: #5676FC">\n                    施工\n                </button>\n            </ion-col>\n        </ion-row>\n    </ion-item>\n    <div style="height:10px;width: 100%"></div>\n    <ion-item no-lines>\n        <ion-label style="color: #5676FC">* 工时</ion-label>\n        <ion-input type="text" value="" ></ion-input>\n    </ion-item>\n    <div style="height:10px;width: 100%"></div>\n    <ion-item no-lines>\n        <ion-label style="color: #5676FC">* 设计时间</ion-label>\n        <ion-input type="date"></ion-input>\n    </ion-item>\n    <div style="height:10px;width: 100%"></div>\n    <ion-item no-lines>\n        <ion-label style="color: #5676FC">* 订单备注</ion-label>\n        <ion-textarea style="height: 30%"></ion-textarea>\n    </ion-item>\n</ion-content>'/*ion-inline-end:"/Users/Aollio/NightCat/src/pages/designer/publishtask/publishtask.html"*/
     })
 ], PublishTaskPage);
 
@@ -57522,7 +57542,7 @@ var DesignerTabsPage = (function () {
 DesignerTabsPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({template:/*ion-inline-start:"/Users/Aollio/NightCat/src/pages/designer/tabs/tabs.html"*/'<ion-menu [content]="content" [persistent]="false">\n    <page-slidemenu></page-slidemenu>\n</ion-menu>\n\n<ion-tabs #content>\n    <ion-tab [root]="home" tabTitle="首页" tabIcon="home"></ion-tab>\n    <ion-tab [root]="tasks" tabTitle="任务广场" tabIcon="ios-list-box-outline"></ion-tab>\n    <ion-tab [root]="message" tabTitle="消息" tabIcon="ios-chatboxes-outline"></ion-tab>\n    <ion-tab [root]="me" tabTitle="我的" tabIcon="ios-person-outline"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/Users/Aollio/NightCat/src/pages/designer/tabs/tabs.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* Platform */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* Platform */],
         __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_5__ionic_native_splash_screen__["a" /* SplashScreen */]])
 ], DesignerTabsPage);
 
@@ -57614,12 +57634,12 @@ var EmployerModulePage = (function () {
     return EmployerModulePage;
 }());
 EmployerModulePage = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* IonicPage */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])({
         segment: 'e'
     }),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({template:/*ion-inline-start:"/Users/Aollio/NightCat/src/pages/employer/employer.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/Aollio/NightCat/src/pages/employer/employer.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
 ], EmployerModulePage);
 
 //# sourceMappingURL=employer.js.map
@@ -57659,7 +57679,7 @@ var EmployerTabsPage = (function () {
 EmployerTabsPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({template:/*ion-inline-start:"/Users/Aollio/NightCat/src/pages/employer/tabs/tabs.html"*/'\n<ion-header>\n    <ion-navbar>\n        <ion-title>首页</ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content>\n    这是雇主首页\n</ion-content>\n'/*ion-inline-end:"/Users/Aollio/NightCat/src/pages/employer/tabs/tabs.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */],
         __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_splash_screen__["a" /* SplashScreen */]])
 ], EmployerTabsPage);
 
@@ -57737,7 +57757,7 @@ WelcomePage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
         selector: 'page-welcome',template:/*ion-inline-start:"/Users/Aollio/NightCat/src/pages/welcome/welcome.html"*/'<!--\n  Generated template for the WelcomePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n    <ion-navbar>\n        <ion-title>欢迎，这是测试界面</ion-title>\n    </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n    <button ion-button (click)="open(designerLogin)" full>我是设计师-登录</button>\n    <button ion-button (click)="open(employerLogin)" full>我是雇主-登录</button>\n    <button ion-button (click)="open(designerHome)" full>设计师主页</button>\n    <button ion-button (click)="open(employerHome)" full>雇主主页</button>\n    <button ion-button (click)="open(orderListComponent)" full>订单列表</button>\n    <button ion-button (click)="open(orderDetailPage)" full>订单详情</button>\n    <button ion-button (click)="open(pulishtaskPage)" full>发布任务</button>\n    <button ion-button (click)="open(designerWalletPage)" full>设计师钱包</button>\n</ion-content>\n'/*ion-inline-end:"/Users/Aollio/NightCat/src/pages/welcome/welcome.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
 ], WelcomePage);
 
 // this.storage.get('firstOpen').then((result) => {
@@ -75528,6 +75548,9 @@ var map = {
 	"../pages/designer/designer.module": [
 		114
 	],
+	"../pages/designer/wallet/wallet.module": [
+		287
+	],
 	"../pages/employer/employer.module": [
 		121
 	]
@@ -75598,6 +75621,7 @@ AppModule = __decorate([
                 mode: 'ios'
             }, {
                 links: [
+                    { loadChildren: '../pages/designer/wallet/wallet.module#WalletModule', name: 'designer-wallet', segment: 'wallet', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/employer/employer.module#EmployerModule', name: 'EmployerModulePage', segment: 'e', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/designer/designer.module#DesignerModule', name: 'DesignerModulePage', segment: 'designer', priority: 'low', defaultHistory: [] }
                 ]
@@ -75841,7 +75865,7 @@ var MyApp = (function () {
 MyApp = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({template:/*ion-inline-start:"/Users/Aollio/NightCat/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/Aollio/NightCat/src/app/app.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
 ], MyApp);
 
 //# sourceMappingURL=app.component.js.map
@@ -75946,7 +75970,7 @@ ResetPasswordPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
         selector: 'page-resetpassword',template:/*ion-inline-start:"/Users/Aollio/NightCat/src/pages/common/accountsecurity/resetpassword/resetpassword.html"*/'<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <title>Title</title>\n</head>\n<body>\n\n</body>\n</html>'/*ion-inline-end:"/Users/Aollio/NightCat/src/pages/common/accountsecurity/resetpassword/resetpassword.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
 ], ResetPasswordPage);
 
 //# sourceMappingURL=resetpassword.js.map
@@ -76037,9 +76061,9 @@ SlidemenuComponment = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
         selector: 'page-slidemenu',template:/*ion-inline-start:"/Users/Aollio/NightCat/src/pages/common/slidemenu/slidemenu.html"*/'<ion-header>\n</ion-header>\n<ion-content>\n\n    <div style="background-color: #3cb5cf;height: 30%">\n        <div style="height: 70%">\n        </div>\n        <div text-center>\n            设计师/雇主昵称\n        </div>\n    </div>\n\n    <ion-list>\n        <button ion-item (click)="openPage(messagePage)">\n            系统消息\n        </button>\n        <button ion-item (click)="openPage(supportPage)">\n            帮助反馈\n        </button>\n        <button ion-item (click)="openPage(accountSecurityPage)">\n            账户与安全\n        </button>\n        <button ion-item (click)="clearCache(\'comfirm\')">\n            清除缓存\n        </button>\n        <button ion-item (click)="openPage(aboutPage)">\n            关于夜猫\n        </button>\n    </ion-list>\n</ion-content>\n<ion-footer>\n    <button ion-button color="primary" full (click)="exitApp()">\n        退出\n    </button>\n</ion-footer>'/*ion-inline-end:"/Users/Aollio/NightCat/src/pages/common/slidemenu/slidemenu.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* Platform */],
-        __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* AlertController */],
-        __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* ToastController */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* Platform */],
+        __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* AlertController */],
+        __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* ToastController */]])
 ], SlidemenuComponment);
 
 //# sourceMappingURL=slidemenu.js.map
@@ -113489,6 +113513,80 @@ function toSubscriber(nextOrObserver, error, complete) {
 }
 exports.toSubscriber = toSubscriber;
 //# sourceMappingURL=toSubscriber.js.map
+
+/***/ }),
+/* 287 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WalletModule", function() { return WalletModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__wallet__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__consumedetail_consumedetail__ = __webpack_require__(288);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+var WalletModule = (function () {
+    function WalletModule() {
+    }
+    return WalletModule;
+}());
+WalletModule = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_1__wallet__["a" /* DesignerWalletPage */],
+            __WEBPACK_IMPORTED_MODULE_3__consumedetail_consumedetail__["a" /* ConsumeDetail */]
+        ],
+        entryComponents: [
+            __WEBPACK_IMPORTED_MODULE_1__wallet__["a" /* DesignerWalletPage */],
+            __WEBPACK_IMPORTED_MODULE_3__consumedetail_consumedetail__["a" /* ConsumeDetail */]
+        ],
+        exports: [__WEBPACK_IMPORTED_MODULE_1__wallet__["a" /* DesignerWalletPage */]],
+        imports: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_1__wallet__["a" /* DesignerWalletPage */])]
+    })
+], WalletModule);
+
+//# sourceMappingURL=wallet.module.js.map
+
+/***/ }),
+/* 288 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConsumeDetail; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ConsumeDetail = (function () {
+    function ConsumeDetail() {
+    }
+    return ConsumeDetail;
+}());
+ConsumeDetail = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
+        selector: 'page-consumedetail',template:/*ion-inline-start:"/Users/Aollio/NightCat/src/pages/designer/wallet/consumedetail/consumedetail.html"*/'<ion-header>\n    <ion-navbar>\n        <ion-title>明细</ion-title>\n    </ion-navbar>\n</ion-header>\n<ion-content>\n\n    <ion-list>\n\n        <ion-header>\n            <div>\n                2017年6月<br/>\n                提现：¥5000 收入：¥784\n            </div>\n        </ion-header>\n\n    </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"/Users/Aollio/NightCat/src/pages/designer/wallet/consumedetail/consumedetail.html"*/
+    }),
+    __metadata("design:paramtypes", [])
+], ConsumeDetail);
+
+//# sourceMappingURL=consumedetail.js.map
 
 /***/ })
 /******/ ]);

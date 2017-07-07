@@ -14,7 +14,7 @@ export class DesignerMePage {
 
     }
 
-    wallet: any = DesignerWalletPage;
+    wallet: any = "designer-wallet";
     authenticate: any = AuthenticationPage;
     comment: any = CommentPage;
 

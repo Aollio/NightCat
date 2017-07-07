@@ -25257,14 +25257,46 @@ page-me-designer ion-item {
   box-shadow: 8px 0 2em #b6b6b6;
 }
 
+.like-amount {
+  margin-top: -3%;
+}
+
+.deadtime {
+  font-size: .78em;
+  color: #c9cacf;
+  text-align: right;
+  margin-top: -5%;
+}
+
+.price {
+  font-size: 1.5em !important;
+  color: #FDBC42;
+}
+
+.getorder {
+  font-size: .78em;
+  text-align: right;
+  margin-top: 2%;
+  color: #FB865E;
+}
+
 .detail {
-  margin-left: 50%;
+  margin-left: 6.5em;
   width: 100%;
+}
+
+.detail .title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
 ion-card {
   margin-left: 10% !important;
-  width: 80%;
+  margin-right: 5% !important;
+  width: 85% !important;
+  height: 10em;
 }
 
 ion-card-content {
@@ -25277,11 +25309,10 @@ ion-card-content {
 
 .avatar {
   position: absolute;
-  text-align: center;
-  margin-left: -10%;
+  margin-left: -2.5em;
   width: 8em;
   height: 8em;
-  background-color: #d5fffb;
+  background-color: #3E3E3E;
   border-radius: .5em;
   -webkit-box-shadow: 1px 3px 1px #aeaeae;
   box-shadow: 1px 3px 1px #aeaeae;
@@ -25326,7 +25357,7 @@ page-wallet ion-content {
 
 page-wallet .money-all {
   padding-left: 3%;
-  height: 30%;
+  height: 35%;
   background-color: #445CFA;
 }
 
