@@ -9,6 +9,7 @@ import {OrderDetailPage} from "../common/orderdetail/orderdetail"
 import {OrderListComponent} from "../designer/orderlist/orderlist";
 import {EmployerModulePage} from "../employer/employer";
 import {DesignerModulePage} from "../designer/designer";
+import {PublishTaskPage} from "../designer/publishtask/publishtask";
 /**
  * Generated class for the WelcomePage page.
  *
@@ -40,6 +41,7 @@ export class WelcomePage {
     designerLogin:any = LoginPage;
 
     designerHome: any = DesignerModulePage;
+    pulishtaskPage: any = PublishTaskPage;
 
     open(page, option) {
         this.navCtrl.push(page, option)
