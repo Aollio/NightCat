@@ -25430,3 +25430,90 @@ page-wallet .money-detail {
   height: 10% !important;
   font-size: 1.3em;
 }
+
+page-consumedetail ion-item, page-consumedetail .item {
+  display: -webkit-inline-box !important;
+  display: -webkit-inline-flex !important;
+  display: -ms-inline-flexbox !important;
+  display: inline-flex !important;
+  width: 100%;
+  height: 6em;
+  padding-bottom: 5px;
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: #D6D6DA;
+}
+
+page-consumedetail .item .type {
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  margin: auto;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  font-size: 3.5em;
+  color: #ffc836;
+}
+
+page-consumedetail .item .detail {
+  width: 60%;
+  height: 100%;
+  margin-left: 0;
+}
+
+page-consumedetail .item .detail .amount {
+  font-size: 1.5em;
+  text-align: left;
+  vertical-align: middle;
+  margin-top: 5%;
+}
+
+page-consumedetail .item .detail .desc {
+  font-size: .9em;
+  color: #9E9E9E;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+page-consumedetail .time {
+  width: 20%;
+  height: 100%;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+}
+
+page-consumedetail .time .word {
+  font-size: 1.2em;
+  color: #9E9E9E;
+  text-align: center;
+  margin: auto;
+  margin-top: 20%;
+}
+
+page-consumedetail .time .number {
+  font-size: 1em;
+  color: #9E9E9E;
+  text-align: center;
+  margin: auto;
+  margin-top: 10%;
+}
+
+page-consumedetail .now-time {
+  font-size: 1.2em;
+  font-weight: 600;
+  padding-left: 5%;
+  margin-bottom: .2em;
+}
+
+page-consumedetail .now-amount {
+  font-size: 1em;
+  margin-top: .1em;
+  padding-left: 5%;
+  color: #9E9E9E;
+}

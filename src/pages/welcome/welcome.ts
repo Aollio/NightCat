@@ -11,6 +11,7 @@ import {EmployerModulePage} from "../employer/employer";
 import {DesignerModulePage} from "../designer/designer";
 import {PublishTaskPage} from "../designer/publishtask/publishtask";
 import {DesignerWalletPage} from "../designer/wallet/wallet";
+import {CommentPage} from "../designer/comment/comment";
 
 /**
  * Generated class for the WelcomePage page.
@@ -45,6 +46,8 @@ export class WelcomePage {
     designerHome: any = DesignerModulePage;
     pulishtaskPage: any = PublishTaskPage;
     designerWalletPage: any = DesignerWalletPage;
+
+    commentPage:any = CommentPage;
 
     open(page, option) {
         this.navCtrl.push(page, option)
