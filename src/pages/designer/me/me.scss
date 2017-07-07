@@ -1,0 +1,33 @@
+page-me-designer{
+  .me-header{
+    background-color: #2a43a8;
+    height:45%;
+    padding-top: 10%;
+  }
+
+  .me-header .me-avatar{
+    border-radius:50px;
+    text-align:center;
+    margin: auto;
+    height: 8em;width: 8em;
+    background: #3cb5cf;
+  }
+
+  .me-header .me-name{
+    text-align: center;
+    font-size: large;
+    padding-top: 1em;
+    color: #ecf3ed;
+  }
+
+  .me-header .me-name ion-label{
+    font-size: small;
+    color: #888fac;
+  }
+  .me-header img{
+    width: 50%;
+    height: 50%;
+    vertical-align:middle;
+    text-align: center;
+  }
+}
