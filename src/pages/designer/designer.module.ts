@@ -34,7 +34,8 @@ import {WalletModule} from "./wallet/wallet.module";
         WalletModule,
         IonicPageModule.forChild(DesignerTabsPage)
     ],
-    exports: [DesignerModulePage, DesignerTabsPage, PublishTaskPage, DesignerWalletPage]
+    exports: [DesignerModulePage,
+        CommentPage,DesignerTabsPage, PublishTaskPage, DesignerWalletPage]
 })
 export class DesignerModule {
 }
