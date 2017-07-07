@@ -1,6 +1,8 @@
 # Compiled class file
 *.class
 
+platforms/
+www/
 .DS_Store
 node_modules/
 .idea/
