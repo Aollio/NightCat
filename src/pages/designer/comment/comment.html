@@ -5,5 +5,29 @@
 </ion-header>
 
 <ion-content>
-    这是评论界面，还没有完成
+    <ion-list>
+        <ion-item-sliding>cimg
+            <ion-item>
+                <div class="comment-item">
+                    <div class="comment-avatar">
+                        <img src="/assets/img/first.png"/>
+                    </div>
+                    <div class="content">
+                        <ion-row class="name">小李</ion-row>
+                        <ion-row class="comment-content">设计师风格好，灵感运用得巧妙。。。。</ion-row>
+                        <ion-row class="comment-time">5月25日 21：00</ion-row>
+                    </div>
+                    <div class="descimg">
+                        <img src="/assets/img/first.png"/>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item-options side="right">
+                <button ion-button color="danger">
+                    <ion-icon name="delete"></ion-icon>
+                    &nbsp;删除&nbsp;
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
 </ion-content>

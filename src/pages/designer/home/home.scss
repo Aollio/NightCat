@@ -1,5 +1,10 @@
 page-home {
 
+  .slides {
+    height: 30%;
+    padding-bottom: .5%
+  }
+
   button {
     height: 3em;
     width: auto;
@@ -17,7 +22,5 @@ page-home {
   .scroll-zoom-wrapper {
     display: inline-flex !important;
   }
-
-
 
 }

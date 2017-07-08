@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
-import {HomePage} from "../designer/home/home";
+import {DesignerHomePage} from "../designer/home/home";
 import {Storage} from '@ionic/storage';
 import {DesignerTabsPage} from "../designer/tabs/tabs";
 import {LoginPage} from "../common/login/login";

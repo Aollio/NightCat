@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 import {AboutPage} from '../../common/about/about';
-import {HomePage} from '../home/home';
+import {DesignerHomePage} from '../home/home';
 import {NavController, Platform} from "ionic-angular";
 import {AccountSecurityPage} from "../../common/accountsecurity/accountsecurity";
 import {SupportPage} from "../../common/support/support";
@@ -15,7 +15,7 @@ import {DesignerMePage} from "../me/me";
 })
 export class DesignerTabsPage {
 
-    home = HomePage;
+    home = DesignerHomePage;
     tasks = AboutPage;
     me = DesignerMePage;
     message = MessagePage;
