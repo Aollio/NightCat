@@ -1,5 +1,5 @@
 <ion-header>
-    <div class="me-header">
+    <div class="me-header" (click)="open(designerMeDetailPage)">
         <div center class="me-avatar"></div>
         <div class="me-name">设计师昵称
             <span><ion-label>7年，上海交通大学<br/>高级设计师</ion-label></span>
@@ -13,10 +13,10 @@
         <ion-item>我的订单
             <ion-icon name="arrow-forward" item-end padding-right></ion-icon>
         </ion-item>
-        <ion-item (click)="open(wallet)">我的钱包
+        <ion-item (click)="open(wallet,{})">我的钱包
             <ion-icon name="arrow-forward" item-end padding-right></ion-icon>
         </ion-item>
-        <ion-item (click)="open(authenticate)">认证中心
+        <ion-item (click)="open(authenticate,{})">认证中心
             <ion-icon name="arrow-forward" item-end padding-right></ion-icon>
         </ion-item>
         <ion-item (click)="open(comment)">评论中心

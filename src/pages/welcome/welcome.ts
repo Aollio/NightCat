@@ -15,6 +15,7 @@ import {CommentPage} from "../designer/comment/comment";
 import {TaskSquarePage} from "../designer/tasksquare/tasksquare";
 import {ChatMessagePage} from "../designer/chatmessage/chatmessage";
 import {BlankPage} from "../blank/blank";
+import {DesignerMeDetailPage} from "../designer/me/medetail/medetail";
 
 /**
  * Generated class for the WelcomePage page.
@@ -52,7 +53,7 @@ export class WelcomePage {
     taskSquarePage: any = TaskSquarePage;
     commentPage: any = CommentPage;
     chatMessagePage: any = ChatMessagePage;
-
+    designerMeDetailPage:any = DesignerMeDetailPage;
 
     list:any  = BlankPage;
 
