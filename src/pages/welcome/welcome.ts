@@ -12,6 +12,8 @@ import {DesignerModulePage} from "../designer/designer";
 import {PublishTaskPage} from "../designer/publishtask/publishtask";
 import {DesignerWalletPage} from "../designer/wallet/wallet";
 import {CommentPage} from "../designer/comment/comment";
+import {TaskSquarePage} from "../designer/tasksquare/tasksquare";
+import {ChatMessagePage} from "../designer/chatmessage/chatmessage";
 
 /**
  * Generated class for the WelcomePage page.
@@ -46,8 +48,9 @@ export class WelcomePage {
     designerHome: any = DesignerModulePage;
     pulishtaskPage: any = PublishTaskPage;
     designerWalletPage: any = DesignerWalletPage;
-
-    commentPage:any = CommentPage;
+    taskSquarePage: any = TaskSquarePage;
+    commentPage: any = CommentPage;
+    chatMessagePage: any = ChatMessagePage;
 
     open(page, option) {
         this.navCtrl.push(page, option)

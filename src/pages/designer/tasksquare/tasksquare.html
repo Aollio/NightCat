@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>接单广场</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-img class="img" *ngIf="showAd" (click)="toggleShowAd()">
+    </ion-img>
+    <ion-segment [(ngModel)]="icons" color="secondary">
+        <button ion-button value="all">
+            <!--<ion-icon name="camera"></ion-icon>-->
+            所有分类
+        </button>
+        <ion-segment-button value="option">
+            <!--<ion-icon name="bookmark"></ion-icon>-->
+            筛选
+        </ion-segment-button>
+        <ion-segment-button value="sort">
+            <!--<ion-icon name="bookmark"></ion-icon>-->
+            排序
+        </ion-segment-button>
+    </ion-segment>
+</ion-content>
