@@ -14,6 +14,7 @@ import {WalletModule} from "./wallet/wallet.module";
 import {DesignerHomePage} from "./home/home";
 import {TaskSquarePage} from "./tasksquare/tasksquare";
 import {ChatMessagePage} from "./chatmessage/chatmessage";
+import {DesignerMeModule} from "./me/me.module";
 
 @NgModule({
     declarations: [
@@ -21,7 +22,6 @@ import {ChatMessagePage} from "./chatmessage/chatmessage";
         DesignerTabsPage,
         MessagePage,
         OrderListComponent,
-        DesignerMePage,
         PublishTaskPage,
         AuthenticationPage,
         CommentPage,
@@ -34,7 +34,6 @@ import {ChatMessagePage} from "./chatmessage/chatmessage";
         DesignerTabsPage,
         MessagePage,
         OrderListComponent,
-        DesignerMePage,
         PublishTaskPage,
         AuthenticationPage,
         CommentPage,
@@ -44,10 +43,11 @@ import {ChatMessagePage} from "./chatmessage/chatmessage";
     ],
     imports: [
         CommonPageModule,
+        DesignerMeModule,
         WalletModule,
         IonicPageModule.forChild(DesignerTabsPage)
     ],
-    exports: [DesignerModulePage,
+    exports: [
         CommentPage, DesignerTabsPage, PublishTaskPage, DesignerWalletPage,
         TaskSquarePage,
         ChatMessagePage

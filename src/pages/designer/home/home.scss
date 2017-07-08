@@ -6,9 +6,18 @@ page-home {
   }
 
   button {
-    height: 3em;
-    width: auto;
+  //  height: 3em;
+  //  width: auto;
     margin: 0px !important;
+    border-radius: 0em!important;
+  }
+
+  .order-type-btn{
+    height: 3em;
+    //margin-left: 1em;
+    //margin-right: 1em;
+    background-color: #e5e6eb;
+    color: #000000;
   }
 
   ion-scroll {

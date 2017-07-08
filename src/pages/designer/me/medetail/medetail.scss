@@ -1,0 +1,147 @@
+page-designer-me-detail {
+
+  .header {
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    background-color: #3cb5cf;
+    z-index: 0;
+  }
+
+  .menu-item {
+    padding-top: 1em;
+    font-size: 1em;
+    color: #FFFFFF;
+    background-color: rgba(158, 158, 158, 0);
+  }
+
+  .menu-item-right {
+    text-align: right;
+    padding-left: 60% !important;
+  }
+
+  .card-personal-desc {
+    box-shadow: 8px 0 2em #b6b6b6;
+    margin-top: 35%;
+    height: 13em;
+    background-color: #FFFFFF!important;
+    z-index: 100;
+  }
+
+  .card-personal-desc .desc-header div {
+    display: inline-flex;
+    width: 100%
+  }
+
+  .card-personal-desc .desc-header div .desc-header-name {
+    font-weight: 400;
+    font-size: 1em;
+    width: auto;
+  }
+
+  .desc-header-type {
+    width: 40%;
+    color: #ffbe60;
+    font-size: 0.7em;
+    padding-left: 2em;
+    text-align: center;
+    margin: auto;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  .desc-header-modify {
+    width: 15%;
+    color: #20d393;
+    font-size: 0.6em;
+    text-align: right;
+    align-self: flex-end;
+    align-items: flex-end;
+    margin: auto;
+    margin-left: 40px;
+  }
+
+  .desc-header-modify-icon {
+    text-align: right;
+  }
+
+  .desc-head-experience {
+    font-size: 0.7em
+  }
+
+  .desc-head-position {
+    font-size: 0.7em
+  }
+
+  .desc-middle-introduce {
+    font-size: 0.65em;
+    background-color: #FFFFFF!important;
+  }
+
+  ion-row,ion-col{
+    background-color: #FFFFFF!important;
+  }
+  .desc-bottom-number {
+    font-size: 1.25em;
+    font-weight: 400;
+    background-color: #FFFFFF!important;
+  }
+
+  .desc-bottom-number-label {
+    color: #9E9E9E;
+    font-size: 0.75em;
+    padding-top: 0.1%;
+  }
+
+  .case-card{
+    box-shadow: 8px 0 2em #b6b6b6;
+  }
+
+  .case-item {
+    border-bottom: solid;
+    border-bottom-width: 1px;
+    border-color: #9E9E9E;
+    padding: 0;
+    margin: 1em;
+  }
+
+  .case-item-main-div {
+    display: inline-flex;
+    height: 20%;
+    width: 100%;
+  }
+
+  .case-item-avatar {
+    height: 100%;
+    width: 20%;
+    padding: .5em;
+  }
+
+  .case-item-desc-main {
+    width: 70%;
+    padding: .5em;
+  }
+
+  .case-item-title {
+    font-weight: 400;
+    font-size: 1em;
+    color: rgb(15, 15, 15);
+  }
+
+  .case-item-desc-word {
+    width: 100%;
+    height: 2.5em;
+    display: -webkit-box!important;
+    -webkit-box-orient: vertical!important;
+    -webkit-line-clamp: 2!important;
+    overflow: hidden!important;
+  }
+
+  .case-item-time-before{
+    text-align: center;
+    vertical-align: middle;
+    margin: auto;
+    font-size: 1em;
+    color: #9E9E9E;
+  }
+
+}

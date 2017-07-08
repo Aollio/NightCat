@@ -17,12 +17,7 @@
         </ion-slide>
     </ion-slides>
     <ion-scroll scrollX="true" style="height: 3em">
-        <button ion-button block>精选</button>
-        <button ion-button>建筑设计</button>
-        <button ion-button>电气设计</button>
-        <button ion-button>结构设计</button>
-        <button ion-button>工艺设计</button>
-
+        <button class="order-type-btn" ion-button *ngFor="let type of types">{{type.name}}</button>
     </ion-scroll>
     <com-orderlist></com-orderlist>
 </ion-content>
