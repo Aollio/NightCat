@@ -47,24 +47,22 @@ page-consumedetail {
   .time {
     width: 20%;
     height: 100%;
-    align-items: center;
     text-align: center;
   }
 
   .time .word {
     font-size: 1.2em;
+    height: 50%;
     color: #9E9E9E;
-    text-align: center;
-    margin: auto;
-    margin-top: 20%;
+    line-height:100%;
+    padding-top: 10%;
   }
 
   .time .number {
+    height: 50%;
     font-size: 1em;
     color: #9E9E9E;
-    text-align: center;
-    margin: auto;
-    margin-top: 10%;
+    padding-top: 10%;
 
   }
 

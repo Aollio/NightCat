@@ -5,8 +5,8 @@
 </ion-header>
 
 <ion-content>
-    <ion-content style="height: 30%">
-        <ion-slides>
+    <!--<ion-content style="height: 30%">-->
+        <ion-slides style="height: 30%;padding-bottom: .5%">
             <ion-slide style="background-color: #32db64">
                 <h1>Slide 1</h1>
             </ion-slide>
@@ -17,5 +17,15 @@
                 <h1>Slide 3</h1>
             </ion-slide>
         </ion-slides>
-    </ion-content>
+    <!--</ion-content>-->
+    <ion-scroll scrollX="true" style="height: 3em">
+
+            <button ion-button block>精选</button>
+            <button ion-button>建筑设计</button>
+            <button ion-button>电气设计</button>
+            <button ion-button>结构设计</button>
+            <button ion-button>工艺设计</button>
+
+    </ion-scroll>
+
 </ion-content>

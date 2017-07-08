@@ -1,14 +1,8 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {RegisterPage} from "../register/register";
-import {ResetPasswordPage} from "../accountsecurity/resetpassword/resetpassword";
+import {ResetPasswordPage} from "../resetpassword/resetpassword";
 
-/**
- * Generated class for the LoginPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 @Component({
     selector: 'page-login',
     templateUrl: 'login.html',
@@ -19,6 +13,7 @@ export class LoginPage {
     isDesigner: boolean = true;
 
     resetPasswordPage: ResetPasswordPage;
+
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {
 
@@ -34,13 +29,15 @@ export class LoginPage {
         })
     }
 
+    openReset() {
+        console.log('click')
+        this.navCtrl.push(ResetPasswordPage, {})
+    }
+
     open(page, option) {
         this.navCtrl.push(page, option);
     }
 
-    ionViewDidLoad() {
-        console.log('ionViewDidLoad LoginPage');
-    }
 
 //todo
     login(param) {

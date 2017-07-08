@@ -1,8 +1,4 @@
-/**
- * Created by Aollio on 7/6/17.
- */
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
 
 @Component({
     selector: 'page-resetpassword',
@@ -10,8 +6,7 @@ import {NavController} from 'ionic-angular';
 })
 export class ResetPasswordPage {
 
-    constructor(public navCtrl: NavController) {
-
-    }
+    // constructor(public navCtrl: NavController) {
+    // }
 
 }

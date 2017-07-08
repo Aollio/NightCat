@@ -1,3 +1,23 @@
 page-home {
 
+  button {
+    height: 3em;
+    width: auto;
+    margin: 0px !important;
+  }
+
+  ion-scroll {
+    height: 3em;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+  .scroll-zoom-wrapper {
+    display: inline-flex !important;
+  }
+
+
+
 }

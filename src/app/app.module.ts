@@ -9,6 +9,7 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 import {WelcomePage} from "../pages/welcome/welcome";
 import {DesignerModule} from "../pages/designer/designer.module";
 import {EmployerModule} from "../pages/employer/employer.module";
+import {CommonModule} from "@angular/common";
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import {EmployerModule} from "../pages/employer/employer.module";
         BrowserModule,
         DesignerModule,
         EmployerModule,
+        CommonModule,
         IonicModule.forRoot(MyApp, {
             mode: 'ios'
         })
