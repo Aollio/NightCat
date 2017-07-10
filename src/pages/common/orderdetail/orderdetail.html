@@ -9,68 +9,109 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content style="background-color: #ebf1f2">
-    <ion-item no-lines>
-        <ion-row>
-            <ion-icon name="add"></ion-icon> &nbsp;预计完成：&nbsp;&nbsp;
-        </ion-row>
-        <ion-row>
-            <ion-icon name="add"></ion-icon>&nbsp;交易状态：&nbsp;&nbsp;
-        </ion-row>
-    </ion-item>
-    <br/>
-    <ion-item no-lines>
-        <ion-row>
-            订单标题：&nbsp;
-        </ion-row>
-        <ion-row>
-            订单预算：&nbsp;
-        </ion-row>
-        <ion-row>
-            订单类型：&nbsp;
-        </ion-row>
-        <ion-row>
-            设计面积：&nbsp;
-        </ion-row>
-        <ion-row>
-            设计深度：&nbsp;
-        </ion-row>
-        <ion-row>
-            工时：&nbsp;
-        </ion-row>
-    </ion-item>
-    <br/>
-    <div style="background-color: #ffffff">
-        <div style="display: inline-flex">
-            <div style="width:20%;">订单详情&nbsp;&nbsp;&nbsp;&nbsp;</div>
-            <div style="width: 80%"> 结构设计要求如下：1.按照所提供的三维模型设计达到指定功能要求。2.复杂完整的模型图。3.根据手绘完成设计图</div>
-        </div>
+<ion-content class="main-background" padding-top="1em">
+    <ion-row>
+        <ion-col class="respect-title" col-3>
+            <ion-icon name="add"></ion-icon>
+            预计完成:
+        </ion-col>
+        <ion-col class="respect-content" col-9>
+            146 Hour
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col class="respect-title" col-3>
+            <ion-icon name="add"></ion-icon>
+            交易状态:
+        </ion-col>
+        <ion-col class="respect-content" col-9>
+            146 Hour
+        </ion-col>
+    </ion-row>
+    <ion-item-divider></ion-item-divider>
+    <ion-row>
+        <ion-col class="respect-title" col-3>
+            订单标题:
+        </ion-col>
+        <ion-col class="respect-content" col-9>
+            146 Hour
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col class="respect-title" col-3>
+            订单预算:
+        </ion-col>
+        <ion-col class="respect-content" col-9>
+            146 Hour
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col class="respect-title" col-3>
+            订单类型:
 
-    </div>
+        </ion-col>
+        <ion-col class="respect-content" col-9>
+            146 Hour
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col class="respect-title" col-3>
+            设计面积:
+        </ion-col>
+        <ion-col class="respect-content" col-9>
+            146 Hour
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col class="respect-title" col-3>
+            设计深度:
+        </ion-col>
+        <ion-col class="respect-content" col-9>
+            146 Hour
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col class="respect-title" col-3>工时
+        </ion-col>
+        <ion-col class="respect-content" col-9>
+            146 Hour
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col class="respect-title" col-3>
+            订单详情
+        </ion-col>
+        <ion-col class="respect-content" col-9>
 
-    <div style="display: flex">
-        &nbsp;
-        <div style="width: 8em;height: 8em;background-color: #2a43a8"></div>&nbsp;
-        <div style="width: 8em;height: 8em;background-color: #48a81f"></div>&nbsp;
-        <div style="width: 8em;height: 8em;background-color: #a81328"></div>&nbsp;
-    </div>
-    <br/>
-    <div style="display: flex;align-content: center;width:100%">
-        &nbsp;
-        <div style="width: 8em;height: 8em;background-color: #2a43a8"></div>&nbsp;
-        <div style="width: 8em;height: 8em;background-color: #48a81f"></div>&nbsp;
-        <!--<div style="width: 8em;height: 8em;background-color: #a81328"></div>-->
-    </div>
+            结构设计要求如下：1.按照所提供的三维模型设计达到指定功能要求。
+            2.复杂完整的模型图。3.根据手绘完成设计图
+        </ion-col>
+    </ion-row>
+
+    <ion-row class="order-photo">
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+    </ion-row>
+
+    <ion-row class="order-photo">
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+    </ion-row>
+
+
 </ion-content>
 
-<ion-footer style="display: inline-flex">
-    <ion-label class="bottom-left" style="width: 25%">
+<ion-footer class="footer-btns">
+    <button class="nobackground" ion-button color="primary" icon-start style="width: 50%">
         <ion-icon name="add"></ion-icon>
-        已收藏
-    </ion-label>
-    <ion-label style="width: 25%">
+        收藏
+    </button>
+    <button class="nobackground" ion-button color="primary" icon-start style="width: 50%">
         <ion-icon name="add"></ion-icon>
         喵喵
-    </ion-label>
-    <button ion-button color="primary" style="width: 50%">立即抢单</button>
+    </button>
+    <button ion-button color="primary" style="width: 60%!important;">立即抢单</button>
+
 </ion-footer>

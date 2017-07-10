@@ -8,6 +8,7 @@ import {StatusBar} from "@ionic-native/status-bar";
 import {DesignerMePage} from "../me/me";
 import {ChatMessagePage} from "../chatmessage/chatmessage";
 import {TaskSquarePage} from "../tasksquare/tasksquare";
+import {MessagePage} from "../message/message";
 
 @Component({
     templateUrl: 'tabs.html'
@@ -17,7 +18,7 @@ export class DesignerTabsPage {
     home = DesignerHomePage;
     tasks = TaskSquarePage;
     me = DesignerMePage;
-    message = ChatMessagePage;
+    message = MessagePage;
 
 
 
