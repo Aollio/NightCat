@@ -10,6 +10,7 @@ import {LoginPage} from "./login/login";
 import {AboutPage} from "./about/about";
 import {ResetPasswordPage} from "./resetpassword/resetpassword";
 import {CommonModulePage} from "./commonpage";
+import {PopoverPage} from "./popover/popover"
 
 @NgModule({
     imports: [IonicPageModule.forChild(CommonModulePage), AccountSecurityModule],
@@ -21,7 +22,8 @@ import {CommonModulePage} from "./commonpage";
         SupportPage,
         OrderDetailPage,
         AboutPage,
-        ResetPasswordPage
+        ResetPasswordPage,
+        PopoverPage
     ],
     entryComponents: [
         CommonModulePage,
@@ -31,7 +33,8 @@ import {CommonModulePage} from "./commonpage";
         SupportPage,
         OrderDetailPage,
         AboutPage,
-        ResetPasswordPage
+        ResetPasswordPage,
+        PopoverPage
     ],
     exports: [
         AccountSecurityPage,
@@ -41,7 +44,8 @@ import {CommonModulePage} from "./commonpage";
         SupportPage,
         OrderDetailPage,
         AboutPage,
-        CommonModulePage
+        CommonModulePage,
+        PopoverPage
     ],
     providers: []
 })

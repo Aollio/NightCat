@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
-import {el} from "@angular/platform-browser/testing/src/browser_util";
+import {PopoverController} from "ionic-angular"
+import {PopoverPage} from "../../common/popover/popover";
 
 @Component({
     selector: 'page-tasksquare',
@@ -9,7 +10,25 @@ export class TaskSquarePage {
 
     showAd: boolean = true;
 
-    constructor() {
+    constructor(public popoverCtrl: PopoverController) {
+    }
+
+    select(a) {
+        if (a === 'type') {
+            this.selectType()
+        } else if (a === 'filter') {
+        }
+        else if (a === 'sort') {
+
+        }
+    }
+
+    selectType() {
+        let popover = this.popoverCtrl.create(PopoverPage, {
+            title: 'Type',
+            items: [{name: 'One'}, {name: 'Two'}]
+        });
+        popover.present();
     }
 
     toggleShowAd() {
