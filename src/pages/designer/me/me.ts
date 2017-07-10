@@ -14,7 +14,9 @@ export class DesignerMePage {
 
     constructor(public navCtrl: NavController) {
 
-    }
+        }
+
+
 
     wallet: any = DesignerWalletPage;
     authenticate: any = AuthenticationPage;
