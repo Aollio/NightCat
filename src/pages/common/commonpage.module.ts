@@ -11,6 +11,7 @@ import {AboutPage} from "./about/about";
 import {ResetPasswordPage} from "./resetpassword/resetpassword";
 import {CommonModulePage} from "./commonpage";
 import {PopoverPage} from "./popover/popover"
+import {OrderProcessDetailPage} from "./orderprocess/orderprocess";
 
 @NgModule({
     imports: [IonicPageModule.forChild(CommonModulePage), AccountSecurityModule],
@@ -23,7 +24,8 @@ import {PopoverPage} from "./popover/popover"
         OrderDetailPage,
         AboutPage,
         ResetPasswordPage,
-        PopoverPage
+        PopoverPage,
+        OrderProcessDetailPage
     ],
     entryComponents: [
         CommonModulePage,
@@ -34,7 +36,8 @@ import {PopoverPage} from "./popover/popover"
         OrderDetailPage,
         AboutPage,
         ResetPasswordPage,
-        PopoverPage
+        PopoverPage,
+        OrderProcessDetailPage
     ],
     exports: [
         AccountSecurityPage,
