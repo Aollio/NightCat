@@ -3,13 +3,12 @@ import {Component} from '@angular/core';
 import {AboutPage} from '../../common/about/about';
 import {DesignerHomePage} from '../home/home';
 import {NavController, Platform} from "ionic-angular";
-import {AccountSecurityPage} from "../../common/accountsecurity/accountsecurity";
-import {SupportPage} from "../../common/support/support";
-import {MessagePage} from "../message/message";
 import {SplashScreen} from "@ionic-native/splash-screen";
 import {StatusBar} from "@ionic-native/status-bar";
 import {DesignerMePage} from "../me/me";
 import {ChatMessagePage} from "../chatmessage/chatmessage";
+import {TaskSquarePage} from "../tasksquare/tasksquare";
+import {MessagePage} from "../message/message";
 
 @Component({
     templateUrl: 'tabs.html'
@@ -17,9 +16,9 @@ import {ChatMessagePage} from "../chatmessage/chatmessage";
 export class DesignerTabsPage {
 
     home = DesignerHomePage;
-    tasks = AboutPage;
+    tasks = TaskSquarePage;
     me = DesignerMePage;
-    message = ChatMessagePage;
+    message = MessagePage;
 
 
 

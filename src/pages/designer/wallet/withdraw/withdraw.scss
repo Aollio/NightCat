@@ -1,0 +1,42 @@
+page-withdraw {
+
+  .money-all {
+    font-size: .8em;
+    color: #9E9E9E;
+    margin-right: 1em;
+  }
+
+  .money-all span {
+    font-size: 2em;
+    color: #000000;
+    font-weight: 500;
+    margin-left: 1em;
+  }
+
+  .money-all button {
+    background-color: transparent;
+    color: #3cb5cf;
+    font-size: 1.5em;
+  }
+
+  .input-money {
+    //height: 3em;
+    font-size: 2em;
+
+  }
+
+  .toast {
+    color: #3cb5cf;
+    padding-top: 3em;
+    margin: auto;
+    text-align: center;
+  }
+
+  .withdraw-btn {
+    width: 60%;
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-top: 2em;
+    text-align: center;
+  }
+}

@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar hideBackButton>
+        <ion-title>账号安全</ion-title>
+        <ion-buttons>
+            <button ion-button icon-only item-end navPop="">
+                <ion-icon name="ios-checkmark-circle-outline"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding-left padding-right>
+    <ion-item (click)="open(modifypsd)">
+        修改密码
+        <ion-icon name="arrow-forward" item-end></ion-icon>
+    </ion-item>
+
+    <ion-item (click)="open(modifytel)">
+        修改手机号
+        <ion-icon name="arrow-forward" item-end></ion-icon>
+    </ion-item>
+
+
+</ion-content>

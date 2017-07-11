@@ -1,8 +1,33 @@
-page-tasksquare{
-  .img{
+page-tasksquare {
+  .img {
     height: 10%;
     width: 100%;
     background-color: #9E9E9E;
+  }
+
+  .type-buttons {
+    display: inline-flex;
+    width: 100%;
+  }
+
+  .type-btn {
+
+    padding-top: .5em;
+    padding-buttom: .5em;
+
+    text-align: center;
+    width: 33%;
+    background-color: transparent;
+    color: #3E3E3E;
+    border-left-color: #9E9E9E;
+    border-left-width: .5px;
+    border-left-style: solid;
+    border-radius: 0;
+
+    font-size: 1.2em;
+  }
+
+  .type-btn:active {
   }
 
 }

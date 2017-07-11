@@ -1,24 +1,17 @@
-<!--
-  Generated template for the LoginPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-    <ion-navbar>
-
+<ion-header class="headerclass">
+    <ion-navbar color="primary">
+        <ion-title>登录</ion-title>
     </ion-navbar>
+
 
 </ion-header>
 
 
 <ion-content padding>
 
-    <p class="a"></p>
-    <!--<div style="height: 40%;">-->
-    <img src="/img/cat_03.png"/>
-    <!--</div>-->
+
+    <div class="login-avatar">
+        <img src="/assets/img/cat_03.png"/></div>
     <br/>
     <br/>
     <ion-item padding-left>
@@ -34,7 +27,6 @@
     <br/>
     <button ion-button round full>登陆</button>
 
-    <!--todo -->
     <button ion-button outline full (click)="openRegisterPage()">注册</button>
     <button ion-button clear full (click)="openReset()">
         忘记密码&nbsp;&nbsp;&nbsp;

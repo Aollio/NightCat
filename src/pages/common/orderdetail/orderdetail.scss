@@ -1,20 +1,44 @@
 page-orderdetail {
-  $colors: (
-          primary:    #488aff,
-          secondary:  #32db64,
-          danger:     #f53d3d,
-          light:      #f4f4f4,
-          dark:       #222,
-          background-color: #ebf1f2
-  );
-.me{
-  margin-left: 20% !important;
-  padding-left: 20%;
-  float:right;
-  height:auto;
-   width:80%;
-  word-wrap:break-word;
 
-}
+  main-background {
+    background-color: #ebf1f2;
+    margin-top: 1em;
+  }
+;
+
+  .respect-title {
+    margin: auto;
+    text-align: center;
+  }
+
+  .respect-content {
+  }
+
+  .order-photo ion-col {
+    width: 8em;
+    height: 8em;
+    background-color: #e60d0b;
+    margin: 1em 0.3em 0.3em;
+  }
+
+  .order-photo ion-col:first-child {
+    margin-left: .5em;
+  }
+
+  .order-photo ion-col:last-child {
+    margin-right: .5em;
+  }
+
+  .footer-btns {
+    display: inline-flex;
+    width: 100%;
+  }
+
+  .nobackground {
+    background-color: transparent;
+    color: blue;
+    padding: 0;
+    width: 20% !important;
+  }
 
 }

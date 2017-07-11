@@ -1,27 +1,81 @@
 page-home {
 
+  $background-color-home: #fdfdfd;
+
+  .header-bar {
+    width: 100%;
+    display: inline-flex;
+  }
+
+  .logo {
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin: auto;
+    text-align: center;
+    width: 15%;
+    //margin-left: .2em;
+    //margin-right: .5em;
+  }
+
+  .header-search {
+    width: 75%;
+  }
+
+  .header-icon {
+    width: 10%;
+    color: white;
+    margin: auto;
+    text-align: center;
+    //font-size: 1.5em;
+    //margin-right: 5%;
+  }
+
+  //.header-icon ion-icon {
+  //  padding-right: 5%;
+  //}
+
   .slides {
     height: 30%;
     padding-bottom: .5%
   }
 
+  ion-content {
+    background-color: $background-color-home !important;
+  }
+
   button {
-  //  height: 3em;
-  //  width: auto;
     margin: 0px !important;
-    border-radius: 0em!important;
+    border-radius: 0em !important;
   }
 
-  .order-type-btn{
+  .buttons-slide {
     height: 3em;
-    //margin-left: 1em;
-    //margin-right: 1em;
-    background-color: #e5e6eb;
-    color: #000000;
+  }
+  .scroll-zoom-wrapper {
+    //border-bottom-color: #cccccc;
+    //border-bottom-width: 0.05em!important;
+    //border-bottom-style: solid;
+    //
   }
 
-  ion-scroll {
-    height: 3em;
+  .order-type-btn {
+    height: 2.5em;
+    background-color: $background-color-home;
+    color: rgba(41, 41, 41, 0.93);
+    margin: .3em;
+    width: 4em;
+    font-size: 1.2em;
+    border-bottom-width: .05em;
+    border-bottom-color: #cccccc;
+    border-bottom-style: solid;
+  }
+
+  .btn-active {
+    color: map_get($colors, nav-des-bg);
+    border-bottom-width: .1em;
+    border-bottom-color: map_get($colors, nav-des-bg);
+
   }
 
   ::-webkit-scrollbar {

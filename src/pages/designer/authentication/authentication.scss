@@ -1,0 +1,55 @@
+page-authenication {
+
+  .process {
+    height: 25%;
+    width: 100%;
+    display: inline-flex;
+  }
+
+  .active {
+    color: #3cb5cf !important;
+  }
+
+  .process ion-col {
+    margin: auto;
+    text-align: center;
+    font-size: 1em;
+    color: #9E9E9E;
+  }
+
+  .process ion-col ion-icon {
+    font-size: 3em;
+  }
+
+  .upload-icon {
+    font-size: 4em;
+    margin: auto;
+    text-align: center;
+  }
+
+  .upload {
+    background-color: #4a87ee;
+    color: #fdfdfd;
+    height: 30%;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+  }
+
+  .desc{
+    margin: auto;
+    text-align: center;
+  }
+
+
+  .only-center-text{
+    margin: auto;
+    text-align: center;
+  }
+
+  .finfish-icon{
+    color: #32db64;
+    font-size: 4em;
+  }
+
+}

@@ -1,7 +1,7 @@
 <ion-header>
     <ion-navbar color="primary" hideBackButton>
         <ion-buttons start>
-            <button ion-button  navPop>
+            <button ion-button navPop>
                 取消
             </button>
         </ion-buttons>
@@ -16,8 +16,8 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content  style="background-color: #f3f8fb">
-    <ion-item no-lines >
+<ion-content class="content">
+    <ion-item no-lines>
         <ion-label style="color: #5676FC">* 项目类型</ion-label>
         <ion-select [(ngModel)]="gaming" input interface="popover" placeholder="请选择您的任务类型">
             <ion-option value="nes">NES</ion-option>
@@ -28,64 +28,66 @@
             <ion-option value="snes">SNES</ion-option>
         </ion-select>
     </ion-item>
-    <div style="height:10px;width: 100%"></div>
+    <div class="divblank"></div>
     <ion-item no-lines>
         <ion-label style="color: #5676FC">* 项目标题</ion-label>
         <ion-input smaxlength="10" type="text" value="" placeholder="请输入任务标题"></ion-input>
     </ion-item>
-    <div style="height:3px;width: 100%"></div>
+    <div class="divblank1"></div>
     <ion-item no-lines style="height: 30%">
         <ion-input type="text" value="" placeholder="详细描述一下任务的内容"></ion-input>
         <div>
             <img src="/assets/img/jiahao.png" height="200" width="200"/>
         </div>
     </ion-item>
-    <div style="height:10px;width: 100%"></div>
+    <div class="divblank"></div>
     <ion-item no-lines>
         <ion-label style="color: #5676FC">* 预算</ion-label>
         <ion-input type="text" value="" placeholder="请输入金额"></ion-input>
     </ion-item>
-    <div style="height:10px;width: 100%"></div>
+    <div class="divblank"></div>
     <ion-item no-lines>
-    <ion-label style="color: #5676FC">* 设计面积</ion-label>
-    <ion-input type="text" value="" ></ion-input>
+        <ion-label style="color: #5676FC">* 设计面积</ion-label>
+        <ion-input type="text" value=""></ion-input>
     </ion-item>
-    <div style="height:10px;width: 100%"></div>
-    <ion-item no-lines>
-        <ion-row>
-            <ion-col style="float:left; color: #5676FC;width: 25%">
-                * 设计深度
-            </ion-col>
-            <ion-col style="width: 25%">
-                <button ion-button outline style="height: 1em; color: #5676FC">
+    <div class="divblank"></div>
+
+    <div s style="display: inline-flex ;width: 100%;background-color: white">
+        <div class="lable">&nbsp;* 设计深度</div>
+        <div style="width: 50%">
+            <ion-segment [(ngModel)]="relationship" color="primary">
+                <ion-segment-button small value="key">
                     方案
-                </button>
-            </ion-col>
-            <ion-col style="width: 25%">
-                <button ion-button outline style="height: 1em; color: #5676FC">
-                    扩充
-                </button>
-            </ion-col>
-            <ion-col style="width: 25%">
-                <button ion-button outline style="height: 1em; color: #5676FC">
+                </ion-segment-button>
+                <ion-segment-button small value="add">
+                    扩出
+                </ion-segment-button>
+                <ion-segment-button small value="action">
                     施工
-                </button>
-            </ion-col>
-        </ion-row>
-    </ion-item>
-    <div style="height:10px;width: 100%"></div>
+                </ion-segment-button>
+            </ion-segment>
+        </div>
+
+
+    </div>
+    <div class="divblank"></div>
     <ion-item no-lines>
         <ion-label style="color: #5676FC">* 工时</ion-label>
-        <ion-input type="text" value="" ></ion-input>
+        <ion-input type="text" value=""></ion-input>
     </ion-item>
-    <div style="height:10px;width: 100%"></div>
+    <div class="divblank"></div>
     <ion-item no-lines>
         <ion-label style="color: #5676FC">* 设计时间</ion-label>
         <ion-input type="date"></ion-input>
     </ion-item>
-    <div style="height:10px;width: 100%"></div>
-    <ion-item no-lines>
-        <ion-label style="color: #5676FC">* 订单备注</ion-label>
-        <ion-textarea style="height: 30%"></ion-textarea>
-    </ion-item>
+    <div class="divblank"></div>
+
+    <div class="divcss">
+
+        <p class="pcss">* 订单备注</p>
+        <div class="div1css">
+            <textarea class="textareacss"></textarea>
+        </div>
+
+    </div>
 </ion-content>
