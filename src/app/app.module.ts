@@ -11,6 +11,9 @@ import {DesignerModule} from "../pages/designer/designer.module";
 import {EmployerModule} from "../pages/employer/employer.module";
 import {CommonModule} from "@angular/common";
 import {BlankPage} from "../pages/blank/blank";
+import {NetworkService} from "../service/network.service";
+import {SharedService} from "../service/share.service";
+import {HttpUrls} from "../service/httpurls.service";
 
 
 @NgModule({
@@ -36,6 +39,9 @@ import {BlankPage} from "../pages/blank/blank";
     bootstrap: [IonicApp],
 
     providers: [
+        HttpUrls,
+        NetworkService,
+        SharedService,
         StatusBar,
         SplashScreen,
         {provide: ErrorHandler, useClass: IonicErrorHandler}

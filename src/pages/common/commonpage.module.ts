@@ -10,7 +10,6 @@ import {LoginPage} from "./login/login";
 import {AboutPage} from "./about/about";
 import {ResetPasswordPage} from "./resetpassword/resetpassword";
 import {CommonModulePage} from "./commonpage";
-import {PopoverPage} from "./popover/popover"
 import {OrderProcessDetailPage} from "./orderprocess/orderprocess";
 
 @NgModule({
@@ -24,7 +23,6 @@ import {OrderProcessDetailPage} from "./orderprocess/orderprocess";
         OrderDetailPage,
         AboutPage,
         ResetPasswordPage,
-        PopoverPage,
         OrderProcessDetailPage
     ],
     entryComponents: [
@@ -36,7 +34,6 @@ import {OrderProcessDetailPage} from "./orderprocess/orderprocess";
         OrderDetailPage,
         AboutPage,
         ResetPasswordPage,
-        PopoverPage,
         OrderProcessDetailPage
     ],
     exports: [
@@ -48,7 +45,6 @@ import {OrderProcessDetailPage} from "./orderprocess/orderprocess";
         OrderDetailPage,
         AboutPage,
         CommonModulePage,
-        PopoverPage
     ],
     providers: []
 })

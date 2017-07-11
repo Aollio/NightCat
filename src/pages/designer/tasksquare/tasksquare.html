@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-navbar>
+    <ion-navbar color="nav-des-bg">
         <ion-title>接单广场</ion-title>
     </ion-navbar>
 </ion-header>
@@ -8,13 +8,13 @@
     <ion-img class="img" *ngIf="showAd" (click)="toggleShowAd()">
     </ion-img>
     <div class="type-buttons">
-        <button ion-button class="type-btn" (click)="select('type')">所有分类&nbsp;
+        <button class="type-btn" (click)="select('type')">所有分类&nbsp;
             <ion-icon name="ios-arrow-down"></ion-icon>
         </button>
-        <button ion-button class="type-btn" (click)="select('filter')">筛选&nbsp;
+        <button class="type-btn" (click)="select('type')">筛选&nbsp;
             <ion-icon name="ios-arrow-down"></ion-icon>
         </button>
-        <button ion-button class="type-btn" (click)="select('sort')">排序&nbsp;
+        <button class="type-btn" (click)="select('type')">排序&nbsp;
             <ion-icon name="ios-arrow-down"></ion-icon>
         </button>
     </div>

@@ -1,0 +1,6 @@
+//<ion-navbar color="nav-des-bg">
+
+ion-navbar {
+  //color: $nav-des-bg;/
+  color: map_get($colors,nav-des-bg)!important;
+}

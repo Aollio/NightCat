@@ -26,8 +26,11 @@
         "@ionic/storage": "2.0.1",
         "cordova-browser": "^4.1.0",
         "cordova-ios": "^4.4.0",
+        "cordova-plugin-compat": "^1.1.0",
         "cordova-plugin-console": "^1.0.5",
         "cordova-plugin-device": "^1.1.4",
+        "cordova-plugin-file": "^4.3.3",
+        "cordova-plugin-http": "^1.2.0",
         "cordova-plugin-splashscreen": "^4.0.3",
         "cordova-plugin-statusbar": "^2.2.2",
         "cordova-plugin-telerik-imagepicker": "git+https://github.com/Telerik-Verified-Plugins/ImagePicker.git",
@@ -56,7 +59,8 @@
             "ionic-plugin-keyboard": {},
             "com.synconset.imagepicker": {
                 "PHOTO_LIBRARY_USAGE_DESCRIPTION": "your usage message"
-            }
+            },
+            "cordova-plugin-http": {}
         },
         "platforms": [
             "browser",

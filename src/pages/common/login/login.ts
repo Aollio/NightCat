@@ -12,6 +12,9 @@ export class LoginPage {
     //isDesigner
     isDesigner: boolean = true;
 
+    navbgcolor:string = 'primary';
+    navtxcolor:string = 'primary';
+
     resetPasswordPage: ResetPasswordPage;
 
 

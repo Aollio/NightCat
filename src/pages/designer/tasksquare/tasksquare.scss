@@ -11,7 +11,10 @@ page-tasksquare {
   }
 
   .type-btn {
-    margin: 0;
+
+    padding-top: .5em;
+    padding-buttom: .5em;
+
     text-align: center;
     width: 33%;
     background-color: transparent;
@@ -20,6 +23,11 @@ page-tasksquare {
     border-left-width: .5px;
     border-left-style: solid;
     border-radius: 0;
+
+    font-size: 1.2em;
+  }
+
+  .type-btn:active {
   }
 
 }

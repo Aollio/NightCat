@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-navbar>
+    <ion-navbar color="nav-des-bg">
         <ion-title>Home</ion-title>
     </ion-navbar>
 </ion-header>
@@ -17,8 +17,9 @@
         </ion-slide>
     </ion-slides>
 
-    <ion-scroll scrollX="true" style="height: 3em">
-        <button class="order-type-btn" ion-button *ngFor="let type of types">{{type.name}}</button>
+    <ion-scroll scrollX="true" class="buttons-slide">
+        <button class="order-type-btn btn-active">精选</button>
+        <button class="order-type-btn" *ngFor="let type of types">{{type.name}}</button>
     </ion-scroll>
     <com-orderlist></com-orderlist>
 </ion-content>

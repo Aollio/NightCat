@@ -1,7 +1,7 @@
 <ion-header>
-    <ion-navbar color="primary" hideBackButton>
+    <ion-navbar color="nav-des-bg" hideBackButton>
         <ion-buttons start>
-            <button ion-button  navPop>
+            <button ion-button navPop>
                 取消
             </button>
         </ion-buttons>
@@ -16,8 +16,8 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content  style="background-color: #f3f8fb">
-    <ion-item no-lines >
+<ion-content style="background-color: #f3f8fb">
+    <ion-item no-lines>
         <ion-label style="color: #5676FC">* 项目类型</ion-label>
         <ion-select [(ngModel)]="gaming" input interface="popover" placeholder="请选择您的任务类型">
             <ion-option value="nes">NES</ion-option>
@@ -47,8 +47,8 @@
     </ion-item>
     <div style="height:10px;width: 100%"></div>
     <ion-item no-lines>
-    <ion-label style="color: #5676FC">* 设计面积</ion-label>
-    <ion-input type="text" value="" ></ion-input>
+        <ion-label style="color: #5676FC">* 设计面积</ion-label>
+        <ion-input type="text" value=""></ion-input>
     </ion-item>
     <div style="height:10px;width: 100%"></div>
     <ion-item no-lines>
@@ -76,7 +76,7 @@
     <div style="height:10px;width: 100%"></div>
     <ion-item no-lines>
         <ion-label style="color: #5676FC">* 工时</ion-label>
-        <ion-input type="text" value="" ></ion-input>
+        <ion-input type="text" value=""></ion-input>
     </ion-item>
     <div style="height:10px;width: 100%"></div>
     <ion-item no-lines>
