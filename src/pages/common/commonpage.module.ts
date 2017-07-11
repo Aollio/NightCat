@@ -1,8 +1,7 @@
 import {NgModule} from "@angular/core";
 import {SlidemenuComponment} from "./slidemenu/slidemenu";
 import {IonicPageModule} from "ionic-angular";
-import {AccountSecurityModule} from "./accountsecurity/accountsecurity.module";
-import {AccountSecurityPage} from "./accountsecurity/accountsecurity";
+import {AccountSecurityPage} from "./securitycenter/accountsecurity/accountsecurity";
 import {OrderDetailPage} from "./orderdetail/orderdetail";
 import {SupportPage} from "./support/support";
 import {RegisterPage} from "./register/register";
@@ -11,9 +10,10 @@ import {AboutPage} from "./about/about";
 import {ResetPasswordPage} from "./resetpassword/resetpassword";
 import {CommonModulePage} from "./commonpage";
 import {OrderProcessDetailPage} from "./orderprocess/orderprocess";
+import {SecurityCenterModule} from "./securitycenter/securitycenter.module";
 
 @NgModule({
-    imports: [IonicPageModule.forChild(CommonModulePage), AccountSecurityModule],
+    imports: [IonicPageModule.forChild(CommonModulePage), SecurityCenterModule],
     declarations: [
         CommonModulePage,
         SlidemenuComponment,
