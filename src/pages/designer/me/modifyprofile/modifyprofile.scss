@@ -1,0 +1,46 @@
+page-modifyprofile {
+  .tit {
+    color: #4e72fc !important;
+  }
+  $color: (
+          color1:#4e72fc
+  );
+  .con {
+    background-color: #f7f7f9!important;
+
+  }
+  .top1{
+    width: 100%;
+    height: 2em!important;
+  }
+  .blank{
+    width: 100%;
+    height: 1.5em!important;
+  }
+  ion-icon {
+    color: #767676 !important;
+
+  }
+  .divcss{
+    width: 100%;
+    background-color: #ffffff;
+  }
+  .textareacss{
+   width: 100%;
+    height:6em;
+    border-radius: 10px!important;
+    resize : none;
+  }
+
+  .pcss{
+    margin-left: 5%;
+  }
+  .div1css{
+    height: 60%!important;
+  margin-left: 5%;
+    width: 90%;
+    border: #9e9e9e !important;
+    border-width: medium;
+
+  }
+}

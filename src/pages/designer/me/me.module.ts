@@ -4,15 +4,18 @@ import {CommonPageModule} from "../../common/commonpage.module";
 import {IonicPageModule} from "ionic-angular";
 import {DesignerMeDetailPage} from "./medetail/medetail";
 import {WalletModule} from "../wallet/wallet.module";
+import {ModifyProfilePage} from "./modifyprofile/modifyprofile";
 
 @NgModule({
     declarations: [
         DesignerMePage,
-        DesignerMeDetailPage
+        DesignerMeDetailPage,
+        ModifyProfilePage
     ],
     entryComponents: [
         DesignerMePage,
-        DesignerMeDetailPage
+        DesignerMeDetailPage,
+        ModifyProfilePage
     ],
     imports: [
         WalletModule,
