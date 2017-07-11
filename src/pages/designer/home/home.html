@@ -29,7 +29,6 @@
     </ion-slides>
 
     <ion-scroll scrollX="true" class="buttons-slide">
-        <!--<button class="order-type-btn btn-active">精选</button>-->
         <button class="order-type-btn" *ngFor="let type of types;let i=index"
                 [class.btn-active]="currentType === i" (click)="selectType(i)">{{type.name}}
         </button>
