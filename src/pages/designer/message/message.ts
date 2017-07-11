@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {OrderDetailPage} from "../../common/orderdetail/orderdetail";
+import {PublishTaskPage} from "../publishtask/publishtask";
 
 @Component({
     selector: 'page-message',
@@ -8,6 +9,7 @@ import {OrderDetailPage} from "../../common/orderdetail/orderdetail";
 })
 export class MessagePage {
 
+    publishtaskpage = PublishTaskPage;
     constructor(public navCtrl: NavController) {
 
     }
@@ -20,6 +22,9 @@ export class MessagePage {
         this.navCtrl.push(OrderDetailPage, {
             order_id: order_id
         })
+    }
+    openPage(page,option){
+        this.navCtrl.push(page,option)
     }
 
 }

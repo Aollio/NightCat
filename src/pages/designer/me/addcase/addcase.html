@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>上传案例</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div class="blank"></div>
+    <ion-item>
+        <ion-input type="text" value="" placeholder="输入案例名称">
+        </ion-input>
+    </ion-item>
+
+
+    <div >
+        <textarea class="textareacss" placeholder="输入案例介绍"></textarea>
+        <div><span  class="spancss">已输入字符: {{b}} </span></div>
+    </div>
+
+
+
+</ion-content>
+<ion-footer> <button ion-button (click)="open(list)" full>上传案例</button></ion-footer>
