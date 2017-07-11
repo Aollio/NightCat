@@ -4,6 +4,8 @@ import {AuthenticationPage} from "../authentication/authenication";
 import {CommentPage} from "../comment/comment";
 import {DesignerMeDetailPage} from "./medetail/medetail";
 import {DesignerWalletPage} from "../wallet/wallet";
+import {SharedService} from "../../../service/share.service";
+import {User} from "../../../model/user";
 
 @IonicPage()
 @Component({
@@ -12,16 +14,18 @@ import {DesignerWalletPage} from "../wallet/wallet";
 })
 export class DesignerMePage {
 
-    constructor(public navCtrl: NavController) {
+    user: User;
 
-        }
-
+    constructor(public navCtrl: NavController,
+                public shared: SharedService) {
+        this.user = shared.currentUser;
+    }
 
 
     wallet: any = DesignerWalletPage;
     authenticate: any = AuthenticationPage;
     comment: any = CommentPage;
-    designerMeDetailPage:any = DesignerMeDetailPage;
+    designerMeDetailPage: any = DesignerMeDetailPage;
 
     open(page, option) {
         this.navCtrl.push(page, option)

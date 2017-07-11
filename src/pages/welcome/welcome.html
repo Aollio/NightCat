@@ -9,8 +9,8 @@
 
 <ion-content padding><ion-content padding>
 
-<button ion-button (click)="open(designerLogin)" full>我是设计师-登录</button>
-    <button ion-button (click)="open(employerLogin)" full>我是雇主-登录</button>
+<button ion-button (click)="open(designerLogin,{role:'designer'})" full>我是设计师-登录</button>
+    <button ion-button (click)="open(employerLogin,{role:'employer'})" full>我是雇主-登录</button>
     <button ion-button (click)="open(designerHome)" full>设计师主页</button>
     <button ion-button (click)="open(employerHome)" full>雇主主页</button>
     <button ion-button (click)="open(designerMeDetailPage)" full>个人详情</button>

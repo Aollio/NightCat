@@ -5,12 +5,14 @@ import {AlertController, NavController, Platform, ToastController} from "ionic-a
 import {MessagePage} from "../../designer/message/message";
 import {AccountSecurityPage} from "../securitycenter/accountsecurity/accountsecurity";
 import {SupportPage} from "../support/support";
+import {SharedService} from "../../../service/share.service";
+import {User} from "../../../model/user";
 
 @Component({
     selector: 'page-slidemenu',
     templateUrl: 'slidemenu.html'
 })
-export class SlidemenuComponment {
+export class SlideMenuComponment {
 
 
     messagePage: any = MessagePage;
@@ -18,13 +20,20 @@ export class SlidemenuComponment {
     accountSecurityPage: any = AccountSecurityPage;
     aboutPage: any = AboutPage
 
+    user: User;
+    isDesigner: boolean;
+    maincolor;
 
     constructor(public navCtrl: NavController, public platfrom: Platform,
                 private alertCtrl: AlertController,
-                private toastCtrl: ToastController) {
+                private toastCtrl: ToastController,
+                public shared: SharedService) {
+        this.user = shared.currentUser;
+        this.isDesigner = this.shared.isDesigner;
+        this.maincolor = this.shared.getNavColor();
     }
 
-    openPage(page, option) {
+    open(page, option) {
         this.navCtrl.push(page, option)
     }
 
@@ -59,11 +68,6 @@ export class SlidemenuComponment {
             duration: 2000,
             position: 'bottom'
         });
-
-        toast.onDidDismiss(() => {
-            console.log('Dismissed toast');
-        });
-
         toast.present();
     }
 

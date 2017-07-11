@@ -14,7 +14,8 @@ import {BlankPage} from "../pages/blank/blank";
 import {NetworkService} from "../service/network.service";
 import {SharedService} from "../service/share.service";
 import {HttpUrls} from "../service/httpurls.service";
-
+import {FormsModule} from '@angular/forms';
+import {UserService} from "../service/ajax/user.service";
 
 @NgModule({
     declarations: [
@@ -28,6 +29,7 @@ import {HttpUrls} from "../service/httpurls.service";
     ],
     imports: [
         BrowserModule,
+        FormsModule,
         DesignerModule,
         EmployerModule,
         CommonModule,
@@ -42,6 +44,7 @@ import {HttpUrls} from "../service/httpurls.service";
         HttpUrls,
         NetworkService,
         SharedService,
+        UserService,
         StatusBar,
         SplashScreen,
         {provide: ErrorHandler, useClass: IonicErrorHandler}

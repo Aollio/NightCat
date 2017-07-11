@@ -1,0 +1,29 @@
+page-slidemenu {
+
+  $font-color: map_get($colors, font-gray);
+  ion-list {
+    margin-top: 1.5em !important;
+    margin-left: 1em;
+  }
+
+  button {
+    color: $font-color !important;
+  }
+
+  ion-icon {
+    font-size: .8em;
+  }
+
+  .designer {
+    color: map_get($colors, nav-des-bg) !important;
+  }
+
+  .employer {
+    color: map_get($colors, nav-emp-bg) !important;
+  }
+
+  .exitbtn{
+    color: white!important;
+  }
+
+}

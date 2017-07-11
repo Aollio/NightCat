@@ -7,7 +7,7 @@
     <br/>
     <ion-item class="input-item">
         <ion-icon name="ios-person" item-start></ion-icon>
-        <ion-input [(ngModel)]="user.phone" class="input-class" type="text" value="" placeholder="用户名或手机号码"></ion-input>
+        <ion-input [(ngModel)]="user.phone" class="input-class" type="text" value="" placeholder="请输入手机号"></ion-input>
     </ion-item>
 
     <ion-item class="input-item">
@@ -19,7 +19,7 @@
     <button ion-button round class="login-btn" (click)="login()">登陆</button>
 
     <button ion-button outline class="register-btn" (click)="openRegisterPage()">注册</button>
-    <button ion-button clear full (click)="openReset()">
+    <button ion-button clear full (click)="open(resetPasswordPage)">
         忘记密码&nbsp;&nbsp;&nbsp;
         <ion-icon name="ios-help-circle-outline" end></ion-icon>
     </button>

@@ -1,8 +1,13 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
 import {RegisterPage} from "../register/register";
 import {ResetPasswordPage} from "../resetpassword/resetpassword";
 import {User} from "../../../model/user";
+import {AbsCommonPage} from "../abs";
+import {UserService} from "../../../service/ajax/user.service";
+import {DesignerTabsPage} from "../../designer/tabs/tabs";
+import {EmployerModulePage} from "../../employer/employer";
+import {DesignerModulePage} from "../../designer/designer";
 
 @Component({
     selector: 'page-login',
@@ -12,22 +17,35 @@ export class LoginPage {
 
     isDesigner: boolean = true;
 
-
     user: User = new User();
     //the view that jump
     resetPasswordPage: ResetPasswordPage;
 
-
-    constructor(public navCtrl: NavController, public navParams: NavParams) {
-
-        if (navParams.get('role') === 'employer') {
+    constructor(public navCtrl: NavController, public navParams: NavParams,
+                public toastCtrl: ToastController,
+                public userSev: UserService) {
+        var role = navParams.get('role');
+        this.user.role = role;
+        if (role === 'employer') {
             this.isDesigner = false
         }
     }
 
     login() {
-        console.log(this.user)
-        // if (this.user)
+        console.log(this.user);
+        if (this.user.phone == null || this.user.phone == '') {
+            this.toast('手机号没有输入完整')
+        }
+        if (this.user.password == null || this.user.password == '') {
+            this.toast('密码没有输入完整')
+        }
+        var success = this.userSev.login(this.user);
+        if (!success) {
+            this.toast('登录失败')
+            return
+        }
+        this.navCtrl.push(this.isDesigner ? DesignerModulePage : EmployerModulePage)
+
     }
 
 
@@ -37,14 +55,18 @@ export class LoginPage {
         })
     }
 
-    openReset() {
-        console.log('click')
-        this.navCtrl.push(ResetPasswordPage, {})
-    }
 
     open(page, option) {
         this.navCtrl.push(page, option);
     }
 
+    toast(msg) {
+        let toast = this.toastCtrl.create({
+            message: msg,
+            duration: 2000,
+            position: 'bottom'
+        });
+        toast.present();
+    }
 
 }
