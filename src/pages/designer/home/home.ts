@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
+import {MessagePage} from "../message/message";
 
 @Component({
     selector: 'page-home',
@@ -23,6 +24,9 @@ export class DesignerHomePage {
 
     currentType: number = 3;
 
+    messagePage: any = MessagePage;
+
+
     constructor(public navCtrl: NavController) {
     }
 
@@ -31,4 +35,7 @@ export class DesignerHomePage {
         console.log(this.types[index])
     }
 
+    open(page,option){
+        this.navCtrl.push(page,option)
+    }
 }

@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
+import {OrderDetailPage} from "../../common/orderdetail/orderdetail";
 
 @Component({
     selector: 'com-orderlist',
@@ -10,4 +11,7 @@ export class OrderListComponent {
 
     }
 
+    openOrderDetail(){
+        this.navCtrl.push(OrderDetailPage)
+    }
 }

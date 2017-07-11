@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {RegisterPage} from "../register/register";
 import {ResetPasswordPage} from "../resetpassword/resetpassword";
+import {User} from "../../../model/user";
 
 @Component({
     selector: 'page-login',
@@ -9,20 +10,24 @@ import {ResetPasswordPage} from "../resetpassword/resetpassword";
 })
 export class LoginPage {
 
-    //isDesigner
     isDesigner: boolean = true;
 
-    navbgcolor:string = 'primary';
-    navtxcolor:string = 'primary';
 
+    user: User = new User();
+    //the view that jump
     resetPasswordPage: ResetPasswordPage;
 
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {
 
-        if (navParams.get('type') === 'employer') {
+        if (navParams.get('role') === 'employer') {
             this.isDesigner = false
         }
+    }
+
+    login() {
+        console.log(this.user)
+        // if (this.user)
     }
 
 
@@ -42,11 +47,4 @@ export class LoginPage {
     }
 
 
-//todo
-    login(param) {
-        if (param === "login") {
-        }
-        if (param === "newuser") {
-        }
-    }
 }

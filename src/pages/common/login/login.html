@@ -1,33 +1,24 @@
-<ion-header class="headerclass">
-    <ion-navbar color="primary">
-        <ion-title>登录</ion-title>
-    </ion-navbar>
+<ion-content padding class="ion-content-class">
 
-
-</ion-header>
-
-
-<ion-content padding>
-
-
+    <div class="null-only-height"></div>
     <div class="login-avatar">
         <img src="/assets/img/cat_03.png"/></div>
     <br/>
     <br/>
-    <ion-item padding-left>
-        <ion-icon name="beer" item-start></ion-icon>
-        <ion-input type="text" value="" placeholder="用户名或手机号码"></ion-input>
+    <ion-item class="input-item">
+        <ion-icon name="ios-person" item-start></ion-icon>
+        <ion-input [(ngModel)]="user.phone" class="input-class" type="text" value="" placeholder="用户名或手机号码"></ion-input>
     </ion-item>
 
-    <ion-item padding-left>
-        <ion-icon name="beer" item-start></ion-icon>
-        <ion-input type="password" placeholder="请输入密码"></ion-input>
+    <ion-item class="input-item">
+        <ion-icon name="ios-lock-outline" item-start></ion-icon>
+        <ion-input [(ngModel)]="user.password" type="password" placeholder="请输入密码"></ion-input>
     </ion-item>
     <br/>
     <br/>
-    <button ion-button round full>登陆</button>
+    <button ion-button round class="login-btn" (click)="login()">登陆</button>
 
-    <button ion-button outline full (click)="openRegisterPage()">注册</button>
+    <button ion-button outline class="register-btn" (click)="openRegisterPage()">注册</button>
     <button ion-button clear full (click)="openReset()">
         忘记密码&nbsp;&nbsp;&nbsp;
         <ion-icon name="ios-help-circle-outline" end></ion-icon>
