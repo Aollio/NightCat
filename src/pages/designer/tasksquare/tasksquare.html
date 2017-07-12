@@ -9,12 +9,36 @@
     </ion-img>
     <div class="type-buttons">
         <button ion-button class="type-btn" (click)="select('type')">所有分类&nbsp;
+            <ion-select [(ngModel)]="gaming" interface="popover">
+                <ion-option value="nes">NES</ion-option>
+                <ion-option value="n64">Nintendo64</ion-option>
+                <ion-option value="ps">PlayStation</ion-option>
+                <ion-option value="genesis">Sega Genesis</ion-option>
+                <ion-option value="saturn">Sega Saturn</ion-option>
+                <ion-option value="snes">SNES</ion-option>
+            </ion-select>
             <ion-icon name="ios-arrow-down"></ion-icon>
         </button>
         <button ion-button class="type-btn" (click)="select('filter')">筛选&nbsp;
+            <ion-select [(ngModel)]="gaming" interface="popover">
+                <ion-option value="nes">NES</ion-option>
+                <ion-option value="n64">Nintendo64</ion-option>
+                <ion-option value="ps">PlayStation</ion-option>
+                <ion-option value="genesis">Sega Genesis</ion-option>
+                <ion-option value="saturn">Sega Saturn</ion-option>
+                <ion-option value="snes">SNES</ion-option>
+            </ion-select>
             <ion-icon name="ios-arrow-down"></ion-icon>
         </button>
         <button ion-button class="type-btn" (click)="select('sort')">排序&nbsp;
+            <ion-select [(ngModel)]="gaming" interface="popover">
+                <ion-option value="nes">NES</ion-option>
+                <ion-option value="n64">Nintendo64</ion-option>
+                <ion-option value="ps">PlayStation</ion-option>
+                <ion-option value="genesis">Sega Genesis</ion-option>
+                <ion-option value="saturn">Sega Saturn</ion-option>
+                <ion-option value="snes">SNES</ion-option>
+            </ion-select>
             <ion-icon name="ios-arrow-down"></ion-icon>
         </button>
     </div>

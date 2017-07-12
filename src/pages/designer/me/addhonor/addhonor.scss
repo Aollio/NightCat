@@ -1,5 +1,79 @@
-page-addhonor{
-  .toolbar-title{
+page-addhonor {
+  .toolbar-title {
     color: map_get($colors, nav-des-bg) !important;
   }
+
+  .process {
+    height: 25%;
+    width: 100%;
+    display: inline-flex;
+  }
+
+  .active {
+    color: #3cb5cf !important;
+  }
+
+  .process ion-col {
+    margin: auto;
+    text-align: center;
+    font-size: 1em;
+    color: #9E9E9E;
+  }
+
+  .process ion-col ion-icon {
+    font-size: 3em;
+  }
+
+  .upload-icon {
+    font-size: 4em;
+    margin: auto;
+    text-align: center;
+  }
+
+  .upload {
+    background-color: #4a87ee;
+    color: #fdfdfd;
+    height: 50%!important;
+    width: 100%;
+    padding-top: 10em;
+    padding-bottom: 10em;
+    margin: auto;
+    text-align: center;
+  }
+
+  .desc {
+    margin: auto;
+    text-align: center;
+
+  }
+
+  .only-center-text {
+    margin: auto;
+    text-align: center;
+  }
+
+  .finfish-icon {
+    color: #32db64;
+    font-size: 4em;
+  }
+  .mui-ellipsis-3 {
+     display: -webkit-box;
+     white-space: normal !important;
+    width:20px!important;
+    word-wrap: break-word;
+    -webkit-line-clamp: 3!important;
+     -webkit-box-orient: vertical;
+
+  }
+  .innerCtn{
+    overflow:not;
+    text-indent: 1rem;
+    line-height: 1.2rem;
+    font-size: 1.25rem;
+    height:100%;
+    width: 90%;
+    color:map_get($colors,nav-des-bg);
+  }
+
+
 }

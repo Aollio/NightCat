@@ -34,10 +34,12 @@ export class LoginPage {
     login() {
         console.log(this.user);
         if (this.user.phone == null || this.user.phone == '') {
-            this.toast('手机号没有输入完整')
+            this.toast('请输入手机号')
+            return
         }
         if (this.user.password == null || this.user.password == '') {
-            this.toast('密码没有输入完整')
+            this.toast('请输入密码')
+            return
         }
         var success = this.userSev.login(this.user);
         if (!success) {
