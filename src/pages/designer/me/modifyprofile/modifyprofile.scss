@@ -6,41 +6,43 @@ page-modifyprofile {
           color1:#4e72fc
   );
   .con {
-    background-color: #f7f7f9!important;
+    background-color: #f7f7f9 !important;
 
   }
-  .top1{
+  .top1 {
     width: 100%;
-    height: 2em!important;
+    height: 2em !important;
   }
-  .blank{
+  .blank {
     width: 100%;
-    height: 1.5em!important;
+    height: 1.5em !important;
   }
   ion-icon {
     color: #767676 !important;
 
   }
-  .divcss{
+
+  .summary-input-group {
     width: 100%;
     background-color: #ffffff;
   }
-  .textareacss{
-   width: 100%;
-    height:6em;
-    border-radius: 10px!important;
-    resize : none;
-  }
 
-  .pcss{
+  .summary-label {
+    padding-top: 5%;
+    margin-top: 0;
+    margin-bottom: 0;
     margin-left: 5%;
+    font-size: 1.2em;
   }
-  .div1css{
-    height: 60%!important;
-  margin-left: 5%;
-    width: 90%;
-    border: #9e9e9e !important;
-    border-width: medium;
 
+  .summary-textarea {
+    width: 96%;
+    height: 6em;
+    border-radius: 10px !important;
+    border-color: #c9cacf;
+    resize: none;
+    padding: 2%;
+    margin: 2%;
   }
+
 }

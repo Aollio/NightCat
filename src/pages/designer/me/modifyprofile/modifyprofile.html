@@ -7,11 +7,11 @@
     <div class="top1"></div>
     <div>
         <ion-item>
-            <ion-label>昵称</ion-label>
+            <ion-label fixed>昵称</ion-label>
             <ion-input type="text" value="" placeholder="填写昵称"></ion-input>
         </ion-item>
         <ion-item>
-            <ion-label>年限</ion-label>
+            <ion-label fixed>年限</ion-label>
             <ion-select [(ngModel)]="gaming" interface="popover">
                 <ion-option value="1">1</ion-option>
                 <ion-option value="2">2</ion-option>
@@ -23,15 +23,15 @@
             </ion-select>
         </ion-item>
         <ion-item>
-            <ion-label>职称</ion-label>
+            <ion-label fixed>职称</ion-label>
             <ion-input type="text" placeholder="高级工程师"></ion-input>
         </ion-item>
         <ion-item>
-            <ion-label>毕业院校</ion-label>
+            <ion-label fixed>毕业院校</ion-label>
             <ion-input type="text" placeholder="上海交通大学"></ion-input>
         </ion-item>
         <ion-item>
-            <ion-label>时薪</ion-label>
+            <ion-label fixed>时薪</ion-label>
             <ion-input type="text" placeholder="10"></ion-input>
             <ion-note style="color: #171817" item-end>元</ion-note>
         </ion-item>
@@ -41,7 +41,7 @@
         <ion-icon class="ion-icon" style="color:#b1b1b1  " name="arrow-forward" item-end></ion-icon>
     </ion-item>
     <div class="blank"></div>
-    <ion-item no-lines class="money-detail" (click)="open(addhonor)">
+    <ion-item class="money-detail" (click)="open(addhonor)">
         添加荣誉
         <ion-icon class="ion-icon" style="color:#b1b1b1  " name="arrow-forward" item-end></ion-icon>
     </ion-item>
@@ -49,11 +49,8 @@
         添加案例
         <ion-icon class="ion-icon" style="color:#b1b1b1  " name="arrow-forward" item-end></ion-icon>
     </ion-item>
-    <div class="divcss">
-    <p class="pcss">个人说明</p>
-    <div class="div1css">
-        <textarea class="textareacss"></textarea>
+    <div class="summary-input-group">
+        <p class="summary-label">个人说明</p>
+        <textarea class="summary-textarea"></textarea>
     </div>
-
-</div>
 </ion-content>

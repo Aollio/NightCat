@@ -1,17 +1,17 @@
 <ion-header>
     <ion-navbar color="nav-des-bg">
-       <div class="header-bar">
-           <div class="logo">夜猫</div>
-           <ion-searchbar placeholder="搜索内容" class="header-search">
-               [(ngModel)]="myInput"
-               <!--[showCancelButton]="shouldShowCancel"-->
-               <!--(ionInput)="onInput($event)"-->
-               <!--(ionCancel)="onCancel($event)"-->
-           </ion-searchbar>
-           <button ion-button icon-only icon-end class="header-icon" (click)="open(message)">
-               <ion-icon  name="ios-chatboxes"></ion-icon>
-           </button>
-       </div>
+        <div class="header-bar">
+            <div class="logo">夜猫</div>
+            <ion-searchbar placeholder="搜索内容" class="header-search">
+                [(ngModel)]="myInput"
+                <!--[showCancelButton]="shouldShowCancel"-->
+                <!--(ionInput)="onInput($event)"-->
+                <!--(ionCancel)="onCancel($event)"-->
+            </ion-searchbar>
+            <button ion-button icon-only icon-end class="header-icon" (click)="open(messagePage)">
+                <ion-icon name="text"></ion-icon>
+            </button>
+        </div>
     </ion-navbar>
 </ion-header>
 

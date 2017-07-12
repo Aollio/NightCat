@@ -10,6 +10,12 @@ import {StatusBar} from "@ionic-native/status-bar";
 })
 export class EmployerTabsPage {
 
+    home: any;
+    helpchoose: any;
+    publishorder: any;
+    project: any;
+    me: any;
+
 
     constructor(public navCtrl: NavController, public platform: Platform,
                 public statusBar: StatusBar, public splashScreen: SplashScreen) {
