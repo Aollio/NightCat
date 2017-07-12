@@ -50,7 +50,8 @@ import {DesignerMeModule} from "./me/me.module";
     exports: [
         CommentPage, DesignerTabsPage, PublishTaskPage, DesignerWalletPage,
         TaskSquarePage,
-        ChatMessagePage
+        ChatMessagePage,
+        OrderListComponent
     ]
 })
 export class DesignerModule {

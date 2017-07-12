@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-navbar color="emp-primary">
+        <div class="header-bar">
+            <div class="logo">夜猫</div>
+            <ion-searchbar placeholder="搜索内容" class="header-search">
+                [(ngModel)]="myInput"
+                <!--[showCancelButton]="shouldShowCancel"-->
+                <!--(ionInput)="onInput($event)"-->
+                <!--(ionCancel)="onCancel($event)"-->
+            </ion-searchbar>
+            <button ion-button icon-only icon-end class="header-icon" color="emp-primary" (click)="open(messagePage)">
+                <ion-icon name="text"></ion-icon>
+            </button>
+        </div>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-slides class="slides">
+        <ion-slide style="background-color: #32db64">
+            <h1>Slide 1</h1>
+        </ion-slide>
+        <ion-slide style="background-color: #32db64">
+            <h1>Slide 2</h1>
+        </ion-slide>
+        <ion-slide style="background-color: #32db64">
+            <h1>Slide 3</h1>
+        </ion-slide>
+    </ion-slides>
+
+    <ion-grid class="order-type-grid">
+        <ion-row class="order-type-row" *ngFor="let types of typegroup">
+            <ion-col *ngFor="let typeitem of types"
+                     col-3 class="order-type-col" text-center>
+                <img ng-attr-src="typeitem.imageurl" src="/assets/img/first.png"><br>
+                {{ typeitem.name }}
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <com-orderlist></com-orderlist>
+</ion-content>

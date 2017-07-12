@@ -1,0 +1,73 @@
+page-employer-home {
+
+  $background-color-home: #fdfdfd;
+
+  $grid-border-color: #cccccc;
+
+  $grid-font-color: #292929;
+
+  .header-bar {
+    width: 100%;
+    display: inline-flex;
+  }
+
+  .logo {
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin: auto;
+    text-align: center;
+    width: 15%;
+  }
+
+  .header-search {
+    width: 75%;
+  }
+
+  .header-icon {
+    width: 10%;
+    color: white;
+    margin: auto;
+    text-align: center;
+  }
+
+  .slides {
+    height: 30%;
+    padding-bottom: .5%
+  }
+
+  ion-content {
+    background-color: $background-color-home !important;
+  }
+
+  .order-type-grid{
+    color: $grid-font-color;
+  }
+
+  .order-type-row:first-child {
+    border-top: none!important;
+  }
+
+  .order-type-row {
+    border-top-width: 1px;
+    border-top-color: $grid-border-color;
+    border-top-style: solid;
+  }
+
+  .order-type-row .order-type-col:last-child {
+    border-right:none !important;
+  }
+
+  .order-type-col {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-right-width: 1px;
+    border-right-color: $grid-border-color;
+    border-right-style: solid;
+  }
+
+  .order-type-col img {
+    max-width: 50%;
+  }
+
+}
