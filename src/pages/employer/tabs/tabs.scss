@@ -1,19 +1,21 @@
 
 page-employer-tabs {
 
-  a.icon-only {
-    //font-size: 1em!important;
+  .add-icon, .icon-only {
+    width: 2em !important;
+    height: 2em !important;
+    font-size: 2em !important;
+    position: absolute;
+    display: block !important;
+    background-color: $emp_primary;
+    border-radius: 1em;
   }
 
   a.icon-only ion-icon {
-    //position: absolute;
-    //height: 100%;
-    //width: 100%;
-    //color: #c9cacf;
-    //font-size: 5em!important;
-    //text-align: center!important;
-    //background-color: map_get($colors, emp-primary);
-    //border-radius: 9em;
-    //margin-bottom: 10%;
+    color: white!important;
+    height: 2em !important;
+    font-size: 2em !important;
+    margin: auto !important;
+    text-align: center !important;
   }
 }

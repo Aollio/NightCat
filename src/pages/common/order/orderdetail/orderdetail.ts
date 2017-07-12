@@ -1,12 +1,13 @@
 import {Component} from '@angular/core';
-import {NavController, NavParams} from 'ionic-angular';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {OrderProcessDetailPage} from "../orderprocess/orderprocess";
-import {SharedService} from "../../../service/share.service";
-import {AbsCommonPage} from "../abs";
+import {SharedService} from "../../../../service/share.service";
+import {AbsCommonPage} from "../../abs";
 
 /*
  * 订单详情
  * */
+// @IonicPage()
 @Component({
     selector: 'page-orderdetail',
     templateUrl: 'orderdetail.html',

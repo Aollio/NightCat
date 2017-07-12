@@ -5,7 +5,7 @@ import {Storage} from '@ionic/storage';
 import {DesignerTabsPage} from "../designer/tabs/tabs";
 import {LoginPage} from "../common/login/login";
 import {RegisterPage} from "../common/register/register";
-import {OrderDetailPage} from "../common/orderdetail/orderdetail"
+import {OrderDetailPage} from "../common/order/orderdetail/orderdetail"
 import {OrderListComponent} from "../designer/orderlist/orderlist";
 import {EmployerModulePage} from "../employer/employer";
 import {DesignerModulePage} from "../designer/designer";
@@ -18,6 +18,7 @@ import {BlankPage} from "../blank/blank";
 import {DesignerMeDetailPage} from "../designer/me/medetail/medetail";
 import {AddCasePage} from "../designer/me/addcase/addcase";
 import {AddHonorPage} from "../designer/me/addhonor/addhonor";
+import {CaseDetailPage} from "../designer/me/casedetail/casedetail";
 
 /**
  * Generated class for the WelcomePage page.
@@ -58,6 +59,9 @@ export class WelcomePage {
     designerMeDetailPage:any = DesignerMeDetailPage;
     addcase:any = AddCasePage;
     addhonor:any = AddHonorPage;
+
+    casedetail:any = CaseDetailPage;
+
     list:any  = BlankPage;
 
     open(page, option) {

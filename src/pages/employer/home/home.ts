@@ -7,6 +7,13 @@ import {NavController} from 'ionic-angular';
 })
 export class EmployerHomePage {
 
+
+    images: Array<{ url }> = [
+        {url: '/assets/img/home-default.png'},
+        {url: '/assets/img/home-default.png'},
+        {url: '/assets/img/home-default.png'},
+    ]
+
     typegroup: Array<Array<{ name, imageurl }>> = [
         [
             {

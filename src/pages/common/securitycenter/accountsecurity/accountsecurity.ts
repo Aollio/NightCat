@@ -25,7 +25,5 @@ export class AccountSecurityPage {
 
     openHome(){
 
-        // this.navCtrl.pop();
-        // this.navCtrl.getPrevious().
     }
 }

@@ -40,6 +40,12 @@ page-home {
     padding-bottom: .5%
   }
 
+  .slides ion-slide img{
+    //max-width: 100%;
+    width: 100%;
+    height: 100%;
+  }
+
   ion-content {
     background-color: $background-color-home !important;
   }

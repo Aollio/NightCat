@@ -1,0 +1,36 @@
+page-casedetail {
+  ion-card {
+    margin-bottom: 0em !important;
+    margin-top: 0em !important;
+    margin-left: 0em !important;
+    margin-right: 0em !important;
+    width: 100% !important;
+  }
+
+  .close-btn {
+    //float: right;
+  }
+
+  .comment-avatar {
+    width: 1em !important;
+    height: 1em !important;
+    max-width: 1em !important; //any size
+    max-height: 1em !important; //any size
+    min-width: 1em !important;
+    min-height: 1em !important;
+  }
+  .comment-avatar img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 1em !important; //any size
+    max-height: 1em !important; //any size
+  }
+
+  .omment-content {
+
+  }
+
+  .comment-timebefore {
+
+  }
+}

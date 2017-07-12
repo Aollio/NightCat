@@ -1,5 +1,5 @@
-<ion-header>
-    <ion-navbar [color]="navColor">
+<ion-header no-border>
+    <ion-navbar [color]="navColor" no-border >
         <ion-title>订单详情</ion-title>
         <ion-buttons end>
             <button ion-button (click)="open(orderProcessDetail)">
@@ -11,44 +11,43 @@
 
 <ion-content class="main-background" padding-top="1em">
     <ion-row>
-        <ion-col class="respect-title" col-3>
-            <ion-icon name="add"></ion-icon>
+        <ion-col class="respect-title more-weight" col-3>
+            <ion-icon name="clock-outline"></ion-icon>
             预计完成:
         </ion-col>
-        <ion-col class="respect-content" col-9>
+        <ion-col class="respect-content more-weight" col-9>
             146 Hour
         </ion-col>
     </ion-row>
     <ion-row>
-        <ion-col class="respect-title" col-3>
-            <ion-icon name="add"></ion-icon>
+        <ion-col class="respect-title more-weight" col-3>
+            <ion-icon name="ios-paper-outline"></ion-icon>
             交易状态:
         </ion-col>
-        <ion-col class="respect-content" col-9>
+        <ion-col class="respect-content order-state" col-9>
             未接单
         </ion-col>
     </ion-row>
-    <ion-item-divider></ion-item-divider>
+    <div class="item-divider-cus-20"></div>
     <ion-row>
-        <ion-col class="respect-title" col-3>
+        <ion-col class="respect-title more-weight" col-3>
             订单标题:
         </ion-col>
-        <ion-col class="respect-content" col-9>
+        <ion-col class="respect-content more-weight" col-9>
             园艺设计, Logo设计
         </ion-col>
     </ion-row>
     <ion-row>
-        <ion-col class="respect-title" col-3>
+        <ion-col class="respect-title more-weight" col-3>
             订单预算:
         </ion-col>
-        <ion-col class="respect-content" col-9>
+        <ion-col class="respect-content order-price" col-9>
             4
         </ion-col>
     </ion-row>
     <ion-row>
         <ion-col class="respect-title" col-3>
             订单类型:
-
         </ion-col>
         <ion-col class="respect-content" col-9>
             工艺设计
@@ -71,12 +70,23 @@
         </ion-col>
     </ion-row>
     <ion-row>
-        <ion-col class="respect-title" col-3>工时
+        <ion-col class="respect-title" col-3>
+            工时
         </ion-col>
         <ion-col class="respect-content" col-9>
             146
         </ion-col>
     </ion-row>
+    <div class="item-divider-cus-10"></div>
+    <ion-row>
+        <ion-col class="respect-title" col-3>
+            下单时间
+        </ion-col>
+        <ion-col class="respect-content" col-9>
+            2017-07-01 21:07
+        </ion-col>
+    </ion-row>
+    <div class="item-divider-cus-10"></div>
     <ion-row>
         <ion-col class="respect-title" col-3>
             订单详情
@@ -89,22 +99,28 @@
     </ion-row>
 
     <ion-row class="order-photo">
-        <ion-col></ion-col>
-        <ion-col></ion-col>
-        <ion-col></ion-col>
+        <ion-col>
+            <img src="/assets/img/detail-default.png">
+        </ion-col>
+        <ion-col>
+            <img src="/assets/img/detail-default.png">
+        </ion-col>
+        <ion-col>
+            <img src="/assets/img/detail-default.png">
+        </ion-col>
     </ion-row>
-
 
 
 </ion-content>
 
 <ion-footer class="footer-btns">
     <button class="nobackground" ion-button color="primary" icon-start style="width: 50%">
-        <ion-icon name="add"></ion-icon>
+        <ion-icon name="ios-star-outline"></ion-icon>
+        <!--<ion-icon name="ios-star"></ion-icon>-->
         收藏
     </button>
     <button class="nobackground" ion-button color="primary" icon-start style="width: 50%">
-        <ion-icon name="add"></ion-icon>
+        <ion-icon name="text-outline"></ion-icon>
         喵喵
     </button>
     <button ion-button color="primary" style="width: 60%!important;">立即抢单</button>

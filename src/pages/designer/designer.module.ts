@@ -15,6 +15,7 @@ import {DesignerHomePage} from "./home/home";
 import {TaskSquarePage} from "./tasksquare/tasksquare";
 import {ChatMessagePage} from "./chatmessage/chatmessage";
 import {DesignerMeModule} from "./me/me.module";
+import {CaseDetailPage} from "./me/casedetail/casedetail";
 
 @NgModule({
     declarations: [
@@ -51,7 +52,8 @@ import {DesignerMeModule} from "./me/me.module";
         CommentPage, DesignerTabsPage, PublishTaskPage, DesignerWalletPage,
         TaskSquarePage,
         ChatMessagePage,
-        OrderListComponent
+        OrderListComponent,
+        CaseDetailPage
     ]
 })
 export class DesignerModule {

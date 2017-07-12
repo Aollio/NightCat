@@ -1,0 +1,29 @@
+page-message {
+
+  .msg-header {
+    border-bottom-color: #c9cacf;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    padding-bottom: .2em;
+    font-size: .9em;
+  }
+
+  .msg-type {
+    float: left;
+    color: $des-primary;
+  }
+
+  .msg-time {
+    float: right;
+    color: #dddddd;
+  }
+
+  .content {
+    padding-top: .5em !important;
+  }
+
+  .order-id {
+    text-decoration: underline;
+  }
+
+}

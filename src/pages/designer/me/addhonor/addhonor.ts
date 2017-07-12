@@ -6,4 +6,11 @@ import {Component} from "@angular/core";
 })
 export class AddHonorPage{
 
+
+
+    showToast:boolean = true;
+
+    closeToast(){
+        this.showToast = false;
+    }
 }

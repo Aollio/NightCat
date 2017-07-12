@@ -1,0 +1,85 @@
+page-orderdetail {
+
+  $font-color: #828282;
+
+  $bg-color:#e6eced;
+  main-background {
+    background-color: $bg-color;
+    margin-top: 1em;
+  }
+;
+
+  .respect-title {
+    margin: auto;
+    text-align: center;
+    color: $font-color;
+  }
+
+  .respect-title ion-icon {
+    padding-left: .5em;
+  }
+
+  .respect-content {
+    padding-left: 2em;
+    color: $font-color;
+  }
+
+  .more-weight {
+    font-weight: 550;
+    color: #000000;
+  }
+
+  .order-state {
+    color: #FDBC42;
+  }
+
+  .order-price {
+    color: #FDBC42;
+  }
+
+  .item-divider-cus-10{
+    width: 100%;
+    height: .5em;
+    background-color: $bg-color;
+  }
+  .item-divider-cus-20{
+    width: 100%;
+    height: 1em;
+    background-color: $bg-color;
+  }
+
+  .order-photo ion-col {
+    width: 8em;
+    height: 8em;
+    margin: .2em 0.3em 0.3em;
+  }
+
+  .order-photo ion-icon img{
+    max-width: 100%;
+  }
+
+  .order-photo ion-col:first-child {
+    margin-left: .5em;
+  }
+
+  .order-photo ion-col:last-child {
+    margin-right: .5em;
+  }
+
+  .footer-btns {
+    display: inline-flex;
+    width: 100%;
+  }
+
+  .footer-btns button{
+    height: 2em;
+  }
+
+  .nobackground {
+    background-color: transparent;
+    color: $des-primary;
+    padding: 0;
+    width: 20% !important;
+  }
+
+}
