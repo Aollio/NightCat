@@ -18,6 +18,7 @@ import {BlankPage} from "../blank/blank";
 import {DesignerMeDetailPage} from "../designer/me/medetail/medetail";
 import {AddCasePage} from "../designer/me/addcase/addcase";
 import {AddHonorPage} from "../designer/me/addhonor/addhonor";
+import {CaseDetailPage} from "../designer/me/casedetail/casedetail";
 
 /**
  * Generated class for the WelcomePage page.
@@ -58,6 +59,9 @@ export class WelcomePage {
     designerMeDetailPage:any = DesignerMeDetailPage;
     addcase:any = AddCasePage;
     addhonor:any = AddHonorPage;
+
+    casedetail:any = CaseDetailPage;
+
     list:any  = BlankPage;
 
     open(page, option) {

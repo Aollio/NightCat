@@ -7,6 +7,7 @@ import {WalletModule} from "../wallet/wallet.module";
 import {ModifyProfilePage} from "./modifyprofile/modifyprofile";
 import {AddHonorPage} from "./addhonor/addhonor";
 import {AddCasePage} from "./addcase/addcase";
+import {CaseDetailPage} from "./casedetail/casedetail";
 
 @NgModule({
     declarations: [
@@ -14,20 +15,24 @@ import {AddCasePage} from "./addcase/addcase";
         DesignerMeDetailPage,
         ModifyProfilePage,
         AddHonorPage,
-        AddCasePage
+        AddCasePage,
+        CaseDetailPage
     ],
     entryComponents: [
         DesignerMePage,
         DesignerMeDetailPage,
         ModifyProfilePage,
         AddCasePage,
-        AddHonorPage
+        AddHonorPage,
+        CaseDetailPage
     ],
     imports: [
         WalletModule,
         IonicPageModule.forChild(DesignerMePage)
     ],
-    exports: [DesignerMePage, DesignerMeDetailPage]
+    exports: [
+        CaseDetailPage,
+        DesignerMePage, DesignerMeDetailPage]
 })
 export class DesignerMeModule {
 }

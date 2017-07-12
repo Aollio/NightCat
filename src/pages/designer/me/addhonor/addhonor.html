@@ -6,17 +6,18 @@
 </ion-header>
 <ion-content>
 
-
+<ion-item-divider></ion-item-divider>
     <div class="blank"></div>
-    <ion-item >
+    <ion-item *ngIf="showToast">
         <ion-icon color="nav-des-bg" item-start name="ios-alert-outline"></ion-icon>
-        <div class="innerCtn"> <div class="mui-ellipsis-3 ">
+        <div class="innerCtn">
+            <div class="mui-ellipsis-3 ">
             我们将保护您的隐私，
             请务必确保真实、有效的信息
 
         </div></div>
 
-        <ion-icon item-end name="ios-close"></ion-icon>
+        <ion-icon item-end name="ios-close" (click)="closeToast()"></ion-icon>
     </ion-item>
     <div>
         <ion-item>
