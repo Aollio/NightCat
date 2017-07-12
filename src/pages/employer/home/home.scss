@@ -40,12 +40,12 @@ page-employer-home {
     background-color: $background-color-home !important;
   }
 
-  .order-type-grid{
+  .order-type-grid {
     color: $grid-font-color;
   }
 
   .order-type-row:first-child {
-    border-top: none!important;
+    border-top: none !important;
   }
 
   .order-type-row {
@@ -55,7 +55,7 @@ page-employer-home {
   }
 
   .order-type-row .order-type-col:last-child {
-    border-right:none !important;
+    border-right: none !important;
   }
 
   .order-type-col {
@@ -67,7 +67,29 @@ page-employer-home {
   }
 
   .order-type-col img {
-    max-width: 50%;
+
+  }
+
+  .des-card {
+    width: 50%;
+
+    height: auto;
+  }
+  .des-card-avatar {
+    height: 70%;
+  }
+  .des-card-middiv {
+    height: 10%;
+
+  }
+  .des-card-name {
+   float: left;
+  }
+  .des-card-time {
+  float: right;
+  }
+  .des-card-describe {
+
   }
 
 }

@@ -21,5 +21,8 @@ export class AddCasePage {
         console.log(this.a00)
     }
 
+    uploadcase(){
+
+    }
 
 }

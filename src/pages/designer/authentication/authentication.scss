@@ -32,6 +32,8 @@ page-authenication {
     color: #fdfdfd;
     height: 30%;
     width: 100%;
+    padding-top: 5em;
+    padding-bottom: 5em;
     margin: auto;
     text-align: center;
   }
@@ -50,6 +52,10 @@ page-authenication {
   .finfish-icon{
     color: #32db64;
     font-size: 4em;
+  }
+  .blank {
+    width: 100%;
+    height: 1.5em !important;
   }
 
 }

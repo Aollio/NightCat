@@ -14,7 +14,7 @@ page-addcase {
     height: 30% !important;
     margin-left: 5%;
     width: 90%;
-    border-width: 10px!important;
+    border-width: 1000px!important;
     //border-top: #9e9e9e !important;
     //border-bottom: #9e9e9e !important;
     //border-top-width: medium;
@@ -23,12 +23,19 @@ page-addcase {
   }
 
   .summary-textarea {
+    width: 96%;
+    height: 6em;
+    border-color: #c9cacf;
+    border-left: none;
+    border-right: none;
+    border-top: none;
     resize: none;
-    height: 90%;
-    width: 100%;
+    padding: 2%;
+    margin: 2%;
   }
   .spancss {
     float: right;
+    color: #c9cacf;
   }
   .buttoncss {
 
