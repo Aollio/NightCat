@@ -16,23 +16,16 @@
 </ion-header>
 
 <ion-content>
-    <ion-slides class="slides">
-        <ion-slide style="background-color: #32db64">
-            <h1>Slide 1</h1>
-        </ion-slide>
-        <ion-slide style="background-color: #32db64">
-            <h1>Slide 2</h1>
-        </ion-slide>
-        <ion-slide style="background-color: #32db64">
-            <h1>Slide 3</h1>
+    <ion-slides class="slides" pager paginationType="bullets" loop>
+        <ion-slide *ngFor="let image of images">
+            <img src="{{image.url}}"/>
         </ion-slide>
     </ion-slides>
-
     <ion-grid class="order-type-grid">
         <ion-row class="order-type-row" *ngFor="let types of typegroup">
             <ion-col *ngFor="let typeitem of types"
                      col-3 class="order-type-col" text-center>
-                <img ng-attr-src="typeitem.imageurl" src="/assets/img/first.png"><br>
+                <img src="{{typeitem.imageurl}}"><br>
                 {{ typeitem.name }}
             </ion-col>
         </ion-row>

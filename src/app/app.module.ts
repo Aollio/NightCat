@@ -34,7 +34,10 @@ import {UserService} from "../service/ajax/user.service";
         EmployerModule,
         CommonModule,
         IonicModule.forRoot(MyApp, {
-            mode: 'ios'
+            mode: 'ios',
+            backButtonText: '返回',
+            tabsHideOnSubPages: true,
+            hideTabsOnSubPages: true,
         })
     ],
     exports: [],

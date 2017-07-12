@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
-import {AbsCommonPage} from "../abs";
-import {SharedService} from "../../../service/share.service";
+import {AbsCommonPage} from "../../abs";
+import {SharedService} from "../../../../service/share.service";
 
 /*
  * 订单详情

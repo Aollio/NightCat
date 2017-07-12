@@ -5,7 +5,7 @@ import {Storage} from '@ionic/storage';
 import {DesignerTabsPage} from "../designer/tabs/tabs";
 import {LoginPage} from "../common/login/login";
 import {RegisterPage} from "../common/register/register";
-import {OrderDetailPage} from "../common/orderdetail/orderdetail"
+import {OrderDetailPage} from "../common/order/orderdetail/orderdetail"
 import {OrderListComponent} from "../designer/orderlist/orderlist";
 import {EmployerModulePage} from "../employer/employer";
 import {DesignerModulePage} from "../designer/designer";

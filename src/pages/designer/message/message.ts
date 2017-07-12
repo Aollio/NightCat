@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {OrderDetailPage} from "../../common/orderdetail/orderdetail";
+import {OrderDetailPage} from "../../common/order/orderdetail/orderdetail";
 import {PublishTaskPage} from "../publishtask/publishtask";
 
 @Component({

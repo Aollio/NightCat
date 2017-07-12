@@ -8,6 +8,13 @@ import {MessagePage} from "../message/message";
 })
 export class DesignerHomePage {
 
+
+    images:Array<{url}> = [
+        {url:'/assets/img/home-default.png'},
+        {url:'/assets/img/home-default.png'},
+        {url:'/assets/img/home-default.png'},
+    ]
+
     types: Array<{ name, value }> = [
         {name: '精选1', value: 'null'},
         {name: '精选2', value: 'null'},
