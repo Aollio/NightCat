@@ -3,6 +3,7 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {OrderProcessDetailPage} from "../orderprocess/orderprocess";
 import {SharedService} from "../../../../service/share.service";
 import {AbsCommonPage} from "../../abs";
+import {DesignerMeDetailPage} from "../../../designer/me/medetail/medetail";
 
 /*
  * 订单详情
@@ -27,6 +28,11 @@ export class OrderDetailPage extends AbsCommonPage {
         this.order_id = navParams.get('order_id');
     }
 
+
+    openUserDetail(){
+        this.navCtrl.push(DesignerMeDetailPage, {})
+
+    }
 
     open(page, option) {
         this.navCtrl.push(page, {})
