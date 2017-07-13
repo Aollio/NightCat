@@ -11,7 +11,7 @@ page-login {
   .login-avatar {
     margin: auto;
     text-align: center;
-    height: 30%;
+    height: 23%;
     width: 70%;
   }
 
@@ -22,21 +22,32 @@ page-login {
   .input-item {
     padding-left: 15%;
     padding-right: 15%;
-    border-bottom-color: $main-color !important;
-  }
-  .item-inner {
-    border-bottom-color: $main-color !important;
+    height: 1.5em;
   }
 
-  .input-item ion-icon {
-    width: 1.1em;
-    height: 1.1em;
-    line-height: 1.1em;
+  .input-icon {
+    font-size: 1.3em;
+    width: 1em;
+    height: 1em;
     text-align: center;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 4em;
+    //border-style: solid;
+    //border-width: 1px;
+    //border-radius: 1em;
     color: $main-color;
+    margin-right: .1em !important;
+    margin-bottom: 0em !important;
+  }
+
+  .input-item ion-input {
+    font-size: .7em;
+  }
+
+  .input-item ion-input input {
+    margin-bottom: .2em;
+  }
+
+  .item-inner {
+    border-bottom-color: $main-color !important;
   }
 
   .input-class {
@@ -49,8 +60,8 @@ page-login {
     font-weight: 500;
     margin: auto;
     text-align: center;
-    width: 70%;
-    margin-left: 15%;
+    width: 75%;
+    margin-left: 12.5%;
     height: 2.2em;
   }
 
@@ -60,8 +71,8 @@ page-login {
     height: 2.2em;
     margin: auto;
     text-align: center;
-    width: 70%;
-    margin-left: 15%;
+    width: 75%;
+    margin-left: 12.5%;
     margin-top: .5em;
     border-radius: 2em;
   }

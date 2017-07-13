@@ -1,7 +1,7 @@
 page-me-designer {
 
   .me-header {
-    background-color: map_get($colors,nav-des-bg);
+    background-color: map_get($colors, nav-des-bg);
     height: 19em;
     padding-top: 3em;
   }
@@ -12,7 +12,14 @@ page-me-designer {
     margin: auto;
     height: 8em;
     width: 8em;
-    background: #3cb5cf;
+    background-color: transparent;
+  }
+
+  .me-avatar img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100%;
+    min-width: 100%;
   }
 
   .me-header .me-name {
