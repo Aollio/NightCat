@@ -7,12 +7,18 @@ com-orderlist {
     width: 90% !important;
     padding-bottom: 0 !important;
     padding-top: 0 !important;
-    height: 8.5em;
+    height: 9em;
     border-radius: .2em !important;
     border-color: transparent !important;
     box-shadow: 1px 1px 10px 2px #f4f4f4 !important;
   }
 
+  ion-card ion-card-content{
+    padding-top: 13px;
+    padding-right: 16px;
+    padding-bottom: 13px;
+    padding-left: 16px;
+  }
   ion-card-content {
     display: inline-flex;
     width: 100%;
@@ -40,7 +46,7 @@ com-orderlist {
   .detail .title {
     color: #3E3E3E;
     font-weight: 500;
-    font-size: .9em;
+    font-size: .8em;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
@@ -49,16 +55,18 @@ com-orderlist {
 
   .like-amount {
     margin-top: -3%;
-    font-size: .8em;
+    font-size: .7em;
   }
 
   .price {
     font-size: 1.2em !important;
     color: #FDBC42;
+    padding-top: 0em;
+    padding-bottom: 0em;
   }
 
   .deadtime {
-    font-size: .78em;
+    font-size: .7em;
     color: #c9cacf;
     text-align: right;
     margin-top: -5%;
