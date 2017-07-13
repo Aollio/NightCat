@@ -11,19 +11,31 @@ page-message {
   .msg-type {
     float: left;
     color: $des-primary;
+    font-size: 1em;
   }
 
   .msg-time {
     float: right;
-    color: #dddddd;
+    color: #eaeaea;
   }
 
   .content {
     padding-top: .5em !important;
+    font-size: 0.85em;
+    color: #9E9E9E;
   }
 
   .order-id {
     text-decoration: underline;
   }
 
+  ion-content{
+    background-color:  #eaeaea!important;
+  }
+ion-card-header{
+  padding-top: 5px!important;
+}
+  ion-card{
+    border: none!important;
+  }
 }
