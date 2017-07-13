@@ -16,6 +16,8 @@ import {TaskSquarePage} from "./tasksquare/tasksquare";
 import {ChatMessagePage} from "./chatmessage/chatmessage";
 import {DesignerMeModule} from "./me/me.module";
 import {CaseDetailPage} from "./me/casedetail/casedetail";
+import {OrderDetailPage} from "../common/order/orderdetail/orderdetail";
+import {OrderModule} from "../common/order/order.module";
 
 @NgModule({
     declarations: [
@@ -46,10 +48,14 @@ import {CaseDetailPage} from "./me/casedetail/casedetail";
         CommonPageModule,
         DesignerMeModule,
         WalletModule,
-        IonicPageModule.forChild(DesignerTabsPage)
+        IonicPageModule.forChild(DesignerTabsPage),
+        OrderModule
     ],
     exports: [
-        CommentPage, DesignerTabsPage, PublishTaskPage, DesignerWalletPage,
+        CommentPage,
+        DesignerTabsPage,
+        PublishTaskPage,
+        DesignerWalletPage,
         TaskSquarePage,
         ChatMessagePage,
         OrderListComponent,

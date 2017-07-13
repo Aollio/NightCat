@@ -7,9 +7,10 @@
 <ion-content>
     <ion-img class="img" *ngIf="showAd" (click)="toggleShowAd()">
     </ion-img>
+
     <div class="type-buttons">
-        <button ion-button class="type-btn" (click)="select('type')">所有分类&nbsp；
-            <ion-select [(ngModel)]="gaming" interface="popover">
+        <button ion-button clear class="type-btn" (click)="select('type')">所有分类
+            <ion-select [(ngModel)]="gaming" selectedText=" " interface="popover">
                 <ion-option value="nes">NES</ion-option>
                 <ion-option value="n64">Nintendo64</ion-option>
                 <ion-option value="ps">PlayStation</ion-option>

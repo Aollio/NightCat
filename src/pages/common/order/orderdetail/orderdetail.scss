@@ -2,17 +2,21 @@ page-orderdetail {
 
   $font-color: #828282;
 
-  $bg-color:#e6eced;
-  main-background {
-    background-color: $bg-color;
-    margin-top: 1em;
+  $bg-color: #e6eced;
+
+
+  .header-row-first{
+    padding-top: .5em;
   }
-;
+  .header-row-last{
+    padding-bottom: .5em;
+  }
 
   .respect-title {
     margin: auto;
-    text-align: center;
+    text-align: left;
     color: $font-color;
+    padding-left: .7em;
   }
 
   .respect-title ion-icon {
@@ -20,8 +24,35 @@ page-orderdetail {
   }
 
   .respect-content {
-    padding-left: 2em;
+    padding-left: 0;
+    padding-right: 1em;
     color: $font-color;
+  }
+  .person-item {
+    border-bottom-width: 1px !important;
+    border-bottom-style: solid !important;
+    border-bottom-color: #e8e9ee !important;
+  }
+
+  .comment-avatar {
+    width: 1.5em !important;
+    height: 1.5em !important;
+    max-width: 1.5em !important; //any size
+    max-height: 1.5em !important; //any size
+    min-width: 1.5em !important;
+    min-height: 1.5em !important;
+  }
+
+  .comment-avatar img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 1.5em !important; //any size
+    max-height: 1.5em !important; //any size
+  }
+
+  .person-arrow-icon {
+    //font-size: small;
+    color: #c9cacf;
   }
 
   .more-weight {
@@ -37,24 +68,24 @@ page-orderdetail {
     color: #FDBC42;
   }
 
-  .item-divider-cus-10{
+  .item-divider-cus-10 {
     width: 100%;
-    height: .5em;
+    height: .3em;
     background-color: $bg-color;
   }
-  .item-divider-cus-20{
+  .item-divider-cus-20 {
     width: 100%;
-    height: 1em;
+    height: .6em;
     background-color: $bg-color;
   }
 
   .order-photo ion-col {
     width: 8em;
     height: 8em;
-    margin: .2em 0.3em 0.3em;
+    //margin: .2em 0.3em 0.3em;
   }
 
-  .order-photo ion-icon img{
+  .order-photo ion-icon img {
     max-width: 100%;
   }
 
@@ -71,15 +102,21 @@ page-orderdetail {
     width: 100%;
   }
 
-  .footer-btns button{
+  .footer-btns button {
     height: 2em;
   }
 
-  .nobackground {
-    background-color: transparent;
+  .footer-clear-btn {
+    //background-color: transparent;
     color: $des-primary;
     padding: 0;
     width: 20% !important;
   }
+
+  //设置返回文字为透明,不显示返回文字
+  .back-button-text {
+    color: transparent;
+  }
+
 
 }
