@@ -57,6 +57,9 @@ export class LoginPage {
         })
     }
 
+    openResetPasswordPage() {
+        this.navCtrl.push(ResetPasswordPage, {});
+    }
 
     open(page, option) {
         this.navCtrl.push(page, option);

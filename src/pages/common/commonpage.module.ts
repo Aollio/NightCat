@@ -41,6 +41,7 @@ import {OrderModule} from "./order/order.module";
         SupportPage,
         AboutPage,
         CommonModulePage,
+        ResetPasswordPage
     ],
     providers: []
 })

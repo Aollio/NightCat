@@ -2,9 +2,9 @@ page-login {
 
   $main-color: map_get($colors, primary);
 
-  .ion-content-class{
+  .ion-content-class {
   }
-  .null-only-height{
+  .null-only-height {
     height: 2em;
   }
 
@@ -45,6 +45,8 @@ page-login {
   }
 
   .login-btn {
+    font-size: 1.2em;
+    font-weight: 500;
     margin: auto;
     text-align: center;
     width: 70%;
@@ -53,6 +55,8 @@ page-login {
   }
 
   .register-btn {
+    font-size: 1.2em;
+    font-weight: 500;
     height: 2.2em;
     margin: auto;
     text-align: center;
@@ -62,4 +66,7 @@ page-login {
     border-radius: 2em;
   }
 
+  .forget-passowrd {
+    font-size: .8em;
+  }
 }

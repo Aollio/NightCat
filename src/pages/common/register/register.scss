@@ -1,2 +1,97 @@
 page-register {
+
+  $main-color: map_get($colors, primary);
+
+  .header-bar-color {
+    width: 100%;
+    height: 10em;
+    background-color: $main-color;
+  }
+
+  //用于设置header中头像
+  .person-div {
+    width: 5em;
+    height: 5em;
+    background-color: rgba(157, 152, 154, 0.26);
+    border-radius: 2.5em;
+    border-style: dashed;
+    border-width: 1px;
+    border-color: white !important;
+    margin-bottom: 1.5em;
+    margin-top: 3.5em;
+    margin-left: 2em;
+  }
+  //用于设置header中头像
+  .person-class {
+    width: 100%;
+    height: 100%;
+    margin-top: 0em !important;
+    margin-bottom: 0em !important;
+    margin-right: 0em !important;
+    font-size: 5em;
+    padding-bottom: 1em;
+    color: white;
+  }
+  //用于设置header中头像
+  .person-class::before {
+    margin-left: -0.01em !important;
+  }
+
+  //用于注册表单
+  .register-form {
+    padding-left: 10%;
+    padding-top: 1.5em;
+  }
+
+  .form-label {
+    color: $main-color;
+    font-size: 1em !important;
+    padding-top: .5em !important;
+    padding-bottom: .2em !important;
+  }
+
+  .register-form ion-item {
+    width: 80% !important;
+  }
+
+  .register-form ion-item ion-input {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: $main-color;
+  }
+
+  .noborder {
+    border-bottom-width: 0em !important;
+  }
+
+  input::-webkit-input-placeholder,
+  textarea::-webkit-input-placeholder {
+    color: #6E6E6E !important;
+  }
+
+  .register-form ion-item ion-input {
+    font-size: .9em !important;
+  }
+
+  .register-button {
+    font-size: 1.2em;
+    font-weight: 500;
+    height: 2.2em;
+    margin: auto;
+    text-align: center;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: .5em;
+    border-radius: 2em;
+  }
+
+  .login-text {
+    font-size: .8em ;
+  }
+
+  .blank-height {
+    width: 100%;
+    height: 0.2em;
+  }
+
 }
