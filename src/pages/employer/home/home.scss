@@ -71,24 +71,37 @@ page-employer-home {
   }
 
   .des-card {
-    width: 50%;
-
+    padding: 5%;
     height: auto;
   }
   .des-card-avatar {
-    height: 70%;
+    height: auto;
   }
   .des-card-middiv {
     height: 10%;
 
   }
   .des-card-name {
-   float: left;
+    float: left;
+    color: #C13638;
+    font-size: 0.85em;
   }
   .des-card-time {
-  float: right;
+    float: right;
+    color: #F45D07;
+    font-size: 0.85em;
   }
   .des-card-describe {
+    height: 18%;
+    width: 100%;
+    color: #9E9E9E;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; //文本行数
+    overflow: hidden;
+    font-size: 0.8em;
+  }
+  .des-card-img{
 
   }
 

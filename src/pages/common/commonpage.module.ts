@@ -11,10 +11,9 @@ import {ResetPasswordPage} from "./resetpassword/resetpassword";
 import {CommonModulePage} from "./commonpage";
 import {OrderProcessDetailPage} from "./order/orderprocess/orderprocess";
 import {SecurityCenterModule} from "./securitycenter/securitycenter.module";
-import {OrderModule} from "./order/order.module";
 
 @NgModule({
-    imports: [IonicPageModule.forChild(CommonModulePage), SecurityCenterModule, OrderModule],
+    imports: [IonicPageModule.forChild(CommonModulePage), SecurityCenterModule],
     declarations: [
         CommonModulePage,
         SlideMenuComponment,
