@@ -9,14 +9,15 @@ page-withdraw {
   .money-all span {
     font-size: 2em;
     color: #000000;
-    font-weight: 500;
-    margin-left: 1em;
+    font-weight: 400;
+    margin-left: .5em;
   }
 
   .money-all button {
     background-color: transparent;
     color: #3cb5cf;
-    font-size: 1.5em;
+    font-size: 1em;
+    margin-right: 0 !important;
   }
 
   .input-money {
@@ -27,16 +28,17 @@ page-withdraw {
 
   .toast {
     color: #3cb5cf;
-    padding-top: 3em;
+    padding-top: 4em;
     margin: auto;
+    font-size: .7em;
     text-align: center;
   }
 
   .withdraw-btn {
-    width: 60%;
-    margin-right: 20%;
-    margin-left: 20%;
-    margin-top: 2em;
+    width: 70%;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-top: 1em;
     text-align: center;
   }
 }

@@ -2,12 +2,16 @@ page-tasksquare {
   .img {
     height: 10%;
     width: 100%;
-    background-color: #9E9E9E;
+    background-color: transparent;
   }
 
   .type-buttons {
     display: inline-flex;
     width: 100%;
+  }
+
+  .type-btn:first-child {
+    border-left-width: 0px !important;
   }
 
   .type-btn {

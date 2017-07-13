@@ -5,42 +5,32 @@
 </ion-header>
 
 <ion-content>
-    <ion-img class="img" *ngIf="showAd" (click)="toggleShowAd()">
-    </ion-img>
+    <img src="/assets/img/home-default.png" class="img" *ngIf="showAd" (click)="toggleShowAd()"/>
+
 
     <div class="type-buttons">
         <button ion-button clear class="type-btn" (click)="select('type')">所有分类
             <ion-select [(ngModel)]="gaming" selectedText=" " interface="popover">
-                <ion-option value="nes">NES</ion-option>
-                <ion-option value="n64">Nintendo64</ion-option>
-                <ion-option value="ps">PlayStation</ion-option>
-                <ion-option value="genesis">Sega Genesis</ion-option>
-                <ion-option value="saturn">Sega Saturn</ion-option>
-                <ion-option value="snes">SNES</ion-option>
+                <ion-option value="n64">建筑设计</ion-option>
+                <ion-option value="ps">人文设计</ion-option>
+                <ion-option value="genesis">Logo</ion-option>
             </ion-select>
-            <ion-icon name="ios-arrow-down"></ion-icon>
+            <!--<ion-icon name="ios-arrow-down"></ion-icon>-->
         </button>
         <button ion-button class="type-btn" (click)="select('filter')">筛选&nbsp;
             <ion-select [(ngModel)]="gaming" interface="popover">
-                <ion-option value="nes">NES</ion-option>
-                <ion-option value="n64">Nintendo64</ion-option>
-                <ion-option value="ps">PlayStation</ion-option>
-                <ion-option value="genesis">Sega Genesis</ion-option>
-                <ion-option value="saturn">Sega Saturn</ion-option>
-                <ion-option value="snes">SNES</ion-option>
+                <ion-option value="nes">类型</ion-option>
+                <ion-option value="sne3s">价格</ion-option>
+                <ion-option value="sne2s">热度</ion-option>
             </ion-select>
-            <ion-icon name="ios-arrow-down"></ion-icon>
+            <!--<ion-icon name="ios-arrow-down"></ion-icon>-->
         </button>
         <button ion-button class="type-btn" (click)="select('sort')">排序&nbsp;
             <ion-select [(ngModel)]="gaming" interface="popover">
-                <ion-option value="nes">NES</ion-option>
-                <ion-option value="n64">Nintendo64</ion-option>
-                <ion-option value="ps">PlayStation</ion-option>
-                <ion-option value="genesis">Sega Genesis</ion-option>
-                <ion-option value="saturn">Sega Saturn</ion-option>
-                <ion-option value="snes">SNES</ion-option>
+                <ion-option value="nes">价格从高到低</ion-option>
+                <ion-option value="ness">价格从低到高</ion-option>
             </ion-select>
-            <ion-icon name="ios-arrow-down"></ion-icon>
+            <!--<ion-icon name="ios-arrow-down"></ion-icon>-->
         </button>
     </div>
     <com-orderlist></com-orderlist>
