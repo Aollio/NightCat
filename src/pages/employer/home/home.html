@@ -31,15 +31,23 @@
         </ion-row>
     </ion-grid>
 
-    <div class="des-card">
-        <div class="des-card-avatar"><img src="/assets/img/first.png"></div>
-        <div class="des-card-middiv">
-            <span class="des-card-name">张三</span>
-            <span class="des-card-time">100/时</span>
-        </div>
-        <div class="des-card-describe">
-            <p >帮助你是希望你成长、成功以后和我一样帮助他人</p>
-        </div>
 
-    </div>
+    <ion-grid class="order-type-grid">
+        <ion-row *ngFor="let desarray of desmatrix">
+            <ion-col *ngFor="let desitem of desarray"
+                     col-6 class="des-card" text-center>
+                <div class="des-card-avatar">
+                    <img class="des-card-img" src="{{desitem.avatar}}">
+                </div>
+                <div class="des-card-middiv">
+                    <span class="des-card-name">{{desitem.name}}</span>
+                    <span class="des-card-time">{{desitem.time}}</span>
+                </div>
+                <div class="des-card-describe">
+                    {{desitem.describe}}
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
 </ion-content>

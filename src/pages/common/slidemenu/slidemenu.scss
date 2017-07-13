@@ -24,6 +24,13 @@ page-slidemenu {
 
   .exitbtn{
     color: white!important;
-  }
 
+  }
+  .exitbtn span{
+    margin: auto;
+    text-align: left;
+    justify-content:flex-start;
+    -webkit-justify-content:flex-start;
+
+  }
 }

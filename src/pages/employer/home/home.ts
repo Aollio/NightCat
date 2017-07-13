@@ -59,6 +59,39 @@ export class EmployerHomePage {
         ],
     ]
 
+    desmatrix: Array<Array<{ avatar, name, time, describe }>> = [
+        [
+            {
+                avatar: '/assets/img/first.png', name: '张三', time: '100/时',
+                describe: '帮助你是希望你成长、成功以后和我一样帮助他人帮助你是希望你成长、成功以后和我一样帮助他人'
+            },
+            {
+                avatar: '/assets/img/first.png', name: '张三', time: '100/时',
+                describe: '帮助你是希望你成长、成功以后和我一样帮助他人'
+            }
+        ],
+        [
+            {
+                avatar: '/assets/img/first.png', name: '张三', time: '100/时',
+                describe: '帮助你是希望你成长、成功以后和我一样帮助他人'
+            },
+            {
+                avatar: '/assets/img/first.png', name: '张三', time: '100/时',
+                describe: '帮助你是希望你成长、成功以后和我一样帮助他人'
+            }
+        ],
+        [
+            {
+                avatar: '/assets/img/first.png', name: '张三', time: '100/时',
+                describe: '帮助你是希望你成长、成功以后和我一样帮助他人'
+            },
+            {
+                avatar: '/assets/img/first.png', name: '张三', time: '100/时',
+                describe: '帮助你是希望你成长、成功以后和我一样帮助他人'
+            }
+        ]
+    ]
+
     constructor(public navCtrl: NavController) {
     }
 
