@@ -9,6 +9,7 @@ import {DesignerMeDetailPage} from "../../designer/me/medetail/medetail";
 export class EmployerHomePage {
 
     designerMeDetailPage: DesignerMeDetailPage;
+
     images: Array<{ url }> = [
         {url: 'assets/img/home-default.png'},
         {url: 'assets/img/home-default.png'},

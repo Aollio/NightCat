@@ -22,6 +22,14 @@ page-employer-projects {
     //border-right-color: white;
     border-image: linear-gradient( red , blue) 30 30;
   }
+  #grad{
+    width: 2px;
+    height: 10px;
+    background: -webkit-linear-gradient(red, blue); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(red, blue); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(red, blue); /* Firefox 3.6 - 15 */
+    background: linear-gradient(red, blue); /* 标准的语法 */
+  }
 
   .number-label {
     height: 30%;
@@ -50,7 +58,7 @@ page-employer-projects {
 
   .datetime {
     width: 50%;
-    font-size: 1.15em;
+    font-size: 1em;
     margin: auto;
     margin-top: 0em;
     text-align: right;
@@ -59,20 +67,23 @@ page-employer-projects {
 
   .dayofmonth {
     width: 50%;
-    font-size: 5.5em;
+    font-size: 4em;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.64);
     margin-right: auto;
     margin-left: auto;
     text-align: center;
-    margin-top: -20%;
+   margin-top: -10%;
+    //margin-bottom:-20% ;
   }
 
   .header-toast {
     height: 30%;
-    font-size: 1.15em;
+    padding-top: 0%;
+    margin-left: -20%;
+    font-size: 1em;
     margin: auto;
-    text-align: center;
+    text-align: left;
     color: rgba(255, 255, 255, 0.64);
   }
 

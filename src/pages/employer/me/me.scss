@@ -1,0 +1,53 @@
+page-me-employer{
+
+  .me-header {
+    background-color: #203E46;
+    height: 19em;
+    padding-top: 3em;
+  }
+
+  .me-header .me-avatar {
+    border-radius: 5em;
+    text-align: center;
+    margin: auto;
+    height: 8em;
+    width: 8em;
+    background-color: transparent;
+  }
+
+  .me-avatar img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  .me-header .me-name {
+    text-align: center;
+    font-size: large;
+    padding-top: 1em;
+    color: #ecf3ed;
+  }
+
+  .me-header .me-name ion-label {
+    font-size: small;
+    color: #b7bfe5;
+  }
+
+  .me-header img {
+    width: 50%;
+    height: 50%;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  ion-item {
+    padding-top: .5em !important;
+    padding-bottom: .5em !important;
+    padding-left: 1em !important;
+    color: #767676 !important;
+    border: none;
+    box-shadow: 8px 0 2em #b6b6b6;
+  }
+
+}

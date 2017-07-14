@@ -9,6 +9,7 @@ import {DesignerModule} from "../designer/designer.module";
 import {DesignerMeModule} from "../designer/me/me.module";
 import {HelpChoosePage} from "./helpchoose/helpchoose";
 import {ProjectsPage} from "./projects/projects";
+import {EmployerMePage} from "./me/me";
 
 @NgModule({
     declarations: [
@@ -16,6 +17,8 @@ import {ProjectsPage} from "./projects/projects";
         EmployerModulePage,
         EmployerHomePage,
         HelpChoosePage,
+        ProjectsPage,
+        EmployerMePage,
         ProjectsPage
     ],
     entryComponents: [
@@ -23,6 +26,8 @@ import {ProjectsPage} from "./projects/projects";
         EmployerModulePage,
         EmployerHomePage,
         HelpChoosePage,
+        ProjectsPage,
+        EmployerMePage,
         ProjectsPage
     ],
     imports: [
