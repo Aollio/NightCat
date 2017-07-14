@@ -19,6 +19,7 @@ import {DesignerMeDetailPage} from "../designer/me/medetail/medetail";
 import {AddCasePage} from "../designer/me/addcase/addcase";
 import {AddHonorPage} from "../designer/me/addhonor/addhonor";
 import {CaseDetailPage} from "../designer/me/casedetail/casedetail";
+import {ProjectsPage} from "../employer/projects/projects";
 
 /**
  * Generated class for the WelcomePage page.
@@ -56,13 +57,14 @@ export class WelcomePage {
     taskSquarePage: any = TaskSquarePage;
     commentPage: any = CommentPage;
     chatMessagePage: any = ChatMessagePage;
-    designerMeDetailPage:any = DesignerMeDetailPage;
-    addcase:any = AddCasePage;
-    addhonor:any = AddHonorPage;
+    designerMeDetailPage: any = DesignerMeDetailPage;
+    addcase: any = AddCasePage;
+    addhonor: any = AddHonorPage;
 
-    casedetail:any = CaseDetailPage;
+    casedetail: any = CaseDetailPage;
 
-    list:any  = BlankPage;
+    projectsPage: any = ProjectsPage;
+    list: any = BlankPage;
 
     open(page, option) {
         this.navCtrl.push(page, option)

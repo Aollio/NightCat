@@ -8,19 +8,22 @@ import {DesignerModulePage} from "../designer/designer";
 import {DesignerModule} from "../designer/designer.module";
 import {DesignerMeModule} from "../designer/me/me.module";
 import {HelpChoosePage} from "./helpchoose/helpchoose";
+import {ProjectsPage} from "./projects/projects";
 
 @NgModule({
     declarations: [
         EmployerTabsPage,
         EmployerModulePage,
         EmployerHomePage,
-        HelpChoosePage
+        HelpChoosePage,
+        ProjectsPage
     ],
     entryComponents: [
         EmployerTabsPage,
         EmployerModulePage,
         EmployerHomePage,
-        HelpChoosePage
+        HelpChoosePage,
+        ProjectsPage
     ],
     imports: [
         CommonPageModule,
@@ -28,7 +31,8 @@ import {HelpChoosePage} from "./helpchoose/helpchoose";
         DesignerMeModule,
         IonicPageModule.forChild(EmployerTabsPage)
     ],
-    exports: [EmployerModulePage, EmployerHomePage]
+    exports: [ProjectsPage,
+        EmployerModulePage, EmployerHomePage]
 })
 export class EmployerModule {
 }
