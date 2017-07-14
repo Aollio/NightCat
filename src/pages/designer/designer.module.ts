@@ -18,6 +18,7 @@ import {DesignerMeModule} from "./me/me.module";
 import {CaseDetailPage} from "./me/casedetail/casedetail";
 import {OrderDetailPage} from "../common/order/orderdetail/orderdetail";
 import {OrderModule} from "../common/order/order.module";
+import {DesignerMeDetailPage} from "./me/medetail/medetail";
 
 @NgModule({
     declarations: [
