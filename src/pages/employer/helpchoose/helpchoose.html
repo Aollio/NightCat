@@ -6,5 +6,14 @@
     </ion-navbar>
 </ion-header>
 <ion-content>
-
+    <div>您想设计哪一类建筑工程</div>
+    <ion-grid class="order-type-grid">
+        <ion-row class="order-type-row" *ngFor="let types of typegroup">
+            <ion-col *ngFor="let typeitem of types"
+                     col-3 class="order-type-col" text-center>
+                <img src="{{typeitem.imageurl}}"><br>
+                {{ typeitem.name }}
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>
