@@ -66,11 +66,12 @@ page-home {
   }
 
   .order-type-btn {
-    height: 2.5em;
+    height: 2em;
+    line-height: 2em;
     background-color: $background-color-home;
     color: rgba(41, 41, 41, 0.93);
     margin: .3em;
-    width: 4em;
+    width: 5em;
     font-size: 1.2em;
     border-bottom-width: .05em;
     border-bottom-color: #cccccc;
@@ -80,13 +81,13 @@ page-home {
   .btn-active {
     color: map_get($colors, nav-des-bg);
     border-bottom-width: .1em;
-    border-bottom-color: map_get($colors, nav-des-bg);
+    border-bottom-color: $des-primary;
 
   }
 
   ::-webkit-scrollbar {
-    width: 0px;
-    height: 0px;
+    width: 0px!important;
+    height: 0px!important;
   }
   .scroll-zoom-wrapper {
     display: inline-flex !important;
