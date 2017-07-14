@@ -6,21 +6,26 @@ import {EmployerModulePage} from "./employer";
 import {EmployerHomePage} from "./home/home";
 import {DesignerModulePage} from "../designer/designer";
 import {DesignerModule} from "../designer/designer.module";
+import {DesignerMeModule} from "../designer/me/me.module";
+import {HelpChoosePage} from "./helpchoose/helpchoose";
 
 @NgModule({
     declarations: [
         EmployerTabsPage,
         EmployerModulePage,
-        EmployerHomePage
+        EmployerHomePage,
+        HelpChoosePage
     ],
     entryComponents: [
         EmployerTabsPage,
         EmployerModulePage,
-        EmployerHomePage
+        EmployerHomePage,
+        HelpChoosePage
     ],
     imports: [
         CommonPageModule,
         DesignerModule,
+        DesignerMeModule,
         IonicPageModule.forChild(EmployerTabsPage)
     ],
     exports: [EmployerModulePage, EmployerHomePage]

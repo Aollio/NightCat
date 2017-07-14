@@ -5,6 +5,7 @@ import {NavController, Platform} from "ionic-angular";
 import {SplashScreen} from "@ionic-native/splash-screen";
 import {StatusBar} from "@ionic-native/status-bar";
 import {EmployerHomePage} from "../home/home";
+import {HelpChoosePage} from "../helpchoose/helpchoose";
 
 @Component({
     selector: 'page-employer-tabs',
@@ -13,7 +14,7 @@ import {EmployerHomePage} from "../home/home";
 export class EmployerTabsPage {
 
     home: any = EmployerHomePage;
-    helpchoose: any = AboutPage;
+    helpchoose: any = HelpChoosePage;
     publishorder: any = AboutPage;
     project: any = AboutPage;
     me: any = AboutPage;

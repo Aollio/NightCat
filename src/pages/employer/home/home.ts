@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
+import {DesignerMeDetailPage} from "../../designer/me/medetail/medetail";
 
 @Component({
     selector: 'page-employer-home',
@@ -7,7 +8,7 @@ import {NavController} from 'ionic-angular';
 })
 export class EmployerHomePage {
 
-
+    designerMeDetailPage: DesignerMeDetailPage;
     images: Array<{ url }> = [
         {url: 'assets/img/home-default.png'},
         {url: 'assets/img/home-default.png'},
@@ -132,5 +133,9 @@ export class EmployerHomePage {
 
     open(page, option) {
         this.navCtrl.push(page, option)
+    }
+
+    openMeDetail() {
+        this.navCtrl.push(DesignerMeDetailPage,{})
     }
 }
