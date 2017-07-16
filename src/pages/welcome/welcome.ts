@@ -1,10 +1,6 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
-import {DesignerHomePage} from "../designer/home/home";
-import {Storage} from '@ionic/storage';
-import {DesignerTabsPage} from "../designer/tabs/tabs";
+import { NavController, NavParams, Platform, ToastController} from 'ionic-angular';
 import {LoginPage} from "../common/login/login";
-import {RegisterPage} from "../common/register/register";
 import {OrderDetailPage} from "../common/order/orderdetail/orderdetail"
 import {OrderListComponent} from "../designer/orderlist/orderlist";
 import {EmployerModulePage} from "../employer/employer";
@@ -20,13 +16,8 @@ import {AddCasePage} from "../designer/me/addcase/addcase";
 import {AddHonorPage} from "../designer/me/addhonor/addhonor";
 import {CaseDetailPage} from "../designer/me/casedetail/casedetail";
 import {ProjectsPage} from "../employer/projects/projects";
+import {NetworkService} from "../../service/network.service";
 
-/**
- * Generated class for the WelcomePage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 @Component({
     selector: 'page-welcome',
     templateUrl: 'welcome.html',
@@ -34,11 +25,6 @@ import {ProjectsPage} from "../employer/projects/projects";
 export class WelcomePage {
 
     rootPage: any;
-
-    constructor(public navCtrl: NavController, public navParams: NavParams) {
-
-
-    }
 
 
     /**
@@ -66,6 +52,71 @@ export class WelcomePage {
     projectsPage: any = ProjectsPage;
     list: any = BlankPage;
 
+
+    constructor(public navCtrl: NavController, public navParams: NavParams,
+                public platform: Platform,
+                public toastCtrl: ToastController,
+                public http: NetworkService) {
+
+
+    }
+
+
+    //用于测试get/post请求
+    private url = "http://192.168.100.154:8080/users"
+
+    getTest() {
+        console.log("开始doget请求")
+        this.http.get(this.url, {}, {})
+            .then(data => {
+                    console.log(data);
+                    this.handlerSucc(data)
+                }
+            )
+            .catch(error => {
+                console.log(error.status);
+                this.handerError(error)
+            })
+    }
+
+    handlerSucc(data) {
+        this.toast(data);
+    }
+
+    handerError(error) {
+        this.toast(error.message);
+    }
+
+
+    postTest() {
+        console.log("开始dopost请求")
+        let param = {
+            phone: 'abaphone', password: 'passwordasda'
+        }
+        this.http.post(this.url, param)
+            .then(data => {
+                    console.log("POST 成功")
+                    console.log(data);
+                    this.toast(data)
+                }
+            )
+            .catch(error => {
+                console.log("POST 出现了异常")
+                console.log(error)
+                console.log("post异常" + error.status);
+            })
+    }
+
+    toast(msg) {
+        let toast = this.toastCtrl.create({
+            message: msg,
+            duration: 2000,
+            position: 'bottom'
+        });
+        toast.present();
+    }
+
+
     open(page, option) {
         this.navCtrl.push(page, option)
     }
@@ -82,15 +133,3 @@ export class WelcomePage {
 
 
 }
-
-
-// this.storage.get('firstOpen').then((result) => {
-//
-//     if (result) {
-//         this.rootPage = DesignerTabsPage;
-//     }
-//     else {
-//         this.storage.set('firstOpen', true);
-//         this.rootPage = WelcomePage;
-//     }
-// });

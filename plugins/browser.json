@@ -25,18 +25,15 @@
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "io.ionic.starter"
         },
-        "com.synconset.imagepicker": {
+        "cordova-plugin-http": {
             "PACKAGE_NAME": "io.ionic.starter"
         },
-        "cordova-plugin-http": {
+        "cordova-plugin-file": {
             "PACKAGE_NAME": "io.ionic.starter"
         }
     },
     "dependent_plugins": {
         "cordova-plugin-compat": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-file": {
             "PACKAGE_NAME": "io.ionic.starter"
         }
     }

@@ -8,6 +8,7 @@ import {UserService} from "../../../service/ajax/user.service";
 import {DesignerTabsPage} from "../../designer/tabs/tabs";
 import {EmployerModulePage} from "../../employer/employer";
 import {DesignerModulePage} from "../../designer/designer";
+import {SharedService} from "../../../service/share.service";
 
 @Component({
     selector: 'page-login',
@@ -23,7 +24,8 @@ export class LoginPage {
 
     constructor(public navCtrl: NavController, public navParams: NavParams,
                 public toastCtrl: ToastController,
-                public userSev: UserService) {
+                public userSev: UserService,
+                public shared: SharedService) {
         var role = navParams.get('role');
         this.user.role = role;
         if (role === 'employer') {
@@ -32,7 +34,9 @@ export class LoginPage {
     }
 
     login() {
-        console.log(this.user);
+
+        console.log("开始登录")
+
         if (this.user.phone == null || this.user.phone == '') {
             this.toast('请输入手机号')
             return
@@ -41,15 +45,25 @@ export class LoginPage {
             this.toast('请输入密码')
             return
         }
-        var success = this.userSev.login(this.user);
-        if (!success) {
-            this.toast('登录失败')
-            return
-        }
-        this.navCtrl.push(this.isDesigner ? DesignerModulePage : EmployerModulePage)
+
+        this.userSev
+            .login(this.user.phone, this.user.password,
+                this.user.role === this.shared.ROLE_DESIGNER)
+            .then(user => {
+                if (user === null) {
+                    this.toast("登录失败, 用户名或密码错误")
+                    console.log("登录失败, 用户名或密码错误")
+                }
+                this.toast("登录正常");
+                console.log("登录成功")
+                this.navCtrl.push(DesignerModulePage, {})
+            })
+            .catch(error => {
+            this.toast("登录出现了异常");
+            console.log("login.ts error" + error)
+        });
 
     }
-
 
     openRegisterPage() {
         this.navCtrl.push(RegisterPage, {
