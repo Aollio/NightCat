@@ -1,33 +1,113 @@
 page-helpchoose {
+
   $grid-border-color: #cccccc;
   $grid-font-color: #292929;
+  .titlecss{
+    color:$grid-border-color!important;
+  }
+  .toolbar-title {
+    color: $grid-border-color!important;
+  }
+
+  .contentdiv {
+    font-size: 1.5em;
+    color: $emp_primary;
+    text-align: center;
+  }
   .order-type-grid {
     color: $grid-font-color;
+    margin-top: 2em;
   }
 
   .order-type-row:first-child {
-    border-top: none !important;
+    border: none !important;
   }
 
   .order-type-row {
-    border-top-width: 1px;
-    border-top-color: $grid-border-color;
-    border-top-style: solid;
+    border: none!important;
   }
 
   .order-type-row .order-type-col:last-child {
     border-right: none !important;
   }
-
-  .order-type-col {
-    padding-top: 1em;
-    padding-bottom: 1em;
-    border-right-width: 1px;
-    border-right-color: $grid-border-color;
-    border-right-style: solid;
+  .icon{
+    padding-top: -5px;
+    color:white;
+    font-size: 30px;
+    line-height: 30px;
   }
 
+  .order-type-col div {
+    background-color: #be84ff;
+    height: 7em;
+    width: 7em;
+    font-size: 0.5em;
+   border-radius: 20%;
+    padding-bottom: 1px;
+    border-right-width: 0px;
+    margin-outside: white;
+    color: white;
+  }
+  .order-type-col{
+    padding-top: 2%;
+    padding-left:2%;
+  }
   .order-type-col img {
 
+  }
+.tip{
+  text-align: center;
+  color: #9E9E9E;
+}
+  .button{
+    margin-left: 15%;
+    width: 70%;
+    height: 2.5em;
+    color:white;
+    font-size: 1.5em;
+    background-color:$emp_primary;
+    border-radius: 1.5em;
+  }
+  .selectbutton{
+     margin-left: 15%;
+     width: 70%;
+     height: 2em;
+     color:$emp_primary;
+     font-size: 1.5em;
+    background-color: white;
+    border:$emp_primary ;
+    border-width: 1px;
+    border-style: solid;
+    margin-top: 2%;
+
+   }
+
+  .blank{
+    height: 40%;
+    width: 100%;
+  }
+  .con{
+    width: 100%;
+    height: 100%;
+  }
+  .link{
+    color: $emp_primary;
+  }
+
+  .div1css{
+    height: 60%!important;
+    margin-left: 10%;
+    width: 80%;
+    border: #9e9e9e !important;
+    border-width: medium;
+
+  }
+  .summary-textarea{
+    width: 100%;
+    height:10em;
+    border-radius: 10px!important;
+    resize : none;
+    padding-left: 10%;
+    padding-right: 10%;
   }
 }
