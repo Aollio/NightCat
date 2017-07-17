@@ -1,13 +1,13 @@
 import {Component} from "@angular/core";
 import {NavController} from "ionic-angular";
-import {HelpChoosePage} from "../helpchoose";
-import {el} from "@angular/platform-browser/testing/src/browser_util";
+import {PublishTaskPage} from "../../common/publishtask/publishtask";
 
 @Component({
-    selector:'helpchoose',
-    templateUrl: 'middleware.html'
+    selector: 'publish-task-middleware',
+    templateUrl: 'publish-task-middleware.html'
 })
-export class MiddleWarePage {
+export class PublishTaskMiddleWarePage {
+
     constructor(public nav: NavController) {
         this.nav.parent.select(0);
     }
@@ -16,23 +16,23 @@ export class MiddleWarePage {
     second_open: boolean = false;
 
     ionViewDidEnter() {
-        console.log("abc")
+        console.log(this.nav.parent.getSelected().index)
         if (this.second_open) {
             this.first_open = false;
             this.nav.parent.select(0);
             this.second_open = false;
+            console.log("end jump of second")
         }
-
         if (this.first_open) {
             this.first_open = false;
             this.nav.parent.select(0);
             this.second_open = true;
-            this.nav.push(HelpChoosePage, {});
+            this.nav.push(PublishTaskPage, {});
             console.log("end jump of first")
         }
-        if (this.nav.parent.getSelected().index === 1) {
+        if (this.nav.parent.getSelected().index === 2) {
             this.nav.parent.select(0);
-            this.nav.push(HelpChoosePage, {});
+            this.nav.push(PublishTaskPage, {});
             console.log("end jump because index == 1")
         }
         this.nav.parent.select(0);

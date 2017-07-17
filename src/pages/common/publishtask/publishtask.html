@@ -53,7 +53,7 @@
     </ion-item>
     <div *ngIf="designer === false" class="tip-small-label">设计单位(面积/个数)二选一</div>
     <ion-item no-lines>
-        <ion-label fixed [color]='maincolor'>{{ designer ? '*' : '' }}设计面积</ion-label>
+        <ion-label fixed [color]='maincolor'>{{ designer ? '* ' : '' }}设计面积</ion-label>
         <ion-input type="text" value="" placeholder="请输入设计面积"></ion-input>
     </ion-item>
     <ion-item no-lines *ngIf="designer === false">
@@ -94,7 +94,7 @@
     </ion-item>
     <ion-item>
         <ion-label [color]='maincolor'>止</ion-label>
-        <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="event.timeEnds"></ion-datetime>
+        <ion-datetime [color]="maincolor" displayFormat="YYYY-MM-DD" [(ngModel)]="event.timeEnds"></ion-datetime>
     </ion-item>
     <div class="blank-10px"></div>
 

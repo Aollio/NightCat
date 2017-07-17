@@ -8,9 +8,10 @@ import {EmployerHomePage} from "../home/home";
 import {HelpChoosePage} from "../helpchoose/helpchoose";
 import {EmployerMePage} from "../me/me";
 import {ProjectsPage} from "../projects/projects";
-import {MiddleWare} from "../helpchoose/middleware/middleware";
+import {MiddleWarePage} from "../helpchoose/middleware/middleware";
 import {Tabs} from "ionic-angular/navigation/nav-interfaces";
 import {PublishTaskPage} from "../../common/publishtask/publishtask";
+import {PublishTaskMiddleWarePage} from "../publish-task-middleware/publish-task-middleware";
 
 @Component({
     selector: 'page-employer-tabs',
@@ -19,25 +20,15 @@ import {PublishTaskPage} from "../../common/publishtask/publishtask";
 export class EmployerTabsPage {
 
     home: any = EmployerHomePage;
-    helpchoose: any = HelpChoosePage;
-    publishorder: any = AboutPage;
     project: any = ProjectsPage;
     me: any = EmployerMePage;
-    middleware: any = MiddleWare;
+    helpchoose: any = MiddleWarePage;
 
-    publishtask: any = PublishTaskPage;
+    publishtask: any = PublishTaskMiddleWarePage;
 
-    @ViewChild('myTabs') tabRef: Tabs;
 
     constructor(public navCtrl: NavController, public platform: Platform,
                 public statusBar: StatusBar, public splashScreen: SplashScreen) {
-    }
-
-    openHelpChoose() {
-        console.log('aa')
-        this.navCtrl.push(HelpChoosePage, {
-            tab: this.tabRef
-        })
     }
 
 

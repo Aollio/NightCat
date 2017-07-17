@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from "ionic-angular";
 import {EmployerTabsPage} from "../tabs/tabs";
+import {Tabs} from "ionic-angular/navigation/nav-interfaces";
 
 @Component({
     templateUrl: 'helpchoose.html',
@@ -8,10 +9,8 @@ import {EmployerTabsPage} from "../tabs/tabs";
 })
 export class HelpChoosePage {
 
-    tab: any;
 
     constructor(public navCtrl: NavController, private param: NavParams) {
-        this.tab = this.param.get('tab')
     }
 
     state: number = 1;
@@ -51,7 +50,7 @@ export class HelpChoosePage {
 
 
     returnTabs() {
-        this.tab.select(0)
-        this.navCtrl.popTo(EmployerTabsPage)
+        // this.navCtrl.popTo(EmployerTabsPage)
+        this.navCtrl.popToRoot({});
     }
 }
