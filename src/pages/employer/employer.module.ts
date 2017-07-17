@@ -10,6 +10,7 @@ import {DesignerMeModule} from "../designer/me/me.module";
 import {HelpChoosePage} from "./helpchoose/helpchoose";
 import {ProjectsPage} from "./projects/projects";
 import {EmployerMePage} from "./me/me";
+import {EmployerMeModule} from "./me/me.module";
 
 @NgModule({
     declarations: [
@@ -34,7 +35,8 @@ import {EmployerMePage} from "./me/me";
         CommonPageModule,
         DesignerModule,
         DesignerMeModule,
-        IonicPageModule.forChild(EmployerTabsPage)
+        IonicPageModule.forChild(EmployerTabsPage),
+        EmployerMeModule
     ],
     exports: [ProjectsPage,
         EmployerModulePage, EmployerHomePage]
