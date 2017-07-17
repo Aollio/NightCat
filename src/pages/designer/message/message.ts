@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {OrderDetailPage} from "../../common/order/orderdetail/orderdetail";
-import {PublishTaskPage} from "../publishtask/publishtask";
+import {PublishTaskPage} from "../../common/publishtask/publishtask";
 
 @Component({
     selector: 'page-message',

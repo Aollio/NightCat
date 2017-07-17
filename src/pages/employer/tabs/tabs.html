@@ -2,13 +2,10 @@
     <page-slidemenu></page-slidemenu>
 </ion-menu>
 
-<ion-tabs #content>
+<ion-tabs #content selectedIndex="0">
     <ion-tab [root]="home" tabTitle="首页" tabIcon="home"></ion-tab>
     <ion-tab [root]="helpchoose" tabTitle="帮我选" tabIcon="ios-list-box-outline"></ion-tab>
-    <!--<ion-tab disabled>-->
-    <!--</ion-tab>-->
-    <ion-tab icon-only tabIcon="add">
-        <!--<ion-icon name="add" class="add-icon"></ion-icon>-->
+    <ion-tab [root]="publishtask" icon-only tabIcon="add">
         <p>One</p>
     </ion-tab>
     <ion-tab [root]="project" tabTitle="工程" tabIcon="ios-chatboxes-outline"></ion-tab>

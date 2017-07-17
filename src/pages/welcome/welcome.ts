@@ -5,7 +5,7 @@ import {OrderDetailPage} from "../common/order/orderdetail/orderdetail"
 import {OrderListComponent} from "../designer/orderlist/orderlist";
 import {EmployerModulePage} from "../employer/employer";
 import {DesignerModulePage} from "../designer/designer";
-import {PublishTaskPage} from "../designer/publishtask/publishtask";
+import {PublishTaskPage} from "../common/publishtask/publishtask";
 import {DesignerWalletPage} from "../designer/wallet/wallet";
 import {CommentPage} from "../designer/comment/comment";
 import {TaskSquarePage} from "../designer/tasksquare/tasksquare";

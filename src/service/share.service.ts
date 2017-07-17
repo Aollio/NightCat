@@ -29,11 +29,11 @@ export class SharedService {
     }
 
     //获取导航栏的颜色
-    getNavColor() {
+    getPrimaryColor() {
         if (this.isDesigner) {
-            return 'nav-des-bg';
+            return 'des-primary';
         } else {
-            return 'nav-emp-bg';
+            return 'emp-primary';
         }
     }
 

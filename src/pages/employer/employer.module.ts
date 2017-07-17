@@ -10,6 +10,8 @@ import {DesignerMeModule} from "../designer/me/me.module";
 import {HelpChoosePage} from "./helpchoose/helpchoose";
 import {ProjectsPage} from "./projects/projects";
 import {EmployerMePage} from "./me/me";
+import {EmpOrderListComponent} from "./projects/emporderlist/emporderlist";
+import {MiddleWare} from "./helpchoose/middleware/middleware";
 
 @NgModule({
     declarations: [
@@ -19,7 +21,10 @@ import {EmployerMePage} from "./me/me";
         HelpChoosePage,
         ProjectsPage,
         EmployerMePage,
-        ProjectsPage
+        ProjectsPage,
+        EmpOrderListComponent,
+        MiddleWare
+
     ],
     entryComponents: [
         EmployerTabsPage,
@@ -28,7 +33,9 @@ import {EmployerMePage} from "./me/me";
         HelpChoosePage,
         ProjectsPage,
         EmployerMePage,
-        ProjectsPage
+        ProjectsPage,
+        EmpOrderListComponent,
+        MiddleWare
     ],
     imports: [
         CommonPageModule,

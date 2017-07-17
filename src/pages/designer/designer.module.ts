@@ -5,9 +5,7 @@ import {OrderListComponent} from "./orderlist/orderlist";
 import {IonicPageModule} from "ionic-angular";
 import {CommonPageModule} from "../common/commonpage.module";
 import {DesignerModulePage} from "./designer";
-import {DesignerMePage} from "./me/me";
 import {DesignerWalletPage} from "./wallet/wallet";
-import {PublishTaskPage} from "./publishtask/publishtask";
 import {AuthenticationPage} from "./authentication/authenication";
 import {CommentPage} from "./comment/comment";
 import {WalletModule} from "./wallet/wallet.module";
@@ -16,9 +14,7 @@ import {TaskSquarePage} from "./tasksquare/tasksquare";
 import {ChatMessagePage} from "./chatmessage/chatmessage";
 import {DesignerMeModule} from "./me/me.module";
 import {CaseDetailPage} from "./me/casedetail/casedetail";
-import {OrderDetailPage} from "../common/order/orderdetail/orderdetail";
 import {OrderModule} from "../common/order/order.module";
-import {DesignerMeDetailPage} from "./me/medetail/medetail";
 
 @NgModule({
     declarations: [
@@ -26,7 +22,6 @@ import {DesignerMeDetailPage} from "./me/medetail/medetail";
         DesignerTabsPage,
         MessagePage,
         OrderListComponent,
-        PublishTaskPage,
         AuthenticationPage,
         CommentPage,
         DesignerHomePage,
@@ -38,7 +33,6 @@ import {DesignerMeDetailPage} from "./me/medetail/medetail";
         DesignerTabsPage,
         MessagePage,
         OrderListComponent,
-        PublishTaskPage,
         AuthenticationPage,
         CommentPage,
         DesignerHomePage,
@@ -55,7 +49,6 @@ import {DesignerMeDetailPage} from "./me/medetail/medetail";
     exports: [
         CommentPage,
         DesignerTabsPage,
-        PublishTaskPage,
         DesignerWalletPage,
         TaskSquarePage,
         ChatMessagePage,
