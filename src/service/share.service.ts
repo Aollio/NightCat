@@ -6,7 +6,7 @@ import {User} from "../model/user";
 export class SharedService {
 
     //是否为演示模式, 各个和网络连接有关的, 如果检测到为true, 则不进行网络传送, 使用测试数据进行演示
-    KEYNOTE: boolean = false;
+    KEYNOTE: boolean = true;
 
     //是否为开发/调试模式, 开发调试模式在网络传输中, 使用与开发服务器进行数据传输
     DEBUG: boolean = false;
@@ -20,6 +20,13 @@ export class SharedService {
     //用户角色的字符串
     ROLE_DESIGNER: string = 'designer';
     ROLE_EMPLOYER: string = 'employer';
+
+
+    constructor() {
+        if (this.KEYNOTE) {
+            this.initDefaultUser(false)
+        }
+    }
 
     //获取导航栏的颜色
     getNavColor() {

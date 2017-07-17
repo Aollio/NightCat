@@ -5,7 +5,7 @@ import {SharedService} from "./share.service";
 export class HttpUrls {
 
     server_url: string = "http://192.168.100.154:8080";
-
+    
     loginurl: string = this.server_url + "/users/login";
     registerurl: string = this.server_url + "/users";
 
