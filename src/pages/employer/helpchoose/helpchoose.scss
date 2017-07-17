@@ -1,10 +1,14 @@
 page-helpchoose {
 
-  $grid-border-color: #cccccc;
+  $grid-border-color: rgba(107, 107, 107, 0.66);
   $grid-font-color: #292929;
-  .titlecss {
-    color: $grid-border-color !important;
+
+  //导航栏返回按钮颜色
+  .bar-button {
+    color: $emp_primary !important;
   }
+
+  //导航栏标题颜色
   .toolbar-title {
     color: $grid-border-color !important;
   }

@@ -13,9 +13,11 @@ import {OrderProcessDetailPage} from "./order/orderprocess/orderprocess";
 import {SecurityCenterModule} from "./securitycenter/securitycenter.module";
 import {DesignerMeModule} from "../designer/me/me.module";
 import {PublishTaskPage} from "./publishtask/publishtask";
+import {CommentOrderPage} from "./order/comment-order/comment-order";
+import {OrderModule} from "./order/order.module";
 
 @NgModule({
-    imports: [IonicPageModule.forChild(CommonModulePage), SecurityCenterModule,DesignerMeModule],
+    imports: [IonicPageModule.forChild(CommonModulePage), SecurityCenterModule, DesignerMeModule,OrderModule],
     declarations: [
         CommonModulePage,
         SlideMenuComponment,
@@ -24,7 +26,7 @@ import {PublishTaskPage} from "./publishtask/publishtask";
         SupportPage,
         AboutPage,
         ResetPasswordPage,
-        PublishTaskPage
+        PublishTaskPage,
     ],
     entryComponents: [
         CommonModulePage,
@@ -34,7 +36,7 @@ import {PublishTaskPage} from "./publishtask/publishtask";
         SupportPage,
         AboutPage,
         ResetPasswordPage,
-        PublishTaskPage
+        PublishTaskPage,
     ],
     exports: [
         AccountSecurityPage,
@@ -45,7 +47,8 @@ import {PublishTaskPage} from "./publishtask/publishtask";
         AboutPage,
         CommonModulePage,
         ResetPasswordPage,
-        PublishTaskPage
+        PublishTaskPage,
+        CommentOrderPage
     ],
     providers: []
 })

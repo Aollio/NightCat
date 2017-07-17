@@ -1,0 +1,79 @@
+comment-order {
+
+  $orange: #FB3908;
+
+  ion-header {
+  }
+
+  ion-content {
+    background-color: #F6F6F6 !important;
+  }
+
+  .comment-type-btns {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    border-bottom: 1px solid #d6d6d6;
+  }
+
+  .comment-type-btns button {
+    width: 25%;
+  }
+
+  .comment-type-btns button .button-inner {
+    color: #9E9E9E;
+  }
+
+  .active .button-inner {
+    color: $orange !important;
+  }
+
+  ion-textarea textarea {
+    height: 10em !important;
+    resize: none !important;
+  }
+
+  .item-divider-cus-10 {
+    width: 100%;
+    height: .8em;
+  }
+
+  .stars-row {
+    padding-left: .5em;
+    padding-right: .5em;
+    text-align: center;
+    background-color: white;
+    padding-top: .3em;
+    padding-bottom: .3em;
+    color: #9E9E9E;
+  }
+
+  .stars {
+    display: inline-flex;
+    width: 100%;
+  }
+  .stars div {
+    font-size: 1.5em;
+    width: 20%;
+    color: $orange;
+  }
+
+  .finish-content {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    text-align: center;
+  }
+
+  .only-center-text {
+    margin: auto;
+    padding-top: 40%;
+    text-align: center;
+  }
+
+  .finfish-icon {
+    color: #32db64;
+    font-size: 4em;
+  }
+
+}

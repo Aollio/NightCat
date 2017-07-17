@@ -18,7 +18,7 @@ export class HelpChoosePage {
     nextOrFinish() {
         this.state++;
         if (this.state > 3) {
-            //   this.navCtrl.pop();
+            this.navCtrl.pop();
         }
     }
 
@@ -49,8 +49,4 @@ export class HelpChoosePage {
     ]
 
 
-    returnTabs() {
-        // this.navCtrl.popTo(EmployerTabsPage)
-        this.navCtrl.popToRoot({});
-    }
 }

@@ -17,6 +17,7 @@ import {AddHonorPage} from "../designer/me/addhonor/addhonor";
 import {CaseDetailPage} from "../designer/me/casedetail/casedetail";
 import {ProjectsPage} from "../employer/projects/projects";
 import {NetworkService} from "../../service/network.service";
+import {CommentOrderPage} from "../common/order/comment-order/comment-order";
 
 @Component({
     selector: 'page-welcome',
@@ -51,6 +52,8 @@ export class WelcomePage {
 
     projectsPage: any = ProjectsPage;
     list: any = BlankPage;
+
+    commentOrderPage:any = CommentOrderPage;
 
 
     constructor(public navCtrl: NavController, public navParams: NavParams,
