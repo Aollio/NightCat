@@ -19,7 +19,7 @@
 <ion-content class="content">
     <ion-item no-lines>
         <ion-label [color]='maincolor'>* 项目类型</ion-label>
-        <ion-select [(ngModel)]="gaming" input interface="popover" placeholder="请选择您的任务类型">
+        <ion-select [(ngModel)]="gaming" input interface="popover" placeholder="请选择任务类型">
             <ion-option value="nes">NES</ion-option>
             <ion-option value="n64">Nintendo64</ion-option>
             <ion-option value="ps">PlayStation</ion-option>
@@ -49,7 +49,7 @@
 
     <ion-item no-lines *ngIf="designer === false">
         <ion-label [color]='maincolor'>* 抢单截止时间</ion-label>
-        <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="event.employer_deadline"></ion-datetime>
+        <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="event.employer_deadline"></ion-datetime>
     </ion-item>
     <div *ngIf="designer === false" class="tip-small-label">设计单位(面积/个数)二选一</div>
     <ion-item no-lines>
@@ -90,11 +90,11 @@
     </ion-item>
     <ion-item>
         <ion-label [color]='maincolor'>起</ion-label>
-        <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="event.timeStarts"></ion-datetime>
+        <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="event.timeStarts"></ion-datetime>
     </ion-item>
     <ion-item>
         <ion-label [color]='maincolor'>止</ion-label>
-        <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="event.timeEnds"></ion-datetime>
+        <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="event.timeEnds"></ion-datetime>
     </ion-item>
     <div class="blank-10px"></div>
 
