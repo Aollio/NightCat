@@ -104,5 +104,31 @@ page-employer-home {
   .des-card-img{
 
   }
+  .designer-type-col {
+    //margin: auto;
+    //text-align: center;
+    margin-top: .5em;
+  }
+  .designer-type-icon {
+    padding-top: -5px;
+    color: white;
+    font-size: 6em;
+    //line-height: 30px;
+  }
+
+  .designer-type-col div {
+    background-color: #be84ff;
+    height: 7em;
+    width: 7em;
+    margin: auto;
+    font-size: 0.5em;
+    border-radius: 10%;
+    padding-top: .2em;
+
+    padding-bottom: .2em;
+    //border-right-width: 0px;
+    //margin-outside: white;
+    color: white;
+  }
 
 }
