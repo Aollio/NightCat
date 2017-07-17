@@ -24,7 +24,8 @@ export class SlideMenuComponment {
     isDesigner: boolean;
     maincolor;
 
-    constructor(public navCtrl: NavController, public platfrom: Platform,
+    constructor(public navCtrl: NavController,
+                public platfrom: Platform,
                 private alertCtrl: AlertController,
                 private toastCtrl: ToastController,
                 public shared: SharedService) {

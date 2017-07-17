@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {LoginPage} from "../login/login";
+import {SharedService} from "../../../service/share.service";
 
 
 @Component({
@@ -12,7 +13,9 @@ export class RegisterPage {
     isDesigner: boolean = true;
 
 
-    constructor(public navCtrl: NavController, public navParams: NavParams) {
+    constructor(public navCtrl: NavController,
+                public navParams: NavParams,
+                public shared: SharedService) {
         this.isDesigner = navParams.get('isDesigner')
     }
 
@@ -20,7 +23,7 @@ export class RegisterPage {
         console.log('ionViewDidLoad LoginPage');
     }
 
-    openLoginPage(){
+    openLoginPage() {
         this.navCtrl.push(LoginPage);
     }
 

@@ -11,7 +11,7 @@ export class OrderListComponent {
 
     }
 
-    openOrderDetail(){
-        this.navCtrl.push(OrderDetailPage)
+    openOrderDetail() {
+        this.navCtrl.push(OrderDetailPage, {role: "designer"})
     }
 }

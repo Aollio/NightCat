@@ -2,9 +2,9 @@
     <ion-navbar [color]="navColor" no-border>
         <ion-title>订单详情</ion-title>
         <!--<ion-buttons end>-->
-            <!--<button ion-button (click)="open(orderProcessDetail)">-->
-                <!--订单动态-->
-            <!--</button>-->
+        <!--<button ion-button (click)="open(orderProcessDetail)">-->
+        <!--订单动态-->
+        <!--</button>-->
         <!--</ion-buttons>-->
     </ion-navbar>
 </ion-header>
@@ -121,7 +121,7 @@
 
 </ion-content>
 
-<ion-footer class="footer-btns">
+<ion-footer class="footer-btns" *ngIf="role==='designer'">
     <button class="footer-clear-btn" clear ion-button color="primary" icon-start style="width: 50%">
         <ion-icon name="ios-star-outline"></ion-icon>
         <!--<ion-icon name="ios-star"></ion-icon>-->
@@ -132,5 +132,11 @@
         喵喵
     </button>
     <button ion-button color="primary" style="width: 60%!important;">立即抢单</button>
+
+</ion-footer>
+
+<ion-footer class="footer-btns" *ngIf="role==='employer'">
+
+    <button ion-button color="epm-primary" style="width: 30%!important;">支付</button>
 
 </ion-footer>

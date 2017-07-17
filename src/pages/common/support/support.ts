@@ -9,7 +9,9 @@ import {SharedService} from "../../../service/share.service";
 })
 export class SupportPage extends AbsCommonPage {
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, public share: SharedService) {
+    constructor(public navCtrl: NavController,
+                public navParams: NavParams,
+                public share: SharedService) {
         super(share);
     }
 

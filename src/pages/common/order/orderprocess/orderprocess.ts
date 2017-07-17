@@ -14,7 +14,9 @@ export class OrderProcessDetailPage extends AbsCommonPage {
 
     order_id: string;
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, public share: SharedService) {
+    constructor(public navCtrl: NavController,
+                public navParams: NavParams,
+                public share: SharedService) {
         super(share);
     }
 
