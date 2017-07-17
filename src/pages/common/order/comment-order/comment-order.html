@@ -1,0 +1,88 @@
+<ion-header no-border>
+    <ion-navbar>
+        <ion-title>
+            评论
+        </ion-title>
+        <ion-buttons end>
+            <button *ngIf="publish_complete === false" ion-button clear (click)="publish()">
+                发布
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <div *ngIf="publish_complete === false">
+        <ion-buttons class="comment-type-btns">
+            <button ion-button clear icon-start
+                    [class.active]="level === 3"
+                    (click)="select(3)">
+                <ion-icon name="ios-rose" *ngIf="level === 3"></ion-icon>
+                <ion-icon name="ios-rose-outline" *ngIf="level != 3"></ion-icon>
+                好评
+            </button>
+            <button ion-button clear icon-start
+                    [class.active]="level === 2"
+                    (click)="select(2)">
+                <ion-icon name="ios-rose" *ngIf="level === 2"></ion-icon>
+                <ion-icon name="ios-rose-outline" *ngIf="level != 2"></ion-icon>
+                中评
+            </button>
+            <button ion-button clear icon-start
+                    [class.active]="level === 1"
+                    (click)="select(1)">
+                <ion-icon name="ios-rose" *ngIf="level === 1"></ion-icon>
+                <ion-icon name="ios-rose-outline" *ngIf="level != 1"></ion-icon>
+
+                差评
+            </button>
+        </ion-buttons>
+        <ion-item no-lines>
+            <ion-textarea placeholder="风格满足你的期待吗? 说说它的优点和美中不足的地方吧"></ion-textarea>
+        </ion-item>
+        <div class="item-divider-cus-10"></div>
+        <ion-row class="stars-row">
+            <ion-col col-3>满意度</ion-col>
+
+            <ion-col col-6>
+                <div class="stars">
+                    <div (click)="star(1)">
+                        <ion-icon name="star" *ngIf="grade >= 1"></ion-icon>
+                        <ion-icon name="star-outline" *ngIf="grade < 1"></ion-icon>
+                    </div>
+                    <div (click)="star(2)">
+                        <ion-icon name="star" *ngIf="grade >= 2"></ion-icon>
+                        <ion-icon name="star-outline" *ngIf="grade < 2"></ion-icon>
+                    </div>
+                    <div (click)="star(3)">
+                        <ion-icon name="star" *ngIf="grade >= 3"></ion-icon>
+                        <ion-icon name="star-outline" *ngIf="grade < 3"></ion-icon>
+                    </div>
+                    <div (click)="star(4)">
+                        <ion-icon name="star" *ngIf="grade >= 4"></ion-icon>
+                        <ion-icon name="star-outline" *ngIf="grade < 4"></ion-icon>
+                    </div>
+                    <div (click)="star(5)">
+                        <ion-icon name="star" *ngIf="grade >= 5"></ion-icon>
+                        <ion-icon name="star-outline" *ngIf="grade < 5"></ion-icon>
+                    </div>
+
+                </div>
+            </ion-col>
+            <ion-col col-3>非常好</ion-col>
+        </ion-row>
+
+    </div>
+    <div class="finish-content">
+        <div class="only-center-text" *ngIf="publish_complete === true">
+            <div>
+                <ion-icon class="finfish-icon" name="ios-checkmark-circle"></ion-icon>
+            </div>
+            <h2>感谢您的评价</h2>
+            <p>
+                你的评价将是其他用户的重要参考
+            </p>
+        </div>
+    </div>
+</ion-content>

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 
 import {AboutPage} from '../../common/about/about';
 import {NavController, Platform} from "ionic-angular";
@@ -8,6 +8,10 @@ import {EmployerHomePage} from "../home/home";
 import {HelpChoosePage} from "../helpchoose/helpchoose";
 import {EmployerMePage} from "../me/me";
 import {ProjectsPage} from "../projects/projects";
+import {MiddleWarePage} from "../helpchoose/middleware/middleware";
+import {Tabs} from "ionic-angular/navigation/nav-interfaces";
+import {PublishTaskPage} from "../../common/publishtask/publishtask";
+import {PublishTaskMiddleWarePage} from "../publish-task-middleware/publish-task-middleware";
 
 @Component({
     selector: 'page-employer-tabs',
@@ -16,10 +20,11 @@ import {ProjectsPage} from "../projects/projects";
 export class EmployerTabsPage {
 
     home: any = EmployerHomePage;
-    helpchoose: any = HelpChoosePage;
-    publishorder: any = AboutPage;
     project: any = ProjectsPage;
     me: any = EmployerMePage;
+    helpchoose: any = MiddleWarePage;
+
+    publishtask: any = PublishTaskMiddleWarePage;
 
 
     constructor(public navCtrl: NavController, public platform: Platform,

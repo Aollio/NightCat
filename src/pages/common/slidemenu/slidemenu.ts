@@ -31,7 +31,7 @@ export class SlideMenuComponment {
                 public shared: SharedService) {
         this.user = shared.currentUser;
         this.isDesigner = this.shared.isDesigner;
-        this.maincolor = this.shared.getNavColor();
+        this.maincolor = this.shared.getPrimaryColor();
     }
 
     open(page, option) {

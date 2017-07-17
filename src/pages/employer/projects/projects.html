@@ -5,15 +5,12 @@
     <ion-row class="projects-header-row">
         <ion-col col-3
                  class="header-number">
-            <div style="float: left">
-                <div class="number-label">
-                    设计时长
-                </div>
-                <div class="number-detail">
-                    0
-                </div>
+            <div class="number-label">
+                设计时长
             </div>
-            <div id="grad"style="float: right"></div>
+            <div class="number-detail">
+                0
+            </div>
         </ion-col>
 
         <ion-col col-3
@@ -40,6 +37,43 @@
 
 </ion-header>
 
+
 <ion-content>
+    <ion-row class="type-nav">
+        <ion-col (click)="select('wait_design')"
+                 col-3 class="order-type-col order-type-color" text-center>
+            <div [class.active]="type === 1">
+                <ion-icon class="icon" name="ios-calendar-outline"></ion-icon>
+                <br>
+                未设计
+            </div>
+        </ion-col>
+        <ion-col (click)="select('wait_outcome')"
+                 col-3 class="order-type-col order-type-color" text-center>
+            <div [class.active]="type === 2">
+                <ion-icon class="icon" name="ios-calendar-outline"></ion-icon>
+                <br>
+                待结单
+            </div>
+        </ion-col>
+        <ion-col (click)="select('wait_comment')"
+                 col-3 class="order-type-col order-type-color " text-center>
+            <div [class.active]="type === 3">
+                <ion-icon class="icon" name="ios-calendar-outline"></ion-icon>
+                <br>
+                待评价
+            </div>
+        </ion-col>
+        <ion-col (click)="select('all')"
+                 col-3 class="order-type-col order-type-color" text-center>
+            <div [class.active]="type === 4">
+                <ion-icon class="icon" name="ios-list-box-outline"></ion-icon>
+                <br>
+                全部
+            </div>
+        </ion-col>
+    </ion-row>
+
+    <com-emporderlist></com-emporderlist>
 
 </ion-content>

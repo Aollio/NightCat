@@ -9,7 +9,7 @@ export class AbsCommonPage {
      * 构造器判断一下，如果是order id，则显示加载符号，如果是order直接显示
      * */
     constructor(public constance: SharedService) {
-        this.navColor = constance.getNavColor();
+        this.navColor = constance.getPrimaryColor();
     }
 
 }

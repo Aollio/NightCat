@@ -1,16 +1,21 @@
 page-helpchoose {
 
-  $grid-border-color: #cccccc;
+  $grid-border-color: rgba(107, 107, 107, 0.66);
   $grid-font-color: #292929;
-  .titlecss{
-    color:$grid-border-color!important;
-  }
-  .toolbar-title {
-    color: $grid-border-color!important;
+
+  //导航栏返回按钮颜色
+  .bar-button {
+    color: $emp_primary !important;
   }
 
-  .contentdiv {
+  //导航栏标题颜色
+  .toolbar-title {
+    color: $grid-border-color !important;
+  }
+
+  .content-title-div {
     font-size: 1.5em;
+    margin-top: 1em;
     color: $emp_primary;
     text-align: center;
   }
@@ -19,95 +24,110 @@ page-helpchoose {
     margin-top: 2em;
   }
 
-  .order-type-row:first-child {
-    border: none !important;
+  .order-type-grid {
+    padding-left: 1em;
+    padding-right: 1em;
   }
 
-  .order-type-row {
-    border: none!important;
+  .designer-type-col {
+    //margin: auto;
+    //text-align: center;
+    margin-top: .5em;
   }
 
-  .order-type-row .order-type-col:last-child {
-    border-right: none !important;
-  }
-  .icon{
-    padding-top: -5px;
-    color:white;
-    font-size: 30px;
-    line-height: 30px;
-  }
-
-  .order-type-col div {
+  .designer-type-col div {
     background-color: #be84ff;
     height: 7em;
     width: 7em;
+    margin: auto;
     font-size: 0.5em;
-   border-radius: 20%;
-    padding-bottom: 1px;
-    border-right-width: 0px;
-    margin-outside: white;
+    border-radius: 10%;
+    padding-top: .2em;
+
+    padding-bottom: .2em;
+    //border-right-width: 0px;
+    //margin-outside: white;
     color: white;
   }
-  .order-type-col{
-    padding-top: 2%;
-    padding-left:2%;
+
+  .designer-type-icon {
+    padding-top: -5px;
+    color: white;
+    font-size: 6em;
+    //line-height: 30px;
   }
+
   .order-type-col img {
 
   }
-.tip{
-  text-align: center;
-  color: #9E9E9E;
-}
-  .button{
+  .tip {
+    text-align: center;
+    color: #9E9E9E;
+  }
+  .tip-button {
     margin-left: 15%;
     width: 70%;
     height: 2.5em;
-    color:white;
+    color: white;
     font-size: 1.5em;
-    background-color:$emp_primary;
+    background-color: $emp_primary;
     border-radius: 1.5em;
+    margin-bottom: .5em;
   }
-  .selectbutton{
-     margin-left: 15%;
-     width: 70%;
-     height: 2em;
-     color:$emp_primary;
-     font-size: 1.5em;
+
+  .position-btns {
+    margin-top: 4em;
+  }
+  .selectbutton {
+    margin-left: 30%;
+    //margin-right: 25%;
+    width: 40%;
+    height: 2em;
+    color: $emp_primary;
+    font-size: 1em;
     background-color: white;
-    border:$emp_primary ;
+    border: $emp_primary;
     border-width: 1px;
     border-style: solid;
-    margin-top: 2%;
+    margin-top: .5em;
 
-   }
+  }
 
-  .blank{
+  .blank {
     height: 40%;
     width: 100%;
   }
-  .con{
+  .con {
     width: 100%;
     height: 100%;
   }
-  .link{
+  .link {
     color: $emp_primary;
   }
 
-  .div1css{
-    height: 60%!important;
+  .detail-require {
+    height: 60% !important;
+    margin-top: 3em;
     margin-left: 10%;
     width: 80%;
     border: #9e9e9e !important;
     border-width: medium;
 
   }
-  .summary-textarea{
+
+  .footer-tip {
+    text-align: center;
+    color: #9E9E9E;
+    margin-bottom: .5em;
+  }
+  .summary-textarea {
     width: 100%;
-    height:10em;
-    border-radius: 10px!important;
-    resize : none;
-    padding-left: 10%;
-    padding-right: 10%;
+    height: 10em;
+    border-color: #cacaca;
+    border-radius: 5px !important;
+    resize: none;
+    padding-left: 1em;
+    padding-top: 1em;
+    padding-right: 1em;
   }
 }

@@ -1,0 +1,73 @@
+com-emporderlist {
+
+  ion-card {
+    //margin-left: 5% !important;
+    //margin-right: 5% !important;
+    //width: 100% !important;
+    //padding-bottom: 0 !important;
+    //padding-top: 0 !important;
+    height: 6em;
+    border-radius: .2em !important;
+    border-color: transparent !important;
+    box-shadow: 2px 0px 10px 2px #d4d4d4 !important;
+  }
+
+  ion-card-content{
+    padding: 0!important;
+  }
+
+
+  .order-item{
+    display: inline-flex!important;
+    width: 100%;
+  }
+
+  .avatar {
+    margin: 0.75em;
+    text-align: center;
+    width: 4.5em;
+    height: 4.5em;
+    background-color: #3E3E3E;
+    border-radius: .5em;
+    box-shadow: 0 0 10px 2px #c9c9c9;
+  }
+
+  .detail {
+    width: 80%;
+    padding-left: .5em;
+    margin-top: .5em;
+    margin-right: 1em;
+    font-size: 1.1em;
+  }
+
+  .detail-row{
+    margin-top: 2%;
+  }
+
+
+  .detail .title {
+    color: #3E3E3E;
+    font-weight: 500;
+    font-size: .8em;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+
+
+  .get-order-amount {
+    //margin-top: -3%;
+    font-weight: 400;
+    font-size: .8em;
+  }
+
+  .deadtime {
+    font-size: .8em;
+    color: #FDBC42;
+    text-align: right;
+    //margin-top: -5%;
+  }
+
+
+}

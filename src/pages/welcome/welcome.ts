@@ -5,7 +5,7 @@ import {OrderDetailPage} from "../common/order/orderdetail/orderdetail"
 import {OrderListComponent} from "../designer/orderlist/orderlist";
 import {EmployerModulePage} from "../employer/employer";
 import {DesignerModulePage} from "../designer/designer";
-import {PublishTaskPage} from "../designer/publishtask/publishtask";
+import {PublishTaskPage} from "../common/publishtask/publishtask";
 import {DesignerWalletPage} from "../designer/wallet/wallet";
 import {CommentPage} from "../designer/comment/comment";
 import {TaskSquarePage} from "../designer/tasksquare/tasksquare";
@@ -18,6 +18,7 @@ import {CaseDetailPage} from "../designer/me/casedetail/casedetail";
 import {ProjectsPage} from "../employer/projects/projects";
 import {NetworkService} from "../../service/network.service";
 import {PayPage} from "../employer/pay/pay";
+import {CommentOrderPage} from "../common/order/comment-order/comment-order";
 
 @Component({
     selector: 'page-welcome',
@@ -52,6 +53,8 @@ export class WelcomePage {
 
     projectsPage: any = ProjectsPage;
     list: any = BlankPage;
+
+    commentOrderPage:any = CommentOrderPage;
 
 
     constructor(public navCtrl: NavController, public navParams: NavParams,

@@ -1,0 +1,108 @@
+<ion-header>
+    <ion-navbar [color]="maincolor" hideBackButton>
+        <ion-buttons start>
+            <button ion-button navPop>
+                取消
+            </button>
+        </ion-buttons>
+        <ion-title>
+            发布任务
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button>
+                发布
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="content">
+    <ion-item no-lines>
+        <ion-label [color]='maincolor'>* 项目类型</ion-label>
+        <ion-select [(ngModel)]="gaming" input interface="popover" placeholder="请选择任务类型">
+            <ion-option value="nes">NES</ion-option>
+            <ion-option value="n64">Nintendo64</ion-option>
+            <ion-option value="ps">PlayStation</ion-option>
+            <ion-option value="genesis">Sega Genesis</ion-option>
+            <ion-option value="saturn">Sega Saturn</ion-option>
+            <ion-option value="snes">SNES</ion-option>
+        </ion-select>
+    </ion-item>
+    <div class="blank-10px"></div>
+    <ion-item no-lines>
+        <ion-label [color]='maincolor' fixed>* 项目标题</ion-label>
+        <ion-input smaxlength="10" type="text" value="" placeholder="请输入任务标题"></ion-input>
+    </ion-item>
+    <div class="blank-3px"></div>
+    <ion-item no-lines>
+        <ion-input type="text" value="" placeholder="详细描述一下任务的内容"></ion-input>
+        <div>
+            <img src="assets/img/jiahao.png" height="200" width="200"/>
+        </div>
+    </ion-item>
+    <div class="blank-10px"></div>
+    <ion-item no-lines>
+        <ion-label fixed [color]='maincolor'>* 预算</ion-label>
+        <ion-input type="text" value="" placeholder="请输入金额"></ion-input>
+    </ion-item>
+    <div class="blank-10px"></div>
+
+    <ion-item no-lines *ngIf="designer === false">
+        <ion-label [color]='maincolor'>* 抢单截止时间</ion-label>
+        <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="event.employer_deadline"></ion-datetime>
+    </ion-item>
+    <div *ngIf="designer === false" class="tip-small-label">设计单位(面积/个数)二选一</div>
+    <ion-item no-lines>
+        <ion-label fixed [color]='maincolor'>{{ designer ? '* ' : '' }}设计面积</ion-label>
+        <ion-input type="text" value="" placeholder="请输入设计面积"></ion-input>
+    </ion-item>
+    <ion-item no-lines *ngIf="designer === false">
+        <ion-label fixed [color]='maincolor'>个数</ion-label>
+        <ion-input type="text" value="" placeholder="请输入设计个数"></ion-input>
+    </ion-item>
+    <div class="blank-10px"></div>
+
+    <ion-item no-lines>
+        <ion-label fixed [color]='maincolor'>* 设计深度</ion-label>
+    </ion-item>
+    <!--<div style="width: 50%">-->
+    <ion-item no-lines>
+        <ion-segment [(ngModel)]="relationship" [color]="maincolor">
+            <ion-segment-button small value="key">
+                方案
+            </ion-segment-button>
+            <ion-segment-button small value="add">
+                扩出
+            </ion-segment-button>
+            <ion-segment-button small value="action">
+                施工
+            </ion-segment-button>
+        </ion-segment>
+    </ion-item>
+    <div class="blank-10px"></div>
+    <ion-item no-lines>
+        <ion-label fixed [color]='maincolor'>* 工时</ion-label>
+        <ion-input type="text" value=""></ion-input>
+    </ion-item>
+    <div class="blank-10px"></div>
+    <ion-item no-lines>
+        <ion-label fixed [color]='maincolor'>* 设计时间</ion-label>
+    </ion-item>
+    <ion-item>
+        <ion-label [color]='maincolor'>起</ion-label>
+        <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="event.timeStarts"></ion-datetime>
+    </ion-item>
+    <ion-item>
+        <ion-label [color]='maincolor'>止</ion-label>
+        <ion-datetime [color]="maincolor" displayFormat="YYYY-MM-DD" [(ngModel)]="event.timeEnds"></ion-datetime>
+    </ion-item>
+    <div class="blank-10px"></div>
+
+    <div class="divcss" *ngIf="designer">
+        <p class="pcss">* 订单备注</p>
+        <div class="div1css">
+            <textarea class="summary-textarea"></textarea>
+        </div>
+
+    </div>
+</ion-content>

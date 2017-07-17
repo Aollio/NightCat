@@ -1,6 +1,6 @@
 page-employer-projects {
 
-  $font-size-label: 1.25em;
+  $font-size-label: 1.15em;
 
   .projects-header {
     background-color: $emp_primary;
@@ -17,18 +17,10 @@ page-employer-projects {
   .header-number {
     text-align: center;
     border-image: -webkit-linear-gradient(red, white);
-    //border-right-style: solid;
-    border-right-width: 10px;
-    //border-right-color: white;
-    border-image: linear-gradient( red , blue) 30 30;
-  }
-  .header-number border{
-    width: 3px;
-    height: 100px;
-    background: -webkit-linear-gradient(red, blue); /* Safari 5.1 - 6.0 */
-    background: -o-linear-gradient(red, blue); /* Opera 11.1 - 12.0 */
-    background: -moz-linear-gradient(red, blue); /* Firefox 3.6 - 15 */
-    background: linear-gradient(red, blue); /* 标准的语法 */
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: white;
+    border-image: linear-gradient($emp_primary, rgba(255, 255, 255, 0.24), white) 5 5;
   }
 
   .number-label {
@@ -42,7 +34,7 @@ page-employer-projects {
     height: 70%;
     color: white;
     padding-top: 5%;
-    font-size: 3em;
+    font-size: 300%;
     font-weight: 500;
   }
 
@@ -67,24 +59,59 @@ page-employer-projects {
 
   .dayofmonth {
     width: 50%;
-    font-size: 4em;
+    font-size: 400%;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.64);
     margin-right: auto;
     margin-left: auto;
     text-align: center;
-   margin-top: -10%;
+    margin-top: -10%;
     //margin-bottom:-20% ;
   }
 
   .header-toast {
     height: 30%;
     padding-top: 0%;
-    margin-left: -20%;
+    //margin-left: -20%;
     font-size: 1em;
     margin: auto;
-    text-align: left;
+    text-align: center;
     color: rgba(255, 255, 255, 0.64);
   }
 
+  ion-content{
+    background-color: #ebecf1 !important;
+  }
+
+  .type-nav{
+    background-color: white;
+  }
+
+  ion-content ion-row ion-col{
+    padding-bottom: 0!important;
+  }
+
+  .order-type-color{
+    color: #9e9e9e;
+    font-weight: 400;
+  }
+
+  .active{
+    color: $emp_primary;
+    border-bottom-color: $emp_primary;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+  }
+
+  .icon {
+    font-size: 2.2em;
+  }
+
+  .order-type-col div {
+    padding-top: .25em;
+    padding-bottom: .25em;
+    margin-left: 1em;
+    margin-right: 1em;
+    font-size: 1em;
+  }
 }
