@@ -16,6 +16,7 @@ import {DesignerMeDetailPage} from "../../../designer/me/medetail/medetail";
 export class OrderDetailPage extends AbsCommonPage {
 
     order_id: string;
+    role: string;
 
     orderProcessDetail: any = OrderProcessDetailPage;
 
@@ -26,10 +27,11 @@ export class OrderDetailPage extends AbsCommonPage {
     constructor(public navCtrl: NavController, public navParams: NavParams, public share: SharedService) {
         super(share);
         this.order_id = navParams.get('order_id');
+        this.role = navParams.get('role');
     }
 
 
-    openUserDetail(){
+    openUserDetail() {
         this.navCtrl.push(DesignerMeDetailPage, {})
 
     }
