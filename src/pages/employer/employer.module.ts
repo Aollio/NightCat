@@ -11,6 +11,7 @@ import {HelpChoosePage} from "./helpchoose/helpchoose";
 import {ProjectsPage} from "./projects/projects";
 import {EmployerMePage} from "./me/me";
 import {EmployerMeModule} from "./me/me.module";
+import {PayPage} from "./pay/pay";
 
 @NgModule({
     declarations: [
@@ -20,7 +21,8 @@ import {EmployerMeModule} from "./me/me.module";
         HelpChoosePage,
         ProjectsPage,
         EmployerMePage,
-        ProjectsPage
+        ProjectsPage,
+        PayPage,
     ],
     entryComponents: [
         EmployerTabsPage,
@@ -29,7 +31,8 @@ import {EmployerMeModule} from "./me/me.module";
         HelpChoosePage,
         ProjectsPage,
         EmployerMePage,
-        ProjectsPage
+        ProjectsPage,
+        PayPage
     ],
     imports: [
         CommonPageModule,
@@ -39,7 +42,10 @@ import {EmployerMeModule} from "./me/me.module";
         EmployerMeModule
     ],
     exports: [ProjectsPage,
-        EmployerModulePage, EmployerHomePage]
+        EmployerModulePage,
+        EmployerHomePage,
+        PayPage
+    ]
 })
 export class EmployerModule {
 }
