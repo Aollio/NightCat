@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
 import {PopoverController} from "ionic-angular"
+import {PopoverPage} from "../../popver/popver";
 
 @Component({
     selector: 'page-tasksquare',
@@ -13,6 +14,10 @@ export class TaskSquarePage {
     }
 
     select(a) {
+        let popover = this.popoverCtrl.create(PopoverPage,{},{
+            cssClass:'select-popover'
+        });
+        popover.present();
         if (a === 'type') {
             this.selectType()
         } else if (a === 'filter') {

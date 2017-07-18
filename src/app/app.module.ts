@@ -18,16 +18,19 @@ import {FormsModule} from '@angular/forms';
 import {UserService} from "../service/ajax/user.service";
 import {HTTP} from "@ionic-native/http";
 import {Http, HttpModule} from "@angular/http";
+import {PopoverPage} from "../pages/popver/popver";
 
 @NgModule({
     declarations: [
         MyApp,
         WelcomePage,
-        BlankPage
+        BlankPage,
+        PopoverPage
     ],
     entryComponents: [
         WelcomePage,
-        BlankPage
+        BlankPage,
+        PopoverPage
     ],
     imports: [
         HttpModule,
