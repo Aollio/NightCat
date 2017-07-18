@@ -32,7 +32,6 @@ import {ChooseDesignerPage} from "./choosedesigner/choosedesigner";
         MiddleWarePage,
         PublishTaskMiddleWarePage,
         ChooseDesignerPage
-
     ],
     entryComponents: [
         EmployerTabsPage,
@@ -60,7 +59,7 @@ import {ChooseDesignerPage} from "./choosedesigner/choosedesigner";
         EmployerModulePage,
         EmployerHomePage,
         PayPage,
-        ChooseDesignerPage
+        ChooseDesignerPage,
     ]
 })
 export class EmployerModule {

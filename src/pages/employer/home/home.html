@@ -21,23 +21,27 @@
             <img src="{{image.url}}"/>
         </ion-slide>
     </ion-slides>
-    <ion-grid class="order-type-grid">
-        <ion-row>
-            <!--<ion-row class="designer-type-row" *ngFor="let types of typegroup">-->
-            <ion-col *ngFor="let typeitem of types"
-                     col-3 class="designer-type-col" text-center>
-                <div>
-                    <ion-icon class="designer-type-icon" [name]="typeitem.icon"></ion-icon>
-                    <br>
-                    {{ typeitem.name }}
+
+    <ion-grid class="home-type-grid">
+        <ion-row class="home-type-row">
+            <ion-col *ngFor="let typeitem of types; let i = index"
+                     col-3 class="home-type-col" text-center
+                     [class.no-top-border]="i < 4"
+                     [class.no-right-border]=" ((i + 1) % 4) === 0"
+            >
+                <div class="home-type-icon-container"
+                     [style.background-color]="typeitem.color">
+                    <ion-icon class="home-type-icon"
+                              [name]="typeitem.icon">
+                    </ion-icon>
                 </div>
+                {{ typeitem.name }}
             </ion-col>
         </ion-row>
     </ion-grid>
 
 
-    <ion-grid class="order-type-grid">
-        <!--<ion-row *ngFor="let desarray of desmatrix">-->
+    <ion-grid class="designer-list-grid">
         <ion-row>
             <ion-col *ngFor="let desitem of desarray"
                      col-6 class="des-card" text-center>

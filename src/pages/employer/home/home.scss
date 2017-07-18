@@ -40,34 +40,50 @@ page-employer-home {
     background-color: $background-color-home !important;
   }
 
-  .order-type-grid {
+  .home-type-grid {
     color: $grid-font-color;
   }
 
-  .order-type-row:first-child {
-    border-top: none !important;
-  }
-
-  .order-type-row {
+  .home-type-col {
+    padding-top: 1em;
     border-top-width: 1px;
     border-top-color: $grid-border-color;
     border-top-style: solid;
-  }
-
-  .order-type-row .order-type-col:last-child {
-    border-right: none !important;
-  }
-
-  .order-type-col {
-    padding-top: 1em;
-    padding-bottom: 1em;
     border-right-width: 1px;
     border-right-color: $grid-border-color;
     border-right-style: solid;
   }
 
-  .order-type-col img {
+  .no-top-border {
+    border-top: none !important;
+  }
+  .no-right-border {
+    border-right: none !important;
+  }
 
+  .home-type-icon-container {
+    background-color: #be84ff;
+    height: 4.5em;
+    width: 4.5em;
+    margin: auto;
+    margin-bottom: .5em;
+    font-size: 0.5em;
+    border-radius: 10%;
+    padding-top: .2em;
+    padding-bottom: .2em;
+    color: white;
+  }
+
+  .home-type-icon {
+    padding-top: -5px;
+    color: white;
+    font-size: 5em;
+  }
+
+  .home-type-row {
+  }
+
+  .designer-list-grid {
   }
 
   .des-card {
@@ -77,9 +93,12 @@ page-employer-home {
   .des-card-avatar {
     height: auto;
   }
+  .des-card-avatar img {
+    border-top-right-radius: .5em;
+    border-top-left-radius: .5em;
+  }
   .des-card-middiv {
     height: 10%;
-
   }
   .des-card-name {
     float: left;
@@ -92,7 +111,8 @@ page-employer-home {
     font-size: 0.85em;
   }
   .des-card-describe {
-    height: 18%;
+    height: 2em;
+    line-height: 1em;
     width: 100%;
     color: #9E9E9E;
     display: -webkit-box;
@@ -101,34 +121,8 @@ page-employer-home {
     overflow: hidden;
     font-size: 0.8em;
   }
-  .des-card-img{
+  .des-card-img {
 
-  }
-  .designer-type-col {
-    //margin: auto;
-    //text-align: center;
-    margin-top: .5em;
-  }
-  .designer-type-icon {
-    padding-top: -5px;
-    color: white;
-    font-size: 6em;
-    //line-height: 30px;
-  }
-
-  .designer-type-col div {
-    background-color: #be84ff;
-    height: 7em;
-    width: 7em;
-    margin: auto;
-    font-size: 0.5em;
-    border-radius: 10%;
-    padding-top: .2em;
-
-    padding-bottom: .2em;
-    //border-right-width: 0px;
-    //margin-outside: white;
-    color: white;
   }
 
 }

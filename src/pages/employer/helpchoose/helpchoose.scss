@@ -19,26 +19,24 @@ page-helpchoose {
     color: $emp_primary;
     text-align: center;
   }
-  .order-type-grid {
+
+  .designer-types-grid {
+    margin-left: 3em;
+    margin-right: 3em;
     color: $grid-font-color;
     margin-top: 2em;
-  }
-
-  .order-type-grid {
-    padding-left: 1em;
-    padding-right: 1em;
+    width: auto;
   }
 
   .designer-type-col {
-    //margin: auto;
-    //text-align: center;
-    margin-top: .5em;
+    margin-top: 1em;
+    padding: 0;
   }
 
-  .designer-type-col div {
-    background-color: #be84ff;
-    height: 7em;
-    width: 7em;
+  .designer-type-container {
+    background-color: #ff544f;
+    height: 8em;
+    width: 8em;
     margin: auto;
     font-size: 0.5em;
     border-radius: 10%;
@@ -79,18 +77,22 @@ page-helpchoose {
     margin-top: 4em;
   }
   .selectbutton {
-    margin-left: 30%;
+    margin-left: 25%;
     //margin-right: 25%;
-    width: 40%;
-    height: 2em;
+    width: 50%;
+    height: auto;
     color: $emp_primary;
-    font-size: 1em;
+    font-size: 1.2em;
     background-color: white;
-    border: $emp_primary;
-    border-width: 1px;
-    border-style: solid;
+    border: 1px solid;
     margin-top: .5em;
+    padding-top: .7em;
+    padding-bottom: .7em;
+  }
 
+  .selected {
+    color: white;
+    background-color: $emp-primary;
   }
 
   .blank {
@@ -129,5 +131,17 @@ page-helpchoose {
     padding-left: 1em;
     padding-top: 1em;
     padding-right: 1em;
+  }
+
+  .jump-question {
+    height: 1.5em;
+    width: 100%;
+  }
+
+  .jump-question div {
+    float: right;
+    padding-bottom: 1em;
+    padding-right: 1em;
+    color: $emp_primary;
   }
 }

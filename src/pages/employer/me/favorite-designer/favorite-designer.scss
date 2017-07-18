@@ -1,0 +1,45 @@
+page-favorite-designer {
+  .comment-item {
+    display: inline-flex;
+    height: 100%;
+    width: 100%;
+  }
+  .comment-avatar {
+    width: 25%;
+    height: 100%;
+  }
+   .comment-item-content {
+    padding-left: 1em;
+    width: 75%;
+    height: 100%;
+  }
+
+  .name{
+    height: 1.5em;
+  }
+
+  .des-card-describe {
+    //height: 30%;
+    width: 85%;
+    max-width: 85%;
+    color: #9E9E9E;
+    font-size: .8em;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; //文本行数
+    overflow: hidden;
+  }
+
+  .favorite-count-container{
+  }
+
+  .favorite-count-container button ion-icon{
+    color: red;
+  }
+
+  ion-buttons botton .button-inner{
+    color: whitesmoke!important;
+  }
+
+
+}

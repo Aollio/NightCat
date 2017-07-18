@@ -1,12 +1,12 @@
 import {NgModule} from "@angular/core";
-import {MyFlowerPage} from "./myflower/myflower";
+import {EmpFavoriteDesignerPage} from "./favorite-designer/favorite-designer";
 import {IonicModule} from "ionic-angular";
 @NgModule({
     declarations: [
-        MyFlowerPage
+        EmpFavoriteDesignerPage
     ],
     entryComponents: [
-        MyFlowerPage
+        EmpFavoriteDesignerPage
     ],
     imports: [
         IonicModule

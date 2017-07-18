@@ -1,19 +1,36 @@
-page-choosedesigner{
+page-choosedesigner {
   $grid-font-color: #292929;
-  .order-type-grid {
+
+  .designer-list-grid {
     color: $grid-font-color;
   }
 
   .des-card {
-    padding: 5%;
+    padding: .5em;
     height: auto;
   }
   .des-card-avatar {
     height: auto;
+    max-height: 10em;
   }
+
+  .des-card-img{
+    max-height: 100%;
+  }
+
+  .avatar-icon-div {
+    position: absolute;
+    font-size: 2em;
+    width: 85%;
+    color: $emp_primary;
+  }
+
+  .avatar-icon-div ion-icon {
+    float: right;
+  }
+
   .des-card-middiv {
     height: 10%;
-
   }
   .des-card-name {
     float: left;
@@ -25,7 +42,7 @@ page-choosedesigner{
     color: #F45D07;
     font-size: 1.2em;
   }
-  .des-card-short{
+  .des-card-short {
     width: 90%;
     overflow: hidden;
     white-space: nowrap;

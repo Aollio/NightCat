@@ -11,12 +11,12 @@
 <ion-content>
     <div class="con" *ngIf="state === 1">
         <div class="content-title-div">您想设计哪一类建筑工程？</div>
-        <ion-grid class="order-type-grid">
+        <ion-grid class="designer-types-grid">
             <ion-row>
-                <!--<ion-row class="designer-type-row" *ngFor="let types of typegroup">-->
-                <ion-col *ngFor="let typeitem of types"
+                <ion-col *ngFor="let typeitem of types; let i = index"
                          col-3 class="designer-type-col" text-center>
-                    <div>
+                    <div class="designer-type-container"
+                         [style.background-color]="typeitem.color">
                         <ion-icon class="designer-type-icon" [name]="typeitem.icon"></ion-icon>
                         <br>
                         {{ typeitem.name }}
@@ -31,17 +31,24 @@
     <div class="con" *ngIf="state === 2">
         <div class="content-title-div">请选择设计师职称等级</div>
         <div class="position-btns">
-            <button class="tip selectbutton">初级工程师</button>
-            <button class="tip selectbutton">中级工程师</button>
-            <button class="tip selectbutton">高级工程师</button>
+            <button class="tip selectbutton" [class.selected]="position === 1" (click)="selectPosition(1)">初级工程师
+            </button>
+            <button class="tip selectbutton" [class.selected]="position === 2" (click)="selectPosition(2)">中级工程师
+            </button>
+            <button class="tip selectbutton" [class.selected]="position === 3" (click)="selectPosition(3)">高级工程师
+            </button>
         </div>
     </div>
 
     <div class="con" *ngIf="state === 3">
         <div class="content-title-div">请选择设计师是否认证</div>
         <div class="position-btns">
-            <button class="tip selectbutton">未认证工程师</button>
-            <button class="tip selectbutton">已认证工程师</button>
+            <button class="tip selectbutton" [class.selected]="authenticate === 0" (click)="selectAuthenticate(0)">
+                未认证工程师
+            </button>
+            <button class="tip selectbutton" [class.selected]="authenticate === 1" (click)="selectAuthenticate(1)">
+                已认证工程师
+            </button>
         </div>
 
 
@@ -58,6 +65,9 @@
         </div>
         <button (click)="nextOrFinish()" *ngIf="state < 3" class="tip-button">下一问></button>
         <button (click)="nextOrFinish()" *ngIf="state === 3" class="tip-button">确认提交</button>
+    </div>
+    <div class="jump-question">
+        <div>跳过</div>
     </div>
 
 </ion-footer>
