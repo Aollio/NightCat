@@ -1,6 +1,6 @@
 # Compiled class file
 *.class
-
+.tmp-custom-icons/
 platforms/
 www/
 .DS_Store
