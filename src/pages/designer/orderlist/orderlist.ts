@@ -8,7 +8,7 @@ import {OrderDetailPage} from "../../common/order/orderdetail/orderdetail";
 })
 export class OrderListComponent {
     constructor(public navCtrl: NavController) {
-
+// dasds
     }
 
     openOrderDetail() {
