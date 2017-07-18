@@ -1,19 +1,33 @@
- page-blank{
-.circle{
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: $emp_primary!important;
-
-}
-  .line{
-    //height: 10em;
-    //padding-top: 45%;
-    //width: 100%;
-    background-color: $emp_primary!important;
-
+page-blank {
+  .gou {
+    width: 2em !important;
+    height: 2em !important;
+    border-radius: 50% !important;
+    background-color: $emp_primary !important;
+  }
+  .gou div {
+    margin: auto;
+    font-size: 2em;
+    color: white!important;
   }
 
-
+  .yirenzheng{
+    width: 3em !important;
+    height: 1em !important;
+    border-radius: 0.5em !important;
+    border-width: 1em;
+    border-color: $emp_primary;
+  }
+  .yirenzheng div {
+    margin: auto;
+    font-size: 1em;
+    color: $emp_primary;
+  }
+  .line {
+    //height: 10em;s
+    //padding-top: 45%;
+    //width: 100%;
+    background-color: $emp_primary !important;
+  }
 
 }

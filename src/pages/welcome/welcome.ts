@@ -19,6 +19,7 @@ import {ProjectsPage} from "../employer/projects/projects";
 import {NetworkService} from "../../service/network.service";
 import {PayPage} from "../employer/pay/pay";
 import {CommentOrderPage} from "../common/order/comment-order/comment-order";
+import {ChooseDesignerPage} from "../employer/choosedesigner/choosedesigner";
 
 @Component({
     selector: 'page-welcome',
@@ -50,7 +51,7 @@ export class WelcomePage {
     addhonor: any = AddHonorPage;
     casedetail: any = CaseDetailPage;
     paypage: any = PayPage;
-
+    choosedesigner:any=ChooseDesignerPage;
     projectsPage: any = ProjectsPage;
     list: any = BlankPage;
 

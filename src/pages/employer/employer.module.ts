@@ -15,6 +15,7 @@ import {PayPage} from "./pay/pay";
 import {EmpOrderListComponent} from "./projects/emporderlist/emporderlist";
 import {MiddleWarePage} from "./helpchoose/middleware/middleware";
 import {PublishTaskMiddleWarePage} from "./publish-task-middleware/publish-task-middleware";
+import {ChooseDesignerPage} from "./choosedesigner/choosedesigner";
 
 @NgModule({
     declarations: [
@@ -29,7 +30,8 @@ import {PublishTaskMiddleWarePage} from "./publish-task-middleware/publish-task-
         ProjectsPage,
         EmpOrderListComponent,
         MiddleWarePage,
-        PublishTaskMiddleWarePage
+        PublishTaskMiddleWarePage,
+        ChooseDesignerPage
 
     ],
     entryComponents: [
@@ -44,7 +46,8 @@ import {PublishTaskMiddleWarePage} from "./publish-task-middleware/publish-task-
         ProjectsPage,
         EmpOrderListComponent,
         MiddleWarePage,
-        PublishTaskMiddleWarePage
+        PublishTaskMiddleWarePage,
+        ChooseDesignerPage
     ],
     imports: [
         CommonPageModule,
@@ -56,7 +59,8 @@ import {PublishTaskMiddleWarePage} from "./publish-task-middleware/publish-task-
     exports: [ProjectsPage,
         EmployerModulePage,
         EmployerHomePage,
-        PayPage
+        PayPage,
+        ChooseDesignerPage
     ]
 })
 export class EmployerModule {

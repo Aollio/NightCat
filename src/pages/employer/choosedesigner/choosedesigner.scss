@@ -1,0 +1,35 @@
+page-choosedesigner{
+  $grid-font-color: #292929;
+  .order-type-grid {
+    color: $grid-font-color;
+  }
+
+  .des-card {
+    padding: 5%;
+    height: auto;
+  }
+  .des-card-avatar {
+    height: auto;
+  }
+  .des-card-middiv {
+    height: 10%;
+
+  }
+  .des-card-name {
+    float: left;
+    color: #C13638;
+    font-size: 1.2em;
+  }
+  .des-card-time {
+    float: right;
+    color: #F45D07;
+    font-size: 1.2em;
+  }
+  .des-card-short{
+    width: 90%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 1em;
+  }
+}
