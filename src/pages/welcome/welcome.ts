@@ -20,6 +20,7 @@ import {NetworkService} from "../../service/network.service";
 import {PayPage} from "../employer/pay/pay";
 import {CommentOrderPage} from "../common/order/comment-order/comment-order";
 import {ChooseDesignerPage} from "../employer/choosedesigner/choosedesigner";
+import {SearchDesignerPage} from "../employer/searchdesigner/searchdesigner";
 
 @Component({
     selector: 'page-welcome',
@@ -54,7 +55,7 @@ export class WelcomePage {
     choosedesigner:any=ChooseDesignerPage;
     projectsPage: any = ProjectsPage;
     list: any = BlankPage;
-
+    searchdesigner: any = SearchDesignerPage;
     commentOrderPage:any = CommentOrderPage;
 
 
