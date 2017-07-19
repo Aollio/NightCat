@@ -15,34 +15,30 @@
 
     <ion-list no-lines>
         <button ion-item (click)="open(messagePage)">
-            <ion-icon [ngClass]="{'designer':isDesigner,'employer':!isDesigner}"
-                      item-start name="md-notifications"></ion-icon>
+            <custom-icon set="cat" name="slidemenu-inform" class="icon" [ngClass]="{'designer':isDesigner,'employer':!isDesigner}"
+                         item-start></custom-icon>
             系统消息
         </button>
         <button ion-item (click)="open(supportPage)">
-            <ion-icon [ngClass]="{'designer':isDesigner,'employer':!isDesigner}"
-                      item-start
-                      name="ios-mail"></ion-icon>
+            <custom-icon set="cat" name="slidemenu-support" class="icon" [ngClass]="{'designer':isDesigner,'employer':!isDesigner}"
+                         item-start></custom-icon>
             帮助反馈
         </button>
         <button ion-item (click)="open(accountSecurityPage)">
 
-            <ion-icon [ngClass]="{'designer':isDesigner,'employer':!isDesigner}"
-                      item-start
-                      name="ios-home"></ion-icon>
+            <custom-icon set="cat" name="slidemenu-account" class="icon" [ngClass]="{'designer':isDesigner,'employer':!isDesigner}"
+                         item-start></custom-icon>
             账户与安全
         </button>
         <button ion-item (click)="clearCache('comfirm')">
 
-            <ion-icon [ngClass]="{'designer':isDesigner,'employer':!isDesigner}"
-                      item-start
-                      name="md-medical"></ion-icon>
+             <custom-icon set="cat" name="slidemenu-clear" class="icon" [ngClass]="{'designer':isDesigner,'employer':!isDesigner}"
+                           item-start></custom-icon>
             清除缓存
         </button>
         <button ion-item (click)="open(aboutPage)">
-            <ion-icon [ngClass]="{'designer':isDesigner,'employer':!isDesigner}"
-                      item-start
-                      name="ios-archive"></ion-icon>
+            <custom-icon set="cat" name="slidemenu-about" class="icon" [ngClass]="{'designer':isDesigner,'employer':!isDesigner}"
+                         item-start></custom-icon>
             关于夜猫
         </button>
     </ion-list>
