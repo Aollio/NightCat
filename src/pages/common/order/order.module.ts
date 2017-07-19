@@ -3,6 +3,7 @@ import {IonicPageModule} from 'ionic-angular';
 import {OrderDetailPage} from "./orderdetail/orderdetail";
 import {OrderProcessDetailPage} from "./orderprocess/orderprocess";
 import {CommentOrderPage} from "./comment-order/comment-order";
+import {CustomIconsModule} from "ionic2-custom-icons";
 
 @NgModule({
     declarations: [
@@ -17,6 +18,7 @@ import {CommentOrderPage} from "./comment-order/comment-order";
     ],
     imports: [
         IonicPageModule.forChild(OrderDetailPage),
+        CustomIconsModule // Add this!
     ],
     exports: [
         OrderDetailPage, CommentOrderPage

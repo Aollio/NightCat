@@ -43,7 +43,7 @@
         <ion-col (click)="select('wait_design')"
                  col-3 class="order-type-col order-type-color" text-center>
             <div [class.active]="type === 1">
-                <ion-icon class="icon" name="ios-calendar-outline"></ion-icon>
+                <custom-icon class="icon" set="cat" name="projects-waitdesign"></custom-icon>
                 <br>
                 未设计
             </div>
@@ -51,7 +51,7 @@
         <ion-col (click)="select('wait_outcome')"
                  col-3 class="order-type-col order-type-color" text-center>
             <div [class.active]="type === 2">
-                <ion-icon class="icon" name="ios-calendar-outline"></ion-icon>
+                <custom-icon  class="icon" set="cat" name="projects-waitorder"></custom-icon>
                 <br>
                 待结单
             </div>
@@ -59,7 +59,7 @@
         <ion-col (click)="select('wait_comment')"
                  col-3 class="order-type-col order-type-color " text-center>
             <div [class.active]="type === 3">
-                <ion-icon class="icon" name="ios-calendar-outline"></ion-icon>
+                <custom-icon class="icon" set="cat" name="my-comment"></custom-icon>
                 <br>
                 待评价
             </div>
@@ -67,7 +67,7 @@
         <ion-col (click)="select('all')"
                  col-3 class="order-type-col order-type-color" text-center>
             <div [class.active]="type === 4">
-                <ion-icon class="icon" name="ios-list-box-outline"></ion-icon>
+                <custom-icon class="icon" set="cat" name="projects-all"></custom-icon>
                 <br>
                 全部
             </div>

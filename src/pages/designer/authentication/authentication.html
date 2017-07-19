@@ -15,19 +15,26 @@
 <ion-content>
     <ion-row class="process">
         <ion-col [class.active]="state === 1">
-            <ion-icon name="person"></ion-icon>
-            <br/>
-            身份认证
+            <custom-icon set="cat" name="authentication-id">
+            </custom-icon>
+            <div>
+                身份认证
+            </div>
+
         </ion-col>
         <ion-col [class.active]="state === 2">
-            <ion-icon name="nuclear"></ion-icon>
-            <br/>
-            学历认证
+            <custom-icon set="cat" name="authentication-education">
+            </custom-icon>
+            <div>
+                学历认证
+            </div>
         </ion-col>
         <ion-col [class.active]="state === 3">
-            <ion-icon name="person"></ion-icon>
-            <br/>
-            审核中
+            <custom-icon set="cat" name="authentication-audit">
+            </custom-icon>
+            <div>
+                审核中
+            </div>
         </ion-col>
     </ion-row>
 
