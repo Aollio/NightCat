@@ -22,6 +22,8 @@
             支付
         </ion-col>
         <ion-col [class.active]="state >= 3">
+            <ion-icon *ngIf="state < 3" name="person">
+            </ion-icon>
             <ion-icon *ngIf="state === 3" name="person">
             </ion-icon>
             <ion-icon *ngIf="state > 3" name="ios-checkmark-circle">

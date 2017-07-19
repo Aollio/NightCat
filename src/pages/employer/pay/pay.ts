@@ -7,7 +7,7 @@ import {Component} from "@angular/core";
 export class PayPage {
 
 
-    state: number = 3
+    state: number = 2
 
     pay: string;
 
