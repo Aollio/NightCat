@@ -1,4 +1,4 @@
-<ion-list>
+<ion-list *ngIf="!isEmpty()">
     <ion-card>
         <ion-card-content>
             <div class="order-item">
@@ -18,3 +18,15 @@
         </ion-card-content>
     </ion-card>
 </ion-list>
+<ion-content *ngIf="isEmpty()" class="ioncontent">
+    <div class="null-project">
+        <img src="assets/img/project-null.png">
+    </div>
+    <p class="null-porject-toast">
+        当前没有工程, 海量资深工程师任你选
+    </p>
+
+    <button ion-button class="null-project-button" (click)="openFindDesigner()">找个好设计师来设计吧</button>
+    <button ion-button class="null-project-button" (click)="openPulishTask()">自己发布项目</button>
+
+</ion-content>

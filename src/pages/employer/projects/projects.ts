@@ -1,5 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {el} from "@angular/platform-browser/testing/src/browser_util";
+import {EmpOrderListComponent} from "./emporderlist/emporderlist";
 
 @Component({
     selector: 'page-employer-projects',
@@ -8,6 +9,7 @@ import {el} from "@angular/platform-browser/testing/src/browser_util";
 export class ProjectsPage {
 
     type: any = 1;
+
 
     constructor() {
     }
