@@ -7,6 +7,20 @@ page-blank {
   }
   .gou div {
     margin: auto;
+    font-size: 1em;
+    color: white!important;
+  }
+
+  .pinglun {
+    width: 3em !important;
+    height: 3em !important;
+    border-radius: 50% !important;
+    background-color: #C13638 !important;
+  }
+  .pinglun div {
+    padding-top: 3%;
+    text-align: center;
+    margin: auto;
     font-size: 2em;
     color: white!important;
   }
@@ -20,6 +34,7 @@ page-blank {
   }
   .yirenzheng div {
     margin: auto;
+    margin-left: 2em;
     font-size: 1em;
     color: $emp_primary;
   }
