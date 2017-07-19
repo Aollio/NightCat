@@ -20,6 +20,9 @@ import {NetworkService} from "../../service/network.service";
 import {PayPage} from "../employer/pay/pay";
 import {CommentOrderPage} from "../common/order/comment-order/comment-order";
 import {ChooseDesignerPage} from "../employer/choosedesigner/choosedesigner";
+import {DesignerTabsPage} from "../designer/tabs/tabs";
+import {SharedService} from "../../service/share.service";
+import {EmployerTabsPage} from "../employer/tabs/tabs";
 import {SearchDesignerPage} from "../employer/searchdesigner/searchdesigner";
 
 @Component({
@@ -127,6 +130,16 @@ export class WelcomePage {
         this.navCtrl.push(page, option)
     }
 
+
+    openEmployer() {
+        this.shared.isDesigner = false;
+        this.navCtrl.push(EmployerModulePage, {})
+    }
+
+    openDesigner() {
+        this.shared.isDesigner = true;
+        this.navCtrl.push(DesignerModulePage, {});
+    }
 
     /**
      * 打开登录/注册页面
