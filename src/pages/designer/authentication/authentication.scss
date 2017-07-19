@@ -1,5 +1,8 @@
 page-authenication {
-
+  custom-icon::before {
+    width: 0em;
+    height: 0em;
+  }
   .process {
     height: 25%;
     width: 100%;
@@ -16,8 +19,11 @@ page-authenication {
     font-size: 1em;
     color: #9E9E9E;
   }
-
-  .process ion-col ion-icon {
+  ion-col custom-icon{
+    text-align: center;
+    padding-right: 50%;
+  }
+  .process ion-col custom-icon {
     font-size: 3em;
   }
 
@@ -38,18 +44,17 @@ page-authenication {
     text-align: center;
   }
 
-  .desc{
+  .desc {
     margin: auto;
     text-align: center;
   }
 
-
-  .only-center-text{
+  .only-center-text {
     margin: auto;
     text-align: center;
   }
 
-  .finfish-icon{
+  .finfish-icon {
     color: #32db64;
     font-size: 4em;
   }

@@ -16,6 +16,7 @@ import {EmpOrderListComponent} from "./projects/emporderlist/emporderlist";
 import {MiddleWarePage} from "./helpchoose/middleware/middleware";
 import {PublishTaskMiddleWarePage} from "./publish-task-middleware/publish-task-middleware";
 import {ChooseDesignerPage} from "./choosedesigner/choosedesigner";
+import {CustomIconsModule} from "ionic2-custom-icons";
 
 @NgModule({
     declarations: [
@@ -53,7 +54,8 @@ import {ChooseDesignerPage} from "./choosedesigner/choosedesigner";
         DesignerModule,
         DesignerMeModule,
         IonicPageModule.forChild(EmployerTabsPage),
-        EmployerMeModule
+        EmployerMeModule,
+        CustomIconsModule // Add this!
     ],
     exports: [ProjectsPage,
         EmployerModulePage,

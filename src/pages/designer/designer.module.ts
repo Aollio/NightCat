@@ -15,6 +15,7 @@ import {ChatMessagePage} from "./chatmessage/chatmessage";
 import {DesignerMeModule} from "./me/me.module";
 import {CaseDetailPage} from "./me/casedetail/casedetail";
 import {OrderModule} from "../common/order/order.module";
+import {CustomIconsModule} from "ionic2-custom-icons";
 
 @NgModule({
     declarations: [
@@ -44,7 +45,8 @@ import {OrderModule} from "../common/order/order.module";
         DesignerMeModule,
         WalletModule,
         IonicPageModule.forChild(DesignerTabsPage),
-        OrderModule
+        OrderModule,
+        CustomIconsModule // Add this!
     ],
     exports: [
         CommentPage,
