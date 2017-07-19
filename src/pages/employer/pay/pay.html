@@ -6,18 +6,96 @@
     </ion-navbar>
 </ion-header>
 <ion-content>
-    <ion-list radio-group>
+    <ion-row class="process">
+        <ion-col [class.active]="state >= 1">
+            <ion-icon name="ios-checkmark-circle"></ion-icon>
+            <br/>
+            确认订单
+        </ion-col>
+        <!--person的为省略号的图标-->
+        <ion-col [class.active]="state >= 2">
+            <ion-icon *ngIf="state === 2" name="person">
+            </ion-icon>
+            <ion-icon *ngIf="state > 2" name="ios-checkmark-circle">
+            </ion-icon>
+            <br/>
+            支付
+        </ion-col>
+        <ion-col [class.active]="state >= 3">
+            <ion-icon *ngIf="state === 3" name="person">
+            </ion-icon>
+            <ion-icon *ngIf="state > 3" name="ios-checkmark-circle">
+            </ion-icon>
+            <br/>
+            支付成功
+        </ion-col>
+        <ion-col col-3 [class.active]="state >= 4">
+            <ion-icon name="ios-cloud-circle"></ion-icon>
+            <br/>
+            等待设计
+        </ion-col>
+    </ion-row>
+    <div *ngIf="state === 2">
+        <ion-list no-lines padding>
+            <ion-item class="pay-way" (click)="payment('ali')">
+                <ion-label>支付宝支付</ion-label>
+                <ion-icon name="star" item-start></ion-icon>
+                <ion-icon *ngIf="pay === 'ali'" name="ios-checkmark-circle-outline" item-end></ion-icon>
+                <ion-icon *ngIf="pay != 'ali'" name="ios-square-outline" item-end></ion-icon>
+            </ion-item>
+            <ion-item class="pay-way" (click)="payment('wechat')">
+                <ion-label>微信支付</ion-label>
+                <ion-icon name="star" item-start></ion-icon>
+                <ion-icon *ngIf="pay === 'wechat'" name="ios-checkmark-circle-outline" item-end></ion-icon>
+                <ion-icon *ngIf="pay != 'wechat'" name="ios-square-outline" item-end></ion-icon>
+
+            </ion-item>
+            <ion-item class="pay-way" (click)="payment('bankcard')">
+                <ion-label>银行卡支付</ion-label>
+                <ion-icon name="star" item-start></ion-icon>
+                <ion-icon *ngIf="pay === 'bankcard'" name="ios-checkmark-circle-outline" item-end></ion-icon>
+                <ion-icon *ngIf="pay != 'bankcard'" name="ios-square-outline" item-end></ion-icon>
+            </ion-item>
+        </ion-list>
+
+        <button ion-button class="confirmbutton constract" (click)="comfirm_payment()">确&nbsp;定</button>
+    </div>
+
+    <div *ngIf="state === 3">
         <ion-item>
-            <ion-label>支付宝支付</ion-label>
-            <ion-radio checked="true" value="lipay"></ion-radio>
+            <ion-label>订单信息</ion-label>
+            <ion-label>订单名称</ion-label>
         </ion-item>
+
         <ion-item>
-            <ion-label>微信支付</ion-label>
-            <ion-radio value="WeChatPay"></ion-radio>
+            <ion-label>账号</ion-label>
+            <ion-label class="item-content">18666666666</ion-label>
         </ion-item>
+
         <ion-item>
-            <ion-label>银行卡支付</ion-label>
-            <ion-radio value="BankCardPay"></ion-radio>
+            <ion-label>付款方式</ion-label>
+            <ion-label class="item-content">支付宝</ion-label>
         </ion-item>
-    </ion-list>
+
+        <ion-item>
+            <ion-label>需付款</ion-label>
+            <ion-label class="item-content pay-money-amount">2000元</ion-label>
+        </ion-item>
+        <button ion-button class="confirmbutton constract" (click)="comfirm_paymoney()">确认付款</button>
+    </div>
+
+    <div *ngIf="state === 4">
+        <div class="finish-content">
+            <div class="only-center-text">
+                <div>
+                    <ion-icon class="finfish-icon" name="ios-checkmark-circle-outline"></ion-icon>
+                </div>
+                <p class="finish_desc">支付完成<br>
+                    期待设计师完成作品
+                </p>
+            </div>
+        </div>
+        <button ion-button class="confirmbutton" navPop>确&nbsp;定</button>
+
+    </div>
 </ion-content>

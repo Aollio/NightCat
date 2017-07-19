@@ -1,3 +1,81 @@
-page-pay{
+page-pay {
 
+  .process {
+    height: 20%;
+    width: 100%;
+    display: inline-flex;
+    background-color: whitesmoke;
+  }
+
+  .active {
+    color: $emp-primary !important;
+  }
+
+  .process ion-col {
+    margin: auto;
+    text-align: center;
+    font-size: 1em;
+    color: #9E9E9E;
+  }
+
+  .process ion-col ion-icon {
+    font-size: 2.5em;
+    margin-bottom: .2em;
+  }
+
+  .pay-way {
+    border-bottom: 2px solid whitesmoke !important;
+  }
+
+  .confirmbutton {
+    margin-left: 15%;
+    //margin-right: 25%;
+    width: 70%;
+    height: auto;
+    color: $emp_primary;
+    font-size: 1.2em;
+    background-color: white;
+    border: 1px solid;
+    margin-top: 2em;
+    padding-top: .7em;
+    padding-bottom: .7em;
+    border-radius: 0 !important;
+  }
+
+  .constract {
+    color: white;
+    background-color: $emp-primary;
+  }
+
+  .item-row {
+    width: 100%;
+  }
+
+  .item-title {
+    width: auto;
+  }
+
+  .item-content {
+    text-align: right;
+  }
+
+  .pay-money-amount {
+    font-size: 1.5em !important;
+
+  }
+
+  .only-center-text {
+    margin: auto;
+    padding-top: 40%;
+    text-align: center;
+  }
+
+  .finish_desc{
+    font-size: 1.5em;
+  }
+
+  .finfish-icon {
+    color: #32db64;
+    font-size: 6em;
+  }
 }
