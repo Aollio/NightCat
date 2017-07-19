@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import { NavController, NavParams, Platform, ToastController} from 'ionic-angular';
+import {NavController, NavParams, Platform, ToastController} from 'ionic-angular';
 import {LoginPage} from "../common/login/login";
 import {OrderDetailPage} from "../common/order/orderdetail/orderdetail"
 import {OrderListComponent} from "../designer/orderlist/orderlist";
@@ -20,6 +20,9 @@ import {NetworkService} from "../../service/network.service";
 import {PayPage} from "../employer/pay/pay";
 import {CommentOrderPage} from "../common/order/comment-order/comment-order";
 import {ChooseDesignerPage} from "../employer/choosedesigner/choosedesigner";
+import {DesignerTabsPage} from "../designer/tabs/tabs";
+import {SharedService} from "../../service/share.service";
+import {EmployerTabsPage} from "../employer/tabs/tabs";
 
 @Component({
     selector: 'page-welcome',
@@ -51,17 +54,18 @@ export class WelcomePage {
     addhonor: any = AddHonorPage;
     casedetail: any = CaseDetailPage;
     paypage: any = PayPage;
-    choosedesigner:any=ChooseDesignerPage;
+    choosedesigner: any = ChooseDesignerPage;
     projectsPage: any = ProjectsPage;
     list: any = BlankPage;
 
-    commentOrderPage:any = CommentOrderPage;
+    commentOrderPage: any = CommentOrderPage;
 
 
     constructor(public navCtrl: NavController, public navParams: NavParams,
                 public platform: Platform,
                 public toastCtrl: ToastController,
-                public http: NetworkService) {
+                public http: NetworkService,
+                public shared: SharedService) {
 
 
     }
@@ -126,6 +130,16 @@ export class WelcomePage {
         this.navCtrl.push(page, option)
     }
 
+
+    openEmployer() {
+        this.shared.isDesigner = false;
+        this.navCtrl.push(EmployerModulePage, {})
+    }
+
+    openDesigner() {
+        this.shared.isDesigner = true;
+        this.navCtrl.push(DesignerModulePage, {});
+    }
 
     /**
      * 打开登录/注册页面

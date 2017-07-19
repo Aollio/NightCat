@@ -9,28 +9,11 @@
 
 
     <div class="type-buttons">
-        <button ion-button clear class="type-btn" (click)="select('type')">所有分类
-            <!--<ion-select [(ngModel)]="gaming" selectedText=" " interface="popover">-->
-                <!--<ion-option value="n64">建筑设计</ion-option>-->
-                <!--<ion-option value="ps">人文设计</ion-option>-->
-                <!--<ion-option value="genesis">Logo</ion-option>-->
-            <!--</ion-select>-->
-            <!--<ion-icon name="ios-arrow-down"></ion-icon>-->
+        <button ion-button clear class="type-btn" (click)="selectType()">所有分类
         </button>
-        <button ion-button class="type-btn" (click)="select('filter')">筛选&nbsp;
-            <ion-select [(ngModel)]="gaming" interface="popover">
-                <ion-option value="nes">类型</ion-option>
-                <ion-option value="sne3s">价格</ion-option>
-                <ion-option value="sne2s">热度</ion-option>
-            </ion-select>
-            <!--<ion-icon name="ios-arrow-down"></ion-icon>-->
+        <button ion-button clear class="type-btn" (click)="selectFilter()">筛选&nbsp;
         </button>
-        <button ion-button class="type-btn" (click)="select('sort')">排序&nbsp;
-            <ion-select [(ngModel)]="gaming" interface="popover">
-                <ion-option value="nes">价格从高到低</ion-option>
-                <ion-option value="ness">价格从低到高</ion-option>
-            </ion-select>
-            <!--<ion-icon name="ios-arrow-down"></ion-icon>-->
+        <button ion-button clear class="type-btn" (click)="selectSort()">排序&nbsp;
         </button>
     </div>
     <com-orderlist></com-orderlist>
