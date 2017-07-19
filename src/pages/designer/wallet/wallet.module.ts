@@ -3,6 +3,7 @@ import {DesignerWalletPage} from "./wallet";
 import {IonicModule, IonicPageModule} from "ionic-angular";
 import {ConsumeDetail} from "./consumedetail/consumedetail";
 import {DesignerWithDrawPage} from "./withdraw/withdraw";
+import {CustomIconsModule} from "ionic2-custom-icons";
 
 @NgModule({
     declarations: [
@@ -16,7 +17,9 @@ import {DesignerWithDrawPage} from "./withdraw/withdraw";
         DesignerWithDrawPage
     ],
     exports: [DesignerWalletPage],
-    imports: [IonicPageModule.forChild(DesignerWalletPage)]
+    imports: [IonicPageModule.forChild(DesignerWalletPage),
+        CustomIconsModule // Add this!
+     ]
 })
 export class WalletModule {
 }
