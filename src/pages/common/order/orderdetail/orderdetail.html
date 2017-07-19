@@ -121,10 +121,10 @@
 
 </ion-content>
 
-<ion-footer class="footer-btns" *ngIf="role === 'designer'">
-    <button class="footer-clear-btn" clear ion-button color="primary" icon-start style="width: 50%">
-        <ion-icon name="ios-star-outline"></ion-icon>
-        <!--<ion-icon name="ios-star"></ion-icon>-->
+<ion-footer class="footer-btns" *ngIf="isDesigner">
+    <button class="footer-clear-btn" clear ion-button color="primary" (click)="collect()" icon-start style="width: 50%">
+        <ion-icon name="ios-star-outline"  *ngIf="collectstate===0"></ion-icon>
+        <ion-icon name="ios-star"*ngIf="collectstate===1" class="order-state"></ion-icon>
         收藏
     </button>
     <button class="footer-clear-btn" clear ion-button color="primary" icon-start style="width: 50%">
@@ -135,7 +135,7 @@
 
 </ion-footer>
 
-<ion-footer class="footer-btns" *ngIf="role === 'employer'">
+<ion-footer class="footer-btns" *ngIf="!isDesigner">
 
     <button ion-button color="emp-primary" style="width: 30%!important;">支付</button>
 

@@ -19,7 +19,7 @@ page-slidemenu {
   }
 
   .employer {
-    color: map_get($colors, nav-emp-bg) !important;
+    color: $emp_primary !important;
   }
 
   .exitbtn{
@@ -32,5 +32,9 @@ page-slidemenu {
     justify-content:flex-start;
     -webkit-justify-content:flex-start;
 
+  }
+  .icon{
+    padding-left: -10%;
+    padding-right: 10%;
   }
 }
