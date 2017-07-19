@@ -15,9 +15,14 @@ import {DesignerMeModule} from "../designer/me/me.module";
 import {PublishTaskPage} from "./publishtask/publishtask";
 import {CommentOrderPage} from "./order/comment-order/comment-order";
 import {OrderModule} from "./order/order.module";
+import {CustomIconsModule} from "ionic2-custom-icons";
 
 @NgModule({
-    imports: [IonicPageModule.forChild(CommonModulePage), SecurityCenterModule, DesignerMeModule,OrderModule],
+    imports: [IonicPageModule.forChild(CommonModulePage),
+        SecurityCenterModule,
+        DesignerMeModule,OrderModule,
+        CustomIconsModule // Add this!
+    ],
     declarations: [
         CommonModulePage,
         SlideMenuComponment,
