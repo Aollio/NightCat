@@ -1,9 +1,6 @@
 page-casedetail {
   ion-card {
-    margin-bottom: 0em !important;
-    margin-top: 0em !important;
-    margin-left: 0em !important;
-    margin-right: 0em !important;
+    margin: 0em !important;
     width: 100% !important;
   }
 
@@ -11,12 +8,24 @@ page-casedetail {
     //float: right;
   }
 
+  .comment-item{
+    border-bottom: 1px solid #d6d6d6 !important;
+  }
+
+  .comment-container {
+    font-size: .9em;
+  }
+
+  .comment-avatar-title {
+    display: inline-flex;
+  }
+
   .comment-avatar {
-    width: 1em !important;
+    //width: 1em !important;
     height: 1em !important;
-    max-width: 1em !important; //any size
+    //max-width: 1em !important; //any size
     max-height: 1em !important; //any size
-    min-width: 1em !important;
+    //min-width: 1em !important;
     min-height: 1em !important;
   }
   .comment-avatar img {
@@ -24,13 +33,43 @@ page-casedetail {
     height: 100% !important;
     max-width: 1em !important; //any size
     max-height: 1em !important; //any size
+    margin: auto;
+    margin-right: 0 !important;
+    text-align: center;
   }
 
-  .omment-content {
-
+  .comment-title {
+    vertical-align: middle;
+    margin: auto;
+    text-align: center;
+    font-weight: 500;
   }
 
-  .comment-timebefore {
+  .comment-content {
+  color: #484848;
+  }
 
+
+  .comment-content-bottom{
+    display: inline-flex;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+  }
+
+  .comment-time{
+    color: gray;
+    padding-top: .3em;
+    font-size: .8em;
+    width: 40%;
+    margin-right: 0em;
+    margin-left: 0em;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: left;
+  }
+
+  .comment-content-bottom ion-buttons{
+    width: 60%;
   }
 }
