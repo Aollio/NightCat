@@ -18,6 +18,7 @@ import {PublishTaskMiddleWarePage} from "./publish-task-middleware/publish-task-
 import {ChooseDesignerPage} from "./choosedesigner/choosedesigner";
 import {CustomIconsModule} from "ionic2-custom-icons";
 import {SearchDesignerPage} from "./searchdesigner/searchdesigner";
+import {RecommendDesignerPage} from "./recommenddesigner/recommenddesigner";
 
 @NgModule({
     declarations: [
@@ -34,7 +35,8 @@ import {SearchDesignerPage} from "./searchdesigner/searchdesigner";
         MiddleWarePage,
         PublishTaskMiddleWarePage,
         ChooseDesignerPage,
-        SearchDesignerPage
+        SearchDesignerPage,
+        RecommendDesignerPage
     ],
     entryComponents: [
         EmployerTabsPage,
@@ -50,7 +52,8 @@ import {SearchDesignerPage} from "./searchdesigner/searchdesigner";
         MiddleWarePage,
         PublishTaskMiddleWarePage,
         ChooseDesignerPage,
-        SearchDesignerPage
+        SearchDesignerPage,
+        RecommendDesignerPage
     ],
     imports: [
         CommonPageModule,

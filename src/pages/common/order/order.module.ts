@@ -4,6 +4,7 @@ import {OrderDetailPage} from "./orderdetail/orderdetail";
 import {OrderProcessDetailPage} from "./orderprocess/orderprocess";
 import {CommentOrderPage} from "./comment-order/comment-order";
 import {CustomIconsModule} from "ionic2-custom-icons";
+import {EmployerModule} from "../../employer/employer.module";
 
 @NgModule({
     declarations: [
@@ -18,7 +19,7 @@ import {CustomIconsModule} from "ionic2-custom-icons";
     ],
     imports: [
         IonicPageModule.forChild(OrderDetailPage),
-        CustomIconsModule // Add this!
+        CustomIconsModule, // Add this!
     ],
     exports: [
         OrderDetailPage, CommentOrderPage

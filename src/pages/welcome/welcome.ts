@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import { NavController, NavParams, Platform, ToastController} from 'ionic-angular';
+import {NavController, NavParams, Platform, ToastController} from 'ionic-angular';
 import {LoginPage} from "../common/login/login";
 import {OrderDetailPage} from "../common/order/orderdetail/orderdetail"
 import {OrderListComponent} from "../designer/orderlist/orderlist";
@@ -55,17 +55,18 @@ export class WelcomePage {
     addhonor: any = AddHonorPage;
     casedetail: any = CaseDetailPage;
     paypage: any = PayPage;
-    choosedesigner:any=ChooseDesignerPage;
+    choosedesigner: any = ChooseDesignerPage;
     projectsPage: any = ProjectsPage;
     list: any = BlankPage;
     searchdesigner: any = SearchDesignerPage;
-    commentOrderPage:any = CommentOrderPage;
+    commentOrderPage: any = CommentOrderPage;
 
 
     constructor(public navCtrl: NavController, public navParams: NavParams,
                 public platform: Platform,
                 public toastCtrl: ToastController,
-                public http: NetworkService) {
+                public http: NetworkService,
+                public shared: SharedService) {
 
 
     }

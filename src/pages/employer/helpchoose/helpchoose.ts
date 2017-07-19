@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {NavController, NavParams} from "ionic-angular";
 import {EmployerTabsPage} from "../tabs/tabs";
 import {Tabs} from "ionic-angular/navigation/nav-interfaces";
+import {RecommendDesignerPage} from "../recommenddesigner/recommenddesigner";
 
 @Component({
     templateUrl: 'helpchoose.html',
@@ -58,7 +59,7 @@ export class HelpChoosePage {
     nextOrFinish() {
         this.state++;
         if (this.state > 3) {
-            this.navCtrl.pop();
+            this.navCtrl.push(RecommendDesignerPage);
         }
     }
 

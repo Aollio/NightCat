@@ -4,6 +4,8 @@ import {OrderProcessDetailPage} from "../orderprocess/orderprocess";
 import {SharedService} from "../../../../service/share.service";
 import {AbsCommonPage} from "../../abs";
 import {DesignerMeDetailPage} from "../../../designer/me/medetail/medetail";
+import {PayPage} from "../../../employer/pay/pay";
+import {CommentOrderPage} from "../comment-order/comment-order";
 
 /*
  * 订单详情
@@ -18,6 +20,8 @@ export class OrderDetailPage extends AbsCommonPage {
     order_id: string;
     isDesigner: boolean;
     collectstate: any = 0;
+    pay:any=PayPage;
+    commentorder:any=CommentOrderPage;
     orderProcessDetail: any = OrderProcessDetailPage;
 
     /**
