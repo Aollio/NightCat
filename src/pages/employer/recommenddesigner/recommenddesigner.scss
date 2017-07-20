@@ -143,4 +143,33 @@ page-recommenddesigner{
     padding-right: 1em;
     color: $emp_primary;
   }
+  .des-card-middiv {
+    height: 10%;
+  }
+  .des-card-name {
+    float: left;
+    color: #C13638;
+    font-size: 1.2em;
+  }
+  .des-card-time {
+    float: right;
+    color: #F45D07;
+    font-size: 1.2em;
+  }
+  .avatar-icon-div ion-icon {
+    float: right;
+  }
+  .avatar-icon-div {
+    position: absolute;
+    font-size: 2em;
+    width: 85%;
+    color: $emp_primary;
+  }
+  .des-card-short {
+    width: 90%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 1em;
+  }
 }
