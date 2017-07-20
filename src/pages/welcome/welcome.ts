@@ -24,6 +24,7 @@ import {DesignerTabsPage} from "../designer/tabs/tabs";
 import {SharedService} from "../../service/share.service";
 import {EmployerTabsPage} from "../employer/tabs/tabs";
 
+
 @Component({
     selector: 'page-welcome',
     templateUrl: 'welcome.html',
