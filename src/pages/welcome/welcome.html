@@ -8,21 +8,64 @@
 
 <ion-content padding>
 
-    <button ion-button (click)="open(designerLogin,{role:'designer'})" full>我是设计师-登录</button>
-    <button ion-button (click)="open(employerLogin,{role:'employer'})" full>我是雇主-登录</button>
-    <button ion-button (click)="openDesigner()" full>设计师主页</button>
-    <button ion-button (click)="openEmployer()" full>雇主主页</button>
-    <button ion-button (click)="open(addcase)" full>添加案例</button>
-    <button ion-button (click)="open(addhonor)" full>添加荣誉</button>
-    <button ion-button (click)="open(list)" full>空白页</button>
-    <button ion-button (click)="open(commentOrderPage)" full>评论订单</button>
-    <button ion-button (click)="open(paypage)" full>支付</button>
-    <button ion-button (click)="open(choosedesigner)" full>选择设计师</button>
-    <button ion-button (click)="open(searchdesigner)" full>搜索设计师</button>
 
 
-    <button ion-button color="green" full (click)="getTest()">NetworkGet</button>
-    <button ion-button color="green" full (click)="postTest()">NetworkPost</button>
-    <button ion-button color="green" full (click)="aaabbb()">NetworkPost</button>
+    <div class="tutorial-page" *ngIf="state===1">
+        <ion-slides pager>
+            <ion-slide *ngFor="let slide of slides">
+                <ion-toolbar>
+                    <ion-buttons end>
+                        <button ion-button color="primary" (click)="enterwelcome()">跳过</button>
+                    </ion-buttons>
+                </ion-toolbar>
+                <img [src]="slide" class="slide-image"/>
+            </ion-slide>
+            <ion-slide class="end-class">
+
+
+                <button  class="enterbutton" (click)="enterwelcome()">
+                    进入主页
+                </button>
+            </ion-slide>
+        </ion-slides>
+    </div>
+
+<div class="welcome-page" *ngIf="state===2">
+    <div class="logo">
+        <img src="assets/img/symbol.png"/>
+        <div>
+            夜&nbsp;猫
+        </div>
+
+    </div>
+
+    <button ion-button class="empbutton"
+            (click)="open(designerLogin,{role:'employer'})"
+            round >
+        以雇主的身份开始  </button><br>
+    <div class="or">or</div>
+    <button ion-button class="desbutton"
+            (click)="open(employerLogin,{role:'designer'})"
+            round >
+        以设计师的身份开始</button>
+    <div class="login">已经拥有一个账号？</div>
+    <div class="tip">随着您注册账户的成功，即表示您已经同意并阅读了我们公司的安全协议及条款
+    </div>
+    <!--<button ion-button (click)="openDesigner()" full>设计师主页</button>-->
+    <!--<button ion-button (click)="openEmployer()" full>雇主主页</button>-->
+    <!--<button ion-button (click)="open(addcase)" full>添加案例</button>-->
+    <!--<button ion-button (click)="open(addhonor)" full>添加荣誉</button>-->
+    <!--<button ion-button (click)="open(list)" full>空白页</button>-->
+    <!--<button ion-button (click)="open(commentOrderPage)" full>评论订单</button>-->
+    <!--<button ion-button (click)="open(paypage)" full>支付</button>-->
+    <!--<button ion-button (click)="open(choosedesigner)" full>选择设计师</button>-->
+    <!--<button ion-button (click)="open(searchdesigner)" full>搜索设计师</button>-->
+
+
+    <!--<button ion-button color="green" full (click)="getTest()">NetworkGet</button>-->
+    <!--<button ion-button color="green" full (click)="postTest()">NetworkPost</button>-->
+    <!--<button ion-button color="green" full (click)="aaabbb()">NetworkPost</button>-->
+
+</div>
 
 </ion-content>

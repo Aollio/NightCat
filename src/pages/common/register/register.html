@@ -1,12 +1,54 @@
-<ion-content >
+<ion-content *ngIf="state===0" class="ion-content-class">
+
+    <div class="null-only-height">欢迎来夜猫</div>
+
+    <form class="myInput">
+        <div class="name">
+            <input type="text" placeholder="请输入账号">
+        </div>
+        <div class="password">
+            <div><input type="password" placeholder="请输入密码"></div>
+        </div>
+
+    </form>
+    <button ion-button round class="login-btn" (click)="login()">注册</button>
+
+</ion-content>
+<ion-content  *ngIf="state===1">
+<div class="welcome-page">
+    <div class="logo">
+        <img src="assets/img/symbol.png"/>
+        <div>
+            夜&nbsp;猫
+        </div>
+
+    </div>
+
+    <button ion-button class="completebutton"
+
+            round>
+        完善您的个人资料
+    </button>
+    <br>
+    <div class="or">or</div>
+    <button ion-button class="desbutton"
+
+            round>
+        注册成为夜猫会员
+    </button>
+</div>
+
+</ion-content>
+
+<ion-content *ngIf="state===5">
+
+
     <ion-item class="header-bar-color">
         <div class="person-div">
             <ion-icon class="person-class"
                       name="ios-person" item-start padding-left="2em"></ion-icon>
         </div>
     </ion-item>
-
-
     <div class="register-form">
         <ion-item no-lines>
             <ion-label class="form-label" stacked>基本资料</ion-label>

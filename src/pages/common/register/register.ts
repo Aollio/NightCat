@@ -9,7 +9,7 @@ import {SharedService} from "../../../service/share.service";
     templateUrl: 'register.html',
 })
 export class RegisterPage {
-
+    state:any=0;
     isDesigner: boolean = true;
 
 
@@ -26,5 +26,9 @@ export class RegisterPage {
     openLoginPage() {
         this.navCtrl.push(LoginPage);
     }
+    login(){
+        this.state=1;
+    }
+
 
 }

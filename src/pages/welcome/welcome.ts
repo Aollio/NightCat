@@ -33,6 +33,7 @@ import {SearchDesignerPage} from "../employer/searchdesigner/searchdesigner";
 export class WelcomePage {
 
     rootPage: any;
+    state:any=1;
 
 
     /**
@@ -152,5 +153,14 @@ export class WelcomePage {
         })
     }
 
+    slides = [
+        "assets/img/Walkthrough_1.png",
+        "assets/img/Walkthrough_2.png",
+        "assets/img/Walkthrough_3.png",
+        "assets/img/Walkthrough_4.png"
+    ];
 
+    enterwelcome(){
+        this.state=2;
+    }
 }
