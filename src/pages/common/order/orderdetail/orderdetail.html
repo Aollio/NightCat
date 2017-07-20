@@ -137,6 +137,8 @@
 
 <ion-footer class="footer-btns" *ngIf="!isDesigner">
 
-    <button ion-button color="emp-primary" style="width: 30%!important;">支付</button>
+    <button ion-button color="emp-primary" (click)="open(pay)" style="width: 30%!important;">支付</button>
+    <button ion-button color="emp-primary" (click)="open(commentorder)" style="width: 30%!important;">确认结单</button>
+    <button ion-button color="emp-primary"  style="width: 30%!important;">延时接单</button>
 
 </ion-footer>

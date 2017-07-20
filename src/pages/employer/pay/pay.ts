@@ -4,7 +4,7 @@ import {Component} from "@angular/core";
     templateUrl: 'pay.html',
     selector: 'page-pay'
 })
-export class PayPage {
+export class PayPage{
 
 
     state: number = 2

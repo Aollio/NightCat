@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-navbar color="emp-primary">
+        <!--<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>-->
+        <ion-title>推荐设计师</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-grid class="designer-list-grid">
+        <ion-row>
+            <ion-col *ngFor="let desitem of desarray; let i=index"
+                     col-4 class="des-card" text-center
+                     (click)="selectDesigner(desitem,i)">
+                <div class="des-card-avatar">
+                    <div class="avatar-icon-div">
+                        <ion-icon *ngIf="selected_index === i" name="ios-checkmark-circle"></ion-icon>
+                        <ion-icon *ngIf="selected_index != i" name="ios-checkmark-circle-outline"></ion-icon>
+                    </div>
+                    <img class="des-card-img" src="{{desitem.avatar}}">
+                </div>
+                <div class="des-card-middiv">
+                    <span class="des-card-name">{{desitem.name}}</span>
+                    <span class="des-card-time">{{desitem.time}}</span>
+                </div>
+                <div class="des-card-short">
+                    {{desitem.describe}}
+                </div>
+            </ion-col>
+        </ion-row>
+        <!--</ion-row>-->
+    </ion-grid>
+</ion-content>

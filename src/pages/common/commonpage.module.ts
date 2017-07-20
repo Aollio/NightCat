@@ -20,7 +20,9 @@ import {CustomIconsModule} from "ionic2-custom-icons";
 @NgModule({
     imports: [IonicPageModule.forChild(CommonModulePage),
         SecurityCenterModule,
-        DesignerMeModule,OrderModule,
+        DesignerMeModule,
+        OrderModule,
+
         CustomIconsModule // Add this!
     ],
     declarations: [

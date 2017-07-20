@@ -17,6 +17,8 @@ import {MiddleWarePage} from "./helpchoose/middleware/middleware";
 import {PublishTaskMiddleWarePage} from "./publish-task-middleware/publish-task-middleware";
 import {ChooseDesignerPage} from "./choosedesigner/choosedesigner";
 import {CustomIconsModule} from "ionic2-custom-icons";
+import {SearchDesignerPage} from "./searchdesigner/searchdesigner";
+import {RecommendDesignerPage} from "./recommenddesigner/recommenddesigner";
 
 @NgModule({
     declarations: [
@@ -32,7 +34,9 @@ import {CustomIconsModule} from "ionic2-custom-icons";
         EmpOrderListComponent,
         MiddleWarePage,
         PublishTaskMiddleWarePage,
-        ChooseDesignerPage
+        ChooseDesignerPage,
+        SearchDesignerPage,
+        RecommendDesignerPage
     ],
     entryComponents: [
         EmployerTabsPage,
@@ -47,7 +51,9 @@ import {CustomIconsModule} from "ionic2-custom-icons";
         EmpOrderListComponent,
         MiddleWarePage,
         PublishTaskMiddleWarePage,
-        ChooseDesignerPage
+        ChooseDesignerPage,
+        SearchDesignerPage,
+        RecommendDesignerPage
     ],
     imports: [
         CommonPageModule,

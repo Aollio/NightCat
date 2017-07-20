@@ -23,6 +23,7 @@ import {ChooseDesignerPage} from "../employer/choosedesigner/choosedesigner";
 import {DesignerTabsPage} from "../designer/tabs/tabs";
 import {SharedService} from "../../service/share.service";
 import {EmployerTabsPage} from "../employer/tabs/tabs";
+import {SearchDesignerPage} from "../employer/searchdesigner/searchdesigner";
 
 
 @Component({
@@ -58,7 +59,7 @@ export class WelcomePage {
     choosedesigner: any = ChooseDesignerPage;
     projectsPage: any = ProjectsPage;
     list: any = BlankPage;
-
+    searchdesigner: any = SearchDesignerPage;
     commentOrderPage: any = CommentOrderPage;
 
 
