@@ -25,6 +25,7 @@ import {SharedService} from "../../service/share.service";
 import {EmployerTabsPage} from "../employer/tabs/tabs";
 import {SearchDesignerPage} from "../employer/searchdesigner/searchdesigner";
 
+
 @Component({
     selector: 'page-welcome',
     templateUrl: 'welcome.html',
