@@ -4,7 +4,7 @@
     <ion-grid class="designer-list-grid">
         <ion-row>
             <ion-col *ngFor="let desitem of desarray; let i=index"
-                     col-6 class="des-card" text-center
+                     col-4 class="des-card" text-center
                      (click)="selectDesigner(desitem,i)">
                 <div class="des-card-avatar">
                     <div class="avatar-icon-div">
@@ -20,11 +20,10 @@
     </ion-grid>
 </ion-content>
 <ion-footer>
-<ion-buttons start>
-    <button ion-button small>确认</button>
-</ion-buttons>
-   <ion-buttons end>
-        <button ion-button small>取消</button>
-   </ion-buttons>
+    <div >
+        <button ion-button small style="float: left">确认</button>
+        <button ion-button small style="float: right">取消</button>
+    </div>
+
 
 </ion-footer>

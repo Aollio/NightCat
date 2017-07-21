@@ -162,6 +162,6 @@ export class WelcomePage {
     ];
 
     enterwelcome(){
-        this.state=2;
+        this.state = 2;
     }
 }
