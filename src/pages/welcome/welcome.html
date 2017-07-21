@@ -40,15 +40,15 @@
     </div>
 
     <button ion-button class="empbutton"
-            (click)="open(designerLogin,{role:'employer'})"
+            (click)="open(register,{role:'employer'})"
             round >
         以雇主的身份开始  </button><br>
     <div class="or">or</div>
     <button ion-button class="desbutton"
-            (click)="open(employerLogin,{role:'designer'})"
+            (click)="open(register,{role:'designer'})"
             round >
-        以设计师的身份开始</button>
-    <div class="login">已经拥有一个账号？</div>
+        以设计师的身份开始</button><br>
+    <a class="login" (click)="open(employerLogin)">已经拥有一个账号？</a>
     <div class="tip">随着您注册账户的成功，即表示您已经同意并阅读了我们公司的安全协议及条款
     </div>
     <!--<button ion-button (click)="openDesigner()" full>设计师主页</button>-->

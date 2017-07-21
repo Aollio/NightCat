@@ -1,25 +1,52 @@
-<ion-content *ngIf="state===0" class="ion-content-class">
+<ion-content *ngIf="state===1" class="ion-content-class">
+
+    <div class="null-only-height">欢迎注册成为夜猫会员</div>
+
+    <form class="myInput">
+        <div class="name">
+            <input type="text" placeholder="请输入昵称">
+        </div>
+        <div class="verify">
+            <button  class="butdiv">
+                获取验证码
+            </button>
+            <input type="text" maxlength="5" placeholder="输入验证码">
+        </div>
+        <div class="password">
+            <div><input type="password" placeholder="请输入密码"></div>
+        </div>
+        <div class="password">
+            <div><input type="password" placeholder="请确认密码"></div>
+        </div>
+    </form>
+    <button ion-button round class="login-btn" (click)="next()">下一步</button>
+
+</ion-content>
+<ion-content *ngIf="state===2" class="ion-content-class">
 
     <div class="null-only-height">欢迎来夜猫</div>
 
     <form class="myInput">
         <div class="name">
-            <input type="text" placeholder="请输入账号">
+            <input type="text" placeholder="请输入昵称">
         </div>
+        <!--todo-->
         <div class="password">
-            <div><input type="password" placeholder="请输入密码"></div>
+            <div><input  (click)="doRadio()" placeholder="选择头像"></div>
         </div>
+
 
     </form>
     <button ion-button round class="login-btn" (click)="login()">注册</button>
 
 </ion-content>
-<ion-content  *ngIf="state===1">
+
+<ion-content  *ngIf="state===3">
 <div class="welcome-page">
     <div class="logo">
-        <img src="assets/img/symbol.png"/>
+        <ion-icon name="ios-checkmark-circle-outline"></ion-icon>
         <div>
-            夜&nbsp;猫
+
         </div>
 
     </div>
@@ -32,15 +59,15 @@
     <br>
     <div class="or">or</div>
     <button ion-button class="desbutton"
-
+            (click)="open()"
             round>
-        注册成为夜猫会员
+        直接进入主页
     </button>
 </div>
 
 </ion-content>
 
-<ion-content *ngIf="state===5">
+<ion-content *ngIf="state===8">
 
 
     <ion-item class="header-bar-color">

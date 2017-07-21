@@ -35,7 +35,7 @@ com-popver {
   .select-ios .select-icon {
     position: relative;
 
-    width: 12px;
+    width: 18px;
     height: 18px;
   }
 
@@ -45,8 +45,8 @@ com-popver {
 
     position: absolute;
 
-    width: 0;
-    height: 0;
+    width: 10px;
+    height: 10px;
 
     border-top: 5px solid;
     border-right: 5px solid transparent;
@@ -56,4 +56,57 @@ com-popver {
     pointer-events: none;
   }
 
+
+  $grid-font-color: #292929;
+
+  .designer-list-grid {
+    color: $grid-font-color;
+    //width: 100px;
+    height: 120px;
+  }
+
+  .des-card {
+    padding: .5em;
+    height: auto;
+  }
+  .des-card-avatar {
+    height: auto;
+    max-height: 10em;
+  }
+
+  .des-card-img{
+    max-height: 100%;
+  }
+
+  .avatar-icon-div {
+    position: absolute;
+    font-size: 1em;
+    width: 85%;
+    color: $emp_primary;
+  }
+
+  .avatar-icon-div ion-icon {
+    float: right;
+  }
+
+  .des-card-middiv {
+    height: 10%;
+  }
+  .des-card-name {
+    float: left;
+    color: #C13638;
+    font-size: 1.2em;
+  }
+  .des-card-time {
+    float: right;
+    color: #F45D07;
+    font-size: 1.2em;
+  }
+  .des-card-short {
+    width: 90%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 1em;
+  }
 }

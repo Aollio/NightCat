@@ -24,6 +24,7 @@ import {DesignerTabsPage} from "../designer/tabs/tabs";
 import {SharedService} from "../../service/share.service";
 import {EmployerTabsPage} from "../employer/tabs/tabs";
 import {SearchDesignerPage} from "../employer/searchdesigner/searchdesigner";
+import {RegisterPage} from "../common/register/register";
 
 
 @Component({
@@ -34,7 +35,7 @@ export class WelcomePage {
 
     rootPage: any;
     state:any=1;
-
+    register: any = RegisterPage;
 
     /**
      * 这是主页的快速入口，用于开发

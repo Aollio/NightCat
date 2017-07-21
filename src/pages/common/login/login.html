@@ -4,13 +4,14 @@
 
     <form class="myInput">
         <div class="name">
-            <input type="text" placeholder="请输入账号">
+            <input type="text" [(ngModel)] ="user.phone" [ngModelOptions]="{standalone: true}" placeholder="请输入账号">
         </div>
         <div class="password">
-            <div><input type="password" placeholder="请输入密码"></div>
             <div class="icondiv">
-                <custom-icon set="cat" name="my-add"></custom-icon>
+            <custom-icon set="cat" name="my-add"></custom-icon>
             </div>
+            <div><input type="password" [(ngModel)] ="user.password"  [ngModelOptions]="{standalone: true}"placeholder="请输入密码"></div>
+
 
         </div>
 
