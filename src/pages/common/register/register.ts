@@ -24,11 +24,11 @@ export class RegisterPage {
                 public alerCtrl: AlertController,
                 public popoverCtrl: PopoverController) {
         this.role = navParams.get('role');
-        if (this.role == 'designer') {
-            this.navCtrl.setRoot(DesignerModulePage)
-        } else {
-            this.navCtrl.setRoot(EmployerModulePage)
-        }
+        // if (this.role == 'designer') {
+        //     this.navCtrl.setRoot(DesignerModulePage)
+        // } else {
+        //     this.navCtrl.setRoot(EmployerModulePage)
+        // }
     }
 
     ionViewDidLoad() {
