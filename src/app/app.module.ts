@@ -20,20 +20,25 @@ import {HTTP} from "@ionic-native/http";
 import {Http, HttpModule} from "@angular/http";
 import {PopoverPage} from "../pages/popver/popver";
 import {CustomIconsModule} from 'ionic2-custom-icons';
+import {ImService} from "../service/im/service.im";
+import {ImModule} from "../pages/im/im.module";
+import {IMPage} from "../pages/im/im";
+import {Util} from "../service/util";
 
 @NgModule({
     declarations: [
         MyApp,
         WelcomePage,
         BlankPage,
-        PopoverPage
+        PopoverPage,
     ],
     entryComponents: [
         WelcomePage,
         BlankPage,
-        PopoverPage
+        PopoverPage,
     ],
     imports: [
+        ImModule,
         HttpModule,
         BrowserModule,
         FormsModule,
@@ -52,6 +57,8 @@ import {CustomIconsModule} from 'ionic2-custom-icons';
     bootstrap: [IonicApp],
 
     providers: [
+        ImService,
+        Util,
         HttpUrls,
         NetworkService,
         SharedService,

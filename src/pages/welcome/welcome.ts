@@ -23,8 +23,12 @@ import {ChooseDesignerPage} from "../employer/choosedesigner/choosedesigner";
 import {DesignerTabsPage} from "../designer/tabs/tabs";
 import {SharedService} from "../../service/share.service";
 import {EmployerTabsPage} from "../employer/tabs/tabs";
-import {SearchDesignerPage} from "../employer/searchdesigner/searchdesigner";
+import {ImService} from "../../service/im/service.im";
+import {IMPage} from "../im/im";
+import {ChatPage} from "../im/chat/chat";
+import {State} from "../../service/im/state.im";
 
+declare let Student: any;
 
 @Component({
     selector: 'page-welcome',
@@ -41,11 +45,14 @@ export class WelcomePage {
     orderDetailPage: any = OrderDetailPage;
     orderListComponent: any = OrderListComponent;
 
-    employerHome: any = EmployerModulePage;
+
     employerLogin: any = LoginPage;
     designerLogin: any = LoginPage;
 
     designerHome: any = DesignerModulePage;
+    employerHome: any = EmployerModulePage;
+
+
     pulishtaskPage: any = PublishTaskPage;
     designerWalletPage: any = DesignerWalletPage;
     taskSquarePage: any = TaskSquarePage;
@@ -59,7 +66,7 @@ export class WelcomePage {
     choosedesigner: any = ChooseDesignerPage;
     projectsPage: any = ProjectsPage;
     list: any = BlankPage;
-    searchdesigner: any = SearchDesignerPage;
+
     commentOrderPage: any = CommentOrderPage;
 
 
@@ -67,9 +74,30 @@ export class WelcomePage {
                 public platform: Platform,
                 public toastCtrl: ToastController,
                 public http: NetworkService,
-                public shared: SharedService) {
+                public shared: SharedService,
+                public im: ImService) {
 
 
+    }
+
+    openChat() {
+        this.navCtrl.push(ChatPage, {})
+    }
+
+    openMsgs() {
+        this.navCtrl.push(IMPage, {})
+    }
+
+    customBtn() {
+        // this.im.initializeNim();
+        State.INSTANCE.getUserByAccount('12')
+            .then(user => console.log(user))
+            .catch(error => console.log(error))
+    }
+
+    closeNim() {
+        console.log('close Nim')
+        this.im.closeNim()
     }
 
 

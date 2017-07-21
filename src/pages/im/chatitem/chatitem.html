@@ -1,0 +1,30 @@
+<li class="u-msg"
+    [class.item-me]="msg.flow==='out'"
+    [class.item-you]="msg.flow==='in'"
+    [class.item-time]="msg.type==='timeTag'"
+    [class.item-tip]="msg.type==='tip'"
+    [class.session-chat]="type==='session'"
+>
+    <div *ngIf="msg.type==='timeTag'">---- {{ msg.showText }} ----</div>
+    <div *ngIf="msg.type==='tip'" class="tip">{{ msg.showText }}</div>
+    <div
+            *ngIf="msg.flow === 'in' || msg.flow === 'out'">
+        <!--:idClient="msg.idClient"-->
+
+        <a class="msg-head" *ngIf="msg.avatar" [href]="msg.link">
+            <img [src]="msg.avatar">
+        </a>
+        <p class="msg-user" *ngIf="msg.type!=='notification'">
+            <em>{{ msg.showTime }}</em>{{ msg.from }}</p>
+
+        <span *ngIf="msg.type === 'text'" class="msg-text">{{ msg.showText }}</span>
+        <span *ngIf="msg.type==='image'" class="msg-text" ref="mediaMsg">
+              <!--@click.stop="showFullImg(msg.originLink)">-->
+        </span>
+        <!--<span v-else-if="msg.type==='file'" class="msg-text"><a :href="msg.fileLink" target="_blank"><i-->
+        <!--class="u-icon icon-file"></i>{{msg.showText}}</a></span>-->
+        <span v-else-if="msg.type==='notification'" class="msg-text notify">{{msg.showText}}</span>
+        <span v-else class="msg-text" v-html="msg.showText"></span>
+        <span v-if="msg.status==='fail'" class="msg-failed"><i class="weui-icon-warn"></i></span>
+    </div>
+</li>

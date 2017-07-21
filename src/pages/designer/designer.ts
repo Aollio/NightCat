@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import {IonicPage, Platform} from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, Platform} from 'ionic-angular';
+import {StatusBar} from '@ionic-native/status-bar';
+import {SplashScreen} from '@ionic-native/splash-screen';
 import {DesignerTabsPage} from "./tabs/tabs";
 
 @IonicPage()
@@ -10,14 +10,16 @@ import {DesignerTabsPage} from "./tabs/tabs";
 })
 export class DesignerModulePage {
 
-    rootPage:any = DesignerTabsPage;
+    rootPage: any = DesignerTabsPage;
 
-    constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+    constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,
+                public nav: NavController) {
         platform.ready().then(() => {
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
             statusBar.styleDefault();
             splashScreen.hide();
         });
+        nav.setRoot(this.rootPage)
     }
 }
