@@ -23,6 +23,10 @@ import {ChooseDesignerPage} from "../employer/choosedesigner/choosedesigner";
 import {DesignerTabsPage} from "../designer/tabs/tabs";
 import {SharedService} from "../../service/share.service";
 import {EmployerTabsPage} from "../employer/tabs/tabs";
+import {ImService} from "../../service/im/service.im";
+import {IMPage} from "../im/im";
+import {ChatPage} from "../im/chat/chat";
+import {State} from "../../service/im/state.im";
 import {SearchDesignerPage} from "../employer/searchdesigner/searchdesigner";
 import {RegisterPage} from "../common/register/register";
 
@@ -34,7 +38,7 @@ import {RegisterPage} from "../common/register/register";
 export class WelcomePage {
 
     rootPage: any;
-    state:any=1;
+    state: any = 1;
     register: any = RegisterPage;
 
     /**
@@ -48,6 +52,8 @@ export class WelcomePage {
     designerLogin: any = LoginPage;
 
     designerHome: any = DesignerModulePage;
+
+
     pulishtaskPage: any = PublishTaskPage;
     designerWalletPage: any = DesignerWalletPage;
     taskSquarePage: any = TaskSquarePage;
@@ -69,9 +75,30 @@ export class WelcomePage {
                 public platform: Platform,
                 public toastCtrl: ToastController,
                 public http: NetworkService,
-                public shared: SharedService) {
+                public shared: SharedService,
+                public im: ImService) {
 
 
+    }
+
+    openChat() {
+        this.navCtrl.push(ChatPage, {})
+    }
+
+    openMsgs() {
+        this.navCtrl.push(IMPage, {})
+    }
+
+    customBtn() {
+        // this.im.initializeNim();
+        State.INSTANCE.getUserByAccount('12')
+            .then(user => console.log(user))
+            .catch(error => console.log(error))
+    }
+
+    closeNim() {
+        console.log('close Nim')
+        this.im.closeNim()
     }
 
 
@@ -154,6 +181,10 @@ export class WelcomePage {
         })
     }
 
+    enterwelcome() {
+        this.state = 2
+    }
+
     slides = [
         "assets/img/Walkthrough_1.png",
         "assets/img/Walkthrough_2.png",
@@ -161,7 +192,5 @@ export class WelcomePage {
         "assets/img/Walkthrough_4.png"
     ];
 
-    enterwelcome(){
-        this.state = 2;
-    }
+
 }

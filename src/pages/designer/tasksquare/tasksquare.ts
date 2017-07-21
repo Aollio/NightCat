@@ -70,6 +70,10 @@ export class TaskSquarePage {
     }
 
     selectSort() {
+
+        // let popver = this.popoverCtrl.create(PopoverPage,{})
+        // popver.present()
+        //
         let alert = this.alert.create({
             inputs: [
                 {label: '价格从低到高', type: 'radio', value: ''},

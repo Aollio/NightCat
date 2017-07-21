@@ -1,0 +1,77 @@
+<ion-header no-border>
+    <ion-navbar>
+        <ion-title>
+            {{ to }}
+            <!--<div class="chat-title">-->
+            <!--<h1>-->
+            <!--Fabio Ottaviani-->
+            <!--</h1>-->
+            <!--<figure class="avatar">-->
+            <!--<img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/156381/profile/profile-80_4.jpg" /></figure>-->
+            <!--</div>-->
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div class="chat">
+
+        <div class="messages">
+            <div *ngFor="let message of msglist">
+                <div class="message" [class.message-personal]="message.flow === 'out'">
+                    {{ message.showText }}
+                    <div class="timestamp"> {{ message.showTime }}</div>
+                </div>
+            </div>
+            <div class="messages-content">
+                <div class="message">Hello World
+                    <div class="timestamp">2017年15号</div>
+                </div>
+                <div class="message message-personal">Hello World
+                    <div class="timestamp">2017年15号</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="bg"></div>
+</ion-content>
+
+<ion-footer class="ion-footer-msg">
+    <div class="message-box">
+        <ion-input type="text" class="message-input" placeholder="Type message..."></ion-input>
+        <button type="submit" class="message-submit">Send</button>
+    </div>
+</ion-footer>
+
+
+<!--<ion-header >-->
+<!--&lt;!&ndash;<x-header class="m-tab" :left-options="leftBtnOptions" @on-click-back="onClickBack">&ndash;&gt;-->
+<!--&lt;!&ndash;<h1 class="m-tab-top" @click="enterNameCard">{{sessionName}}</h1>&ndash;&gt;-->
+<!--&lt;!&ndash;<a slot="left"></a>&ndash;&gt;-->
+<!--&lt;!&ndash;<group class="m-tab-right" slot="right">&ndash;&gt;-->
+<!--&lt;!&ndash;<a :href="'#/chathistory/'+sessionId">历史消息</a>&ndash;&gt;-->
+<!--&lt;!&ndash;</group>&ndash;&gt;-->
+<!--&lt;!&ndash;</x-header>&ndash;&gt;-->
+
+<!--<ion-navbar><ion-title>聊天</ion-title></ion-navbar>-->
+
+<!--</ion-header>-->
+<!--<ion-content>-->
+<!--<div class="m-chat-main">-->
+<!--<chat-list-->
+<!--type="session"-->
+<!--[msglist]="msglist"-->
+<!--[userInfos]="userInfos"-->
+<!--[robotInfos]="robotInfos"-->
+<!--[myInfo]="myInfo"-->
+<!--[isRobot]="isRobot"-->
+<!--&gt;</chat-list>-->
+<!--&lt;!&ndash;<chat-editor&ndash;&gt;-->
+<!--&lt;!&ndash;type="session"&ndash;&gt;-->
+<!--&lt;!&ndash;:scene="scene"&ndash;&gt;-->
+<!--&lt;!&ndash;:to="to"&ndash;&gt;-->
+<!--&lt;!&ndash;:isRobot="isRobot"&ndash;&gt;-->
+<!--&lt;!&ndash;&gt;</chat-editor>&ndash;&gt;-->
+<!--</div>-->
+<!--</ion-content>-->

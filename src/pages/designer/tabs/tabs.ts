@@ -7,6 +7,7 @@ import {StatusBar} from "@ionic-native/status-bar";
 import {DesignerMePage} from "../me/me";
 import {TaskSquarePage} from "../tasksquare/tasksquare";
 import {MessagePage} from "../message/message";
+import {DesignerModulePage} from "../designer";
 
 @Component({
     templateUrl: 'tabs.html'
@@ -22,6 +23,7 @@ export class DesignerTabsPage {
 
     constructor(public navCtrl: NavController, public platform: Platform,
                 public statusBar: StatusBar, public splashScreen: SplashScreen) {
+        this.navCtrl.swipeBackEnabled = false
     }
 
 
