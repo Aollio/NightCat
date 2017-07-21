@@ -27,8 +27,9 @@ import {ImService} from "../../service/im/service.im";
 import {IMPage} from "../im/im";
 import {ChatPage} from "../im/chat/chat";
 import {State} from "../../service/im/state.im";
+import {SearchDesignerPage} from "../employer/searchdesigner/searchdesigner";
+import {RegisterPage} from "../common/register/register";
 
-declare let Student: any;
 
 @Component({
     selector: 'page-welcome',
@@ -37,7 +38,8 @@ declare let Student: any;
 export class WelcomePage {
 
     rootPage: any;
-
+    state:any=1;
+    register: any = RegisterPage;
 
     /**
      * 这是主页的快速入口，用于开发
@@ -45,12 +47,11 @@ export class WelcomePage {
     orderDetailPage: any = OrderDetailPage;
     orderListComponent: any = OrderListComponent;
 
-
+    employerHome: any = EmployerModulePage;
     employerLogin: any = LoginPage;
     designerLogin: any = LoginPage;
 
     designerHome: any = DesignerModulePage;
-    employerHome: any = EmployerModulePage;
 
 
     pulishtaskPage: any = PublishTaskPage;
@@ -66,7 +67,7 @@ export class WelcomePage {
     choosedesigner: any = ChooseDesignerPage;
     projectsPage: any = ProjectsPage;
     list: any = BlankPage;
-
+    searchdesigner: any = SearchDesignerPage;
     commentOrderPage: any = CommentOrderPage;
 
 
@@ -180,5 +181,11 @@ export class WelcomePage {
         })
     }
 
+    slides = [
+        "assets/img/Walkthrough_1.png",
+        "assets/img/Walkthrough_2.png",
+        "assets/img/Walkthrough_3.png",
+        "assets/img/Walkthrough_4.png"
+    ];
 
 }

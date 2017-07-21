@@ -1,9 +1,30 @@
-<!--<ion-list style="background-color: #1D7745">-->
-    <!--<ion-list-header>Ionic</ion-list-header>-->
-    <!--<button ion-item (click)="close()">Learn Ionic</button>-->
-    <!--<button ion-item (click)="close()">Documentation</button>-->
-    <!--<button ion-item (click)="close()">Showcase</button>-->
-    <!--<button ion-item (click)="close()">GitHub Repo</button>-->
-<!--</ion-list>-->
 
-<div style="width: 10em;height: 10em;background-color: #1D7745">ABCSDASDASDASD</div>
+
+<ion-content>
+    <ion-grid class="designer-list-grid">
+        <ion-row>
+            <ion-col *ngFor="let desitem of desarray; let i=index"
+                     col-6 class="des-card" text-center
+                     (click)="selectDesigner(desitem,i)">
+                <div class="des-card-avatar">
+                    <div class="avatar-icon-div">
+                        <ion-icon *ngIf="selected_index === i" name="ios-checkmark-circle"></ion-icon>
+                        <ion-icon *ngIf="selected_index != i" name="ios-checkmark-circle-outline"></ion-icon>
+                    </div>
+                    <img class="des-card-img" src="{{desitem.avatar}}">
+                </div>
+
+            </ion-col>
+        </ion-row>
+        <!--</ion-row>-->
+    </ion-grid>
+</ion-content>
+<ion-footer>
+<ion-buttons start>
+    <button ion-button small>确认</button>
+</ion-buttons>
+   <ion-buttons end>
+        <button ion-button small>取消</button>
+   </ion-buttons>
+
+</ion-footer>
