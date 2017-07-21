@@ -4,6 +4,7 @@ import {LoginPage} from "../login/login";
 import {SharedService} from "../../../service/share.service";
 import {DesignerModulePage} from "../../designer/designer";
 import {PopoverPage} from "../../popver/popver";
+import {EmployerModulePage} from "../../employer/employer";
 
 
 @Component({
@@ -23,6 +24,11 @@ export class RegisterPage {
                 public alerCtrl: AlertController,
                 public popoverCtrl: PopoverController) {
         this.role = navParams.get('role');
+        if (this.role == 'designer') {
+            this.navCtrl.setRoot(DesignerModulePage)
+        } else {
+            this.navCtrl.setRoot(EmployerModulePage)
+        }
     }
 
     ionViewDidLoad() {
@@ -49,65 +55,64 @@ export class RegisterPage {
     doRadio() {
         let popover = this.popoverCtrl.create(PopoverPage);
         // let alert = this.alerCtrl.create();
-        popover.present({
-        });
-    //     alert.setTitle('Lightsaber color');
-    //
-    //     alert.addInput({
-    //         type: 'radio',
-    //         label: 'Blue',
-    //         value: 'blue',
-    //         checked: true
-    //     });
-    //
-    //     alert.addInput({
-    //         type: 'radio',
-    //         label: 'Green',
-    //         value: 'green'
-    //     });
-    //
-    //     alert.addInput({
-    //         type: 'radio',
-    //         label: 'Red',
-    //         value: 'red'
-    //     });
-    //
-    //     alert.addInput({
-    //         type: 'radio',
-    //         label: 'Yellow',
-    //         value: 'yellow'
-    //     });
-    //
-    //     alert.addInput({
-    //         type: 'radio',
-    //         label: 'Purple',
-    //         value: 'purple'
-    //     });
-    //
-    //     alert.addInput({
-    //         type: 'radio',
-    //         label: 'White',
-    //         value: 'white'
-    //     });
-    //
-    //     alert.addInput({
-    //         type: 'radio',
-    //         label: 'Black',
-    //         value: 'black'
-    //     });
-    //
-    //     alert.addButton('Cancel');
-    //     alert.addButton({
-    //         text: 'Ok',
-    //         handler: data => {
-    //             console.log('Radio data:', data);
-    //             this.testRadioOpen = false;
-    //             this.testRadioResult = data;
-    //         }
-    //     });
-    //
-    //     alert.present().then(() => {
-    //         this.testRadioOpen = true;
-    //     });
-     }
+        popover.present({});
+        //     alert.setTitle('Lightsaber color');
+        //
+        //     alert.addInput({
+        //         type: 'radio',
+        //         label: 'Blue',
+        //         value: 'blue',
+        //         checked: true
+        //     });
+        //
+        //     alert.addInput({
+        //         type: 'radio',
+        //         label: 'Green',
+        //         value: 'green'
+        //     });
+        //
+        //     alert.addInput({
+        //         type: 'radio',
+        //         label: 'Red',
+        //         value: 'red'
+        //     });
+        //
+        //     alert.addInput({
+        //         type: 'radio',
+        //         label: 'Yellow',
+        //         value: 'yellow'
+        //     });
+        //
+        //     alert.addInput({
+        //         type: 'radio',
+        //         label: 'Purple',
+        //         value: 'purple'
+        //     });
+        //
+        //     alert.addInput({
+        //         type: 'radio',
+        //         label: 'White',
+        //         value: 'white'
+        //     });
+        //
+        //     alert.addInput({
+        //         type: 'radio',
+        //         label: 'Black',
+        //         value: 'black'
+        //     });
+        //
+        //     alert.addButton('Cancel');
+        //     alert.addButton({
+        //         text: 'Ok',
+        //         handler: data => {
+        //             console.log('Radio data:', data);
+        //             this.testRadioOpen = false;
+        //             this.testRadioResult = data;
+        //         }
+        //     });
+        //
+        //     alert.present().then(() => {
+        //         this.testRadioOpen = true;
+        //     });
+    }
 }

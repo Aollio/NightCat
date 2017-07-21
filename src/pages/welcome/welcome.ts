@@ -38,7 +38,7 @@ import {RegisterPage} from "../common/register/register";
 export class WelcomePage {
 
     rootPage: any;
-    state:any=1;
+    state: any = 1;
     register: any = RegisterPage;
 
     /**
@@ -179,6 +179,10 @@ export class WelcomePage {
         this.navCtrl.push(LoginPage, {
             type: typeinfo
         })
+    }
+
+    enterwelcome() {
+        this.state = 2
     }
 
     slides = [
