@@ -74,7 +74,7 @@ export class State {
         this.msgs[msg.sessionId].push(msg)
     }
 
-    commitMessages(msgs) {
+    commitMessageList(msgs) {
         for (let msg of msgs) {
             this.commitMessage(msg)
         }
@@ -82,13 +82,24 @@ export class State {
 
 
     //根据账号来获取友好昵称，并缓存用户信息到State中
-    //返回一个Promise，params as 用户名片
+    //返回一个Promise，User as 用户名片
     getUserByAccount(account): Promise<any> {
+        if (account == this.myInfo.account) {
+            return this.myInfo
+        }
+
+        let cache = this.userInfos[account]
+        if (cache != null) {
+            return Promise.resolve(cache)
+        }
+
         return new Promise((resolve, reject) => {
             State.INSTANCE.nim.getUser({
                 account: account,
                 done: (error, user) => {
                     if (!error && user) {
+                        //set cache
+                        State.INSTANCE.userInfos[account] = user
                         resolve(user)
                     } else {
                         reject(error)

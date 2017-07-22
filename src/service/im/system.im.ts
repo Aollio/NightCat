@@ -32,7 +32,7 @@ export class System {
     static onSyncDone() {
 
         let state = State.INSTANCE
-        console.log(state)
+        console.log("onSyncDone\n", state)
         state.isLoading = false
 
         if (System.customSyncDoneFunc != null) {

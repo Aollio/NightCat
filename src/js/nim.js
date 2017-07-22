@@ -2754,7 +2754,7 @@
                                 var a = document.getElementsByTagName("script")[0],
                                     c = document.createElement("script");
                                 c.src = s + "&jsonp=" + t.j.length, c.onreadystatechange = function () {
-                                    "loaded" == this.readyState && c.parentNode && (c.parentNode.removeChild(c), r.connecting = !1, !r.reconnecting && r.onError("Server down or port not open"), r.publish("handshake_failed"))
+                                    "loaded" == this.readyState && c.parentNode && (c.parentNode.removeChild(c), r.connecting = !1, !r.reconnecting && r.onError("Server down or port not openHome"), r.publish("handshake_failed"))
                                 }, a.parentNode.insertBefore(c, a), t.j.push(function (e) {
                                     n(e), c.parentNode.removeChild(c)
                                 })

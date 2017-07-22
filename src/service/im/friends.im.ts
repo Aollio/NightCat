@@ -7,7 +7,9 @@ export class Friends {
     }
 
     static onUpdateMyInfo(myinfo) {
-        for (var field in myinfo) {
+        //update user info
+        // use updating the obj filed instead of set new reference of state
+        for (let field in myinfo) {
             State.INSTANCE.myInfo[field] = myinfo[field]
         }
     }

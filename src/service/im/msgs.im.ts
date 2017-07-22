@@ -15,14 +15,14 @@ export class Messages {
         console.log('onOfflineMsgs')
         console.log(obj)
         //msgs是一个消息数组
-        State.INSTANCE.commitMessages(obj.msgs)
+        State.INSTANCE.commitMessageList(obj.msgs)
     }
 
     static onRoamingMsgs(obj) {
         console.log('onRoamingMsgs')
         console.log(obj)
         //msgs是一个消息数组
-        State.INSTANCE.commitMessages(obj.msgs)
+        State.INSTANCE.commitMessageList(obj.msgs)
     }
 
     static onMsgs(msg) {
