@@ -2,10 +2,10 @@
 page-employer-tabs {
 
   a.icon-only {
-    //margin: 0em 1em !important;
-    padding: 0em 1em !important;
-    //font-size: 2em !important;
-    position: relative;
+   // margin: 1em 1em 1em 1em !important;
+   // padding: .5em 0em 2em 0!important;
+    font-size: .45em !important;
+   // position: relative;
     display: block !important;
   }
 
@@ -16,9 +16,10 @@ page-employer-tabs {
     font-size: 4.5em !important;
     height: 1.5em !important;
     width: 1.5em !important;
-    font-size: 500 !important;
-    margin: auto !important;
-    margin-top: -0.3em!important;
+   // font-size: 500em !important;
+   // margin: auto !important;
+    margin-top: -0em!important;
+    margin-left: 4%;
     text-align: center !important;
     background-color: $emp_primary;
     border-radius: 1000em;
