@@ -8,6 +8,33 @@ export class Messages {
     constructor() {
     }
 
+    //get history messages, return message list as promise
+    static getHistoryMsgs(to): Promise<any> {
+
+        return new Promise((resolve, reject) => {
+            let options = {
+                scene: 'p2p',
+                to: to,
+                reverse: false,
+                asc: true,
+                limit: 20,
+                done: (error, obj) => {
+                    if (obj.msgs) {
+                        if (obj.msgs.length === 0) {
+                            console.log('no more history messages')
+                            // commit('setNoMoreHistoryMsgs')
+                        }
+                        resolve(obj.msgs)
+                    } else {
+                        reject(error)
+                    }
+                }
+            }
+            State.INSTANCE.nim.getHistoryMsgs(options)
+        })
+
+    }
+
     /**
      * 处理消息的回调
      * */

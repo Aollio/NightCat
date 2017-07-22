@@ -13,6 +13,8 @@ export class IMPage {
 
     sessions: any
 
+    sessionNameMap: any = {}
+
     constructor(public imServ: ImService,
                 public nav: NavController,
                 public util: Util) {
@@ -24,12 +26,17 @@ export class IMPage {
             this.imServ.initializeNim()
             this.imServ.registerSyncDone(() => this.initializeDone())
             this.util.presentLoading("加载消息列表中...")
+        } else {
+            this.initFriendlyName()
+            console.log(this.sessions)
+            console.log(this.sessionNameMap)
         }
         this.sessions = this.imServ.state.sessionlist
     }
 
     initializeDone() {
         this.util.hideLoading()
+        this.initFriendlyName()
     }
 
 
@@ -38,6 +45,15 @@ export class IMPage {
         this.nav.push(ChatPage, {
             sessionId: sessionId
         })
+    }
+
+
+    initFriendlyName() {
+        for (let sess of this.sessions) {
+            this.sessionNameMap[sess.id] = sess.to
+            State.INSTANCE.getUserByAccount(sess.to)
+                .then(user => this.sessionNameMap[sess.id] = user.nick)
+        }
     }
 
 

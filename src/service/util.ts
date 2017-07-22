@@ -1,4 +1,4 @@
-import {Loading, LoadingController} from "ionic-angular";
+import {Loading, LoadingController, ToastController} from "ionic-angular";
 import {Injectable} from "@angular/core";
 
 @Injectable()
@@ -7,14 +7,27 @@ export class Util {
     //NOTE!!!单例的初始化在IMService中初始化
     public static INSTANCE: Util;
 
-    constructor(public loaderCtrl: LoadingController) {
+    constructor(public loaderCtrl: LoadingController,
+                public toastCtrl: ToastController) {
+    }
+
+    toast(message, duration = 2000) {
+        let toast = this.toastCtrl.create({
+            message: message,
+            duration: duration,
+            position: 'bottom'
+        });
+        toast.present();
     }
 
     static loading: Loading;
 
-
     //显示加载框
     presentLoading(message) {
+        if (Util.loading != null) {
+            Util.loading.setContent(message)
+            return
+        }
         let load = this.loaderCtrl.create({
             content: message,
             spinner: 'crescent',

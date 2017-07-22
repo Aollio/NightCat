@@ -15,11 +15,13 @@ export class Sessions {
         console.log('onSessions')
         console.log(obj)
 
-        let state = State.INSTANCE
         for (let session of obj) {
-            state.sessionlist.push(session)
-            state.sessionMap[session.id] = session
+            if (session.scene != 'p2p') {
+                continue
+            }
+            Sessions.updateStateSession(session)
         }
+
     }
 
     /**
@@ -33,21 +35,31 @@ export class Sessions {
     static onUpdateSession(session) {
         console.log('onUpdateSession')
         console.log(session)
-        let state = State.INSTANCE
-        let sessionlist = state.sessionlist
-        state.sessionMap[session.id] = session
+        Sessions.updateStateSession(session)
+    }
+
+    static updateStateSession(session) {
+
         //find previous session
         let preSession = null
-        for (let sess of sessionlist) {
+        for (let sess of State.INSTANCE.sessionlist) {
             if (sess.id === session.id) {
                 preSession = sess
             }
         }
+
         //if this session is new session, add to the sessions list and map
         if (preSession == null) {
-            state.sessionMap[session.id] = session
+            State.INSTANCE.sessionMap[session.id] = session
+            State.INSTANCE.sessionlist.push(session)
+            //set message-session mapping
+            let msglist = State.INSTANCE.msgs[session.id]
+            if (msglist == null) {
+                State.INSTANCE.msgs[session.id] = []
+            }
             return
         }
+
         //update previous session, don't set new reference
         for (let field in session) {
             preSession[field] = session[field]

@@ -29,20 +29,53 @@ export class ImService {
         Emoji.initalize()
 
         console.log(this.state)
-
         this.options = new Option()
     }
 
+    //send text message
+    sendMessage(text, scene = 'p2p'): Promise<any> {
+        let session = this.state.sessionMap[this.state.currSessionId]
+        return new Promise((resolve, reject) => {
+            let nim = this.state.nim
+            let msg = nim.sendText({
+                scene: 'p2p',
+                to: session.to,
+                text: text,
+                done: (error, msg) => {
+                    if (!error) {
+                        //update msg state
+                        resolve(msg)
+                    } else {
+                        reject(error)
+                    }
+                }
+            })
+            //send msg, the variable msg's state is not 'success'
+            //but need push msg to the state msgs and currentMsgs
+            console.log('send message not done ok')
 
+            Messages.preHandleMessage(msg)
+            let belongmsgs = this.state.msgs[session.id]
+            if (belongmsgs == null) {
+                belongmsgs = []
+                this.state.msgs[session.id] = belongmsgs
+            }
+            belongmsgs.push(msg)
+        })
+    }
+
+    //初始化NIM
     initializeNim() {
         console.log(this.state)
         this.state.nim = NIM.getInstance(this.options)
     }
 
+    //注册第一次初始化的回调事件
     registerSyncDone(func) {
         System.customSyncDone(() => func())
     }
 
+    //关闭NIM
     closeNim() {
         State.INSTANCE.nim.disconnect();
     }
