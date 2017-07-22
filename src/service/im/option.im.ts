@@ -8,7 +8,8 @@ import {Friends} from "./friends.im";
 export class Option {
 
 
-    debug = false;
+    db: boolean = false
+    debug = false
     appKey = ImConfig.appkey
 
     account = ImConfig.userinfo.account
