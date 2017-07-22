@@ -57,9 +57,37 @@ export class State {
     searchedTeams: any = []
 
 
-    setCurrentSessionId(sessionId) {
+    setCurrentSessionAndPreareMsgs(sessionId): Promise<any> {
         this.currSessionId = sessionId
         this.currSessionMsgs = this.msgs[sessionId]
+        if (this.msgs[sessionId] == null || this.msgs[sessionId].length == 0) {
+            //获取历史记录
+            return Messages.getHistoryMsgs(this.sessionMap[sessionId].to)
+                .then(msglist => {
+                        let list = this.msgs[sessionId]
+                        //handle receive message and push them to State.msgs()
+                        for (let msg of msglist) {
+                            if (!Messages.preHandleMessage(msg)) {
+                                continue
+                            }
+                            if (list == null) {
+                                this.msgs[sessionId] = []
+                                list = this.msgs[sessionId]
+                            }
+                            list.push(msg)
+                        }
+                        //set currSessionMsgs
+                        this.currSessionMsgs = list
+                        console.log('getHistoryMsgsSuccess', msglist)
+                        return Promise.resolve(msglist)
+                    }
+                )
+                .catch(error => {
+                    console.log(error)
+                    return Promise.reject(error)
+                })
+        }
+        return Promise.resolve({})
     }
 
     //新收到的消息 递交到消息全局变量中

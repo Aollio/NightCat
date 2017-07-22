@@ -1,6 +1,8 @@
 import {Component} from "@angular/core";
 import {State} from "../../../service/im/state.im";
 import {NavParams} from "ionic-angular";
+import {Util} from "../../../service/util";
+import {ImService} from "../../../service/im/service.im";
 
 @Component({
     selector: 'page-chat',
@@ -9,52 +11,67 @@ import {NavParams} from "ionic-angular";
 export class ChatPage {
 
 
-    msglist: Array<any> = [
-        {
-            flow: 'in',
-            showTime: 1500607363964,
-            type: 'text',
-            showText: '测试信息测试信息测试信息测试信息测试信息测试信息测试信息测试信息测试信息测试信息测试信息测试信息测试信息'
-        },
-        {flow: 'out', showTime: 1500607463964, type: 'text', showText: '测试信息'},
-        {flow: 'in', showTime: 1500607563964, type: 'text', showText: '测试信息'},
-        {flow: 'out', showTime: 1500607663964, type: 'text', showText: '测试信息'},
-    ]
+    to: string
+
+    myInfo: any
 
     userInfos: any
-    myInfo: any
 
     sessionId: string
 
-    to: string
+    chatobject: string
 
-    constructor(public param: NavParams) {
+    msglist: Array<any> = []
+
+    message: string = ''
+
+
+    constructor(public param: NavParams,
+                public util: Util,
+                public imServ: ImService) {
         let sessionId = this.param.get('sessionId')
-
-
-
         let state = State.INSTANCE
-        state.setCurrentSessionId(sessionId)
 
-        console.log('chat:\n',state)
+        util.presentLoading('正在加载消息')
+
+        //set currentSession
+        state.setCurrentSessionAndPreareMsgs(sessionId)
+            .then((obj) => {
+                util.hideLoading()
+                console.log(state)
+                for (let msg of state.msgs[sessionId]) {
+                    this.msglist.push(msg)
+                }
+            })
+            .catch((err) => {
+                console.log('chat set session id failed')
+                util.presentLoading('加载失败')
+                setTimeout(() => util.hideLoading(), 2000)
+            })
+
+        console.log('chat:\n', state)
 
         this.sessionId = sessionId
         this.userInfos = state.userInfos
         this.myInfo = state.myInfo
         this.to = state.sessionMap[sessionId].to
 
-        this.msglist = state.msgs[sessionId]
-        // this.sessionId = '123456'
+        this.chatobject = this.to
+        //set title is user's nickname, if error, show user's account
+        state.getUserByAccount(this.to)
+            .then(user => this.chatobject = user.nick)
+            .catch(error => console.log(error))
+    }
 
-        // this.userInfos = State.INSTANCE.userInfos
-        // this.robotInfos = State.INSTANCE.robotInfos
-        // this.myInfo = State.INSTANCE.myInfo
 
-        // this.sessionId = '123456'
-        // this.to = 'aollioaollio'
-        // this.userInfos = {}
-        // this.robotInfos ={}
-        // this.myInfo = {}
+    sendMessage() {
+        if (this.message == null || this.message == '') {
+            console.log('消息为空', this.message)
+            return
+        }
+        this.imServ.sendMessage(this.message)
+            .then((message) => console.log('发送消息成功', message))
+            .catch((error) => console.log('发送消息失败', error))
     }
 
 }
