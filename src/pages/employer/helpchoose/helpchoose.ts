@@ -3,6 +3,8 @@ import {NavController, NavParams} from "ionic-angular";
 import {EmployerTabsPage} from "../tabs/tabs";
 import {Tabs} from "ionic-angular/navigation/nav-interfaces";
 import {RecommendDesignerPage} from "../recommenddesigner/recommenddesigner";
+import {EmployerHomePage} from "../home/home";
+import {EmployerModulePage} from "../employer";
 
 @Component({
     templateUrl: 'helpchoose.html',
@@ -10,7 +12,7 @@ import {RecommendDesignerPage} from "../recommenddesigner/recommenddesigner";
 })
 export class HelpChoosePage {
 
-
+    employerhome: any=EmployerHomePage;
     types: Array<{ name, icon, color }> = [
         {
             name: '建筑设计', icon: 'ios-list-box-outline', color: '#be84ff'
@@ -62,6 +64,16 @@ export class HelpChoosePage {
             this.navCtrl.push(RecommendDesignerPage);
         }
     }
+    open(page){
+        this.navCtrl.push(page);
+    }
 
+    gotoRoot(){
+        this.navCtrl.goToRoot({});
+    }
+    openEmployer() {
+        //this.shared.isDesigner = false;
+        this.navCtrl.push(EmployerModulePage, {})
+    }
 
 }

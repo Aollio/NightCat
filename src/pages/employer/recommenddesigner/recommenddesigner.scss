@@ -6,7 +6,11 @@ page-recommenddesigner{
   .bar-button {
     color: $emp_primary !important;
   }
-
+.but-com{
+  font-size: 1.2em;
+  color: white;
+  background-color:transparent;
+}
   //导航栏标题颜色
   .toolbar-title {
     color: $grid-border-color !important;
