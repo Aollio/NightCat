@@ -9,7 +9,7 @@
 <ion-content padding>
 
     <div class="tutorial-page" *ngIf="state===1">
-        <ion-slides  >
+        <ion-slides>
             <ion-slide *ngFor="let slide of slides">
                 <ion-toolbar>
                     <ion-buttons end>
@@ -71,11 +71,14 @@
         <!--<button ion-button color="green" full (click)="getTest()">NetworkGet</button>-->
         <!--<button ion-button color="green" full (click)="postTest()">NetworkPost</button>-->
 
-
-        <!--<button ion-button color="danger" full (click)="openChat()">IM聊天界面</button>-->
-        <!--<button ion-button color="danger" full (click)="openMsgs()">IM消息页</button>-->
-        <!--<button ion-button color="danger" full (click)="customBtn()">获取用户</button>-->
-        <!--<button ion-button color="danger" full (click)="closeNim()">ExitNIM</button>-->
     </div>
 
+
+
+    <button ion-button color="danger" full (click)="openChat()">IM聊天界面</button>
+    <button ion-button color="danger" full (click)="openMsgs()">IM消息页</button>
+    <button ion-button color="danger" full (click)="customBtn()">获取用户</button>
+    <button ion-button color="danger" full (click)="closeNim()">ExitNIM</button>
+
 </ion-content>
+

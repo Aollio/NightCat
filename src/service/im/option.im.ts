@@ -28,7 +28,7 @@ export class Option {
     // 当前登录帐号在其它端发送消息之后也会收到此回调  注意此时消息对象的from字段就是当前登录的帐号
     onmsg = Messages.onMsgs
     // 是否同步漫游消息, 默认true. 如果传false就收不到漫游消息, 即不会收到onroamingmsgs回调.
-    syncRoamingMsgs: boolean = true
+    // syncRoamingMsgs: boolean = true
     //同步离线消息的回调  每个会话对应一个回调  会传入消息数组
     onofflinemsgs = Messages.onOfflineMsgs
     //同步漫游消息的回调  每个会话对应一个回调  会传入消息数组

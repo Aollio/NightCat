@@ -17,7 +17,7 @@ import {HttpUrls} from "../service/httpurls.service";
 import {FormsModule} from '@angular/forms';
 import {UserService} from "../service/ajax/user.service";
 import {HTTP} from "@ionic-native/http";
-import {Http, HttpModule} from "@angular/http";
+import { HttpModule} from "@angular/http";
 import {PopoverPage} from "../pages/popver/popver";
 import {CustomIconsModule} from 'ionic2-custom-icons';
 import {ImService} from "../service/im/service.im";
@@ -50,6 +50,8 @@ import {Util} from "../service/util";
             backButtonText: '返回',
             tabsHideOnSubPages: true,
             hideTabsOnSubPages: true,
+            //push overlay reveal
+            menuType:'overlay'
         }),
         CustomIconsModule // Add this!
     ],

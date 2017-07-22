@@ -580,7 +580,7 @@ Here is a request for persistent storage.
 ```js
 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
 
-    console.log('file system open: ' + fs.name);
+    console.log(openHome + fs.name);
     fs.root.getFile("newPersistentFile.txt", { create: true, exclusive: false }, function (fileEntry) {
 
         console.log("fileEntry is file?" + fileEntry.isFile.toString());

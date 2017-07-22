@@ -24,11 +24,6 @@ export class RegisterPage {
                 public alerCtrl: AlertController,
                 public popoverCtrl: PopoverController) {
         this.role = navParams.get('role');
-        if (this.role == 'designer') {
-            this.navCtrl.setRoot(DesignerModulePage)
-        } else {
-            this.navCtrl.setRoot(EmployerModulePage)
-        }
     }
 
     ionViewDidLoad() {
@@ -47,8 +42,12 @@ export class RegisterPage {
         this.state = 3;
     }
 
-    open() {
-        this.navCtrl.push(DesignerModulePage, {});
+    openHome() {
+        if (this.role === 'designer') {
+            this.navCtrl.setRoot(DesignerModulePage, {})
+        } else {
+            this.navCtrl.setRoot(EmployerModulePage, {});
+        }
     }
 
 

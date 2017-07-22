@@ -9,6 +9,7 @@ import {PublishTaskPage} from "../../common/publishtask/publishtask";
 export class PublishTaskMiddleWarePage {
 
     constructor(public nav: NavController) {
+        console.log('create')
         this.nav.parent.select(0);
     }
 
