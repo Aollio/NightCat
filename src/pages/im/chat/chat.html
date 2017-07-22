@@ -15,22 +15,15 @@
 
 <ion-content>
     <div class="chat">
-
         <div class="messages">
-            <div *ngFor="let message of msglist">
-                <div class="message" [class.message-personal]="message.flow === 'out'">
-                    {{ message.showText }}
-                    <div class="timestamp"> {{ message.showTime }}</div>
+            <div class="messages-content">
+                <div *ngFor="let message of msglist">
+                    <div class="message" [class.message-personal]="message.flow === 'out'">
+                        {{ message.showText }}
+                        <div class="timestamp"> {{ message.showTime }}</div>
+                    </div>
                 </div>
             </div>
-            <!--<div class="messages-content">-->
-            <!--<div class="message">Hello World-->
-            <!--<div class="timestamp">2017年15号</div>-->
-            <!--</div>-->
-            <!--<div class="message message-personal">Hello World-->
-            <!--<div class="timestamp">2017年15号</div>-->
-            <!--</div>-->
-            <!--</div>-->
         </div>
 
     </div>

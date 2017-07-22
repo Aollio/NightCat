@@ -32,6 +32,7 @@ export class ImService {
         this.options = new Option()
     }
 
+    //send text message
     sendMessage(text, scene = 'p2p'): Promise<any> {
         let session = this.state.sessionMap[this.state.currSessionId]
         return new Promise((resolve, reject) => {
@@ -43,7 +44,6 @@ export class ImService {
                 done: (error, msg) => {
                     if (!error) {
                         //update msg state
-                        //todo
                         resolve(msg)
                     } else {
                         reject(error)
@@ -52,7 +52,15 @@ export class ImService {
             })
             //send msg, the variable msg's state is not 'success'
             //but need push msg to the state msgs and currentMsgs
-            this.state.msgs[session.id].push(msg)
+            console.log('send message not done ok')
+
+            Messages.preHandleMessage(msg)
+            let belongmsgs = this.state.msgs[session.id]
+            if (belongmsgs == null) {
+                belongmsgs = []
+                this.state.msgs[session.id] = belongmsgs
+            }
+            belongmsgs.push(msg)
         })
     }
 

@@ -21,7 +21,7 @@ export class ChatPage {
 
     chatobject: string
 
-    msglist: Array<any> = []
+    msglist: Array<any>
 
     message: string = ''
 
@@ -39,9 +39,7 @@ export class ChatPage {
             .then((obj) => {
                 util.hideLoading()
                 console.log(state)
-                for (let msg of state.msgs[sessionId]) {
-                    this.msglist.push(msg)
-                }
+                this.msglist = state.currSessionMsgs
             })
             .catch((err) => {
                 console.log('chat set session id failed')
