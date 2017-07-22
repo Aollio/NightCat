@@ -24,10 +24,10 @@ page-favorite-designer {
     max-width: 85%;
     color: #9E9E9E;
     font-size: .8em;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2; //文本行数
     overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis!important;
+
   }
 
   .favorite-count-container{
