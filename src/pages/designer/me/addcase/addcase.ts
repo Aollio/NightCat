@@ -1,4 +1,6 @@
 import {Component} from "@angular/core";
+import {ImagePicker} from '@ionic-native/image-picker';
+
 
 @Component({
     selector: 'page-addcase',
@@ -6,22 +8,24 @@ import {Component} from "@angular/core";
 
 })
 export class AddCasePage {
-    ppl = 70;
-    maxl = 200;
-    a00 ;
-    b:any = 'h';
+    constructor(public imagePicker: ImagePicker) {
 
-    one() {
-        var txttxt = this.a00.length;
-        console.log(this.a00.length);
-        this.b = 200 - txttxt;
     }
 
-    cha(){
-        console.log(this.a00)
-    }
+    addpicture;
+    maxSize: any = 200 * 1024;//200KB
+    description: string = '';
 
-    uploadcase(){
+
+
+    imagePicker1() {
+
+        let options = {
+            maximumImagesCount: 1,
+            width: 300,
+            height: 300,
+            quality: 75
+        };
 
     }
 

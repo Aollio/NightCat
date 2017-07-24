@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {NavController} from "ionic-angular";
+import {NavController, NavParams} from "ionic-angular";
 import {ModifyProfilePage} from "../modifyprofile/modifyprofile";
 import {SharedService} from "../../../../service/share.service";
 import {User} from "../../../../model/user";
@@ -12,6 +12,7 @@ import {CaseDetailPage} from "../casedetail/casedetail";
 export class DesignerMeDetailPage {
 
     user: User;
+    public isDesigner:boolean;
 
     cases: Array<{ title, desc, fav_count, comment_count, time }> = [
         {
@@ -29,8 +30,12 @@ export class DesignerMeDetailPage {
     ]
 
     constructor(public navCtrl: NavController,
-                public shared: SharedService) {
+                public shared: SharedService,
+
+                public navParams:NavParams) {
+        this.isDesigner=navParams.get('isDesigner');
         this.user = shared.currentUser;
+
     }
 
 

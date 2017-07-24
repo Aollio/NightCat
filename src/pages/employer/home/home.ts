@@ -119,7 +119,7 @@ export class EmployerHomePage {
         this.navCtrl.push(page, option)
     }
 
-    openMeDetail() {
-        this.navCtrl.push(DesignerMeDetailPage, {})
+    openMeDetail(option) {
+        this.navCtrl.push(DesignerMeDetailPage,option)
     }
 }

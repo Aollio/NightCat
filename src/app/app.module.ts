@@ -24,6 +24,8 @@ import {ImService} from "../service/im/service.im";
 import {ImModule} from "../pages/im/im.module";
 import {IMPage} from "../pages/im/im";
 import {Util} from "../service/util";
+import { ImagePicker} from '@ionic-native/image-picker';
+
 
 @NgModule({
     declarations: [
@@ -66,6 +68,7 @@ import {Util} from "../service/util";
         SharedService,
         UserService,
         StatusBar,
+        ImagePicker,//
         HTTP,
         SplashScreen,
         {provide: ErrorHandler, useClass: IonicErrorHandler}

@@ -18,7 +18,7 @@
                 <div class="desc-header-type">
                     {{user.type}}
                 </div>
-                <div class="desc-header-modify" (click)="modify()">修改
+                <div class="desc-header-modify" *ngIf="isDesigner" (click)="modify()">修改
                     <ion-icon class="desc-header-modify-icon" name="md-create"></ion-icon>
                 </div>
             </div>

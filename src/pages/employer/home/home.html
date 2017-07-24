@@ -46,7 +46,7 @@
             <ion-col *ngFor="let desitem of desarray"
                      col-6 class="des-card" text-center>
                 <div class="des-card-avatar">
-                    <img (click)="openMeDetail()" class="des-card-img" src="{{desitem.avatar}}">
+                    <img (click)="openMeDetail({id:10000000,isDesigner:false})" class="des-card-img" src="{{desitem.avatar}}">
                 </div>
                 <div class="des-card-middiv">
                     <span class="des-card-name">{{desitem.name}}</span>
