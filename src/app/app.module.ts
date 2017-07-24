@@ -24,7 +24,6 @@ import {ImService} from "../service/im/service.im";
 import {ImModule} from "../pages/im/im.module";
 import {IMPage} from "../pages/im/im";
 import {Util} from "../service/util";
-import { ImagePicker} from '@ionic-native/image-picker';
 
 
 @NgModule({
@@ -56,6 +55,7 @@ import { ImagePicker} from '@ionic-native/image-picker';
             menuType:'overlay'
         }),
         CustomIconsModule // Add this!
+
     ],
     exports: [],
     bootstrap: [IonicApp],
@@ -68,7 +68,7 @@ import { ImagePicker} from '@ionic-native/image-picker';
         SharedService,
         UserService,
         StatusBar,
-        ImagePicker,//
+       // ImagePicker,//
         HTTP,
         SplashScreen,
         {provide: ErrorHandler, useClass: IonicErrorHandler}

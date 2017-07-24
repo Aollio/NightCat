@@ -6,18 +6,19 @@
 <ion-content>
     <div class="blank"></div>
     <ion-item >
-        <ion-input type="text" value="" placeholder="输入案例名称">
+        <ion-input no-lines type="text" value="" placeholder="输入案例名称">
         </ion-input>
     </ion-item>
 
 
-    <div>
+    <ion-item>
         <textarea class="summary-textarea"[(ngModel)]="description"
                   placeholder="输入案例介绍"></textarea>
-        <div class="spancss"> 剩余字数:<span>{{ 200 -description.length }}/200</span></div>
-    </div>
+    </ion-item>
+    <div class="spancss"> 剩余字数:<span>{{ 200 -description.length }}/200</span></div>
 
     <div>
+        <!--todo-->
     <!--<input type="file" [(ngModel)]="addpicture" (input)="change()" accept="image/*">-->
     </div>
 

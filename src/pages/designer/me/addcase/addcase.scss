@@ -25,13 +25,14 @@ page-addcase {
   .summary-textarea {
     width: 90%;
     height: 6em;
-    border-color: #c9cacf;
-    border-left: none;
-    border-right: none;
-    border-top: none;
+    //border-color: #c9cacf;
+   // border-left: none;
+   // border-right: none;
+   // border-top: none;
+    border: none;
     resize: none;
-    padding: 5%;
-    margin: 2%;
+    //padding: 5%;
+   // margin: 2%;
   }
   .spancss {
     float: right;

@@ -1,10 +1,11 @@
+
 <ion-content>
     <div class="header">
         <button ion-button class="menu-item" clear icon-only item-start navPop>
             <ion-icon name="md-arrow-back"></ion-icon>
         </button>
 
-        <button ion-button class="menu-item menu-item-right" icon-only item-end>
+        <button *ngIf="isDesigner" ion-button class="menu-item menu-item-right" icon-only item-end>
             上传封面
         </button>
     </div>
