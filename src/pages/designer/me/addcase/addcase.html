@@ -12,7 +12,7 @@
 
 
     <div>
-        <textarea class="summary-textarea" (input)="input()"  [(ngModel)]="description"
+        <textarea class="summary-textarea"[(ngModel)]="description"
                   placeholder="输入案例介绍"></textarea>
         <div class="spancss"> 剩余字数:<span>{{ 200 -description.length }}/200</span></div>
     </div>

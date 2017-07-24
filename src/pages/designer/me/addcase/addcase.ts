@@ -6,6 +6,10 @@ import {Component} from "@angular/core";
 
 })
 export class AddCasePage {
+
+
+    description: string
+
     constructor() {
     }
 
