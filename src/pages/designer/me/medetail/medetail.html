@@ -1,6 +1,5 @@
-
 <ion-content>
-    <div class="header">
+    <div class="header1">
         <button ion-button class="menu-item" clear icon-only item-start navPop>
             <ion-icon name="md-arrow-back"></ion-icon>
         </button>
@@ -15,10 +14,13 @@
             <div>
                 <div class="desc-header-name">
                     {{user.nickname}}
+                    <span class="desc-header-type">
+                          {{user.type}}
+                    </span>
                 </div>
-                <div class="desc-header-type">
-                    {{user.type}}
-                </div>
+                <!--<div>-->
+
+                <!--</div>-->
                 <div class="desc-header-modify" *ngIf="isDesigner" (click)="modify()">修改
                     <ion-icon class="desc-header-modify-icon" name="md-create"></ion-icon>
                 </div>
