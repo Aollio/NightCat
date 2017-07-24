@@ -103,12 +103,15 @@ export class WelcomePage {
 
 
     //用于测试get/post请求
-    private url = "http://192.168.100.154:8080/users"
+    private url = "http://localhost:3000/hello"
 
     getTest() {
         console.log("开始doget请求")
-        this.http.get(this.url, {}, {})
+        this.http.get(this.url, {
+            message: 'hello get', value: 'good', phone: 'abaphone'
+        }, {})
             .then(data => {
+                    console.log('get成功')
                     console.log(data);
                     this.handlerSucc(data)
                 }
@@ -131,7 +134,7 @@ export class WelcomePage {
     postTest() {
         console.log("开始dopost请求")
         let param = {
-            phone: 'abaphone', password: 'passwordasda'
+            phone: 'abaphone', password: 'passwordasda', message: 'hello get', value: 'good'
         }
         this.http.post(this.url, param)
             .then(data => {
