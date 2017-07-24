@@ -9,7 +9,7 @@ export class AddCasePage {
     ppl = 70;
     maxl = 200;
     a00 ;
-    b:any = 'h';
+    b:any;
 
     one() {
         var txttxt = this.a00.length;
