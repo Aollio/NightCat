@@ -1,7 +1,11 @@
 page-designer-me-detail {
 
-  .header {
+  .transparent{
+    background-color: transparent!important;
+  }
+  .header1 {
     position: absolute;
+    top:0;
     height: 40%;
     width: 100%;
     background-color: #3cb5cf;
@@ -9,7 +13,7 @@ page-designer-me-detail {
   }
 
   .menu-item {
-    padding-top: 1em;
+    padding-top: 3rem;
     font-size: 1.5rem;
     color: #FFFFFF;
     background-color: rgba(158, 158, 158, 0);
@@ -36,15 +40,16 @@ page-designer-me-detail {
   .card-personal-desc .desc-header div .desc-header-name {
     font-weight: 400;
     font-size: 1em;
-    width: auto;
+    //width: auto;
   }
 
   .desc-header-type {
-    width: 40%;
+    padding-left: 1rem!important;
+    //width: 40%;
     color: #ffbe60;
     font-size: 0.7em;
     padding-left: .5em;
-    text-align: center;
+   // text-align: center;
     margin: auto;
     margin-right: 0px;
     margin-left: 0px;
@@ -57,7 +62,7 @@ page-designer-me-detail {
     align-self: flex-end;
     align-items: flex-end;
     margin: auto;
-    //margin-left: 30%;
+   margin-left: 30%;
   }
 
   .desc-header-modify-icon {
