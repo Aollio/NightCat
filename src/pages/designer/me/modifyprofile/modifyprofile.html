@@ -29,13 +29,17 @@
         </ion-item>
         <ion-item>
             <ion-label fixed>时薪</ion-label>
-            <ion-input type="text" placeholder="10"></ion-input>
+            <ion-input type="text" placeholder="请输入时薪"></ion-input>
             <ion-note style="color: #171817" item-end>元</ion-note>
         </ion-item>
     </div>
     <ion-item no-lines class="money-detail" (click)="open(consumeDetail)">
-        设计师类别
-        <ion-icon class="ion-icon" style="color:#b1b1b1  " name="arrow-forward" item-end></ion-icon>
+        <ion-label fixed>设计师类别</ion-label>
+        <ion-select [(ngModel)]="desclass" interface="popover" >
+            <ion-option *ngFor="let item of desclassarray" value="{{item.val}}">{{item.name}}</ion-option>
+
+
+        </ion-select>con>
     </ion-item>
     <div class="blank"></div>
     <ion-item class="money-detail" (click)="open(addhonor)">
