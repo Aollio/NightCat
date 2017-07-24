@@ -12,23 +12,20 @@
         </ion-item>
         <ion-item>
             <ion-label fixed>年限</ion-label>
-            <ion-select [(ngModel)]="gaming" interface="popover">
-                <ion-option value="1">1</ion-option>
-                <ion-option value="2">2</ion-option>
-                <ion-option value="3">3</ion-option>
-                <ion-option value="4">4</ion-option>
-                <ion-option value="5">5</ion-option>
-                <ion-option value="6">6</ion-option>
-                <ion-option value="7">7</ion-option>
-            </ion-select>
+            <ion-input type="text"></ion-input>
         </ion-item>
         <ion-item>
             <ion-label fixed>职称</ion-label>
-            <ion-input type="text" placeholder="高级工程师"></ion-input>
+            <ion-select [(ngModel)]="position" interface="popover">
+                <ion-option value="01">初级工程师</ion-option>
+                <ion-option value="02">中级工程师</ion-option>
+                <ion-option value="03">高级工程师</ion-option>
+
+            </ion-select>
         </ion-item>
         <ion-item>
             <ion-label fixed>毕业院校</ion-label>
-            <ion-input type="text" placeholder="上海交通大学"></ion-input>
+            <ion-input type="text" placeholder="请输入院校名称"></ion-input>
         </ion-item>
         <ion-item>
             <ion-label fixed>时薪</ion-label>
