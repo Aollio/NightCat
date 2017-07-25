@@ -18,7 +18,8 @@ export class LoginPage {
 
     isDesigner: boolean = true;
 
-    user: User = new User();
+    user: any = {};
+
     //the view that jump
     resetPasswordPage: ResetPasswordPage;
 
@@ -35,7 +36,6 @@ export class LoginPage {
 
     login() {
 
-        console.log("开始登录")
 
         if (this.user.phone == null || this.user.phone == '') {
             this.toast('请输入手机号')
@@ -46,22 +46,23 @@ export class LoginPage {
             return
         }
 
+        console.log("开始登录")
+
         this.userSev
             .login(this.user.phone, this.user.password,
                 this.user.role === this.shared.ROLE_DESIGNER)
-            .then(user => {
-                if (user === null) {
-                    this.toast("登录失败, 用户名或密码错误")
-                    console.log("登录失败, 用户名或密码错误")
-                }
-                this.toast("登录正常");
+            .then(() => {
                 console.log("登录成功")
-                this.navCtrl.push(DesignerModulePage, {})
+                if (this.shared.isDesigner) {
+                    this.navCtrl.setRoot(DesignerModulePage)
+                } else {
+                    this.navCtrl.setRoot(EmployerModulePage)
+                }
             })
             .catch(error => {
-            this.toast("登录出现了异常");
-            console.log("login.ts error" + error)
-        });
+                this.toast("登录出现了异常");
+                console.log("login.ts error" + error)
+            });
 
     }
 

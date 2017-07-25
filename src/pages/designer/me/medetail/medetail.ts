@@ -12,7 +12,8 @@ import {CaseDetailPage} from "../casedetail/casedetail";
 export class DesignerMeDetailPage {
 
     user: User;
-    public isDesigner:boolean;
+
+    public isDesigner: boolean;
 
     cases: Array<{ title, desc, fav_count, comment_count, time }> = [
         {
@@ -31,9 +32,8 @@ export class DesignerMeDetailPage {
 
     constructor(public navCtrl: NavController,
                 public shared: SharedService,
-
-                public navParams:NavParams) {
-        this.isDesigner=navParams.get('isDesigner');
+                public navParams: NavParams) {
+        this.isDesigner = navParams.get('isDesigner');
         this.user = shared.currentUser;
 
     }
