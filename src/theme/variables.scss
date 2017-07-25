@@ -20,8 +20,126 @@ $app-direction: ltr;
 // http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
-$menu-width: 250px;
+//$menu-width: 250px;
 
+// --------------------------------------------------
+//默认rem大小初一2
+$action-sheet-ios-button-font-size: 1.0rem;
+$action-sheet-ios-button-min-height: 2.8rem;
+$action-sheet-ios-title-font-size: 0.65rem;
+$action-sheet-ios-title-padding: 0.75rem;
+$action-sheet-md-button-font-size: 0.8rem;
+$action-sheet-md-button-min-height: 2.4rem;
+$action-sheet-md-icon-font-size: 1.2rem;
+$action-sheet-md-icon-width: 1.15rem;
+$action-sheet-md-title-font-size: 0.8rem;
+$action-sheet-wp-button-font-size: 0.75rem;
+$action-sheet-wp-button-height: 2.4rem;
+$action-sheet-wp-icon-font-size: 1.2rem;
+$action-sheet-wp-icon-width: 1.15rem;
+$action-sheet-wp-title-font-size: 1.0rem;
+$alert-wp-input-line-height: 1.5rem;
+$badge-font-size: 0.65rem;
+$button-ios-font-size: 0.8rem;
+$button-ios-large-font-size: 1.0rem;
+$button-ios-margin-bottom: 0.2rem;
+$button-ios-margin-end: 0.1rem;
+$button-ios-margin-start: 0.1rem;
+$button-ios-margin-top: 0.2rem;
+$button-ios-small-font-size: 0.65rem;
+$button-md-font-size: 0.7rem;
+$button-md-height: 1.8rem;
+$button-md-large-font-size: 1.0rem;
+$button-md-margin-bottom: 0.2rem;
+$button-md-margin-end: 0.1rem;
+$button-md-margin-start: 0.1rem;
+$button-md-margin-top: 0.2rem;
+$button-md-small-font-size: 0.65rem;
+$button-round-padding-end: 1.3rem;
+$button-wp-font-size: 0.7rem;
+$button-wp-height: 1.8rem;
+$button-wp-large-font-size: 1.0rem;
+$button-wp-margin-bottom: 0.2rem;
+$button-wp-margin-end: 0.1rem;
+$button-wp-margin-start: 0.1rem;
+$button-wp-margin-top: 0.2rem;
+$button-wp-small-font-size: 0.65rem;
+$card-ios-font-size: 0.7rem;
+$card-ios-header-font-size: 0.8rem;
+$card-ios-title-font-size: 0.9rem;
+$card-md-avatar-size: 2.0rem;
+$card-md-font-size: 0.7rem;
+$card-md-header-font-size: 0.8rem;
+$card-md-thumbnail-size: 4.0rem;
+$card-md-title-font-size: 1.2rem;
+$card-wp-avatar-size: 2.0rem;
+$card-wp-font-size: 0.7rem;
+$card-wp-header-font-size: 0.8rem;
+$card-wp-thumbnail-size: 4.0rem;
+$card-wp-title-font-size: 1.2rem;
+$h1-font-size: 1.3rem;
+$h2-font-size: 1.2rem;
+$h3-font-size: 1.1rem;
+$h4-font-size: 1.0rem;
+$h5-font-size: 0.9rem;
+$h6-font-size: 0.8rem;
+$item-ios-body-text-font-size: 0.85rem;
+$item-ios-paragraph-font-size: 0.7rem;
+$item-md-body-text-font-size: 0.7rem;
+$item-md-font-size: 0.8rem;
+$item-wp-body-text-font-size: 0.7rem;
+$item-wp-divider-font-size: 1.0rem;
+$item-wp-font-size: 0.8rem;
+$list-ios-header-font-size: 0.6rem;
+$list-ios-header-letter-spacing: 0.05rem;
+$list-md-header-font-size: 0.7rem;
+$list-md-header-min-height: 2.25rem;
+$list-wp-header-font-size: 1.0rem;
+$searchbar-ios-input-height: 1.5rem;
+$searchbar-md-input-line-height: 1.5rem;
+$searchbar-wp-input-font-size: 0.7rem;
+$searchbar-wp-input-line-height: 1.5rem;
+$segment-button-ios-font-size: 0.65rem;
+$segment-button-ios-height: 1.6rem;
+$segment-button-ios-icon-line-height: 1.4rem;
+$segment-button-ios-icon-size: 1.3rem;
+$segment-button-ios-line-height: 1.5rem;
+$segment-button-ios-toolbar-button-height: 1.3rem;
+$segment-button-ios-toolbar-font-size: 0.6rem;
+$segment-button-ios-toolbar-icon-line-height: 1.2rem;
+$segment-button-ios-toolbar-icon-size: 1.1rem;
+$segment-button-ios-toolbar-line-height: 1.25rem;
+$segment-button-md-font-size: 0.6rem;
+$segment-button-md-height: 2.1rem;
+$segment-button-md-icon-size: 1.3rem;
+$segment-button-md-line-height: 2.0rem;
+$segment-button-wp-font-size: 0.65rem;
+$segment-button-wp-height: 2.0rem;
+$segment-button-wp-icon-size: 1.3rem;
+$segment-button-wp-line-height: 2.0rem;
+$tabs-md-tab-font-size: 0.6rem;
+$tabs-md-tab-font-size-active: 0.7rem;
+$tabs-md-tab-icon-size: 1.2rem;
+$tabs-md-tab-min-height: 2.8rem;
+$tabs-wp-tab-font-size: 0.6rem;
+$tabs-wp-tab-icon-size: 1.2rem;
+$tabs-wp-tab-min-height: 2.4rem;
+$text-input-wp-line-height: 1.5rem;
+$toast-ios-border-radius: 0.325rem;
+$toast-ios-title-font-size: 0.7rem;
+$toast-ios-title-padding-top: 0.75rem;
+$toast-md-title-font-size: 0.75rem;
+$toast-wp-title-font-size: 0.7rem;
+$toast-wp-title-padding-top: 0.75rem;
+$toolbar-ios-button-font-size: 0.85rem;
+$toolbar-ios-title-font-size: 0.85rem;
+$toolbar-md-button-font-size: 0.7rem;
+$toolbar-md-title-font-size: 1.0rem;
+$toolbar-wp-button-font-size: 0.7rem;
+$toolbar-wp-title-font-size: 0.75rem;
+// --------------------------------------------------
+
+//$font-size-root: 10px;
 // Named Color Variables
 // --------------------------------------------------
 // Named colors makes it easy to reuse colors on various components.
@@ -36,23 +154,18 @@ $colors: (
         danger: #f53d3d,
         light: #f4f4f4,
         dark: #222,
-
         nav-des-tx:#f4f4f4,
         nav-des-bg:#488aff,
-
         des-primary:#488aff,
         emp-primary:#26C764,
-
         nav-emp-tx:#f4f4f4,
         nav-com-bg: #f4f4f4,
         nav-com-tx: #32db64,
         font-gray:#939393,
         blank-color:#ececec,
-
         login-emp:#3b5998,
         login-des:#fa4169,
-
-        transparent-color: rgba(255,255,255,0)
+        transparent-color: rgba(255, 255, 255, 0)
 );
 
 $emp_primary: #26C764;

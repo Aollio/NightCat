@@ -13,9 +13,9 @@ page-employer-tabs {
     display: block;
     position: fixed;
     color: white !important;
-    font-size: 4.5em !important;
-    height: 1.5em !important;
-    width: 1.5em !important;
+    font-size: 2.25em !important;
+    height: .75em !important;
+    width: .75em !important;
    // font-size: 500em !important;
    // margin: auto !important;
     margin-top: -0em!important;
@@ -26,26 +26,9 @@ page-employer-tabs {
   }
 
   a.icon-only ion-icon::before {
-    padding-top: .3em;
+    padding-top: .15em;
     text-align: center !important;
     vertical-align: middle !important;
   }
 
-  //.add-icon, .icon-only {
-  //  width: 2em !important;
-  //  height: 2em !important;
-  //  font-size: 2em !important;
-  //  position: absolute;
-  //  display: block !important;
-  //  background-color: $emp_primary;
-  //  border-radius: 1em;
-  //}
-  //
-  //a.icon-only ion-icon {
-  //  color: white!important;
-  //  height: 2em !important;
-  //  font-size: 2em !important;
-  //  margin: auto !important;
-  //  text-align: center !important;
-  //}
 }
