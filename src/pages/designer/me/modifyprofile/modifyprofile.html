@@ -56,6 +56,9 @@
     </ion-item>
     <div class="summary-input-group">
         <p class="summary-label">个人说明</p>
-        <textarea class="summary-textarea"></textarea>
+        <textarea class="summary-textarea" [(ngModel)]="description"></textarea>
     </div>
+    <div class="spancss"> 剩余字数:<span>{{ 200 -description.length }}/50</span></div>
+
+
 </ion-content>

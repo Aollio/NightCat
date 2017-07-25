@@ -10,6 +10,7 @@ import {AddHonorPage} from "../addhonor/addhonor";
 
 })
 export class ModifyProfilePage{
+    description :any;
     addcase=AddCasePage;
     addhonor=AddHonorPage;
     constructor(public navCtrl: NavController) {
