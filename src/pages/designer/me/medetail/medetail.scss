@@ -11,6 +11,38 @@ page-designer-me-detail {
     background-color: #3cb5cf;
     z-index: 0;
   }
+  .type-buttons {
+    display: inline-flex;
+    width: 100%;
+  }
+
+  .type-btn:first-child {
+    border-left-width: 0px !important;
+  }
+
+  .type-btn {
+
+    padding-top: .5em;
+    padding-buttom: .5em;
+
+    text-align: center;
+    width: 33%;
+    background-color: transparent;
+    color: #3E3E3E;
+    border-left-color: #9E9E9E;
+    border-left-width: .5px;
+    border-left-style: solid;
+    border-radius: 0;
+
+    font-size: 1.2em;
+  }
+
+  .type-btn:active {
+  }
+
+
+
+
 
   .menu-item {
     margin-top: 2rem!important;

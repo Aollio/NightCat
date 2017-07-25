@@ -34,7 +34,9 @@ export class ModifyProfilePage{
             {'name': '室内设计', 'val': '10'},
             {'name': '暖通设计', 'val': '11'},
             {'name': '景观设计', 'val': '12'}
-
-
     ];
+
+    savemess(){
+
+    }
 }
