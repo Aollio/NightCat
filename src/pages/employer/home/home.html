@@ -41,23 +41,42 @@
     </ion-grid>
 
 
-    <ion-grid class="designer-list-grid">
-        <ion-row>
-            <ion-col *ngFor="let desitem of desarray"
-                     col-6 class="des-card" text-center>
-                <div class="des-card-avatar">
-                    <img (click)="openMeDetail({id:10000000,isDesigner:false})" class="des-card-img" src="{{desitem.avatar}}">
-                </div>
-                <div class="des-card-middiv">
-                    <span class="des-card-name">{{desitem.name}}</span>
-                    <span class="des-card-time">{{desitem.time}}</span>
-                </div>
-                <div class="des-card-describe">
-                    {{desitem.describe}}
-                </div>
-            </ion-col>
-        </ion-row>
+    <!--<ion-grid class="designer-list-grid">-->
+        <!--<ion-row>-->
+            <!--<ion-col *ngFor="let desitem of desarray"-->
+                     <!--col-6 class="des-card" text-center>-->
+                <!--<div class="des-card-avatar">-->
+                    <!--<img (click)="openMeDetail({id:10000000,isDesigner:false})" class="des-card-img" src="{{desitem.avatar}}">-->
+                <!--</div>-->
+                <!--<div class="des-card-middiv">-->
+                    <!--<span class="des-card-name">{{desitem.name}}</span>-->
+                    <!--<span class="des-card-time">{{desitem.time}}</span>-->
+                <!--</div>-->
+                <!--<div class="des-card-describe">-->
+                    <!--{{desitem.describe}}-->
+                <!--</div>-->
+            <!--</ion-col>-->
         <!--</ion-row>-->
-    </ion-grid>
+        <!--&lt;!&ndash;</ion-row>&ndash;&gt;-->
+    <!--</ion-grid>-->
+
+    <div class="my-list clearfloat"  *ngFor="let desitem of desarray">
+    <div class="my-list-li">
+        <div class="my-list-li-img">
+            <img src="{{desitem.avatar}}"/>
+        </div>
+        <div class="my-list-li-text">
+            <div class="my-list-li-text-l">
+                {{desitem.name}}
+            </div>
+            <div class="my-list-li-text-r">
+                {{desitem.time}}
+            </div>
+        </div>
+        <div class="my-list-li-val">
+            <p>{{desitem.describe}}</p>
+        </div>
+    </div>
+    </div>
 
 </ion-content>

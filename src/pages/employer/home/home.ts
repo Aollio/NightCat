@@ -1,13 +1,16 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {DesignerMeDetailPage} from "../../designer/me/medetail/medetail";
-
+declare let initializeFontSize:any
 @Component({
     selector: 'page-employer-home',
     templateUrl: 'home.html'
 })
 export class EmployerHomePage {
 
+    ionViewDidEnter(){
+      initializeFontSize()
+    }
     designerMeDetailPage: DesignerMeDetailPage;
 
     images: Array<{ url }> = [

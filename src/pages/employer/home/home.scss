@@ -87,23 +87,32 @@ page-employer-home {
   }
 
   .des-card {
-    padding: 5%;
-    height: auto;
+    width: 7.25rem;
+    height: 10.5rem;
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    float: left;
   }
   .des-card-avatar {
     height: auto;
   }
   .des-card-avatar img {
-    border-top-right-radius: .5em;
-    border-top-left-radius: .5em;
+    width: 7.25rem;
+    height: 7.25rem;
   }
   .des-card-middiv {
-    height: 10%;
+    width: 7.25rem;
+    height: 1rem;
+    display:-webkit-box;
+    font-family: helvetica;
+    font-size: 0.6rem;
+    margin-top: 0.15rem;
   }
   .des-card-name {
     float: left;
     color: #C13638;
     font-size: 0.85em;
+    -webkit-box-flex:1;
   }
   .des-card-time {
     float: right;
@@ -120,9 +129,65 @@ page-employer-home {
     -webkit-line-clamp: 2; //文本行数
     overflow: hidden;
     font-size: 0.8em;
+    margin: 0;
+
+    white-space:normal!important;
+    text-overflow:ellipsis;
+    word-wrap:break-word;
+
   }
   .des-card-img {
 
+  }
+
+
+
+  .my-list{
+    width: 16rem;
+    padding: 0;
+  }
+  .clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
+  .clearfloat{zoom:1}
+  .my-list-li{
+    width: 7.25rem;
+    height: 10.5rem;
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    float: left;
+  }
+  .my-list-li-img{
+    width: 7.25rem;
+    height: 7.25rem;
+  }
+  .my-list-li-img img{
+    width: 100%;
+    height: 100%;
+  }
+  .my-list-li-text{
+    width: 7.25rem;
+    height: 1rem;
+    display:-webkit-box;
+    font-family: helvetica;
+    font-size: 0.6rem;
+    color: #fa4169;
+    margin-top: 0.15rem;
+  }
+  .my-list-li-text-l{
+    -webkit-box-flex:1;
+  }
+  .my-list-li-val{
+    font-size: 0.6rem;
+    line-height: 1rem;
+  }
+  .my-list-li-val p{
+    margin: 0;
+    display:-webkit-box;
+    overflow:hidden;
+    white-space:normal!important;
+    text-overflow:ellipsis;
+    word-wrap:break-word;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
   }
 
 }
