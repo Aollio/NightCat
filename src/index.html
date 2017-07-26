@@ -16,7 +16,14 @@
     <script src="js/md5.js"></script>
     <script src="js/cookie.js"></script>
     <script src="js/cat.js"></script>
-
+<script>function initializeFontSize(){
+    var html=document.documentElement;
+    var width=html.getBoundingClientRect().width;
+    html.style.fontSize=width/160+'px';
+    console.log('This is nightcat')
+}
+initializeFontSize()
+</script>
     <!-- un-comment this code to enable service worker
     <script>
       if ('serviceWorker' in navigator) {
