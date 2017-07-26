@@ -7,7 +7,7 @@ import {AccountSecurityPage} from "../securitycenter/accountsecurity/accountsecu
 import {SupportPage} from "../support/support";
 import {SharedService} from "../../../service/share.service";
 import {User} from "../../../model/user";
-
+declare let initializeFontSize: any
 @Component({
     selector: 'page-slidemenu',
     templateUrl: 'slidemenu.html'
@@ -33,7 +33,10 @@ export class SlideMenuComponment {
         this.isDesigner = this.shared.isDesigner;
         this.maincolor = this.shared.getPrimaryColor();
     }
-
+    ionViewDidEnter() {
+        initializeFontSize()
+        console.log("com")
+    }
     open(page, option) {
         this.navCtrl.push(page, option)
     }

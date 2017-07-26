@@ -2,18 +2,23 @@ comment-order {
 
   $orange: #FB3908;
 
+  .toolbar-title-ios{
+    font-weight: 400;
+  }
+
   ion-header {
   }
 
   ion-content {
     background-color: #F6F6F6 !important;
+
   }
 
   .comment-type-btns {
     width: 100%;
     margin: auto;
     text-align: center;
-    border-bottom: 1px solid #d6d6d6;
+    border-bottom: 1rem solid #d6d6d6;
   }
 
   .comment-type-btns button {
@@ -29,22 +34,22 @@ comment-order {
   }
 
   ion-textarea textarea {
-    height: 10em !important;
+    height: 10rem !important;
     resize: none !important;
   }
 
   .item-divider-cus-10 {
     width: 100%;
-    height: .8em;
+    height: .8rem;
   }
 
   .stars-row {
-    padding-left: .5em;
-    padding-right: .5em;
+    padding-left: .5rem;
+    padding-right: .5rem;
     text-align: center;
     background-color: white;
-    padding-top: .3em;
-    padding-bottom: .3em;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
     color: #9E9E9E;
   }
 
@@ -72,8 +77,23 @@ comment-order {
   }
 
   .finfish-icon {
-    color: #32db64;
-    font-size: 4em;
+    position: relative;
+    top:1rem ;
+    margin-right: 1.25rem!important;
+    color: #ff9900;
+    font-size: 5rem;
   }
 
+  .my-pleasure{
+    font-weight: 500;
+    font-size: 2rem;
+  }
+.my-mess{
+  margin-top: 2rem;
+  color: #6E6E6E;
+  font-size: 1.2rem;
+}
+  .my-font-size{
+    font-size: 1.25rem!important;
+  }
 }

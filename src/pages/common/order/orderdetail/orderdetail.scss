@@ -6,48 +6,48 @@ page-orderdetail {
 
 
   .header-row-first{
-    padding-top: .5em;
+    padding-top: .5rem;
   }
   .header-row-last{
-    padding-bottom: .5em;
+    padding-bottom: .5rem;
   }
 
   .respect-title {
     margin: auto;
     text-align: left;
     color: $font-color;
-    padding-left: .7em;
+    padding-left: .7rem;
   }
 
   .respect-title ion-icon {
-    padding-left: .5em;
+    padding-left: .5rem;
   }
 
   .respect-content {
     padding-left: 0;
-    padding-right: 1em;
+    padding-right: 1rem;
     color: $font-color;
   }
-  .person-item {
+  .person-itrem {
     border-bottom-width: 1px !important;
     border-bottom-style: solid !important;
     border-bottom-color: #e8e9ee !important;
   }
 
   .comment-avatar {
-    width: 1.5em !important;
-    height: 1.5em !important;
-    max-width: 1.5em !important; //any size
-    max-height: 1.5em !important; //any size
-    min-width: 1.5em !important;
-    min-height: 1.5em !important;
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    max-width: 1.5rem !important; //any size
+    max-height: 1.5rem !important; //any size
+    min-width: 1.5rem !important;
+    min-height: 1.5rem !important;
   }
 
   .comment-avatar img {
     width: 100% !important;
     height: 100% !important;
-    max-width: 1.5em !important; //any size
-    max-height: 1.5em !important; //any size
+    max-width: 1.5rem !important; //any size
+    max-height: 1.5rem !important; //any size
   }
 
   .person-arrow-icon {
@@ -56,7 +56,7 @@ page-orderdetail {
   }
 
   .more-weight {
-    font-weight: 550;
+    font-weight: 500;
     color: #000000;
   }
 
@@ -68,21 +68,21 @@ page-orderdetail {
     color: #FDBC42;
   }
 
-  .item-divider-cus-10 {
+  .itrem-divider-cus-10 {
     width: 100%;
-    height: .3em;
+    height: .3rem;
     background-color: $bg-color;
   }
-  .item-divider-cus-20 {
+  .itrem-divider-cus-20 {
     width: 100%;
-    height: .6em;
+    height: .6rem;
     background-color: $bg-color;
   }
 
   .order-photo ion-col {
-    width: 8em;
-    height: 8em;
-    //margin: .2em 0.3em 0.3em;
+    width: 8rem;
+    height: 8rem;
+    //margin: .2rem 0.3rem 0.3rem;
   }
 
   .order-photo ion-icon img {
@@ -90,20 +90,22 @@ page-orderdetail {
   }
 
   .order-photo ion-col:first-child {
-    margin-left: .5em;
+    margin-left: .5rem;
   }
 
   .order-photo ion-col:last-child {
-    margin-right: .5em;
+    margin-right: .5rem;
   }
 
   .footer-btns {
     display: inline-flex;
     width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
   }
 
   .footer-btns button {
-    height: 2em;
+    height: 2rem;
   }
 
   .footer-clear-btn {
@@ -118,5 +120,7 @@ page-orderdetail {
     color: transparent;
   }
 
-
+.my-margin{
+  margin: 0;
+}
 }

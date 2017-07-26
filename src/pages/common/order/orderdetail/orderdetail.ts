@@ -6,7 +6,7 @@ import {AbsCommonPage} from "../../abs";
 import {DesignerMeDetailPage} from "../../../designer/me/medetail/medetail";
 import {PayPage} from "../../../employer/pay/pay";
 import {CommentOrderPage} from "../comment-order/comment-order";
-
+declare let initializeFontSize:any
 /*
  * 订单详情
  * */
@@ -33,7 +33,10 @@ export class OrderDetailPage extends AbsCommonPage {
         this.order_id = navParams.get('order_id');
         this.isDesigner = share.isDesigner;
     }
-
+    ionViewDidEnter(){
+        initializeFontSize()
+        console.log("com")
+    }
 
     openUserDetail() {
         this.navCtrl.push(DesignerMeDetailPage, {})
