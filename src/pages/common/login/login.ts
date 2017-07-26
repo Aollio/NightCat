@@ -9,6 +9,7 @@ import {DesignerTabsPage} from "../../designer/tabs/tabs";
 import {EmployerModulePage} from "../../employer/employer";
 import {DesignerModulePage} from "../../designer/designer";
 import {SharedService} from "../../../service/share.service";
+import {WelcomePage} from "../../welcome/welcome";
 
 @Component({
     selector: 'page-login',
@@ -71,8 +72,8 @@ export class LoginPage {
     }
 
     openRegisterPage() {
-        this.navCtrl.push(RegisterPage, {
-            isDesigner: this.isDesigner
+        this.navCtrl.push(WelcomePage, {
+            register: 'true'
         })
     }
 

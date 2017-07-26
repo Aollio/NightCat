@@ -50,7 +50,11 @@ export class UsersService {
     }
 
 
-    async login(user): Promise<User> {
+    /**
+     * 用户进行登录, 登录成功将设置全局TOKEN.
+     * 失败返回错误信息
+     * */
+    async login(user): Promise<any> {
         let token
         //校对成功后, 会收到TOKEN. 将TOKEN设置为共享变量并存储.
         try {
@@ -62,7 +66,7 @@ export class UsersService {
 
         this.shared.TOKEN = token.id
         this.shared.currentUserId = token.uid
-        return
+        return 'ok'
     }
 
     async register(user) {

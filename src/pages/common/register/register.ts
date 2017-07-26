@@ -15,9 +15,9 @@ import {UsersService} from "../../../service/ajax/users.service";
 })
 export class RegisterPage {
 
-    //页面切换状态
+    //页面切换状态, 页面切换特效的实现变量
     state: any = 1;
-
+    current = 1
 
     isDesigner: boolean = true;
 
@@ -34,7 +34,7 @@ export class RegisterPage {
                 public util: Util,
                 public usersServ: UsersService) {
         this.role = navParams.get('role');
-        if (this.role == 'designer') {
+        if (this.role == '00') {
             this.user.role = '00'
         } else {
             this.user.role = '01'
@@ -70,6 +70,7 @@ export class RegisterPage {
         }
 
         this.state = 2;
+        this.current = 2
     }
 
     register() {
@@ -79,38 +80,45 @@ export class RegisterPage {
             return
         }
 
-        this.util.presentLoading('正在注册...')
+        let loading = this.util.createLoading('正在注册')
+
+        loading.present()
 
         this.usersServ.register(this.user)
             .then(user => {
-                this.util.hideLoading()
-                this.util.presentLoading('正在登录...')
+                loading.setContent('正在登录...')
                 this.usersServ.login(user)
                     .then(() => {
-                        this.util.hideLoading()
+
+                        loading.dismiss()
                         this.util.toast('登录成功')
+                        console.log('login success')
+
                         this.state = 3
+                        this.current = 3
                     })
                     .catch(eror => {
-                        this.util.hideLoading()
+                        loading.dismiss()
                         this.util.toast('登录失败')
+
+                        console.log('login fail')
+
                         this.navCtrl.push(LoginPage)
                     })
             })
             .catch(error => {
                 console.log('注册失败', error)
-                this.util.hideLoading()
+                loading.dismiss()
                 this.util.toast('注册失败, 请稍后重试')
             })
 
-        this.state = 3;
     }
 
     openHome() {
-        if (this.role === 'designer') {
-            this.navCtrl.setRoot(DesignerModulePage, {})
+        if (this.role === '00') {
+            this.navCtrl.setRoot(DesignerModulePage, {}, {animate: true})
         } else {
-            this.navCtrl.setRoot(EmployerModulePage, {});
+            this.navCtrl.setRoot(EmployerModulePage, {}, {animate: true});
         }
     }
 
