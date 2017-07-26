@@ -27,7 +27,7 @@ export class UsersService {
             password: user.password
         }
         console.log('开始获取TOKEN', param)
-        let data = await this.http.post(this.urls.token_url, param)
+        let data = await this.http.post(this.urls.tokens_url, param)
 
         if (data.status != 200) {
             Promise.reject(data)
@@ -46,7 +46,7 @@ export class UsersService {
             console.log('演示模式, 返回默认用户');
             return Promise.resolve(this.shared.defaultUser)
         }
-        return await this.http.get(this.urls.token_url, {token: token})
+        return await this.http.get(this.urls.tokens_url, {token: token})
     }
 
 
@@ -77,7 +77,7 @@ export class UsersService {
             return user
         }
 
-        let data = await this.http.post(this.urls.register_url, user)
+        let data = await this.http.post(this.urls.users_register, user)
         if (data.status != 200) {
             Promise.reject(data)
         }

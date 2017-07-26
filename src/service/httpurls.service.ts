@@ -7,11 +7,13 @@ export class HttpUrls {
     server_url: string = "http://localhost:3000";
 
     //登录URL, 用于获取用户对应的TOKEN
-    token_url: string = this.server_url + "/tokens";
+    tokens_url: string = this.server_url + "/tokens";
 
-    user_info_url: string = this.server_url + "/tokens";
+    users_info: string = this.server_url + "/tokens";
 
-    register_url: string = this.server_url + "/users";
+    users_register: string = this.server_url + "/users";
+
+    projects_url: string = this.server_url + '/projects'
 
     constructor(private shared: SharedService) {
         if (shared.DEBUG) {
