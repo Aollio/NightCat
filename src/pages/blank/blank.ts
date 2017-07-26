@@ -1,14 +1,16 @@
 import {Component} from "@angular/core";
 
 
-declare let initializeFontSize:any
+declare let initializeFontSize: any
 
 @Component({
-    selector:'page-blank',
+    selector: 'page-blank',
     templateUrl: 'blank.html'
 })
 export class BlankPage {
-    constructor(){}
+
+    constructor() {
+    }
 
     images: Array<{ url }> = [
         {url: 'assets/img/home-default.png'},
@@ -16,7 +18,7 @@ export class BlankPage {
         {url: 'assets/img/home-default.png'},
     ]
 
-    ionViewDidEnter(){
+    ionViewDidEnter() {
         initializeFontSize()
     }
 }

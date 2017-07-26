@@ -2,11 +2,18 @@ import {Component} from "@angular/core";
 import {AlertCmp, AlertController, PopoverController} from "ionic-angular"
 import {PopoverPage} from "../../popver/popver";
 
+declare let initializeFontSize:any
+
+
 @Component({
     selector: 'page-tasksquare',
     templateUrl: 'tasksquare.html'
 })
 export class TaskSquarePage {
+
+    ionViewDidEnter(){
+        // initializeFontSize()
+    }
 
     showAd: boolean = true;
 

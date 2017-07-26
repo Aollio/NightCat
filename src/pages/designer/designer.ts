@@ -5,7 +5,9 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 import {DesignerTabsPage} from "./tabs/tabs";
 import {RegisterPage} from "../common/register/register";
 
-@IonicPage()
+@IonicPage({
+    segment: 'd'
+})
 @Component({
     templateUrl: 'designer.html'
 })

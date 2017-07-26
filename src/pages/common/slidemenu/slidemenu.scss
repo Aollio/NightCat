@@ -1,9 +1,10 @@
 page-slidemenu {
 
   $font-color: map_get($colors, font-gray);
+
   ion-list {
-    margin-top: 1.5em !important;
-    margin-left: 1em;
+    margin-top: 1rem !important;
+    margin-left: .5rem;
   }
 
   button {
@@ -11,7 +12,7 @@ page-slidemenu {
   }
 
   ion-icon {
-    font-size: .8em;
+    font-size: .8rem;
   }
 
   .designer {
@@ -22,18 +23,20 @@ page-slidemenu {
     color: $emp_primary !important;
   }
 
-  .exitbtn{
-    color: white!important;
+  .exitbtn {
+    color: white !important;
 
   }
-  .exitbtn span{
+  .exitbtn span {
     margin: auto;
     text-align: left;
-    justify-content:flex-start;
-    -webkit-justify-content:flex-start;
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
 
   }
-  .custom-icon{
+  .custom-icon {
+    min-height: 0 !important;
+    font-size: 1.4rem !important;
     padding-left: -10%;
     padding-right: 10%;
   }

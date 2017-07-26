@@ -21,15 +21,15 @@ page-helpchoose {
   }
 
   .designer-types-grid {
-    margin-left: 2.5em;
-    margin-right: 2.5em;
+    margin-left: 1.25em;
+    margin-right: 1.25em;
     color: $grid-font-color;
-    margin-top: 2em;
+    margin-top: 1em;
     width: auto;
   }
 
   .designer-type-col {
-    margin-top: 1em;
+    margin-top: .5em;
     padding: 0;
   }
 
@@ -51,7 +51,7 @@ page-helpchoose {
   .designer-type-icon {
     padding-top: -5px;
     color: white;
-    font-size: 4em;
+    font-size: 2em;
     //line-height: 30px;
   }
 
@@ -65,16 +65,16 @@ page-helpchoose {
   .tip-button {
     margin-left: 15%;
     width: 70%;
-    height: 2.5em;
+    height: 1.25em;
     color: white;
-    font-size: 1.5em;
+    font-size: .75em;
     background-color: $emp_primary;
-    border-radius: 1.5em;
-    margin-bottom: .5em;
+    border-radius: .75em;
+    margin-bottom: .25em;
   }
 
   .position-btns {
-    margin-top: 4em;
+    margin-top: 2em;
   }
   .selectbutton {
     margin-left: 25%;
@@ -82,7 +82,7 @@ page-helpchoose {
     width: 50%;
     height: auto;
     color: $emp_primary;
-    font-size: 1.2em;
+    font-size: .6em;
     background-color: white;
     border: 1px solid;
     margin-top: .5em;
@@ -134,7 +134,7 @@ page-helpchoose {
   }
 
   .jump-question {
-    height: 1.5em;
+    height: .75em;
     width: 100%;
   }
 

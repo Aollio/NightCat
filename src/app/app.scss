@@ -1,6 +1,5 @@
 // http://ionicframework.com/docs/v2/theming/
 
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -19,3 +18,18 @@ custom-icon::before {
   height: 0em;
 }
 
+.item-input, .back-button-ios {
+  min-height: 0 !important;
+}
+
+.item-block, .item-icon {
+  min-height: 0 !important;
+}
+
+//ion-icon, custom-icon {
+//  font-size: 1.4rem !important;
+//}
+//
+//.back-button-icon-ios {
+//  font-size: 1.7rem !important;
+//}
