@@ -15,7 +15,7 @@ import {NetworkService} from "../service/network.service";
 import {SharedService} from "../service/share.service";
 import {HttpUrls} from "../service/httpurls.service";
 import {FormsModule} from '@angular/forms';
-import {UserService} from "../service/ajax/user.service";
+import {UsersService} from "../service/ajax/users.service";
 import {HTTP} from "@ionic-native/http";
 import { HttpModule} from "@angular/http";
 import {PopoverPage} from "../pages/popver/popver";
@@ -66,7 +66,7 @@ import {Util} from "../service/util";
         HttpUrls,
         NetworkService,
         SharedService,
-        UserService,
+        UsersService,
         StatusBar,
        // ImagePicker,//
         HTTP,

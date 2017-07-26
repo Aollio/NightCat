@@ -11,7 +11,14 @@ export class Util {
                 public toastCtrl: ToastController) {
     }
 
-    toast(message, duration = 2000) {
+
+    notEmptyOrToast(obj, msg) {
+        if (obj === null || obj === '') {
+            this.toast(msg)
+        }
+    }
+
+    toast(message, duration = 1000) {
         let toast = this.toastCtrl.create({
             message: message,
             duration: duration,

@@ -4853,7 +4853,7 @@
             login: {
                 sid: o.auth.id,
                 cid: o.auth.login,
-                params: [{type: "Property", name: "login"}]
+                params: [{type: "Property", name: "register"}]
             },
             logout: {sid: o.auth.id, cid: o.auth.logout},
             kick: {sid: o.auth.id, cid: o.auth.kick, params: [{type: "StrArray", name: "deviceIds"}]},
@@ -5094,7 +5094,7 @@
         }), a = r.merge({}, i.packetConfig, {
             "2_3": {
                 service: "auth",
-                cmd: "login",
+                cmd: "register",
                 response: [{type: "Property", name: "loginRes"}, {
                     type: "PropertyArray",
                     name: "loginPorts",
@@ -5847,7 +5847,7 @@
         var r = n(11).fn, i = n(4), o = n(13), s = n(21), a = n(9), c = n(6), u = n(1), l = u.notundef;
         r.login = function () {
             var e = this;
-            e.sendCmd("login", e.assembleLogin(), e.onLogin.bind(e)), e.autoconnect = !1
+            e.sendCmd("register", e.assembleLogin(), e.onLogin.bind(e)), e.autoconnect = !1
         }, r.genSessionKey = function () {
             var e = {};
             return function () {
@@ -5941,7 +5941,7 @@
                 e.isConnected() && (e.logger.info("disconnecting"), e.logout())
             }, t.onConnect = function () {
                 var e = this;
-                e.backoff && e.backoff.reset(), e.retryCount = 0, e.connecting = !1, e.shouldReconnect = !0, e.hasNotifyDisconnected = !1, e.login()
+                e.backoff && e.backoff.reset(), e.retryCount = 0, e.connecting = !1, e.shouldReconnect = !0, e.hasNotifyDisconnected = !1, e.register()
             }, t.onHandshakeFailed = function () {
                 this.onDisconnect()
             }, t.onConnectFailed = function () {
@@ -6052,7 +6052,7 @@
             login: {
                 sid: o.chatroom.id,
                 cid: o.chatroom.login,
-                params: [{type: "byte", name: "type"}, {type: "Property", name: "login"}, {
+                params: [{type: "byte", name: "type"}, {type: "Property", name: "register"}, {
                     type: "Property",
                     name: "imLogin"
                 }]
@@ -6131,7 +6131,7 @@
             "4_11": {service: "notify"},
             "13_2": {
                 service: a,
-                cmd: "login",
+                cmd: "register",
                 response: [{type: "Property", name: "chatroom"}, {type: "Property", name: "chatroomMember"}]
             },
             "13_3": {
@@ -10285,7 +10285,7 @@
         }, r.processAuth = function (e) {
             var t = this;
             switch (e.cmd) {
-                case"login":
+                case"register":
                     e.error || (e.obj = e.content.loginRes, t.connectionId = e.content.loginRes.connectionId, t.onLoginPortsChange(e, 2));
                     break;
                 case"kicked":
@@ -10311,7 +10311,7 @@
                     e.type = i.reverseType(e.type), e.time = +e.time, e.online = o
                 }), r = r.filter(function (e) {
                     return e.connectionId !== n.connectionId
-                }), r.length && (n.logger.info("on login ports", r), n.options.onloginportschange(r))
+                }), r.length && (n.logger.info("on register ports", r), n.options.onloginportschange(r))
             }
         }, r.kickedReasons = ["", "samePlatformKick", "serverKick", "otherPlatformKick", "silentlyKick"], r.kickedMessages = ["", "不允许同一个帐号在多个地方同时登录", "被服务器踢了", "被其它端踢了", "悄悄被踢"]
     }, function (e, t, n) {

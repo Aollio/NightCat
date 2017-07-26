@@ -4,7 +4,7 @@ import {RegisterPage} from "../register/register";
 import {ResetPasswordPage} from "../resetpassword/resetpassword";
 import {User} from "../../../model/user";
 import {AbsCommonPage} from "../abs";
-import {UserService} from "../../../service/ajax/user.service";
+import {UsersService} from "../../../service/ajax/users.service";
 import {DesignerTabsPage} from "../../designer/tabs/tabs";
 import {EmployerModulePage} from "../../employer/employer";
 import {DesignerModulePage} from "../../designer/designer";
@@ -25,12 +25,17 @@ export class LoginPage {
 
     constructor(public navCtrl: NavController, public navParams: NavParams,
                 public toastCtrl: ToastController,
-                public userSev: UserService,
+                public userSev: UsersService,
                 public shared: SharedService) {
         var role = navParams.get('role');
         this.user.role = role;
-        if (role === 'employer') {
+        if (role === 'designer') {
+            this.user.role = '00'
+            this.isDesigner = true
+        } else {
+            this.user.role = '01'
             this.isDesigner = false
+
         }
     }
 
@@ -49,8 +54,7 @@ export class LoginPage {
         console.log("开始登录")
 
         this.userSev
-            .login(this.user.phone, this.user.password,
-                this.user.role === this.shared.ROLE_DESIGNER)
+            .login(this.user)
             .then(() => {
                 console.log("登录成功")
                 if (this.shared.isDesigner) {
@@ -61,7 +65,7 @@ export class LoginPage {
             })
             .catch(error => {
                 this.toast("登录出现了异常");
-                console.log("login.ts error" + error)
+                console.log("login.ts error", error)
             });
 
     }
