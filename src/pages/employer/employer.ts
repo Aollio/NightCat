@@ -22,5 +22,6 @@ export class EmployerModulePage {
             statusBar.styleDefault();
             splashScreen.hide();
         });
+        // this.nav.setRoot(EmployerModulePage)
     }
 }

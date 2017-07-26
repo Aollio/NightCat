@@ -25,6 +25,7 @@ export class DesignerModulePage {
             statusBar.styleDefault();
             splashScreen.hide();
         });
+        // this.navctrl.setRoot(DesignerModulePage)
     }
 
 }

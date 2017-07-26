@@ -1,0 +1,27 @@
+page-first {
+
+  .welcome-page {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    repeat: fixed !important;
+    background: url("../assets/img/SelectOption.png") no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .logo div {
+    color: map_get($colors, login-des);
+    text-align: center;
+    margin-bottom: 3.5em;
+    font-size: 1.2em;
+    font-weight: 300;
+  }
+
+  .logo img {
+    max-height: 100%;
+    max-width: 100%;
+    margin: 27% 0 0;
+    padding-left: 0%;
+  }
+
+}

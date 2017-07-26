@@ -15,28 +15,30 @@ export class IMPage {
 
     sessionNameMap: any = {}
 
+
     constructor(public imServ: ImService,
                 public nav: NavController,
                 public util: Util) {
 
+        let loading = this.util.createLoading("加载消息列表中...")
+
+
         if (imServ.state.isLoading) {
-            //todo 打开加载框
+            loading.present()
             console.log("正在加载")
             //如果还没有初始化NIM模块, 则开始初始化
             this.imServ.initializeNim()
-            this.imServ.registerSyncDone(() => this.initializeDone())
-            this.util.presentLoading("加载消息列表中...")
+            this.imServ.registerSyncDone(() => {
+                loading.dismiss();
+                this.initFriendlyName()
+            })
+
         } else {
             this.initFriendlyName()
             console.log(this.sessions)
             console.log(this.sessionNameMap)
         }
         this.sessions = this.imServ.state.sessionlist
-    }
-
-    initializeDone() {
-        this.util.hideLoading()
-        this.initFriendlyName()
     }
 
 

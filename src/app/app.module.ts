@@ -15,16 +15,22 @@ import {NetworkService} from "../service/network.service";
 import {SharedService} from "../service/share.service";
 import {HttpUrls} from "../service/httpurls.service";
 import {FormsModule} from '@angular/forms';
-import {UserService} from "../service/ajax/user.service";
+import {UsersService} from "../service/ajax/users.service";
 import {HTTP} from "@ionic-native/http";
-import { HttpModule} from "@angular/http";
+import {HttpModule} from "@angular/http";
 import {PopoverPage} from "../pages/popver/popver";
 import {CustomIconsModule} from 'ionic2-custom-icons';
 import {ImService} from "../service/im/service.im";
 import {ImModule} from "../pages/im/im.module";
-import {IMPage} from "../pages/im/im";
 import {Util} from "../service/util";
+import {FirstPage} from "../pages/first/first";
+import {IonicStorageModule} from "@ionic/storage";
+import {Storage} from '@ionic/storage';
 
+
+export function provideStorage() {
+    return new Storage({});
+}
 
 @NgModule({
     declarations: [
@@ -32,11 +38,13 @@ import {Util} from "../service/util";
         WelcomePage,
         BlankPage,
         PopoverPage,
+        FirstPage
     ],
     entryComponents: [
         WelcomePage,
         BlankPage,
         PopoverPage,
+        FirstPage
     ],
     imports: [
         ImModule,
@@ -51,9 +59,9 @@ import {Util} from "../service/util";
             backButtonText: '返回',
             tabsHideOnSubPages: true,
             hideTabsOnSubPages: true,
-            //push overlay reveal
-            menuType:'overlay'
+            menuType: 'overlay'
         }),
+        IonicStorageModule.forRoot({}),
         CustomIconsModule // Add this!
 
     ],
@@ -66,61 +74,15 @@ import {Util} from "../service/util";
         HttpUrls,
         NetworkService,
         SharedService,
-        UserService,
+        UsersService,
         StatusBar,
-       // ImagePicker,//
         HTTP,
         SplashScreen,
-        {provide: ErrorHandler, useClass: IonicErrorHandler}
+        {provide: ErrorHandler, useClass: IonicErrorHandler},
+        {provide: Storage, useFactory: provideStorage},
     ]
 })
 export class AppModule {
 }
 
-// constructor(public http:Http) {
-//     $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
-// Use x-www-form-urlencoded Content-Type
 
-/**
- * The workhorse; converts an object to x-www-form-urlencoded serialization.
- * @param {Object} obj
- * @return {String}
- */
-// var param = function (obj) {
-//     var query = '', name, value, fullSubName, subName, subValue, innerObj, i;
-//
-//     for (name in obj) {
-//         value = obj[name];
-//
-//         if (value instanceof Array) {
-//             for (i = 0; i < value.length; ++i) {
-//                 subValue = value[i];
-//                 fullSubName = name + '[' + i + ']';
-//                 innerObj = {};
-//                 innerObj[fullSubName] = subValue;
-//                 query += param(innerObj) + '&';
-//             }
-//         }
-//         else if (value instanceof Object) {
-//             for (subName in value) {
-//                 subValue = value[subName];
-//                 fullSubName = name + '[' + subName + ']';
-//                 innerObj = {};
-//                 innerObj[fullSubName] = subValue;
-//                 query += param(innerObj) + '&';
-//             }
-//         }
-//         else if (value !== undefined && value !== null)
-//             query += encodeURIComponent(name) + '=' + encodeURIComponent(value) + '&';
-//     }
-//
-//     return query.length ? query.substr(0, query.length - 1) : query;
-// };
-//
-// Override $http service's default transformRequest
-// $httpProvider.defaults.transformRequest = [function (data) {
-//     return angular.isObject(data) && String(data) !== '[object File]' ? param(data) : data;
-// }];
-// });
-// }
-// }
