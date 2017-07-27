@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {MessagePage} from "../message/message";
+import {AdsService} from "../../../service/ajax/ads.service";
 
 @Component({
     selector: 'page-home',
@@ -10,9 +11,9 @@ export class DesignerHomePage {
 
 
     images: Array<{ url }> = [
-        {url: 'assets/img/home-default.png'},
-        {url: 'assets/img/home-default.png'},
-        {url: 'assets/img/home-default.png'},
+        // {url: 'assets/img/home-default.png'},
+        // {url: 'assets/img/home-default.png'},
+        // {url: 'assets/img/home-default.png'},
     ]
 
     types: Array<{ name, value }> = [
@@ -34,7 +35,15 @@ export class DesignerHomePage {
     messagePage: any = MessagePage;
 
 
-    constructor(public navCtrl: NavController) {
+    constructor(public navCtrl: NavController,
+                public adsServ: AdsService) {
+        this.adsServ.getDesHomeSlides().then(slides => {
+            for (let x of slides) {
+                this.images.push(x)
+            }
+        }).catch(eroor => {
+            console.log('DesignerHomePage load slides error')
+        })
     }
 
     selectType(index) {

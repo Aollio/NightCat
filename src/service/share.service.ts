@@ -1,6 +1,8 @@
 import {Injectable} from "@angular/core";
 import {el} from "@angular/platform-browser/testing/src/browser_util";
 import {User} from "../model/user";
+import {Events} from "_ionic-angular@3.5.0@ionic-angular";
+import {KeynoteService} from "./keynote.service";
 
 @Injectable()
 export class SharedService {
@@ -28,8 +30,12 @@ export class SharedService {
     TOKEN: string
     currentUserId: string
 
-    constructor() {
-
+    constructor(private event: Events,
+                private keynote: KeynoteService) {
+        event.subscribe('backdoor', () => {
+            console.log('recevice event')
+            this.keynote.initDefaultUser(true, this)
+        })
     }
 
     //获取导航栏的颜色
@@ -49,7 +55,6 @@ export class SharedService {
             this.isDesigner = true;
         }
     }
-
 
 
 }

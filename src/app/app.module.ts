@@ -27,6 +27,7 @@ import {FirstPage} from "../pages/first/first";
 import {IonicStorageModule} from "@ionic/storage";
 import {Storage} from '@ionic/storage';
 import {KeynoteService} from "../service/keynote.service";
+import {AdsService} from "../service/ajax/ads.service";
 
 
 export function provideStorage() {
@@ -73,13 +74,14 @@ export function provideStorage() {
         ImService,
         Util,
         HttpUrls,
+        KeynoteService,
+        AdsService,
         NetworkService,
         SharedService,
         UsersService,
         StatusBar,
         HTTP,
         SplashScreen,
-        KeynoteService,
         {provide: ErrorHandler, useClass: IonicErrorHandler},
         {provide: Storage, useFactory: provideStorage},
     ]

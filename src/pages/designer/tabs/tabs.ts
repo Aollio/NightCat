@@ -23,7 +23,6 @@ export class DesignerTabsPage {
 
     constructor(public navCtrl: NavController, public platform: Platform,
                 public statusBar: StatusBar, public splashScreen: SplashScreen) {
-        this.navCtrl.swipeBackEnabled = false
     }
 
 
