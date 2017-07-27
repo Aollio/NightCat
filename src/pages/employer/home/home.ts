@@ -9,7 +9,7 @@ declare let initializeFontSize:any
 export class EmployerHomePage {
 
     ionViewDidEnter(){
-      initializeFontSize()
+        initializeFontSize()
     }
     designerMeDetailPage: DesignerMeDetailPage;
 

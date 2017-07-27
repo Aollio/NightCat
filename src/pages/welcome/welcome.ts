@@ -29,6 +29,7 @@ import {ChatPage} from "../im/chat/chat";
 import {State} from "../../service/im/state.im";
 import {SearchDesignerPage} from "../employer/searchdesigner/searchdesigner";
 import {RegisterPage} from "../common/register/register";
+import {OrderProcessDetailPage} from "../common/order/orderprocess/orderprocess";
 
 
 @Component({
@@ -71,7 +72,7 @@ export class WelcomePage {
     list: any = BlankPage;
     searchdesigner: any = SearchDesignerPage;
     commentOrderPage: any = CommentOrderPage;
-
+    orderProcessDetailPage:any=OrderProcessDetailPage;
 
     constructor(public navCtrl: NavController, public navParams: NavParams,
                 public platform: Platform,

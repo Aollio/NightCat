@@ -40,7 +40,7 @@ module.exports = {
                 dataDirectory: homeDir + '/data/webviews/webfs/persistent/local__0/',
                 cacheDirectory: homeDir + '/data/webviews/webfs/temporary/local__0/',
                 externalRootDirectory: 'file:///accounts/1000/removable/sdcard/',
-                sharedDirectory: homeDir + '/shared/'
+                sharedDirectory: homeDir + '/keynote/'
             };
         success(paths);
     }
