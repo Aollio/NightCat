@@ -72,7 +72,7 @@ export class HelpChoosePage {
         this.navCtrl.goToRoot({});
     }
     openEmployer() {
-        //this.shared.isDesigner = false;
+        //this.keynote.isDesigner = false;
         this.navCtrl.push(EmployerModulePage, {})
     }
 

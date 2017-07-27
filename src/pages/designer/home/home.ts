@@ -9,10 +9,10 @@ import {MessagePage} from "../message/message";
 export class DesignerHomePage {
 
 
-    images:Array<{url}> = [
-        {url:'assets/img/home-default.png'},
-        {url:'assets/img/home-default.png'},
-        {url:'assets/img/home-default.png'},
+    images: Array<{ url }> = [
+        {url: 'assets/img/home-default.png'},
+        {url: 'assets/img/home-default.png'},
+        {url: 'assets/img/home-default.png'},
     ]
 
     types: Array<{ name, value }> = [
@@ -42,7 +42,7 @@ export class DesignerHomePage {
         console.log(this.types[index])
     }
 
-    open(page,option){
-        this.navCtrl.push(page,option)
+    open(page, option) {
+        this.navCtrl.push(page, option)
     }
 }

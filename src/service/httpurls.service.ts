@@ -13,7 +13,11 @@ export class HttpUrls {
 
     users_register: string = this.server_url + "/users";
 
+
     projects_url: string = this.server_url + '/projects'
+
+    //广告相关
+    ads_designer_home_slides_url: string = this.server_url + '/ads/d/home/slides'
 
     constructor(private shared: SharedService) {
         if (shared.DEBUG) {

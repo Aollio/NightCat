@@ -5,7 +5,7 @@ import {HttpUrls} from "../httpurls.service";
 import {KeynoteService} from "../keynote.service";
 
 @Injectable()
-export class ProjectsService {
+export class AdsService {
 
 
     private KEYNOTE: boolean;
@@ -16,6 +16,20 @@ export class ProjectsService {
         this.KEYNOTE = shared.KEYNOTE;
     }
 
+    async getDesHomeSlides() {
+        if (this.KEYNOTE) {
+            console.log('演示模式, 返回内置轮播图')
+            return this.keynote.ad_designer_home_slides;
+        }
+        let response = await this.http.get(this.urls.ads_designer_home_slides_url)
+
+        if (response.status != 200) {
+            Promise.reject(response)
+        }
+
+        return response.content
+    }
+
 
     async getProjects(param = {}): Promise<any> {
         if (this.KEYNOTE) {
@@ -24,9 +38,11 @@ export class ProjectsService {
         }
         let response = await this.http.get(this.urls.projects_url, param)
 
+
         if (response.status != 200) {
             Promise.reject(response)
         }
+
         return response.content
     }
 

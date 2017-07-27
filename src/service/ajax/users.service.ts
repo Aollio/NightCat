@@ -6,13 +6,17 @@ import {HttpUrls} from "../httpurls.service";
 import 'rxjs/add/operator/toPromise';
 import {NetworkService} from "../network.service";
 import {ErrorObserver} from "rxjs/Observer";
+import {KeynoteService} from "../keynote.service";
 
 @Injectable()
 export class UsersService {
 
     private KEYNOTE: boolean;
 
-    constructor(public shared: SharedService, private http: NetworkService, private urls: HttpUrls,) {
+    constructor(public keynote: KeynoteService,
+                private http: NetworkService,
+                private urls: HttpUrls,
+                public shared:SharedService) {
         this.KEYNOTE = shared.KEYNOTE;
     }
 
@@ -20,7 +24,7 @@ export class UsersService {
     async getToken(user): Promise<any> {
         if (this.KEYNOTE) {
             console.log('演示模式, 返回默认TOKEN');
-            return Promise.resolve(this.shared.defaultToken)
+            return Promise.resolve(this.keynote.token)
         }
         let param = {
             phone: user.phone,
@@ -44,7 +48,7 @@ export class UsersService {
     async getUser(token): Promise<any> {
         if (this.KEYNOTE) {
             console.log('演示模式, 返回默认用户');
-            return Promise.resolve(this.shared.defaultUser)
+            return Promise.resolve(this.keynote.user)
         }
         return await this.http.get(this.urls.tokens_url, {token: token})
     }
