@@ -1,38 +1,44 @@
 page-pulishtask {
   .content {
-    background-color: #f3f8fb
-  }
+    background-color: #f3f8fb;
 
+  }
+.my-item{
+
+}
+  .my-item ion-label,ion-select,ion-input,ion-segment-button{
+    font-size: 1.5rem!important;
+  }
   .design-depth {
     display: inline-flex !important;
     width: 100%;
   }
 
   .design-depth ion-label {
-    width: 6em !important;
+    width: 6rem !important;
   }
 
   .lable {
     color: #5676FC !important;
-    font-size: .5em;
+    font-size: .5rem;
     width: 35%;
-    margin-left: 10px;
+    margin-left: 1rem;
   }
 
   .blank-3px {
-    height: 3px;
+    height: 0.25rem ;
     width: 100%
   }
 
   .blank-10px {
-    height: 10px;
+    height: 1rem;
     width: 100%
   }
 
   .tip-small-label{
     color: #9E9E9E;
-    font-size: .4em;
-    padding-left: .5em;
+    font-size: .4rem;
+    padding-left: .5rem;
     height: auto;
   }
 
@@ -42,8 +48,8 @@ page-pulishtask {
   }
   .summary-textarea {
     width: 100%;
-    height: 6em;
-    border-radius: 10px !important;
+    height: 6rem;
+    border-radius: 1rem !important;
     resize: none;
   }
 

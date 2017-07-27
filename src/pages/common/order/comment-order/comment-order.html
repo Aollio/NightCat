@@ -12,11 +12,12 @@
 </ion-header>
 
 
-<ion-content>
-    <div *ngIf="publish_complete === false">
+<ion-content >
+    <div *ngIf="publish_complete === false" >
         <ion-buttons class="comment-type-btns">
             <button ion-button clear icon-start
                     [class.active]="level === 3"
+                    class="my-font-size"
                     (click)="select(3)">
                 <ion-icon name="ios-rose" *ngIf="level === 3"></ion-icon>
                 <ion-icon name="ios-rose-outline" *ngIf="level != 3"></ion-icon>
@@ -24,6 +25,7 @@
             </button>
             <button ion-button clear icon-start
                     [class.active]="level === 2"
+                    class="my-font-size"
                     (click)="select(2)">
                 <ion-icon name="ios-rose" *ngIf="level === 2"></ion-icon>
                 <ion-icon name="ios-rose-outline" *ngIf="level != 2"></ion-icon>
@@ -31,6 +33,7 @@
             </button>
             <button ion-button clear icon-start
                     [class.active]="level === 1"
+                    class="my-font-size"
                     (click)="select(1)">
                 <ion-icon name="ios-rose" *ngIf="level === 1"></ion-icon>
                 <ion-icon name="ios-rose-outline" *ngIf="level != 1"></ion-icon>
@@ -39,7 +42,7 @@
             </button>
         </ion-buttons>
         <ion-item no-lines>
-            <ion-textarea placeholder="风格满足你的期待吗? 说说它的优点和美中不足的地方吧"></ion-textarea>
+            <ion-textarea class="my-font-size" placeholder="风格满足你的期待吗? 说说它的优点和美中不足的地方吧"></ion-textarea>
         </ion-item>
         <div class="item-divider-cus-10"></div>
         <ion-row class="stars-row">
@@ -78,9 +81,10 @@
         <div class="only-center-text" *ngIf="publish_complete === true">
             <div>
                 <ion-icon class="finfish-icon" name="ios-checkmark-circle"></ion-icon>
+                <span class="my-pleasure">感谢您的评价</span>
             </div>
-            <h2>感谢您的评价</h2>
-            <p>
+
+            <p class="my-mess">
                 你的评价将是其他用户的重要参考
             </p>
         </div>
