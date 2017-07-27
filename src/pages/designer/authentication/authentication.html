@@ -20,7 +20,6 @@
             <div>
                 身份认证
             </div>
-
         </ion-col>
         <ion-col [class.active]="state === 2">
             <custom-icon set="cat" name="authentication-education">
@@ -36,7 +35,6 @@
                 审核中
             </div>
         </ion-col>
-
     </ion-row>
 
     <div *ngIf="state === 1">
@@ -75,13 +73,17 @@
             <div class="desc">请上传学历证书</div>
         </div>
     </div>
+
     <div *ngIf="state === 3" class="only-center-text">
         <div>
             <ion-icon class="finfish-icon" name="ios-checkmark-circle"></ion-icon>
         </div>
-        <h2>上传成功!</h2>
-        <p>
-            等待审核 期待成为优秀设计师
-        </p>
+        <div>
+            <p>上传成功!</p>
+            <p>
+                等待审核 期待成为优秀设计师
+            </p>
+        </div>
+
     </div>
 </ion-content>

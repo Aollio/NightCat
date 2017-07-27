@@ -7,6 +7,7 @@ import {el} from "@angular/platform-browser/testing/src/browser_util";
     selector:'helpchoose',
     templateUrl: 'middleware.html'
 })
+
 export class MiddleWarePage {
     constructor(public nav: NavController) {
         this.nav.parent.select(0);
@@ -22,7 +23,6 @@ export class MiddleWarePage {
             this.nav.parent.select(0);
             this.second_open = false;
         }
-
         if (this.first_open) {
             this.first_open = false;
             this.nav.parent.select(0);

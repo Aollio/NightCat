@@ -44,6 +44,9 @@ export class RegisterPage {
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad LoginPage');
+    }
+
+    ionViewDidEnter() {
         initializeFontSize()
     }
 

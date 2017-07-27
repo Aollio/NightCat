@@ -2,7 +2,7 @@ page-comment {
 
   .comment-item {
     display: inline-flex;
-    height: 4em;
+    height: 4rem;
     width: 100%;
   }
 
@@ -12,12 +12,12 @@ page-comment {
   }
 
   .comment-time .comment-avatar img{
-    border-radius: .5em;
+    border-radius: .5rem;
 
   }
 
   .comment-item .content {
-    padding-left: 1em;
+    padding-left: 1rem;
     width: 70%;
     height: 100%;
   }
@@ -30,7 +30,7 @@ page-comment {
   }
 
   .comment-item .content .comment-content {
-    //padding-top: 0.5em;
+    //padding-top: 0.5rem;
     width: 90%;
     overflow: hidden;
     white-space: nowrap;
@@ -40,8 +40,8 @@ page-comment {
   .comment-item .content .comment-time {
     position: absolute;
     margin: 0 0 0 0 !important;
-    margin-top: 0.5em !important;
-    font-size: 0.7em;
+    margin-top: 0.5rem !important;
+    font-size: 0.7rem;
     color: #9E9E9E;
   }
 
@@ -52,6 +52,6 @@ page-comment {
   }
 
   .comment-item .favorite-count img{
-    border-radius: .5em;
+    border-radius: .5rem;
   }
 }
