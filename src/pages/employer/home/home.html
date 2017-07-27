@@ -1,7 +1,6 @@
-
 <ion-header color="emp-primary">
 
-    <div >
+    <div>
         <ion-toolbar>
             <ion-buttons start>
                 <button ion-button icon-only class="header-name">
@@ -25,58 +24,54 @@
 </ion-header>
 
 <ion-content>
-    <!--<div *ngIf="pagestate === 0">-->
-        <div class="my-title">金兔子耳朵</div>
-        <div class="my-val">The top open source framework for building amazing mobile apps.</div>
-        <div class="my-ul clearfloat">
-            <div class="my-li">
-                <div class="my-li-ioc">
-                    H
-                </div>
-                <div class="my-li-name">
-                    设计师
-                </div>
-                <div class="my-li-val">
-                    The top open source framework for building amazing mobile apps.
-                </div>
+
+    <div class="my-title">夜猫</div>
+    <!--<div class="my-val">The top open source framework for building amazing mobile apps.</div>-->
+    <div class="my-ul clearfloat">
+        <div class="my-li" (click)="btn_designer()">
+            <div class="my-li-ioc">
+                H
             </div>
-            <div class="my-li">
-                <div class="my-li-ioc">
-                    H
-                </div>
-                <div class="my-li-name">
-                    总包
-                </div>
-                <div class="my-li-val">
-                    The top open source framework
-                </div>
+            <div class="my-li-name">
+                设计师
             </div>
-            <div class="my-li">
-                <div class="my-li-ioc">
-                    H
-                </div>
-                <div class="my-li-name">
-                    分类
-                </div>
-                <div class="my-li-val">
-                    The top open source framework
-                </div>
-            </div>
-            <div class="my-li">
-                <div class="my-li-ioc">
-                    H
-                </div>
-                <div class="my-li-name">
-                    预约
-                </div>
-                <div class="my-li-val">
-                    The top open source framework
-                </div>
+            <div class="my-li-val">
+                The top open source framework for building amazing mobile apps.
             </div>
         </div>
-   <!--</div>-->
-
-
-
+        <div class="my-li" (click)="btn_fullstack()">
+            <div class="my-li-ioc">
+                H
+            </div>
+            <div class="my-li-name">
+                总包
+            </div>
+            <div class="my-li-val">
+                The top open source framework
+            </div>
+        </div>
+        <div class="my-li" (click)="btn_types()">
+            <div class="my-li-ioc">
+                H
+            </div>
+            <div class="my-li-name">
+                分类
+            </div>
+            <div class="my-li-val">
+                The top open source framework
+            </div>
+        </div>
+        <div class="my-li" (click)="btn_appoint()">
+            <div class="my-li-ioc">
+                H
+            </div>
+            <div class="my-li-name">
+                预约
+            </div>
+            <div class="my-li-val">
+                The top open source framework
+            </div>
+        </div>
+    </div>
 
 </ion-content>
