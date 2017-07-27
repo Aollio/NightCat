@@ -1,0 +1,83 @@
+page-designertypes-home{
+  .my-list{
+    width: 100%;
+    background-color: #efeff4;
+  }
+  .my-li{
+    margin:1.25rem 0.83333333rem 0;
+    background-color: #fff;
+    height: 6.66666666rem;
+    border-radius: 5px;
+    padding:0.83333333rem;
+    display:-webkit-box;
+    box-shadow:0 1px 6px #ccc;
+  }
+  .my-li-img{
+    width: 6.66666666rem;
+    height: 6.66666666rem;
+    border-radius: 50%;
+  }
+  .my-li-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  .my-li-right1{
+    -webkit-box-flex:1;
+    margin-left: 1.25rem;
+    font-family: helvetica;
+  }
+  .my-li-right-t1{
+    height: 2.5rem;
+    font-size: 1.66666666rem;
+    color: #333;
+    display:-webkit-box;
+  }
+  .my-li-right-t-name1{
+    -webkit-box-flex:1;
+    height: 2.5rem;
+    line-height: 2.33333333rem;
+    font-size: 1.66666666rem;
+    color: #333;
+    display:-webkit-box;
+    overflow:hidden;
+    white-space:normal!important;
+    text-overflow:ellipsis;
+    word-wrap:break-word;
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;
+  }
+  .my-li-right-t-r1{
+    width:6.66666666rem;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    text-align: right;
+    font-family: helvetica;
+  }
+  .my-li-right-c1{
+    margin-top: 0.41666666rem;
+    height: 1.66666666rem;
+    font-size: 1.33333333rem;
+    color: #999;
+    display:-webkit-box;
+    overflow:hidden;
+    white-space:normal!important;
+    text-overflow:ellipsis;
+    word-wrap:break-word;
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;
+  }
+  .my-li-right-b1{
+    height: 2.08333333rem;
+    font-size: 1.33333333rem;
+    line-height: 1.66666666rem;
+    color: #666;
+    display:-webkit-box;
+    overflow:hidden;
+    white-space:normal!important;
+    text-overflow:ellipsis;
+    word-wrap:break-word;
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;
+  }
+}
