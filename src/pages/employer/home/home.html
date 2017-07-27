@@ -1,86 +1,82 @@
 
 <ion-header color="emp-primary">
-    <ion-toolbar>
-        <ion-buttons start>
-            <button ion-button icon-only class="header-name">
-                夜猫
-            </button>
-        </ion-buttons>
+
+    <div >
+        <ion-toolbar>
+            <ion-buttons start>
+                <button ion-button icon-only class="header-name">
+                    夜猫
+                </button>
+            </ion-buttons>
             <ion-searchbar placeholder="搜索内容" class="header-search">
                 [(ngModel)]="myInput"
                 [showCancelButton]="shouldShowCancel"
                 (ionInput)="onInput($event)"
                 (ionCancel)="onCancel($event)"
             </ion-searchbar>
-        <ion-buttons end>
-            <button ion-button icon-only>
-                <ion-icon name="md-chatbubbles"></ion-icon>
-            </button>
-        </ion-buttons>
-    </ion-toolbar>
+            <ion-buttons end>
+                <button ion-button icon-only>
+                    <ion-icon name="md-chatbubbles"></ion-icon>
+                </button>
+            </ion-buttons>
+        </ion-toolbar>
+    </div>
+
 </ion-header>
 
 <ion-content>
-    <ion-slides class="slides" pager loop>
-        <ion-slide *ngFor="let image of images">
-            <img src="{{image.url}}"/>
-        </ion-slide>
-    </ion-slides>
-
-    <ion-grid class="home-type-grid">
-        <ion-row class="home-type-row">
-            <ion-col *ngFor="let typeitem of types; let i = index"
-                     col-3 class="home-type-col" text-center
-                     [class.no-top-border]="i < 4"
-                     [class.no-right-border]=" ((i + 1) % 4) === 0">
-                <div class="home-type-icon-container"
-                     [style.background-color]="typeitem.color">
-                    <ion-icon class="home-type-icon"
-                              [name]="typeitem.icon">
-                    </ion-icon>
+    <!--<div *ngIf="pagestate === 0">-->
+        <div class="my-title">金兔子耳朵</div>
+        <div class="my-val">The top open source framework for building amazing mobile apps.</div>
+        <div class="my-ul clearfloat">
+            <div class="my-li">
+                <div class="my-li-ioc">
+                    H
                 </div>
-                {{ typeitem.name }}
-            </ion-col>
-        </ion-row>
-    </ion-grid>
-
-
-    <!--<ion-grid class="designer-list-grid">-->
-    <!--<ion-row>-->
-    <!--<ion-col *ngFor="let desitem of desarray"-->
-    <!--col-6 class="des-card" text-center>-->
-    <!--<div class="des-card-avatar">-->
-    <!--<img (click)="openMeDetail({id:10000000,isDesigner:false})" class="des-card-img" src="{{desitem.avatar}}">-->
-    <!--</div>-->
-    <!--<div class="des-card-middiv">-->
-    <!--<span class="des-card-name">{{desitem.name}}</span>-->
-    <!--<span class="des-card-time">{{desitem.time}}</span>-->
-    <!--</div>-->
-    <!--<div class="des-card-describe">-->
-    <!--{{desitem.describe}}-->
-    <!--</div>-->
-    <!--</ion-col>-->
-    <!--</ion-row>-->
-    <!--&lt;!&ndash;</ion-row>&ndash;&gt;-->
-    <!--</ion-grid>-->
-
-    <div class="my-list clearfloat">
-        <div *ngFor="let desitem of desarray" class="my-list-li">
-            <div class="my-list-li-img">
-                <img src="{{desitem.avatar}}"/>
-            </div>
-            <div class="my-list-li-text">
-                <div class="my-list-li-text-l">
-                    {{desitem.name}}
+                <div class="my-li-name">
+                    设计师
                 </div>
-                <div class="my-list-li-text-r">
-                    {{desitem.time}}
+                <div class="my-li-val">
+                    The top open source framework for building amazing mobile apps.
                 </div>
             </div>
-            <div class="my-list-li-val">
-                <p>{{desitem.describe}}</p>
+            <div class="my-li">
+                <div class="my-li-ioc">
+                    H
+                </div>
+                <div class="my-li-name">
+                    总包
+                </div>
+                <div class="my-li-val">
+                    The top open source framework
+                </div>
+            </div>
+            <div class="my-li">
+                <div class="my-li-ioc">
+                    H
+                </div>
+                <div class="my-li-name">
+                    分类
+                </div>
+                <div class="my-li-val">
+                    The top open source framework
+                </div>
+            </div>
+            <div class="my-li">
+                <div class="my-li-ioc">
+                    H
+                </div>
+                <div class="my-li-name">
+                    预约
+                </div>
+                <div class="my-li-val">
+                    The top open source framework
+                </div>
             </div>
         </div>
-    </div>
+   <!--</div>-->
+
+
+
 
 </ion-content>

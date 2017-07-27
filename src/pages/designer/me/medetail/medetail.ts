@@ -10,7 +10,7 @@ import {CaseDetailPage} from "../casedetail/casedetail";
     templateUrl: 'medetail.html'
 })
 export class DesignerMeDetailPage {
-
+    ButState:any=1;
     user: User;
 
     public isDesigner: boolean;
@@ -45,5 +45,14 @@ export class DesignerMeDetailPage {
 
     modify() {
         this.navCtrl.push(ModifyProfilePage);
+    }
+    case(){
+    this.ButState=1;
+    }
+    honor(){
+        this.ButState=2;
+    }
+    experice(){
+        this.ButState=3;
     }
 }
