@@ -8,6 +8,7 @@ import {EmployerModulePage} from "../../employer/employer";
 import {Util} from "../../../service/util";
 import {UsersService} from "../../../service/ajax/users.service";
 
+declare let initializeFontSize: any
 
 @Component({
     selector: 'page-register',
@@ -43,6 +44,7 @@ export class RegisterPage {
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad LoginPage');
+        initializeFontSize()
     }
 
 
