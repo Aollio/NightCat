@@ -7,6 +7,8 @@ import {DesignerModulePage} from "../designer/designer";
 import {EmployerModulePage} from "../employer/employer";
 import {provideStorage} from "../../app/app.module";
 import {SharedService} from "../../service/share.service";
+import {Util} from "../../service/util";
+import {LoginPage} from "../common/login/login";
 
 @Component({
     selector: "page-first",
@@ -20,7 +22,8 @@ export class FirstPage {
     constructor(private nav: NavController,
                 private storage: Storage,
                 public event: Events,
-                public share: SharedService) {
+                public share: SharedService,
+                private util: Util) {
 
         console.log('publish event')
         //后门, 方便开发
@@ -52,6 +55,10 @@ export class FirstPage {
             this.nav.setRoot(WelcomePage)
         })
 
+        event.subscribe('gotologin', () => {
+            util.toast('授权过期或者未登录')
+            this.nav.setRoot(LoginPage, {}, {animate: true})
+        })
 
 
         // this.storage.set('first','true')

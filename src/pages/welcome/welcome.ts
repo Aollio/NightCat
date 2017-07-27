@@ -113,7 +113,7 @@ export class WelcomePage {
 
 
     //用于测试get/post请求
-    private url = "http://localhost:3000/hello"
+    private url = "http://localhost:3000/notifications"
 
     getTest() {
         console.log("开始doget请求")
