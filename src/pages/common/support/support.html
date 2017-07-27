@@ -9,9 +9,10 @@
         问题和意见
     </ion-item>
     <ion-item>
-        <textarea rows="8"
+        <textarea rows="8" ([ngModule])="suggest"
                   placeholder="您在使用过程中遇到什么问题？请详细描述"
         ></textarea>
+        <span>{{200-suggest.length}}</span>
     </ion-item>
 
     <ion-item>

@@ -13,27 +13,27 @@ page-designer-me-detail {
   }
   .type-buttons {
     display: inline-flex;
-    width: 100%;
+    width: 24rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
-
-  .type-btn:first-child {
-    border-left-width: 0px !important;
-  }
+  .active{
+    color: #4a87ee;
+     border-bottom:#4a87ee 0.2rem solid;
+}
 
   .type-btn {
-
-    padding-top: .5em;
-    padding-buttom: .5em;
-
+    padding-top: .5rem;
+    padding-buttom: .5rem;
+    padding-left:.5rem ;
+    padding-right: .5rem;
     text-align: center;
     width: 33%;
     background-color: transparent;
     color: #3E3E3E;
-    border-left-color: #9E9E9E;
-    border-left-width: .5px;
-    border-left-style: solid;
     border-radius: 0;
-
     font-size: 1.2em;
   }
 
@@ -104,6 +104,7 @@ page-designer-me-detail {
   .desc-head-position {
     font-size: 0.8em;
     padding-top: .3em;
+    border: none;
   }
 
   .desc-head-position ion-icon {
@@ -111,11 +112,13 @@ page-designer-me-detail {
   }
 
   .desc-middle-introduce {
+    border: none!important;
     font-size: 0.65em;
     background-color: #FFFFFF !important;
   }
 
   .card-footer-number{
+    border: none;
   }
 
   ion-row, ion-col {
@@ -134,7 +137,9 @@ page-designer-me-detail {
   }
 
   .case-card {
+    margin-top: 0;
     box-shadow: 8px 0 2em #b6b6b6;
+    padding-top: 0;
   }
 
   .case-item {
@@ -188,5 +193,4 @@ page-designer-me-detail {
     font-size: 1em;
     color: #9E9E9E;
   }
-
 }
