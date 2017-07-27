@@ -1,12 +1,12 @@
 import {Component} from "@angular/core";
-import {NavController} from "ionic-angular";
+import {NavController, Events} from "ionic-angular";
 import {Storage} from '@ionic/storage';
 import {WelcomePage} from "../welcome/welcome";
 import {RegisterPage} from "../common/register/register";
-import {el} from "@angular/platform-browser/testing/src/browser_util";
 import {DesignerModulePage} from "../designer/designer";
 import {EmployerModulePage} from "../employer/employer";
 import {provideStorage} from "../../app/app.module";
+import {SharedService} from "../../service/share.service";
 
 @Component({
     selector: "page-first",
@@ -17,11 +17,19 @@ import {provideStorage} from "../../app/app.module";
 })
 export class FirstPage {
 
-    constructor(private nav: NavController, private storage: Storage) {
+    constructor(private nav: NavController,
+                private storage: Storage,
+                public event: Events,
+                public share: SharedService) {
+
+        console.log('publish event')
+        //后门, 方便开发
+        event.publish('backdoor')
+
         this.storage.get('first').then(val => {
             if (val == null || val == 'true') {
                 this.nav.setRoot(WelcomePage)
-                this.storage.set('first','true')
+                this.storage.set('first', 'true')
             } else {
                 this.storage.get('token').then(val => {
                     if (val == null || val == 'false') {
@@ -43,7 +51,12 @@ export class FirstPage {
             console.log('storage error => WelcomePage')
             this.nav.setRoot(WelcomePage)
         })
+
+
+
         // this.storage.set('first','true')
+
+
     }
 
 }

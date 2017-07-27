@@ -4,15 +4,12 @@ import {SharedService} from "./share.service";
 @Injectable()
 export class KeynoteService {
 
-    constructor(public share: SharedService) {
-        if (this.share.KEYNOTE) {
-            this.initDefaultUser(false)
-        }
+    constructor() {
     }
 
-    initDefaultUser(isDesigner: boolean) {
+    initDefaultUser(isDesigner: boolean,share) {
         if (isDesigner) {
-            this.share.currentUser = {
+            share.currentUser = {
                 nickname: 'Marty 薄荷创意',
                 role: '00',
                 phone: '1234567890',
@@ -24,9 +21,9 @@ export class KeynoteService {
                 service_length: '7年',
                 type: '建筑设计'
             }
-            this.share.isDesigner = true;
+            share.isDesigner = true;
         } else {
-            this.share.currentUser = {
+            share.currentUser = {
                 nickname: 'Marty 薄荷创意',
                 role: '01',
                 phone: '1234567890',
@@ -38,7 +35,7 @@ export class KeynoteService {
                 service_length: '7年',
                 type: '建筑设计'
             }
-            this.share.isDesigner = false;
+            share.isDesigner = false;
         }
     }
 
