@@ -3,7 +3,8 @@ page-slidemenu {
   position: absolute;
     width: 100%;
     height: 100%;
-    z-index: -1
+    z-index: -1;
+    top:0;
  }
   .my-slide-bgi img{
     min-height: 100%
@@ -29,16 +30,18 @@ page-slidemenu {
  }
 
  .designer {
-   color: map_get($colors, nav-des-bg) !important;
+ //  color: map_get($colors, nav-des-bg) !important;
  }
 
  .employer {
-   color: $emp_primary !important;
+   //color: $emp_primary !important;
  }
 
  .exitbtn {
    color: white !important;
-
+   margin-top: 0;
+   margin-bottom: 0;
+   height: 4.5rem;
  }
  .exitbtn span {
    margin: auto;
@@ -53,4 +56,5 @@ page-slidemenu {
    padding-left: -10%;
    padding-right: 10%;
  }
+
 }
