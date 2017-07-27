@@ -1,8 +1,9 @@
 import {Injectable} from "@angular/core";
 import {el} from "@angular/platform-browser/testing/src/browser_util";
 import {User} from "../model/user";
-import {Events} from "_ionic-angular@3.5.0@ionic-angular";
+
 import {KeynoteService} from "./keynote.service";
+import {Events} from "ionic-angular";
 
 @Injectable()
 export class SharedService {
