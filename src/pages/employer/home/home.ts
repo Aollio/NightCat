@@ -1,16 +1,20 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {DesignerMeDetailPage} from "../../designer/me/medetail/medetail";
-declare let initializeFontSize:any
+
+declare let initializeFontSize: any
+
 @Component({
     selector: 'page-employer-home',
     templateUrl: 'home.html'
 })
 export class EmployerHomePage {
+    pagestate: any = 0;
 
-    ionViewDidEnter(){
+    ionViewDidEnter() {
         initializeFontSize()
     }
+
     designerMeDetailPage: DesignerMeDetailPage;
 
     images: Array<{ url }> = [
@@ -24,25 +28,25 @@ export class EmployerHomePage {
             name: '建筑设计', icon: 'ios-list-box-outline', color: '#be84ff'
         },
         {
-            name: '结构设计', icon: 'ios-list-box-outline',color: '#be84ff'
+            name: '结构设计', icon: 'ios-list-box-outline', color: '#be84ff'
         },
         {
-            name: '软装设计', icon: 'add',color: '#ff9769'
+            name: '软装设计', icon: 'add', color: '#ff9769'
         },
         {
-            name: '工艺设计', icon: 'close',color: '#be84ff'
+            name: '工艺设计', icon: 'close', color: '#be84ff'
         },
 
         {
-            name: '建筑工程12', icon: 'add',color: '#ff7384'
+            name: '建筑工程12', icon: 'add', color: '#ff7384'
         },
         {
-            name: '建筑工程12', icon: 'ios-calendar-outline',color: '#be84ff'
+            name: '建筑工程12', icon: 'ios-calendar-outline', color: '#be84ff'
         },
         {
-            name: '建筑工程23', icon: 'ios-briefcase-outline',color: '#89ffc3'
-        },   {
-            name: '建筑工程23', icon: 'ios-briefcase-outline',color: '#ff6633'
+            name: '建筑工程23', icon: 'ios-briefcase-outline', color: '#89ffc3'
+        }, {
+            name: '建筑工程23', icon: 'ios-briefcase-outline', color: '#ff6633'
         }
     ]
 
@@ -123,6 +127,6 @@ export class EmployerHomePage {
     }
 
     openMeDetail(option) {
-        this.navCtrl.push(DesignerMeDetailPage,option)
+        this.navCtrl.push(DesignerMeDetailPage, option)
     }
 }

@@ -1,197 +1,89 @@
 page-employer-home {
 
-  $background-color-home: #fdfdfd;
 
-  $grid-border-color: #cccccc;
-
-  $grid-font-color: #292929;
-
-  //.header-bar {
-  //  width: 100%;
-  //  display: inline-flex;
-  //}
-  //
-  //.logo {
-  //  color: white;
-  //  font-size: 1rem;
-  //  font-weight: 600;
-  //  margin: auto;
-  //  text-align: center;
-  //  width: 2rem;
-  //}
-
-  //.header-search {
-  //  width: 10rem;
-  //}
-  //
-  //.header-icon {
-  //  color: white;
-  //  margin: auto;
-  //  text-align: center;
-  //}
-  //
-  //.slides {
-  //  height: 30%;
-  //  padding-bottom: .5%
-  //}
-  //.header-name{
-  //  font-size: 1.4rem;
-  //}
-  //.bar-button-ios{
-  //  font-size: 1.5rem;
-  //}
-  ion-content {
-    background-color: $background-color-home !important;
-  }
-  .slides{
-    height: 13.5rem;
-  }
-  .swiper-slide img{
-    height: 13.5rem;
-    width: 100%;
-  }
-  .home-type-grid {
-    color: $grid-font-color;
-  }
-
-  .home-type-col {
-    padding-top: 1em;
-    border-top-width: 1px;
-    border-top-color: $grid-border-color;
-    border-top-style: solid;
-    border-right-width: 1px;
-    border-right-color: $grid-border-color;
-    border-right-style: solid;
-  }
-
-  .no-top-border {
-    border-top: none !important;
-  }
-  .no-right-border {
-    border-right: none !important;
-  }
-
-  .home-type-icon-container {
-    background-color: #be84ff;
-    height: 4.5em;
-    width: 4.5em;
-    margin: auto;
-    margin-bottom: .5em;
-    font-size: 0.5em;
-    border-radius: 10%;
-    padding-top: .2em;
-    padding-bottom: .2em;
-    color: white;
-  }
-
-  .home-type-icon {
-    padding-top: -5px;
-    color: white;
-    font-size: 2rem;
-  }
-
-  .home-type-row {
-  }
-
-  .designer-list-grid {
-  }
-
-  .des-card {
-    width: 7.25rem;
-    height: 10.5rem;
-    margin-left: 0.5rem;
-    margin-top: 0.5rem;
-    float: left;
-  }
-  .des-card-avatar {
-    height: auto;
-  }
-  .des-card-avatar img {
-    width: 7.25rem;
-    height: 7.25rem;
-  }
-  .des-card-middiv {
-    width: 7.25rem;
-    height: 1rem;
-    display:-webkit-box;
+  .my-title{
+    font-size: 1.91666666rem;
+    height: 3.33333333rem;
+    line-height: 3.33333333rem;
+    margin: 1.66666666rem;
+    color: #666;
     font-family: helvetica;
-    font-size: 0.6rem;
-    margin-top: 0.15rem;
-  }
-  .des-card-name {
-    float: left;
-    color: #C13638;
-    font-size: 0.85em;
-    -webkit-box-flex:1;
-  }
-  .des-card-time {
-    float: right;
-    color: #F45D07;
-    font-size: 0.85em;
-  }
-  .des-card-describe {
-    height: 2em;
-    line-height: 1em;
-    width: 100%;
-    color: #9E9E9E;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2; //文本行数
-    overflow: hidden;
-    font-size: 0.8em;
-    margin: 0;
-
+    display:-webkit-box;
+    overflow:hidden;
     white-space:normal!important;
     text-overflow:ellipsis;
     word-wrap:break-word;
-
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;
   }
-  .des-card-img {
-
+  .my-val{
+    margin: 0.83333333rem 1.66666666rem;
+    font-size: 1.91666666rem;
+    color: #999;
+    line-height: 2.5rem;
+    font-family: helvetica;
+    display:-webkit-box;
+    overflow:hidden;
+    white-space:normal!important;
+    text-overflow:ellipsis;
+    word-wrap:break-word;
+    -webkit-line-clamp:3;
+    -webkit-box-orient:vertical;
   }
-
-
-
-  .my-list{
-    width: 100%;
-    padding: 0;
-    border-top: 1rem solid #efeff4;
+  .my-ul{
+    width: 32rem !important;
   }
   .clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
   .clearfloat{zoom:1}
-  .my-list-li{
-    width: 14.5rem;
-    height: 21rem;
-    margin-left: 1rem;
-    margin-top: 1rem;
+  .my-li{
+    width: 12.125rem;
+    height: 12.125rem;
+    margin-left: 1.25rem;
+    margin-top: 2.5rem;
+    padding: 1rem;
+    /*background-color: #8e8e8e;*/
     float: left;
-  }
-  .my-list-li-img{
-    width: 14.5rem;
-    height: 14.5rem;
-  }
-  .my-list-li-img img{
-    width: 100%;
-    height: 100%;
-  }
-  .my-list-li-text{
-    width: 14.5rem;
-    height: 2rem;
-    display:-webkit-box;
     font-family: helvetica;
-    font-size: 1.2rem;
-    color: #fa4169;
-    margin-top: 0.3rem;
+    border-radius: 5px;
+    box-shadow:0 5px 20px #595959;
+    background: -webkit-linear-gradient(top, #595959 , #c1c1c1); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(top, #595959 , #c1c1c1); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(top, #595959 , #c1c1c1); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to top, #595959 , #c1c1c1); /* 标准的语法 */
   }
-  .my-list-li-text-l{
-    -webkit-box-flex:1;
+  .my-li:first-child{
+
+    box-shadow:0 5px 20px #0053d4;
+    background: -webkit-linear-gradient(top, #0053d4 , #94bbf8); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(top, #0053d4 , #94bbf8); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(top,#0053d4 , #94bbf8); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to top, #0053d4 , #94bbf8); /* 标准的语法 */
   }
-  .my-list-li-val{
-    font-size: 1.2rem;
+  .my-li-ioc{
+    /*border-bottom: 1px solid #000;*/
+    height: 6rem;
+    font-size: 4.16666666rem;
+    color: #fff;
+  }
+  .my-li-name{
+    height: 2rem;
     line-height: 2rem;
+    color: #fff;
+    font-size: 1.5rem;
+    display:-webkit-box;
+    overflow:hidden;
+    white-space:normal!important;
+    text-overflow:ellipsis;
+    word-wrap:break-word;
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;
   }
-  .my-list-li-val p{
-    margin: 0;
+  .my-li-val{
+    margin-top: 0.66666666rem;
+    height: 3rem;
+    color: #fff;
+    font-size: 1.33333333rem;
+    line-height: 1.7rem;
     display:-webkit-box;
     overflow:hidden;
     white-space:normal!important;
@@ -200,5 +92,4 @@ page-employer-home {
     -webkit-line-clamp:2;
     -webkit-box-orient:vertical;
   }
-
 }
