@@ -49,7 +49,9 @@ export class WelcomePage {
     orderListComponent: any = OrderListComponent;
 
     employerHome: any = EmployerModulePage;
-    employerLogin: any = LoginPage;
+
+    loginPage: any = LoginPage;
+
     designerLogin: any = LoginPage;
 
     designerHome: any = DesignerModulePage;
@@ -77,8 +79,15 @@ export class WelcomePage {
                 public toastCtrl: ToastController,
                 public http: NetworkService,
                 public shared: SharedService,
-                public im: ImService) {
+                public im: ImService,
+                public navParam: NavParams) {
 
+        console.log('enter welcome')
+        let isregister = this.navParam.get('register')
+        console.log(isregister)
+        if (isregister == 'true') {
+            this.enterRegister()
+        }
 
     }
 
@@ -114,21 +123,11 @@ export class WelcomePage {
             .then(data => {
                     console.log('get成功')
                     console.log(data);
-                    this.handlerSucc(data)
                 }
             )
             .catch(error => {
                 console.log(error.status);
-                this.handerError(error)
             })
-    }
-
-    handlerSucc(data) {
-        this.toast(data);
-    }
-
-    handerError(error) {
-        this.toast(error.message);
     }
 
 
@@ -185,7 +184,7 @@ export class WelcomePage {
         })
     }
 
-    enterwelcome() {
+    enterRegister() {
         this.state = 2
     }
 

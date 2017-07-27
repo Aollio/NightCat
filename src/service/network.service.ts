@@ -81,36 +81,34 @@ export class NetworkService {
      * @param param
      * @returns {Promise<any>}
      */
-    post(url, param?: any, headers?): Promise<any> {
+    async post(url, param = {}, headers = {}): Promise<any> {
 
         console.log(this.platform.platforms())
+
         if (this.platform.is('core') || this.platform.is('mobileweb')) {
-            //由于angular 传送post数据方式的不同, 需要添加一下headers和将param转化为可识别格式,
-            //才能被后端所接受
+            //由于angular 传送post数据方式的不同, 需要添加一下headers和将param转化为可识别格式,才能被后端所接受
             console.log('开始post请求', '在浏览器中')
-            let _headers = new Headers({
-                Accept: 'application/json,text/json,*/*',
-                'content-type': 'application/x-www-form-urlencoded'
-            })
-            return this.http_browser
-                .post(url, this.trans(param), {headers: _headers})
-                .toPromise()
-                .then(res => res.json() as any)
-                .catch(error => {
-                    //     error 是 response对象 ,含有属性
-                    //     ok:false;status:404,statusText:"OK",type:2,url:"http://localhost:8080/user"
-                    //     angular http模块 出现错误是返回的error.json()对象,包含数据,
-                    //     a = error.json(), a.status,a.message,a.error, a.timestamp, a.path
-                    console.log(error)
-                    return Promise.reject(error.message | error);
-                })
+            headers['Accept'] = 'application/json,text/json,*/*'
+            headers['content-type'] = 'application/x-www-form-urlencoded'
+
+            let _headers = new Headers(headers)
+
+            let response
+            try {
+                response = await this.http_browser.post(url, this.trans(param), {headers: _headers}).toPromise()
+            } catch (error) {
+                //     error 是 response对象 ,含有属性
+                //     ok:false;status:404,statusText:"OK",type:2,url:"http://localhost:8080/user"
+                //     angular http模块 出现错误是返回的error.json()对象,包含数据,
+                //     a = error.json(), a.status,a.message,a.error, a.timestamp, a.path
+                console.log(error)
+                return Promise.reject(error.message | error);
+            }
+            return response.json()
         }
 
-        return this.http_mobile
-            .post(url, param || {}, {})
-            .then(data => data.data.content as any)
-            .catch(error => Promise.reject(error))
-
+        let response = await this.http_mobile.post(url, param = {}, headers)
+        return response.data
     }
 
 

@@ -54,7 +54,7 @@ export class SharedService {
 
     defaultUser: any = {
         nickname: 'Marty 薄荷创意',
-        role: 'designer',
+        role: '00',
         phone: '1234567890',
         password: '123456',
         realname: '王晓峰',
@@ -65,11 +65,16 @@ export class SharedService {
         type: '建筑设计'
     }
 
+    defaultToken: any = {
+        id: 'default_id',
+        uid: ''
+    }
+
     initDefaultUser(isDesigner: boolean) {
         if (isDesigner) {
             this.currentUser = {
                 nickname: 'Marty 薄荷创意',
-                role: 'designer',
+                role: '00',
                 phone: '1234567890',
                 password: '123456',
                 realname: '王晓峰',
@@ -83,7 +88,7 @@ export class SharedService {
         } else {
             this.currentUser = {
                 nickname: 'Marty 薄荷创意',
-                role: 'employer',
+                role: '01',
                 phone: '1234567890',
                 password: '123456',
                 realname: '王晓峰',

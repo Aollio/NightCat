@@ -32,19 +32,19 @@ export class ChatPage {
         let sessionId = this.param.get('sessionId')
         let state = State.INSTANCE
 
-        util.presentLoading('正在加载消息')
+        let loading = util.createLoading('正在加载消息')
 
         //set currentSession
         state.setCurrentSessionAndPreareMsgs(sessionId)
             .then((obj) => {
-                util.hideLoading()
+                loading.dismiss()
                 console.log(state)
                 this.msglist = state.currSessionMsgs
             })
             .catch((err) => {
                 console.log('chat set session id failed')
-                util.presentLoading('加载失败')
-                setTimeout(() => util.hideLoading(), 2000)
+                loading.setContent('加载失败')
+                setTimeout(() => loading.dismiss(), 2000)
             })
 
         console.log('chat:\n', state)

@@ -11,7 +11,14 @@ export class Util {
                 public toastCtrl: ToastController) {
     }
 
-    toast(message, duration = 2000) {
+
+    notEmptyOrToast(obj, msg) {
+        if (obj === null || obj === '') {
+            this.toast(msg)
+        }
+    }
+
+    toast(message, duration = 1000) {
         let toast = this.toastCtrl.create({
             message: message,
             duration: duration,
@@ -20,33 +27,18 @@ export class Util {
         toast.present();
     }
 
-    static loading: Loading;
 
     //显示加载框
-    presentLoading(message) {
-        if (Util.loading != null) {
-            Util.loading.setContent(message)
-            return
-        }
-        let load = this.loaderCtrl.create({
-            content: message,
-            spinner: 'crescent',
-            dismissOnPageChange: true,
-            // duration: 3000
-        });
-        load.present();
-        Util.loading = load
-        return load
+    createLoading(message, options = {}) {
+
+        options['content'] = message
+        options['spinner'] = 'crescent'
+        options['dismissOnPageChange'] = true
+
+        return this.loaderCtrl.create(options);
+
     }
 
-    //隐藏加载框
-    hideLoading() {
-        if (Util.loading === null) {
-            return
-        }
-        Util.loading.dismissAll()
-        Util.loading = null
-    }
 
     // 消息类型列表
     mapMsgType = (msg) => {

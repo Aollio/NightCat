@@ -1,43 +1,56 @@
 page-slidemenu {
-
-  $font-color: map_get($colors, font-gray);
-
-  ion-list {
-    margin-top: 1rem !important;
-    margin-left: .5rem;
+  .my-slide-bgi{
+  position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1
+ }
+  .my-slide-bgi img{
+    min-height: 100%
   }
 
-  button {
-    color: $font-color !important;
+  .bg-tran button{
+    background-color: transparent;
   }
 
-  ion-icon {
-    font-size: .8rem;
-  }
 
-  .designer {
-    color: map_get($colors, nav-des-bg) !important;
-  }
+ ion-list {
+   margin-top: 1rem !important;
+   margin-left: .5rem;
+ }
 
-  .employer {
-    color: $emp_primary !important;
-  }
+ button {
+   height: 4rem;
+   font-size: 2rem;
+ }
 
-  .exitbtn {
-    color: white !important;
+ .my-font-size {
+   font-size: 2rem;
+ }
 
-  }
-  .exitbtn span {
-    margin: auto;
-    text-align: left;
-    justify-content: flex-start;
-    -webkit-justify-content: flex-start;
+ .designer {
+   color: map_get($colors, nav-des-bg) !important;
+ }
 
-  }
-  .custom-icon {
-    min-height: 0 !important;
-    font-size: 1.4rem !important;
-    padding-left: -10%;
-    padding-right: 10%;
-  }
+ .employer {
+   color: $emp_primary !important;
+ }
+
+ .exitbtn {
+   color: white !important;
+
+ }
+ .exitbtn span {
+   margin: auto;
+   text-align: left;
+   justify-content: flex-start;
+   -webkit-justify-content: flex-start;
+
+ }
+ .custom-icon {
+   min-height: 0 !important;
+   font-size: 2rem !important;
+   padding-left: -10%;
+   padding-right: 10%;
+ }
 }

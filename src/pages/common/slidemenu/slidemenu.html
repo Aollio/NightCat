@@ -1,19 +1,24 @@
 <ion-header>
 </ion-header>
+<!--<ion-content style="background-image:url(../../../assets/img/SelectOption.png) " class="my-slide-bgi">-->
 <ion-content>
 
-    <div style="background-color: #3cb5cf;height: 30%">
+<div class="my-slide-bgi">
+    <img  src="assets/img/SelectOption.png"/>
+</div>
+
+    <div style="height: 30%">
         <div style="height: 70%">
         </div>
-        <div text-center *ngIf="{} === user">
+        <div class="my-font-size" text-center *ngIf="{} === user">
             设计师/雇主昵称
         </div>
-        <div text-center *ngIf="!({} === user)">
+        <div class="my-font-size" text-center *ngIf="!({} === user)">
             {{user.nickname}}
         </div>
     </div>
 
-    <ion-list no-lines>
+    <ion-list no-lines class="bg-tran">
         <button ion-item (click)="open(messagePage)">
             <custom-icon set="cat" name="slidemenu-inform" class="custom-icon" [ngClass]="{'designer':isDesigner,'employer':!isDesigner}"
                          item-start></custom-icon>
