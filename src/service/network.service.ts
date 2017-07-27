@@ -1,7 +1,9 @@
 import {Component, Injectable} from "@angular/core";
 import {Http, Headers} from "@angular/http";
 import {HTTP} from "@ionic-native/http";
-import {Platform} from "ionic-angular";
+import {Platform, NavController, Events} from "ionic-angular";
+import {Util} from "./util";
+import {LoginPage} from "../pages/common/login/login";
 
 @Injectable()
 @Component({
@@ -14,8 +16,8 @@ export class NetworkService {
 
     constructor(private http_browser: Http,
                 private http_mobile: HTTP,
-                private platform: Platform) {
-
+                private platform: Platform,
+                private event: Events) {
     }
 
 
@@ -34,7 +36,7 @@ export class NetworkService {
      * @returns {Promise<any>}
      */
     async get(url, param?, header?): Promise<any> {
-        if (this.platform.is('core')) {
+        if (this.platform.is('core') || this.platform.is('mobileweb')) {
             let _params = {
                 params: param
             }
@@ -50,6 +52,10 @@ export class NetworkService {
                 console.log(error.status)
                 console.log(error.ok)
                 console.log(error.message)
+                if (error.status == 401) {
+                    this.event.publish('gotologin')
+                }
+
                 return Promise.reject(error)
             }
         }
@@ -102,6 +108,11 @@ export class NetworkService {
                 //     angular http模块 出现错误是返回的error.json()对象,包含数据,
                 //     a = error.json(), a.status,a.message,a.error, a.timestamp, a.path
                 console.log(error)
+
+                if (error.status == 401) {
+                    this.event.publish('gotologin')
+                }
+
                 return Promise.reject(error.message | error);
             }
             return response.json()
