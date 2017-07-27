@@ -28,22 +28,7 @@ page-register {
     width: 40% !important;
   }
 
-  .verify {
-    width: 100%;
-    // height: 2em;
 
-  }
-  .butdiv {
-    font-size: .6em;
-    position: absolute;
-    margin-left: 59%;
-    margin-top: 2.5%;
-    padding-bottom: -10%;
-    margin-bottom: 2.5% !important;
-    background-color: map_get($colors, login-des);
-    color: white;
-    // transition: color 0.3s;
-  }
 
   .welcome-page {
     text-align: center;
@@ -91,69 +76,93 @@ page-register {
     color: #6E6E6E;
     text-align: center;
   }
+
+  //register form
   .myInput {
     width: 90%;
-    margin-left: 5%;
-  }
+    margin: auto;
 
-  .myInput input, select, textarea, button {
-    width: 100%;
-    margin-bottom: 1em;
-    height: 3.2em;
-    padding: 0 1em;
-    border: 0.1em solid #dce4ec;
-    background: #f5f5f5;
-    border-radius: 0.25em;
-    outline: 0;
-    transition: border 0.4s linear, background 0.3s;
-  }
+    div {
+      width: 100%;
+      height: 5rem;
+      padding: 0.6rem;
 
-  .myInput input[type='radio'] {
-    width: 1em;
-    height: 1em;
-  }
+      input, select, textarea, button {
+        width: 100%;
+        height: 100%;
+        //margin-bottom: 1rem;
+        padding: 0 1rem;
+        border: 0.1em solid #dce4ec;
+        background: #f5f5f5;
+        border-radius: 0.25rem;
+        outline: 0;
+        transition: border 0.4s linear, background 0.3s;
+      }
 
-  .myInput input:focus {
-    border-color: #2483bc;
-  }
+      input[type='radio'] {
+        width: 1rem;
+        height: 1rem;
+      }
 
-  .myInput select:focus {
-    border-color: #1abc9c;
-  }
+      input:focus {
+        border-color: #2483bc;
+      }
 
-  .myInput input:read-only {
-    border: 0.15em solid #eaeded;
-    background: #eaeded;
-  }
+      select:focus {
+        border-color: #1abc9c;
+      }
 
-  .myInput input[type="submit"], input[type="button"], input[type="reset"], button {
-    width: 8em;
-    height: 2.5em;
-    border: 0;
-    color: white;
-    background: #1abc9c;
-  }
+      input:read-only {
+        border: 0.15em solid #eaeded;
+        background: #eaeded;
+      }
 
-  .myInput select {
-    width: 12.3em;
-    height: 2.5em;
-    padding-left: 1em;
-    padding-right: 0;
-  }
+      input[type="submit"], input[type="button"], input[type="reset"], button {
+        width: 8rem;
+        height: 2.5rem;
+        border: 0;
+        color: white;
+        background: #1abc9c;
+      }
 
-  .myInput select:hover {
-  }
+      select {
+        width: 12.3rem;
+        height: 2.5rem;
+        padding-left: 1rem;
+        padding-right: 0;
+      }
 
-  .myInput textarea {
-    width: 20em;
-    height: 10em;
-    border: 0.1em solid #7c8185;
-  }
+      select:hover {
+      }
 
-  .myInput textarea:focus {
-    border-color: #1abc9c;
-  }
+      textarea {
+        width: 20rem;
+        height: 10rem;
+        border: 0.1rem solid #7c8185;
+      }
 
+      textarea:focus {
+        border-color: #1abc9c;
+      }
+    }
+    .verify {
+      position: relative;
+      width: 100%;
+
+      .butdiv {
+        position: absolute;
+        font-size: .6em;
+        margin:auto;
+        top: 0;
+        bottom: 0;
+        right: 1.5rem;
+        background-color: map_get($colors, login-des);
+        color: white;
+         //transition: color 0.3s;
+      }
+    }
+  }
+  
   .myInput-danger {
     /*background: #cf5045;*/
   }
@@ -162,14 +171,15 @@ page-register {
     background: #cf5045;
   }
 
+
   .login-btn {
-    font-size: 1.2em;
+    font-size: 1.2rem;
     font-weight: 500;
-    margin-top: 2.5em;
+    margin-top: 2.5rem;
     text-align: center;
     width: 90%;
     margin-left: 5%;
-    height: 3.2em;
+    height: 3.2rem;
     background-color: map_get($colors, login-des);
   }
 
