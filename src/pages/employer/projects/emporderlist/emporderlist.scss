@@ -6,8 +6,8 @@ com-emporderlist {
     //width: 100% !important;
     //padding-bottom: 0 !important;
     //padding-top: 0 !important;
-    height: 6em;
-    border-radius: .2em !important;
+    height: 6rem;
+    border-radius: .2rem !important;
     border-color: transparent !important;
     box-shadow: 2px 0px 10px 2px #d4d4d4 !important;
   }
@@ -22,21 +22,21 @@ com-emporderlist {
   }
 
   .avatar {
-    margin: 0.75em;
+    margin: 0.75rem;
     text-align: center;
-    width: 4.5em;
-    height: 4.5em;
+    width: 4.5rem;
+    height: 4.5rem;
     background-color: #3E3E3E;
-    border-radius: .5em;
+    border-radius: .5rem;
     box-shadow: 0 0 10px 2px #c9c9c9;
   }
 
   .detail {
     width: 80%;
-    padding-left: .5em;
-    margin-top: .5em;
-    margin-right: 1em;
-    font-size: 1.1em;
+    padding-left: .5rem;
+    margin-top: .5rem;
+    margin-right: 1rem;
+    font-size: 1.1rem;
   }
 
   .detail-row {
@@ -46,7 +46,7 @@ com-emporderlist {
   .detail .title {
     color: #3E3E3E;
     font-weight: 500;
-    font-size: .8em;
+    font-size: .8rem;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
@@ -56,25 +56,25 @@ com-emporderlist {
   .get-order-amount {
     //margin-top: -3%;
     font-weight: 400;
-    font-size: .8em;
+    font-size: .8rem;
   }
 
   .deadtime {
-    font-size: .8em;
+    font-size: .8rem;
     color: #FDBC42;
     text-align: right;
     //margin-top: -5%;
   }
 
   .ioncontent {
-    background-color: #ECECEC !important;
+    background-color: #f0f0f0 !important;
     text-align: center;
   }
 
   .null-project {
     text-align: center;
     width: 100%;
-    height: 50%;
+    height: 45%;
     padding-top: 20%;
   }
 
@@ -83,24 +83,20 @@ com-emporderlist {
   }
 
   .null-porject-toast {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     width: 80%;
     margin-left: 10%;
     color: gray;
   }
 
   .null-project-button{
-    width: 70%;
-    height: auto;
+    width: 60%;
     color: $emp_primary;
-    font-size: 1.2em;
+    font-size: 1.5rem;
     background-color: white;
     border: 1px solid;
-    margin: auto;
-    margin-top: 1em;
-    padding-top: .7em;
-    padding-bottom: .7em;
-    border-radius: .2em !important;
+    margin: 0.5rem auto;
+    border-radius: .5em !important;
   }
 
 }
