@@ -1,36 +1,35 @@
 page-withdraw {
 
   .money-all {
-    font-size: .8em;
+    font-size: .8rem;
     color: #9E9E9E;
-    margin-right: 1em;
+    margin-right: 1rem;
   }
 
   .money-all span {
-    font-size: 2em;
+    font-size: 2rem;
     color: #000000;
     font-weight: 400;
-    margin-left: .5em;
+    margin-left: .5rem;
   }
 
   .money-all button {
     background-color: transparent;
     color: #3cb5cf;
-    font-size: 1em;
+    font-size: 1rem;
     margin-right: 0 !important;
   }
 
   .input-money {
-    //height: 3em;
-    font-size: 2em;
-
+    //height: 3rem;
+    font-size: 2rem;
   }
 
   .toast {
     color: #3cb5cf;
-    padding-top: 4em;
+    padding-top: 4rem;
     margin: auto;
-    font-size: .7em;
+    font-size: .7rem;
     text-align: center;
   }
 
@@ -38,7 +37,7 @@ page-withdraw {
     width: 70%;
     margin-right: 15%;
     margin-left: 15%;
-    margin-top: 1em;
+    margin-top: 1rem;
     text-align: center;
   }
 }

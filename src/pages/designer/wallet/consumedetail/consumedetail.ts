@@ -1,4 +1,5 @@
 import {Component} from "@angular/core";
+declare let initializeFontSize: any
 
 @Component({
     selector: 'page-consumedetail',
@@ -6,5 +7,9 @@ import {Component} from "@angular/core";
 })
 export class ConsumeDetail {
     constructor() {
+
+    }
+    ionViewDidEnter() {
+        initializeFontSize()
     }
 }
