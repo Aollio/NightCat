@@ -1,4 +1,7 @@
 page-designertypes-home{
+  .bodybg{
+    background-color:  #efeff4;
+  }
   .my-list{
     width: 100%;
     background-color: #efeff4;
@@ -6,7 +9,7 @@ page-designertypes-home{
   .my-li{
     margin:1.25rem 0.83333333rem 0;
     background-color: #fff;
-    height: 6.66666666rem;
+    //height: 6.66666666rem;
     border-radius: 5px;
     padding:0.83333333rem;
     display:-webkit-box;

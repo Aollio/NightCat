@@ -1,102 +1,114 @@
 page-orderprocess {
-  #cd-timeline {
-    position: relative;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    margin-left: 10px !important;
-  }
-
-  .cd-timeline-block::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 1em;
-    height: 100%;
-    width: 2px;
-    background: #c9c9c9;
-  }
-
-  .cd-timeline-block:last-child::before {
-    content: '';
-    position: absolute;
-    height: 0%;
-  }
-
-  .cd-timeline-block {
-    position: relative;
-    //padding: 1em 0;
-    padding-top: .5em;
-    padding-bottom: 1em;
-  }
-  .cd-timeline-block:first-child {
-    margin-top: 0;
-  }
-  .cd-timeline-block:last-child {
-    margin-bottom: 0;
-  }
-
-  .cd-timeline-icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid #4a87ee;
-    padding-top: 5px;
-    background: white;
-  }
-  .cd-timeline-icon i {
-    color: #4a87ee;
-  }
-  .cd-timeline-picture {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 2em;
-    height: 2em;
-    border-radius: 50%;
-    //border-color: #4a87ee;
-    //border-style: solid;
-    //border-width: 2px;
-    background: white;
-  }
-  .cd-timeline-picture img {
-    display: block;
+  .my-ul{
     width: 100%;
-    height: 100%;
-    position: absolute;
+    background-color: #efeff4;
+  }
+  .my-li-line{
+    margin-left: 4.16666666rem;
+    border-left: 0.25rem solid #C1C1C1;
+    height:3.75rem;
+    display:-webkit-box;
+  }
+  .my-li-line-circular{
+    width: 1.08333333rem;
+    height: 1.08333333rem;
+    background-color: #C1C1C1;
+    border-radius: 50%;
+    position: relative;
+    top: 1.75rem;
+    right:0.625rem;
+  }
+  .my-li-line-time{
+    -webkit-box-flex:1;
+    margin-top: 1.75rem;
+    font-size: 1.16666666rem;
+    font-family: helvetica;
+    margin-left: 0.83333333rem;
+    color: #666;;
+  }
+  .my-li-card{
+    /*height: 16.66666666rem;*/
+    background-color: #fff;
+    margin: 0 0.41666666rem;
+    border-radius: 2px;
+    padding:1.25rem;
+    font-family: helvetica;
+    box-shadow:0 1px 6px #ccc;
+  }
+  .my-li-card-top{
+    height: 3.33333333rem;
+    border-bottom: 1px solid #e6e6e6;
+    display:-webkit-box;
+  }
+  .my-li-card-top-l{
+    width: 2.08333333rem;
+    height: 2.08333333rem;
+    background-color: #FA4169;
     border-radius: 50%;
   }
+  .my-li-card-top-c{
+    -webkit-box-flex:1;
+    margin-left: 1.25rem;
+    font-size: 1.16666666rem;
+    margin-top: 0.41666666rem;
+    color: #333;
+    font-family: helvetica;
+  }
+  .my-li-card-top-r{
+    width: 3.33333333rem;
+    height: 1.66666666rem;
+    border: 1px solid #e6e6e6;
+    font-size: 1rem;
+    line-height: 1.91666666rem;
+    text-align: center;
+    margin-top: 0.41666666rem;
+    color: #999;
+    border-radius: 2px;
+  }
+  .my-li-card-title{
+    font-size: 1.5rem;
+    height: 3.33333333rem;
+    line-height: 3.75rem;
+    font-family: helvetica;
+    display:-webkit-box;
+    overflow:hidden;
+    white-space:normal!important;
+    text-overflow:ellipsis;
+    word-wrap:break-word;
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;
+  }
+  .my-li-card-text{
+    font-size: 1rem;
+    line-height: 1.75rem;
+    color: #666;
+    font-family: helvetica;
+    display:-webkit-box;
+    overflow:hidden;
+    white-space:normal!important;
+    text-overflow:ellipsis;
+    word-wrap:break-word;
+    -webkit-line-clamp:4;
+    -webkit-box-orient:vertical;
 
-  .cd-timeline-content {
+  }
+  .my-li-card-bottom{
+    height: 2.5rem;
+    margin-top: 1.25rem;
     position: relative;
-    margin-left: 2.5em;
-    height: 7em;
-    background: white;
-    border-bottom-color: #c9cacf !important;
-    border-bottom-style: solid;
-    border-bottom-width: 2px;
-    padding-left: 1em;
-  }
 
-  .author{
-    font-weight: 500;
-    color: #3E3E3E;
   }
-
-  .position{
-    color: #c9cacf;
-  }
-
-  .timeline-content{
-    font-size: 1.2em;
-  }
-
-  .time-before{
-    color: #c9cacf;
-  }
-  .time-before ion-icon{
-    color: #c9cacf;
+  .my-li-card-bottom-r{
+    border: 1px solid #999999;
+    font-size: 1rem;
+    height: 2.25rem;
+    /*padding: 0.41666666rem;*/
+    color: #666;
+    width: 6.66666666rem;
+    border-radius: 2px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    line-height: 2.5rem;
   }
 }

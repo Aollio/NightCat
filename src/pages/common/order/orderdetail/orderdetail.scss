@@ -13,7 +13,7 @@ page-orderdetail {
   }
 
   .respect-title {
-    margin: auto;
+    //margin: auto;
     text-align: left;
     color: $font-color;
     padding-left: .7rem;
@@ -100,12 +100,12 @@ page-orderdetail {
   .footer-btns {
     display: inline-flex;
     width: 100%;
-    padding-top: 2rem;
-    padding-bottom: 0.5rem;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
   }
 
   .footer-btns button {
-    height: 2rem;
+    height: 3.8333333333333335rem;
   }
 
   .footer-clear-btn {
