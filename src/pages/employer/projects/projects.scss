@@ -103,22 +103,22 @@ page-employer-projects {
     font-weight: 400;
   }
 
-  .active {
-    color: $emp_primary;
-    border-bottom-color: $emp_primary;
-    border-bottom-style: solid;
-    border-bottom-width: 2px;
-  }
-
   .custom-icon {
-    font-size: 2.2rem;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    font-size: 2.5rem;
     padding-right: 70%;
     padding-left: 28%;
   }
+  .active {
+    color: $emp_primary;
+    border-bottom: 2px solid $emp_primary;
+  }
 
   .order-type-col div {
-    padding-top: .25rem;
-    padding-bottom: .25rem;
+
+    padding: 1rem 0;
     margin-left: 1rem;
     margin-right: 1rem;
     font-size: 1rem;
