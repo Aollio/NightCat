@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
 import {IonicPage, NavController} from "ionic-angular";
+import {Util} from "../../../../service/util";
 
 @Component({
     selector: 'page-withdraw',
@@ -8,12 +9,21 @@ import {IonicPage, NavController} from "ionic-angular";
 export class DesignerWithDrawPage {
 
 
-
-    constructor(public navCtrl: NavController) {
+state:boolean=true;
+    constructor(public navCtrl: NavController,
+                public uti:Util) {
     }
 
 
     open(page, option) {
         this.navCtrl.push(page, option)
+    }
+    alertTip(){
+
+     if(this.state){
+         this.uti.toast('请输入真实姓名');
+         this.state=false;
+     }
+
     }
 }
