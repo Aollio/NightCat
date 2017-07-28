@@ -2,9 +2,9 @@
 page-employer-tabs {
 
   a.icon-only {
-   // margin: 1rem 1rem 1rem 1rem !important;
-   // padding: .5rem 0rem 2rem 0!important;
-    font-size: .45rem !important;
+   // margin: 1em 1em 1em 1em !important;
+   // padding: .5em 0em 2em 0!important;
+    font-size: .45em !important;
    // position: relative;
     display: block !important;
   }
@@ -22,11 +22,11 @@ page-employer-tabs {
     margin-left: 4%;
     text-align: center !important;
     background-color: $emp_primary;
-    border-radius: 1000rem;
+    border-radius: 1000em;
   }
 
   a.icon-only ion-icon::before {
-    padding-top: .15rem;
+    padding-top: .15em;
     text-align: center !important;
     vertical-align: middle !important;
   }

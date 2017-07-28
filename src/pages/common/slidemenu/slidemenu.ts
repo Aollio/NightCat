@@ -25,7 +25,7 @@ export class SlideMenuComponment {
     maincolor;
 
     constructor(public navCtrl: NavController,
-                public platfrom: Platform,
+                public platform: Platform,
                 private alertCtrl: AlertController,
                 private toastCtrl: ToastController,
                 public shared: SharedService) {
@@ -77,6 +77,6 @@ export class SlideMenuComponment {
 
 
     exitApp() {
-        this.platfrom.exitApp();
+        this.platform.exitApp();
     }
 }
