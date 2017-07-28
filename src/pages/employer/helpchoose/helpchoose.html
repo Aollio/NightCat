@@ -63,7 +63,7 @@
         <div class="footer-tip">共3问当前第{{state}}问&nbsp;&nbsp;
             <a class="link" (click)="openPage()">提交问卷</a>
         </div>
-        <button (click)="nextOrFinish()" *ngIf="state < 3" class="tip-button">下一问></button>
+        <button (click)="nextOrFinish()" *ngIf="state < 3" class="tip-button">下一问 ></button>
         <button (click)="nextOrFinish()" *ngIf="state === 3" class="tip-button">确认提交</button>
     </div>
     <div class="jump-question">
