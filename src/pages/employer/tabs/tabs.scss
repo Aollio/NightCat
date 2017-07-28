@@ -2,9 +2,9 @@
 page-employer-tabs {
 
   a.icon-only {
-   // margin: 1em 1em 1em 1em !important;
-   // padding: .5em 0em 2em 0!important;
-    font-size: .45em !important;
+   // margin: 1rem 1rem 1rem 1rem !important;
+   // padding: .5rem 0rem 2rem 0!important;
+    font-size: .45rem !important;
    // position: relative;
     display: block !important;
   }
@@ -13,20 +13,20 @@ page-employer-tabs {
     display: block;
     position: fixed;
     color: white !important;
-    font-size: 2.25em !important;
-    height: .75em !important;
-    width: .75em !important;
-   // font-size: 500em !important;
+    font-size: 2.25rem !important;
+    height: 3.2rem !important;
+    width: 3.2rem !important;
+   // font-size: 500rem !important;
    // margin: auto !important;
-    margin-top: -0em!important;
+    margin-top: -0rem!important;
     margin-left: 4%;
     text-align: center !important;
     background-color: $emp_primary;
-    border-radius: 1000em;
+    border-radius: 1000rem;
   }
 
   a.icon-only ion-icon::before {
-    padding-top: .15em;
+    padding-top: .15rem;
     text-align: center !important;
     vertical-align: middle !important;
   }
