@@ -9,7 +9,7 @@ import {RegisterPage} from "../common/register/register";
     segment: 'd'
 })
 @Component({
-    templateUrl: 'designer.html'
+    templateUrl: "designer.html"
 })
 export class DesignerModulePage {
 

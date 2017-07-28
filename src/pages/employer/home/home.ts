@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {DesignerMeDetailPage} from "../../designer/me/medetail/medetail";
+import {EesignerTypesPage} from "./designertypes/designertypes";
 
 declare let initializeFontSize: any
 
@@ -9,7 +10,7 @@ declare let initializeFontSize: any
     templateUrl: 'home.html'
 })
 export class EmployerHomePage {
-    pageState: any = 0;
+
 
     ionViewDidEnter() {
         initializeFontSize()
@@ -31,15 +32,15 @@ export class EmployerHomePage {
     }
 
     btn_designer(){
-        this.pageState=1;
+       this.navCtrl.push(EesignerTypesPage);
     }
     btn_fullstack(){
-        this.pageState=2;
+
     }
     btn_types(){
-        this.pageState=3;
+
     }
     btn_appoint(){
-        this.pageState=4
+
     }
 }

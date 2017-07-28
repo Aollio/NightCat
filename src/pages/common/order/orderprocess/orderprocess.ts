@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {AbsCommonPage} from "../../abs";
 import {SharedService} from "../../../../service/share.service";
-
+declare let initializeFontSize:any
 /*
  * 订单详情
  * */
@@ -20,7 +20,10 @@ export class OrderProcessDetailPage extends AbsCommonPage {
         super(share);
     }
 
-
+    ionViewDidEnter(){
+        initializeFontSize()
+        console.log("com")
+    }
     open(page, option) {
         this.navCtrl.push(page, {})
     }

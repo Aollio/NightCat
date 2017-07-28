@@ -12,7 +12,7 @@ declare let console;
 export class TaskSquarePage {
 
     ionViewDidEnter(){
-        // initializeFontSize()
+        initializeFontSize()
     }
 
     showAd: boolean = true;

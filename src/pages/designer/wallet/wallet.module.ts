@@ -5,6 +5,9 @@ import {ConsumeDetail} from "./consumedetail/consumedetail";
 import {DesignerWithDrawPage} from "./withdraw/withdraw";
 import {CustomIconsModule} from "ionic2-custom-icons";
 
+declare let initializeFontSize: any
+
+
 @NgModule({
     declarations: [
         DesignerWalletPage,
@@ -22,4 +25,7 @@ import {CustomIconsModule} from "ionic2-custom-icons";
      ]
 })
 export class WalletModule {
+    ionViewDidEnter() {
+        initializeFontSize()
+    }
 }
