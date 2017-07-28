@@ -16,18 +16,21 @@ export class DesignerHomePage {
         // {url: 'assets/img/home-default.png'},
     ]
 
-    types: Array<{ name, value }> = [
-        {name: '精选1', value: 'null'},
-        {name: '精选2', value: 'null'},
-        {name: '精选3', value: 'null'},
-        {name: '精选4', value: 'null'},
-        {name: '精选5', value: 'null'},
-        {name: '精选6', value: 'null'},
-        {name: '精选7', value: 'null'},
-        {name: '精选8', value: 'null'},
-        {name: '精选9', value: 'null'},
-        {name: '精选10', value: 'null'},
-        {name: '精选11', value: 'null'},
+    types: Array<{ name, val }> = [
+        {name: '概预算', val: '0'},
+        {name: '项目经理', val: '1'},
+        {name: '审图', val: '2'},
+        {name: '策划', val: '3'},
+        {name: '规划设计', val: '4'},
+        {name: '建筑设计', val: '5'},
+        {name: '电气设计', val: '6'},
+        {name: '结构设计', val: '7'},
+        {name: '软装设计', val: '8'},
+        {name: '给排水设计', val: '9'},
+        {name: '室内设计', val: '10'},
+        {name: '暖通设计', val: '11'},
+        {name: '景观设计', val: '12'}
+
     ]
 
     currentType: number = 3;
