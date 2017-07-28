@@ -6,29 +6,27 @@ page-tasksquare {
   }
 
   .type-buttons {
+    background-color: rgb(241,241,241);
     display: inline-flex;
+    padding: 1rem;
     width: 100%;
   }
 
   .type-btn:first-child {
-    border-left-width: 0px !important;
+    border-left-width: 0 !important;
   }
 
   .type-btn {
-
-    padding-top: .5em;
-    padding-buttom: .5em;
-
     text-align: center;
     width: 33%;
+    height: 1.5rem;
+    line-height: 1.5rem;
     background-color: transparent;
     color: #3E3E3E;
-    border-left-color: #9E9E9E;
-    border-left-width: .5px;
-    border-left-style: solid;
+    border-left: .5px solid #9E9E9E;
     border-radius: 0;
 
-    font-size: 1.2em;
+    font-size: 1.2rem;
   }
 
   .type-btn:active {
