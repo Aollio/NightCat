@@ -19,6 +19,7 @@ import {ChooseDesignerPage} from "./choosedesigner/choosedesigner";
 import {CustomIconsModule} from "ionic2-custom-icons";
 import {SearchDesignerPage} from "./searchdesigner/searchdesigner";
 import {RecommendDesignerPage} from "./recommenddesigner/recommenddesigner";
+import {EmployerHomeModule} from "./home/home.module";
 
 @NgModule({
     declarations: [
@@ -61,7 +62,8 @@ import {RecommendDesignerPage} from "./recommenddesigner/recommenddesigner";
         DesignerMeModule,
         IonicPageModule.forChild(EmployerTabsPage),
         EmployerMeModule,
-        CustomIconsModule // Add this!
+        CustomIconsModule ,// Add this!
+        EmployerHomeModule
     ],
     exports: [ProjectsPage,
         EmployerModulePage,

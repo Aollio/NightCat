@@ -1,5 +1,9 @@
 page-employer-home {
+  .my-header{
+    font-size: 1rem;
+  }
   .my-title{
+    text-align: center;
     font-size: 1.91666666rem;
     height: 3.33333333rem;
     line-height: 3.33333333rem;
@@ -34,8 +38,8 @@ page-employer-home {
   .clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
   .clearfloat{zoom:1}
   .my-li{
-    width: 12.125rem;
-    height: 12.125rem;
+    width: 14.125rem;
+    height: 14.125rem;
     margin-left: 1.25rem;
     margin-top: 2.5rem;
     padding: 1rem;

@@ -6,9 +6,10 @@ declare let initializeFontSize: any
     selector: 'page-designertypes-home',
     templateUrl: 'designertypes.html'
 })
-export class EmployerHomePage {
+export class EesignerTypesPage {
     pageState: any = 0;
 
     ionViewDidEnter() {
         initializeFontSize()
-    }}
+    }
+}
