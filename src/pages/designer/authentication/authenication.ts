@@ -4,6 +4,8 @@
 import {NavController} from "ionic-angular";
 import {Component} from "@angular/core";
 
+declare let initializeFontSize: any
+
 @Component({
     selector: 'page-authenication',
     templateUrl: 'authentication.html'
@@ -21,6 +23,10 @@ export class AuthenticationPage {
         if (this.state > 3) {
             this.navCtrl.pop();
         }
+    }
+
+    ionViewDidEnter() {
+        initializeFontSize()
     }
 
 }

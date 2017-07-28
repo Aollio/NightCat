@@ -6,11 +6,18 @@ import {RecommendDesignerPage} from "../recommenddesigner/recommenddesigner";
 import {EmployerHomePage} from "../home/home";
 import {EmployerModulePage} from "../employer";
 
+declare let initializeFontSize: any
+
+
 @Component({
     templateUrl: 'helpchoose.html',
     selector: 'page-helpchoose'
 })
 export class HelpChoosePage {
+
+    ionViewDidEnter() {
+        initializeFontSize()
+    }
 
     employerhome: any=EmployerHomePage;
     types: Array<{ name, icon, color }> = [

@@ -1,7 +1,7 @@
 page-authenication {
   custom-icon::before {
-    width: 0em;
-    height: 0em;
+    width: 0rem;
+    height: 0rem;
   }
   .process {
     height: 25%;
@@ -16,7 +16,7 @@ page-authenication {
   .process ion-col {
     margin: auto;
     text-align: center;
-    font-size: 1em;
+    font-size: 1rem;
     color: #9E9E9E;
   }
   ion-col custom-icon{
@@ -24,11 +24,11 @@ page-authenication {
     padding-right: 50%;
   }
   .process ion-col custom-icon {
-    font-size: 3em;
+    font-size: 3rem;
   }
 
   .upload-icon {
-    font-size: 4em;
+    font-size: 4rem;
     margin: auto;
     text-align: center;
   }
@@ -38,8 +38,8 @@ page-authenication {
     color: #fdfdfd;
     height: 30%;
     width: 100%;
-    padding-top: 5em;
-    padding-bottom: 5em;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
     margin: auto;
     text-align: center;
   }
@@ -56,11 +56,11 @@ page-authenication {
 
   .finfish-icon {
     color: #32db64;
-    font-size: 4em;
+    font-size: 4rem;
   }
   .blank {
     width: 100%;
-    height: 1.5em !important;
+    height: 1.5rem !important;
   }
 
 }
