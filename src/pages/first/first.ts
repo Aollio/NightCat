@@ -31,20 +31,20 @@ export class FirstPage {
 
         this.storage.get('first').then(val => {
             if (val == null || val == 'true') {
-                this.nav.setRoot(WelcomePage)
+                this.gotoWelcome()
                 this.storage.set('first', 'true')
             } else {
                 this.storage.get('token').then(val => {
                     if (val == null || val == 'false') {
-                        this.nav.setRoot(RegisterPage)
+                        this.gotoLogin()
                     } else {
                         this.storage.get('role').then(val => {
                             if (val == null) {
-                                this.nav.setRoot(WelcomePage)
+                                this.gotoWelcome()
                             } else if (val == '00') {
-                                this.nav.setRoot(DesignerModulePage)
+                                this.nav.setRoot(DesignerModulePage, {animate: true})
                             } else {
-                                this.nav.setRoot(EmployerModulePage)
+                                this.nav.setRoot(EmployerModulePage, {animate: true})
                             }
                         })
                     }
@@ -64,6 +64,14 @@ export class FirstPage {
         // this.storage.set('first','true')
 
 
+    }
+
+    gotoWelcome() {
+        this.nav.setRoot(WelcomePage, {}, {animate: true})
+    }
+
+    gotoLogin() {
+        this.nav.setRoot(LoginPage, {}, {animate: true})
     }
 
 }

@@ -23,7 +23,8 @@ export class NetworkService {
 
     async getWithToken(url, param = {}, header = {}) {
         if (this.token == null) {
-            Promise.reject({status: -100, messgae: 'TOKEN不存在, 用户是否登录?'})
+            this.event.publish('gotologin')
+            return Promise.reject({status: -100, messgae: 'TOKEN不存在, 用户是否登录?'})
         }
         header['token'] = this.token
         return await this.get(url, param, header)
@@ -74,7 +75,8 @@ export class NetworkService {
 
     async postWithToken(url, param = {}, header = {}) {
         if (this.token == null) {
-            Promise.reject({status: -100, messgae: 'TOKEN不存在, 用户是否登录?'})
+            this.event.publish('gotologin')
+            Promise.reject({status: 401, messgae: 'TOKEN不存在, 用户是否登录?'})
         }
         header['token'] = this.token
         return await this.post(url, param, header)
