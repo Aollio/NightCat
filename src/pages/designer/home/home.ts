@@ -2,13 +2,16 @@ import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {MessagePage} from "../message/message";
 import {AdsService} from "../../../service/ajax/ads.service";
+declare let initializeFontSize: any;
 
 @Component({
     selector: 'page-home',
     templateUrl: 'home.html'
 })
 export class DesignerHomePage {
-
+    ionViewDidEnter() {
+        initializeFontSize()
+    }
 
     images: Array<{ url }> = [
         // {url: 'assets/img/home-default.png'},
