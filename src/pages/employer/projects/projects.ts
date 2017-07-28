@@ -1,6 +1,7 @@
 import {Component, ViewChild} from '@angular/core';
 import {el} from "@angular/platform-browser/testing/src/browser_util";
 import {EmpOrderListComponent} from "./emporderlist/emporderlist";
+declare let initializeFontSize: any
 
 @Component({
     selector: 'page-employer-projects',
@@ -13,7 +14,9 @@ export class ProjectsPage {
 
     constructor() {
     }
-
+    ionViewDidEnter() {
+        initializeFontSize()
+    }
 
     select(type) {
         if (type === 'wait_design') {
