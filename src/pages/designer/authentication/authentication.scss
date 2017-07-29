@@ -4,7 +4,7 @@ page-authenication {
     height: 0rem;
   }
   .process {
-    height: 25%;
+    height: 10rem;
     width: 100%;
     display: inline-flex;
   }
@@ -21,11 +21,13 @@ page-authenication {
   }
   ion-col custom-icon{
     text-align: center;
-    padding-right: 50%;
-  }
-  .process ion-col custom-icon {
+    padding-right: 70%;
+    padding-left: 28%;
     font-size: 3rem;
   }
+  //.process ion-col custom-icon {
+  //
+  //}
 
   .upload-icon {
     font-size: 4rem;
