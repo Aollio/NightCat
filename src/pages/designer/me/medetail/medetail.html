@@ -45,7 +45,7 @@
             </p>
         </ion-item>
 
-        <ion-row class="card-footer-number">
+        <ion-row class="card-footer-number" [class.margin_bottom_0]="isDesigner">
             <ion-col center text-center>
                 <p class="desc-bottom-number">162</p>
                 <p class="desc-bottom-number-label">
@@ -67,7 +67,7 @@
         </ion-row>
     </ion-card>
 
-    <div class="row_buttons">
+    <div class="row_buttons" *ngIf="!isDesigner">
         <button ion-button round class="attention_btn">关 注 我</button>
         <button ion-button round icon-only class="sed_msg_btn">
             <ion-icon name="chatboxes"></ion-icon>
