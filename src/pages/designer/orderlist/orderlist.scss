@@ -1,117 +1,109 @@
 
 com-orderlist {
-
-  ion-card {
-    margin-left: 5% !important;
-    margin-right: 5% !important;
-    width: 90% !important;
-    padding-bottom: 0 !important;
-    padding-top: 0 !important;
-    height: 9em;
-    border-radius: .2em !important;
-    border-color: transparent !important;
-    box-shadow: 1px 1px 10px 2px #f4f4f4 !important;
-  }
-
-  ion-card ion-card-content{
-    padding-top: 13px;
-    padding-right: 16px;
-    padding-bottom: 13px;
-    padding-left: 16px;
-  }
-  ion-card-content {
-    display: inline-flex;
+  .my-list{
     width: 100%;
+    background-color: #efeff4;
   }
-
-  .avatar {
-    position: absolute;
-    margin: auto;
-    text-align: center;
-    margin-left: -2em;
-    //margin-top: .75em;
-    width: 6.5em;
-    height: 6.5em;
-    background-color: #3E3E3E;
-    border-radius: .5em;
-    box-shadow: 0 0 10px 2px #c9c9c9;
+  .my-ul{
+    background-color: #fff;
+   // height: 8rem;
+    margin:1.66666666rem 1.25rem 0 2.7rem;
+    box-shadow:0 1px 6px #ccc;
+    border-radius: 5px;
+    padding:1.25rem;
   }
-
-  .detail {
-    margin-left: 6em;
+  .my-li{
+    /*background-color: #000;*/
+    width: 28.25rem;
+    height: 8rem;
+    display:-webkit-box;
+    position: relative;
+    right: 2.7rem;
+  }
+  .my-li-img{
+    width: 8rem;
+    height: 8rem;
+    background-color: #434343;
+    border-radius: 5px;
+    box-shadow:0 1px 6px #c1c1c1;
+  }
+  .my-li-img img{
     width: 100%;
-    //padding-top: .75em;
-  }
-
-  .detail .title {
-    color: #3E3E3E;
-    font-weight: 500;
-    font-size: .8em;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
-  }
-
-  .like-amount {
-    margin-top: -3%;
-    font-size: .7em;
-  }
-
-  .price {
-    font-size: 1.2em !important;
-    color: #FDBC42;
-    padding-top: 0em;
-    padding-bottom: 0em;
-  }
-
-  .deadtime {
-    font-size: .7em;
-    color: #c9cacf;
-    text-align: right;
-    margin-top: -5%;
-  }
-
-  .getorder {
-    font-size: .78em;
-    text-align: right;
-    margin-top: 2%;
-    color: #FB865E;
-  }
-
-  .progress {
-    height: .5em;
-    margin-bottom: 20px;
-    overflow: hidden;
-    background-color: #f5f5f5;
-    border-radius: 4px;
-    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1)
-  }
-
-  .progress-bar {
-    float: left;
-    width: 0;
     height: 100%;
-    font-size: 12px;
-    line-height: 20px;
-    color: #fff;
-    text-align: center;
-    background-color: #337ab7;
-    -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
-    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
-    -webkit-transition: width .6s ease;
-    -o-transition: width .6s ease;
-    transition: width .6s ease
+    border-radius: 5px;
   }
-
-  .progress-striped .progress-bar, .progress-bar-striped11 {
-    -webkit-background-size: 40px 40px;
-    background-size: 40px 40px
+  .my-li-right{
+    -webkit-box-flex:1;
+    margin-left: 1.25rem;
+    font-family: helvetica;
   }
-
-  .progress-striped .progress-bar, .progress-bar-striped11 {
-    -webkit-background-size: 40px 40px;
-    background-size: 40px 40px
+  .my-li-right-t{
+    height: 3.16666666rem;
+    font-size: 1.66666666rem;
+    color: #333;
+    display:-webkit-box;
+  }
+  .my-li-right-t-name{
+    -webkit-box-flex:1;
+    height: 3.16666666rem;
+    line-height: 1.66666666rem;
+    font-size: 1.16666666rem;
+    color: #333;
+    display:-webkit-box;
+    overflow:hidden;
+    white-space:normal!important;
+    text-overflow:ellipsis;
+    word-wrap:break-word;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+  }
+  .my-li-right-c{
+    display:-webkit-box;
+    height: 1.66666666rem;
+    margin-top: 0.4rem;
+  }
+  .my-li-right-c-l{
+    -webkit-box-flex:1;
+    height: 1.66666666rem;
+    font-size: 1.66666666rem;
+    color: #FDBC42;
+  }
+  .my-li-right-c-r{
+    -webkit-box-flex:1;
+    text-align: right;
+    color: #FB865E;
+    font-size:1rem;
+  }
+  .my-li-right-b{
+    display:-webkit-box;
+    height: 1.6rem;
+    margin-top: 0.35rem;
+  }
+  .my-li-right-b-l{
+    -webkit-box-flex:1;
+    height: 1.66666666rem;
+    font-size: 1rem;
+    color: #666;
+  }
+  .my-li-right-b-r{
+    -webkit-box-flex:1;
+    text-align: right;
+    color: #999;
+    font-size:1rem;
+  }
+  .my-bar{
+    height: 0.6rem;
+    background-color: #cccccc;
+    border-radius: 0.6rem;
+  }
+  .my-bar-l{
+    width: 82%;
+    height: 0.6rem;
+    border-top-left-radius: 0.6rem;
+    border-bottom-left-radius: 0.6rem;
+    background: -webkit-linear-gradient(right, #3a83f6 , #94bbf8); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #3a83f6 , #94bbf8); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right,#3a83f6 , #94bbf8); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #3a83f6 , #94bbf8); /* 标准的语法 */
   }
 }

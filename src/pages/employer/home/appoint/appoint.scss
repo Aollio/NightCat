@@ -1,0 +1,65 @@
+page-appoint{
+  .my-title{
+    text-align: center;
+    font-size: 1.91666666rem;
+    height: 3.33333333rem;
+    line-height: 3.33333333rem;
+    margin: 1.66666666rem;
+    color: #666;
+    font-family: helvetica;
+    display:-webkit-box;
+    overflow:hidden;
+    white-space:normal!important;
+    text-overflow:ellipsis;
+    word-wrap:break-word;
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;
+  }
+  .my-val{
+    text-align: center;
+    font-size: 1.91666666rem;
+    height: 3.33333333rem;
+    line-height: 3.33333333rem;
+    margin: 1.66666666rem;
+    color: #999;
+    font-family: helvetica;
+    display:-webkit-box;
+    overflow:hidden;
+    white-space:normal!important;
+    text-overflow:ellipsis;
+    word-wrap:break-word;
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;
+  }
+  .my-ul{
+    width: 100%;
+    margin-top: 10rem;
+  }
+  .my-li{
+    margin: 2.5rem 1.66666666rem;
+    height: 3.75rem;
+    border: 1px solid #ededed;
+    border-radius: 3.33333333rem;
+    font-size: 1.5rem;
+    line-height: 3.75rem;
+    padding: 0 1.25rem;
+    font-family: helvetica;
+    color: #666;
+    /*box-shadow:0 1px 6px #ccc;*/
+  }
+  .my-bottom{
+    margin: 7.5rem 1.66666666rem 0;
+    height: 3.75rem;
+    border-radius: 3.33333333rem;
+    font-size: 1.5rem;
+    line-height: 3.75rem;
+    text-align: center;
+    font-family: helvetica;
+    color: #fff;
+    box-shadow:0 1px 6px #94bbf8;
+    background: -webkit-linear-gradient(right, #0053d4 , #94bbf8); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #0053d4 , #94bbf8); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right,#0053d4 , #94bbf8); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #0053d4 , #94bbf8); /* 标准的语法 */
+  }
+}

@@ -1,7 +1,8 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {DesignerMeDetailPage} from "../../designer/me/medetail/medetail";
-import {EesignerTypesPage} from "./designertypes/designertypes";
+import {AppointPage} from "./appoint/appoint";
+import {DesignerTypesPage} from "./designertypes/designertypes";
 
 declare let initializeFontSize: any
 
@@ -32,7 +33,7 @@ export class EmployerHomePage {
     }
 
     btn_designer(){
-       this.navCtrl.push(EesignerTypesPage);
+       this.navCtrl.push(DesignerTypesPage);
     }
     btn_fullstack(){
 
@@ -41,6 +42,7 @@ export class EmployerHomePage {
 
     }
     btn_appoint(){
+        this.navCtrl.push( AppointPage);
 
     }
 }
