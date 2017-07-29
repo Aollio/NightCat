@@ -30,6 +30,7 @@ import {State} from "../../service/im/state.im";
 import {SearchDesignerPage} from "../employer/searchdesigner/searchdesigner";
 import {RegisterPage} from "../common/register/register";
 import {OrderProcessDetailPage} from "../common/order/orderprocess/orderprocess";
+import {ImagePicker} from "@ionic-native/image-picker";
 
 
 @Component({
@@ -72,7 +73,7 @@ export class WelcomePage {
     list: any = BlankPage;
     searchdesigner: any = SearchDesignerPage;
     commentOrderPage: any = CommentOrderPage;
-    orderProcessDetailPage:any=OrderProcessDetailPage;
+    orderProcessDetailPage: any = OrderProcessDetailPage;
 
     constructor(public navCtrl: NavController, public navParams: NavParams,
                 public platform: Platform,
@@ -80,7 +81,8 @@ export class WelcomePage {
                 public http: NetworkService,
                 public shared: SharedService,
                 public im: ImService,
-                public navParam: NavParams) {
+                public navParam: NavParams,
+                public imagePicker: ImagePicker) {
 
         console.log('enter welcome')
         let isregister = this.navParam.get('register')
@@ -89,6 +91,15 @@ export class WelcomePage {
             this.enterRegister()
         }
 
+    }
+
+    openImagePicker() {
+        this.imagePicker.getPictures({}).then((results) => {
+            for (var i = 0; i < results.length; i++) {
+                console.log('Image URI: ' + results[i]);
+            }
+        }, (err) => {
+        });
     }
 
     openChat() {
@@ -167,12 +178,12 @@ export class WelcomePage {
 
     openEmployer() {
         this.shared.isDesigner = false;
-        this.navCtrl.setRoot(EmployerModulePage, {},{animate:true})
+        this.navCtrl.setRoot(EmployerModulePage, {}, {animate: true})
     }
 
     openDesigner() {
         this.shared.isDesigner = true;
-        this.navCtrl.setRoot(DesignerModulePage, {},{animate:true});
+        this.navCtrl.setRoot(DesignerModulePage, {}, {animate: true});
     }
 
     /**
