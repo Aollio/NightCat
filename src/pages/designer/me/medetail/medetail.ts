@@ -4,6 +4,7 @@ import {ModifyProfilePage} from "../modifyprofile/modifyprofile";
 import {SharedService} from "../../../../service/share.service";
 import {User} from "../../../../model/user";
 import {CaseDetailPage} from "../casedetail/casedetail";
+import {ChatPage} from "../../../im/chat/chat";
 declare let initializeFontSize: any
 @Component({
     selector: 'page-designer-me-detail',
@@ -57,5 +58,8 @@ export class DesignerMeDetailPage {
     }
     experice(){
         this.ButState=3;
+    }
+    openChat(operation) {
+        this.navCtrl.push(ChatPage,operation)
     }
 }
