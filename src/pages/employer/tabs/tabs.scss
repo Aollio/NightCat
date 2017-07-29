@@ -1,11 +1,18 @@
 
 page-employer-tabs {
 
+  .tab-button[aria-selected=true] .tab-button-icon {
+    color: $emp-primary !important;
+  }
+  .tab-button[aria-selected=true] {
+    color: $emp-primary !important;
+  }
+
   a.icon-only {
-   // margin: 1em 1em 1em 1em !important;
-   // padding: .5em 0em 2em 0!important;
+    // margin: 1em 1em 1em 1em !important;
+    // padding: .5em 0em 2em 0!important;
     font-size: .45em !important;
-   // position: relative;
+    // position: relative;
     display: block !important;
   }
 
@@ -16,9 +23,9 @@ page-employer-tabs {
     font-size: 2.25rem !important;
     height: 3.2rem !important;
     width: 3.2rem !important;
-   // font-size: 500rem !important;
-   // margin: auto !important;
-    margin-top: -0rem!important;
+    // font-size: 500rem !important;
+    // margin: auto !important;
+    margin-top: -0rem !important;
     margin-left: 4%;
     text-align: center !important;
     background-color: $emp_primary;
