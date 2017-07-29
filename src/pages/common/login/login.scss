@@ -1,6 +1,6 @@
 page-login {
   .ion-content-class {
-    repeat: fixed!important;
+    repeat: fixed !important;
     background: url("../../../assets/img/SelectOption.png") no-repeat;
     background-size: 100% 100%;
 
@@ -12,12 +12,12 @@ page-login {
     color: #6E6E6E;
     text-align: center;
   }
-  .myInput{
-    width:90% ;
+  .myInput {
+    width: 90%;
     margin-left: 5%;
   }
 
-  .myInput input, select, textarea , button{
+  .myInput input, select, textarea, button {
     width: 100%;
     margin-bottom: 1em;
     height: 3.2em;
@@ -29,7 +29,7 @@ page-login {
     transition: border 0.4s linear, background 0.3s;
   }
 
-  .myInput input[type='radio']{
+  .myInput input[type='radio'] {
     width: 1em;
     height: 1em;
   }
@@ -42,13 +42,12 @@ page-login {
     border-color: #1abc9c;
   }
 
-
   .myInput input:read-only {
     border: 0.15em solid #eaeded;
     background: #eaeded;
   }
 
-  .myInput input[type="submit"], input[type="button"],input[type="reset"] ,button{
+  .myInput input[type="submit"], input[type="button"], input[type="reset"], button {
     width: 8em;
     height: 2.5em;
     border: 0;
@@ -56,7 +55,7 @@ page-login {
     background: #1abc9c;
   }
 
-  .myInput input[type="submit"]:hover, input[type="button"]:hover ,input[type="reset"]:hover, button:hover{
+  .myInput input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover, button:hover {
     background: #2fe2bf;
   }
 
@@ -80,24 +79,23 @@ page-login {
     border-color: #1abc9c;
   }
 
-  .myInput-danger{
+  .myInput-danger {
     /*background: #cf5045;*/
   }
 
-  .myInput-danger:hover{
+  .myInput-danger:hover {
     background: #cf5045;
   }
-
 
   .login-btn {
     font-size: 1.2em;
     font-weight: 500;
-   margin-top: 2.5em;
+    margin-top: 2.5em;
     text-align: center;
     width: 90%;
     margin-left: 5%;
     height: 3.2em;
-    background-color:  map_get($colors,login-des);
+    background-color: map_get($colors, login-des);
   }
 
   .register-btn {
@@ -116,18 +114,25 @@ page-login {
     margin-top: 2.5em;
     font-size: 1em;
   }
-  .tip{
-    margin-top: 9em!important;
+  .tip {
+    margin-top: 9em !important;
     text-align: center;
     width: 100%;
   }
-  .icondiv{
-    font-size: 2.8em;
-    position: absolute;
-    margin-left: 68%;
-    margin-top: 1.25%;
-  background-color: #0a0a0a;
-    color: #bfc9ca;
-    transition: color 0.3s;
+  .password{
+    width: 100%;
+    position: relative;
+    .icondiv {
+      position: absolute;
+      font-size: 3rem;
+      right: 1rem;
+      top: 0.5rem;
+      //bottom: 0;
+      margin: auto;
+      //background-color: #0a0a0a;
+      color: #bfc9ca;
+      transition: color 0.3s;
+    }
   }
+
 }
