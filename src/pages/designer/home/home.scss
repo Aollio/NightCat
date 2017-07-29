@@ -1,6 +1,6 @@
 page-home {
 
-  $background-color-home: #fdfdfd;
+  $background-color-home: #efeff4;
 
   .header-bar {
     width: 100%;
@@ -53,10 +53,12 @@ page-home {
   button {
     margin: 0px !important;
     border-radius: 0em !important;
+
   }
 
   .buttons-slide {
     height: 3em;
+
   }
   .scroll-zoom-wrapper {
     //border-bottom-color: #cccccc;
@@ -68,7 +70,7 @@ page-home {
   .order-type-btn {
     height: 2em;
     line-height: 2em;
-    background-color: $background-color-home;
+    background-color:white;
     color: rgba(41, 41, 41, 0.93);
     margin: .3em;
     width: 5em;

@@ -1,11 +1,13 @@
 import {Component} from "@angular/core";
-
+declare let initializeFontSize: any
 @Component({
     selector: 'page-choosedesigner',
     templateUrl: 'choosedesigner.html'
 })
 export class ChooseDesignerPage {
-
+    ionViewDidEnter() {
+        initializeFontSize()
+    }
     desarray: Array<{ avatar, name, time, describe }> = [
         {
             avatar: 'assets/img/des-1.png', name: '张三', time: '100/时',

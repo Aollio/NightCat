@@ -1,12 +1,19 @@
 page-tasksquare {
+  ion-header{
+   // height:13.333333333333334rem  ;
+  }
+  .toolbar-title-ios{
+    font-weight:normal!important;
+  }
+  $background-color-home: #efeff4;
   .img {
-    height: 10%;
+    height: 6.6rem ;
     width: 100%;
     background-color: transparent;
   }
 
   .type-buttons {
-    background-color: rgb(241,241,241);
+    background-color: white;
     display: inline-flex;
     padding: 1rem;
     width: 100%;
@@ -21,7 +28,7 @@ page-tasksquare {
     width: 33%;
     height: 1.5rem;
     line-height: 1.5rem;
-    background-color: transparent;
+    background-color:white;
     color: #3E3E3E;
     border-left: .5px solid #9E9E9E;
     border-radius: 0;
@@ -31,5 +38,7 @@ page-tasksquare {
 
   .type-btn:active {
   }
-
+  ion-content {
+    background-color: $background-color-home !important;
+  }
 }

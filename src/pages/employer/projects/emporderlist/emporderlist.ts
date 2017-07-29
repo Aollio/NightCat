@@ -8,7 +8,9 @@ declare let initializeFontSize: any
 })
 export class EmpOrderListComponent {
 
-    orderlist: Array<{}> = [];
+    orderlist: Array<{}> = [
+
+    ];
 
     constructor(public nav:NavController) {
     }

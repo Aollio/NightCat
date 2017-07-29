@@ -51,14 +51,14 @@
             </button>
         </div>
 
-
+        <div class="detail-require" >
+            <textarea placeholder="填写更详细的需求，可以帮您更快的找到合适的设计师哦" class="summary-textarea"></textarea>
+        </div>
     </div>
 
 </ion-content>
 <ion-footer>
-    <div class="detail-require" *ngIf="state === 3">
-        <textarea placeholder="填写更详细的需求，可以帮您更快的找到合适的设计师哦" class="summary-textarea"></textarea>
-    </div>
+
     <div>
         <div class="footer-tip">共3问当前第{{state}}问&nbsp;&nbsp;
             <a class="link" (click)="openPage()">提交问卷</a>

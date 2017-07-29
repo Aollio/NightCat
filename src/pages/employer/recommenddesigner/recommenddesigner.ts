@@ -3,6 +3,7 @@ import {NavController} from "ionic-angular";
 import {DesignerMeDetailPage} from "../../designer/me/medetail/medetail";
 import {ChooseDesignerPage} from "../choosedesigner/choosedesigner";
 import {HelpChoosePage} from "../helpchoose/helpchoose";
+declare let initializeFontSize: any;
 @Component({
     templateUrl: 'recommenddesigner.html',
     selector:'page-recommenddesigner'
@@ -12,6 +13,9 @@ export class RecommendDesignerPage{
     helpchoosePage:any=HelpChoosePage;
     constructor(public navctrl:NavController){
 
+    }
+    ionViewDidEnter() {
+        initializeFontSize()
     }
     desarray: Array<{ avatar, name, time, describe }> = [
         {

@@ -72,14 +72,17 @@ com-emporderlist {
   }
 
   .null-project {
-    text-align: center;
+    //text-align: center;
     width: 100%;
-    height: 45%;
-    padding-top: 20%;
+    height: auto;
+    margin-top: 2rem;
+   // padding-top: 3rem;
   }
 
   .null-project img {
     max-height: 100%;
+    height: 10rem;
+    width: 10rem;
   }
 
   .null-porject-toast {
