@@ -4,7 +4,7 @@ import {ModifyProfilePage} from "../modifyprofile/modifyprofile";
 import {SharedService} from "../../../../service/share.service";
 import {User} from "../../../../model/user";
 import {CaseDetailPage} from "../casedetail/casedetail";
-
+declare let initializeFontSize: any
 @Component({
     selector: 'page-designer-me-detail',
     templateUrl: 'medetail.html'
@@ -36,6 +36,9 @@ export class DesignerMeDetailPage {
         this.isDesigner = navParams.get('isDesigner');
         this.user = shared.currentUser;
 
+    }
+    ionViewDidEnter() {
+        initializeFontSize()
     }
 
 
