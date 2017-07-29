@@ -28,6 +28,7 @@ import {IonicStorageModule} from "@ionic/storage";
 import {Storage} from '@ionic/storage';
 import {KeynoteService} from "../service/keynote.service";
 import {AdsService} from "../service/ajax/ads.service";
+import {ImagePicker} from "@ionic-native/image-picker";
 
 
 export function provideStorage() {
@@ -65,7 +66,6 @@ export function provideStorage() {
         }),
         IonicStorageModule.forRoot({}),
         CustomIconsModule // Add this!
-
     ],
     exports: [],
     bootstrap: [IonicApp],
@@ -82,6 +82,7 @@ export function provideStorage() {
         StatusBar,
         HTTP,
         SplashScreen,
+        ImagePicker,
         {provide: ErrorHandler, useClass: IonicErrorHandler},
         {provide: Storage, useFactory: provideStorage},
     ]

@@ -76,4 +76,22 @@ export class ChatPage {
     // //         .catch((error) => console.log('发送消息失败', error))
     //  }
 
+
+// <ion-content>
+// <div class="chat">
+//     <div class="messages">
+//     <div class="messages-content">
+//     <div *ngFor="let message of msglist">
+//     <div class="message" [class.message-personal]="message.flow === 'out'">
+//         {{ message.showText }}
+// <div class="timestamp"> {{ message.showTime }}</div>
+// </div>
+// </div>
+// </div>
+// </div>
+//
+// </div>
+// <div class="bg"></div>
+//     </ion-content>
+
 }

@@ -31,14 +31,17 @@ export class FirstPage {
 
         // this.storage.get('first').then(val => {
         //     if (val == null || val == 'true') {
+        //         console.log('first', val)
         //         this.gotoWelcome()
-        //         this.storage.set('first', 'true')
+        //         this.storage.set('first', 'false')
         //     } else {
         //         this.storage.get('token').then(val => {
+        //             console.log('token', val)
         //             if (val == null || val == 'false') {
         //                 this.gotoLogin()
         //             } else {
         //                 this.storage.get('role').then(val => {
+        //                     console.log('role', val)
         //                     if (val == null) {
         //                         this.gotoWelcome()
         //                     } else if (val == '00') {
