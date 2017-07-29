@@ -6,12 +6,12 @@ page-choosedesigner {
   }
 
   .des-card {
-    padding: .5em;
+    padding: .5rem;
     height: auto;
   }
   .des-card-avatar {
     height: auto;
-    max-height: 10em;
+    max-height: 10rem;
   }
 
   .des-card-img{
@@ -20,7 +20,7 @@ page-choosedesigner {
 
   .avatar-icon-div {
     position: absolute;
-    font-size: 2em;
+    font-size: 2rem;
     width: 85%;
     color: $emp_primary;
   }
@@ -35,18 +35,18 @@ page-choosedesigner {
   .des-card-name {
     float: left;
     color: #C13638;
-    font-size: 1.2em;
+    font-size: 1.2rem;
   }
   .des-card-time {
     float: right;
     color: #F45D07;
-    font-size: 1.2em;
+    font-size: 1.2rem;
   }
   .des-card-short {
     width: 90%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    font-size: 1em;
+    font-size: 1rem;
   }
 }

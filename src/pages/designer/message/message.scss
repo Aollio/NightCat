@@ -29,13 +29,15 @@ page-message {
     text-decoration: underline;
   }
 
-  ion-content{
-    background-color:  #eaeaea!important;
+  ion-content {
+    background-color: #eeeeee !important;
   }
-ion-card-header{
-  padding-top: 5px!important;
-}
-  ion-card{
-    border: none!important;
+  ion-card-header {
+    padding-top: 5px !important;
+  }
+  ion-card {
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0.5rem!important;
   }
 }

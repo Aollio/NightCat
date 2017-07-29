@@ -16,13 +16,14 @@ import {PublishTaskPage} from "./publishtask/publishtask";
 import {CommentOrderPage} from "./order/comment-order/comment-order";
 import {OrderModule} from "./order/order.module";
 import {CustomIconsModule} from "ionic2-custom-icons";
+import {ImModule} from "../im/im.module";
 
 @NgModule({
     imports: [IonicPageModule.forChild(CommonModulePage),
         SecurityCenterModule,
         DesignerMeModule,
         OrderModule,
-
+        ImModule,
         CustomIconsModule // Add this!
     ],
     declarations: [

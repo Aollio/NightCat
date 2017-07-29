@@ -21,10 +21,10 @@ export class UsersService {
     }
 
 
-    async getToken(user): Promise<any> {
+    async getToken(user) {
         if (this.KEYNOTE) {
             console.log('演示模式, 返回默认TOKEN');
-            return Promise.resolve(this.keynote.token)
+            return this.keynote.token
         }
         let param = {
             phone: user.phone,
@@ -34,7 +34,7 @@ export class UsersService {
         let data = await this.http.post(this.urls.tokens_url, param)
 
         if (data.status != 200) {
-            Promise.reject(data)
+            throw data
         }
 
         let token = data.content
@@ -73,6 +73,7 @@ export class UsersService {
         return 'ok'
     }
 
+
     async register(user) {
 
         if (this.KEYNOTE) {
@@ -90,6 +91,5 @@ export class UsersService {
         console.log('注册用户成功', newuser)
         return newuser
     }
-
 
 }
