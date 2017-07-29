@@ -29,31 +29,33 @@ export class FirstPage {
         //后门, 方便开发
         event.publish('backdoor')
 
-        this.storage.get('first').then(val => {
-            if (val == null || val == 'true') {
-                this.gotoWelcome()
-                this.storage.set('first', 'true')
-            } else {
-                this.storage.get('token').then(val => {
-                    if (val == null || val == 'false') {
-                        this.gotoLogin()
-                    } else {
-                        this.storage.get('role').then(val => {
-                            if (val == null) {
-                                this.gotoWelcome()
-                            } else if (val == '00') {
-                                this.nav.setRoot(DesignerModulePage, {animate: true})
-                            } else {
-                                this.nav.setRoot(EmployerModulePage, {animate: true})
-                            }
-                        })
-                    }
-                })
-            }
-        }).catch(error => {
-            console.log('storage error => WelcomePage')
-            this.nav.setRoot(WelcomePage)
-        })
+        // this.storage.get('first').then(val => {
+        //     if (val == null || val == 'true') {
+        //         this.gotoWelcome()
+        //         this.storage.set('first', 'true')
+        //     } else {
+        //         this.storage.get('token').then(val => {
+        //             if (val == null || val == 'false') {
+        //                 this.gotoLogin()
+        //             } else {
+        //                 this.storage.get('role').then(val => {
+        //                     if (val == null) {
+        //                         this.gotoWelcome()
+        //                     } else if (val == '00') {
+        //                         this.nav.setRoot(DesignerModulePage, {animate: true})
+        //                     } else {
+        //                         this.nav.setRoot(EmployerModulePage, {animate: true})
+        //                     }
+        //                 })
+        //             }
+        //         })
+        //     }
+        // }).catch(error => {
+        //     console.log('storage error => WelcomePage')
+        //     this.nav.setRoot(WelcomePage)
+        // })
+
+        this.gotoWelcome()
 
         event.subscribe('gotologin', () => {
             util.toast('授权过期或者未登录')
