@@ -6,6 +6,7 @@ import {DesignerMeDetailPage} from "./medetail/medetail";
 import {DesignerWalletPage} from "../wallet/wallet";
 import {SharedService} from "../../../service/share.service";
 import {User} from "../../../model/user";
+declare let initializeFontSize: any;
 
 @IonicPage()
 @Component({
@@ -15,7 +16,9 @@ import {User} from "../../../model/user";
 export class DesignerMePage {
 
     user: User;
-
+    ionViewDidEnter() {
+        initializeFontSize()
+    }
     constructor(public navCtrl: NavController,
                 public shared: SharedService) {
         this.user = shared.currentUser;

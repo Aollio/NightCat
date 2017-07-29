@@ -11,7 +11,7 @@
 
     <ion-card class="card-personal-desc">
         <ion-item class="desc-header">
-            <div>
+            <!--<div>-->
                 <div class="desc-header-name">
                     {{user.nickname}}
                     <span class="desc-header-type">
@@ -24,7 +24,7 @@
                 <div class="desc-header-modify" *ngIf="isDesigner" (click)="modify()">修改
                     <ion-icon class="desc-header-modify-icon" name="md-create"></ion-icon>
                 </div>
-            </div>
+            <!--</div>-->
 
             <p class="desc-head-experience">
                 {{user.service_length}}&nbsp;{{user.school}}
@@ -67,6 +67,7 @@
         </ion-row>
 
     </ion-card>
+
     <div class="type-buttons">
         <button ion-button clear [class.active]="ButState===1" (click)="case()" class="type-btn active" >案例
         </button>
@@ -91,7 +92,7 @@
                     </div>
                 </div>
                 <ion-row>
-                    <ion-col col-2>
+                    <ion-col col-3>
                         <button ion-button icon-left clear small class="case-icon-btn">
                             <ion-icon name="thumbs-up"></ion-icon>
                             <div>{{ case.fav_count }}</div>
@@ -103,7 +104,7 @@
                             <div>{{ case.comment_count}}</div>
                         </button>
                     </ion-col>
-                    <ion-col col-5></ion-col>
+                    <ion-col col-4></ion-col>
                     <ion-col col-3 item-right class="case-item-time-before">
                         <button ion-button icon-left clear small disabled>
                             <div>{{ case.time }}</div>

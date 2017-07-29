@@ -3,11 +3,11 @@ import {Component} from "@angular/core";
 declare let initializeFontSize: any
 
 @Component({
-    selector: 'page-designertypes-home',
-    templateUrl: 'designertypes.html'
+    selector: 'page-appoint',
+    templateUrl: 'appoint.html'
 })
-export class DesignerTypesPage {
-    pageState: any = 0;
+export class AppointPage {
+
 
     ionViewDidEnter() {
         initializeFontSize()

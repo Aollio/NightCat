@@ -1,19 +1,22 @@
 import {NgModule} from "@angular/core";
-import {EesignerTypesPage} from "./designertypes/designertypes";
 import {IonicModule} from "ionic-angular";
+import {AppointPage} from "./appoint/appoint";
+import {DesignerTypesPage} from "./designertypes/designertypes";
 
 @NgModule({
     declarations: [
-        EesignerTypesPage
+        DesignerTypesPage,
+        AppointPage
     ],
     entryComponents: [
-        EesignerTypesPage
+        DesignerTypesPage,
+        AppointPage
     ],
     imports: [
         IonicModule,
     ],
     exports: [
-        EesignerTypesPage
+        DesignerTypesPage
     ]
 
 })
