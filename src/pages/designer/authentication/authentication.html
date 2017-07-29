@@ -52,7 +52,8 @@
             <ion-input placeholder="请输入证件名称"></ion-input>
         </ion-item>
         <ion-item-divider></ion-item-divider>
-        <div class="upload">
+        <div class="upload" (click)="uploading_img()">
+            <input type="image" value="图片"/>
             <div class="upload-icon">
                 <ion-icon name="ios-camera-outline"></ion-icon>
             </div>

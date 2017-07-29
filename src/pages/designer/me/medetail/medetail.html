@@ -12,18 +12,18 @@
     <ion-card class="card-personal-desc">
         <ion-item class="desc-header">
             <!--<div>-->
-                <div class="desc-header-name">
-                    {{user.nickname}}
-                    <span class="desc-header-type">
+            <div class="desc-header-name">
+                {{user.nickname}}
+                <span class="desc-header-type">
                           {{user.type}}
                     </span>
-                </div>
-                <!--<div>-->
+            </div>
+            <!--<div>-->
 
-                <!--</div>-->
-                <div class="desc-header-modify" *ngIf="isDesigner" (click)="modify()">修改
-                    <ion-icon class="desc-header-modify-icon" name="md-create"></ion-icon>
-                </div>
+            <!--</div>-->
+            <div class="desc-header-modify" *ngIf="isDesigner" (click)="modify()">修改
+                <ion-icon class="desc-header-modify-icon" name="md-create"></ion-icon>
+            </div>
             <!--</div>-->
 
             <p class="desc-head-experience">
@@ -45,7 +45,7 @@
             </p>
         </ion-item>
 
-        <ion-row class="card-footer-number">
+        <ion-row class="card-footer-number" [class.margin_bottom_0]="isDesigner">
             <ion-col center text-center>
                 <p class="desc-bottom-number">162</p>
                 <p class="desc-bottom-number-label">
@@ -65,15 +65,21 @@
                 </p>
             </ion-col>
         </ion-row>
-
     </ion-card>
 
+    <div class="row_buttons" *ngIf="!isDesigner">
+        <button ion-button round class="attention_btn">关 注 我</button>
+        <button ion-button round icon-only class="sed_msg_btn">
+            <ion-icon name="chatboxes"></ion-icon>
+        </button>
+    </div>
+
     <div class="type-buttons">
-        <button ion-button clear [class.active]="ButState===1" (click)="case()" class="type-btn active" >案例
+        <button ion-button clear [class.active]="ButState===1" (click)="case()" class="type-btn active">案例
         </button>
-        <button ion-button clear  [class.active]="ButState===2" (click)="honor()" class="type-btn" >荣誉
+        <button ion-button clear [class.active]="ButState===2" (click)="honor()" class="type-btn">荣誉
         </button>
-        <button ion-button clear  [class.active]="ButState===3" (click)="experice()" class="type-btn" >工作经历&nbsp;
+        <button ion-button clear [class.active]="ButState===3" (click)="experice()" class="type-btn">工作经历&nbsp;
         </button>
     </div>
 

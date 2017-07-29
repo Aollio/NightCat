@@ -167,12 +167,12 @@ export class WelcomePage {
 
     openEmployer() {
         this.shared.isDesigner = false;
-        this.navCtrl.push(EmployerModulePage, {})
+        this.navCtrl.setRoot(EmployerModulePage, {},{animate:true})
     }
 
     openDesigner() {
         this.shared.isDesigner = true;
-        this.navCtrl.push(DesignerModulePage, {});
+        this.navCtrl.setRoot(DesignerModulePage, {},{animate:true});
     }
 
     /**
