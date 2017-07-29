@@ -42,13 +42,9 @@ page-me-designer {
   }
 
   ion-item {
-    padding-top: .5rem !important;
-    padding-bottom: .5rem !important;
     padding-left: 1rem !important;
-    color: #767676 !important;
-    border: none;
-    height: 6rem;
-    box-shadow: 0.66666rem 0 2rem #b6b6b6;
   }
-
+  ion-item ion-icon{
+    color: #d9d9d9;
+  }
 }
