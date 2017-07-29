@@ -127,7 +127,7 @@
         <ion-icon name="ios-star"*ngIf="collectstate===1" class="order-state"></ion-icon>
         收藏
     </button>
-    <button class="footer-clear-btn" clear ion-button color="primary" icon-start style="width: 50%">
+    <button class="footer-clear-btn" (click)="openChat({sessionId: 'hgyuguyg'})" clear ion-button color="primary" icon-start style="width: 50%">
         <ion-icon name="text-outline"></ion-icon>
         喵喵
     </button>

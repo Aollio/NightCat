@@ -6,10 +6,13 @@ import {AbsCommonPage} from "../../abs";
 import {DesignerMeDetailPage} from "../../../designer/me/medetail/medetail";
 import {PayPage} from "../../../employer/pay/pay";
 import {CommentOrderPage} from "../comment-order/comment-order";
-declare let initializeFontSize:any
+import {ChatPage} from "../../../im/chat/chat";
+
+declare let initializeFontSize: any
 /*
  * 订单详情
  * */
+
 // @IonicPage()
 @Component({
     selector: 'page-orderdetail',
@@ -20,8 +23,8 @@ export class OrderDetailPage extends AbsCommonPage {
     order_id: string;
     isDesigner: boolean;
     collectstate: any = 0;
-    pay:any=PayPage;
-    commentorder:any=CommentOrderPage;
+    pay: any = PayPage;
+    commentorder: any = CommentOrderPage;
     orderProcessDetail: any = OrderProcessDetailPage;
 
     /**
@@ -33,7 +36,8 @@ export class OrderDetailPage extends AbsCommonPage {
         this.order_id = navParams.get('order_id');
         this.isDesigner = share.isDesigner;
     }
-    ionViewDidEnter(){
+
+    ionViewDidEnter() {
         initializeFontSize()
         console.log("com")
     }
@@ -47,8 +51,11 @@ export class OrderDetailPage extends AbsCommonPage {
         this.navCtrl.push(page, {})
     }
 
-    collect(){
-        this.collectstate=(++this.collectstate)%2;
+    collect() {
+        this.collectstate = (++this.collectstate) % 2;
     }
 
+    openChat(operation) {
+        this.navCtrl.push(ChatPage,operation)
+    }
 }
