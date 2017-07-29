@@ -1,18 +1,15 @@
-<ion-content padding>
-
+<ion-content>
+    <ion-toolbar *ngIf="state==1">
+        <ion-buttons end>
+            <button ion-button color="primary"  (click)="enterRegister()">跳过</button>
+        </ion-buttons>
+    </ion-toolbar>
     <div class="tutorial-page" *ngIf="state===1">
         <ion-slides>
             <ion-slide *ngFor="let slide of slides">
-                <ion-toolbar>
-                    <ion-buttons end>
-                        <button ion-button color="primary" (click)="enterRegister()">跳过</button>
-                    </ion-buttons>
-                </ion-toolbar>
                 <img [src]="slide" class="slide-image"/>
             </ion-slide>
             <ion-slide class="end-class">
-
-
                 <button class="enterbutton" (click)="enterRegister()">
                     进入主页
                 </button>
@@ -33,17 +30,17 @@
                 round>
             以雇主的身份开始
         </button>
-        <br>
+        <!--<br>-->
         <div class="or">or</div>
         <button ion-button class="desbutton"
                 (click)="open(register,{role:'00'})"
                 round>
             以设计师的身份开始
         </button>
-        <br>
-        <a class="login" (click)="open(loginPage)">已经拥有一个账号？</a>
-        <div class="tip">随着您注册账户的成功，即表示您已经阅读并同意了我们公司的安全协议及条款
-        </div>
+        <!--<br>-->
+        <p class="login" (click)="open(loginPage)">已经拥有一个账号？</p>
+        <p class="tip">随着您注册账户的成功，即表示您已经阅读并同意了我们公司的安全协议及条款
+        </p>
 
 
     </div>
