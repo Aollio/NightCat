@@ -2,37 +2,37 @@ page-chat {
   /*--------------------
 Mixins
 --------------------*/
-  .my-dl{
+  .my-dl {
     /*width: 100%;*/
-    padding:3rem 1.7rem;
+    padding: 3rem 1.7rem;
   }
-  .my-dt{
-    display:-webkit-box;
+  .my-dt {
+    display: -webkit-box;
     margin-bottom: 2.5rem;
   }
-  .my-dt-portrait{
+  .my-dt-portrait {
     width: 3.8rem;
     height: 3.8rem;
     background-color: #fff;
     border-radius: 50%;
-    box-shadow:0 1px 6px #ccc;
+    box-shadow: 0 1px 6px #ccc;
   }
-  .my-dt-portrait img{
+  .my-dt-portrait img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
   }
-  .my-dt-text{
+  .my-dt-text {
     /*-webkit-box-flex:1;*/
     margin-left: 1rem;
   }
-  .my-dt-name{
+  .my-dt-name {
     font-size: 1.2rem;
     color: #666666;
     height: 1.6rem;
   }
-  .my-dt-val{
-    padding:1rem;
+  .my-dt-val {
+    padding: 1rem;
     margin-top: 0.4rem;
     background-color: #fff;
     border-bottom-left-radius: 10px;
@@ -41,50 +41,50 @@ Mixins
     max-width: 17rem;
     line-height: 1.7rem;
     color: #333;
-    box-shadow:0 1px 6px #ccc;
+    box-shadow: 0 1px 6px #ccc;
   }
-  .my-dt-val p{
+  .my-dt-val p {
     display: inline;
     font-size: 1.3rem;
   }
-  .my-dd:after{
-    display:block;
-    clear:both;
-    content:"";
-    visibility:hidden;
-    height:0;
+  .my-dd:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0;
   }
-  .my-dd{
-    zoom:1;
+  .my-dd {
+    zoom: 1;
     margin-bottom: 2.5rem;
   }
-  .my-dd-portrait{
+  .my-dd-portrait {
     width: 3.8rem;
     height: 3.8rem;
     background-color: #fff;
     border-radius: 50%;
     float: right;
-    box-shadow:0 1px 6px #ccc;
+    box-shadow: 0 1px 6px #ccc;
   }
-  .my-dd-portrait img{
+  .my-dd-portrait img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
   }
-  .my-dd-text{
+  .my-dd-text {
     /*-webkit-box-flex:1;*/
     /*margin-left: 1rem;*/
     float: right;
     margin-right: 1rem;
   }
-  .my-dd-name{
+  .my-dd-name {
     font-size: 1.2rem;
     color: #666666;
     height: 1.6rem;
     text-align: right;
   }
-  .my-dd-val{
-    padding:1rem;
+  .my-dd-val {
+    padding: 1rem;
     margin-top: 0.4rem;
     background-color: #8e7cc3;
     border-bottom-left-radius: 10px;
@@ -93,10 +93,28 @@ Mixins
     max-width: 17rem;
     line-height: 1.7rem;
     color: #fff;
-    box-shadow:0 1px 6px #ccc;
+    box-shadow: 0 1px 6px #ccc;
   }
-  .my-dd-val p{
+  .my-dd-val p {
     display: inline;
     font-size: 1.3rem;
+  }
+  .message-box {
+    display: -webkit-box;
+    background-color: #e6e6e6;
+    height: 45px;
+  }
+  .message-input {
+    background-color: #e6e6e6;
+    width: auto;
+    padding: 0 5px;
+    height: 45px;
+  }
+  .message-submit {
+    background-color: #4a87ee;
+    width: 60px;
+    height: 45px!important;
+    font-size: 1rem;
+    font-weight: 400;
   }
 }
