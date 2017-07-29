@@ -1,39 +1,5 @@
 page-home {
-
   $background-color-home: #fdfdfd;
-
-  .header-bar {
-    width: 100%;
-    display: inline-flex;
-  }
-
-  .logo {
-    color: white;
-    font-size: 1.2em;
-    font-weight: 600;
-    margin: auto;
-    text-align: center;
-    width: 15%;
-    //margin-left: .2em;
-    //margin-right: .5em;
-  }
-
-  .header-search {
-    width: 75%;
-  }
-
-  .header-icon {
-    width: 10%;
-    color: white;
-    margin: auto;
-    text-align: center;
-    //font-size: 1.5em;
-    //margin-right: 5%;
-  }
-
-  //.header-icon ion-icon {
-  //  padding-right: 5%;
-  //}
 
   .slides {
     height: 30%;
