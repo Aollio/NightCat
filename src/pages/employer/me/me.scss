@@ -1,17 +1,17 @@
 page-me-employer{
 
   .me-header {
-    background-color: #203E46;
-    height: 19em;
-    padding-top: 3em;
+    background-color: map_get($colors, nav-des-bg);
+    height: 23rem;
+    padding-top: 3rem;
   }
 
   .me-header .me-avatar {
-    border-radius: 5em;
+    border-radius: 5rem;
     text-align: center;
     margin: auto;
-    height: 8em;
-    width: 8em;
+    height: 10rem;
+    width: 10rem;
     background-color: transparent;
   }
 
@@ -24,13 +24,13 @@ page-me-employer{
 
   .me-header .me-name {
     text-align: center;
-    font-size: large;
-    padding-top: 1em;
+    font-size: 2rem;
+    padding-top: 1rem;
     color: #ecf3ed;
   }
 
   .me-header .me-name ion-label {
-    font-size: small;
+    font-size: 1.25rem;
     color: #b7bfe5;
   }
 
@@ -42,12 +42,12 @@ page-me-employer{
   }
 
   ion-item {
-    padding-top: .5em !important;
-    padding-bottom: .5em !important;
-    padding-left: 1em !important;
+    padding-top: .5rem !important;
+    padding-bottom: .5rem !important;
+    padding-left: 1rem !important;
     color: #767676 !important;
     border: none;
-    box-shadow: 8px 0 2em #b6b6b6;
+    height: 6rem;
+    box-shadow: 0.66666rem 0 2rem #b6b6b6;
   }
-
 }

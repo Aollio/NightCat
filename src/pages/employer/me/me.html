@@ -1,18 +1,19 @@
 <ion-header>
-    <div class="me-header" (click)="open(designerMeDetailPage)">
-        <div center class="me-avatar">
-            <img src="assets/img/first.png">
-        </div>
-        <div class="me-name">{{user.nickname}}
-            <span><ion-label>
-                {{user.service_length}}&nbsp;{{user.school}}<br/>{{user.position}}
-            </ion-label></span>
-        </div>
-    </div>
+
 </ion-header>
 
 
 <ion-content>
+    <div class="me-header" (click)="open(designerMeDetailPage)">
+    <div center class="me-avatar">
+        <img src="assets/img/first.png">
+    </div>
+    <div class="me-name">{{user.nickname}}
+        <span><ion-label>
+                {{user.service_length}}&nbsp;{{user.school}}<br/>{{user.position}}
+            </ion-label></span>
+    </div>
+</div>
     <ion-list no-lines>
         <ion-item>我的订单
             <ion-icon name="arrow-forward" item-end padding-right></ion-icon>
