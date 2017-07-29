@@ -8,6 +8,7 @@ import {EmployerTabsPage} from "./tabs/tabs";
     segment: 'e'
 })
 @Component({
+    selector:'emp-root',
     templateUrl: 'employer.html'
 })
 export class EmployerModulePage {
