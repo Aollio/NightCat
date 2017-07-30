@@ -4,7 +4,7 @@ import {HelpChoosePage} from "../helpchoose";
 import {el} from "@angular/platform-browser/testing/src/browser_util";
 
 @Component({
-    selector:'helpchoose',
+    selector:'middleware',
     templateUrl: 'middleware.html'
 })
 
@@ -17,7 +17,7 @@ export class MiddleWarePage {
     second_open: boolean = false;
 
     ionViewDidEnter() {
-        console.log("abc")
+        console.log("abc");
         if (this.second_open) {
             this.first_open = false;
             this.nav.parent.select(0);
