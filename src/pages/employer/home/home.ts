@@ -26,6 +26,7 @@ export class EmployerHomePage {
 
     open(page, option) {
         this.navCtrl.push(page, option)
+
     }
 
     openMeDetail(option) {

@@ -15,6 +15,7 @@ export class IMPage {
 
     sessionNameMap: any = {}
 
+    im = IMPage
 
     constructor(public imServ: ImService,
                 public nav: NavController,

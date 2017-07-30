@@ -56,6 +56,6 @@ export class OrderDetailPage extends AbsCommonPage {
     }
 
     openChat(operation) {
-        this.navCtrl.push(ChatPage,operation)
+        this.navCtrl.push(ChatPage, operation)
     }
 }
