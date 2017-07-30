@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {NavController, NavParams, Platform, ToastController} from 'ionic-angular';
 import {LoginPage} from "../common/login/login";
 import {OrderDetailPage} from "../common/order/orderdetail/orderdetail"
@@ -31,6 +31,7 @@ import {SearchDesignerPage} from "../employer/searchdesigner/searchdesigner";
 import {RegisterPage} from "../common/register/register";
 import {OrderProcessDetailPage} from "../common/order/orderprocess/orderprocess";
 import {ImagePicker} from "@ionic-native/image-picker";
+import { Slides } from 'ionic-angular';
 
 
 @Component({
@@ -199,12 +200,25 @@ export class WelcomePage {
         this.state = 2
     }
 
-    slides = [
+    slidesImg = [
         "assets/img/Walkthrough_1.png",
         "assets/img/Walkthrough_2.png",
         "assets/img/Walkthrough_3.png",
-        "assets/img/Walkthrough_4.png"
+        // "assets/img/Walkthrough_4.png"
     ];
 
+    @ViewChild(Slides) slides: Slides;
+
+    toggleEnterBtn(){
+        let currentIndex = this.slides.getActiveIndex();
+        let button = document.getElementById("enterbutton");
+        if(button){
+            if(this.slides.isEnd()){
+                button.style.bottom = "0";
+            }else {
+                button.style.bottom = "-4rem";
+            }
+        }
+    }
 
 }

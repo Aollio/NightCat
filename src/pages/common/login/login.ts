@@ -11,6 +11,8 @@ import {DesignerModulePage} from "../../designer/designer";
 import {SharedService} from "../../../service/share.service";
 import {WelcomePage} from "../../welcome/welcome";
 
+declare let initializeFontSize: any
+
 @Component({
     selector: 'page-login',
     templateUrl: 'login.html',
@@ -38,6 +40,10 @@ export class LoginPage {
             this.isDesigner = false
 
         }
+    }
+
+    ionViewDidEnter() {
+        initializeFontSize()
     }
 
     login() {
