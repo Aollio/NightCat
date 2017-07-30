@@ -14,7 +14,8 @@ page-orderprocess {
   .my-li-line{
     margin-left: 4.16666666rem;
     border-left: 0.25rem solid #C1C1C1;
-    height:3.75rem;
+   // height:3.75rem;
+    height: auto;
     display:-webkit-box;
   }
   .my-li-line-circular{
@@ -36,8 +37,9 @@ page-orderprocess {
   }
   .my-li-card{
     /*height: 16.66666666rem;*/
+   // width: 10rem;
     background-color: #fff;
-    margin: 0 0.41666666rem;
+    margin:  2rem 0rem 0 -2.5rem;
     border-radius: 2px;
     padding:1.25rem;
     font-family: helvetica;

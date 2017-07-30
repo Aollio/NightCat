@@ -56,7 +56,7 @@ page-designer-me-detail {
     border-radius: 0.5rem;
     z-index: 100;
 
-    .desc-header  {
+    .desc-header {
       position: relative;
       display: inline-flex;
       width: 100%;
@@ -86,10 +86,6 @@ page-designer-me-detail {
       }
     }
   }
-
-
-
-
 
   .desc-header-modify-icon {
     text-align: right;
@@ -121,7 +117,6 @@ page-designer-me-detail {
     margin-bottom: 3rem;
     border: none;
   }
-
 
   ion-row, ion-col {
     background-color: #FFFFFF !important;
@@ -200,31 +195,33 @@ page-designer-me-detail {
     color: #9E9E9E;
   }
 
+  .row_buttons {
+    position: relative;
+    height: 0;
+    top: -3rem;
+    width: 100%;
+    overflow: visible;
 
-.row_buttons{
-  position: relative;
-  height: 0;
-  top: -3rem;
-  width: 100%;
-  overflow: visible;
+    .attention_btn, .sed_msg_btn {
+      position: absolute;
+      margin: 0;
+      height: 4rem;
+      font-size: 1.5rem;
+    }
 
-  .attention_btn,.sed_msg_btn{
-    position: absolute;
-    margin: 0;
-    height: 4rem;
-    font-size: 1.5rem;
+    .attention_btn {
+      left: 3rem;;
+      width: 50%;
+      background-color: #1abc9c;
+    }
+    .sed_msg_btn {
+      right: 3rem;
+      width: 4rem;
+      background-color: #C13638;
+    }
   }
-
-  .attention_btn{
-    left: 3rem;;
-    width: 50%;
-    background-color: #1abc9c;
+  .touch-expand-div {
+    height: 10px;
+    width: 10px;
   }
-  .sed_msg_btn{
-    right: 3rem;
-    width: 4rem;
-    background-color: #C13638;
-  }
-}
-
 }

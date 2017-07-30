@@ -21,9 +21,12 @@
             <!--<div>-->
 
             <!--</div>-->
-            <div class="desc-header-modify" *ngIf="isDesigner" (click)="modify()">修改
-                <ion-icon class="desc-header-modify-icon" name="md-create"></ion-icon>
+            <div class="touch-expand-div" (click)="modify()">
+                <div class="desc-header-modify" *ngIf="isDesigner">修改
+                    <ion-icon class="desc-header-modify-icon" name="md-create"></ion-icon>
+                </div>
             </div>
+
             <!--</div>-->
 
             <p class="desc-head-experience">
