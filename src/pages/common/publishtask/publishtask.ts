@@ -9,10 +9,14 @@ export class PublishTaskPage {
 
     maincolor: string;
     designer: boolean;
+   relationship:any;
+
 
     public event = {
+        relationship:'key',
         timeStarts: '2017-01-01',
         timeEnds: '2017-01-01',
+        timeStar:'2017-01-01',
         employer_deadline: '2017-01-01'
     }
     ionViewDidEnter(){
