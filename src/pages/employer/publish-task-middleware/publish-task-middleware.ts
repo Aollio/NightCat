@@ -28,7 +28,7 @@ export class PublishTaskMiddleWarePage {
             this.first_open = false;
             this.nav.parent.select(0);
             this.second_open = true;
-            // this.nav.push(PublishTaskPage, {});
+            this.nav.push(PublishTaskPage, {});
             console.log("end jump of first")
         }
         if (this.nav.parent.getSelected().index === 2) {
