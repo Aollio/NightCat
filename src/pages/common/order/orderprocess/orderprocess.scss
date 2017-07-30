@@ -6,40 +6,45 @@ page-orderprocess {
     height: 20rem;
     width: 20rem;
     margin:auto;
+    img{
+      width: 100%;
+      height: 100%;
+    }
   }
   .my-ul{
-    width: 100%;
+    margin-top: 2rem;
+    width: 95%;
+    margin-left:5%;
     background-color: #efeff4;
+    border-left: 0.2rem solid #C1C1C1;
   }
   .my-li-line{
-    margin-left: 4.16666666rem;
-    border-left: 0.25rem solid #C1C1C1;
-   // height:3.75rem;
-    height: auto;
-    display:-webkit-box;
+    position: relative;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 2rem;
   }
   .my-li-line-circular{
-    width: 1.08333333rem;
-    height: 1.08333333rem;
+    width: 1.6rem;
+    height: 1.6rem;
     background-color: #C1C1C1;
     border-radius: 50%;
-    position: relative;
-    top: 1.75rem;
-    right:0.625rem;
+    position: absolute;
+    top: -0.9rem;
+    left: -0.9rem;
   }
   .my-li-line-time{
-    -webkit-box-flex:1;
-    margin-top: 1.75rem;
+    position: absolute;
+    //-webkit-box-flex:1;
+    //margin-top: 1.75rem;
+    top: -1rem;
     font-size: 1.16666666rem;
     font-family: helvetica;
-    margin-left: 0.83333333rem;
+    //margin: 1rem;
     color: #666;;
   }
   .my-li-card{
-    /*height: 16.66666666rem;*/
-   // width: 10rem;
     background-color: #fff;
-    margin:  2rem 0rem 0 -2.5rem;
     border-radius: 2px;
     padding:1.25rem;
     font-family: helvetica;
