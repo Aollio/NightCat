@@ -48,7 +48,7 @@ export class DesignerHomePage {
                 this.images.push(x)
             }
         }).catch(eroor => {
-            console.log('DesignerHomePage load slides error')
+            console.log('DesignerHomePage load slidesImg error')
         })
     }
 

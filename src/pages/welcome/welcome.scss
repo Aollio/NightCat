@@ -32,7 +32,7 @@ page-welcome {
   .slide-image {
     max-height: 100%;
     max-width:100%;
-    margin: 18px 0;
+    //margin: 18px 0;
   }
   .slide-image1 {
     max-height: 100%;
@@ -62,14 +62,7 @@ page-welcome {
     width: 75%!important;
     background-color:map_get($colors,login-des);
   }
-  .enterbutton{
-    //margin-left: 12.5%!important;
-    margin-top: 160%;
-    color: white;
-    height: 7%;
-    width: 100%!important;
-    background-color:map_get($colors,login-des);
-  }
+
   .or{
     margin-top: 1em;
     margin-bottom: 1em;
@@ -101,8 +94,21 @@ margin-top: 4em;
 
   .end-class {
     repeat: fixed!important;
-    background: url("../assets/img/Walkthrough_4.png") no-repeat;
+    background: url("../assets/img/Walkthrough_4_2.png") no-repeat;
     background-size: 100% 100%;
 
+    position: relative;
+
+    #enterbutton{
+      position: absolute;
+
+      bottom: -4rem;
+      left: 0;
+      color: white;
+      height: 4rem;
+      width: 100%!important;
+      background-color:map_get($colors,login-des);
+      transition: bottom 0.5s;
+    }
   }
 }

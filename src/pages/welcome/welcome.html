@@ -1,16 +1,16 @@
 <ion-content>
-    <ion-toolbar *ngIf="state==1">
-        <ion-buttons end>
-            <button ion-button color="primary"  (click)="enterRegister()">跳过</button>
+    <!--<ion-toolbar >-->
+        <ion-buttons class="over_btn" *ngIf="state==1" end>
+            <button  ion-button clear color="primary"  (click)="enterRegister()">跳过</button>
         </ion-buttons>
-    </ion-toolbar>
+    <!--</ion-toolbar>-->
     <div class="tutorial-page" *ngIf="state===1">
-        <ion-slides>
-            <ion-slide *ngFor="let slide of slides">
+        <ion-slides (ionSlideDidChange)="toggleEnterBtn()">
+            <ion-slide *ngFor="let slide of slidesImg">
                 <img [src]="slide" class="slide-image"/>
             </ion-slide>
             <ion-slide class="end-class">
-                <button class="enterbutton" (click)="enterRegister()">
+                <button id="enterbutton" (click)="enterRegister()">
                     进入主页
                 </button>
             </ion-slide>
@@ -41,8 +41,6 @@
         <p class="login" (click)="open(loginPage)">已经拥有一个账号？</p>
         <p class="tip">随着您注册账户的成功，即表示您已经阅读并同意了我们公司的安全协议及条款
         </p>
-
-
     </div>
 
     <!--<button ion-button (click)="open(addcase)" full>添加案例</button>-->
