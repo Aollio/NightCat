@@ -3,17 +3,11 @@
 <ion-content>
     <ion-grid class="designer-list-grid">
         <ion-row>
-            <ion-col *ngFor="let desitem of desarray; let i=index"
+            <ion-col *ngFor="let item of emojiarray; let i=index"
                      col-4 class="des-card" text-center
-                     (click)="selectDesigner(desitem,i)">
-                <div class="des-card-avatar">
-                    <div class="avatar-icon-div">
-                        <ion-icon *ngIf="selected_index === i" name="ios-checkmark-circle"></ion-icon>
-                        <ion-icon *ngIf="selected_index != i" name="ios-checkmark-circle-outline"></ion-icon>
-                    </div>
-                    <img class="des-card-img" src="{{desitem.avatar}}">
-                </div>
-
+                     (click)="selectDesigner(item,i)">
+                <custom-icon style="font-size: 5em" set="cat" [name]="item" ></custom-icon>
+                <custom-icon ></custom-icon>
             </ion-col>
         </ion-row>
         <!--</ion-row>-->

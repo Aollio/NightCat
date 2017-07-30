@@ -9,31 +9,15 @@ export class PopoverPage {
     constructor(public viewCtrl: ViewController) {
     }
 
-    desarray: Array<{ avatar, name, time, describe }> = [
-        {
-            avatar: 'assets/img/des-1.png', name: '张三', time: '100/时',
-            describe: '帮助你是希望你成长、成功以后和我一样帮助他人帮助你是希望你成长、成功以后和我一样帮助他人'
-        },
-        {
-            avatar: 'assets/img/des-2.png', name: '张三', time: '100/时',
-            describe: '帮助你是希望你成长、成功以后和我一样帮助他人帮助你是希望你成长、成功以后和我一样帮助他人'
-        },
-        {
-            avatar: 'assets/img/des-3.png', name: '张三', time: '100/时',
-            describe: '帮助你是希望你成长、成功以后和我一样帮助他人帮助你是希望你成长、成功以后和我一样帮助他人'
-        },
-        {
-            avatar: 'assets/img/des-4.png', name: '张三', time: '100/时',
-            describe: '帮助你是希望你成长、成功以后和我一样帮助他人帮助你是希望你成长、成功以后和我一样帮助他人'
-        },
-        {
-            avatar: 'assets/img/des-1.png', name: '张三', time: '100/时',
-            describe: '帮助你是希望你成长、成功以后和我一样帮助他人帮助你是希望你成长、成功以后和我一样帮助他人'
-        },
-        {
-            avatar: 'assets/img/des-2.png', name: '张三', time: '100/时',
-            describe: '帮助你是希望你成长、成功以后和我一样帮助他人帮助你是希望你成长、成功以后和我一样帮助他人'
-        },
+    emojiarray: Array<any> = [
+        'if_cat_emoji_face_smily-9-01_2361853',
+        "if_cat_emoji_face_smily-20-01_2361861",
+        "if_cat_emoji_face_smily-24-01_2361865",
+        "if_cat_emoji_face_smily-29-01_2361869",
+        "if_cat_emoji_face_smily-35-01_2361874",
+        "if_cat_emoji_face_smily-38-01_2361877",
+
+
         ];
     selected_index = -1;
     selected: any = null;
