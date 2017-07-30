@@ -2,19 +2,20 @@
 
     <div class="null-only-height">欢迎回来！</div>
 
-    <form class="myInput">
-        <div class="name">
-            <input type="text" [(ngModel)]="user.phone" [ngModelOptions]="{standalone: true}" placeholder="请输入账号">
-        </div>
-        <div class="password">
-            <ion-icon class="icondiv" name="ios-help-circle"></ion-icon>
+    <div class="name">
+        <ion-item>
+            <ion-label floating >请输入账号</ion-label>
+            <ion-input type="text" [(ngModel)]="user.phone" [ngModelOptions]="{standalone: true}"></ion-input>
+        </ion-item>
+    </div>
 
-            <input type="password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}"
-                   placeholder="请输入密码">
-        </div>
-
-    </form>
-
+    <div class="password">
+        <ion-icon class="icondiv" name="ios-help-circle"></ion-icon>
+        <ion-item>
+            <ion-label floating >请输入密码</ion-label>
+            <ion-input type="password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}"></ion-input>
+        </ion-item>
+    </div>
 
     <button ion-button round class="login-btn" (click)="login()">登陆</button>
 
