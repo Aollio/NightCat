@@ -2,7 +2,10 @@
 
     <button ion-button (click)="show()">show</button>
     <div id="show"></div>
-
+    <div class="myInput">
+        <input type="file" [(ngModel)]="file"/>
+    </div>
+    <button ion-button (click)="showFile()">showfile</button>
 </ion-content>
 
 

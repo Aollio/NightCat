@@ -1,4 +1,12 @@
 page-addcase {
+  ion-label{
+    color: #666;
+  }
+
+  .p{
+    padding-left: 1rem;
+  }
+
   .title {
     color: #4b68dc !important;
   }
@@ -22,7 +30,7 @@ page-addcase {
 
   }
 
-  .summary-textarea {
+  textarea {
     width: 90%;
     height: 6em;
     //border-color: #c9cacf;
@@ -35,11 +43,34 @@ page-addcase {
    // margin: 2%;
   }
   .spancss {
-    float: right;
+    //width: 90%;
+    text-align: right;
+    //float: right;/
     padding-right: 5%;
     color: #c9cacf;
   }
   .buttoncss {
 
+  }
+
+  .imgs_wraper{
+    height: 6rem;
+    width: 100%;
+    margin: 1rem;
+    display: flex;
+    img{
+      padding: 0.5rem;
+      height: 100%;
+    }
+  }
+  .img_add_btn{
+    margin: auto;
+  }
+  .add_btn_wrapper{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
   }
 }

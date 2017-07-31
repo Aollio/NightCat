@@ -1,6 +1,7 @@
 import {Component, ViewChild} from "@angular/core";
 import set = Reflect.set;
 // import {console} from "../designer/tasksquare/tasksquare";
+import {Util} from "../../service/util"
 
 
 declare let initializeFontSize: any
@@ -12,8 +13,9 @@ declare let jQuery:any
 })
 export class BlankPage {
 
+    file:any;
 
-    constructor() {
+    constructor(public util:Util) {
     }
 
     images: Array<{ url }> = [
@@ -40,4 +42,7 @@ export class BlankPage {
         });
     }
 
+    showFile(){
+        this.util.toast(this.file,2000)
+    }
 }
