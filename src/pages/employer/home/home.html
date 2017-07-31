@@ -6,6 +6,7 @@
                     夜猫
                 </button>
             </ion-buttons>
+            <!--todo add series event. if user want to search something -->
             <ion-searchbar placeholder="搜索内容" class="header-search">
                 [(ngModel)]="myInput"
                 [showCancelButton]="shouldShowCancel"
@@ -13,6 +14,7 @@
                 (ionCancel)="onCancel($event)"
             </ion-searchbar>
             <ion-buttons end>
+                <!--todo add the click event. -->
                 <button ion-button icon-only>
                     <ion-icon name="md-chatbubbles"></ion-icon>
                 </button>

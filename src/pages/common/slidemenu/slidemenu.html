@@ -1,6 +1,6 @@
 <ion-header>
 </ion-header>
-<!--<ion-content style="background-image:url(../../../assets/img/SelectOption.png) " class="my-slide-bgi">-->
+
 <ion-content>
 
     <div class="my-slide-bgi">
@@ -10,11 +10,8 @@
     <div style="height: 30%">
         <div style="height: 70%">
         </div>
-        <div class="my-font-size" text-center *ngIf="{} === user">
-            设计师/雇主昵称
-        </div>
-        <div class="my-font-size" text-center *ngIf="!({} === user)">
-            {{user.nickname}}
+        <div class="my-font-size" text-center>
+            {{user.nickname || '昵称'}}
         </div>
     </div>
 

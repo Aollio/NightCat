@@ -17,7 +17,6 @@ declare let initializeFontSize: any
 export class RegisterPage {
 
     //页面切换状态, 页面切换特效的实现变量
-    state: any = 1;
     current = 1
 
     isDesigner: boolean = true;
@@ -42,9 +41,6 @@ export class RegisterPage {
         }
     }
 
-    ionViewDidLoad() {
-        console.log('ionViewDidLoad LoginPage');
-    }
 
     ionViewDidEnter() {
         initializeFontSize()
@@ -74,7 +70,6 @@ export class RegisterPage {
             return
         }
 
-        this.state = 2;
         this.current = 2
     }
 
@@ -99,12 +94,11 @@ export class RegisterPage {
                         this.util.toast('登录成功')
                         console.log('login success')
 
-                        this.state = 3
                         this.current = 3
                     })
                     .catch(eror => {
                         loading.dismiss()
-                        this.util.toast('登录失败')
+                        this.util.toast('自动登录失败')
 
                         console.log('login fail')
 

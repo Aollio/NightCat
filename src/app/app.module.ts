@@ -29,6 +29,7 @@ import {Storage} from '@ionic/storage';
 import {KeynoteService} from "../service/keynote.service";
 import {AdsService} from "../service/ajax/ads.service";
 import {ImagePicker} from "@ionic-native/image-picker";
+import {ProjectsService} from "../service/ajax/projects.service";
 
 
 export function provideStorage() {
@@ -79,6 +80,7 @@ export function provideStorage() {
         NetworkService,
         SharedService,
         UsersService,
+        ProjectsService,
         StatusBar,
         HTTP,
         SplashScreen,

@@ -15,17 +15,18 @@ export class SharedService {
     DEBUG: boolean = true;
 
     //是否是设计师, 如果用户是设计师, 则对于一些公共页面, 执行对应的修改, 例如主题颜色的不相同
-    isDesigner: boolean = true;
+    currentModuleIsDesigner: boolean;
+    isDesigner = this.currentModuleIsDesigner;
 
     //当前登录用户
-    currentUser: User;
+    private currentUser: User;
 
     //用户角色的字符串
     ROLE_DESIGNER: string = 'designer'
     ROLE_EMPLOYER: string = 'employer'
 
-    ROLE_SERVER_DESIGNER: string = '0'
-    ROLE_SERVER_EMPLOYER: string = '1'
+    ROLE_SERVER_DESIGNER: string = '00'
+    ROLE_SERVER_EMPLOYER: string = '01'
 
 
     TOKEN: string
@@ -34,26 +35,39 @@ export class SharedService {
     constructor(private event: Events,
                 private keynote: KeynoteService) {
         event.subscribe('backdoor', () => {
-            console.log('recevice event')
+            console.log('receive \'backdoor\' event')
             this.keynote.initDefaultUser(true, this)
         })
     }
 
+
+    getCurrentIsDesigner(){
+        return this.currentModuleIsDesigner
+    }
+
     //获取导航栏的颜色
     getPrimaryColor() {
-        if (this.isDesigner) {
+        if (this.currentModuleIsDesigner) {
             return 'des-primary';
         } else {
             return 'emp-primary';
         }
     }
 
+    getCurrentUser() {
+        if (this.currentUser == null) {
+            // this.event.publish('gotologin',{})
+            return {}
+        }
+        else return this.currentUser
+    }
+
     setCurrentUser(user: User) {
         this.currentUser = user;
         if (user.role != 'designer') {
-            this.isDesigner = false;
+            this.currentModuleIsDesigner = false;
         } else {
-            this.isDesigner = true;
+            this.currentModuleIsDesigner = true;
         }
     }
 

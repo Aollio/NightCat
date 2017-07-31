@@ -15,13 +15,14 @@ declare let initializeFontSize: any;
 })
 export class DesignerMePage {
 
-    user: User;
+    user = {};
+
     ionViewDidEnter() {
         initializeFontSize()
     }
     constructor(public navCtrl: NavController,
                 public shared: SharedService) {
-        this.user = shared.currentUser;
+        this.user = shared.getCurrentUser();
     }
 
 

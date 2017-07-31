@@ -12,9 +12,7 @@ declare let initializeFontSize: any
     templateUrl: 'wallet.html'
 })
 export class DesignerWalletPage {
-    ionViewDidEnter() {
-        initializeFontSize()
-    }
+
 
     showBalance: boolean = true;
 
@@ -22,14 +20,15 @@ export class DesignerWalletPage {
     designerWithDrawPage:any = DesignerWithDrawPage;
 
     constructor(public navCtrl: NavController) {
+
     }
 
-    toggleShowBanalce() {
-        if (this.showBalance) {
-            this.showBalance = false;
-        } else {
-            this.showBalance = true;
-        }
+    ionViewDidEnter() {
+        initializeFontSize()
+    }
+
+    toggleShowBalance() {
+        this.showBalance = !this.showBalance;
     }
 
     open(page, option) {

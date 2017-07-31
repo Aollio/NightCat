@@ -12,12 +12,14 @@ export class EmployerMePage {
 
     follower: EmpFavoriteDesignerPage;
 
-    user;
+    user = {};
+
+
     ionViewDidEnter() {
         initializeFontSize()
     }
     constructor(public  navCtrl: NavController, public share: SharedService) {
-        this.user = share.currentUser
+        this.user = share.getCurrentUser()
     }
 
     open(page, option) {

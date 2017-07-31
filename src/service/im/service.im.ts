@@ -75,6 +75,10 @@ export class ImService {
         System.customSyncDone(() => func())
     }
 
+    registerSyncError(func){
+        System.customSyncError(() => func())
+    }
+
     //关闭NIM
     closeNim() {
         State.INSTANCE.nim.disconnect();

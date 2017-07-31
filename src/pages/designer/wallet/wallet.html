@@ -17,10 +17,10 @@
         <div class="introduce">
             <div class="unit">钱包余额（元）</div>
             <div class="icon-show" item-end>
-                <custom-icon set="cat" name="my-eye" *ngIf="showBalance" (click)="toggleShowBanalce()"></custom-icon>
-                <custom-icon set="cat" name="my-eye-close" *ngIf="!showBalance" (click)="toggleShowBanalce()"></custom-icon>
-                <!--<ion-icon name="ios-eye-outline" *ngIf="showBalance" (click)="toggleShowBanalce()"></ion-icon>-->
-                <!--<ion-icon name="ios-eye-off-outline" *ngIf="!showBalance" (click)="toggleShowBanalce()"></ion-icon>-->
+                <custom-icon set="cat" name="my-eye" *ngIf="showBalance" (click)="toggleShowBalance()"></custom-icon>
+                <custom-icon set="cat" name="my-eye-close" *ngIf="!showBalance" (click)="toggleShowBalance()"></custom-icon>
+                <!--<ion-icon name="ios-eye-outline" *ngIf="showBalance" (click)="toggleShowBalance()"></ion-icon>-->
+                <!--<ion-icon name="ios-eye-off-outline" *ngIf="!showBalance" (click)="toggleShowBalance()"></ion-icon>-->
             </div>
         </div>
         <div class="money-amount" *ngIf="showBalance">0.00</div>

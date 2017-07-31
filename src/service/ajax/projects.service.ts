@@ -30,5 +30,18 @@ export class ProjectsService {
         return response.content
     }
 
+    /*
+    grabProj
+    * */
+    async grabProj(id){
+
+        //todo grad url
+        let response = await this.http.postWithToken('url',{})
+
+        if (response.status == 600){
+            //this is keynote mode. so return not really data
+        }
+    }
+
 
 }

@@ -1,5 +1,4 @@
 <ion-content>
-    <!--<div *ngIf="state===1" [class.out-window]="current == 1" class="ion-content-class cat-fad-out">-->
     <!--手机 密码-->
     <div [class.out-window]="current != 1" [class.on-window]="current == 1" class="ion-content-class ">
         <div class="null-only-height">欢迎注册成为夜猫会员</div>
@@ -22,7 +21,6 @@
         </form>
         <button ion-button round class="login-btn" (click)="next()">下一步</button>
     </div>
-    <!--<div *ngIf="state===2" class="ion-content-class">-->
 
     <!--头像 昵称-->
     <div [class.out-window]="current != 2" [class.on-window]="current == 2" class="ion-content-class">
@@ -43,7 +41,6 @@
 
     </div>
 
-    <!--<div *ngIf="state===3" >-->
     <div class="ion-content-class"  [class.out-window]="current != 3" [class.on-window]="current == 3" >
         <div class="welcome-page">
             <div class="logo">
@@ -116,4 +113,6 @@
 
 
     </div>
+
+
 </ion-content>

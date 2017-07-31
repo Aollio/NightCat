@@ -10,6 +10,7 @@ import {EmployerModulePage} from "../../employer/employer";
 import {DesignerModulePage} from "../../designer/designer";
 import {SharedService} from "../../../service/share.service";
 import {WelcomePage} from "../../welcome/welcome";
+import {async} from "rxjs/scheduler/async";
 
 declare let initializeFontSize: any
 
@@ -19,7 +20,6 @@ declare let initializeFontSize: any
 })
 export class LoginPage {
 
-    isDesigner: boolean = true;
 
     user: any = {};
 
@@ -30,16 +30,6 @@ export class LoginPage {
                 public toastCtrl: ToastController,
                 public userSev: UsersService,
                 public shared: SharedService) {
-        var role = navParams.get('role');
-        this.user.role = role;
-        if (role === 'designer') {
-            this.user.role = '00'
-            this.isDesigner = true
-        } else {
-            this.user.role = '01'
-            this.isDesigner = false
-
-        }
     }
 
     ionViewDidEnter() {
@@ -58,22 +48,23 @@ export class LoginPage {
             return
         }
 
-        console.log("开始登录")
+        console.log("开始登录");
 
-        this.userSev
-            .login(this.user)
-            .then(() => {
-                console.log("登录成功")
-                if (this.shared.isDesigner) {
-                    this.navCtrl.setRoot(DesignerModulePage)
-                } else {
-                    this.navCtrl.setRoot(EmployerModulePage)
-                }
-            })
-            .catch(error => {
-                this.toast("登录出现了异常");
-                console.log("login.ts error", error)
-            });
+        (async ()=> {
+            await this.userSev.login(this.user)
+            let user = await this.userSev.getLoginUser()
+            if (user.role == '00'){
+                this.navCtrl.setRoot(DesignerModulePage)
+            }else if (user.role == '01'){
+                this.navCtrl.setRoot(EmployerModulePage)
+            }else {
+                throw {}
+            }
+
+        })().catch(error => {
+            this.toast("登录出现了异常");
+            console.log("login.ts error", error)
+        });
 
     }
 

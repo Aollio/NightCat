@@ -25,9 +25,10 @@ export class FirstPage {
                 public share: SharedService,
                 private util: Util) {
 
-        console.log('publish event')
-        //后门, 方便开发
-        event.publish('backdoor')
+        //后门, 方便开发. publish this 'backdoor' event.
+        // SharedService will receive this event and init default user
+        // (auto login using default user)
+        //event.publish('backdoor')
 
         // this.storage.get('first').then(val => {
         //     if (val == null || val == 'true') {

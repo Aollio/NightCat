@@ -20,7 +20,7 @@ export class SlideMenuComponment {
     accountSecurityPage: any = AccountSecurityPage;
     aboutPage: any = AboutPage
 
-    user: User;
+    user;
     isDesigner: boolean;
     maincolor;
 
@@ -29,14 +29,16 @@ export class SlideMenuComponment {
                 private alertCtrl: AlertController,
                 private toastCtrl: ToastController,
                 public shared: SharedService) {
-        this.user = shared.currentUser;
-        this.isDesigner = this.shared.isDesigner;
+        this.user = shared.getCurrentUser();
+        this.isDesigner = this.shared.getCurrentIsDesigner();
         this.maincolor = this.shared.getPrimaryColor();
     }
+
+
     ionViewDidEnter() {
         initializeFontSize()
-        console.log("com")
     }
+
     open(page, option) {
         this.navCtrl.push(page, option)
     }
@@ -74,7 +76,6 @@ export class SlideMenuComponment {
         });
         toast.present();
     }
-
 
     exitApp() {
         this.platform.exitApp();
