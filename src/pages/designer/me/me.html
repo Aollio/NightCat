@@ -4,12 +4,12 @@
 
 
 <ion-content>
-    <div class="me-header" (click)="open(designerMeDetailPage,{isDesigner:true})">
+    <div class="me-header" (click)="opendetail(designerMeDetailPage,{isDesigner:true})">
         <div center class="me-avatar">
             <img src="assets/img/first.png">
         </div>
-        <div class="me-name">
-            {{user.nickname || 'login'}}
+        <div *ngIf="!isNullObj(user)" class="me-name">
+            {{user.nickname || ''}}
             <span><ion-label>
                 {{user.service_length || ''}}&nbsp;
                 {{user.school || ''}}
@@ -17,18 +17,21 @@
                 {{user.position || ''}}
             </ion-label></span>
         </div>
+        <div *ngIf="isNullObj(user)" class="login_btn_wrapper">
+            <button ion-button outline color="light" (click)="login()">请登录</button>
+        </div>
     </div>
     <ion-list>
         <ion-item>我的订单
             <ion-icon name="arrow-forward" item-end padding-right></ion-icon>
         </ion-item>
-        <ion-item (click)="open(wallet,{})">我的钱包
+        <ion-item (click)="opendetail(wallet,{})">我的钱包
             <ion-icon name="arrow-forward" item-end padding-right></ion-icon>
         </ion-item>
-        <ion-item (click)="open(authenticate,{})">认证中心
+        <ion-item (click)="opendetail(authenticate,{})">认证中心
             <ion-icon name="arrow-forward" item-end padding-right></ion-icon>
         </ion-item>
-        <ion-item (click)="open(comment,{})">评论中心
+        <ion-item (click)="opendetail(comment,{})">评论中心
             <ion-icon name="arrow-forward" item-end padding-right></ion-icon>
         </ion-item>
         <ion-item>我的收藏

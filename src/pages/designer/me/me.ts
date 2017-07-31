@@ -6,6 +6,8 @@ import {DesignerMeDetailPage} from "./medetail/medetail";
 import {DesignerWalletPage} from "../wallet/wallet";
 import {SharedService} from "../../../service/share.service";
 import {User} from "../../../model/user";
+import {LoginPage} from "../../common/login/login";
+import { ModalController, NavParams } from 'ionic-angular';
 declare let initializeFontSize: any;
 
 @IonicPage()
@@ -21,7 +23,8 @@ export class DesignerMePage {
         initializeFontSize()
     }
     constructor(public navCtrl: NavController,
-                public shared: SharedService) {
+                public shared: SharedService,
+                public modalCtrl: ModalController) {
         this.user = shared.getCurrentUser();
     }
 
@@ -31,8 +34,19 @@ export class DesignerMePage {
     comment: any = CommentPage;
     designerMeDetailPage: any = DesignerMeDetailPage;
 
-    open(page, option) {
+    opendetail(page, option) {
+        // console.log(Object.keys(this.user).length);
+        if(this.isNullObj(this.user)) return;
         this.navCtrl.push(page, option)
+    }
+
+    isNullObj(obj){
+       return JSON.stringify(obj)==JSON.stringify({});
+    }
+    login(){
+        let profileModal = this.modalCtrl.create(LoginPage);
+        profileModal.present();
+        // this.navCtrl.push(LoginPage);
     }
 
 }

@@ -32,6 +32,8 @@ import {RegisterPage} from "../common/register/register";
 import {OrderProcessDetailPage} from "../common/order/orderprocess/orderprocess";
 import {ImagePicker} from "@ionic-native/image-picker";
 import { Slides } from 'ionic-angular';
+import {EmployerHomePage} from "../employer/home/home";
+import {DesignerHomePage} from "../designer/home/home";
 
 
 @Component({
@@ -43,6 +45,9 @@ export class WelcomePage {
     rootPage: any;
     state: any = 1;
     register: any = RegisterPage;
+    // employerHome :any = EmployerHomePage;
+    // designerHome:any = DesignerHomePage;
+
 
     /**
      * 这是主页的快速入口，用于开发

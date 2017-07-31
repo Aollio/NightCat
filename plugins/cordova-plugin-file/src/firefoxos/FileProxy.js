@@ -643,7 +643,7 @@ QUIRKS:
         request.onerror = errorCallback || onError;
 
         request.onupgradeneeded = function(e) {
-            // First open was called or higher db version was used.
+            // First opendetail was called or higher db version was used.
 
             // console.log('onupgradeneeded: oldVersion:' + e.oldVersion,
             //           'newVersion:' + e.newVersion);
@@ -784,7 +784,7 @@ QUIRKS:
     function onError(e) {
         switch (e.target.errorCode) {
             case 12:
-                console.log('Error - Attempt to open db with a lower version than the ' +
+                console.log('Error - Attempt to opendetail db with a lower version than the ' +
                     'current one.');
                 break;
             default:
