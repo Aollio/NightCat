@@ -17,7 +17,7 @@
 
     <div class="spancss"> 剩余字数:<span>{{ 200 -description.length }}/200</span></div>
 
-    <ion-item>添加图片 {{imgs.length}}/3</ion-item>
+
 
     <div class="imgs_wraper">
         <img *ngFor="let img of imgs" [src]="img">
@@ -26,6 +26,7 @@
         <button class="img_add_btn" ion-button outline icon-only (click)="openImagePicker()">
             <ion-icon name="md-add"></ion-icon>
         </button>
+        <p> 添加图片 {{imgs.length}}/3</p>
     </div>
     <!--<input type="file" [(ngModel)]="addpicture" (input)="change()" accept="image/*">-->
 

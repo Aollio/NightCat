@@ -34,8 +34,8 @@
         <div class="my-list" *ngIf="btn_avatar_state===2">
             <div class="my-ul clearfloat">
                 <div class="my-li"
-                     *ngFor="let item of emojiarray" [class.img-selected]="avatar === item"
-                ><img [src]="item" (click)="select(item)" alt=""/></div>
+                     *ngFor="let item of emojiarray" [class.img-selected]="avatar === item">
+                    <img [src]="item" (click)="select(item)" alt=""/></div>
 
             </div>
             <div class="my-bottom">
