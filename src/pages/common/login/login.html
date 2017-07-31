@@ -2,27 +2,20 @@
 
     <div class="null-only-height">欢迎回来！</div>
 
-    <!--repeat: fixed !important;-->
-    <!--background: url("../../../assets/img/SelectOption.png") no-repeat;-->
-    <!--background-size: 100% 100%;-->
-
-    <div class="background-div">
-        <img src="assets/img/SelectOption.png"/>
+    <div class="name">
+        <ion-item>
+            <ion-label floating >请输入账号</ion-label>
+            <ion-input type="text" [(ngModel)]="user.phone" [ngModelOptions]="{standalone: true}"></ion-input>
+        </ion-item>
     </div>
 
-    <form class="myInput">
-        <div class="name">
-            <input type="text" [(ngModel)]="user.phone" [ngModelOptions]="{standalone: true}" placeholder="请输入账号">
-        </div>
-        <div class="password">
-            <ion-icon class="icondiv" name="ios-help-circle"></ion-icon>
-
-            <input type="password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}"
-                   placeholder="请输入密码">
-        </div>
-
-    </form>
-
+    <div class="password">
+        <ion-icon class="icondiv" name="ios-help-circle"></ion-icon>
+        <ion-item>
+            <ion-label floating >请输入密码</ion-label>
+            <ion-input type="password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}"></ion-input>
+        </ion-item>
+    </div>
 
     <button ion-button round class="login-btn" (click)="login()">登陆</button>
 
