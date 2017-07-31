@@ -15,7 +15,8 @@ declare let initializeFontSize: any
     templateUrl: 'register.html',
 })
 export class RegisterPage {
-
+    avatar: any = "";
+    btn_avatar_state: any = 1;
     //页面切换状态, 页面切换特效的实现变量
     current = 1
 
@@ -130,5 +131,34 @@ export class RegisterPage {
 
     openLoginPage() {
         this.navCtrl.push(LoginPage);
+    }
+
+
+    emojiarray: Array<any> = [
+        'assets/img/if_cat_emoji_face_smily-9-01_2361853.png',
+        "assets/img/if_cat_emoji_face_smily-20-01_2361861.png",
+        "assets/img/if_cat_emoji_face_smily-24-01_2361865.png",
+        "assets/img/if_cat_emoji_face_smily-29-01_2361869.png",
+        "assets/img/if_cat_emoji_face_smily-35-01_2361874.png",
+        "assets/img/if_cat_emoji_face_smily-38-01_2361877.png",
+
+
+    ];
+
+    chooseAvatar() {
+        this.btn_avatar_state = 2;
+    }
+
+    complete(any) {
+        this.btn_avatar_state = any;
+        if (any === 1) {
+            this.avatar = "";
+        }if(this.avatar === ""){
+            this.btn_avatar_state = 1;
+        }
+    }
+
+    select(item){
+        this.avatar=item;
     }
 }
