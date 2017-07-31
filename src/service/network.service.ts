@@ -4,6 +4,8 @@ import {HTTP} from "@ionic-native/http";
 import {Platform, NavController, Events} from "ionic-angular";
 import {Util} from "./util";
 import {LoginPage} from "../pages/common/login/login";
+import {KeynoteService} from "./keynote.service";
+import {SharedService} from "./share.service";
 
 @Injectable()
 @Component({
@@ -17,14 +19,19 @@ export class NetworkService {
     constructor(private http_browser: Http,
                 private http_mobile: HTTP,
                 private platform: Platform,
-                private event: Events) {
+                private event: Events,
+                private share: SharedService) {
+    }
+
+    doIfNoToken() {
+        this.event.publish('gotologin')
     }
 
 
     async getWithToken(url, param = {}, header = {}) {
         if (this.token == null) {
-            this.event.publish('gotologin')
-            return Promise.reject({status: -100, messgae: 'TOKEN不存在, 用户是否登录?'})
+            this.doIfNoToken()
+            return {status: 401, messgae: 'TOKEN不存在, 用户是否登录?'}
         }
         header['token'] = this.token
         return await this.get(url, param, header)
@@ -37,6 +44,12 @@ export class NetworkService {
      * @returns {Promise<any>}
      */
     async get(url, param?, header?): Promise<any> {
+
+        if (this.share.KEYNOTE) {
+            return {status: 600}
+        }
+
+
         if (this.platform.is('core') || this.platform.is('mobileweb')) {
             let _params = {
                 params: param
@@ -53,20 +66,21 @@ export class NetworkService {
                 console.log(error.status)
                 console.log(error.ok)
                 console.log(error.message)
+                //error.status 401 means that unautnenication
                 if (error.status == 401) {
-                    this.event.publish('gotologin')
+                    this.doIfNoToken()
                 }
-
-                return Promise.reject(error)
+                return error
             }
         }
 
+        //using http mobile
         let data
         try {
             data = await this.http_mobile.get(url, param || {}, {})
         } catch (error) {
             console.log(error)
-            Promise.reject(error)
+            return error
         }
         return data.data
 
@@ -75,8 +89,8 @@ export class NetworkService {
 
     async postWithToken(url, param = {}, header = {}) {
         if (this.token == null) {
-            this.event.publish('gotologin')
-            Promise.reject({status: 401, messgae: 'TOKEN不存在, 用户是否登录?'})
+            this.doIfNoToken()
+            return {status: 401, message: 'TOKEN NOT EXIST'}
         }
         header['token'] = this.token
         return await this.post(url, param, header)
@@ -90,6 +104,11 @@ export class NetworkService {
      * @returns {Promise<any>}
      */
     async post(url, param = {}, headers = {}): Promise<any> {
+
+
+        if (this.share.KEYNOTE) {
+            return {status: 600}
+        }
 
         console.log(this.platform.platforms())
 
@@ -110,17 +129,23 @@ export class NetworkService {
                 //     angular http模块 出现错误是返回的error.json()对象,包含数据,
                 //     a = error.json(), a.status,a.message,a.error, a.timestamp, a.path
                 console.log(error)
-
                 if (error.status == 401) {
                     this.event.publish('gotologin')
                 }
-
-                return Promise.reject(error.message | error);
+                return error
             }
             return response.json()
         }
 
-        let response = await this.http_mobile.post(url, param = {}, headers)
+        let response
+        try {
+            response = await this.http_mobile.post(url, param = {}, headers)
+        } catch (error) {
+            if (error.status == 401) {
+                this.event.publish('gotologin')
+            }
+            return error
+        }
         return response.data
     }
 
@@ -129,8 +154,8 @@ export class NetworkService {
         if (obj == null) {
             return "";
         }
-        var str = [];
-        for (var p in obj)
+        let str = [];
+        for (let p in obj)
             str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
         return str.join("&");
     }

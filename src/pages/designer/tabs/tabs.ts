@@ -8,6 +8,7 @@ import {DesignerMePage} from "../me/me";
 import {TaskSquarePage} from "../tasksquare/tasksquare";
 import {MessagePage} from "../message/message";
 import {DesignerModulePage} from "../designer";
+import {IMPage} from "../../im/im";
 import {DesignerProjectsPage} from "../projects/projects";
 
 @Component({
@@ -19,7 +20,7 @@ export class DesignerTabsPage {
     console = DesignerProjectsPage;
     me = DesignerMePage;
     message = MessagePage;
-
+    im = IMPage;
 
 
     constructor(public navCtrl: NavController, public platform: Platform,

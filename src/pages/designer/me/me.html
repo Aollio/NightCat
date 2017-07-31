@@ -8,9 +8,13 @@
         <div center class="me-avatar">
             <img src="assets/img/first.png">
         </div>
-        <div class="me-name">{{user.nickname}}
+        <div class="me-name">
+            {{user.nickname || 'login'}}
             <span><ion-label>
-                {{user.service_length}}&nbsp;{{user.school}}<br/>{{user.position}}
+                {{user.service_length || ''}}&nbsp;
+                {{user.school || ''}}
+                <br/>
+                {{user.position || ''}}
             </ion-label></span>
         </div>
     </div>
@@ -24,7 +28,7 @@
         <ion-item (click)="open(authenticate,{})">认证中心
             <ion-icon name="arrow-forward" item-end padding-right></ion-icon>
         </ion-item>
-        <ion-item (click)="open(comment)">评论中心
+        <ion-item (click)="open(comment,{})">评论中心
             <ion-icon name="arrow-forward" item-end padding-right></ion-icon>
         </ion-item>
         <ion-item>我的收藏

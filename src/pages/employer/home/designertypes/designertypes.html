@@ -1,12 +1,18 @@
 
 <ion-header>
     <ion-navbar>
-        <ion-title>设计师</ion-title>
+        <!--todo 绑定事件-->
+            <ion-searchbar placeholder="搜索设计师" class="header-search">
+                <!--[(ngModel)]="myInput"-->
+                <!--[showCancelButton]="shouldShowCancel"-->
+                <!--(ionInput)="onInput($event)"-->
+                <!--(ionCancel)="onCancel($event)"-->
+            </ion-searchbar>
     </ion-navbar>
 </ion-header>
 
 <ion-content class="bodybg">
-    <div class="my-list">
+    <div (click)="open( designerMeDetailPage,{id:''})" class="my-list">
         <div class="my-li">
             <div class="my-li-img">
                 <img src="img/03.png" alt="" />

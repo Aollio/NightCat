@@ -5,22 +5,29 @@
 </ion-header>
 <ion-content>
     <div class="blank"></div>
-    <ion-item >
-        <ion-input no-lines type="text" value="" placeholder="输入案例名称">
-        </ion-input>
+    <ion-item>
+        <ion-label floating>输入案例名称</ion-label>
+        <ion-input no-lines type="text" value="" [(ngModel)]="projectName"></ion-input>
     </ion-item>
-
 
     <ion-item>
-        <textarea class="summary-textarea"[(ngModel)]="description"
-                  placeholder="输入案例介绍"></textarea>
+        <ion-label floating>输入案例介绍</ion-label>
+        <ion-textarea maxlength="200" [(ngModel)]="description"></ion-textarea>
     </ion-item>
+
     <div class="spancss"> 剩余字数:<span>{{ 200 -description.length }}/200</span></div>
 
-    <div>
-        <!--todo-->
-    <!--<input type="file" [(ngModel)]="addpicture" (input)="change()" accept="image/*">-->
+    <ion-item>添加图片 {{imgs.length}}/3</ion-item>
+
+    <div class="imgs_wraper">
+        <img *ngFor="let img of imgs" [src]="img">
     </div>
+    <div class="add_btn_wrapper">
+        <button class="img_add_btn" ion-button outline icon-only (click)="openImagePicker()">
+            <ion-icon name="md-add"></ion-icon>
+        </button>
+    </div>
+    <!--<input type="file" [(ngModel)]="addpicture" (input)="change()" accept="image/*">-->
 
 
 </ion-content>

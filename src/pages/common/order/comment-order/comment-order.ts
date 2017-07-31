@@ -14,6 +14,7 @@ export class CommentOrderPage {
 
     constructor(public toastCtrl: ToastController) {
     }
+
     ionViewDidEnter(){
         initializeFontSize()
     }

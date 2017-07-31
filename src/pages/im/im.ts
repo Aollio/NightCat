@@ -15,15 +15,20 @@ export class IMPage {
 
     sessionNameMap: any = {}
 
+    im = IMPage
 
     constructor(public imServ: ImService,
                 public nav: NavController,
                 public util: Util) {
+        this.sessions = this.imServ.state.sessionlist
+    }
+
+    ionViewDidEnter(){
 
         let loading = this.util.createLoading("加载消息列表中...")
 
 
-        if (imServ.state.isLoading) {
+        if (this.imServ.state.isLoading) {
             loading.present()
             console.log("正在加载")
             //如果还没有初始化NIM模块, 则开始初始化
@@ -32,13 +37,16 @@ export class IMPage {
                 loading.dismiss();
                 this.initFriendlyName()
             })
+            // this.imServ.registerSyncError(() => {
+            //     loading.dismiss()
+            //     this.util.toast('加载失败')
+            // })
 
         } else {
             this.initFriendlyName()
             console.log(this.sessions)
             console.log(this.sessionNameMap)
         }
-        this.sessions = this.imServ.state.sessionlist
     }
 
 

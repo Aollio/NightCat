@@ -8,9 +8,11 @@
     <div center class="me-avatar">
         <img src="assets/img/first.png">
     </div>
-    <div class="me-name">{{user.nickname}}
+    <div class="me-name">{{user.nickname || 'Please login'}}
         <span><ion-label>
-                {{user.service_length}}&nbsp;{{user.school}}<br/>{{user.position}}
+                {{user.service_length || ''}}&nbsp;{{user.school || ''}}
+            <br/>
+            {{user.position || ''}}
             </ion-label></span>
     </div>
 </div>

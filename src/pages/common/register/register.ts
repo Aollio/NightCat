@@ -15,9 +15,9 @@ declare let initializeFontSize: any
     templateUrl: 'register.html',
 })
 export class RegisterPage {
-
+    avatar: any = "";
+    btn_avatar_state: any = 1;
     //页面切换状态, 页面切换特效的实现变量
-    state: any = 1;
     current = 1
 
     isDesigner: boolean = true;
@@ -42,9 +42,6 @@ export class RegisterPage {
         }
     }
 
-    ionViewDidLoad() {
-        console.log('ionViewDidLoad LoginPage');
-    }
 
     ionViewDidEnter() {
         initializeFontSize()
@@ -74,7 +71,6 @@ export class RegisterPage {
             return
         }
 
-        this.state = 2;
         this.current = 2
     }
 
@@ -99,12 +95,11 @@ export class RegisterPage {
                         this.util.toast('登录成功')
                         console.log('login success')
 
-                        this.state = 3
                         this.current = 3
                     })
                     .catch(eror => {
                         loading.dismiss()
-                        this.util.toast('登录失败')
+                        this.util.toast('自动登录失败')
 
                         console.log('login fail')
 
@@ -136,5 +131,34 @@ export class RegisterPage {
 
     openLoginPage() {
         this.navCtrl.push(LoginPage);
+    }
+
+
+    emojiarray: Array<any> = [
+        'assets/img/if_cat_emoji_face_smily-9-01_2361853.png',
+        "assets/img/if_cat_emoji_face_smily-20-01_2361861.png",
+        "assets/img/if_cat_emoji_face_smily-24-01_2361865.png",
+        "assets/img/if_cat_emoji_face_smily-29-01_2361869.png",
+        "assets/img/if_cat_emoji_face_smily-35-01_2361874.png",
+        "assets/img/if_cat_emoji_face_smily-38-01_2361877.png",
+
+
+    ];
+
+    chooseAvatar() {
+        this.btn_avatar_state = 2;
+    }
+
+    complete(any) {
+        this.btn_avatar_state = any;
+        if (any === 1) {
+            this.avatar = "";
+        }if(this.avatar === ""){
+            this.btn_avatar_state = 1;
+        }
+    }
+
+    select(item){
+        this.avatar=item;
     }
 }

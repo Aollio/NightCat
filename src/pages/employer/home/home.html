@@ -6,6 +6,7 @@
                     夜猫
                 </button>
             </ion-buttons>
+            <!--todo add series event. if user want to search something -->
             <ion-searchbar placeholder="搜索内容" class="header-search">
                 [(ngModel)]="myInput"
                 [showCancelButton]="shouldShowCancel"
@@ -13,6 +14,7 @@
                 (ionCancel)="onCancel($event)"
             </ion-searchbar>
             <ion-buttons end>
+                <!--todo add the click event. -->
                 <button ion-button icon-only>
                     <ion-icon name="md-chatbubbles"></ion-icon>
                 </button>
@@ -23,10 +25,10 @@
 
 <ion-content>
 
-    <div class="my-title">早上好, 夜猫</div>
-    <!--<div class="my-val">今天天气不错, 准备从下面哪项开始? </div>-->
+    <div class="my-title">嗨, Marty薄荷创意</div>
+    <div class="my-val">今天的你还好吗, 准备从哪项开始? </div>
     <div class="my-ul clearfloat">
-        <div class="my-li" (click)="btn_designer()">
+        <div class="my-li my-left" (click)="btn_designer()">
             <div class="my-li-ioc">
                 H
             </div>
@@ -48,7 +50,7 @@
                 The top open source framework
             </div>
         </div>
-        <div class="my-li" (click)="btn_types()">
+        <div class="my-li my-left" (click)="btn_types()">
             <div class="my-li-ioc">
                 H
             </div>
@@ -59,17 +61,17 @@
                 The top open source framework
             </div>
         </div>
-        <!--<div class="my-li" (click)="btn_appoint()">-->
-            <!--<div class="my-li-ioc">-->
-                <!--H-->
-            <!--</div>-->
-            <!--<div class="my-li-name">-->
-                <!--预约-->
-            <!--</div>-->
-            <!--<div class="my-li-val">-->
-                <!--The top open source framework-->
-            <!--</div>-->
-        <!--</div>-->
+        <div class="my-li" (click)="btn_appoint()">
+            <div class="my-li-ioc">
+                H
+            </div>
+            <div class="my-li-name">
+                预约
+            </div>
+            <div class="my-li-val">
+                The top open source framework
+            </div>
+        </div>
     </div>
 
 </ion-content>

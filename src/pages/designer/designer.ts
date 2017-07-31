@@ -17,15 +17,13 @@ export class DesignerModulePage {
 
     constructor(platform: Platform,
                 statusBar: StatusBar,
-                splashScreen: SplashScreen,
-                public navctrl: NavController) {
+                splashScreen: SplashScreen) {
         platform.ready().then(() => {
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
             statusBar.styleDefault();
             splashScreen.hide();
         });
-        // this.navctrl.setRoot(DesignerModulePage)
     }
 
 }

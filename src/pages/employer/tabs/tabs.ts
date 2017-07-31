@@ -12,6 +12,7 @@ import {MiddleWarePage} from "../helpchoose/middleware/middleware";
 import {Tabs} from "ionic-angular/navigation/nav-interfaces";
 import {PublishTaskPage} from "../../common/publishtask/publishtask";
 import {PublishTaskMiddleWarePage} from "../publish-task-middleware/publish-task-middleware";
+import {IMPage} from "../../im/im";
 
 @Component({
     selector: 'page-employer-tabs',
@@ -23,13 +24,13 @@ export class EmployerTabsPage {
     project: any = ProjectsPage;
     me: any = EmployerMePage;
     helpchoose: any = MiddleWarePage;
+    im:any = IMPage;
 
     publishtask: any = PublishTaskMiddleWarePage;
 
 
     constructor(public navCtrl: NavController, public platform: Platform,
                 public statusBar: StatusBar, public splashScreen: SplashScreen) {
-        this.navCtrl.swipeBackEnabled = false
     }
 
 

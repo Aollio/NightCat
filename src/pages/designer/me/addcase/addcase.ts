@@ -1,4 +1,6 @@
 import {Component} from "@angular/core";
+import {ImagePicker} from "@ionic-native/image-picker";
+
 
 @Component({
     selector: 'page-addcase',
@@ -7,10 +9,22 @@ import {Component} from "@angular/core";
 })
 export class AddCasePage {
 
+    projectName: string = "";
+    description: string = "";
+    imgs = ["assets/img/first.png"];
 
-    description: string="";
+    constructor(public imagePicker: ImagePicker) {
+    }
 
-    constructor() {
+    openImagePicker() {
+        if (this.imgs.length >= 3) return;
+
+        this.imagePicker.getPictures({}).then((results) => {
+            for (var i = 0; i < results.length; i++) {
+                console.log('Image URI: ' + results[i]);
+            }
+        }, (err) => {
+        });
     }
 
 }

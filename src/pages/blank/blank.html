@@ -1,179 +1,188 @@
-
-
 <ion-content>
-    <ion-slides class="slides" pager paginationType="bullets" loop>>
-        <ion-slide *ngFor="let image of images">
-            <img src="{{image.url}}"/>
-        </ion-slide>
-    </ion-slides>
 
-<div class="my-nav">
-    <div class="my-ul">
-        <div class="my-li">
-            <div class="my-li-img">
-                <img src="assets/img/first.png"/>
-            </div>
-            <div class="my-li-name">
-                建筑设计
-            </div>
-        </div>
-        <div class="my-li">
-            <div class="my-li-img">
-                <img src="assets/img/first.png"/>
-            </div>
-            <div class="my-li-name">
-                建筑设计
-            </div>
-        </div>
-        <div class="my-li">
-            <div class="my-li-img">
-                <img src="assets/img/first.png"/>
-            </div>
-            <div class="my-li-name">
-                建筑设计
-            </div>
-        </div>
-        <div class="my-li">
-            <div class="my-li-img">
-                <img src="assets/img/first.png"/>
-            </div>
-            <div class="my-li-name">
-                建筑设计
-            </div>
-        </div>
+    <button ion-button (click)="show()">show</button>
+    <div id="show"></div>
+    <div class="myInput">
+        <input type="file" [(ngModel)]="file"/>
     </div>
-    <div class="my-ul">
-        <div class="my-li">
-            <div class="my-li-img">
-                <img src="assets/img/first.png"/>
-            </div>
-            <div class="my-li-name">
-                建筑设计
-            </div>
-        </div>
-        <div class="my-li">
-            <div class="my-li-img">
-                <img src="assets/img/first.png"/>
-            </div>
-            <div class="my-li-name">
-                建筑设计
-            </div>
-        </div>
-        <div class="my-li">
-            <div class="my-li-img">
-                <img src="assets/img/first.png"/>
-            </div>
-            <div class="my-li-name">
-                建筑设计
-            </div>
-        </div>
-        <div class="my-li">
-            <div class="my-li-img">
-                <img src="assets/img/first.png"/>
-            </div>
-            <div class="my-li-name">
-                建筑设计
-            </div>
-        </div>
-    </div>
-</div>
-<div class="my-list clearfloat">
-    <div class="my-list-li">
-        <div class="my-list-li-img">
-            <img src="assets/img/des-1.png"/>
-        </div>
-        <div class="my-list-li-text">
-            <div class="my-list-li-text-l">
-                张山
-            </div>
-            <div class="my-list-li-text-r">
-                100/时
-            </div>
-        </div>
-        <div class="my-list-li-val">
-            <p>这是一个最简单的卡片视图控件；卡片视图常用来显示完整独立的一段信息，比如一篇文章的预览图、作者信息、点赞数量等</p>
-        </div>
-    </div>
-    <div class="my-list-li">
-        <div class="my-list-li-img">
-            <img src="assets/img/des-1.png"/>
-        </div>
-        <div class="my-list-li-text">
-            <div class="my-list-li-text-l">
-                张山
-            </div>
-            <div class="my-list-li-text-r">
-                100/时
-            </div>
-        </div>
-        <div class="my-list-li-val">
-            <p>这是一个最简单的卡片视图控件；卡片视图常用来显示完整独立的一段信息，比如一篇文章的预览图、作者信息、点赞数量等</p>
-        </div>
-    </div>
-    <div class="my-list-li">
-        <div class="my-list-li-img">
-            <img src="assets/img/des-1.png"/>
-        </div>
-        <div class="my-list-li-text">
-            <div class="my-list-li-text-l">
-                张山
-            </div>
-            <div class="my-list-li-text-r">
-                100/时
-            </div>
-        </div>
-        <div class="my-list-li-val">
-            <p>这是一个最简单的卡片视图控件；卡片视图常用来显示完整独立的一段信息，比如一篇文章的预览图、作者信息、点赞数量等</p>
-        </div>
-    </div>
-    <div class="my-list-li">
-        <div class="my-list-li-img">
-            <img src="assets/img/des-1.png"/>
-        </div>
-        <div class="my-list-li-text">
-            <div class="my-list-li-text-l">
-                张山
-            </div>
-            <div class="my-list-li-text-r">
-                100/时
-            </div>
-        </div>
-        <div class="my-list-li-val">
-            <p>这是一个最简单的卡片视图控件；卡片视图常用来显示完整独立的一段信息，比如一篇文章的预览图、作者信息、点赞数量等</p>
-        </div>
-    </div>
-    <div class="my-list-li">
-        <div class="my-list-li-img">
-            <img src="assets/img/des-1.png"/>
-        </div>
-        <div class="my-list-li-text">
-            <div class="my-list-li-text-l">
-                张山
-            </div>
-            <div class="my-list-li-text-r">
-                100/时
-            </div>
-        </div>
-        <div class="my-list-li-val">
-            <p>这是一个最简单的卡片视图控件；卡片视图常用来显示完整独立的一段信息，比如一篇文章的预览图、作者信息、点赞数量等</p>
-        </div>
-    </div>
-    <div class="my-list-li">
-        <div class="my-list-li-img">
-            <img src="assets/img/des-1.png"/>
-        </div>
-        <div class="my-list-li-text">
-            <div class="my-list-li-text-l">
-                张山
-            </div>
-            <div class="my-list-li-text-r">
-                100/时
-            </div>
-        </div>
-        <div class="my-list-li-val">
-            <p>这是一个最简单的卡片视图控件；卡片视图常用来显示完整独立的一段信息，比如一篇文章的预览图、作者信息、点赞数量等</p>
-        </div>
-    </div>
-</div>
+    <button ion-button (click)="showFile()">showfile</button>
 </ion-content>
+
+
+<!--<ion-content>-->
+    <!--<ion-slides class="slides" pager paginationType="bullets" loop>>-->
+        <!--<ion-slide *ngFor="let image of images">-->
+            <!--<img src="{{image.url}}"/>-->
+        <!--</ion-slide>-->
+    <!--</ion-slides>-->
+
+<!--<div class="my-nav">-->
+    <!--<div class="my-ul">-->
+        <!--<div class="my-li">-->
+            <!--<div class="my-li-img">-->
+                <!--<img src="assets/img/first.png"/>-->
+            <!--</div>-->
+            <!--<div class="my-li-name">-->
+                <!--建筑设计-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="my-li">-->
+            <!--<div class="my-li-img">-->
+                <!--<img src="assets/img/first.png"/>-->
+            <!--</div>-->
+            <!--<div class="my-li-name">-->
+                <!--建筑设计-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="my-li">-->
+            <!--<div class="my-li-img">-->
+                <!--<img src="assets/img/first.png"/>-->
+            <!--</div>-->
+            <!--<div class="my-li-name">-->
+                <!--建筑设计-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="my-li">-->
+            <!--<div class="my-li-img">-->
+                <!--<img src="assets/img/first.png"/>-->
+            <!--</div>-->
+            <!--<div class="my-li-name">-->
+                <!--建筑设计-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="my-ul">-->
+        <!--<div class="my-li">-->
+            <!--<div class="my-li-img">-->
+                <!--<img src="assets/img/first.png"/>-->
+            <!--</div>-->
+            <!--<div class="my-li-name">-->
+                <!--建筑设计-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="my-li">-->
+            <!--<div class="my-li-img">-->
+                <!--<img src="assets/img/first.png"/>-->
+            <!--</div>-->
+            <!--<div class="my-li-name">-->
+                <!--建筑设计-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="my-li">-->
+            <!--<div class="my-li-img">-->
+                <!--<img src="assets/img/first.png"/>-->
+            <!--</div>-->
+            <!--<div class="my-li-name">-->
+                <!--建筑设计-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="my-li">-->
+            <!--<div class="my-li-img">-->
+                <!--<img src="assets/img/first.png"/>-->
+            <!--</div>-->
+            <!--<div class="my-li-name">-->
+                <!--建筑设计-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+<!--<div class="my-list clearfloat">-->
+    <!--<div class="my-list-li">-->
+        <!--<div class="my-list-li-img">-->
+            <!--<img src="assets/img/des-1.png"/>-->
+        <!--</div>-->
+        <!--<div class="my-list-li-text">-->
+            <!--<div class="my-list-li-text-l">-->
+                <!--张山-->
+            <!--</div>-->
+            <!--<div class="my-list-li-text-r">-->
+                <!--100/时-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="my-list-li-val">-->
+            <!--<p>这是一个最简单的卡片视图控件；卡片视图常用来显示完整独立的一段信息，比如一篇文章的预览图、作者信息、点赞数量等</p>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="my-list-li">-->
+        <!--<div class="my-list-li-img">-->
+            <!--<img src="assets/img/des-1.png"/>-->
+        <!--</div>-->
+        <!--<div class="my-list-li-text">-->
+            <!--<div class="my-list-li-text-l">-->
+                <!--张山-->
+            <!--</div>-->
+            <!--<div class="my-list-li-text-r">-->
+                <!--100/时-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="my-list-li-val">-->
+            <!--<p>这是一个最简单的卡片视图控件；卡片视图常用来显示完整独立的一段信息，比如一篇文章的预览图、作者信息、点赞数量等</p>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="my-list-li">-->
+        <!--<div class="my-list-li-img">-->
+            <!--<img src="assets/img/des-1.png"/>-->
+        <!--</div>-->
+        <!--<div class="my-list-li-text">-->
+            <!--<div class="my-list-li-text-l">-->
+                <!--张山-->
+            <!--</div>-->
+            <!--<div class="my-list-li-text-r">-->
+                <!--100/时-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="my-list-li-val">-->
+            <!--<p>这是一个最简单的卡片视图控件；卡片视图常用来显示完整独立的一段信息，比如一篇文章的预览图、作者信息、点赞数量等</p>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="my-list-li">-->
+        <!--<div class="my-list-li-img">-->
+            <!--<img src="assets/img/des-1.png"/>-->
+        <!--</div>-->
+        <!--<div class="my-list-li-text">-->
+            <!--<div class="my-list-li-text-l">-->
+                <!--张山-->
+            <!--</div>-->
+            <!--<div class="my-list-li-text-r">-->
+                <!--100/时-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="my-list-li-val">-->
+            <!--<p>这是一个最简单的卡片视图控件；卡片视图常用来显示完整独立的一段信息，比如一篇文章的预览图、作者信息、点赞数量等</p>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="my-list-li">-->
+        <!--<div class="my-list-li-img">-->
+            <!--<img src="assets/img/des-1.png"/>-->
+        <!--</div>-->
+        <!--<div class="my-list-li-text">-->
+            <!--<div class="my-list-li-text-l">-->
+                <!--张山-->
+            <!--</div>-->
+            <!--<div class="my-list-li-text-r">-->
+                <!--100/时-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="my-list-li-val">-->
+            <!--<p>这是一个最简单的卡片视图控件；卡片视图常用来显示完整独立的一段信息，比如一篇文章的预览图、作者信息、点赞数量等</p>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="my-list-li">-->
+        <!--<div class="my-list-li-img">-->
+            <!--<img src="assets/img/des-1.png"/>-->
+        <!--</div>-->
+        <!--<div class="my-list-li-text">-->
+            <!--<div class="my-list-li-text-l">-->
+                <!--张山-->
+            <!--</div>-->
+            <!--<div class="my-list-li-text-r">-->
+                <!--100/时-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="my-list-li-val">-->
+            <!--<p>这是一个最简单的卡片视图控件；卡片视图常用来显示完整独立的一段信息，比如一篇文章的预览图、作者信息、点赞数量等</p>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+<!--</ion-content>-->
 
