@@ -9,6 +9,7 @@ import {CommentOrderPage} from "../comment-order/comment-order";
 import {ChatPage} from "../../../im/chat/chat";
 import {ProjectsService} from "../../../../service/ajax/projects.service";
 import {Util} from "../../../../service/util";
+import {GrabOrderPage} from "../grab-order/grab-order";
 
 declare let initializeFontSize: any
 /*
@@ -72,6 +73,10 @@ export class OrderDetailPage extends AbsCommonPage {
     }
 
     openChat(operation) {
-        this.navCtrl.push(ChatPage, operation)
+        this.navCtrl.push(ChatPage,operation);
+    }
+
+    openGrabOrderPage(orderId){
+        this.navCtrl.push(GrabOrderPage,orderId);
     }
 }

@@ -1,0 +1,32 @@
+<ion-list *ngIf="!isEmpty()">
+    <ion-card>
+        <ion-card-content>
+            <div class="order-item">
+                <div class="avatar"></div>
+                <div class="detail">
+                    <p class="title">园区导视，布点规划，文化导入，精神堡垒，展厅，室内软装设计等许多内容、不一一展示</p>
+                    <ion-row class="detail-row">
+                        <ion-col class="get-order-amount" align-self-center left>
+                            8人抢单
+                        </ion-col>
+                        <ion-col class="deadtime" align-self-center right>
+                            6天1小时后截止
+                        </ion-col>
+                    </ion-row>
+                </div>
+            </div>
+        </ion-card-content>
+    </ion-card>
+</ion-list>
+<ion-content *ngIf="isEmpty()" class="ioncontent">
+    <div class="null-project">
+        <img src="assets/img/project-null.png">
+    </div>
+    <p class="null-porject-toast">
+        当前没有工程, 海量资深工程师任你选
+    </p>
+
+    <button ion-button class="null-project-button" (click)="openFindOrder()">寻找项目</button>
+    <!--<button ion-button class="null-project-button" (click)="openPulishTask()">自己发布项目</button>-->
+
+</ion-content>

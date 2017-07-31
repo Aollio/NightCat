@@ -163,10 +163,8 @@ $colors: (
         nav-com-tx: #FA4169,
         font-gray:#939393,
         blank-color:#ececec,
-
         login-emp:#fa4169,
         login-des:#488aff,
-
         transparent-color: rgba(255, 255, 255, 0)
 );
 
@@ -174,8 +172,12 @@ $emp_primary: #FA4169;
 $emp-primary: #FA4169;
 
 $des-primary: #488aff;
-$toolbar-ios-height:4rem;
-$navbar-ios-height:4rem;
+$toolbar-ios-height: 4rem;
+$navbar-ios-height: 4rem;
+
+$label-ios-text-color: #666666;
+$label-ios-text-color-focused: map_get($colors, des-primary);
+
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here

@@ -5,17 +5,20 @@ import {OrderProcessDetailPage} from "./orderprocess/orderprocess";
 import {CommentOrderPage} from "./comment-order/comment-order";
 import {CustomIconsModule} from "ionic2-custom-icons";
 import {EmployerModule} from "../../employer/employer.module";
+import {GrabOrderPage} from "./grab-order/grab-order";
 
 @NgModule({
     declarations: [
         OrderDetailPage,
         OrderProcessDetailPage,
-        CommentOrderPage
+        CommentOrderPage,
+        GrabOrderPage
     ],
     entryComponents: [
         OrderDetailPage,
         OrderProcessDetailPage,
-        CommentOrderPage
+        CommentOrderPage,
+        GrabOrderPage
     ],
     imports: [
         IonicPageModule.forChild(OrderDetailPage),
@@ -23,7 +26,6 @@ import {EmployerModule} from "../../employer/employer.module";
     ],
     exports: [
         OrderDetailPage, CommentOrderPage
-
     ]
 })
 export class OrderModule {

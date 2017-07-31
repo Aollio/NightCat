@@ -16,6 +16,9 @@ import {DesignerMeModule} from "./me/me.module";
 import {CaseDetailPage} from "./me/casedetail/casedetail";
 import {OrderModule} from "../common/order/order.module";
 import {CustomIconsModule} from "ionic2-custom-icons";
+import {DesignerProjectsPage} from "./projects/projects";
+import {DesOrderListComponent} from "./projects/designerorderlist/designerorderlist";
+
 
 @NgModule({
     declarations: [
@@ -27,7 +30,9 @@ import {CustomIconsModule} from "ionic2-custom-icons";
         CommentPage,
         DesignerHomePage,
         TaskSquarePage,
-        ChatMessagePage
+        ChatMessagePage,
+        DesignerProjectsPage,
+        DesOrderListComponent
     ],
     entryComponents: [
         DesignerModulePage,
@@ -38,7 +43,9 @@ import {CustomIconsModule} from "ionic2-custom-icons";
         CommentPage,
         DesignerHomePage,
         TaskSquarePage,
-        ChatMessagePage
+        ChatMessagePage,
+        DesignerProjectsPage,
+        DesOrderListComponent
     ],
     imports: [
         CommonPageModule,

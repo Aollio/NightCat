@@ -1,0 +1,127 @@
+page-designer-projects {
+
+  $font-size-label: 1.15rem;
+
+  .projects-header {
+    margin-top: 0;
+    background-color: $des-primary;
+    //height: 25%;
+  }
+
+  .projects-blank-row {
+    height: 40%;
+  }
+
+  .projects-header-row {
+    margin-top: 5rem;
+    height: 60%;
+  }
+  .header-number {
+    text-align: center;
+    //border-image: -webkit-linear-gradient(red, white);
+    border-width: 0 1px 0 0;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: white;
+    border-image: linear-gradient($des_primary, rgba(255, 255, 255, 0.24), white) 5 5;
+  }
+
+  .number-label {
+    height: 30%;
+    color: rgb(189, 213, 255);
+    font-size: $font-size-label;
+  }
+
+  .number-detail {
+    margin: auto;
+    height: 70%;
+    color: white;
+    padding-top: 5%;
+    font-size: 3rem;
+    font-weight: 500;
+  }
+
+  .header-right-col {
+    color: rgb(189, 213, 255);
+  }
+
+  .head-time {
+    position: relative;
+    display: inline-flex;
+    width: 100%;
+    height: 70%;
+
+    .datetime {
+      width: 40%;
+      height: 5rem;
+      font-size: 1rem;
+      //margin: auto;
+      //margin-top: 0rem;
+      text-align: right;
+      //padding-right: .5rem;
+    }
+
+    .dayofmonth {
+      position: absolute;
+      width: 60%;
+      font-size: 7rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.64);
+      top: -3rem;
+      right: 0;
+      //margin-right: auto;
+      //margin-left: auto;
+      text-align: center;
+      //margin-top: -10%;
+      //margin-bottom:-20% ;
+    }
+  }
+
+  .header-toast {
+    height: 30%;
+    padding-top: 0%;
+    //margin-left: -20%;
+    font-size: 1rem;
+    margin: auto;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.64);
+  }
+
+  ion-content {
+    background-color: #ebecf1 !important;
+  }
+
+  .type-nav {
+    background-color: white;
+  }
+
+  ion-content ion-row ion-col {
+    padding-bottom: 0 !important;
+  }
+
+  .order-type-color {
+    color: #9e9e9e;
+    font-weight: 400;
+  }
+
+  .custom-icon {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    font-size: 2.5rem;
+    padding-right: 70%;
+    padding-left: 28%;
+  }
+  .active {
+    color: $des_primary;
+    border-bottom: 2px solid $des_primary;
+  }
+
+  .order-type-col div {
+
+    padding: 1rem 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 1rem;
+  }
+}

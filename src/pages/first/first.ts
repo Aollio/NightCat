@@ -12,6 +12,7 @@ import {LoginPage} from "../common/login/login";
 
 @Component({
     selector: "page-first",
+
     templateUrl: "first.html",
     providers: [
         {provide: Storage, useFactory: provideStorage}
@@ -62,13 +63,12 @@ export class FirstPage {
         this.gotoWelcome()
 
         event.subscribe('gotologin', () => {
-            util.toast('授权过期或者未登录')
+            util.toast('授权过期或者未登录');
             this.nav.setRoot(LoginPage, {}, {animate: true})
         })
 
 
         // this.storage.set('first','true')
-
 
     }
 

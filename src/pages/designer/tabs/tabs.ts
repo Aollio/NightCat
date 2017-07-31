@@ -9,6 +9,7 @@ import {TaskSquarePage} from "../tasksquare/tasksquare";
 import {MessagePage} from "../message/message";
 import {DesignerModulePage} from "../designer";
 import {IMPage} from "../../im/im";
+import {DesignerProjectsPage} from "../projects/projects";
 
 @Component({
     templateUrl: 'tabs.html'
@@ -16,7 +17,7 @@ import {IMPage} from "../../im/im";
 export class DesignerTabsPage {
 
     home = DesignerHomePage;
-    tasks = TaskSquarePage;
+    console = DesignerProjectsPage;
     me = DesignerMePage;
     message = MessagePage;
     im = IMPage;
