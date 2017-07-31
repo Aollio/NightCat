@@ -25,9 +25,16 @@ export class System {
 
     private static customSyncDoneFunc = null
 
+    private static customSyncErrorFunc = null
+
     static customSyncDone(func) {
         System.customSyncDoneFunc = func
     }
+
+    static customSyncError(func){
+        System.customSyncErrorFunc = func
+    }
+
 
     static onSyncDone() {
 
@@ -68,6 +75,9 @@ export class System {
     }
 
     static onError(error, obj) {
+        if (System.customSyncErrorFunc != null){
+            System.customSyncErrorFunc()
+        }
         console.log('发生错误', error, obj);
     }
 }

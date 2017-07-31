@@ -142,7 +142,6 @@ export class WelcomePage {
             })
     }
 
-
     postTest() {
         console.log("开始dopost请求")
         let param = {
@@ -178,12 +177,12 @@ export class WelcomePage {
 
 
     openEmployer() {
-        this.shared.isDesigner = false;
+        this.shared.currentModuleIsDesigner = false;
         this.navCtrl.setRoot(EmployerModulePage, {}, {animate: true})
     }
 
     openDesigner() {
-        this.shared.isDesigner = true;
+        this.shared.currentModuleIsDesigner = true;
         this.navCtrl.setRoot(DesignerModulePage, {}, {animate: true});
     }
 
@@ -204,7 +203,6 @@ export class WelcomePage {
         "assets/img/Walkthrough_1.png",
         "assets/img/Walkthrough_2.png",
         "assets/img/Walkthrough_3.png",
-        // "assets/img/Walkthrough_4.png"
     ];
 
     @ViewChild(Slides) slides: Slides;

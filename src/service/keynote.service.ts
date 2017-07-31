@@ -21,7 +21,7 @@ export class KeynoteService {
                 service_length: '7年',
                 type: '建筑设计'
             }
-            share.isDesigner = true;
+            share.currentModuleIsDesigner = true;
         } else {
             share.currentUser = {
                 nickname: 'Marty 薄荷创意',
@@ -35,7 +35,7 @@ export class KeynoteService {
                 service_length: '7年',
                 type: '建筑设计'
             }
-            share.isDesigner = false;
+            share.currentModuleIsDesigner = false;
         }
     }
 

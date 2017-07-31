@@ -14,9 +14,6 @@ export class DesignerHomePage {
     }
 
     images: Array<{ url }> = [
-        // {url: 'assets/img/home-default.png'},
-        // {url: 'assets/img/home-default.png'},
-        // {url: 'assets/img/home-default.png'},
     ]
 
     types: Array<{ name, val }> = [

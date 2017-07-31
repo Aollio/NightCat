@@ -67,3 +67,16 @@ body{
 }
 
 //弹出框
+
+.background-div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+
+}
+
+.background-div img{
+    min-height: 100%
+}
