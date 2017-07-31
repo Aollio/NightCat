@@ -1,5 +1,9 @@
 page-register {
-
+  .avatar {
+    width: 7rem;
+    height: 7rem;
+    margin-left: 12.5rem;
+  }
   .out-window {
     left: -100% !important;
   }
@@ -27,8 +31,6 @@ page-register {
   .flexble button {
     width: 40% !important;
   }
-
-
 
   .welcome-page {
     text-align: center;
@@ -152,17 +154,17 @@ page-register {
       .butdiv {
         position: absolute;
         font-size: .6em;
-        margin:auto;
+        margin: auto;
         top: 0;
         bottom: 0;
         right: 1.5rem;
         background-color: map_get($colors, login-des);
         color: white;
-         //transition: color 0.3s;
+        //transition: color 0.3s;
       }
     }
   }
-  
+
   .myInput-danger {
     /*background: #cf5045;*/
   }
@@ -170,7 +172,6 @@ page-register {
   .myInput-danger:hover {
     background: #cf5045;
   }
-
 
   .login-btn {
     font-size: 1.2rem;

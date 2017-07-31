@@ -28,14 +28,11 @@
     <div [class.out-window]="current != 2" [class.on-window]="current == 2" class="ion-content-class">
 
         <div class="null-only-height">欢迎来夜猫</div>
+        <div class="avatar"></div>
 
         <form class="myInput">
             <div class="name">
                 <input type="text" name="nickname" [(ngModel)]="user.nickname" placeholder="请输入昵称">
-            </div>
-            <!--todo-->
-            <div class="password">
-                <input (click)="selectAvatar()" placeholder="选择头像">
             </div>
 
         </form>
