@@ -5,6 +5,7 @@ import {SharedService} from "../../../../service/share.service";
 import {User} from "../../../../model/user";
 import {CaseDetailPage} from "../casedetail/casedetail";
 import {ChatPage} from "../../../im/chat/chat";
+import { AlertController } from 'ionic-angular';
 
 declare let initializeFontSize: any
 
@@ -31,10 +32,11 @@ export class DesignerMeDetailPage {
             title: '案例标题', desc: 'It’s often necessary to create social cards within an application.',
             fav_count: 15, comment_count: 2, time: '11 min ago'
         },
-    ]
+    ];
 
     constructor(public navCtrl: NavController,
                 public shared: SharedService,
+                public alertCtrl:AlertController,
                 public navParams: NavParams) {
         this.isDesigner = navParams.get('isDesigner');
         this.user = shared.getCurrentUser();
@@ -67,5 +69,14 @@ export class DesignerMeDetailPage {
 
     openChat(operation) {
         this.navCtrl.push(ChatPage, operation)
+    }
+
+    showHelp(){
+        let alert = this.alertCtrl.create({
+            title: 'star level',
+            subTitle: 'this is ...',
+            buttons: ['OK']
+        });
+        alert.present();
     }
 }
