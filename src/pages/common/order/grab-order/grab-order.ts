@@ -4,26 +4,27 @@ import {AbsCommonPage} from "../../abs";
 import {SharedService} from "../../../../service/share.service";
 declare let initializeFontSize:any;
 /*
- * 订单详情
+ * 我要抢单
  * */
 @Component({
-    selector: 'page-orderprocess',
-    templateUrl: 'orderprocess.html',
-})
-export class OrderProcessDetailPage extends AbsCommonPage {
+     selector: 'grab-order',
+    templateUrl: 'grab-order.html',
 
-    order_id: string;
+})
+export class GrabOrderPage{
+
+    // order_id: string;
 
     constructor(public navCtrl: NavController,
-                // public navParams: NavParams,
+                public navParams: NavParams,
                 public share: SharedService) {
-        super(share);
+        // super(share);
     }
 
     ionViewDidEnter(){
-        initializeFontSize()
-        console.log("com")
+        initializeFontSize();
     }
+
     open(page, option) {
         this.navCtrl.push(page, {})
     }
