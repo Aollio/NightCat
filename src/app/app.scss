@@ -40,3 +40,43 @@ custom-icon::before {
 .margin_bottom_0{
   margin-bottom: 0!important;
 }
+
+body{
+  color: #333!important;
+}
+
+//弹出框
+#pop_bg{
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(180, 180, 180, 0.61);
+  .pop{
+    background-color: whitesmoke;
+    background-clip: content-box;
+    border-radius: 1rem;
+    position: relative;
+    top: -100%;
+    box-sizing: border-box;
+    padding: 3rem;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s top cubic-bezier(0.52, 0, 0.46, 1.29);
+  }
+}
+
+//弹出框
+
+.background-div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+
+}
+
+.background-div img{
+    min-height: 100%
+}

@@ -3,13 +3,15 @@
         <button ion-button class="menu-item" clear icon-only item-start navPop>
             <ion-icon name="md-arrow-back"></ion-icon>
         </button>
-
-        <button *ngIf="isDesigner" ion-button class="menu-item menu-item-right" icon-only item-end>
-            上传封面
-        </button>
+        <!--<button *ngIf="isDesigner" ion-button class="menu-item menu-item-right" icon-only item-end>-->
+            <!--上传封面-->
+        <!--</button>-->
+    </div>
+    <div class="head_img">
+        <img src="assets/img/first.png">
     </div>
 
-    <ion-card class="card-personal-desc">
+    <div class="card-personal-desc">
         <ion-item class="desc-header">
             <!--<div>-->
             <div class="desc-header-name">
@@ -39,8 +41,11 @@
                 <ion-icon name="ios-star"></ion-icon>
                 <ion-icon name="ios-star"></ion-icon>
                 <ion-icon name="ios-star"></ion-icon>
+                <!--todo  button 图标提示-->
+                <ion-icon class="help-btn" (click)="showHelp()" name="md-help-circle"></ion-icon>
             </p>
-            <ion-icon name=""></ion-icon>
+
+
         </ion-item>
         <ion-item>
             <!--todo-->
@@ -69,7 +74,7 @@
                 </p>
             </ion-col>
         </ion-row>
-    </ion-card>
+    </div>
 
     <div class="row_buttons" *ngIf="!isDesigner">
         <button ion-button round class="attention_btn">关 注 我</button>
@@ -80,11 +85,11 @@
     </div>
 
     <div class="type-buttons">
-        <button ion-button clear [class.active]="ButState===1" (click)="case()" class="type-btn active">案例
+        <button ion-button clear [class.active]="btnState===1" (click)="case()" class="type-btn active">案例
         </button>
-        <button ion-button clear [class.active]="ButState===2" (click)="honor()" class="type-btn">荣誉
+        <button ion-button clear [class.active]="btnState===2" (click)="honor()" class="type-btn">荣誉
         </button>
-        <button ion-button clear [class.active]="ButState===3" (click)="experice()" class="type-btn">工作经历&nbsp;
+        <button ion-button clear [class.active]="btnState===3" (click)="experice()" class="type-btn">工作经历&nbsp;
         </button>
     </div>
 

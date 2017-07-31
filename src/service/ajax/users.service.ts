@@ -16,7 +16,7 @@ export class UsersService {
     constructor(public keynote: KeynoteService,
                 private http: NetworkService,
                 private urls: HttpUrls,
-                public shared:SharedService) {
+                public shared: SharedService) {
         this.KEYNOTE = shared.KEYNOTE;
     }
 
@@ -45,12 +45,12 @@ export class UsersService {
 
     }
 
-    async getUser(token): Promise<any> {
+    async getUser(uid): Promise<any> {
         if (this.KEYNOTE) {
             console.log('演示模式, 返回默认用户');
             return Promise.resolve(this.keynote.user)
         }
-        return await this.http.get(this.urls.tokens_url, {token: token})
+        return await this.http.getWithToken(this.urls.tokens_url, {uid: uid})
     }
 
 
@@ -71,6 +71,12 @@ export class UsersService {
         this.shared.TOKEN = token.id
         this.shared.currentUserId = token.uid
         return 'ok'
+    }
+
+    async getLoginUser() {
+        let uid = this.shared.currentUserId
+        let user = await this.getUser(uid)
+        return user
     }
 
 
