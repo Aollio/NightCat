@@ -9,7 +9,6 @@ declare let initializeFontSize: any;
 })
 export class PublishTaskPage {
 
-
     constructor(public shared: SharedService) {
         // this.maincolor = shared.getPrimaryColor();
         // this.designer = shared.isDesigner;
