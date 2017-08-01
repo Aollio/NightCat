@@ -31,14 +31,20 @@ export class Util {
     //显示加载框
     createLoading(message, options = {}) {
 
-        options['content'] = message
-        options['spinner'] = 'crescent'
-        options['dismissOnPageChange'] = true
+        options['content'] = message;
+        options['spinner'] = 'crescent';
+        options['dismissOnPageChange'] = true;
 
         return this.loaderCtrl.create(options);
 
     }
 
+
+    copyObj(oldObj, newObj) {
+        for (let attr in newObj){
+            oldObj[attr] = newObj[attr];
+        }
+    }
 
     // 消息类型列表
     mapMsgType = (msg) => {

@@ -43,6 +43,8 @@ export class LoginPage {
         this.viewCtrl.dismiss();
     }
 
+
+
     login() {
 
         if (this.user.phone == null || this.user.phone == '') {
