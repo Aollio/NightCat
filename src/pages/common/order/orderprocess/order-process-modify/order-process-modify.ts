@@ -1,5 +1,7 @@
 import {Component} from "@angular/core";
-declare let initializeFontSize: any
+
+declare let initializeFontSize: any;
+
 @Component({
     selector: "page-order-process-modify",
     templateUrl: 'order-process-modify.html'

@@ -6,7 +6,7 @@ declare let initializeFontSize:any;
     selector: "waitcomment",
     templateUrl: 'waitcomment.html'
 })
-export class Waitcomment{
+export class OrderProcessWaitcomment{
 
     ionViewDidEnter(){
         initializeFontSize();

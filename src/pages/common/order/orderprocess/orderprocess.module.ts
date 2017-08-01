@@ -3,15 +3,21 @@ import {CustomIconsModule} from "ionic2-custom-icons";
 import {OrderProcessPreSelectedPage} from "./order-process-pre-selectdes/order-process-pre-selectdes";
 import {IonicModule} from "ionic-angular";
 import {OrderProcessModifyPage} from "./order-process-modify/order-process-modify";
+import {OrderProcessWaitcomment} from "./order-process-waitcomment/waitcomment";
+import {OrderProcessComplete} from "./order-process-complete/complete";
 
 @NgModule({
     declarations: [
         OrderProcessPreSelectedPage,
-        OrderProcessModifyPage
+        OrderProcessModifyPage,
+        OrderProcessWaitcomment,
+        OrderProcessComplete
     ],
     entryComponents: [
         OrderProcessPreSelectedPage,
-        OrderProcessModifyPage
+        OrderProcessModifyPage,
+        OrderProcessWaitcomment,
+        OrderProcessComplete
     ],
     imports: [
         IonicModule,
