@@ -79,7 +79,7 @@ export class WelcomePage {
     list: any = BlankPage;
     searchdesigner: any = SearchDesignerPage;
     commentOrderPage: any = CommentOrderPage;
-    OrderProcessModifyPage: any = OrderProcessModifyPage
+    orderProcessModifyPage: any = OrderProcessModifyPage
 
     constructor(public navCtrl: NavController, public navParams: NavParams,
                 public platform: Platform,
