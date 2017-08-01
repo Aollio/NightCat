@@ -45,7 +45,7 @@
             <div [class.active]="type === 1">
                 <custom-icon class="custom-icon" set="cat" name="projects-waitdesign"></custom-icon>
                 <br>
-                未设计
+                未确定
             </div>
         </ion-col>
         <ion-col (click)="select('wait_outcome')"
@@ -53,7 +53,7 @@
             <div [class.active]="type === 2">
                 <custom-icon class="custom-icon" set="cat" name="projects-waitorder"></custom-icon>
                 <br>
-                待结单
+                未支付
             </div>
         </ion-col>
         <ion-col (click)="select('wait_comment')"
@@ -61,7 +61,7 @@
             <div [class.active]="type === 3">
                 <custom-icon class="custom-icon" set="cat" name="my-comment"></custom-icon>
                 <br>
-                待评价
+                已支付
             </div>
         </ion-col>
         <ion-col (click)="select('all')"
@@ -69,7 +69,7 @@
             <div [class.active]="type === 4">
                 <custom-icon class="custom-icon" set="cat" name="projects-all"></custom-icon>
                 <br>
-                全&nbsp;部
+                已完成
             </div>
         </ion-col>
     </ion-row>

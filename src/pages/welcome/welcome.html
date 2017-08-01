@@ -26,14 +26,14 @@
         </div>
 
         <button ion-button class="empbutton"
-                (click)="open(register,{role:'01'})"
+                (click)="openEmployer()"
                 round>
             以雇主的身份开始
         </button>
         <!--<br>-->
         <div class="or">or</div>
         <button ion-button class="desbutton"
-                (click)="open(register,{role:'00'})"
+                (click)="openDesigner()"
                 round>
             以设计师的身份开始
         </button>
@@ -43,11 +43,11 @@
         </p>
     </div>
 
-    <!--<button ion-button (click)="open(addcase)" full>添加案例</button>-->
-    <!--<button ion-button (click)="open(addhonor)" full>添加荣誉</button>-->
-    <!--<button ion-button (click)="open(paypage)" full>支付</button>-->
-    <!--<button ion-button (click)="open(choosedesigner)" full>选择设计师</button>-->
-    <!--<button ion-button (click)="open(searchdesigner)" full>搜索设计师</button>-->
+    <!--<button ion-button (click)="opendetail(addcase)" full>添加案例</button>-->
+    <!--<button ion-button (click)="opendetail(addhonor)" full>添加荣誉</button>-->
+    <!--<button ion-button (click)="opendetail(paypage)" full>支付</button>-->
+    <!--<button ion-button (click)="opendetail(choosedesigner)" full>选择设计师</button>-->
+    <!--<button ion-button (click)="opendetail(searchdesigner)" full>搜索设计师</button>-->
 
     <button ion-button color="danger" full (click)="openMsgs()">IM消息页</button>
     <!--<button ion-button color="danger" full (click)="customBtn()">获取用户</button>-->
