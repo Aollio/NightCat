@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
-import {OrderProcessDetailPage} from "../orderprocess/orderprocess";
 import {SharedService} from "../../../../service/share.service";
 import {AbsCommonPage} from "../../abs";
 import {DesignerMeDetailPage} from "../../../designer/me/medetail/medetail";
@@ -10,6 +9,7 @@ import {ChatPage} from "../../../im/chat/chat";
 import {ProjectsService} from "../../../../service/ajax/projects.service";
 import {Util} from "../../../../service/util";
 import {GrabOrderPage} from "../grab-order/grab-order";
+import {OrderProcessPreSelectedPage} from "../orderprocess/order-process-pre-selectdes/order-process-pre-selectdes";
 
 declare let initializeFontSize: any
 /*
@@ -28,7 +28,7 @@ export class OrderDetailPage extends AbsCommonPage {
     collectstate: any = 0;
     pay: any = PayPage;
     commentorder: any = CommentOrderPage;
-    orderProcessDetail: any = OrderProcessDetailPage;
+    orderrocessPreSelectdesPage: any = OrderProcessPreSelectedPage;
 
     /**
      * 先暂时设为参数为order id，或者为order的对象。

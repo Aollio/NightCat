@@ -9,7 +9,6 @@ import {LoginPage} from "./login/login";
 import {AboutPage} from "./about/about";
 import {ResetPasswordPage} from "./resetpassword/resetpassword";
 import {CommonModulePage} from "./commonpage";
-import {OrderProcessDetailPage} from "./order/orderprocess/orderprocess";
 import {SecurityCenterModule} from "./securitycenter/securitycenter.module";
 import {DesignerMeModule} from "../designer/me/me.module";
 import {PublishTaskPage} from "./publishtask/publishtask";

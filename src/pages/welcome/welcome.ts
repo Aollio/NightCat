@@ -29,7 +29,6 @@ import {ChatPage} from "../im/chat/chat";
 import {State} from "../../service/im/state.im";
 import {SearchDesignerPage} from "../employer/searchdesigner/searchdesigner";
 import {RegisterPage} from "../common/register/register";
-import {OrderProcessDetailPage} from "../common/order/orderprocess/orderprocess";
 import {ImagePicker} from "@ionic-native/image-picker";
 import { Slides } from 'ionic-angular';
 import {EmployerHomePage} from "../employer/home/home";
@@ -79,7 +78,6 @@ export class WelcomePage {
     list: any = BlankPage;
     searchdesigner: any = SearchDesignerPage;
     commentOrderPage: any = CommentOrderPage;
-    orderProcessDetailPage: any = OrderProcessDetailPage;
 
     constructor(public navCtrl: NavController, public navParams: NavParams,
                 public platform: Platform,
