@@ -35,6 +35,7 @@ import {EmployerHomePage} from "../employer/home/home";
 import {DesignerHomePage} from "../designer/home/home";
 import {OrderProcessModifyPage} from "../common/order/orderprocess/order-process-modify/order-process-modify";
 import {OrderProcessComplete} from "../common/order/orderprocess/order-process-complete/complete";
+import {OrderProcessPayment} from "../common/order/orderprocess/order-process-payment/order-process-payment";
 
 
 @Component({
@@ -81,7 +82,9 @@ export class WelcomePage {
     searchdesigner: any = SearchDesignerPage;
     commentOrderPage: any = CommentOrderPage;
     orderProcessModifyPage: any = OrderProcessModifyPage
-    orderProcessComplete:any=OrderProcessComplete;
+    orderProcessComplete: any = OrderProcessComplete;
+    orderProcessPayment: any = OrderProcessPayment;
+
     constructor(public navCtrl: NavController, public navParams: NavParams,
                 public platform: Platform,
                 public toastCtrl: ToastController,
@@ -225,8 +228,8 @@ export class WelcomePage {
         }
     }
 
-    openComplete(){
-        this.navCtrl.push(OrderProcessComplete,{})
+    openComplete() {
+        this.navCtrl.push(OrderProcessComplete, {})
     }
 
 }

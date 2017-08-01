@@ -4,17 +4,20 @@ import {OrderProcessPreSelectedPage} from "./order-process-pre-selectdes/order-p
 import {IonicModule} from "ionic-angular";
 import {OrderProcessModifyPage} from "./order-process-modify/order-process-modify";
 import {OrderProcessComplete} from "./order-process-complete/complete";
+import {OrderProcessPayment} from "./order-process-payment/order-process-payment";
 
 @NgModule({
     declarations: [
         OrderProcessPreSelectedPage,
         OrderProcessModifyPage,
-        OrderProcessComplete
+        OrderProcessComplete,
+        OrderProcessPayment
     ],
     entryComponents: [
         OrderProcessPreSelectedPage,
         OrderProcessModifyPage,
-        OrderProcessComplete
+        OrderProcessComplete,
+        OrderProcessPayment
     ],
     imports: [
         IonicModule,
@@ -23,7 +26,8 @@ import {OrderProcessComplete} from "./order-process-complete/complete";
     exports: [
         OrderProcessPreSelectedPage,
         OrderProcessModifyPage,
-        OrderProcessComplete
+        OrderProcessComplete,
+        OrderProcessPayment
     ]
 })
 export class OrderProcessModule {
