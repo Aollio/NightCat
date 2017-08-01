@@ -1,7 +1,75 @@
 com-popver {
-  .designer-list-grid{
-   // height: 100rem;
-   // width: 100rem;
+  .my-list{
+
+  }
+  .my-ul{
+    /*height: 15.5rem;*/
+    background-color: #fff;
+    padding-bottom: 0.5rem;
+    margin: 14rem 4.5rem 0;
+    /*border-top-left-radius: 3px;
+    border-top-right-radius: 3px;*/
+  }
+  .clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
+  .clearfloat{zoom:1}
+  .my-li{
+    height: 7rem;
+    width: 7rem;
+    margin-left: 0.45rem;
+    margin-top: 0.5rem;
+    float: left;
+  }
+  .my-li img{
+    height: 100%;
+    width: 100%;
+    border: 2px solid #f3f3f3;
+  }
+  .img-selected img{
+    border: 2px solid #FA4169;
+  }
+  .my-bottom{
+    display:-webkit-box;
+    margin: 0rem 4.5rem;
+    height: 4rem;
+    background-color: #fff;
+    border-top: 1px solid #f3f3f3;
+    /*border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;*/
+  }
+  .my-bottom-l{
+    -webkit-box-flex:1;
+  }
+  .my-bottom-l button{
+    width: 100%;
+    height: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    font-size: 1.4rem;
+    border: 0;
+    color: #666;
+  }
+  .my-bottom-r{
+    -webkit-box-flex:1;
+    border-left: 1px solid #f3f3f3;
+  }
+  .my-bottom-r button{
+    width: 100%;
+    height: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    font-size: 1.4rem;
+    border: 1px solid #FA4169;
+    color: #666;
+    font-family: helvetica;
+  }
+  .my-selected button{
+    background-color: #FA4169;
+    color: #fff;
+    font-family: helvetica;
+  }
+
+  .my-bottom button {
+    outline:0 none !important; blr:expression(this.onFocus=this.blur());
   }
   .popover-ios .popover-content{
     width: 500px!important;
