@@ -56,11 +56,12 @@ page-employer-home {
   }
   .my-li:first-child{
 
-    box-shadow:0 5px 20px #0053d4;
-    background: -webkit-linear-gradient(top, #0053d4 , #94bbf8); /* Safari 5.1 - 6.0 */
-    background: -o-linear-gradient(top, #0053d4 , #94bbf8); /* Opera 11.1 - 12.0 */
-    background: -moz-linear-gradient(top,#0053d4 , #94bbf8); /* Firefox 3.6 - 15 */
-    background: linear-gradient(to top, #0053d4 , #94bbf8); /* 标准的语法 */
+    box-shadow:0 5px 20px map_get($colors,emp-primary);
+    background: -webkit-linear-gradient(top, map_get($colors,emp-primary) , #fac1c7); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(top, map_get($colors,emp-primary) , #fac1c7); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(top,map_get($colors,emp-primary) , #fac1c7); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to top, map_get($colors,emp-primary) , #fac1c7); /* 标准的语法 */
+
   }
   .my-left{
     margin-left: 0;

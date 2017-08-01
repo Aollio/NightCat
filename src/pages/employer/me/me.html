@@ -6,7 +6,7 @@
 <ion-content>
     <div class="me-header" (click)="open(designerMeDetailPage)">
         <div center class="me-avatar">
-            <img src="assets/img/first.png">
+            <img src="assets/img/if_cat_emoji_face_smily-29-01_2361869.png">
         </div>
 
         <div *ngIf="!isNullObj1(user)" class="me-name">{{user.nickname || ''}}
@@ -17,7 +17,7 @@
             </ion-label></span>
         </div>
         <div *ngIf="isNullObj1(user)" class="login_btn_wrapper">
-            <button ion-button outline color="light" (click)="openLoginPage($event)">请登录</button>
+            <button ion-button small outline color="light" (click)="openLoginPage($event)">请登录</button>
         </div>
     </div>
     <ion-list>

@@ -1,7 +1,12 @@
 page-me-employer{
 
+  .label{
+    font-size: 1.5rem!important;
+    color: #333!important;
+  }
+
   .me-header {
-    background-color: map_get($colors, nav-des-bg);
+    background-color: map_get($colors, emp-primary);
     height: 23rem;
     padding-top: 3rem;
   }
