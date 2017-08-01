@@ -8,6 +8,7 @@ import {SharedService} from "../../../service/share.service";
 import {User} from "../../../model/user";
 import {LoginPage} from "../../common/login/login";
 import { ModalController, NavParams } from 'ionic-angular';
+import {Util} from "../../../service/util";
 declare let initializeFontSize: any;
 
 @IonicPage()
@@ -24,8 +25,10 @@ export class DesignerMePage {
     }
     constructor(public navCtrl: NavController,
                 public shared: SharedService,
-                public modalCtrl: ModalController) {
-        this.user = shared.getCurrentUser();
+                public modalCtrl: ModalController,
+                public util:Util) {
+        util.updateObj(this.user,this.shared.getCurrentUser());
+        // this.user =  shared.getCurrentUser();
     }
 
 

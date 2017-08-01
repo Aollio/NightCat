@@ -40,7 +40,7 @@ export class Util {
     }
 
 
-    copyObj(oldObj, newObj) {
+    updateObj(oldObj, newObj) {
         for (let attr in newObj){
             oldObj[attr] = newObj[attr];
         }
