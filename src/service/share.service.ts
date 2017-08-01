@@ -4,6 +4,7 @@ import {User} from "../model/user";
 
 import {KeynoteService} from "./keynote.service";
 import {Events} from "ionic-angular";
+import {Util} from "./util";
 
 @Injectable()
 export class SharedService {
@@ -33,16 +34,17 @@ export class SharedService {
     currentUserId: string;
 
     constructor(private event: Events,
+                private util:Util,
                 private keynote: KeynoteService) {
         event.subscribe('backdoor', () => {
             console.log('receive \'backdoor\' event');
-            this.keynote.initDefaultUser(true, this)
+            this.keynote.initDefaultUser(true, this);
         })
     }
 
 
     getCurrentIsDesigner() {
-        return this.currentModuleIsDesigner
+        return this.currentModuleIsDesigner;
     }
 
     //获取导航栏的颜色
@@ -55,16 +57,11 @@ export class SharedService {
     }
 
     getCurrentUser() {
-        // if (this.currentUser == null) {
-        // this.event.publish('gotologin',{})
-        // return {}
-        // }
-        // else
-        return this.currentUser
+        return this.currentUser;
     }
 
     setCurrentUser(user: User) {
-        this.currentUser = user;
+        this.util.updateObj(this.currentUser,user);
         if (user.role != 'designer') {
             this.currentModuleIsDesigner = false;
         } else {

@@ -27,8 +27,8 @@ export class DesignerMePage {
                 public shared: SharedService,
                 public modalCtrl: ModalController,
                 public util:Util) {
-        util.updateObj(this.user,this.shared.getCurrentUser());
-        // this.user =  shared.getCurrentUser();
+        // util.updateObj(this.user,this.shared.getCurrentUser());
+        this.user =  shared.getCurrentUser();
     }
 
 
