@@ -29,11 +29,14 @@ import {ChatPage} from "../im/chat/chat";
 import {State} from "../../service/im/state.im";
 import {SearchDesignerPage} from "../employer/searchdesigner/searchdesigner";
 import {RegisterPage} from "../common/register/register";
-import {OrderProcessDetailPage} from "../common/order/orderprocess/orderprocess";
 import {ImagePicker} from "@ionic-native/image-picker";
-import { Slides } from 'ionic-angular';
+import {Slides} from 'ionic-angular';
 import {EmployerHomePage} from "../employer/home/home";
 import {DesignerHomePage} from "../designer/home/home";
+import {OrderProcessModifyPage} from "../common/order/orderprocess/order-process-modify/order-process-modify";
+import {OrderProcessComplete} from "../common/order/orderprocess/order-process-complete/complete";
+import {OrderProcessPayment} from "../common/order/orderprocess/order-process-payment/order-process-payment";
+import {Waitcomment} from "../common/order/orderprocess/order-process-waitcomment/waitcomment";
 
 
 @Component({
@@ -79,7 +82,10 @@ export class WelcomePage {
     list: any = BlankPage;
     searchdesigner: any = SearchDesignerPage;
     commentOrderPage: any = CommentOrderPage;
-    orderProcessDetailPage: any = OrderProcessDetailPage;
+    orderProcessModifyPage: any = OrderProcessModifyPage
+    orderProcessComplete: any = OrderProcessComplete;
+    orderProcessPayment: any = OrderProcessPayment;
+    waitcomment: any = Waitcomment;
 
     constructor(public navCtrl: NavController, public navParams: NavParams,
                 public platform: Platform,
@@ -212,16 +218,20 @@ export class WelcomePage {
 
     @ViewChild(Slides) slides: Slides;
 
-    toggleEnterBtn(){
+    toggleEnterBtn() {
         let currentIndex = this.slides.getActiveIndex();
         let button = document.getElementById("enterbutton");
-        if(button){
-            if(this.slides.isEnd()){
+        if (button) {
+            if (this.slides.isEnd()) {
                 button.style.bottom = "0";
-            }else {
+            } else {
                 button.style.bottom = "-4rem";
             }
         }
+    }
+
+    openComplete() {
+        this.navCtrl.push(OrderProcessComplete, {})
     }
 
 }

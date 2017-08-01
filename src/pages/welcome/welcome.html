@@ -1,8 +1,8 @@
 <ion-content>
     <!--<ion-toolbar >-->
-        <ion-buttons class="over_btn" *ngIf="state==1" end>
-            <button  ion-button clear color="primary"  (click)="enterRegister()">跳过</button>
-        </ion-buttons>
+    <ion-buttons class="over_btn" *ngIf="state==1" end>
+        <button ion-button clear color="primary" (click)="enterRegister()">跳过</button>
+    </ion-buttons>
     <!--</ion-toolbar>-->
     <div class="tutorial-page" *ngIf="state===1">
         <ion-slides (ionSlideDidChange)="toggleEnterBtn()">
@@ -56,6 +56,10 @@
     <button ion-button color="green" full (click)="getTest()">NetworkGet</button>
     <button ion-button color="green" full (click)="postTest()">NetworkPost</button>
     <button ion-button (click)="open(list)" full>空白页</button>
+    <button ion-button (click)="open(orderProcessModifyPage)" full>OrderProcessModifyPage</button>
+    <button ion-button (click)="open(orderProcessComplete,{})" full>orderProcessCompletePage</button>
+    <button ion-button (click)="open(orderProcessPayment,{})" full>orderProcessPaymentPage</button>
+    <button ion-button (click)="open(waitcomment,{})" full>waitcommentPage</button>
     <button ion-button (click)="openImagePicker()" full>选择图片</button>
     <button ion-button (click)="open(commentOrderPage)" full>评论订单</button>
     <button ion-button (click)="openDesigner()" full>设计师主页</button>
