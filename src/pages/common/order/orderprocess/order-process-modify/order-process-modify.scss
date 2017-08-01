@@ -1,0 +1,223 @@
+page-order-process-modify{
+  .my-nav{
+    width: 100%;
+    /*height: 13rem;*/
+    /*box-shadow:0 1px 6px #ddd;*/
+  }
+  .my-nav img{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow:0 1px 6px #ddd;
+  }
+  .my-title{
+    /*width: 100%;*/
+    height: 5rem;
+    background-color: #fff;
+    box-shadow:0 1px 6px #ddd;
+    margin: 1rem 1.4rem 0;
+    border-radius: 5px;
+    display:-webkit-box;
+    padding:1.2rem;
+  }
+  .my-title-l{
+    width: 2rem;
+    /*height: 6rem;*/
+  }
+  .my-title-circular{
+   // margin-top: ;
+    width: 1.7rem;
+    height: 1.7rem;
+    border-radius: 50%;
+    background-color: #f38989;
+  }
+  .my-title-r{
+    -webkit-box-flex:1;
+    margin-left: 1.25rem;
+  }
+  .my-title-time{
+    height: 2rem;
+    font-size: 1.3rem;
+    font-family: helvetica;
+    color: #999;
+  }
+  .my-title-word{
+    height: 2rem;
+    line-height: 1.6;
+    font-size: 1.4rem;
+    font-family: helvetica;
+    color: #666;
+    margin-top: 0.5rem;
+    display:-webkit-box;
+    overflow:hidden;
+    white-space:normal!important;
+    text-overflow:ellipsis;
+    word-wrap:break-word;
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;
+  }
+  .my-text{
+    /*width: 100%;*/
+    height: 5rem;
+    background-color: #fff;
+    box-shadow:0 1px 6px #ddd;
+    margin: 1rem 1.4rem 0;
+    border-radius: 5px;
+    display:-webkit-box;
+    padding:1.2rem;
+  }
+  .my-text-l{
+    width: 2rem;
+    /*height: 6rem;*/
+  }
+  .my-text-circular{
+   // margin-top: ;
+    width: 1.7rem;
+    height: 1.7rem;
+    border-radius: 50%;
+    background-color: #488aff;
+  }
+  .my-text-r{
+    -webkit-box-flex:1;
+    margin-left: 1.25rem;
+  }
+  .my-text-time{
+    height: 2rem;
+    font-size: 1.3rem;
+    font-family: helvetica;
+    color: #999;
+  }
+  .my-text-word{
+    height: 2rem;
+    line-height: 1.6;
+    font-size: 1.4rem;
+    font-family: helvetica;
+    color: #666;
+    margin-top: 0.5rem;
+    display:-webkit-box;
+    overflow:hidden;
+    white-space:normal!important;
+    text-overflow:ellipsis;
+    word-wrap:break-word;
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;
+  }
+  .my-order{
+    /*width: 100%;*/
+    /*height: 8rem;*/
+    background-color: #fff;
+    box-shadow:0 1px 6px #ddd;
+    margin: 1rem 1.4rem 0;
+    border-radius: 5px;
+    /*display:-webkit-box;*/
+    /*padding:1.2rem;*/
+  }
+  .my-order-t{
+    /*height: 4.5rem;
+    line-height: 4.5rem;*/
+    border-bottom: 1px solid #ccc;
+    padding: 1rem 1.2rem;
+    font-size: 1.4rem;
+    font-family: helvetica;
+    color: #666;
+  }
+  .my-order-t-1{
+    display:-webkit-box;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 1.1rem;
+    color: #999;
+  }
+  .my-order-t-1-name{
+    -webkit-box-flex:1;
+  }
+  .my-order-t-1-val{
+    -webkit-box-flex:1;
+    text-align: right;
+  }
+  .my-order-t-2{
+    display:-webkit-box;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 1.4rem;
+    color: #333;
+  }
+  .my-order-t-2-name{
+    -webkit-box-flex:1;
+  }
+  .my-order-t-2-val{
+    -webkit-box-flex:1;
+    text-align: right;
+  }
+  .my-order-b{
+    height: 4rem;
+    line-height: 4rem;
+    padding: 0 1.2rem;
+    font-size: 1.4rem;
+    font-family: helvetica;
+    color: #333;
+    display:-webkit-box;
+  }
+  .my-order-b-name{
+    -webkit-box-flex:1;
+  }
+  .my-order-b-val{
+    -webkit-box-flex:1;
+    text-align: right;
+  }
+  .my-bottom{
+    height: 4.5rem;
+    background-color: #fff;
+    position: fixed;
+    bottom:0;
+    width: 100%;
+    box-shadow:0 1px 6px #ddd;
+  }
+  .my-bottom-li{
+    height: 3rem;
+    width: 8rem;
+    border:1px solid #666;
+    margin-top: 0.75rem;
+    float: right;
+    margin-right: 2rem;
+    line-height: 3rem;
+    text-align: center;
+    font-size: 1.4rem;
+    border-radius: 3px;
+    color: #666;
+    font-family: helvetica;
+  }
+  .act{
+    border:1px solid #FA4169;
+    color: #FA4169;
+  }
+  .my-list{
+    height: 5rem;
+    padding: 1rem 1.2rem 0;
+    display:-webkit-box;
+  }
+  .my-list-l{
+    width: 5rem;
+    height: 5rem;
+  }
+  .my-list-l img{
+    width: 100%;
+    height: 100%;
+  }
+  .my-list-r{
+    -webkit-box-flex:1;
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    color: #666;
+    font-family: helvetica;
+    display:-webkit-box;
+    overflow:hidden;
+    white-space:normal!important;
+    text-overflow:ellipsis;
+    word-wrap:break-word;
+    -webkit-line-clamp:3;
+    -webkit-box-orient:vertical;
+  }
+}
