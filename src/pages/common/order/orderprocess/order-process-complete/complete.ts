@@ -7,12 +7,13 @@ declare let initializeFontSize: any;
     selector: "complete",
     templateUrl: 'complete.html'
 })
-export class PublishTaskPage {
+export class OrderProcessComplete{
 
+    user;
+    orderId;
 
     constructor(public shared: SharedService) {
-        // this.maincolor = shared.getPrimaryColor();
-        // this.designer = shared.isDesigner;
+        this.user = this.shared.getCurrentUser();
     }
 
     ionViewDidEnter() {
