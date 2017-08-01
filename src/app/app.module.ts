@@ -32,6 +32,7 @@ import {ImagePicker} from "@ionic-native/image-picker";
 import {ProjectsService} from "../service/ajax/projects.service";
 import {OrderProcessModule} from "../pages/common/order/orderprocess/orderprocess.module";
 import {OrderModule} from "../pages/common/order/order.module";
+import {ComponentModule} from "../component/component.module";
 
 
 export function provideStorage() {
@@ -70,7 +71,8 @@ export function provideStorage() {
             menuType: 'overlay'
         }),
         IonicStorageModule.forRoot({}),
-        CustomIconsModule // Add this!
+        CustomIconsModule, // Add this!
+        ComponentModule//自定义模块
     ],
     exports: [],
     bootstrap: [IonicApp],

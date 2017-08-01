@@ -11,7 +11,6 @@ export class DesignerProjectsPage {
 
     type: any = 1;
 
-
     constructor() {
     }
     ionViewDidEnter() {

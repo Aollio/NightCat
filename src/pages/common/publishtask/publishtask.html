@@ -16,7 +16,7 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content class="content">
+<ion-content class="content" [class.designer]="designer" [class.employer]="!designer">
     <ion-item class="my-item" no-lines>
         <ion-label [color]='maincolor'>* 项目类型</ion-label>
         <ion-select [(ngModel)]="gaming" input interface="popover" placeholder="请选择任务类型">
