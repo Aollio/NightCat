@@ -19,29 +19,29 @@ export class SharedService {
     isDesigner = this.currentModuleIsDesigner;
 
     //当前登录用户
-    private currentUser: User;
+    private currentUser = {};
 
     //用户角色的字符串
-    ROLE_DESIGNER: string = 'designer'
-    ROLE_EMPLOYER: string = 'employer'
+    ROLE_DESIGNER: string = 'designer';
+    ROLE_EMPLOYER: string = 'employer';
 
-    ROLE_SERVER_DESIGNER: string = '00'
-    ROLE_SERVER_EMPLOYER: string = '01'
+    ROLE_SERVER_DESIGNER: string = '00';
+    ROLE_SERVER_EMPLOYER: string = '01';
 
 
-    TOKEN: string
-    currentUserId: string
+    TOKEN: string;
+    currentUserId: string;
 
     constructor(private event: Events,
                 private keynote: KeynoteService) {
         event.subscribe('backdoor', () => {
-            console.log('receive \'backdoor\' event')
+            console.log('receive \'backdoor\' event');
             this.keynote.initDefaultUser(true, this)
         })
     }
 
 
-    getCurrentIsDesigner(){
+    getCurrentIsDesigner() {
         return this.currentModuleIsDesigner
     }
 
@@ -55,11 +55,12 @@ export class SharedService {
     }
 
     getCurrentUser() {
-        if (this.currentUser == null) {
-            // this.event.publish('gotologin',{})
-            return {}
-        }
-        else return this.currentUser
+        // if (this.currentUser == null) {
+        // this.event.publish('gotologin',{})
+        // return {}
+        // }
+        // else
+        return this.currentUser
     }
 
     setCurrentUser(user: User) {
@@ -70,6 +71,4 @@ export class SharedService {
             this.currentModuleIsDesigner = true;
         }
     }
-
-
 }

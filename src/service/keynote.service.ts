@@ -1,15 +1,17 @@
 import {Injectable} from "@angular/core";
 import {SharedService} from "./share.service";
+import {Util} from "./util";
 
 @Injectable()
 export class KeynoteService {
 
-    constructor() {
+    constructor(private util: Util) {
     }
 
-    initDefaultUser(isDesigner: boolean,share) {
+    initDefaultUser(isDesigner: boolean, share) {
+        let newUser;
         if (isDesigner) {
-            share.currentUser = {
+            newUser = {
                 nickname: 'Marty 薄荷创意',
                 role: '00',
                 phone: '1234567890',
@@ -21,9 +23,10 @@ export class KeynoteService {
                 service_length: '7年',
                 type: '建筑设计'
             }
+
             share.currentModuleIsDesigner = true;
         } else {
-            share.currentUser = {
+            newUser  = {
                 nickname: 'Marty 薄荷创意',
                 role: '01',
                 phone: '1234567890',
@@ -34,9 +37,10 @@ export class KeynoteService {
                 school: '某哈某佛大学',
                 service_length: '7年',
                 type: '建筑设计'
-            }
+            };
             share.currentModuleIsDesigner = false;
         }
+        this.util.updateObj(share.getCurrentUser(), newUser);
     }
 
 
@@ -57,12 +61,12 @@ export class KeynoteService {
         school: '某哈某佛大学',
         service_length: '7年',
         type: '建筑设计'
-    }
+    };
 
     token: any = {
         id: 'default_id',
         uid: ''
-    }
+    };
 
     projects = [
         {

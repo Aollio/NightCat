@@ -29,7 +29,7 @@ export class FirstPage {
         //后门, 方便开发. publish this 'backdoor' event.
         // SharedService will receive this event and init default user
         // (auto login using default user)
-        // event.publish('backdoor');
+        event.publish('backdoor');
 
         // this.storage.get('first').then(val => {
         //     if (val == null || val == 'true') {
