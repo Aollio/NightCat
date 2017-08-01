@@ -1,4 +1,4 @@
-<ion-list *ngIf="!isEmpty()">
+<ion-list *ngIf="isEmpty()">
     <ion-card>
         <ion-card-content>
             <div class="order-item">
@@ -18,7 +18,7 @@
         </ion-card-content>
     </ion-card>
 </ion-list>
-<ion-content *ngIf="isEmpty()" class="ioncontent">
+<ion-content *ngIf="!isEmpty()" class="ioncontent">
     <div class="null-project">
         <img src="assets/img/project-null.png">
     </div>

@@ -36,6 +36,7 @@ import {DesignerHomePage} from "../designer/home/home";
 import {OrderProcessModifyPage} from "../common/order/orderprocess/order-process-modify/order-process-modify";
 import {OrderProcessComplete} from "../common/order/orderprocess/order-process-complete/complete";
 import {OrderProcessPayment} from "../common/order/orderprocess/order-process-payment/order-process-payment";
+import {Waitcomment} from "../common/order/orderprocess/order-process-waitcomment/waitcomment";
 
 
 @Component({
@@ -84,6 +85,7 @@ export class WelcomePage {
     orderProcessModifyPage: any = OrderProcessModifyPage
     orderProcessComplete: any = OrderProcessComplete;
     orderProcessPayment: any = OrderProcessPayment;
+    waitcomment: any = Waitcomment;
 
     constructor(public navCtrl: NavController, public navParams: NavParams,
                 public platform: Platform,

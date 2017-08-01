@@ -1,23 +1,22 @@
 
 
 <ion-content>
-    <ion-grid class="designer-list-grid">
-        <ion-row>
-            <ion-col *ngFor="let item of emojiarray; let i=index"
-                     col-4 class="des-card" text-center
-                     (click)="selectDesigner(item,i)">
-                <custom-icon style="font-size: 5em" set="cat" [name]="item" ></custom-icon>
-                <custom-icon ></custom-icon>
-            </ion-col>
-        </ion-row>
-        <!--</ion-row>-->
-    </ion-grid>
-</ion-content>
-<ion-footer>
-    <div >
-        <button ion-button small style="float: left">确认</button>
-        <button ion-button small style="float: right">取消</button>
+    <div class="my-list">
+        <div class="my-ul clearfloat">
+            <div class="my-li img-selected"><img src="img/des-2.png" alt="" /></div>
+            <div class="my-li"><img src="img/des-2.png" alt="" /></div>
+            <div class="my-li"><img src="img/des-2.png" alt="" /></div>
+            <div class="my-li"><img src="img/des-2.png" alt="" /></div>
+            <div class="my-li"><img src="img/des-2.png" alt="" /></div>
+            <div class="my-li"><img src="img/des-2.png" alt="" /></div>
+        </div>
+        <div class="my-bottom">
+            <div class="my-bottom-l">
+                <button>取消</button>
+            </div>
+            <div class="my-bottom-r my-selected">
+                <button>确定</button>
+            </div>
+        </div>
     </div>
-
-
-</ion-footer>
+</ion-content>
