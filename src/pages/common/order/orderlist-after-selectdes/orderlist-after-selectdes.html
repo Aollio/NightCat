@@ -1,4 +1,30 @@
-<ion-header>
-</ion-header>
-<ion-content>
+<div class="my-list">
+    <div class="my-li" *ngFor="let item of orderlist">
+        <div class="my-li-img">
+            <img [src]=item.img alt="" />
+        </div>
+        <div class="my-li-right">
+            <div class="my-li-right-t">
+                <div class="my-li-right-t-name">{{item.title}}</div>
+            </div>
+            <div class="my-li-right-b">
+                <div class="my-li-right-b-l">{{item.fav_count}}人收藏</div>
+                <div class="my-li-right-b-r">{{item.time}}后截止</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<ion-content *ngIf="isEmpty()" class="ioncontent">
+    <div class="null-project">
+        <img src="assets/img/project-null.png">
+    </div>
+    <p class="null-porject-toast">
+        当前没有工程, 海量资深工程师任你选
+    </p>
+
+    <button ion-button class="null-project-button" (click)="openFindOrder()">寻找项目</button>
+    <!--<button ion-button class="null-project-button" (click)="openPulishTask()">自己发布项目</button>-->
+
 </ion-content>
