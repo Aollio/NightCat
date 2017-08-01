@@ -18,7 +18,7 @@
             </ion-label></span>
         </div>
         <div *ngIf="isNullObj(user)" class="login_btn_wrapper">
-            <button ion-button outline color="light" (click)="login()">请登录</button>
+            <button ion-button outline color="light" (click)="openLoginPage($event)">请登录</button>
         </div>
     </div>
     <ion-list>

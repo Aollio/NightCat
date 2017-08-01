@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
+import {Events, IonicPage, NavController, NavParams, ToastController, ViewController} from 'ionic-angular';
 import {RegisterPage} from "../register/register";
 import {ResetPasswordPage} from "../resetpassword/resetpassword";
 import {User} from "../../../model/user";
@@ -28,6 +28,8 @@ export class LoginPage {
 
     constructor(public navCtrl: NavController, public navParams: NavParams,
                 public toastCtrl: ToastController,
+                public viewCtrl: ViewController,
+                public event: Events,
                 public userSev: UsersService,
                 public shared: SharedService) {
     }
@@ -37,7 +39,6 @@ export class LoginPage {
     }
 
     login() {
-
 
         if (this.user.phone == null || this.user.phone == '') {
             this.toast('请输入手机号')
@@ -50,13 +51,19 @@ export class LoginPage {
 
         console.log("开始登录");
 
+
         (async ()=> {
             await this.userSev.login(this.user)
             let user = await this.userSev.getLoginUser()
+            //todo 登陆成功
             if (user.role == '00'){
-                this.navCtrl.setRoot(DesignerModulePage)
+                // this.navCtrl.setRoot(DesignerModulePage)
+                this.viewCtrl.dismiss();
+                this.event.publish('backdoor')
             }else if (user.role == '01'){
-                this.navCtrl.setRoot(EmployerModulePage)
+                // this.navCtrl.setRoot(EmployerModulePage)
+                this.viewCtrl.dismiss();
+                this.event.publish('backdoor')
             }else {
                 throw {}
             }
@@ -69,7 +76,7 @@ export class LoginPage {
     }
 
     openRegisterPage() {
-        this.navCtrl.push(WelcomePage, {
+        this.navCtrl.push(RegisterPage, {
             register: 'true'
         })
     }

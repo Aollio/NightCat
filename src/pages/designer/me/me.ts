@@ -36,16 +36,18 @@ export class DesignerMePage {
 
     opendetail(page, option) {
         // console.log(Object.keys(this.user).length);
-        if(this.isNullObj(this.user)) return;
+        // if(this.isNullObj(this.user)) return;
         this.navCtrl.push(page, option)
     }
 
     isNullObj(obj){
        return JSON.stringify(obj)==JSON.stringify({});
     }
-    login(){
+    openLoginPage($event){
         let profileModal = this.modalCtrl.create(LoginPage);
         profileModal.present();
+
+        $event.stopPropagation();
         // this.navCtrl.push(LoginPage);
     }
 
