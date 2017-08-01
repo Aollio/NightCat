@@ -3,6 +3,7 @@ import {CustomIconsModule} from "ionic2-custom-icons";
 import {OrderProcessPreSelectedPage} from "./order-process-pre-selectdes/order-process-pre-selectdes";
 import {IonicModule} from "ionic-angular";
 import {OrderProcessModifyPage} from "./order-process-modify/order-process-modify";
+import {OrderProcessComplete} from "./order-process-complete/complete";
 import {OrderProcessWaitcomment} from "./order-process-waitcomment/waitcomment";
 import {OrderProcessComplete} from "./order-process-complete/complete";
 
@@ -25,7 +26,8 @@ import {OrderProcessComplete} from "./order-process-complete/complete";
     ],
     exports: [
         OrderProcessPreSelectedPage,
-        OrderProcessModifyPage
+        OrderProcessModifyPage,
+        OrderProcessComplete
     ]
 })
 export class OrderProcessModule {

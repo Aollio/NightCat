@@ -31,6 +31,7 @@ import {AdsService} from "../service/ajax/ads.service";
 import {ImagePicker} from "@ionic-native/image-picker";
 import {ProjectsService} from "../service/ajax/projects.service";
 import {OrderProcessModule} from "../pages/common/order/orderprocess/orderprocess.module";
+import {OrderModule} from "../pages/common/order/order.module";
 
 
 export function provideStorage() {
@@ -53,6 +54,7 @@ export function provideStorage() {
     ],
     imports: [
         OrderProcessModule,
+        OrderModule,
         ImModule,
         HttpModule,
         BrowserModule,

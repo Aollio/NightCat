@@ -34,6 +34,7 @@ import {Slides} from 'ionic-angular';
 import {EmployerHomePage} from "../employer/home/home";
 import {DesignerHomePage} from "../designer/home/home";
 import {OrderProcessModifyPage} from "../common/order/orderprocess/order-process-modify/order-process-modify";
+import {OrderProcessComplete} from "../common/order/orderprocess/order-process-complete/complete";
 
 
 @Component({
@@ -80,7 +81,7 @@ export class WelcomePage {
     searchdesigner: any = SearchDesignerPage;
     commentOrderPage: any = CommentOrderPage;
     orderProcessModifyPage: any = OrderProcessModifyPage
-
+    orderProcessComplete:any=OrderProcessComplete;
     constructor(public navCtrl: NavController, public navParams: NavParams,
                 public platform: Platform,
                 public toastCtrl: ToastController,
@@ -222,6 +223,10 @@ export class WelcomePage {
                 button.style.bottom = "-4rem";
             }
         }
+    }
+
+    openComplete(){
+        this.navCtrl.push(OrderProcessComplete,{})
     }
 
 }
