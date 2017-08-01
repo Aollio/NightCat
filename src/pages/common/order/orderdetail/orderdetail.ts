@@ -54,6 +54,8 @@ export class OrderDetailPage extends AbsCommonPage {
 
     }
 
+
+
     open(page, option) {
         this.navCtrl.push(page, {})
     }

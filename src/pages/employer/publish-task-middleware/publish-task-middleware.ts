@@ -1,13 +1,13 @@
 import {Component} from "@angular/core";
 import {NavController} from "ionic-angular";
 import {PublishTaskPage} from "../../common/publishtask/publishtask";
-
+declare let initializeFontSize:any
 @Component({
     selector: 'publish-task-middleware',
     templateUrl: 'publish-task-middleware.html'
 })
-export class PublishTaskMiddleWarePage {
 
+export class PublishTaskMiddleWarePage {
     constructor(public nav: NavController) {
         console.log('create')
         this.nav.parent.select(0);
@@ -17,6 +17,7 @@ export class PublishTaskMiddleWarePage {
     second_open: boolean = false;
 
     ionViewDidEnter() {
+        initializeFontSize()
         console.log(this.nav.parent.getSelected().index)
         if (this.second_open) {
             this.first_open = false;

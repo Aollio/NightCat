@@ -27,7 +27,10 @@ page-wallet {
     font-size: 2rem;
     padding-top: .5rem;
   }
-
+  .my-dollar{
+    position: relative;
+    top:11px;
+  }
   .money-amount {
     color: #FFFFFF;
     font-size: 6rem;
@@ -68,5 +71,6 @@ page-wallet {
   .money-detail{
     height: 6rem !important;
     font-size: 1.6rem;
+    line-height: 5rem;
   }
 }
