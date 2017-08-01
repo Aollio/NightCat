@@ -30,6 +30,7 @@ import {KeynoteService} from "../service/keynote.service";
 import {AdsService} from "../service/ajax/ads.service";
 import {ImagePicker} from "@ionic-native/image-picker";
 import {ProjectsService} from "../service/ajax/projects.service";
+import {OrderProcessModule} from "../pages/common/order/orderprocess/orderprocess.module";
 
 
 export function provideStorage() {
@@ -51,6 +52,7 @@ export function provideStorage() {
         FirstPage
     ],
     imports: [
+        OrderProcessModule,
         ImModule,
         HttpModule,
         BrowserModule,

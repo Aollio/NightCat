@@ -30,9 +30,10 @@ import {State} from "../../service/im/state.im";
 import {SearchDesignerPage} from "../employer/searchdesigner/searchdesigner";
 import {RegisterPage} from "../common/register/register";
 import {ImagePicker} from "@ionic-native/image-picker";
-import { Slides } from 'ionic-angular';
+import {Slides} from 'ionic-angular';
 import {EmployerHomePage} from "../employer/home/home";
 import {DesignerHomePage} from "../designer/home/home";
+import {OrderProcessModifyPage} from "../common/order/orderprocess/order-process-modify/order-process-modify";
 
 
 @Component({
@@ -78,6 +79,7 @@ export class WelcomePage {
     list: any = BlankPage;
     searchdesigner: any = SearchDesignerPage;
     commentOrderPage: any = CommentOrderPage;
+    OrderProcessModifyPage: any = OrderProcessModifyPage
 
     constructor(public navCtrl: NavController, public navParams: NavParams,
                 public platform: Platform,
@@ -210,13 +212,13 @@ export class WelcomePage {
 
     @ViewChild(Slides) slides: Slides;
 
-    toggleEnterBtn(){
+    toggleEnterBtn() {
         let currentIndex = this.slides.getActiveIndex();
         let button = document.getElementById("enterbutton");
-        if(button){
-            if(this.slides.isEnd()){
+        if (button) {
+            if (this.slides.isEnd()) {
                 button.style.bottom = "0";
-            }else {
+            } else {
                 button.style.bottom = "-4rem";
             }
         }
