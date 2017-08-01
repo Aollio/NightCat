@@ -20,6 +20,7 @@ import {CustomIconsModule} from "ionic2-custom-icons";
 import {SearchDesignerPage} from "./searchdesigner/searchdesigner";
 import {RecommendDesignerPage} from "./recommenddesigner/recommenddesigner";
 import {EmployerHomeModule} from "./home/home.module";
+import {OrderModule} from "../common/order/order.module";
 
 @NgModule({
     declarations: [
@@ -63,7 +64,8 @@ import {EmployerHomeModule} from "./home/home.module";
         IonicPageModule.forChild(EmployerTabsPage),
         EmployerMeModule,
         CustomIconsModule ,// Add this!
-        EmployerHomeModule
+        EmployerHomeModule,
+        OrderModule,
     ],
     exports: [ProjectsPage,
         EmployerModulePage,

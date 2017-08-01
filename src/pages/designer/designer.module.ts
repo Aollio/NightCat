@@ -53,7 +53,7 @@ import {DesOrderListComponent} from "./projects/designerorderlist/designerorderl
         WalletModule,
         IonicPageModule.forChild(DesignerTabsPage),
         OrderModule,
-        CustomIconsModule // Add this!
+        CustomIconsModule, // Add this!
     ],
     exports: [
         CommentPage,
