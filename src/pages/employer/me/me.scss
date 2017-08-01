@@ -1,8 +1,19 @@
-page-me-employer{
+page-me-employer {
 
-  .label{
-    font-size: 1.5rem!important;
-    color: #333!important;
+  ion-item{
+    box-sizing: content-box!important;
+    border: 0!important;
+    .item-inner{
+      padding-left:0 !important;
+      border-bottom: 0.55px solid rgb(200, 199, 204)!important;
+    }
+  }
+  .label {
+    font-size: 1.5rem !important;
+    color: #333 !important;
+  }
+  .ion-list{
+    margin-right: 2rem!important;
   }
 
   .me-header {
@@ -34,7 +45,7 @@ page-me-employer{
     color: #ecf3ed;
   }
 
-  .login_btn_wrapper{
+  .login_btn_wrapper {
     margin-top: 2rem;
     text-align: center;
   }
@@ -54,7 +65,7 @@ page-me-employer{
   ion-item {
     padding-left: 1rem !important;
   }
-  ion-item ion-icon{
+  ion-item ion-icon {
     color: #d9d9d9;
   }
 }

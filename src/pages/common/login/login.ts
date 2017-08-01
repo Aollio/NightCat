@@ -38,6 +38,11 @@ export class LoginPage {
         initializeFontSize()
     }
 
+    close(){
+        // console.log('asd');
+        this.viewCtrl.dismiss();
+    }
+
     login() {
 
         if (this.user.phone == null || this.user.phone == '') {
