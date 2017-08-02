@@ -9,13 +9,21 @@
 <ion-content>
     <ion-list>
         <ion-item class="friend" *ngFor="let session of sessions" (click)="chat(session.id)">
+
             <ion-avatar item-start>
                 <img src="assets/img/des-3.png">
             </ion-avatar>
-            <h2>{{ sessionNameMap[session.id] }}</h2>
-            <!--<h3>Don't Know What To Do!</h3>-->
-            <p>{{ session.lastMsg.type === 'text' ? session.lastMsg.text : '特殊消息类型' }}</p>
-            <p> {{ util.formatDate(session.updateTime) }}</p>
+            <!--<h2>{{ sessionNameMap[session.id] }}</h2>-->
+                <div class="massage">
+                <h2>{{ session.id }}</h2>
+                <span> {{ session.updateTime }}</span>
+                <!--<span> {{  util.formatDate(session.updateTime) }}</span>-->
+                <!--<h3>Don't Know What To Do!</h3>-->
+                <!--<p>{{ session.lastMsg.type === 'text' ? session.lastMsg.text : '特殊消息类型' }}</p>-->
+                <p>{{session.message}}</p>
+
+            </div>
+
         </ion-item>
     </ion-list>
 </ion-content>
