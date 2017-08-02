@@ -20,7 +20,8 @@ export class KeynoteService {
             position: '原型设计师',
             school: '哈佛大学',
             service_length: '7年',
-            type: '建筑设计'
+            type: '建筑设计',
+            img_url: 'assets/img/if_cat_emoji_face_smily-49-01_2361838.png'
         },
         {
             uid: "2",
@@ -33,7 +34,9 @@ export class KeynoteService {
             position: '超级雇主',
             school: '某哈某佛大学',
             service_length: '7年',
-            type: '建筑设计'
+            type: '建筑设计',
+            img_url: 'assets/img/if_cat_emoji_face_smily-38-01_2361877.png'
+
         },
         {
             uid: "3",
@@ -46,7 +49,9 @@ export class KeynoteService {
             position: '原型设计师',
             school: '某哈某佛大学',
             service_length: '7年',
-            type: '建筑设计'
+            type: '建筑设计',
+            img_url: 'assets/img/if_cat_emoji_face_smily-29-01_2361869.png'
+
         },
         {
             uid: "4",
@@ -59,7 +64,9 @@ export class KeynoteService {
             position: '超级雇主',
             school: '某哈某佛大学',
             service_length: '7年',
-            type: '建筑设计'
+            type: '建筑设计',
+            img_url: 'assets/img/if_cat_emoji_face_smily-35-01_2361874.png'
+
         },
     ]
 

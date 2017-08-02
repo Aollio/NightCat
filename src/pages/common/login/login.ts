@@ -43,6 +43,12 @@ export class LoginPage {
     close() {
         // console.log('asd');
         this.viewCtrl.dismiss();
+        // this.navCtrl.pop();
+
+    }
+
+    pop(){
+        this.navCtrl.pop()
     }
 
 

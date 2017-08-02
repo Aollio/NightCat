@@ -1,16 +1,48 @@
 <ion-content>
+
+    <div class="my-bac">
+        <img src="assets/img/BG_01.png">
+    </div>
     <div class="header1">
         <button ion-button class="menu-item" clear icon-only item-start navPop>
             <ion-icon name="md-arrow-back"></ion-icon>
         </button>
         <!--<button *ngIf="isDesigner" ion-button class="menu-item menu-item-right" icon-only item-end>-->
-            <!--上传封面-->
+        <!--上传封面-->
         <!--</button>-->
     </div>
-    <div class="head_img">
-        <img src="assets/img/if_cat_emoji_face_smily-29-01_2361869.png">
+    <div center class="me-avatar">
+        <img [src]="user.img_url || 'assets/img/logo1.png'">
     </div>
 
+
+    <ion-row class="card-footer-number" [class.margin_bottom_0]="isDesigner">
+        <ion-col center text-center>
+            <div class="desc-bottom-number">162</div>
+            <div class="desc-bottom-number-label">
+                接单数
+            </div>
+        </ion-col>
+        <ion-col center text-center>
+            <div class="desc-bottom-number">300</div>
+            <div class="desc-bottom-number-label ">
+                总工时
+            </div>
+        </ion-col>
+        <ion-col center text-center>
+            <div class="desc-bottom-number">400</div>
+            <div class="desc-bottom-number-label">
+                时薪
+            </div>
+        </ion-col>
+    </ion-row>
+    <div class="row_buttons" *ngIf="!isDesigner">
+        <button ion-button round class="attention_btn">关 注 我</button>
+        <button ion-button round icon-only class="sed_msg_btn"
+                (click)="openChat({sessionId: 'hgyuguyg'})">
+            <ion-icon name="ios-chatbubbles"></ion-icon>
+        </button>
+    </div>
     <div class="card-personal-desc">
         <ion-item class="desc-header">
             <!--<div>-->
@@ -54,35 +86,9 @@
             </p>
         </ion-item>
 
-        <ion-row class="card-footer-number" [class.margin_bottom_0]="isDesigner">
-            <ion-col center text-center>
-                <p class="desc-bottom-number">162</p>
-                <p class="desc-bottom-number-label">
-                    接单数
-                </p>
-            </ion-col>
-            <ion-col center text-center>
-                <p class="desc-bottom-number">300</p>
-                <p class="desc-bottom-number-label ">
-                    总工时
-                </p>
-            </ion-col>
-            <ion-col center text-center>
-                <p class="desc-bottom-number">400</p>
-                <p class="desc-bottom-number-label">
-                    时薪
-                </p>
-            </ion-col>
-        </ion-row>
+
     </div>
 
-    <div class="row_buttons" *ngIf="!isDesigner">
-        <button ion-button round class="attention_btn">关 注 我</button>
-        <button ion-button round icon-only class="sed_msg_btn"
-                (click)="openChat({sessionId: 'hgyuguyg'})">
-            <ion-icon name="ios-chatbubbles"></ion-icon>
-        </button>
-    </div>
 
     <div class="type-buttons">
         <button ion-button clear [class.active]="btnState===1" (click)="case()" class="type-btn active">案例

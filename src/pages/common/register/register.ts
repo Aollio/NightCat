@@ -160,4 +160,8 @@ export class RegisterPage {
     select(item){
         this.avatar=item;
     }
+
+    pop(){
+        this.navCtrl.pop()
+    }
 }
