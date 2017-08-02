@@ -1,11 +1,9 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {AlertController, NavController} from 'ionic-angular';
 import {DesignerMeDetailPage} from "../../designer/me/medetail/medetail";
 import {AppointPage} from "./appoint/appoint";
 import {DesingerTypePage} from "./desinger-types/desinger-types";
 import {DesignerTypesPage} from "./designer/designertypes";
-import {HelpChoosePage} from "../helpchoose/helpchoose";
-import {AlertController} from "_ionic-angular@3.5.0@ionic-angular/components/alert/alert-controller";
 
 declare let initializeFontSize: any
 
@@ -15,7 +13,7 @@ declare let initializeFontSize: any
 })
 export class EmployerHomePage {
 
-    static isfirstCome=true;
+    static isfirstCome = true;
 
     ionViewDidEnter() {
         initializeFontSize()
