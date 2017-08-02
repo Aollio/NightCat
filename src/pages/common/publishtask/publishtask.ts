@@ -1,6 +1,7 @@
 import {Component} from "@angular/core";
 import {SharedService} from "../../../service/share.service";
-import {NavController, AlertController} from "_ionic-angular@3.5.0@ionic-angular";
+import {AlertController, NavController} from "ionic-angular";
+
 
 declare let initializeFontSize: any;
 

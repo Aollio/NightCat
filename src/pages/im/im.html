@@ -1,8 +1,12 @@
 <ion-header>
     <ion-navbar>
-        <ion-title>
-            消息
-        </ion-title>
+
+        <ion-searchbar placeholder="搜索消息" class="header-search">
+            [(ngModel)]="myInput"
+            [showCancelButton]="shouldShowCancel"
+            (ionInput)="onInput($event)"
+            (ionCancel)="onCancel($event)"
+        </ion-searchbar>
     </ion-navbar>
 </ion-header>
 
