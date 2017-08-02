@@ -5,6 +5,8 @@ import {SharedService} from "../../../service/share.service";
 import {LoginPage} from "../../common/login/login";
 import {CommentPage} from "../../designer/comment/comment";
 import {NotificationsPage} from "../../designer/nofitications/notifications";
+import {PayProjectsListPage} from "./pay-projects-list/pay-projects-list";
+
 declare let initializeFontSize: any;
 
 @Component({
@@ -21,6 +23,7 @@ export class EmployerMePage {
     ionViewDidEnter() {
         initializeFontSize()
     }
+
     constructor(public  navCtrl: NavController,
                 public share: SharedService,
                 public modalCtrl: ModalController) {
@@ -32,21 +35,26 @@ export class EmployerMePage {
         this.navCtrl.push(EmpFavoriteDesignerPage, {})
     }
 
-    isNullObj1(obj){
-        return JSON.stringify(obj)==JSON.stringify({});
+    isNullObj1(obj) {
+        return JSON.stringify(obj) == JSON.stringify({});
     }
-    openLoginPage($event){
+
+    openLoginPage($event) {
         let profileModal = this.modalCtrl.create(LoginPage);
         profileModal.present();
         $event.stopPropagation();
         // this.navCtrl.push(LoginPage);
     }
 
-    openComments(){
-        this.navCtrl.push(CommentPage,{})
+    openComments() {
+        this.navCtrl.push(CommentPage, {})
     }
 
-    openNotifications(){
-        this.navCtrl.push(NotificationsPage,{})
+    openNotifications() {
+        this.navCtrl.push(NotificationsPage, {})
+    }
+
+    openPayProjects() {
+        this.navCtrl.push(PayProjectsListPage, {})
     }
 }
