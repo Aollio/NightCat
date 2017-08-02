@@ -6,7 +6,7 @@
 
 <ion-content>
     <ion-list>
-            <ion-item-sliding (click)="openDesigner()"  *ngFor="let item of users">
+            <ion-item-sliding (click)="openDesigner(item)"  *ngFor="let item of users">
                 <ion-item>
                     <div class="my-li">
                         <div class="my-li-img">
@@ -32,7 +32,6 @@
                         &nbsp;取&nbsp;消&nbsp;关&nbsp;注&nbsp;
                     </button>
                 </ion-item-options>
-            </ion-item-sliding>
         </ion-item-sliding>
     </ion-list>
 </ion-content>

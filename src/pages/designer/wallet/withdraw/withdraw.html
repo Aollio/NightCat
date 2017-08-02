@@ -7,23 +7,32 @@
 </ion-header>
 
 <ion-content>
-    <ion-item class="money-all">
 
-        剩余可提现金额 <span>13000元</span>
-        <button item-end end>全部提现</button>
-    </ion-item>
 
     <ion-item>
-        <ion-label fixed>真实姓名</ion-label>
+        <ion-label fixed class="money-name">持卡人姓名</ion-label>
         <ion-input (focus)="alertTip()"></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label fixed>账号</ion-label>
+        <ion-label fixed class="money-name">银行卡号</ion-label>
+        <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label fixed class="money-name">开户行名称</ion-label>
+        <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label fixed class="money-name">总额</ion-label>
         <ion-input></ion-input>
     </ion-item>
     <ion-item>
         <ion-label stacked>提现金额</ion-label>
         <ion-input class="input-money" placeholder="¥"></ion-input>
+    </ion-item>
+    <ion-item class="money-all">
+
+        剩余可提现金额 <span>13000元</span>
+        <button item-end end>全部提现</button>
     </ion-item>
 
     <p class="toast" item-center>温馨提示:本次提现需要支付1元手续费</p>
