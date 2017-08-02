@@ -2,7 +2,8 @@ import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {DesignerMeDetailPage} from "../../designer/me/medetail/medetail";
 import {AppointPage} from "./appoint/appoint";
-import {DesignerTypesPage} from "./designertypes/designertypes";
+import {DesingerTypePage} from "./desinger-types/desinger-types";
+import {DesignerTypesPage} from "./designer/designertypes";
 
 declare let initializeFontSize: any
 
@@ -33,17 +34,20 @@ export class EmployerHomePage {
         this.navCtrl.push(DesignerMeDetailPage, option)
     }
 
-    btn_designer(){
-       this.navCtrl.push(DesignerTypesPage);
+    btn_designer() {
+        this.navCtrl.push(DesignerTypesPage);
     }
-    btn_fullstack(){
 
+    btn_fullstack() {
+        this.navCtrl.push(DesignerTypesPage);
     }
-    btn_types(){
 
+    btn_types() {
+        this.navCtrl.push(DesingerTypePage)
     }
-    btn_appoint(){
-        this.navCtrl.push( AppointPage);
+
+    btn_appoint() {
+        this.navCtrl.push(AppointPage);
 
     }
 }
