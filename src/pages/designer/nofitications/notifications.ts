@@ -3,6 +3,7 @@ import {NavController} from 'ionic-angular';
 import {ProjectDetailPage} from "../../common/order/orderdetail/orderdetail";
 import {PublishTaskPage} from "../../common/publishtask/publishtask";
 import {SharedService} from "../../../service/share.service";
+import {KeynoteService} from "../../../service/keynote.service";
 
 @Component({
     selector: 'page-notifications',
@@ -15,7 +16,8 @@ export class NotificationsPage {
     maincolor: string;
 
     constructor(public navCtrl: NavController,
-                public shared: SharedService) {
+                public shared: SharedService,
+                public keynote:KeynoteService) {
         this.maincolor = shared.getPrimaryColor();
     }
 
@@ -23,9 +25,9 @@ export class NotificationsPage {
     /**
      * 打开订单详情页面，参数为订单id
      * */
-    openOrderDetail(order_id) {
+    openOrderDetail(id) {
         this.navCtrl.push(ProjectDetailPage, {
-            order_id: order_id
+            order: this.keynote.projects[0]
         })
     }
 

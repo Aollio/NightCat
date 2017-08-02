@@ -6,7 +6,7 @@
 <ion-content>
     <div class="me-header" (click)="open(designerMeDetailPage)">
         <div center class="me-avatar">
-            <img src="assets/img/if_cat_emoji_face_smily-29-01_2361869.png">
+            <img [src]="user.img_url || 'assets/img/logo1.png'">
         </div>
 
         <div *ngIf="!isNullObj1(user)" class="me-name">{{user.nickname || ''}}
@@ -30,7 +30,7 @@
         <ion-item (click)="openComments()">我的评论
             <ion-icon name="arrow-forward" item-end></ion-icon>
         </ion-item>
-        <ion-item (click)="openNotifications()" >我的推送
+        <ion-item (click)="openNotifications()" >我的信息
             <ion-icon name="arrow-forward" item-end></ion-icon>
         </ion-item>
         <ion-item (click)="openPayProjects()">我的支付

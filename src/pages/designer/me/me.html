@@ -6,8 +6,9 @@
 <ion-content>
     <div class="me-header" (click)="opendetail(designerMeDetailPage,{isDesigner:true})">
         <div center class="me-avatar">
-            <img src="assets/img/first.png">
+            <img [src]="user.img_url || 'assets/img/logo1.png'">
         </div>
+
         <div *ngIf="!isNullObj(user)" class="me-name">
             {{user.nickname || ''}}
             <span><ion-label>
