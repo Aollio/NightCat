@@ -1,18 +1,28 @@
 import {Component} from "@angular/core";
 import {DesignerMeDetailPage} from "../../../designer/me/medetail/medetail";
 import {NavController} from "ionic-angular";
+import {KeynoteService} from "../../../../service/keynote.service";
+import {UsersService} from "../../../../service/ajax/users.service";
 
 declare let initializeFontSize: any
 
 @Component({
-    selector: 'page-designertypes-home',
-    templateUrl: 'designertypes.html'
+    selector: 'page-designer-list-home',
+    templateUrl: 'designer-list.html'
 })
-export class DesignerTypesPage {
+export class DesignerListPage {
+
+
+    users: Array<any> = [];
+
     designerMeDetailPage: DesignerMeDetailPage;
 
-    constructor(public navCtrl: NavController) {
-
+    constructor(public navCtrl: NavController, private usersServ: UsersService) {
+        this.usersServ.getUsersByRole(true).then(users => {
+            for (let user of users) {
+                this.users.push(user)
+            }
+        });
     }
 
     ionViewDidEnter() {
@@ -23,7 +33,7 @@ export class DesignerTypesPage {
         this.navCtrl.push(page, option)
     }
 
-    openDesignerrPage() {
+    openDesignerrPage(user) {
         this.navCtrl.push(DesignerMeDetailPage, {
             user:
                 {
@@ -38,7 +48,7 @@ export class DesignerTypesPage {
                     service_length: '7年',
                     type: '建筑设计'
                 },
-                isDesigner:false
+            isDesigner: false
         })
     }
 }

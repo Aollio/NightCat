@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {IonicPageModule} from 'ionic-angular';
-import {OrderDetailPage} from "./orderdetail/orderdetail";
+import {ProjectDetailPage} from "./orderdetail/orderdetail";
 import {CommentOrderPage} from "./comment-order/comment-order";
 import {CustomIconsModule} from "ionic2-custom-icons";
 import {EmployerModule} from "../../employer/employer.module";
@@ -10,24 +10,24 @@ import {OrderListAfterSelectDesignerPage} from "./orderlist-after-selectdes/orde
 
 @NgModule({
     declarations: [
-        OrderDetailPage,
+        ProjectDetailPage,
         CommentOrderPage,
         GrabOrderPage,
         OrderListAfterSelectDesignerPage
     ],
     entryComponents: [
-        OrderDetailPage,
+        ProjectDetailPage,
         CommentOrderPage,
         GrabOrderPage,
         OrderListAfterSelectDesignerPage
     ],
     imports: [
-        IonicPageModule.forChild(OrderDetailPage),
+        IonicPageModule.forChild(ProjectDetailPage),
         CustomIconsModule, // Add this!
         OrderProcessModule
     ],
     exports: [
-        OrderDetailPage, CommentOrderPage,
+        ProjectDetailPage, CommentOrderPage,
         OrderListAfterSelectDesignerPage
     ]
 })

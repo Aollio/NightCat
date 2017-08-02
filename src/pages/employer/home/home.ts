@@ -1,11 +1,10 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {AlertController, NavController} from 'ionic-angular';
 import {DesignerMeDetailPage} from "../../designer/me/medetail/medetail";
 import {AppointPage} from "./appoint/appoint";
 import {DesingerTypePage} from "./desinger-types/desinger-types";
-import {DesignerTypesPage} from "./designer/designertypes";
+import {DesignerListPage} from "./designer/designer-list";
 import {HelpChoosePage} from "../helpchoose/helpchoose";
-import {AlertController} from "_ionic-angular@3.5.0@ionic-angular/components/alert/alert-controller";
 
 declare let initializeFontSize: any
 
@@ -50,19 +49,19 @@ export class EmployerHomePage {
     }
 
     btn_designer() {
-        this.navCtrl.push(DesignerTypesPage);
+        this.navCtrl.push(DesignerListPage);
     }
 
     btn_fullstack() {
-        this.navCtrl.push(DesignerTypesPage);
+        this.navCtrl.push(DesignerListPage);
     }
 
     btn_types() {
-        this.navCtrl.push(DesingerTypePage)
+        this.navCtrl.push(DesingerTypePage);
     }
 
-    btn_appoint() {
-        this.navCtrl.push(AppointPage);
+    btn_helpChoosePage() {
+        this.navCtrl.push(HelpChoosePage);
 
     }
 }

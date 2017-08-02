@@ -1,5 +1,4 @@
 import {Injectable} from "@angular/core";
-import {el} from "@angular/platform-browser/testing/src/browser_util";
 import {User} from "../model/user";
 
 import {KeynoteService} from "./keynote.service";
@@ -36,7 +35,7 @@ export class SharedService {
     constructor(private event: Events,
                 private util:Util,
                 private keynote: KeynoteService) {
-        event.subscribe('backdoor', () => {
+        event.subscribe('backdoor', (user) => {
             console.log('receive \'backdoor\' event');
             this.keynote.initDefaultUser(true, this);
         })

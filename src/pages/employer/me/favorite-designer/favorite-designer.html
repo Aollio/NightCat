@@ -6,39 +6,33 @@
 
 <ion-content>
     <ion-list>
-        <ion-item-sliding (click)="openDesigner()">
-            <ion-item>
-                <div class="comment-item">
-                    <div class="comment-avatar">
-                        <img src="assets/img/fav-avatar.png"/>
-                    </div>
-                    <div class="comment-item-content">
-                        <ion-row class="name">小李</ion-row>
-                        <div class="des-card-describe">设计师简介设计师简介设计师简介设计师简介设计师简介
-                            设计师简介设计师简介设计师简介设计师简介设计师简介
-                            设计师简介设计师简介设计师简介设计师简介设计师简介
-                            设计师简介设计师简介设计师简介设计师简介设计师简介
-                            设计师简介设计师简介设计师简介设计师简介设计师简介
+            <ion-item-sliding (click)="openDesigner()"  *ngFor="let item of users">
+                <ion-item>
+                    <div class="my-li">
+                        <div class="my-li-img">
+                            <img src="assets/img/if_cat_emoji_face_smily-9-01_2361853.png" alt=""/>
                         </div>
-                        <!--<div class="favorite-count-container">-->
-                            <!--<ion-icon class="favorite-count" name="add"></ion-icon>-->
-                        <!--</div>-->
-                        <ion-buttons end class="favorite-count-container">
-                            <button ion-button clear>
-                                <ion-icon name="ios-heart"></ion-icon>
-                               &nbsp;9
-                            </button>
-                        </ion-buttons>
+                        <div class="my-li-right1">
+                            <div class="my-li-right-t1">
+                                <div class="my-li-right-t-name1">{{item.nickname}}</div>
+                                <div class="my-li-right-t-r1">
+                                    <!--已认证-->
+                                    <!--todo 页面调整-->
+                                    <img src="assets/img/yinzhang.png">
+                                </div>
+                            </div>
+                            <div class="my-li-right-c1">{{item.type}}</div>
+                            <div class="my-li-right-b1">{{item.summary}}</div>
+                        </div>
                     </div>
-
-                </div>
-            </ion-item>
-            <ion-item-options side="right">
-                <button ion-button color="emp-primary">
-                    <ion-icon name="delete"></ion-icon>
-                    &nbsp;取&nbsp;消&nbsp;关&nbsp;注&nbsp;
-                </button>
-            </ion-item-options>
+                </ion-item>
+                <ion-item-options side="right">
+                    <button ion-button color="emp-primary">
+                        <ion-icon name="delete"></ion-icon>
+                        &nbsp;取&nbsp;消&nbsp;关&nbsp;注&nbsp;
+                    </button>
+                </ion-item-options>
+            </ion-item-sliding>
         </ion-item-sliding>
     </ion-list>
 </ion-content>
