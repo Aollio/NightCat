@@ -1,45 +1,84 @@
 page-favorite-designer {
-  .comment-item {
-    display: inline-flex;
-    height: 100%;
+  .my-list{
     width: 100%;
+    background-color: #efeff4;
   }
-  .comment-avatar {
-    width: 25%;
+  .my-li{
+    margin:1.25rem 0.83333333rem 0;
+    background-color: #fff;
+    //height: 6.66666666rem;
+    border-radius: 5px;
+    padding:0.83333333rem;
+    display:-webkit-box;
+    box-shadow:0 1px 6px #ccc;
+  }
+  .my-li-img{
+    width: 6.66666666rem;
+    height: 6.66666666rem;
+    border-radius: 50%;
+  }
+  .my-li-img img{
+    width: 100%;
     height: 100%;
+    border-radius: 50%;
   }
-   .comment-item-content {
-    padding-left: 1em;
-    width: 75%;
-    height: 100%;
+  .my-li-right1{
+    -webkit-box-flex:1;
+    margin-left: 1.25rem;
+    font-family: helvetica;
   }
-
-  .name{
-    height: 1.5em;
+  .my-li-right-t1{
+    height: 2.5rem;
+    font-size: 1.66666666rem;
+    color: #333;
+    display:-webkit-box;
   }
-
-  .des-card-describe {
-    //height: 30%;
-    width: 85%;
-    max-width: 85%;
-    color: #9E9E9E;
-    font-size: .8em;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis!important;
-
+  .my-li-right-t-name1{
+    -webkit-box-flex:1;
+    height: 2.5rem;
+    line-height: 2.33333333rem;
+    font-size: 1.66666666rem;
+    color: #333;
+    display:-webkit-box;
+    overflow:hidden;
+    white-space:normal!important;
+    text-overflow:ellipsis;
+    word-wrap:break-word;
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;
   }
-
-  .favorite-count-container{
+  .my-li-right-t-r1{
+    width:6.66666666rem;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    text-align: right;
+    font-family: helvetica;
   }
-
-  .favorite-count-container button ion-icon{
-    color: red;
+  .my-li-right-c1{
+    margin-top: 0.41666666rem;
+    height: 1.66666666rem;
+    font-size: 1.33333333rem;
+    color: #999;
+    display:-webkit-box;
+    overflow:hidden;
+    white-space:normal!important;
+    text-overflow:ellipsis;
+    word-wrap:break-word;
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;
   }
-
-  ion-buttons botton .button-inner{
-    color: whitesmoke!important;
+  .my-li-right-b1{
+    height: 2.08333333rem;
+    font-size: 1.33333333rem;
+    line-height: 1.66666666rem;
+    color: #666;
+    display:-webkit-box;
+    overflow:hidden;
+    white-space:normal!important;
+    text-overflow:ellipsis;
+    word-wrap:break-word;
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;
   }
-
 
 }

@@ -16,6 +16,7 @@ import {CommentOrderPage} from "./order/comment-order/comment-order";
 import {OrderModule} from "./order/order.module";
 import {CustomIconsModule} from "ionic2-custom-icons";
 import {ImModule} from "../im/im.module";
+import {DesingerListComponent} from "./desinger-list/desinger-list";
 
 @NgModule({
     imports: [IonicPageModule.forChild(CommonModulePage),
@@ -23,7 +24,7 @@ import {ImModule} from "../im/im.module";
         DesignerMeModule,
         OrderModule,
         ImModule,
-        CustomIconsModule // Add this!
+        CustomIconsModule ,// Add this!
     ],
     declarations: [
         CommonModulePage,
@@ -34,6 +35,7 @@ import {ImModule} from "../im/im.module";
         AboutPage,
         ResetPasswordPage,
         PublishTaskPage,
+        DesingerListComponent
     ],
     entryComponents: [
         CommonModulePage,
@@ -44,6 +46,7 @@ import {ImModule} from "../im/im.module";
         AboutPage,
         ResetPasswordPage,
         PublishTaskPage,
+        DesingerListComponent
     ],
     exports: [
         AccountSecurityPage,
@@ -55,7 +58,8 @@ import {ImModule} from "../im/im.module";
         CommonModulePage,
         ResetPasswordPage,
         PublishTaskPage,
-        CommentOrderPage
+        CommentOrderPage,
+        DesingerListComponent
     ],
     providers: []
 })
