@@ -47,22 +47,22 @@ page-welcome {
 
   .logo {
     font-size: 1.8rem;
+    img {
+      max-height: 100%;
+      max-width: 100%;
+      margin: 27% 0 0;
+      padding-left: 0%;
+    }
+    div {
+      color: map_get($colors, login-des);
+      text-align: center;
+      margin-bottom: 3.5em;
+      font-family:华文楷体, serif;
+      font-size: 1.2em;
+      font-weight: 400;
+    }
   }
 
-  .logo div {
-    color: map_get($colors, login-des);
-    text-align: center;
-    margin-bottom: 3.5em;
-    font-size: 1.2em;
-    font-weight: 400;
-  }
-
-  .logo img {
-    max-height: 100%;
-    max-width: 100%;
-    margin: 27% 0 0;
-    padding-left: 0%;
-  }
 
   .desbutton, .empbutton {
     height: 4.5rem;

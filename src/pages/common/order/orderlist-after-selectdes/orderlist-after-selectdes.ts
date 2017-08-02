@@ -13,7 +13,7 @@ declare let initializeFontSize: any
 export class OrderListAfterSelectDesignerPage {
 
 
-    orderlist: Array<{ img, title, fav_count, time }> = [
+    orderlist: Array<{type, img, title, fav_count, time }> = [
         {
             type:1,
             img: 'assets/img/fav-avatar.png',

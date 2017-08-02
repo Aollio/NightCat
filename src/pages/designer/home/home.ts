@@ -33,7 +33,7 @@ export class DesignerHomePage {
 
     ]
 
-    currentType: number = 3;
+    currentType: number = 0;
 
     messagePage: any = NotificationsPage;
 
