@@ -133,7 +133,6 @@ export class RegisterPage {
         this.navCtrl.push(LoginPage);
     }
 
-
     emojiarray: Array<any> = [
         'assets/img/if_cat_emoji_face_smily-9-01_2361853.png',
         "assets/img/if_cat_emoji_face_smily-20-01_2361861.png",
