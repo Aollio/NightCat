@@ -1,6 +1,6 @@
 <div class="my-list">
-    <div *ngFor="let item of orderlist">
-        <div class="my-li" *ngIf="type==item.status" (click)="openProjectProcess(item)">
+    <div class="my-ul" *ngFor="let item of orderlist">
+        <div class="my-li"*ngIf="type==item.type" (click)="openProjectProcess()">
             <div class="my-li-img">
                 <img [src]=item.img alt=""/>
             </div>
@@ -14,16 +14,19 @@
                 </div>
             </div>
         </div>
+        <div class="my-bottom">
+            <div class="my-bottom-li act">提交订单</div>
+            <div class="my-bottom-li">修改订单</div>
+        </div>
     </div>
 </div>
-
 
 <ion-content *ngIf="isEmpty()" class="ioncontent">
     <div class="null-project">
         <img src="assets/img/project-null.png">
     </div>
     <p class="null-porject-toast">
-        当前没有工程, 海量资深工程师任你选
+        当前没有工程, 海量资深设计师任你选
     </p>
 
     <button ion-button class="null-project-button" (click)="openFindOrder()">寻找项目</button>
