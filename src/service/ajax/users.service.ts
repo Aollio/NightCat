@@ -7,19 +7,69 @@ import 'rxjs/add/operator/toPromise';
 import {NetworkService} from "../network.service";
 import {ErrorObserver} from "rxjs/Observer";
 import {KeynoteService} from "../keynote.service";
+import {Util} from "../util";
 
 @Injectable()
 export class UsersService {
 
     private KEYNOTE: boolean;
 
+    private users;
+
     constructor(public keynote: KeynoteService,
                 private http: NetworkService,
                 private urls: HttpUrls,
-                public shared: SharedService) {
+                public shared: SharedService,
+                public util: Util) {
         this.KEYNOTE = shared.KEYNOTE;
+        this.users = this.keynote.users
     }
 
+    getUserByUid(uid) {
+        for (let index in this.users) {
+            if (this.users[index].uid == uid) {
+                return this.users[index];
+            }
+        }
+    }
+
+    async getUsersByRole(isDesigner: boolean) {
+        let result = []
+        for (let index in this.users) {
+            if (this.users[index].role == 0 && isDesigner) {
+                result.push(this.users[index])
+            } else if (this.users[index].role == 1 && !isDesigner) {
+                result.push(this.users[index])
+            }
+        }
+        return result;
+    }
+
+    async getUsersByPhone(phone) {
+        for (let index in this.users) {
+            if (this.users[index].phone == phone) {
+                return this.users[index];
+            }
+        }
+    }
+
+
+    async loginWithKeynote(user) {
+        if (user.phone == '4'
+            || user.phone == '1'
+            || user.phone == '2'
+            || user.phone == '3') {
+            let loginuser = await this.getUsersByPhone(user.phone)
+            this.shared.currentModuleIsDesigner = loginuser.role == 0;
+            this.shared.TOKEN = loginuser.uid
+            this.shared.currentUserId = loginuser.uid
+            this.util.updateObj(this.shared.getCurrentUser(), loginuser)
+            return loginuser;
+        }
+
+        throw {status: 500, message: "演示模式登录手机号只支持0,1,2,3. 密码任意"}
+
+    }
 
     async getToken(user) {
         if (this.KEYNOTE) {
@@ -48,6 +98,12 @@ export class UsersService {
     async getUser(uid): Promise<any> {
         if (this.KEYNOTE) {
             console.log('演示模式, 返回默认用户');
+            for (let index in this.users) {
+                let temp = this.users[index];
+                if (temp.uid == uid) {
+                    return temp;
+                }
+            }
             return Promise.resolve(this.keynote.user)
         }
         return await this.http.getWithToken(this.urls.tokens_url, {uid: uid})
@@ -79,7 +135,6 @@ export class UsersService {
         return user
     }
 
-
     async register(user) {
 
         if (this.KEYNOTE) {
@@ -97,5 +152,6 @@ export class UsersService {
         console.log('注册用户成功', newuser)
         return newuser
     }
+
 
 }

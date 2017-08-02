@@ -5,7 +5,7 @@ import {SharedService} from "../../../../service/share.service";
 import {User} from "../../../../model/user";
 import {CaseDetailPage} from "../casedetail/casedetail";
 import {ChatPage} from "../../../im/chat/chat";
-import { AlertController } from 'ionic-angular';
+import {AlertController} from 'ionic-angular';
 
 declare let initializeFontSize: any
 
@@ -36,11 +36,10 @@ export class DesignerMeDetailPage {
 
     constructor(public navCtrl: NavController,
                 public shared: SharedService,
-                public alertCtrl:AlertController,
+                public alertCtrl: AlertController,
                 public navParams: NavParams) {
         this.isDesigner = navParams.get('isDesigner');
-        this.user = navParams.get('user')||shared.getCurrentUser();
-        // this.user = shared.getCurrentUser();
+        this.user = navParams.get('user') || shared.getCurrentUser();
 
     }
 
@@ -73,7 +72,7 @@ export class DesignerMeDetailPage {
         this.navCtrl.push(ChatPage, operation)
     }
 
-    showHelp(){
+    showHelp() {
         let alert = this.alertCtrl.create({
             title: 'star level',
             subTitle: 'this is ...',

@@ -1,7 +1,7 @@
 import {Component, ViewChild} from '@angular/core';
 import {NavController, NavParams, Platform, ToastController} from 'ionic-angular';
 import {LoginPage} from "../common/login/login";
-import {OrderDetailPage} from "../common/order/orderdetail/orderdetail"
+import {ProjectDetailPage} from "../common/order/orderdetail/orderdetail"
 import {OrderListComponent} from "../designer/orderlist/orderlist";
 import {EmployerModulePage} from "../employer/employer";
 import {DesignerModulePage} from "../designer/designer";
@@ -58,7 +58,7 @@ export class WelcomePage {
     /**
      * 这是主页的快速入口，用于开发
      * */
-    orderDetailPage: any = OrderDetailPage;
+    orderDetailPage: any = ProjectDetailPage;
     orderListComponent: any = OrderListComponent;
 
     employerHome: any = EmployerModulePage;

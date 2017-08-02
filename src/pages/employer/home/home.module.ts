@@ -2,18 +2,18 @@ import {NgModule} from "@angular/core";
 import {IonicModule} from "ionic-angular";
 import {AppointPage} from "./appoint/appoint";
 import {DesingerTypePage} from "./desinger-types/desinger-types";
-import {DesignerTypesPage} from "./designer/designertypes";
+import {DesignerListPage} from "./designer/designer-list";
 import {CommonModule} from "@angular/common";
 import {CommonPageModule} from "../../common/commonpage.module";
 
 @NgModule({
     declarations: [
-        DesignerTypesPage,
+        DesignerListPage,
         AppointPage,
         DesingerTypePage
     ],
     entryComponents: [
-        DesignerTypesPage,
+        DesignerListPage,
         AppointPage,
         DesingerTypePage
     ],
@@ -23,7 +23,7 @@ import {CommonPageModule} from "../../common/commonpage.module";
         CommonPageModule
     ],
     exports: [
-        DesignerTypesPage,
+        DesignerListPage,
         DesingerTypePage
     ]
 

@@ -39,10 +39,10 @@ export class EmployerMePage {
         return JSON.stringify(obj) == JSON.stringify({});
     }
 
-    openLoginPage($event) {
+    openLoginPage(event) {
         let profileModal = this.modalCtrl.create(LoginPage);
         profileModal.present();
-        $event.stopPropagation();
+        event.stopPropagation();
         // this.navCtrl.push(LoginPage);
     }
 

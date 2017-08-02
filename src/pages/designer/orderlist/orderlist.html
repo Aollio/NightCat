@@ -1,62 +1,61 @@
-
-    <!--<ion-card (click)="openOrderDetail('000000111111')">-->
-        <!--<ion-card-content>-->
-            <!--<div class="avatar"></div>-->
-            <!--<div class="detail">-->
-                <!--<p class="title">园区导视，布点规划，文化导入，精神堡垒，展厅，室内软装设计等许多内容、不一一展示</p>-->
-                <!--<ion-row>-->
-                    <!--<ion-col class="price" align-self-center left>-->
-                        <!--¥&nbsp;&nbsp;500-->
-                    <!--</ion-col>-->
-                    <!--<ion-col class="getorder" align-self-center right>-->
-                        <!--马上抢单&nbsp;>-->
-                    <!--</ion-col>-->
-                <!--</ion-row>-->
-                <!--<ion-row>-->
-                    <!--<ion-col class="like-amount" align-self-center left>-->
-                        <!--8人收藏-->
-                    <!--</ion-col>-->
-                    <!--<ion-col class="deadtime" align-self-center right>-->
-                        <!--6天1小时后截止-->
-                    <!--</ion-col>-->
-                <!--</ion-row>-->
-                <!--<div class="progress">-->
-                    <!--<div class="progress-bar  progress-bar-striped11 " style="width: 85%;">-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</ion-card-content>-->
-    <!--</ion-card>-->
-    <div class="my-list" >
-        <div class="my-ul"
-             (click)="openOrderDetail('000000111111')"
-        *ngFor="let item of  caseArray">
-            <div class="my-li">
-                <div class="my-li-img">
-                    <img src="{{item.caseImg}}"/>
+<!--<ion-card (click)="openProjectDetail('000000111111')">-->
+<!--<ion-card-content>-->
+<!--<div class="avatar"></div>-->
+<!--<div class="detail">-->
+<!--<p class="title">园区导视，布点规划，文化导入，精神堡垒，展厅，室内软装设计等许多内容、不一一展示</p>-->
+<!--<ion-row>-->
+<!--<ion-col class="price" align-self-center left>-->
+<!--¥&nbsp;&nbsp;500-->
+<!--</ion-col>-->
+<!--<ion-col class="getorder" align-self-center right>-->
+<!--马上抢单&nbsp;>-->
+<!--</ion-col>-->
+<!--</ion-row>-->
+<!--<ion-row>-->
+<!--<ion-col class="like-amount" align-self-center left>-->
+<!--8人收藏-->
+<!--</ion-col>-->
+<!--<ion-col class="deadtime" align-self-center right>-->
+<!--6天1小时后截止-->
+<!--</ion-col>-->
+<!--</ion-row>-->
+<!--<div class="progress">-->
+<!--<div class="progress-bar  progress-bar-striped11 " style="width: 85%;">-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</ion-card-content>-->
+<!--</ion-card>-->
+<div class="my-list">
+    <div class="my-ul"
+         (click)="openProjectDetail(item)"
+         *ngFor="let item of projects">
+        <div class="my-li">
+            <div class="my-li-img">
+                <img src="{{item.img_url}}"/>
+            </div>
+            <div class="my-li-right">
+                <div class="my-li-right-t">
+                    <div class="my-li-right-t-name">
+                        {{item.content}}
+                    </div>
                 </div>
-                <div class="my-li-right">
-                    <div class="my-li-right-t">
-                        <div class="my-li-right-t-name">
-                           {{item.caseDesc}}
-                        </div>
-                    </div>
-                    <div class="my-li-right-c">
-                        <div class="my-li-right-c-l">¥{{item.caseMoney}}</div>
-                        <div class="my-li-right-c-r">马上抢单 ></div>
-                    </div>
-                    <div class="my-li-right-b">
-                        <div class="my-li-right-b-l">{{item.caseFav}}人收藏</div>
-                        <div class="my-li-right-b-r">{{item.caseTime}}后截止</div>
-                    </div>
-                    <div class="my-bar">
-                        <div class="my-bar-l"></div>
-                        <div class="my-bar-r"></div>
-                    </div>
+                <div class="my-li-right-c">
+                    <div class="my-li-right-c-l">¥{{item.budget}}</div>
+                    <div class="my-li-right-c-r">马上抢单 ></div>
+                </div>
+                <div class="my-li-right-b">
+                    <div class="my-li-right-b-l">{{item.fav_count}}人收藏</div>
+                    <div class="my-li-right-b-r">{{item.due_time}}后截止</div>
+                </div>
+                <div class="my-bar">
+                    <div class="my-bar-l"></div>
+                    <div class="my-bar-r"></div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 
 
