@@ -2,7 +2,10 @@ import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {AbsCommonPage} from "../../../abs";
 import {SharedService} from "../../../../../service/share.service";
-declare let initializeFontSize:any;
+import {ProjectDetailPage} from "../../orderdetail/orderdetail";
+
+declare let initializeFontSize: any;
+
 /*
  * 订单详情
  * */
@@ -13,19 +16,30 @@ declare let initializeFontSize:any;
 export class OrderProcessPreSelectedPage extends AbsCommonPage {
 
     order_id: string;
+    isGrab;
 
     constructor(public navCtrl: NavController,
-                // public navParams: NavParams,
+                public navParams: NavParams,
                 public share: SharedService) {
         super(share);
+        this.isGrab = navParams.get('isGrab');
     }
 
-    ionViewDidEnter(){
+    ionViewDidEnter() {
         initializeFontSize()
         console.log("com")
     }
+
     open(page, option) {
         this.navCtrl.push(page, {})
+    }
+
+    goback() {
+        if (this.isGrab) {
+            // this.navCtrl.popTo(ProjectDetailPage);
+            this.navCtrl.popToRoot({animate:true});
+        }
+        // this.navCtrl.pop();
     }
 
 }

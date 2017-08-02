@@ -1,35 +1,39 @@
 <ion-header>
     <!--<ion-title>登陆</ion-title>-->
 </ion-header>
-<ion-content padding class="ion-content-class">
-    <button ion-button float-end clear icon-only (click)="close()">
-        <ion-icon name="close"></ion-icon>
-    </button>
+<ion-content class="ion-content-class">
     <div class="my-bgi">
         <img src="assets/img/SelectOption.png"/>
     </div>
-    <div class="null-only-height">欢迎回来！</div>
+    <div class="padding">
+        <button ion-button float-end clear icon-only (click)="close()">
+            <ion-icon name="close"></ion-icon>
+        </button>
 
-    <div class="name">
-        <ion-item>
-            <ion-label floating >请输入账号</ion-label>
-            <ion-input type="text" [(ngModel)]="user.phone" [ngModelOptions]="{standalone: true}"></ion-input>
-        </ion-item>
+        <div class="null-only-height">欢迎回来！</div>
+
+        <div class="name">
+            <ion-item>
+                <ion-label floating >请输入账号</ion-label>
+                <ion-input type="text" [(ngModel)]="user.phone" [ngModelOptions]="{standalone: true}"></ion-input>
+            </ion-item>
+        </div>
+
+        <div class="password">
+            <ion-icon class="icondiv" name="ios-help-circle"></ion-icon>
+            <ion-item>
+                <ion-label floating >请输入密码</ion-label>
+                <ion-input type="password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}"></ion-input>
+            </ion-item>
+        </div>
+
+        <button ion-button round class="login-btn" (click)="login()">登录</button>
+
+
+        <button ion-button clear full class="forget-passowrd" (click)="openResetPasswordPage()">
+            忘记密码？
+        </button>
+        <div class="tip">没有账号，去<a class="order-id" (click)="openRegisterPage()">注册</a></div>
     </div>
 
-    <div class="password">
-        <ion-icon class="icondiv" name="ios-help-circle"></ion-icon>
-        <ion-item>
-            <ion-label floating >请输入密码</ion-label>
-            <ion-input type="password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}"></ion-input>
-        </ion-item>
-    </div>
-
-    <button ion-button round class="login-btn" (click)="login()">登录</button>
-
-
-    <button ion-button clear full class="forget-passowrd" (click)="openResetPasswordPage()">
-        忘记密码？
-    </button>
-    <div class="tip">没有账号，去<a class="order-id" (click)="openRegisterPage()">注册</a></div>
 </ion-content>

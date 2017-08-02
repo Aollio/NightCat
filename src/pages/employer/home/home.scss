@@ -1,7 +1,5 @@
 page-employer-home {
 
-
-
   .my-header {
     font-size: 1rem;
   }
@@ -49,6 +47,7 @@ page-employer-home {
   .clearfloat {
     zoom: 1
   }
+
   .my-li {
     width: 11rem;
     //height: 10rem;
@@ -65,14 +64,21 @@ page-employer-home {
     background: -moz-linear-gradient(top, #595959, #c1c1c1); /* Firefox 3.6 - 15 */
     background: linear-gradient(to top, #595959, #c1c1c1); /* 标准的语法 */
   }
-  .my-li:first-child {
 
+  .my-li:active{
     box-shadow: 0 5px 20px map_get($colors, emp-primary);
     background: -webkit-linear-gradient(top, map_get($colors, emp-primary), #fac1c7); /* Safari 5.1 - 6.0 */
     background: -o-linear-gradient(top, map_get($colors, emp-primary), #fac1c7); /* Opera 11.1 - 12.0 */
     background: -moz-linear-gradient(top, map_get($colors, emp-primary), #fac1c7); /* Firefox 3.6 - 15 */
     background: linear-gradient(to top, map_get($colors, emp-primary), #fac1c7); /* 标准的语法 */
+  }
 
+  .my-li:first-child {
+    box-shadow: 0 5px 20px map_get($colors, emp-primary);
+    background: -webkit-linear-gradient(top, map_get($colors, emp-primary), #fac1c7); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(top, map_get($colors, emp-primary), #fac1c7); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(top, map_get($colors, emp-primary), #fac1c7); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to top, map_get($colors, emp-primary), #fac1c7); /* 标准的语法 */
   }
   .my-left {
     margin-left: 1rem;
