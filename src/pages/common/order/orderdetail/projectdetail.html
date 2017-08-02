@@ -1,10 +1,10 @@
 <ion-header no-border>
     <ion-navbar [color]="navColor" no-border>
-        <ion-title>订单详情</ion-title>
+        <ion-title>项目详情</ion-title>
         <ion-buttons end>
-        <button ion-button (click)="open(orderrocessPreSelectdesPage)">
-        订单动态
-        </button>
+            <button ion-button (click)="open(orderrocessPreSelectdesPage)">
+                项目动态
+            </button>
         </ion-buttons>
     </ion-navbar>
 </ion-header>
@@ -16,26 +16,17 @@
             预计完成:
         </ion-col>
         <ion-col class="respect-content more-weight" col-8>
-            146 Hour
-        </ion-col>
-    </ion-row>
-    <ion-row class="header-row-last">
-        <ion-col class="respect-title more-weight" col-4>
-            <ion-icon name="ios-paper-outline"></ion-icon>
-            交易状态:
-        </ion-col>
-        <ion-col class="respect-content order-state" col-8>
-            未接单
+            {{project.period}} Hour
         </ion-col>
     </ion-row>
     <div class="item-divider-cus-20"></div>
-    <ion-item no-lines class="person-item" (click)="openUserDetail()">
+    <ion-item no-lines class="person-item">
         <!--<ion-icon name="person" item-start></ion-icon>-->
         <ion-avatar class="comment-avatar" item-start>
             <img src="/assets/img/first.png">
         </ion-avatar>
-        <h3>小王子</h3>
-        <ion-icon class="person-arrow-icon" name="arrow-forward" item-end></ion-icon>
+        <h3>{{ creator.nickname}}</h3>
+        <!--<ion-icon class="person-arrow-icon" name="arrow-forward" item-end></ion-icon>-->
     </ion-item>
 
     <ion-row>
@@ -43,7 +34,7 @@
             订单标题:
         </ion-col>
         <ion-col class="respect-content more-weight" col-9>
-            园艺设计, Logo设计
+            {{project.title}}
         </ion-col>
     </ion-row>
     <ion-row>
@@ -51,7 +42,7 @@
             订单预算:
         </ion-col>
         <ion-col class="respect-content order-price" col-9>
-            4000元
+            {{project.budget}}元
         </ion-col>
     </ion-row>
     <ion-row>
@@ -59,7 +50,7 @@
             订单类型:
         </ion-col>
         <ion-col class="respect-content" col-9>
-            工艺设计
+            {{project.type}}
         </ion-col>
     </ion-row>
     <ion-row>
@@ -67,7 +58,7 @@
             设计面积:
         </ion-col>
         <ion-col class="respect-content" col-9>
-            20000平方米
+            {{project.area_count}}平方米
         </ion-col>
     </ion-row>
     <ion-row>
@@ -75,7 +66,7 @@
             设计深度:
         </ion-col>
         <ion-col class="respect-content" col-9>
-            146
+            {{project.depth}}
         </ion-col>
     </ion-row>
     <ion-row>
@@ -83,7 +74,7 @@
             工时:
         </ion-col>
         <ion-col class="respect-content" col-9>
-            146
+            {{project.period}}
         </ion-col>
     </ion-row>
     <div class="item-divider-cus-10"></div>
@@ -101,8 +92,7 @@
             订单详情:
         </ion-col>
         <ion-col class="respect-content" col-9>
-            结构设计要求如下：1.按照所提供的三维模型设计达到指定功能要求。
-            2.复杂完整的模型图。3.根据手绘完成设计图
+            {{project.content}}
         </ion-col>
     </ion-row>
 
@@ -123,11 +113,12 @@
 
 <ion-footer class="footer-btns" *ngIf="isDesigner">
     <button class="footer-clear-btn" clear ion-button color="primary" (click)="collect()" icon-start style="width: 50%">
-        <ion-icon name="ios-star-outline"  *ngIf="collectstate===0"></ion-icon>
+        <ion-icon name="ios-star-outline" *ngIf="collectstate===0"></ion-icon>
         <ion-icon name="ios-star" *ngIf="collectstate===1" class="order-state"></ion-icon>
         收藏
     </button>
-    <button class="footer-clear-btn" (click)="openChat({sessionId: 'hgyuguyg'})" clear ion-button color="primary" icon-start style="width: 50%">
+    <button class="footer-clear-btn" (click)="openChat({sessionId: 'hgyuguyg'})" clear ion-button color="primary"
+            icon-start style="width: 50%">
         <ion-icon name="text-outline"></ion-icon>
         喵喵
     </button>
@@ -140,6 +131,6 @@
 
     <button ion-button color="emp-primary" (click)="open(pay)" style="width: 30%!important;">支付</button>
     <button ion-button color="emp-primary" (click)="open(commentorder)" style="width: 30%!important;">确认结单</button>
-    <button ion-button color="emp-primary"  style="width: 30%!important;">延时接单</button>
+    <button ion-button color="emp-primary" style="width: 30%!important;">延时接单</button>
 
 </ion-footer>

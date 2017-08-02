@@ -10,6 +10,7 @@ import {ProjectsService} from "../../../../service/ajax/projects.service";
 import {Util} from "../../../../service/util";
 import {GrabOrderPage} from "../grab-order/grab-order";
 import {OrderProcessPreSelectedPage} from "../orderprocess/order-process-pre-selectdes/order-process-pre-selectdes";
+import {UsersService} from "../../../../service/ajax/users.service";
 
 declare let initializeFontSize: any
 /*
@@ -18,12 +19,16 @@ declare let initializeFontSize: any
 
 // @IonicPage()
 @Component({
-    selector: 'page-orderdetail',
-    templateUrl: 'orderdetail.html',
+    selector: 'page-projectdetail',
+    templateUrl: 'projectdetail.html',
 })
-export class OrderDetailPage extends AbsCommonPage {
+export class ProjectDetailPage extends AbsCommonPage {
 
-    order_id: string;
+
+    project;
+
+    creator = {};
+
     isDesigner: boolean;
     collectstate: any = 0;
     pay: any = PayPage;
@@ -37,23 +42,22 @@ export class OrderDetailPage extends AbsCommonPage {
     constructor(public navCtrl: NavController,
                 public navParams: NavParams,
                 public share: SharedService,
-                private projsServ:ProjectsService,
-                private util:Util) {
+                private projsServ: ProjectsService,
+                private userServ: UsersService,
+                private util: Util) {
         super(share);
-        this.order_id = navParams.get('order_id');
+        this.project = navParams.get('project');
         this.isDesigner = share.currentModuleIsDesigner;
+        this.util.updateObj(this.creator, this.userServ.getUserByUid(this.project.create_by))
     }
 
     ionViewDidEnter() {
         initializeFontSize()
-        console.log("com")
     }
 
-    openUserDetail() {
-        this.navCtrl.push(DesignerMeDetailPage, {})
-
-    }
-
+    // openUserDetail() {
+    //     this.navCtrl.push(DesignerMeDetailPage, {})
+    // }
 
 
     open(page, option) {
@@ -67,18 +71,20 @@ export class OrderDetailPage extends AbsCommonPage {
         this.collectstate = (++this.collectstate) % 2;
     }
 
-    grabOrder(){
+    grabOrder() {
         this.util.createLoading('正在抢单中')
         this.projsServ.grabProj('this is project\'s id')
-            .then(() => {})
-            .catch(error => {})
+            .then(() => {
+            })
+            .catch(error => {
+            })
     }
 
     openChat(operation) {
-        this.navCtrl.push(ChatPage,operation);
+        this.navCtrl.push(ChatPage, operation);
     }
 
-    openGrabOrderPage(orderId){
-        this.navCtrl.push(GrabOrderPage,orderId);
+    openGrabOrderPage(orderId) {
+        this.navCtrl.push(GrabOrderPage, orderId);
     }
 }

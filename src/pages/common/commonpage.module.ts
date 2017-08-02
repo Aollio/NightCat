@@ -2,7 +2,7 @@ import {NgModule} from "@angular/core";
 import {SlideMenuComponment} from "./slidemenu/slidemenu";
 import {IonicPageModule} from "ionic-angular";
 import {AccountSecurityPage} from "./securitycenter/accountsecurity/accountsecurity";
-import {OrderDetailPage} from "./order/orderdetail/orderdetail";
+import {ProjectDetailPage} from "./order/orderdetail/orderdetail";
 import {SupportPage} from "./support/support";
 import {RegisterPage} from "./register/register";
 import {LoginPage} from "./login/login";

@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {OrderDetailPage} from "../../common/order/orderdetail/orderdetail";
+import {ProjectDetailPage} from "../../common/order/orderdetail/orderdetail";
 import {PublishTaskPage} from "../../common/publishtask/publishtask";
 import {SharedService} from "../../../service/share.service";
 
@@ -24,7 +24,7 @@ export class NotificationsPage {
      * 打开订单详情页面，参数为订单id
      * */
     openOrderDetail(order_id) {
-        this.navCtrl.push(OrderDetailPage, {
+        this.navCtrl.push(ProjectDetailPage, {
             order_id: order_id
         })
     }

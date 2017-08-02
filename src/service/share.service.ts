@@ -35,7 +35,7 @@ export class SharedService {
     constructor(private event: Events,
                 private util:Util,
                 private keynote: KeynoteService) {
-        event.subscribe('backdoor', () => {
+        event.subscribe('backdoor', (user) => {
             console.log('receive \'backdoor\' event');
             this.keynote.initDefaultUser(true, this);
         })
