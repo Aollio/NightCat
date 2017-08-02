@@ -40,6 +40,7 @@ import {OrderProcessWaitcomment} from "../common/order/orderprocess/order-proces
 
 // import {Waitcomment} from "../common/order/orderprocess/order-process-waitcomment/waitcomment";
 
+declare let initializeFontSize: any;
 
 @Component({
     selector: 'page-welcome',
@@ -108,6 +109,11 @@ export class WelcomePage {
         if (one != null) {
             this.state = one;
         }
+    }
+
+    ionViewDidEnter() {
+        initializeFontSize();
+        console.log("com")
     }
 
     openImagePicker() {

@@ -60,7 +60,7 @@
     <div class="preBudget">
         <ion-item>
             <ion-label floating>预算 *</ion-label>
-            <ion-input [(ngModel)]="event.preBudget" type="text"></ion-input>
+            <ion-input [(ngModel)]="event.preBudget" type="number"></ion-input>
         </ion-item>
         <ion-icon end name="logo-yen"></ion-icon>
     </div>
@@ -94,44 +94,45 @@
         <ion-label floating>个数</ion-label>
         <ion-input [(ngModel)]="event.count" type="text"></ion-input>
     </ion-item>
-    <!--<div class="blank-10px"></div>-->
-    <!--<ion-item class="my-item" no-lines>-->
-        <!--<ion-label fixed [color]='maincolor'>* 设计深度</ion-label>-->
-    <!--</ion-item>-->
+    <div class="blank-10px"></div>
+    <ion-item class="my-item" no-lines>
+        <ion-label fixed [color]='maincolor'>* 设计深度</ion-label>
+    </ion-item>
     <!--<div style="width: 50%">-->
-    <!--<ion-item class="my-item" no-lines>-->
-        <!--<ion-segment [(ngModel)]="relationship" [color]="maincolor">-->
-            <!--<ion-segment-button small value="key">-->
-                <!--方案-->
-            <!--</ion-segment-button>-->
-            <!--<ion-segment-button small value="add">-->
-                <!--扩出-->
-            <!--</ion-segment-button>-->
-            <!--<ion-segment-button small value="action">-->
-                <!--施工-->
-            <!--</ion-segment-button>-->
-        <!--</ion-segment>-->
-    <!--</ion-item>-->
-    <ion-list radio-group style="margin-bottom: 0">
-        <ion-list-header>
-           设计深度 *
-        </ion-list-header>
+    <ion-item class="my-item" no-lines>
+        <ion-segment [(ngModel)]="relationship" [color]="maincolor">
+            <ion-segment-button small value="key">
+                方案
+            </ion-segment-button>
+            <ion-segment-button small value="add">
+                扩出
+            </ion-segment-button>
+            <ion-segment-button small value="action">
+                施工
+            </ion-segment-button>
+        </ion-segment>
+    </ion-item>
 
-        <ion-item>
-            <ion-label>方案</ion-label>
-            <ion-radio checked="true" value="go"></ion-radio>
-        </ion-item>
+    <!--<ion-list radio-group style="margin-bottom: 0">-->
+        <!--<ion-list-header>-->
+           <!--设计深度 *-->
+        <!--</ion-list-header>-->
 
-        <ion-item>
-            <ion-label>扩出</ion-label>
-            <ion-radio value="rust"></ion-radio>
-        </ion-item>
+        <!--<ion-item>-->
+            <!--<ion-label>方案</ion-label>-->
+            <!--<ion-radio checked="true" value="go"></ion-radio>-->
+        <!--</ion-item>-->
 
-        <ion-item>
-            <ion-label>施工</ion-label>
-            <ion-radio value="Python"></ion-radio>
-        </ion-item>
-    </ion-list>
+        <!--<ion-item>-->
+            <!--<ion-label>扩出</ion-label>-->
+            <!--<ion-radio value="rust"></ion-radio>-->
+        <!--</ion-item>-->
+
+        <!--<ion-item>-->
+            <!--<ion-label>施工</ion-label>-->
+            <!--<ion-radio value="Python"></ion-radio>-->
+        <!--</ion-item>-->
+    <!--</ion-list>-->
     <div class="blank-10px"></div>
     <!--<ion-item class="my-item" no-lines>-->
         <!--<ion-label fixed [color]='maincolor'>* 工时</ion-label>-->
