@@ -1,8 +1,8 @@
 page-notifications {
 
   .msg-header {
-    border-bottom-color: #c9cacf;
-    border-bottom-style: solid;
+  //  border-bottom-color: #c9cacf;
+   // border-bottom-style: solid;
     border-bottom-width: 1px;
     padding-bottom: .2em;
     font-size: .9em;
@@ -10,13 +10,13 @@ page-notifications {
 
   .msg-type {
     float: left;
-    color: $des-primary;
+    //color: $des-primary;
     font-size: 1em;
   }
 
   .msg-time {
     float: right;
-    color: #eaeaea;
+    color: #999;
   }
 
   .content {
