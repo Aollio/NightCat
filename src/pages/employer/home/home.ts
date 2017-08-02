@@ -5,6 +5,8 @@ import {AppointPage} from "./appoint/appoint";
 import {DesingerTypePage} from "./desinger-types/desinger-types";
 import {DesignerListPage} from "./designer/designer-list";
 import {HelpChoosePage} from "../helpchoose/helpchoose";
+import {SharedService} from "../../../service/share.service";
+import {Util} from "../../../service/util";
 
 declare let initializeFontSize: any
 
@@ -15,17 +17,23 @@ declare let initializeFontSize: any
 export class EmployerHomePage {
 
     static isfirstCome=true;
+    user={};
 
     ionViewDidEnter() {
         initializeFontSize()
+        this.util.updateObj(this.user,this.shared.getCurrentUser());
+
     }
 
     designerMeDetailPage: DesignerMeDetailPage;
 
 
     constructor(public navCtrl: NavController,
+                private shared:SharedService,
+                private util:Util,
                 public alertCtrl: AlertController) {
         this.showAlert();
+        this.util.updateObj(this.user,shared.getCurrentUser());
     }
 
     showAlert() {
