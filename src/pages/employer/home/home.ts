@@ -4,6 +4,8 @@ import {DesignerMeDetailPage} from "../../designer/me/medetail/medetail";
 import {AppointPage} from "./appoint/appoint";
 import {DesingerTypePage} from "./desinger-types/desinger-types";
 import {DesignerTypesPage} from "./designer/designertypes";
+import {HelpChoosePage} from "../helpchoose/helpchoose";
+import {AlertController} from "_ionic-angular@3.5.0@ionic-angular/components/alert/alert-controller";
 
 declare let initializeFontSize: any
 
@@ -13,6 +15,7 @@ declare let initializeFontSize: any
 })
 export class EmployerHomePage {
 
+    static isfirstCome=true;
 
     ionViewDidEnter() {
         initializeFontSize()
@@ -21,7 +24,19 @@ export class EmployerHomePage {
     designerMeDetailPage: DesignerMeDetailPage;
 
 
-    constructor(public navCtrl: NavController) {
+    constructor(public navCtrl: NavController,
+                public alertCtrl: AlertController) {
+        this.showAlert();
+    }
+
+    showAlert() {
+        // todo  第一次进入提示抢单信息
+        let alert = this.alertCtrl.create({
+            title: 'new message!',
+            subTitle: '有新设计师接单，请查看',
+            buttons: ['OK']
+        });
+        alert.present();
     }
 
 

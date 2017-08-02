@@ -1,7 +1,7 @@
 <ion-header>
     <ion-navbar [color]="maincolor" hideBackButton>
         <ion-buttons start>
-            <button ion-button navPop>
+            <button ion-button (click)="goBack()">
                 取消
             </button>
         </ion-buttons>
@@ -43,11 +43,11 @@
     <!--</ion-item>-->
     <ion-item>
         <ion-label floating>* 项目标题</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" [(ngModel)]="event.title"></ion-input>
     </ion-item>
     <div class="blank-10px"></div>
     <ion-item class="my-item" no-lines>
-        <ion-textarea rows="5" placeholder="详细描述一下任务的内容"></ion-textarea>
+        <ion-textarea [(ngModel)]="event.description" rows="5" placeholder="详细描述一下任务的内容"></ion-textarea>
         <!--<div>-->
         <!--<img src="assets/img/jiahao.png" height="200" width="200"/>-->
         <!--</div>-->
@@ -59,7 +59,7 @@
     <!--</ion-item>-->
     <ion-item>
         <ion-label floating>* 预算</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input [(ngModel)]="event.preBudget" type="text"></ion-input>
     </ion-item>
     <div class="blank-10px"></div>
 
@@ -74,7 +74,7 @@
     <!--</ion-item>-->
     <ion-item>
         <ion-label floating>设计面积</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input [(ngModel)]="event.designArea" type="text"></ion-input>
     </ion-item>
     <div class="blank-10px"></div>
     <!--<ion-item class="my-item" no-lines *ngIf="designer === false">-->
@@ -83,7 +83,7 @@
     <!--</ion-item>-->
     <ion-item>
         <ion-label floating>个数</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input [(ngModel)]="event.count" type="text"></ion-input>
     </ion-item>
     <!--<div class="blank-10px"></div>-->
     <!--<ion-item class="my-item" no-lines>-->
@@ -130,7 +130,7 @@
     <!--</ion-item>-->
     <ion-item>
         <ion-label floating>* 工时</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input [(ngModel)]="event.workTime" type="text"></ion-input>
     </ion-item>
     <div class="blank-10px"></div>
     <ion-item class="my-item" no-lines>

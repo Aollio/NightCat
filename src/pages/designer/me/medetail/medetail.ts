@@ -39,7 +39,9 @@ export class DesignerMeDetailPage {
                 public alertCtrl:AlertController,
                 public navParams: NavParams) {
         this.isDesigner = navParams.get('isDesigner');
-        this.user = shared.getCurrentUser();
+        this.user = navParams.get('user')||shared.getCurrentUser();
+        // this.user = shared.getCurrentUser();
+
     }
 
     ionViewDidEnter() {
