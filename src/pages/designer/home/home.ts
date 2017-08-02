@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {MessagePage} from "../message/message";
+import {NotificationsPage} from "../nofitications/notifications";
 import {AdsService} from "../../../service/ajax/ads.service";
 declare let initializeFontSize: any;
 
@@ -35,7 +35,7 @@ export class DesignerHomePage {
 
     currentType: number = 3;
 
-    messagePage: any = MessagePage;
+    messagePage: any = NotificationsPage;
 
 
     constructor(public navCtrl: NavController,

@@ -37,6 +37,7 @@ import {OrderProcessModifyPage} from "../common/order/orderprocess/order-process
 import {OrderProcessComplete} from "../common/order/orderprocess/order-process-complete/complete";
 import {OrderProcessPayment} from "../common/order/orderprocess/order-process-payment/order-process-payment";
 import {OrderProcessWaitcomment} from "../common/order/orderprocess/order-process-waitcomment/waitcomment";
+
 // import {Waitcomment} from "../common/order/orderprocess/order-process-waitcomment/waitcomment";
 
 
@@ -103,7 +104,10 @@ export class WelcomePage {
         if (isregister == 'true') {
             this.enterRegister()
         }
-
+        let one = this.navParam.get('state');
+        if (one != null) {
+            this.state = one;
+        }
     }
 
     openImagePicker() {

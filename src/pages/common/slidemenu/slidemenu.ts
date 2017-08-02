@@ -2,11 +2,12 @@ import {Component} from '@angular/core';
 
 import {AboutPage} from '../about/about';
 import {AlertController, NavController, Platform, ToastController} from "ionic-angular";
-import {MessagePage} from "../../designer/message/message";
+import {NotificationsPage} from "../../designer/nofitications/notifications";
 import {AccountSecurityPage} from "../securitycenter/accountsecurity/accountsecurity";
 import {SupportPage} from "../support/support";
 import {SharedService} from "../../../service/share.service";
 import {User} from "../../../model/user";
+import {WelcomePage} from "../../welcome/welcome";
 declare let initializeFontSize: any
 @Component({
     selector: 'page-slidemenu',
@@ -15,7 +16,7 @@ declare let initializeFontSize: any
 export class SlideMenuComponment {
 
 
-    messagePage: any = MessagePage;
+    messagePage: any = NotificationsPage;
     supportPage: any = SupportPage;
     accountSecurityPage: any = AccountSecurityPage;
     aboutPage: any = AboutPage
@@ -78,6 +79,7 @@ export class SlideMenuComponment {
     }
 
     exitApp() {
-        this.platform.exitApp();
+       // this.platform.exitApp();
+        this.navCtrl.push(WelcomePage,{state:2});
     }
 }

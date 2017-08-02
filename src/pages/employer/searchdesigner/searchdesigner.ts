@@ -5,10 +5,15 @@ declare let initializeFontSize:any
     selector:'page-searchdesigner'
 })
 export class SearchDesignerPage{
+
+
     ionViewDidEnter(){
         initializeFontSize()
     }
+
     items;
+
+
     getItems(ev) {
         var val = ev.target.value;
         if (val && val.trim() != '') {
@@ -18,5 +23,8 @@ export class SearchDesignerPage{
 
         }
 
+    }
+
+    openOrderDetail(param){
     }
 }

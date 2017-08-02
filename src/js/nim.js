@@ -10501,7 +10501,7 @@
         }, i.updateFriendSysMsg = function (e) {
             var t, n, r = e.obj, i = e.error;
             if (e.obj.idServer) {
-                if (i) t = "error", i = o.filterObj(i, "code message"); else {
+                if (i) t = "error", i = o.filterObj(i, "code nofitications"); else {
                     var s = r.type;
                     switch (s = a.getTypeFromByte(s) || s) {
                         case"passFriendApply":
@@ -11910,7 +11910,7 @@
             })), a
         }, i.updateTeamSysMsgState = function (e, t) {
             var n, r = e.error;
-            r && (t = "error", r = o.filterObj(r, "code message")), n = {
+            r && (t = "error", r = o.filterObj(r, "code nofitications")), n = {
                 idServer: e.obj.idServer,
                 state: t
             }, r && (n.error = r), this.updateSysMsg(n)

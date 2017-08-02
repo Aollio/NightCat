@@ -65,7 +65,7 @@ export class State {
             return Messages.getHistoryMsgs(this.sessionMap[sessionId].to)
                 .then(msglist => {
                         let list = this.msgs[sessionId]
-                        //handle receive message and push them to State.msgs()
+                        //handle receive nofitications and push them to State.msgs()
                         for (let msg of msglist) {
                             if (!Messages.preHandleMessage(msg)) {
                                 continue

@@ -21,6 +21,9 @@ export class DesignerTypesPage {
 
     open(page, option) {
         this.navCtrl.push(page, option)
+    }
 
+    openDesignerrPage() {
+        this.navCtrl.push(DesignerMeDetailPage, {id: ""})
     }
 }

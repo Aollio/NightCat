@@ -2,16 +2,21 @@ import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {OrderDetailPage} from "../../common/order/orderdetail/orderdetail";
 import {PublishTaskPage} from "../../common/publishtask/publishtask";
+import {SharedService} from "../../../service/share.service";
 
 @Component({
-    selector: 'page-message',
-    templateUrl: 'message.html'
+    selector: 'page-notifications',
+    templateUrl: 'notifications.html'
 })
-export class MessagePage {
+export class NotificationsPage {
 
     publishtaskpage = PublishTaskPage;
-    constructor(public navCtrl: NavController) {
 
+    maincolor: string;
+
+    constructor(public navCtrl: NavController,
+                public shared: SharedService) {
+        this.maincolor = shared.getPrimaryColor();
     }
 
 
@@ -23,8 +28,9 @@ export class MessagePage {
             order_id: order_id
         })
     }
-    openPage(page,option){
-        this.navCtrl.push(page,option)
+
+    openPage(page, option) {
+        this.navCtrl.push(page, option)
     }
 
 }

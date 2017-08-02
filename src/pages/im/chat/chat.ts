@@ -67,12 +67,12 @@ export class ChatPage {
     //
     //
     // // sendMessage() {
-    // //     if (this.message == null || this.message == '') {
-    // //         console.log('消息为空', this.message)
+    // //     if (this.nofitications == null || this.nofitications == '') {
+    // //         console.log('消息为空', this.nofitications)
     // //         return
     // //     }
-    // //     this.imServ.sendMessage(this.message)
-    // //         .then((message) => console.log('发送消息成功', message))
+    // //     this.imServ.sendMessage(this.nofitications)
+    // //         .then((nofitications) => console.log('发送消息成功', nofitications))
     // //         .catch((error) => console.log('发送消息失败', error))
     //  }
 
@@ -81,10 +81,10 @@ export class ChatPage {
 // <div class="chat">
 //     <div class="messages">
 //     <div class="messages-content">
-//     <div *ngFor="let message of msglist">
-//     <div class="message" [class.message-personal]="message.flow === 'out'">
-//         {{ message.showText }}
-// <div class="timestamp"> {{ message.showTime }}</div>
+//     <div *ngFor="let nofitications of msglist">
+//     <div class="nofitications" [class.nofitications-personal]="nofitications.flow === 'out'">
+//         {{ nofitications.showText }}
+// <div class="timestamp"> {{ nofitications.showTime }}</div>
 // </div>
 // </div>
 // </div>

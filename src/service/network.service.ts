@@ -61,7 +61,7 @@ export class NetworkService {
                 // error 是 response对象 ,含有属性
                 //ok:false;status:404,statusText:"OK",type:2,url:"http://localhost:8080/user"
                 //angular http模块 出现错误是返回的error.json()对象,包含数据,
-                // a = error.json(), a.status,a.message,a.error, a.timestamp, a.path
+                // a = error.json(), a.status,a.nofitications,a.error, a.timestamp, a.path
                 console.log(error)
                 console.log(error.status)
                 console.log(error.ok)
@@ -127,7 +127,7 @@ export class NetworkService {
                 //     error 是 response对象 ,含有属性
                 //     ok:false;status:404,statusText:"OK",type:2,url:"http://localhost:8080/user"
                 //     angular http模块 出现错误是返回的error.json()对象,包含数据,
-                //     a = error.json(), a.status,a.message,a.error, a.timestamp, a.path
+                //     a = error.json(), a.status,a.nofitications,a.error, a.timestamp, a.path
                 console.log(error)
                 if (error.status == 401) {
                     this.event.publish('gotologin')

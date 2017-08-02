@@ -8,7 +8,7 @@ export class Messages {
     constructor() {
     }
 
-    //get history messages, return message list as promise
+    //get history messages, return nofitications list as promise
     static getHistoryMsgs(to): Promise<any> {
 
         return new Promise((resolve, reject) => {

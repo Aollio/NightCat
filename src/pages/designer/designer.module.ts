@@ -1,6 +1,6 @@
 import {NgModule} from "@angular/core";
 import {DesignerTabsPage} from "./tabs/tabs";
-import {MessagePage} from "./message/message";
+import {NotificationsPage} from "./nofitications/notifications";
 import {OrderListComponent} from "./orderlist/orderlist";
 import {IonicPageModule} from "ionic-angular";
 import {CommonPageModule} from "../common/commonpage.module";
@@ -24,7 +24,7 @@ import {DesOrderListComponent} from "./projects/designerorderlist/designerorderl
     declarations: [
         DesignerModulePage,
         DesignerTabsPage,
-        MessagePage,
+        NotificationsPage,
         OrderListComponent,
         AuthenticationPage,
         CommentPage,
@@ -37,7 +37,7 @@ import {DesOrderListComponent} from "./projects/designerorderlist/designerorderl
     entryComponents: [
         DesignerModulePage,
         DesignerTabsPage,
-        MessagePage,
+        NotificationsPage,
         OrderListComponent,
         AuthenticationPage,
         CommentPage,

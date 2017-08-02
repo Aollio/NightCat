@@ -6,7 +6,7 @@ import {SplashScreen} from "@ionic-native/splash-screen";
 import {StatusBar} from "@ionic-native/status-bar";
 import {DesignerMePage} from "../me/me";
 import {TaskSquarePage} from "../tasksquare/tasksquare";
-import {MessagePage} from "../message/message";
+import {NotificationsPage} from "../nofitications/notifications";
 import {DesignerModulePage} from "../designer";
 import {IMPage} from "../../im/im";
 import {DesignerProjectsPage} from "../projects/projects";
@@ -19,7 +19,7 @@ export class DesignerTabsPage {
     home = DesignerHomePage;
     console = DesignerProjectsPage;
     me = DesignerMePage;
-    message = MessagePage;
+    message = NotificationsPage;
     im = IMPage;
 
 

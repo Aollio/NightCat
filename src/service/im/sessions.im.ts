@@ -52,7 +52,7 @@ export class Sessions {
         if (preSession == null) {
             State.INSTANCE.sessionMap[session.id] = session
             State.INSTANCE.sessionlist.push(session)
-            //set message-session mapping
+            //set nofitications-session mapping
             let msglist = State.INSTANCE.msgs[session.id]
             if (msglist == null) {
                 State.INSTANCE.msgs[session.id] = []

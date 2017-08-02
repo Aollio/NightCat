@@ -1,5 +1,5 @@
 <div class="my-list">
-    <div class="my-li" *ngFor="let item of orderlist">
+    <div class="my-li" *ngFor="let item of orderlist" (click)="openProjectProcess()">
         <div class="my-li-img">
             <img [src]=item.img alt="" />
         </div>
