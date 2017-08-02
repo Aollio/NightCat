@@ -57,7 +57,7 @@ export class EmployerHomePage {
     }
 
     btn_types() {
-        this.navCtrl.push(DesingerTypePage)
+        this.navCtrl.push(DesingerTypePage);
     }
 
     btn_helpChoosePage() {

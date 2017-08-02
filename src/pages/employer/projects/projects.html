@@ -6,7 +6,8 @@
         <ion-col col-3
                  class="header-number">
             <div class="number-label">
-                设计时长
+                <!--设计时长-->
+                已发布
             </div>
             <div class="number-detail">
                 0
@@ -16,7 +17,7 @@
         <ion-col col-3
                  class="header-number">
             <div class="number-label">
-                设计反馈
+                成交数
             </div>
             <div class="number-detail">
                 0
@@ -29,9 +30,9 @@
                 </div>
                 <div class="dayofmonth">27</div>
             </div>
-            <div class="header-toast">
-                今日有一条订单需支付
-            </div>
+            <!--<div class="header-toast">-->
+                <!--今日有一条订单需支付-->
+            <!--</div>-->
         </ion-col>
     </ion-row>
 
@@ -45,7 +46,7 @@
             <div [class.active]="type === 1">
                 <custom-icon class="custom-icon" set="cat" name="projects-waitdesign"></custom-icon>
                 <br>
-                未确定
+                待处理
             </div>
         </ion-col>
         <ion-col (click)="select('wait_outcome')"
@@ -53,7 +54,7 @@
             <div [class.active]="type === 2">
                 <custom-icon class="custom-icon" set="cat" name="projects-waitorder"></custom-icon>
                 <br>
-                未支付
+                待支付
             </div>
         </ion-col>
         <ion-col (click)="select('wait_comment')"
@@ -61,7 +62,8 @@
             <div [class.active]="type === 3">
                 <custom-icon class="custom-icon" set="cat" name="my-comment"></custom-icon>
                 <br>
-                已支付
+                待交付
+                <!--已支付-->
             </div>
         </ion-col>
         <ion-col (click)="select('all')"
@@ -74,6 +76,6 @@
         </ion-col>
     </ion-row>
 
-    <page-orderlist-after-selectdes></page-orderlist-after-selectdes>
+    <page-orderlist-after-selectdes [type]="type"></page-orderlist-after-selectdes>
 
 </ion-content>
