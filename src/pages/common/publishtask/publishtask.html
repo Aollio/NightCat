@@ -18,7 +18,7 @@
 
 <ion-content class="content" [class.designer]="designer" [class.employer]="!designer">
     <ion-item class="my-item" no-lines>
-        <ion-label [color]='maincolor'>* 项目类型</ion-label>
+        <ion-label [color]='maincolor'>项目类型 * </ion-label>
         <ion-select [(ngModel)]="gaming" input interface="popover" placeholder="请选择任务类型">
             <ion-option value="0">概预算</ion-option>
             <ion-option value="1">项目经理</ion-option>
@@ -42,7 +42,7 @@
         <!--<ion-input smaxlength="10" type="text" value="" ></ion-input>-->
     <!--</ion-item>-->
     <ion-item>
-        <ion-label floating>* 项目标题</ion-label>
+        <ion-label floating>项目标题 * </ion-label>
         <ion-input type="text" [(ngModel)]="event.title"></ion-input>
     </ion-item>
     <div class="blank-10px"></div>
@@ -57,17 +57,26 @@
         <!--<ion-label floating fixed [color]='maincolor'>* 预算</ion-label>-->
         <!--<ion-input type="text" value=""></ion-input>-->
     <!--</ion-item>-->
-    <ion-item>
-        <ion-label floating>* 预算</ion-label>
-        <ion-input [(ngModel)]="event.preBudget" type="text"></ion-input>
-    </ion-item>
+    <div class="preBudget">
+        <ion-item>
+            <ion-label floating>预算 *</ion-label>
+            <ion-input [(ngModel)]="event.preBudget" type="text"></ion-input>
+        </ion-item>
+        <ion-icon end name="logo-yen"></ion-icon>
+    </div>
+
+
+
+
+
+
     <div class="blank-10px"></div>
 
     <ion-item class="my-item" no-lines *ngIf="designer === false">
-        <ion-label [color]='maincolor'>* 抢单截止时间</ion-label>
+        <ion-label [color]='maincolor'>抢单截止时间 * </ion-label>
         <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="event.employer_deadline"></ion-datetime>
     </ion-item>
-    <div *ngIf="designer === false" class="tip-small-label">设计单位(面积/个数)二选一</div>
+    <div *ngIf="designer === false" class="tip-small-label">设计单位(面积/个数)</div>
     <!--<ion-item class="my-item" no-lines>-->
         <!--<ion-label fixed [color]='maincolor'>{{ designer ? '* ' : '' }}设计面积</ion-label>-->
         <!--<ion-input type="text" value="" placeholder="请输入设计面积"></ion-input>-->
@@ -103,9 +112,10 @@
             <!--</ion-segment-button>-->
         <!--</ion-segment>-->
     <!--</ion-item>-->
+
     <ion-list radio-group style="margin-bottom: 0">
         <ion-list-header>
-            * 设计深度
+           设计深度 *
         </ion-list-header>
 
         <ion-item>
@@ -123,18 +133,19 @@
             <ion-radio value="Python"></ion-radio>
         </ion-item>
     </ion-list>
+
     <div class="blank-10px"></div>
     <!--<ion-item class="my-item" no-lines>-->
         <!--<ion-label fixed [color]='maincolor'>* 工时</ion-label>-->
         <!--<ion-input type="text" value=""></ion-input>-->
     <!--</ion-item>-->
     <ion-item>
-        <ion-label floating>* 工时</ion-label>
+        <ion-label floating>工时 * </ion-label>
         <ion-input [(ngModel)]="event.workTime" type="text"></ion-input>
     </ion-item>
     <div class="blank-10px"></div>
     <ion-item class="my-item" no-lines>
-        <ion-label fixed [color]='maincolor'>* 设计时间</ion-label>
+        <ion-label fixed [color]='maincolor'>设计时间 * </ion-label>
     </ion-item>
     <ion-item class="my-item">
         <ion-label [color]='maincolor'>起</ion-label>
@@ -147,7 +158,7 @@
     <div class="blank-10px"></div>
 
     <div class="divcss" *ngIf="designer">
-        <p class="pcss">* 订单备注</p>
+        <p class="pcss">订单备注 * </p>
         <div class="div1css">
             <textarea class="summary-textarea"></textarea>
         </div>

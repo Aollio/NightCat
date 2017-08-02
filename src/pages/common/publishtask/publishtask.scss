@@ -1,4 +1,12 @@
 page-pulishtask {
+  .preBudget {
+    position: relative;
+    ion-icon {
+      position: absolute!important;
+      right: 1.5rem!important;
+      bottom: 1rem!important;
+    }
+  }
   .designer{
     .input-has-focus{
       ion-label{

@@ -15,7 +15,7 @@ page-welcome {
     height: 100%;
     width: 100%;
     repeat: fixed !important;
-    background: url("../../assets/img/SelectOption.png") no-repeat;
+    //background: url("../../assets/img/SelectOption.png") no-repeat;
     background-size: 100% 100%;
   }
 
@@ -119,10 +119,11 @@ page-welcome {
     #enterbutton {
       position: absolute;
 
-      bottom: -4rem;
+      bottom: -4.5rem;
+      font-size: 1.5rem;
       left: 0;
       color: white;
-      height: 4rem;
+      height: 4.5rem;
       width: 100% !important;
       background-color: map_get($colors, login-des);
       transition: bottom 0.5s;

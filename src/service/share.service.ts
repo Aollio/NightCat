@@ -1,5 +1,4 @@
 import {Injectable} from "@angular/core";
-import {el} from "@angular/platform-browser/testing/src/browser_util";
 import {User} from "../model/user";
 
 import {KeynoteService} from "./keynote.service";
