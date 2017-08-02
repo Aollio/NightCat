@@ -1,6 +1,7 @@
 
 
 import {Component} from "@angular/core";
+import {SharedService} from "../../../../service/share.service";
 
 @Component({
     selector:'page-casedetail',
@@ -8,6 +9,9 @@ import {Component} from "@angular/core";
 })
 export class CaseDetailPage{
 
-    constructor(){}
+    mainColor;
+    constructor(private shared:SharedService){
+        this.mainColor = shared.getPrimaryColor();
+    }
 
 }

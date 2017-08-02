@@ -1,21 +1,24 @@
 page-welcome {
-  .over_btn{
+  .over_btn {
     position: absolute;
     right: 1rem;
     top: 1rem;
   }
 
-  .tutorial-page{
+
+  .tutorial-page {
     height: 100%;
   }
-  .welcome-page{
+
+  .welcome-page {
     text-align: center;
     height: 100%;
     width: 100%;
-    repeat: fixed!important;
+    repeat: fixed !important;
     background: url("../../assets/img/SelectOption.png") no-repeat;
     background-size: 100% 100%;
   }
+
   .toolbar-background {
     background: #fff;
     border-color: transparent;
@@ -31,44 +34,57 @@ page-welcome {
 
   .slide-image {
     max-height: 100%;
-    max-width:100%;
+    max-width: 100%;
     //margin: 18px 0;
   }
+
   .slide-image1 {
     max-height: 100%;
-    max-width:100%;
+    max-width: 100%;
     margin: 30% 0;
   }
-  .logo div{
-    color: map_get($colors,login-des);
-    text-align: center;
-    margin-bottom:3.5em;
-    font-size: 1.2em;
-    font-weight: 300;
+
+
+  .logo {
+    font-size: 2rem;
   }
-  .logo img{
+
+  .logo div {
+    color: map_get($colors, login-des);
+    text-align: center;
+    margin-bottom: 3.5em;
+    font-size: 1.2em;
+    font-weight: 400;
+  }
+
+  .logo img {
     max-height: 100%;
-    max-width:100%;
+    max-width: 100%;
     margin: 27% 0 0;
     padding-left: 0%;
   }
-  .empbutton{
-   // margin-left: 12.5%!important;
-    width: 75%!important;
-    background-color:map_get($colors,login-emp);
+
+  .desbutton, .empbutton {
+    height: 4.5rem;
+    width: 75% !important;
   }
-  .desbutton{
-    //margin-left: 12.5%!important;
-    width: 75%!important;
-    background-color:map_get($colors,login-des);
+  .empbutton {
+    // margin-left: 12.5%!important;
+    background-color: map_get($colors, login-emp);
   }
 
-  .or{
+  .desbutton {
+    //margin-left: 12.5%!important;
+    background-color: map_get($colors, login-des);
+  }
+
+  .or {
     margin-top: 1em;
     margin-bottom: 1em;
     width: 100%;
     text-align: center;
   }
+
   b {
     font-weight: 500;
   }
@@ -84,31 +100,33 @@ page-welcome {
     }
   }
 
-  .login{
-     color: #4a87ee;
+  .login {
+    color: #4a87ee;
     padding-left: 5%;
   }
-  .tip{
-margin-top: 4em;
+
+  .tip {
+    margin-top: 4em;
   }
 
   .end-class {
-    repeat: fixed!important;
+    repeat: fixed !important;
     background: url("../assets/img/Walkthrough_4_2.png") no-repeat;
     background-size: 100% 100%;
 
     position: relative;
 
-    #enterbutton{
+    #enterbutton {
       position: absolute;
 
       bottom: -4rem;
       left: 0;
       color: white;
       height: 4rem;
-      width: 100%!important;
-      background-color:map_get($colors,login-des);
+      width: 100% !important;
+      background-color: map_get($colors, login-des);
       transition: bottom 0.5s;
     }
   }
+
 }
