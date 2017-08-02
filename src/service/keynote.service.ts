@@ -68,6 +68,10 @@ export class KeynoteService {
         uid: ''
     };
 
+    default_employer ={}
+
+    default_designer = {}
+
     projects = [
         {
             "id": "id0",

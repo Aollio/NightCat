@@ -1,8 +1,8 @@
 import {NgModule} from "@angular/core";
 import {IonicModule} from "ionic-angular";
 import {AppointPage} from "./appoint/appoint";
-import {DesignerTypesPage} from "./designertypes/designertypes";
 import {DesingerTypePage} from "./desinger-types/desinger-types";
+import {DesignerTypesPage} from "./designer/designertypes";
 
 @NgModule({
     declarations: [
