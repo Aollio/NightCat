@@ -2,6 +2,7 @@ import {Component} from "@angular/core";
 import {SharedService} from "../../../service/share.service";
 import {AlertController, NavController} from "ionic-angular";
 
+
 declare let initializeFontSize: any;
 
 @Component({
