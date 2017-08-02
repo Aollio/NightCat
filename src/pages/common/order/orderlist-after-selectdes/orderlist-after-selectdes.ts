@@ -1,7 +1,7 @@
 // import {Component} from '@angular/core';
 import {NavController, NavControllerBase} from "ionic-angular";
 import {OrderProcessModifyPage} from "../orderprocess/order-process-modify/order-process-modify";
-import { Component, Input } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {ProjectDetailPage} from "../orderdetail/orderdetail";
 
 declare let initializeFontSize: any
@@ -16,7 +16,7 @@ export class OrderListAfterSelectDesignerPage {
 
     orderlist: Array<any> = [
         {
-            status:1,
+            status: 1,
             img: 'assets/img/fav-avatar.png',
             title: '自建别墅设计/自建房设计/精品自建住宅\n' +
             '商业地产工程bim建筑设计策划',
@@ -48,12 +48,12 @@ export class OrderListAfterSelectDesignerPage {
             "img_url": '/assets/img/des-1.png'
         },
         {
-            status:1,
+            status: 1,
             img: 'assets/img/detail-default.png',
             title: '自建别墅设计/自建房设计/精品自建住宅\n' +
             '商业地产工程bim建筑设计策划',
             time: '6天1小时'
-                ,
+            ,
             "id": "id0",
 
             "type": "建筑设计",
@@ -80,7 +80,7 @@ export class OrderListAfterSelectDesignerPage {
             "img_url": '/assets/img/des-1.png'
         },
         {
-            status:1,
+            status: 1,
             img: 'assets/img/fav-avatar.png',
             title: '自建别墅设计/自建房设计/精品自建住宅\n' +
             '商业地产工程bim建筑设计策划',
@@ -112,7 +112,7 @@ export class OrderListAfterSelectDesignerPage {
             "img_url": '/assets/img/des-1.png'
         },
         {
-            status:1,
+            status: 1,
             img: 'assets/img/fav-avatar.png',
             title: '自建别墅设计/自建房设计/精品自建住宅\n' +
             '商业地产工程bim建筑设计策划',
@@ -144,7 +144,7 @@ export class OrderListAfterSelectDesignerPage {
             "img_url": '/assets/img/des-1.png'
         },
         {
-            status:2,
+            status: 2,
             img: 'assets/img/detail-default.png',
             title: '自建别墅设计/自建房设计/精品自建住宅\n' +
             '商业地产工程bim建筑设计策划',
@@ -176,7 +176,7 @@ export class OrderListAfterSelectDesignerPage {
             "img_url": '/assets/img/des-1.png'
         },
         {
-            status:3,
+            status: 3,
             img: 'assets/img/fav-avatar.png',
             title: '自建别墅设计/自建房设计/精品自建住宅\n' +
             '商业地产工程bim建筑设计策划',
@@ -216,9 +216,9 @@ export class OrderListAfterSelectDesignerPage {
     }
 
     openProjectProcess(project) {
-        if(project.status==1){
-            this.nav.push(ProjectDetailPage,{project:project});
-        }else {
+        if (project.status == 1) {
+            this.nav.push(ProjectDetailPage, {project: project});
+        } else {
             this.nav.push(OrderProcessModifyPage, {});
         }
     }

@@ -1,6 +1,6 @@
 <div class="my-list">
     <div class="my-ul" *ngFor="let item of orderlist">
-        <div class="my-li" *ngIf="type==item.status" (click)="openProjectProcess()">
+        <div class="my-li" *ngIf="type==item.status" (click)="openProjectProcess(item)">
             <div class="my-li-img">
                 <img [src]=item.img alt=""/>
             </div>

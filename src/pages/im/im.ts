@@ -52,12 +52,12 @@ export class IMPage {
     // }
 
 
-    // chat(sessionId) {
-    //     console.log('进入聊天界面:SessionID', sessionId)
-    //     this.nav.push(ChatPage, {
-    //         sessionId: sessionId
-    //     })
-    // }
+    chat(sessionId) {
+        console.log('进入聊天界面:SessionID', sessionId)
+        this.nav.push(ChatPage, {
+            sessionId: sessionId
+        })
+    }
     //
     //
     // initFriendlyName() {
