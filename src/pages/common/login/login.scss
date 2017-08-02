@@ -1,5 +1,7 @@
 page-login {
-
+.padding{
+  padding: 1rem;
+}
   .my-bgi{
     position: absolute;
     width: 100%;
@@ -101,7 +103,7 @@ page-login {
     text-align: center;
     width: 90%;
     margin-left: 5%;
-    height: 3.2em;
+    height: 2.5em;
     background-color: map_get($colors, login-des);
   }
 

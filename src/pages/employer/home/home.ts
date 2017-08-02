@@ -16,24 +16,28 @@ declare let initializeFontSize: any
 })
 export class EmployerHomePage {
 
-    static isfirstCome=true;
-    user={};
+    static isfirstCome = true;
+    user = {};
 
     ionViewDidEnter() {
         initializeFontSize()
-        this.util.updateObj(this.user,this.shared.getCurrentUser());
+        this.util.updateObj(this.user, this.shared.getCurrentUser());
 
     }
+    //
+    // show() {
+    //     console.log("touch")
+    // }
 
     designerMeDetailPage: DesignerMeDetailPage;
 
 
     constructor(public navCtrl: NavController,
-                private shared:SharedService,
-                private util:Util,
+                private shared: SharedService,
+                private util: Util,
                 public alertCtrl: AlertController) {
         this.showAlert();
-        this.util.updateObj(this.user,shared.getCurrentUser());
+        this.util.updateObj(this.user, shared.getCurrentUser());
     }
 
     showAlert() {

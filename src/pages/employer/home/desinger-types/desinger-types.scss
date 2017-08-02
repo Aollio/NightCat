@@ -4,17 +4,20 @@ page-desinger-types{
   }
   .my-ul{
     width: 100%;
-    margin-top: 5rem;
     background-color: #fff;
     padding:0 2rem;
+    display:-webkit-box;
+  }
+  .my-ul:first-child{
+    margin-top: 5rem;
   }
   .clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
   .clearfloat{zoom:1}
   .my-li{
     width: 7rem;
     //height: 7rem;
-    //padding: 1rem;
-    float: left;
+    padding: 1rem;
+    //float: left;
   }
   .my-li-img{
     width: 100%;

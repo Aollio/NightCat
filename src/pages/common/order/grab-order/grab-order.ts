@@ -2,6 +2,8 @@ import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {AbsCommonPage} from "../../abs";
 import {SharedService} from "../../../../service/share.service";
+import {ProjectDetailPage} from "../orderdetail/orderdetail";
+import {OrderProcessPreSelectedPage} from "../orderprocess/order-process-pre-selectdes/order-process-pre-selectdes";
 declare let initializeFontSize:any;
 /*
  * 我要抢单
@@ -25,8 +27,13 @@ export class GrabOrderPage{
         initializeFontSize();
     }
 
-    open(page, option) {
-        this.navCtrl.push(page, {})
+    // open(page, option) {
+    //     this.navCtrl.push(ProjectDetailPage, {})
+    // }
+
+    openDetailPage(){
+
+        this.navCtrl.push(OrderProcessPreSelectedPage, {isGrab:true})
     }
 
 }
