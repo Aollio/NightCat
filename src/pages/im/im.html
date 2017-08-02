@@ -14,9 +14,12 @@
                 <img src="assets/img/des-3.png">
             </ion-avatar>
             <!--<h2>{{ sessionNameMap[session.id] }}</h2>-->
-                <div class="massage">
-                <h2>{{ session.id }}</h2>
-                <span> {{ session.updateTime }}</span>
+            <div class="massage">
+                <div>
+                    <span class="id">{{ session.id }}</span>
+                    <span class="time"> {{ session.updateTime }}</span>
+                </div>
+
                 <!--<span> {{  util.formatDate(session.updateTime) }}</span>-->
                 <!--<h3>Don't Know What To Do!</h3>-->
                 <!--<p>{{ session.lastMsg.type === 'text' ? session.lastMsg.text : '特殊消息类型' }}</p>-->

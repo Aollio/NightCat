@@ -1,23 +1,31 @@
-page-im{
-  .friend{
-    p{
+page-im {
+  .friend {
+    p {
       font-size: 1rem;
     }
-    h2{
+    h2 {
       margin-bottom: 0.5rem;
     }
   }
 
-  .massage{
+  .massage {
 
   }
-  .massage h2{
+  .massage div {
+
   }
-  .massage span{
-float: right;
-    margin-top: 0;
+  .massage div h2 {
+    //float: left;
   }
-  .massage p{
+  .time {
+    color: #999;
+    font-size: 1rem;
+    line-height: 1rem;
+    position: relative;
+    bottom: .5rem;
+    left: 18rem;
+  }
+  .massage p {
 
   }
 }
