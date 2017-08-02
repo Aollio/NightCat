@@ -3,7 +3,6 @@ import {IonicPageModule} from "ionic-angular";
 import {CommonPageModule} from "../common/commonpage.module";
 import {EmployerTabsPage} from "./tabs/tabs";
 import {EmployerModulePage} from "./employer";
-import {EmployerHomePage} from "./home/home";
 import {DesignerModulePage} from "../designer/designer";
 import {DesignerModule} from "../designer/designer.module";
 import {DesignerMeModule} from "../designer/me/me.module";
@@ -21,6 +20,7 @@ import {SearchDesignerPage} from "./searchdesigner/searchdesigner";
 import {RecommendDesignerPage} from "./recommenddesigner/recommenddesigner";
 import {EmployerHomeModule} from "./home/home.module";
 import {OrderModule} from "../common/order/order.module";
+import {EmployerHomePage} from "./home/home";
 
 @NgModule({
     declarations: [
