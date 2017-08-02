@@ -57,11 +57,11 @@ export class EmployerHomePage {
     }
 
     btn_types() {
-        this.navCtrl.push(DesingerTypePage)
+        this.navCtrl.push(DesingerTypePage);
     }
 
-    btn_appoint() {
-        this.navCtrl.push(AppointPage);
+    btn_helpChoosePage() {
+        this.navCtrl.push(HelpChoosePage);
 
     }
 }
