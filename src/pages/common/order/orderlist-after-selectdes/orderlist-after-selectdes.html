@@ -1,15 +1,17 @@
 <div class="my-list">
-    <div class="my-li" *ngFor="let item of orderlist" (click)="openProjectProcess()">
-        <div class="my-li-img">
-            <img [src]=item.img alt="" />
-        </div>
-        <div class="my-li-right">
-            <div class="my-li-right-t">
-                <div class="my-li-right-t-name">{{item.title}}</div>
+    <div *ngFor="let item of orderlist">
+        <div class="my-li" *ngIf="type==item.type" (click)="openProjectProcess()">
+            <div class="my-li-img">
+                <img [src]=item.img alt=""/>
             </div>
-            <div class="my-li-right-b">
-                <div class="my-li-right-b-l">{{item.fav_count}}人收藏</div>
-                <div class="my-li-right-b-r">{{item.time}}后截止</div>
+            <div class="my-li-right">
+                <div class="my-li-right-t">
+                    <div class="my-li-right-t-name">{{item.title}}</div>
+                </div>
+                <div class="my-li-right-b">
+                    <div class="my-li-right-b-l">{{item.fav_count}}人抢单</div>
+                    <div class="my-li-right-b-r">{{item.time}}后截止</div>
+                </div>
             </div>
         </div>
     </div>

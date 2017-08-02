@@ -1,6 +1,7 @@
 import {Component} from "@angular/core";
 import {SharedService} from "../../../service/share.service";
 import {AlertController, NavController} from "ionic-angular";
+import {Util} from "../../../service/util";
 
 
 declare let initializeFontSize: any;
@@ -40,11 +41,38 @@ export class PublishTaskPage {
         console.log("com")
     }
 
-    constructor(public shared: SharedService,
+    constructor(public util:Util,
+                public shared: SharedService,
                 public navCtrl:NavController,
                 public alertCtrl:AlertController) {
         this.maincolor = shared.getPrimaryColor();
         this.designer = shared.currentModuleIsDesigner;
+    }
+
+
+    publish(){
+        let loading = this.util.createLoading("",{});
+        loading.present();
+
+        setTimeout(()=>{
+            let alert = this.alertCtrl.create({
+                // title: '警告',
+                title: "发布成功！",
+                buttons: [
+                    {
+                        text: 'Ok',
+                        handler: data => {
+                            loading.dismiss();
+                            this.navCtrl.pop();
+                            console.log('Saved clicked');
+                        }
+                    }
+                ]
+            });
+            alert.present();
+        },500);
+
+
     }
 
     goBack(){
