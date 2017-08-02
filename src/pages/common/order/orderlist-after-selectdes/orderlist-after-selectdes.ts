@@ -210,6 +210,8 @@ export class OrderListAfterSelectDesignerPage {
     ];
 
     @Input("type") type;
+
+
     constructor(public nav: NavController) {
     }
 

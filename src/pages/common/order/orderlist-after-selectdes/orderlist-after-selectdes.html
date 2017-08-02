@@ -1,6 +1,6 @@
 <div class="my-list">
     <div class="my-ul" *ngFor="let item of orderlist">
-        <div class="my-li"*ngIf="type==item.type" (click)="openProjectProcess()">
+        <div class="my-li" *ngIf="type==item.status" (click)="openProjectProcess()">
             <div class="my-li-img">
                 <img [src]=item.img alt=""/>
             </div>
@@ -14,7 +14,7 @@
                 </div>
             </div>
         </div>
-        <div class="my-bottom">
+        <div class="my-bottom" *ngIf="type==item.status">
             <div class="my-bottom-li act">提交订单</div>
             <div class="my-bottom-li">修改订单</div>
         </div>
