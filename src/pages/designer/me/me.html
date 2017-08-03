@@ -6,7 +6,7 @@
 <ion-content>
     <div class="me-header" (click)="opendetail(designerMeDetailPage,{isDesigner:true})">
         <div center class="me-avatar">
-            <img [src]="user.img_url || 'assets/img/logo1.png'">
+            <img [src]="user.img_url || 'assets/img/logo.png'">
         </div>
 
         <div *ngIf="!isNullObj(user)" class="me-name">
