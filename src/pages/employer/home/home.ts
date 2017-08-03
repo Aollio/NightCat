@@ -7,6 +7,7 @@ import {DesignerListPage} from "./designer/designer-list";
 import {HelpChoosePage} from "../helpchoose/helpchoose";
 import {SharedService} from "../../../service/share.service";
 import {Util} from "../../../service/util";
+import {NotificationsPage} from "../../designer/nofitications/notifications";
 
 declare let initializeFontSize: any
 
@@ -23,6 +24,9 @@ export class EmployerHomePage {
         initializeFontSize()
         this.util.updateObj(this.user, this.shared.getCurrentUser());
 
+    }
+    openNotificationsPage(){
+        this.navCtrl.push(NotificationsPage);
     }
     //
     // show() {

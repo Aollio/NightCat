@@ -1,5 +1,5 @@
-<ion-header>
-    <ion-navbar>
+<ion-header >
+    <ion-navbar [color]="mainColor">
         <ion-title>
             消息
         </ion-title>
@@ -18,4 +18,10 @@
             <p> {{ util.formatDate(session.updateTime) }}</p>
         </ion-item>
     </ion-list>
+
+
+    <!--<ionic-datepicker date="currentDate" min="minDate" max="maxDate" callback="datePickerCallback">-->
+        <!--<button class="button button-block button-positive"> {{ currentDate | date:'MMMM/dd/yyyy' }} </button>-->
+    <!--</ionic-datepicker>-->
+
 </ion-content>

@@ -1,6 +1,7 @@
 import {Component} from "@angular/core";
 import {NavController} from "ionic-angular";
 import {PublishTaskPage} from "../../common/publishtask/publishtask";
+import {PublishTaskPageNew} from "../../common/publish-task-new/publish-task";
 declare let initializeFontSize:any
 @Component({
     selector: 'publish-task-middleware',
@@ -30,10 +31,12 @@ export class PublishTaskMiddleWarePage {
             this.nav.parent.select(0);
             this.second_open = true;
             this.nav.push(PublishTaskPage, {});
+            // this.nav.push(PublishTaskPageNew, {});
             console.log("end jump of first")
         }
         if (this.nav.parent.getSelected().index === 2) {
             this.nav.parent.select(0);
+            // this.nav.push(PublishTaskPageNew, {});
             this.nav.push(PublishTaskPage, {});
             console.log("end jump because index == 1")
         }
