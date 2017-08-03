@@ -3,6 +3,7 @@ import {State} from "../../../service/im/state.im";
 import {NavParams} from "ionic-angular";
 import {Util} from "../../../service/util";
 import {ImService} from "../../../service/im/service.im";
+import {SharedService} from "../../../service/share.service";
 
 @Component({
     selector: 'page-chat',
@@ -25,8 +26,11 @@ export class ChatPage {
     //
     message: string = ''
 
+    maincolor;
 
-    constructor(public imServ:ImService){
+    constructor(public imServ: ImService,
+                public shared:SharedService) {
+        this.maincolor=this.shared.getPrimaryColor();
         this.imServ.initializeNim()
     }
 
