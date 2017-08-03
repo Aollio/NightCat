@@ -1,0 +1,188 @@
+page-publish-task {
+  .content {
+    background-color: #f3f8fb;
+  }
+
+  ion-item{
+    overflow: visible!important;
+    .item-inner{
+      overflow: visible;
+      .input-wrapper{
+        overflow: visible;
+        height: 4rem !important;
+        position: relative;
+
+        ion-label {
+          position: absolute;
+          top: -1.5rem;
+          display: inline;
+          padding: 0.5rem 1rem;
+          margin: 0!important;
+          height: 3rem;
+          font-size: 1.5rem;
+          line-height: 2rem;
+          border-radius: 1.5rem;
+        }
+        input{
+          margin-top: 2.5rem!important;
+        }
+      }
+    }
+  }
+
+
+
+
+
+  //register form
+  .myInput {
+    width: 90%;
+    margin: auto;
+
+    div.input-wrapper {
+      position: relative;
+      width: 100%;
+      height: 5rem;
+
+      input{
+        width: 100%;
+        height: 100%;
+        //margin-bottom: 1rem;
+        padding: 0 1rem;
+        border: 0.1em solid #dce4ec;
+        background: rgba(245, 245, 245, 0);
+        border-radius: 0.25rem;
+        outline: 0;
+        transition: border 0.4s linear, background 0.3s;
+      }
+      div{
+        transform: translate3d(0, 2rem, 0);
+      }
+
+      input:focus{
+        border-color: #2483bc;
+      }
+
+    }
+
+  }
+
+  .preBudget {
+    position: relative;
+    ion-icon {
+      position: absolute !important;
+      right: 1.5rem !important;
+      bottom: 1rem !important;
+    }
+  }
+
+
+  .designer {
+
+    .input-has-focus {
+      ion-label {
+        background-color: map_get($colors, des-primary);
+        margin: 0;
+        color: white !important;
+      }
+    }
+    .radio-checked {
+      .radio-inner {
+        border-color: map_get($colors, des-primary) !important;
+      }
+    }
+    .item-radio-checked {
+      ion-label {
+        color: map_get($colors, des-primary) !important;
+      }
+    }
+  }
+  .employer {
+    .input-has-focus {
+      ion-label {
+        background-color: map_get($colors, emp-primary);
+
+        color: white !important;
+      }
+    }
+    .radio-checked {
+      .radio-inner {
+        border-color: map_get($colors, emp-primary) !important;
+      }
+    }
+    .item-radio-checked {
+      ion-label {
+        color: map_get($colors, emp-primary) !important;
+      }
+    }
+  }
+
+  .my-item {
+
+  }
+  .my-item ion-label, ion-select, ion-input, ion-segment-button {
+    font-size: 1.5rem !important;
+  }
+  .design-depth {
+    display: inline-flex !important;
+    width: 100%;
+  }
+  .select-ios .select-icon {
+    top: 5px;
+  }
+  .design-depth ion-label {
+    width: 6rem !important;
+  }
+
+  .lable {
+    //color: #5676FC !important;
+    font-size: .5rem;
+    width: 35%;
+    margin-left: 1rem;
+  }
+
+  .blank-3px {
+    height: 0.25rem;
+    width: 100%
+  }
+
+  .blank-10px {
+    height: 1rem;
+    width: 100%
+  }
+
+  .tip-small-label {
+    color: #9E9E9E;
+    font-size: 1.2rem;
+    padding-left: .5rem;
+    height: 45px;
+    text-align: left;
+    line-height: 45px;
+  }
+
+  .divcss {
+    width: 100%;
+    background-color: #ffffff;
+  }
+  .summary-textarea {
+    width: 100%;
+    height: 6rem;
+    border-radius: 1rem !important;
+    resize: none;
+  }
+
+  .pcss {
+    margin-left: 5%;
+    //color: #5676FC
+  }
+  .div1css {
+    height: 60% !important;
+    margin-left: 5%;
+    width: 90%;
+    border: #9e9e9e !important;
+    border-width: medium;
+  }
+  .item-ios.item-block .item-inner {
+    border: 0;
+  }
+}
