@@ -7,6 +7,24 @@ page-pulishtask {
       bottom: 1rem!important;
     }
   }
+
+  ion-item{
+    padding: 0 1rem!important;
+    border-radius: 0.5rem!important;
+    box-sizing: border-box!important;
+    width: 95%!important;
+    margin: auto!important;
+  }
+  ion-item.no-radius{
+    border-radius: 0!important;
+  }
+  ion-item.no-bottom-radius{
+    border-radius:0.5rem 0.5rem  0 0 !important;
+  }
+  ion-item.no-up-radius{
+    border-radius: 0 0 0.5rem 0.5rem  !important;
+  }
+
   .designer{
     .input-has-focus{
       ion-label{
@@ -42,11 +60,8 @@ page-pulishtask {
     }
   }
 
-
-
   .content {
     background-color: #f3f8fb;
-
   }
   .my-item {
 
@@ -85,7 +100,7 @@ page-pulishtask {
   .tip-small-label {
     color: #9E9E9E;
     font-size: 1.2rem;
-    padding-left: .5rem;
+    padding-left: 1rem;
     height: 45px;
     text-align: left;
     line-height: 45px;

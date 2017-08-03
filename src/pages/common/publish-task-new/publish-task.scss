@@ -6,9 +6,9 @@ page-publish-task {
   ion-item{
     overflow: visible!important;
     .item-inner{
-      overflow: visible;
+      overflow: visible!important;
       .input-wrapper{
-        overflow: visible;
+        overflow: visible!important;
         height: 4rem !important;
         position: relative;
 

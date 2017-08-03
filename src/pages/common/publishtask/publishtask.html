@@ -17,9 +17,10 @@
 </ion-header>
 
 <ion-content class="content" [class.designer]="designer" [class.employer]="!designer">
+    <div class="blank-10px"></div>
     <ion-item class="my-item" no-lines>
         <ion-label [color]='maincolor'>项目类型 * </ion-label>
-        <ion-select [(ngModel)]="gaming" input interface="popover" placeholder="请选择任务类型">
+        <ion-select [(ngModel)]="gaming" input interface="popover" placeholder="请选择">
             <ion-option value="0">概预算</ion-option>
             <ion-option value="1">项目经理</ion-option>
             <ion-option value="2">审图</ion-option>
@@ -95,22 +96,31 @@
         <ion-input [(ngModel)]="event.count" type="text"></ion-input>
     </ion-item>
     <div class="blank-10px"></div>
-    <ion-item class="my-item" no-lines>
-        <ion-label fixed [color]='maincolor'>* 设计深度</ion-label>
-    </ion-item>
+    <!--<ion-item class="my-item no-bottom-radius" no-lines>-->
+        <!--<ion-label fixed [color]='maincolor'>* 设计深度</ion-label>-->
+    <!--</ion-item>-->
     <!--<div style="width: 50%">-->
+    <!--<ion-item class="my-item no-up-radius" no-lines>-->
+        <!--<ion-segment [(ngModel)]="relationship" [color]="maincolor">-->
+            <!--<ion-segment-button small value="key">-->
+                <!--方案-->
+            <!--</ion-segment-button>-->
+            <!--<ion-segment-button small value="add">-->
+                <!--扩出-->
+            <!--</ion-segment-button>-->
+            <!--<ion-segment-button small value="action">-->
+                <!--施工-->
+            <!--</ion-segment-button>-->
+        <!--</ion-segment>-->
+    <!--</ion-item>-->
+
     <ion-item class="my-item" no-lines>
-        <ion-segment [(ngModel)]="relationship" [color]="maincolor">
-            <ion-segment-button small value="key">
-                方案
-            </ion-segment-button>
-            <ion-segment-button small value="add">
-                扩出
-            </ion-segment-button>
-            <ion-segment-button small value="action">
-                施工
-            </ion-segment-button>
-        </ion-segment>
+        <ion-label [color]='maincolor'>设计深度 * </ion-label>
+        <ion-select [(ngModel)]="relationship" input interface="popover" placeholder="请选择">
+            <ion-option value="0">方案</ion-option>
+            <ion-option value="1">扩出</ion-option>
+            <ion-option value="2">施工</ion-option>
+        </ion-select>
     </ion-item>
 
     <!--<ion-list radio-group style="margin-bottom: 0">-->
@@ -146,11 +156,11 @@
     <ion-item class="my-item" no-lines>
         <ion-label fixed [color]='maincolor'>设计时间 * </ion-label>
     </ion-item>
-    <ion-item class="my-item">
+    <ion-item class="my-item no-radius">
         <ion-label [color]='maincolor'>开始</ion-label>
         <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="event.timeStarts"></ion-datetime>
     </ion-item>
-    <ion-item class="my-item">
+    <ion-item class="my-item no-up-radius">
         <ion-label [color]='maincolor'>结束</ion-label>
         <ion-datetime [color]="maincolor" displayFormat="YYYY-MM-DD" [(ngModel)]="event.timeEnds"></ion-datetime>
     </ion-item>
