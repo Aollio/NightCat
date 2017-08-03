@@ -3,6 +3,7 @@ import {DesignerMeDetailPage} from "../../../designer/me/medetail/medetail";
 import {NavController} from "ionic-angular";
 import {KeynoteService} from "../../../../service/keynote.service";
 import {UsersService} from "../../../../service/ajax/users.service";
+import {SharedService} from "../../../../service/share.service";
 
 declare let initializeFontSize: any
 
@@ -11,13 +12,16 @@ declare let initializeFontSize: any
     templateUrl: 'designer-list.html'
 })
 export class DesignerListPage {
-
+    miancolor;
 
     users: Array<any> = [];
 
     designerMeDetailPage: DesignerMeDetailPage;
 
-    constructor(public navCtrl: NavController, private usersServ: UsersService) {
+    constructor(public navCtrl: NavController,
+                private usersServ: UsersService,
+                public shared:SharedService) {
+        this.miancolor=this.shared.getPrimaryColor();
         this.usersServ.getUsersByRole(true).then(users => {
             for (let user of users) {
                 this.users.push(user)

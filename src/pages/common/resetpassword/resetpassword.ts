@@ -10,8 +10,12 @@ declare let initializeFontSize: any;
 })
 export class ResetPasswordPage {
 
+    maincolor;
+
     constructor(public navCtrl: NavController,
                 public shared: SharedService) {
+        this.maincolor = this.shared.getPrimaryColor();
+
     }
 
     ionViewDidEnter() {

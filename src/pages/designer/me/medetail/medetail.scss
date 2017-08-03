@@ -1,8 +1,11 @@
 page-designer-me-detail {
+  .toolbar-background-ios{
+    background-color: rgba(255,255,255,0.0);
+  }
   .my-bac{
      height: 50%;
      width: 100%;
-     position: fixed;
+     position: absolute;
      top: 0;
      z-index: -1;
    }
@@ -31,7 +34,7 @@ page-designer-me-detail {
   }
   .header1 {
     position: absolute;
-    top: 0;
+    top: 2rem;
     //height: 40%;
     width: 100%;
     background-color: rgba(60, 181, 207, 0);
