@@ -37,9 +37,11 @@ export class OrderProcessPreSelectedPage extends AbsCommonPage {
     goback() {
         if (this.isGrab) {
             // this.navCtrl.popTo(ProjectDetailPage);
-            this.navCtrl.popToRoot({animate:true});
+            this.navCtrl.popToRoot({animate: true});
+        } else {
+            this.navCtrl.pop();
+
         }
-        // this.navCtrl.pop();
     }
 
 }
