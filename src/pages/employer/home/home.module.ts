@@ -10,7 +10,8 @@ import {CommonPageModule} from "../../common/commonpage.module";
     declarations: [
         DesignerListPage,
         AppointPage,
-        DesingerTypePage
+        DesingerTypePage,
+
     ],
     entryComponents: [
         DesignerListPage,
