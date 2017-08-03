@@ -42,9 +42,9 @@
         <!--<ion-label floating [color]='maincolor' fixed>* 项目标题</ion-label>-->
         <!--<ion-input smaxlength="10" type="text" value="" ></ion-input>-->
     <!--</ion-item>-->
-    <ion-item>
+    <ion-item [class.]>
         <ion-label floating>项目标题 * </ion-label>
-        <ion-input type="text" [(ngModel)]="event.title"></ion-input>
+        <ion-input (focus)="setState()" type="text" [(ngModel)]="event.title"></ion-input>
     </ion-item>
     <div class="blank-10px"></div>
     <ion-item class="my-item" no-lines>
@@ -166,13 +166,15 @@
     </ion-item>
     <div class="blank-10px"></div>
 
-    <div class="divcss" *ngIf="designer">
-        <p class="pcss">订单备注 * </p>
-        <div class="div1css">
-            <textarea class="summary-textarea"></textarea>
-        </div>
-
-    </div>
+    <ion-item class="divcss" *ngIf="designer">
+        <!--<div >-->
+            <p class="pcss">订单备注 * </p>
+            <div class="div1css">
+                <textarea class="summary-textarea"></textarea>
+            </div>
+        <!--</div>-->
+    </ion-item>
+    <div class="blank-10px"></div>
     <!--<div>-->
         <!--<ion-datetime displayFormat="YYYY-MM-DD"-->
                       <!--[(ngModel)]="event.timeStar">-->
