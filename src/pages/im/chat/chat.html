@@ -1,7 +1,7 @@
 
 <!--todo-->
 <ion-header no-border>
-    <ion-navbar>
+    <ion-navbar [color]="miancolor">
         <ion-title>
             <!--{{ chatobject }}-->
             <!--<div class="chat-title">-->
@@ -52,6 +52,9 @@
         <ion-input type="text"
                        [(ngModel)]="message"
                        class="message-input" placeholder="Type message..."></ion-input>
-        <button (click)="sendMessage()" class="message-submit">Send</button>
+        <button (click)="sendMessage()"
+                ion-button
+                [color]="miancolor"
+                class="message-submit">Send</button>
     </div>
 </ion-footer>
