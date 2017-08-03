@@ -7,19 +7,22 @@ import {EmployerModule} from "../../employer/employer.module";
 import {GrabOrderPage} from "./grab-order/grab-order";
 import {OrderProcessModule} from "./orderprocess/orderprocess.module";
 import {OrderListAfterSelectDesignerPage} from "./orderlist-after-selectdes/orderlist-after-selectdes";
+import {OrderListComponent} from "./orderlist/orderlist";
 
 @NgModule({
     declarations: [
         ProjectDetailPage,
         CommentOrderPage,
         GrabOrderPage,
-        OrderListAfterSelectDesignerPage
+        OrderListAfterSelectDesignerPage,
+       OrderListComponent
     ],
     entryComponents: [
         ProjectDetailPage,
         CommentOrderPage,
         GrabOrderPage,
-        OrderListAfterSelectDesignerPage
+        OrderListAfterSelectDesignerPage,
+        OrderListComponent
     ],
     imports: [
         IonicPageModule.forChild(ProjectDetailPage),
@@ -28,7 +31,8 @@ import {OrderListAfterSelectDesignerPage} from "./orderlist-after-selectdes/orde
     ],
     exports: [
         ProjectDetailPage, CommentOrderPage,
-        OrderListAfterSelectDesignerPage
+        OrderListAfterSelectDesignerPage,
+        OrderListComponent
     ]
 })
 export class OrderModule {

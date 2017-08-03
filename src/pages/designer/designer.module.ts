@@ -1,7 +1,6 @@
 import {NgModule} from "@angular/core";
 import {DesignerTabsPage} from "./tabs/tabs";
 import {NotificationsPage} from "./nofitications/notifications";
-import {OrderListComponent} from "./orderlist/orderlist";
 import {IonicPageModule} from "ionic-angular";
 import {CommonPageModule} from "../common/commonpage.module";
 import {DesignerModulePage} from "./designer";
@@ -25,7 +24,6 @@ import {DesOrderListComponent} from "./projects/designerorderlist/designerorderl
         DesignerModulePage,
         DesignerTabsPage,
         NotificationsPage,
-        OrderListComponent,
         AuthenticationPage,
         CommentPage,
         DesignerHomePage,
@@ -38,7 +36,6 @@ import {DesOrderListComponent} from "./projects/designerorderlist/designerorderl
         DesignerModulePage,
         DesignerTabsPage,
         NotificationsPage,
-        OrderListComponent,
         AuthenticationPage,
         CommentPage,
         DesignerHomePage,
@@ -61,7 +58,6 @@ import {DesOrderListComponent} from "./projects/designerorderlist/designerorderl
         DesignerWalletPage,
         TaskSquarePage,
         ChatMessagePage,
-        OrderListComponent,
         CaseDetailPage
     ]
 })

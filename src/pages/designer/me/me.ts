@@ -9,6 +9,7 @@ import {User} from "../../../model/user";
 import {LoginPage} from "../../common/login/login";
 import { ModalController, NavParams } from 'ionic-angular';
 import {Util} from "../../../service/util";
+import {FavoriteProjectsPage} from "./favorite-projects/favorite-projects";
 declare let initializeFontSize: any;
 
 @IonicPage()
@@ -17,7 +18,7 @@ declare let initializeFontSize: any;
     templateUrl: 'me.html'
 })
 export class DesignerMePage {
-
+    favoriteProjectsPage:any=FavoriteProjectsPage;
     user = {};
 
     ionViewDidEnter() {
@@ -42,7 +43,10 @@ export class DesignerMePage {
         // if(this.isNullObj(this.user)) return;
         this.navCtrl.push(page, option)
     }
+    open(page, option) {
 
+        this.navCtrl.push(page, option)
+    }
     isNullObj(obj){
        return JSON.stringify(obj)==JSON.stringify({});
     }
