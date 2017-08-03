@@ -34,7 +34,7 @@ import {OrderProcessModule} from "../pages/common/order/orderprocess/orderproces
 import {OrderModule} from "../pages/common/order/order.module";
 import {ComponentModule} from "../component/component.module";
 // import { Calendar } from '@ionic-native/calendar';
-import {DatePicker} from '@ionic-native/date-picker';
+//import {DatePicker} from '@ionic-native/date-picker';
 
 export function provideStorage() {
     return new Storage({});
@@ -90,7 +90,7 @@ export function provideStorage() {
         ProjectsService,
         StatusBar,
         // Calendar,
-        DatePicker,
+        //DatePicker,
         HTTP,
         SplashScreen,
         ImagePicker,

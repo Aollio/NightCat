@@ -2,7 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 import {NavController, NavParams, Platform, ToastController} from 'ionic-angular';
 import {LoginPage} from "../common/login/login";
 import {ProjectDetailPage} from "../common/order/orderdetail/orderdetail"
-import {OrderListComponent} from "../designer/orderlist/orderlist";
+import {OrderListComponent} from "../common/order/orderlist/orderlist";
 import {EmployerModulePage} from "../employer/employer";
 import {DesignerModulePage} from "../designer/designer";
 import {PublishTaskPage} from "../common/publishtask/publishtask";

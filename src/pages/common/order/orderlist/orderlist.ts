@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {ProjectDetailPage} from "../../common/order/orderdetail/orderdetail";
-import {KeynoteService} from "../../../service/keynote.service";
-import {Util} from "../../../service/util";
+import {ProjectDetailPage} from "../orderdetail/orderdetail";
+import {KeynoteService} from "../../../../service/keynote.service";
+import {Util} from "../../../../service/util";
 
 declare let initializeFontSize: any
 
