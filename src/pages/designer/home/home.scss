@@ -2,6 +2,11 @@ page-home {
 
   $background-color-home: #efeff4;
 
+  .scroll-zoom-wrapper::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
   .header-bar {
     width: 100%;
     display: inline-flex;
@@ -40,7 +45,7 @@ page-home {
     padding-bottom: .5%
   }
 
-  .slides ion-slide img{
+  .slides ion-slide img {
     //max-width: 100%;
     width: 100%;
     height: 100%;
@@ -68,7 +73,7 @@ page-home {
   .order-type-btn {
     height: 2em;
     line-height: 2em;
-    background-color:white;
+    background-color: white;
     color: rgba(41, 41, 41, 0.93);
     margin: .3em;
     width: 5em;
@@ -86,11 +91,9 @@ page-home {
   }
 
   ::-webkit-scrollbar {
-    width: 0px!important;
-    height: 0px!important;
+    width: 0px !important;
+    height: 0px !important;
   }
-
-
 
   .scroll-zoom-wrapper {
     display: inline-flex !important;

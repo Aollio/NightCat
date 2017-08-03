@@ -8,4 +8,8 @@ page-accountsecurity {
   .bar-button {
     color: map_get($colors, nav-com-tx) !important;
   }
+
+  .item-center {
+    color: map_get($colors, font-color) !important;
+  }
 }
