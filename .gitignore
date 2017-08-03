@@ -3,6 +3,7 @@
 .tmp-custom-icons/
 platforms/
 www/
+dump.rdb
 .DS_Store
 node_modules/
 .idea/
