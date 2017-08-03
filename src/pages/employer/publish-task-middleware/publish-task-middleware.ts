@@ -3,6 +3,7 @@ import {NavController} from "ionic-angular";
 import {PublishTaskPage} from "../../common/publishtask/publishtask";
 import {PublishTaskPageNew} from "../../common/publish-task-new/publish-task";
 declare let initializeFontSize:any
+declare let jQuery:any
 @Component({
     selector: 'publish-task-middleware',
     templateUrl: 'publish-task-middleware.html'
@@ -42,5 +43,27 @@ export class PublishTaskMiddleWarePage {
         }
         this.nav.parent.select(0);
         console.log("end jump")
+
+
+        setTimeout(()=>{
+            this.setInput();
+        },100);
+    }
+
+    setInput(){
+        jQuery(".myInput").find("input").focus(function () {
+            console.log("focus")
+            jQuery(this).parent().addClass("myInput-wrapper-focus");
+        }).blur(function () {
+            console.log("blur")
+            let input = jQuery(this);
+            if(input.val()==""){
+                input.parent().removeClass("myInput-wrapper-focus");
+            }
+        })
+        //若点击到title
+        jQuery(".myInput").find(".myInput-title").click(function () {
+            jQuery(this).siblings().focus();
+        })
     }
 }
