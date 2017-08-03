@@ -17,6 +17,7 @@ import {OrderModule} from "./order/order.module";
 import {CustomIconsModule} from "ionic2-custom-icons";
 import {ImModule} from "../im/im.module";
 import {DesingerListComponent} from "./desinger-list/desinger-list";
+import {PublishTaskPageNew} from "./publish-task-new/publish-task";
 
 @NgModule({
     imports: [IonicPageModule.forChild(CommonModulePage),
@@ -35,6 +36,7 @@ import {DesingerListComponent} from "./desinger-list/desinger-list";
         AboutPage,
         ResetPasswordPage,
         PublishTaskPage,
+        PublishTaskPageNew,
         DesingerListComponent
     ],
     entryComponents: [
@@ -46,6 +48,7 @@ import {DesingerListComponent} from "./desinger-list/desinger-list";
         AboutPage,
         ResetPasswordPage,
         PublishTaskPage,
+        PublishTaskPageNew,
         DesingerListComponent
     ],
     exports: [
@@ -58,6 +61,7 @@ import {DesingerListComponent} from "./desinger-list/desinger-list";
         CommonModulePage,
         ResetPasswordPage,
         PublishTaskPage,
+        PublishTaskPageNew,
         CommentOrderPage,
         DesingerListComponent
     ],

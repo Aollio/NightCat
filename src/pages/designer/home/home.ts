@@ -54,6 +54,9 @@ export class DesignerHomePage {
         console.log(this.types[index])
     }
 
+    openNotificationsPage(){
+        this.navCtrl.push(NotificationsPage);
+    }
     open(page, option) {
         this.navCtrl.push(page, option)
     }

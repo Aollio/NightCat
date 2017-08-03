@@ -144,7 +144,7 @@ page-designer-me-detail {
   }
 
   .card-footer-number {
-    margin-bottom: 3rem;
+    //margin-bottom: 3rem;
     border: none;
   }
 
@@ -243,16 +243,21 @@ page-designer-me-detail {
   }
 
   .row_buttons {
-    position: relative;
+    //position: relative;
    // height: 0;
-    top: -4rem;
+   // top: -4rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    //height: 3rem;
     width: 100%;
     overflow: visible;
-    margin-bottom: 2rem;
+    //margin-bottom: 2rem;
 
 
     .attention_btn, .sed_msg_btn {
-      position: absolute;
+      //position: absolute;
+
       margin: 0;
       height: 4rem;
       font-size: 1.5rem;

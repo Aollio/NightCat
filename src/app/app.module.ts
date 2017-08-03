@@ -33,7 +33,8 @@ import {ProjectsService} from "../service/ajax/projects.service";
 import {OrderProcessModule} from "../pages/common/order/orderprocess/orderprocess.module";
 import {OrderModule} from "../pages/common/order/order.module";
 import {ComponentModule} from "../component/component.module";
-
+// import { Calendar } from '@ionic-native/calendar';
+import {DatePicker} from '@ionic-native/date-picker';
 
 export function provideStorage() {
     return new Storage({});
@@ -88,6 +89,8 @@ export function provideStorage() {
         UsersService,
         ProjectsService,
         StatusBar,
+        // Calendar,
+        DatePicker,
         HTTP,
         SplashScreen,
         ImagePicker,
