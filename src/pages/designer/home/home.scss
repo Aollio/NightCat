@@ -14,13 +14,13 @@ page-home {
 
   .logo {
     color: white;
-    font-size: 1.2em;
+    font-size: 1.2rem;
     font-weight: 600;
     margin: auto;
     text-align: center;
     width: 15%;
-    //margin-left: .2em;
-    //margin-right: .5em;
+    //margin-left: .2rem;
+    //margin-right: .5rem;
   }
 
   .header-search {
@@ -32,7 +32,7 @@ page-home {
     color: white;
     margin: auto;
     text-align: center;
-    //font-size: 1.5em;
+    //font-size: 1.5rem;
     //margin-right: 5%;
   }
 
@@ -57,35 +57,35 @@ page-home {
 
   button {
     margin: 0px !important;
-    border-radius: 0em !important;
+    border-radius: 0rem !important;
   }
 
   .buttons-slide {
-    height: 3em;
+    height: 4rem;
   }
   .scroll-zoom-wrapper {
     //border-bottom-color: #cccccc;
-    //border-bottom-width: 0.05em!important;
+    //border-bottom-width: 0.05rem!important;
     //border-bottom-style: solid;
     //
   }
 
   .order-type-btn {
-    height: 2em;
-    line-height: 2em;
+    height: 4rem;
+    line-height: 4rem;
     background-color: white;
     color: rgba(41, 41, 41, 0.93);
-    margin: .3em;
-    width: 5em;
-    font-size: 1.2em;
-    border-bottom-width: .05em;
+    margin: .3rem;
+    width: 9rem;
+    font-size: 1rem;
+    border-bottom-width: .05rem;
     border-bottom-color: #cccccc;
     border-bottom-style: solid;
   }
 
   .btn-active {
     color: map_get($colors, nav-des-bg);
-    border-bottom-width: .1em;
+    border-bottom-width: .2rem;
     border-bottom-color: $des-primary;
 
   }
