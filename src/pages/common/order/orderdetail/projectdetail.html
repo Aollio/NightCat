@@ -10,13 +10,12 @@
 </ion-header>
 
 <ion-content>
-    <ion-row class="header-row-first">
-        <ion-col class="respect-title more-weight" col-4>
-            <ion-icon name="clock-outline"></ion-icon>
-            预计完成:
+    <ion-row>
+        <ion-col class="respect-title more-weight" col-3>
+            项目标题:
         </ion-col>
-        <ion-col class="respect-content more-weight" col-8>
-            {{project.period}} Hour
+        <ion-col class="respect-content more-weight" col-9>
+            {{project.title}}
         </ion-col>
     </ion-row>
     <div class="item-divider-cus-20"></div>
@@ -29,17 +28,20 @@
         <!--<ion-icon class="person-arrow-icon" name="arrow-forward" item-end></ion-icon>-->
     </ion-item>
 
-    <ion-row>
-        <ion-col class="respect-title more-weight" col-3>
-            订单标题:
+
+    <ion-row class="header-row-first">
+        <ion-col class="respect-title more-weight" col-4>
+            <ion-icon name="clock-outline"></ion-icon>
+            预计完成:
         </ion-col>
-        <ion-col class="respect-content more-weight" col-9>
-            {{project.title}}
+        <ion-col class="respect-content more-weight" col-8>
+            {{project.period}} Hour
         </ion-col>
     </ion-row>
+
     <ion-row>
         <ion-col class="respect-title more-weight" col-3>
-            订单预算:
+            项目预算:
         </ion-col>
         <ion-col class="respect-content order-price" col-9>
             {{project.budget}}元
@@ -47,7 +49,7 @@
     </ion-row>
     <ion-row>
         <ion-col class="respect-title" col-3>
-            订单类型:
+            项目类型:
         </ion-col>
         <ion-col class="respect-content" col-9>
             {{project.type}}
@@ -89,7 +91,7 @@
     <div class="item-divider-cus-10"></div>
     <ion-row>
         <ion-col class="respect-title" col-3>
-            订单详情:
+            项目详情:
         </ion-col>
         <ion-col class="respect-content" col-9>
             {{project.content}}
@@ -129,8 +131,8 @@
 
 <ion-footer class="footer-btns" *ngIf="!isDesigner">
 
-    <button ion-button color="emp-primary" (click)="open(pay)" style="width: 30%!important;">支付</button>
-    <button ion-button color="emp-primary" (click)="open(commentorder)" style="width: 30%!important;">确认结单</button>
-    <button ion-button color="emp-primary" style="width: 30%!important;">延时接单</button>
+    <button ion-button color="emp-primary" (click)="open(pay)" style="width: 33.3%!important;">支付</button>
+    <button ion-button color="emp-primary" (click)="open(commentorder)" style="width: 33.3%!important;">确认结单</button>
+    <button ion-button color="emp-primary" style="width: 33.3%!important;">延时接单</button>
 
 </ion-footer>
