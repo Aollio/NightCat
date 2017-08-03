@@ -4,6 +4,7 @@
 platforms/
 www/
 dump.rdb
+package-lock.json
 .DS_Store
 node_modules/
 .idea/

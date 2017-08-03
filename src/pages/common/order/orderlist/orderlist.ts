@@ -7,7 +7,7 @@ import {Util} from "../../../../service/util";
 declare let initializeFontSize: any
 
 @Component({
-    selector: 'com-orderlist',
+    selector: 'order-list',
     templateUrl: 'orderlist.html'
 })
 export class OrderListComponent {
