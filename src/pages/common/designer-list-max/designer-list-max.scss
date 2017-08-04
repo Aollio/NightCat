@@ -1,4 +1,7 @@
 page-designer-list-max{
+  .content-ios{
+    background-color: #efeff4;
+  }
   .my-list{
     width: 100%;
   }
@@ -21,7 +24,7 @@ page-designer-list-max{
     height: 7rem;
     width: 7rem;
     border-radius: 5px;
-    background-color: #434343;
+    background-color: #fff;
     box-shadow:0 1px 6px #ddd;
 
   }
@@ -43,6 +46,7 @@ page-designer-list-max{
     height: 2.2rem;
   }
   .my-introduction{
+    height: 3.2rem;
     font-size: 1.2rem;
     line-height: 1.6rem;
     color: #666;
@@ -59,20 +63,20 @@ page-designer-list-max{
     display:-webkit-box;
     margin-top: 0.7rem;
   }
-  .my-li{
+  .y-li{
     -webkit-box-flex:1;
     font-size: 1.2rem;
     text-align: center;
     color: #666;
     font-family: helvetica;
   }
-  .my-li-name{
+  .y-li-name{
     margin-top: 0.3rem;
     color: #999;
   }
   .my-bar{
     height: 0.6rem;
-    background-color: #cccccc;
+    background-color: #eeeeee;
     border-radius: 0.6rem;
     margin-top: 0.7rem;
   }
@@ -81,9 +85,9 @@ page-designer-list-max{
     height: 0.6rem;
     border-top-left-radius: 0.6rem;
     border-bottom-left-radius: 0.6rem;
-    background: -webkit-linear-gradient(right, #3a83f6 , #94bbf8); /* Safari 5.1 - 6.0 */
-    background: -o-linear-gradient(right, #3a83f6 , #94bbf8); /* Opera 11.1 - 12.0 */
-    background: -moz-linear-gradient(right,#3a83f6 , #94bbf8); /* Firefox 3.6 - 15 */
-    background: linear-gradient(to right, #3a83f6 , #94bbf8); /* 标准的语法 */
+    background: -webkit-linear-gradient(right, #FA4169 , #fac1c7); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #FA4169 , #fac1c7); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right,#FA4169 , #fac1c7); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #FA4169 , #fac1c7); /* 标准的语法 */
   }
 }
