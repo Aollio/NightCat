@@ -16,7 +16,7 @@ export class KeynoteService {
             phone: '1',
             password: '123456',
             realname: '蓝晓峰',
-            summary: '我只是一个普通的设计师',
+            summary: ' 负责设计，采购，材料表制作，摆场等软装配套服务。主要作品有中山建华样板房，贵阳山水黔城样板房，韶关森林官邸样板房等。2006年以前在室内设计公司工作，担任材料配饰及绘图工作。',
             position: '原型设计师',
             school: '哈佛大学',
             service_length: '7年',
