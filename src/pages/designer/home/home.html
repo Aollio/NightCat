@@ -2,7 +2,7 @@
 
     <ion-toolbar color="nav-des-bg">
         <ion-buttons start>
-            <button ion-button icon-only class="header-name" menuToggle>
+            <button menuToggle ion-button icon-only class="header-name">
                 夜猫
             </button>
         </ion-buttons>
@@ -21,6 +21,17 @@
 </ion-header>
 
 <ion-content>
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+                pullingIcon="ios-arrow-down"
+                pullingText="Pull to refresh"
+                refreshingSpinner="dots"
+                refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
+
+
     <ion-slides class="slides" pager paginationType="bullets" loop>
         <ion-slide *ngFor="let image of images">
             <img src="{{image.url}}"/>

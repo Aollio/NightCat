@@ -46,7 +46,9 @@
     </ion-row>
 
     <div class="row_buttons" *ngIf="!isDesigner">
-        <button ion-button round class="attention_btn">关 注 我</button>
+        <button ion-button round class="attention_btn">
+            <ion-icon name="ios-heart"></ion-icon>
+            关 注 我</button>
         <button ion-button round icon-only class="sed_msg_btn"
                 (click)="openChat({sessionId: 'hgyuguyg'})">
             <ion-icon name="ios-chatbubbles"></ion-icon>

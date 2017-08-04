@@ -21,6 +21,7 @@ import {RecommendDesignerPage} from "./recommenddesigner/recommenddesigner";
 import {EmployerHomeModule} from "./home/home.module";
 import {OrderModule} from "../common/order/order.module";
 import {EmployerHomePage} from "./home/home";
+import {EmployerProjectProcess} from "./projects/employer-project-process/employer-project-process";
 
 @NgModule({
     declarations: [
@@ -33,6 +34,7 @@ import {EmployerHomePage} from "./home/home";
         ProjectsPage,
         PayPage,
         ProjectsPage,
+        EmployerProjectProcess,
         EmpOrderListComponent,
         MiddleWarePage,
         PublishTaskMiddleWarePage,
@@ -46,6 +48,7 @@ import {EmployerHomePage} from "./home/home";
         EmployerHomePage,
         HelpChoosePage,
         ProjectsPage,
+        EmployerProjectProcess,
         EmployerMePage,
         ProjectsPage,
         PayPage,
@@ -72,6 +75,7 @@ import {EmployerHomePage} from "./home/home";
         EmployerHomePage,
         PayPage,
         ChooseDesignerPage,
+        EmployerProjectProcess
     ]
 })
 export class EmployerModule {

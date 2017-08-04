@@ -1,34 +1,70 @@
-<div class="my-list">
-    <div class="my-ul" (click)="openDesignerPage(item)" class="my-list"
-         *ngFor="let item of users">
-        <div class="my-dl">
-            <div class="my-dt"><img [src]="item.img_url" alt="" /></div>
-            <div class="my-dd">
-                <div class="my-title">
-                    {{item.nickname}}
-                </div>
-                <div class="my-introduction">
-                    {{item.summary}}
-                </div>
-                <div class="my-ol">
-                    <div class="my-li">
-                        <div class="my-li-val">{{item.service_length}}</div>
-                        <div class="my-li-name">工龄</div>
+<!--<div class="my-list">-->
+    <!--<div class="my-ul" (click)="openDesignerPage(item)" class="my-list"-->
+         <!--*ngFor="let item of users">-->
+        <!--<div class="my-dl">-->
+            <!--<div class="my-dt"><img [src]="item.img_url" alt="" /></div>-->
+            <!--<div class="my-dd">-->
+                <!--<div class="my-title">-->
+                    <!--{{item.nickname}}-->
+                <!--</div>-->
+                <!--<div class="my-introduction">-->
+                    <!--{{item.summary}}-->
+                <!--</div>-->
+                <!--<div class="my-ol">-->
+                    <!--<div class="my-li">-->
+                        <!--<div class="my-li-val">{{item.service_length}}</div>-->
+                        <!--<div class="my-li-name">工龄</div>-->
+                    <!--</div>-->
+                    <!--<div class="my-li">-->
+                        <!--<div class="my-li-val">7</div>-->
+                        <!--<div class="my-li-name">总工时</div>-->
+                    <!--</div>-->
+                    <!--<div class="my-li">-->
+                        <!--<div class="my-li-val">¥500</div>-->
+                        <!--<div class="my-li-name">时薪</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="my-bar">-->
+                    <!--<div class="my-bar-l"></div>-->
+                    <!--<div class="my-bar-r"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+<ion-content class="ion-content-class">
+    <div class="my-list">
+        <div class="my-ul" (click)="openDesignerPage(item)"
+             *ngFor="let item of users">
+            <div class="my-dl">
+                <div class="my-dt"><img [src]="item.img_url" alt="" /></div>
+                <div class="my-dd">
+                    <div class="my-title">
+                        {{item.nickname}}
                     </div>
-                    <div class="my-li">
-                        <div class="my-li-val">7</div>
-                        <div class="my-li-name">总工时</div>
+                    <div class="my-introduction">
+                        {{item.summary}}
                     </div>
-                    <div class="my-li">
-                        <div class="my-li-val">¥500</div>
-                        <div class="my-li-name">时薪</div>
+                    <div class="my-ol">
+                        <div class="y-li">
+                            <div class="y-li-val">{{item.service_length}}</div>
+                            <div class="y-li-name">工龄</div>
+                        </div>
+                        <div class="y-li">
+                            <div class="y-li-val">7</div>
+                            <div class="y-li-name">总工时</div>
+                        </div>
+                        <div class="y-li">
+                            <div class="y-li-val">¥500</div>
+                            <div class="y-li-name">时薪</div>
+                        </div>
                     </div>
-                </div>
-                <div class="my-bar">
-                    <div class="my-bar-l"></div>
-                    <div class="my-bar-r"></div>
+                    <div class="my-bar">
+                        <div class="my-bar-l"></div>
+                        <div class="my-bar-r"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</ion-content>

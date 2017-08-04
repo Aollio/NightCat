@@ -18,6 +18,9 @@ export class SharedService {
     currentModuleIsDesigner: boolean;
     isDesigner = this.currentModuleIsDesigner;
 
+    //第一次使用
+    private _isFirstUse = true;
+
     //当前登录用户
     private currentUser = {};
 
@@ -33,7 +36,7 @@ export class SharedService {
     currentUserId: string;
 
     constructor(private event: Events,
-                private util:Util,
+                private util: Util,
                 private keynote: KeynoteService) {
         event.subscribe('backdoor', (user) => {
             console.log('receive \'backdoor\' event');
@@ -60,11 +63,19 @@ export class SharedService {
     }
 
     setCurrentUser(user: User) {
-        this.util.updateObj(this.currentUser,user);
+        this.util.updateObj(this.currentUser, user);
         if (user.role != 'designer') {
             this.currentModuleIsDesigner = false;
         } else {
             this.currentModuleIsDesigner = true;
         }
+    }
+
+    // 判断用户是否第一次使用
+    isFirstUse() {
+        return this._isFirstUse;
+    }
+    setIsNotFirstUse(){
+        this._isFirstUse = false;
     }
 }

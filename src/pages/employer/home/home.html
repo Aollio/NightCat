@@ -1,25 +1,25 @@
 <ion-header color="emp-primary" class="my-header">
     <!--<ion-navbar no-lines>-->
-    <ion-toolbar>
-        <ion-buttons start>
-            <button ion-button icon-only class="header-name" color="emp-primary" menuToggle>
-                夜猫
-            </button>
-        </ion-buttons>
-        <!--todo add series event. if user want to search something -->
-        <ion-searchbar placeholder="搜索设计师" class="header-search">
-            [(ngModel)]="myInput"
-            [showCancelButton]="shouldShowCancel"
-            (ionInput)="onInput($event)"
-            (ionCancel)="onCancel($event)"
-        </ion-searchbar>
-        <ion-buttons end>
-            <!--todo add the click event. -->
-            <button ion-button icon-only color="emp-primary" (click)="openNotificationsPage()">
-                <ion-icon name="text"></ion-icon>
-            </button>
-        </ion-buttons>
-    </ion-toolbar>
+        <ion-toolbar>
+            <ion-buttons start>
+                <button menuToggle ion-button icon-only class="header-name" color="emp-primary">
+                    夜猫
+                </button>
+            </ion-buttons>
+            <!--todo add series event. if user want to search something -->
+            <ion-searchbar placeholder="搜索设计师" class="header-search">
+                [(ngModel)]="myInput"
+                [showCancelButton]="shouldShowCancel"
+                (ionInput)="onInput($event)"
+                (ionCancel)="onCancel($event)"
+            </ion-searchbar>
+            <ion-buttons end>
+                <!--todo add the click event. -->
+                <button ion-button icon-only color="emp-primary"  (click)="openNotificationsPage()">
+                    <ion-icon name="text"></ion-icon>
+                </button>
+            </ion-buttons>
+        </ion-toolbar>
     <!--</ion-navbar>-->
 </ion-header>
 
@@ -29,7 +29,7 @@
     <div class="my-title" *ngIf="user.nickname == null">嗨, 请<a class="aclass" (click)="openLoginPage($event)">登录</a></div>
     <div class="my-val">今天的你还好吗, 准备从哪项开始?</div>
     <div class="my-ul clearfloat">
-        <div class="my-li my-left" (click)="btn_designer()">
+        <div class="my-li my-left" (click)="btn_designer()" >
             <div class="my-li-ioc">
                 H
             </div>

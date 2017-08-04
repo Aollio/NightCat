@@ -67,7 +67,7 @@ page-employer-home {
     background: linear-gradient(to top, #595959, #c1c1c1); /* 标准的语法 */
   }
 
-  .my-li:active{
+  .my-li:active {
     box-shadow: 0 5px 20px map_get($colors, emp-primary);
     background: -webkit-linear-gradient(top, map_get($colors, emp-primary), #fac1c7); /* Safari 5.1 - 6.0 */
     background: -o-linear-gradient(top, map_get($colors, emp-primary), #fac1c7); /* Opera 11.1 - 12.0 */
@@ -118,4 +118,7 @@ page-employer-home {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
   }
+
+
+
 }
