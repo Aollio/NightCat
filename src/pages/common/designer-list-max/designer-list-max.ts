@@ -5,11 +5,11 @@ import {NavController} from "ionic-angular";
 declare let initializeFontSize: any
 
 @Component({
-    selector: 'desinger-list',
-    templateUrl: 'desinger-list.html'
+   selector: 'page-designer-list-max',
+    templateUrl: 'designer-list-max.html'
 })
 
-export class DesingerListComponent {
+export class DesignerListMaxComponent {
 
     @Input("users") users;
 
@@ -35,4 +35,3 @@ export class DesingerListComponent {
     }
 
 }
-

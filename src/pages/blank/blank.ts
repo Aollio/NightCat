@@ -2,9 +2,9 @@ import {Component, ViewChild} from "@angular/core";
 import set = Reflect.set;
 // import {console} from "../designer/tasksquare/tasksquare";
 import {Util} from "../../service/util";
-import {Calendar} from '@ionic-native/calendar';
+//import {Calendar} from '@ionic-native/calendar';
 import {BasePage} from "../base/base-page";
-import {DatePicker} from '@ionic-native/date-picker';
+//import {DatePicker} from '@ionic-native/date-picker';
 
 
 // declare let initializeFontSize: any
@@ -19,17 +19,18 @@ export class BlankPage {
     file: any;
 
     constructor(public util: Util,
-                private datePicker: DatePicker,) {
+              //  private datePicker: DatePicker,
+                ) {
 
 
-        this.datePicker.show({
-            date: new Date(),
-            mode: 'date',
-            androidTheme: this.datePicker.ANDROID_THEMES.THEME_HOLO_DARK
-        }).then(
-            date => console.log('Got date: ', date),
-            err => console.log('Error occurred while getting date: ', err)
-        );
+        // this.datePicker.show({
+        //     date: new Date(),
+        //     mode: 'date',
+        //     androidTheme: this.datePicker.ANDROID_THEMES.THEME_HOLO_DARK
+        // }).then(
+        //     date => console.log('Got date: ', date),
+        //     err => console.log('Error occurred while getting date: ', err)
+        // );
 
 
         // super.shared

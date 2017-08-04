@@ -16,7 +16,7 @@ declare let initializeFontSize: any
 export class DesignerMeDetailPage {
     btnState: any = 1;
     user = {};
-
+    maincolor;
     public isDesigner: boolean;
 
     cases: Array<{ title, desc, fav_count, comment_count, time }> = [
@@ -40,6 +40,7 @@ export class DesignerMeDetailPage {
                 public navParams: NavParams) {
         this.isDesigner = navParams.get('isDesigner');
         this.user = navParams.get('user') || shared.getCurrentUser();
+        this.maincolor=this.shared.getPrimaryColor();
 
     }
 

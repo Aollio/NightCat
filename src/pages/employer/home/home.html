@@ -24,8 +24,10 @@
 </ion-header>
 
 <ion-content>
-    <div class="my-title">嗨, {{user.nickname||"请登录"}}</div>
-    <div class="my-val">今天的你还好吗, 准备从哪项开始? </div>
+
+    <div class="my-title" *ngIf="user.nickname != null">嗨, {{user.nickname}}</div>
+    <div class="my-title" *ngIf="user.nickname == null">嗨, 请<a class="aclass" (click)="openLoginPage($event)">登录</a></div>
+    <div class="my-val">今天的你还好吗, 准备从哪项开始?</div>
     <div class="my-ul clearfloat">
         <div class="my-li my-left" (click)="btn_designer()" >
             <div class="my-li-ioc">
@@ -35,7 +37,7 @@
                 设计师
             </div>
             <div class="my-li-val">
-                The top open source framework for building amazing mobile apps.
+
             </div>
         </div>
         <div class="my-li" (click)="btn_fullstack()">
@@ -43,10 +45,10 @@
                 H
             </div>
             <div class="my-li-name">
-                总包
+                项目经理
             </div>
             <div class="my-li-val">
-                The top open source framework
+
             </div>
         </div>
         <div class="my-li my-left" (click)="btn_types()">
@@ -57,7 +59,7 @@
                 分类
             </div>
             <div class="my-li-val">
-                The top open source framework
+
             </div>
         </div>
         <div class="my-li" (click)="btn_helpChoosePage()">
@@ -68,7 +70,7 @@
                 帮我选
             </div>
             <div class="my-li-val">
-                The top open source framework
+
             </div>
         </div>
     </div>

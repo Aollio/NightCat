@@ -19,7 +19,7 @@
 <ion-content class="content" [class.designer]="designer" [class.employer]="!designer">
     <div class="blank-10px"></div>
     <ion-item class="my-item" no-lines>
-        <ion-label [color]='maincolor'>项目类型 *</ion-label>
+        <ion-label class="labelcolor">项目类型 *</ion-label>
         <ion-select [(ngModel)]="gaming" input interface="popover" placeholder="请选择">
             <ion-option value="0">概预算</ion-option>
             <ion-option value="1">项目经理</ion-option>
@@ -70,7 +70,7 @@
     <div class="blank-10px"></div>
 
     <ion-item class="my-item" no-lines *ngIf="designer === false">
-        <ion-label [color]='maincolor'>抢单截止时间 *</ion-label>
+        <ion-label class="labelcolor">抢单截止时间 *</ion-label>
         <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="event.employer_deadline"></ion-datetime>
     </ion-item>
     <div *ngIf="designer === false" class="tip-small-label">设计单位(面积/个数)</div>
@@ -111,7 +111,7 @@
     <!--</ion-item>-->
 
     <ion-item class="my-item" no-lines>
-        <ion-label [color]='maincolor'>设计深度 *</ion-label>
+        <ion-label class="labelcolor">设计深度 *</ion-label>
         <ion-select [(ngModel)]="relationship" input interface="popover" placeholder="请选择">
             <ion-option value="0">方案</ion-option>
             <ion-option value="1">扩出</ion-option>
@@ -145,12 +145,12 @@
     <!--<ion-input type="text" value=""></ion-input>-->
     <!--</ion-item>-->
     <ion-item>
-        <ion-label floating>工时 *</ion-label>
+        <ion-label floating>工时 </ion-label>
         <ion-input [(ngModel)]="event.workTime" type="text"></ion-input>
     </ion-item>
     <div class="blank-10px"></div>
     <ion-item class="my-item" no-lines>
-        <ion-label fixed [color]='maincolor'>设计时间 *</ion-label>
+        <ion-label fixed class="labelcolor">设计时间 *</ion-label>
     </ion-item>
     <ion-item class="my-item no-radius">
         <ion-label [color]='cat-gray'>开始</ion-label>

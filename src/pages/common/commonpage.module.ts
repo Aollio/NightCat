@@ -16,8 +16,9 @@ import {CommentOrderPage} from "./order/comment-order/comment-order";
 import {OrderModule} from "./order/order.module";
 import {CustomIconsModule} from "ionic2-custom-icons";
 import {ImModule} from "../im/im.module";
-import {DesingerListComponent} from "./desinger-list/desinger-list";
 import {PublishTaskPageNew} from "./publish-task-new/publish-task";
+import {DesingerListComponent} from "./designer-list-min/designer-list";
+import {DesignerListMaxComponent} from "./designer-list-max/designer-list-max";
 
 @NgModule({
     imports: [IonicPageModule.forChild(CommonModulePage),
@@ -37,7 +38,8 @@ import {PublishTaskPageNew} from "./publish-task-new/publish-task";
         ResetPasswordPage,
         PublishTaskPage,
         PublishTaskPageNew,
-        DesingerListComponent
+        DesingerListComponent,
+        DesignerListMaxComponent
     ],
     entryComponents: [
         CommonModulePage,
@@ -49,7 +51,8 @@ import {PublishTaskPageNew} from "./publish-task-new/publish-task";
         ResetPasswordPage,
         PublishTaskPage,
         PublishTaskPageNew,
-        DesingerListComponent
+        DesingerListComponent,
+        DesignerListMaxComponent
     ],
     exports: [
         AccountSecurityPage,
@@ -63,7 +66,8 @@ import {PublishTaskPageNew} from "./publish-task-new/publish-task";
         PublishTaskPage,
         PublishTaskPageNew,
         CommentOrderPage,
-        DesingerListComponent
+        DesingerListComponent,
+        DesignerListMaxComponent
     ],
     providers: []
 })
