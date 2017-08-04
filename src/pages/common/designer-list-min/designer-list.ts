@@ -5,8 +5,8 @@ import {NavController} from "ionic-angular";
 declare let initializeFontSize: any
 
 @Component({
-    selector: 'desinger-list',
-    templateUrl: 'desinger-list.html'
+    selector: 'designer-list',
+    templateUrl: 'designer-list.html'
 })
 
 export class DesingerListComponent {

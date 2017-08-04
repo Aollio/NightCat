@@ -16,8 +16,8 @@ import {CommentOrderPage} from "./order/comment-order/comment-order";
 import {OrderModule} from "./order/order.module";
 import {CustomIconsModule} from "ionic2-custom-icons";
 import {ImModule} from "../im/im.module";
-import {DesingerListComponent} from "./desinger-list/desinger-list";
 import {PublishTaskPageNew} from "./publish-task-new/publish-task";
+import {DesingerListComponent} from "./designer-list/designer-list";
 
 @NgModule({
     imports: [IonicPageModule.forChild(CommonModulePage),
