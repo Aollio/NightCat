@@ -3,20 +3,29 @@ import {NavController} from "ionic-angular";
 import {DesignerMeDetailPage} from "../../designer/me/medetail/medetail";
 import {ChooseDesignerPage} from "../choosedesigner/choosedesigner";
 import {HelpChoosePage} from "../helpchoose/helpchoose";
+import {UsersService} from "../../../service/ajax/users.service";
+import {KeynoteService} from "../../../service/keynote.service";
+
 declare let initializeFontSize: any;
+
 @Component({
     templateUrl: 'recommenddesigner.html',
-    selector:'page-recommenddesigner'
+    selector: 'page-recommenddesigner'
 })
-export class RecommendDesignerPage{
-    designerMeDetailPage:any=DesignerMeDetailPage;
-    helpchoosePage:any=HelpChoosePage;
-    constructor(public navctrl:NavController){
+export class RecommendDesignerPage {
+    designerMeDetailPage: any = DesignerMeDetailPage;
+    helpchoosePage: any = HelpChoosePage;
 
+    users;
+
+    constructor(public navctrl: NavController, private keynote: KeynoteService) {
+        this.users = this.keynote.users
     }
+
     ionViewDidEnter() {
         initializeFontSize()
     }
+
     desarray: Array<{ avatar, name, time, describe }> = [
         {
             avatar: 'assets/img/des-1.png', name: '张三', time: '100/时',
@@ -58,7 +67,8 @@ export class RecommendDesignerPage{
         this.selected_index = index;
         this.selected = designer;
     }
-    open(page,{}){
-        this.navctrl.push(page,{});
+
+    open(page, {}) {
+        this.navctrl.push(page, {});
     }
 }
