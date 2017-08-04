@@ -1,18 +1,21 @@
 
 page-employer-tabs {
-
-  .tab-button[aria-selected=true] .tab-button-icon {
-    color: $emp-primary !important;
-  }
-  .tab-button[aria-selected=true] {
-    color: $emp-primary !important;
+  .fabicon{
+    margin-top: 1rem;
   }
 
-
-  .ion-md-add-circle{
-    color: $emp-primary !important;
-    height: auto!important;
-    font-size: 4.5rem!important;
-  }
+  //.tab-button[aria-selected=true] .tab-button-icon {
+  //  color: $emp-primary !important;
+  //}
+  //.tab-button[aria-selected=true] {
+  //  color: $emp-primary !important;
+  //}
+  //
+  //
+  //.ion-md-add-circle{
+  //  color: $emp-primary !important;
+  //  height: auto!important;
+  //  font-size: 4.5rem!important;
+  //}
 
 }
