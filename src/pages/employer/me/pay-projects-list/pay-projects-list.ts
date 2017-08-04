@@ -16,5 +16,15 @@ export class PayProjectsListPage {
     constructor(public shared:SharedService){
         this.miancolor=this.shared.getPrimaryColor();
     }
+
+    //todo 内容刷新
+    doRefresh(refresher) {
+        console.log('Begin async operation', refresher);
+
+        setTimeout(() => {
+            console.log('Async operation has ended');
+            refresher.complete();
+        }, 2000);
+    }
 }
 

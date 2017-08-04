@@ -11,5 +11,13 @@
 </ion-header>
 
 <ion-content class="bodybg">
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+                pullingIcon="ios-arrow-down"
+                pullingText="Pull to refresh"
+                refreshingSpinner="dots"
+                refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
     <order-list></order-list>
 </ion-content>

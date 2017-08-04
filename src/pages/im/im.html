@@ -11,8 +11,16 @@
 </ion-header>
 
 <ion-content>
-    <ion-list>
-        <ion-item class="friend" *ngFor="let session of sessions" (click)="chat(session.id)">
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+                pullingIcon="ios-arrow-down"
+                pullingText="Pull to refresh"
+                refreshingSpinner="dots"
+                refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
+    <ion-list >
+        <ion-item no-border class="friend" *ngFor="let session of sessions" (click)="chat(session.id)">
 
             <ion-avatar item-start>
                 <img src="assets/img/des-3.png">

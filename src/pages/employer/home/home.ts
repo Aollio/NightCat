@@ -20,6 +20,7 @@ export class EmployerHomePage {
     static isfirstCome = true;
     user = {};
 
+
     ionViewDidEnter() {
         initializeFontSize()
         this.util.updateObj(this.user, this.shared.getCurrentUser());
@@ -80,4 +81,5 @@ export class EmployerHomePage {
         this.navCtrl.push(HelpChoosePage);
 
     }
+
 }

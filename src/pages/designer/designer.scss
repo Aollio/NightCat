@@ -4,3 +4,25 @@ ion-navbar {
   //color: $nav-des-bg;/
   color: map_get($colors,nav-des-bg)!important;
 }
+
+//start 浮动提示按钮
+ion-fab {
+  margin-top: 11rem;
+  animation: floating 1s infinite ease-in-out;
+  button {
+    background-color: transparent !important;
+  }
+}
+
+@keyframes floating {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 0.5rem;
+  }
+  100% {
+    top: 0;
+  }
+}
+//end 浮动提示按钮

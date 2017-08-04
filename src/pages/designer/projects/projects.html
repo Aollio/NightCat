@@ -74,6 +74,15 @@
         </ion-col>
     </ion-row>
 
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+                pullingIcon="ios-arrow-down"
+                pullingText="Pull to refresh"
+                refreshingSpinner="dots"
+                refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
+
    <page-orderlist-after-selectdes [type]="type"></page-orderlist-after-selectdes>
 
 </ion-content>

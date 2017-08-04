@@ -4,6 +4,6 @@ import {Component} from "@angular/core";
     selector: 'page-employer-project-process',
     templateUrl: 'employer-project-process.html'
 })
-export class ProjectsPage {
+export class EmployerProjectProcess {
 
 }

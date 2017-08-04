@@ -4,22 +4,31 @@
 
 
 <ion-content>
-    <div class="me-header">
-        <div center class="me-avatar">
-            <img [src]="user.img_url || 'assets/img/logo1.png'">
+    <!--用户未登录-->
+    <div *ngIf="isNullObj(user)" class="me-header">
+        <div class="me-avatar">
+            <img src="assets/img/logo1.png"/>
         </div>
-
-        <div *ngIf="!isNullObj1(user)" class="me-name">{{user.nickname || ''}}
-            <span><ion-label>
-                {{user.service_length || ''}}&nbsp;{{user.school || ''}}
-            <br/>
-            {{user.position || ''}}
-            </ion-label></span>
-        </div>
-        <div *ngIf="isNullObj1(user)" class="login_btn_wrapper">
-            <button ion-button small outline color="light" (click)="openLoginPage($event)">请登录</button>
+        <div class="login_btn_wrapper">
+            <button small ion-button outline color="light" (click)="openLoginPage($event)">请登录</button>
         </div>
     </div>
+
+    <!--用户已登录-->
+    <div *ngIf="!isNullObj(user)" class="me-header">
+        <div class="me-avatar">
+            <img [src]="user.img_url || 'assets/img/logo1.png'">
+        </div>
+        <div class="me-name">{{user.nickname || ''}}
+            <!--<span><ion-label>-->
+                <!--{{user.service_length || ''}}&nbsp;{{user.school || ''}}-->
+            <!--<br/>-->
+            <!--{{user.position || ''}}-->
+            <!--</ion-label></span>-->
+        </div>
+    </div>
+
+
     <ion-list class="ion-list">
         <!--<ion-item>我的订单-->
             <!--<ion-icon name="arrow-forward" item-end></ion-icon>-->

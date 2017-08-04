@@ -8,9 +8,9 @@ import {KeynoteService} from "./keynote.service";
 import {SharedService} from "./share.service";
 
 @Injectable()
-@Component({
-    providers: [Http]
-})
+// @Component({
+//     providers: [Http]
+// })
 export class NetworkService {
 
 

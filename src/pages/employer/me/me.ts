@@ -35,7 +35,7 @@ export class EmployerMePage {
         this.navCtrl.push(EmpFavoriteDesignerPage, {})
     }
 
-    isNullObj1(obj) {
+    isNullObj(obj) {
         return JSON.stringify(obj) == JSON.stringify({});
     }
 

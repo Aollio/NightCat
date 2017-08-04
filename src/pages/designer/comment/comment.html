@@ -5,6 +5,14 @@
 </ion-header>
 
 <ion-content>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+                pullingIcon="ios-arrow-down"
+                pullingText="Pull to refresh"
+                refreshingSpinner="dots"
+                refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
     <ion-list>
         <ion-item-sliding>
             <ion-item>

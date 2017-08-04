@@ -35,11 +35,6 @@
             <!--</div>-->
         </ion-col>
     </ion-row>
-
-</ion-header>
-
-
-<ion-content>
     <ion-row class="type-nav">
         <ion-col (click)="select('wait_design')"
                  col-3 class="order-type-col order-type-color" text-center>
@@ -75,6 +70,20 @@
             </div>
         </ion-col>
     </ion-row>
+</ion-header>
+
+
+<ion-content>
+
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+                pullingIcon="ios-arrow-down"
+                pullingText="Pull to refresh"
+                refreshingSpinner="dots"
+                refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
 
     <page-orderlist-after-selectdes [type]="type">
 
