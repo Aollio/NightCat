@@ -1,5 +1,9 @@
 <ion-header>
-    <ion-navbar no-lines>
+    <ion-navbar no-lines hideBackButton="true">
+        <ion-buttons start>
+            <button ion-button clear (click)="goback()">
+                <ion-icon name="ios-arrow-back"></ion-icon>返回</button>
+        </ion-buttons>
         <ion-title>
             完成问卷找到设计师
         </ion-title>

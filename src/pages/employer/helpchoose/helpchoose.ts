@@ -71,6 +71,15 @@ export class HelpChoosePage {
             this.navCtrl.push(RecommendDesignerPage);
         }
     }
+
+    goback(){
+        if(this.state==1){
+            this.navCtrl.pop();
+        }
+        if(this.state>1){
+            this.state--;
+        }
+    }
     open(page){
         this.navCtrl.push(page);
     }

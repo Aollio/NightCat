@@ -11,9 +11,12 @@ declare let initializeFontSize: any
 export class ModifyPhonePage {
     maincolor;
 
+    designer;
+
     constructor(public navCtrl: NavController,
                 public shared: SharedService) {
         this.maincolor = this.shared.getPrimaryColor();
+        this.designer = this.shared.currentModuleIsDesigner;
     }
 
     ionViewDidEnter() {

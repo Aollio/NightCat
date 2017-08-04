@@ -17,8 +17,14 @@ export class AccountSecurityPage {
 
     modifytel = ModifyPhonePage;
 
+    maincolor;
+
+    designer;
+
     constructor(public navCtrl: NavController,
                 public shared: SharedService) {
+        this.maincolor = this.shared.getPrimaryColor();
+        this.designer = this.shared.currentModuleIsDesigner;
 
     }
 

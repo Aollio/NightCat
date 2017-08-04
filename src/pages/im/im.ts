@@ -4,7 +4,10 @@ import {State} from "../../service/im/state.im";
 import {Util} from "../../service/util";
 import {ChatPage} from "./chat/chat";
 import {NavController} from "ionic-angular";
+import {SharedService} from "../../service/share.service";
+
 declare let initializeFontSize: any
+
 @Component({
     selector: 'page-im',
     templateUrl: 'im.html'
@@ -15,16 +18,22 @@ export class IMPage {
 
     //sessionNameMap: any = {}
 
-    im = IMPage
-
+    im = IMPage;
+    maincolor;
+    designer;
     constructor(public imServ: ImService,
                 public nav: NavController,
-                public util: Util) {
+                public util: Util,
+                public shared: SharedService) {
+        this.maincolor = this.shared.getPrimaryColor();
+        this.designer=this.shared.isDesigner;
         // this.sessions = this.imServ.state.sessionlist
     }
+
     ionViewDidEnter() {
         initializeFontSize()
     }
+
     // ionViewDidEnter(){
     //
     //     let loading = this.util.createLoading("加载消息列表中...")
@@ -58,6 +67,7 @@ export class IMPage {
             sessionId: sessionId
         })
     }
+
     //
     //
     // initFriendlyName() {
@@ -69,10 +79,12 @@ export class IMPage {
     // }
 
 
-    sessions:Array<{id,message,updateTime}>=[
-        {id:'设计师小A',message:'你好',updateTime:'12:01'
-    },
-        {id:'设计师小B',message:'你好',updateTime:'12:01'
+    sessions: Array<{ id, message, updateTime }> = [
+        {
+            id: '设计师小A', message: '你好', updateTime: '12:01'
+        },
+        {
+            id: '设计师小B', message: '你好', updateTime: '12:01'
         },
     ];
 

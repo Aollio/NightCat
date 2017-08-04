@@ -33,26 +33,26 @@ custom-icon::before {
 //.back-button-icon-ios {
 //  font-size: 1.7rem !important;
 //}
-.toolbar-title-ios{
-  font-weight:normal!important;
+.toolbar-title-ios {
+  font-weight: normal !important;
 }
 
-.margin_bottom_0{
-  margin-bottom: 0!important;
+.margin_bottom_0 {
+  margin-bottom: 0 !important;
 }
 
-body{
-  color: #333!important;
+body {
+  color: #333 !important;
 }
 
 //弹出框
-#pop_bg{
+#pop_bg {
   display: none;
   position: relative;
   width: 100%;
   height: 100%;
   background-color: rgba(180, 180, 180, 0.61);
-  .pop{
+  .pop {
     background-color: whitesmoke;
     background-clip: content-box;
     border-radius: 1rem;
@@ -77,8 +77,8 @@ body{
 
 }
 
-.background-div img{
-    min-height: 100%
+.background-div img {
+  min-height: 100%
 }
 
 .footer-btn {
@@ -86,4 +86,23 @@ body{
   height: 4.5rem;
   margin: 0 !important;
   padding: 0 !important;
+}
+
+//主题色
+.designer {
+  .toolbar-title {
+    color: $des-primary!important;
+  }
+  .bar-button-default-ios{
+    color: $des-primary!important;
+  }
+}
+
+.employer {
+  .toolbar-title {
+    color: $emp-primary !important;
+  }
+  .bar-button-default-ios{
+    color: $emp-primary !important;
+  }
 }
