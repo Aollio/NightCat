@@ -1,4 +1,4 @@
-import {NgModule} from "@angular/core";
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from "@angular/core";
 import {IonicPageModule} from "ionic-angular";
 import {CommonPageModule} from "../common/commonpage.module";
 import {EmployerTabsPage} from "./tabs/tabs";
@@ -70,13 +70,15 @@ import {EmployerProjectProcess} from "./projects/employer-project-process/employ
         EmployerHomeModule,
         OrderModule,
     ],
-    exports: [ProjectsPage,
+    exports: [
+        ProjectsPage,
         EmployerModulePage,
         EmployerHomePage,
         PayPage,
         ChooseDesignerPage,
         EmployerProjectProcess
-    ]
+    ],
+    schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class EmployerModule {
 }

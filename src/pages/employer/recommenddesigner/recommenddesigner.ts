@@ -9,8 +9,8 @@ import {KeynoteService} from "../../../service/keynote.service";
 declare let initializeFontSize: any;
 
 @Component({
-    templateUrl: 'recommenddesigner.html',
-    selector: 'page-recommenddesigner'
+    selector: 'page-recommenddesigner',
+    templateUrl: 'recommenddesigner.html'
 })
 export class RecommendDesignerPage {
     designerMeDetailPage: any = DesignerMeDetailPage;

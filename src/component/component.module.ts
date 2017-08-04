@@ -1,5 +1,5 @@
 import {NgModule} from "@angular/core";
-import {PublishOrderItemComponent} from "./publishedOrderItem/publishOrderItem.component";
+import {PublishOrderItemComponent} from "./published-order-item/published-order-item";
 
 @NgModule({
     declarations:[

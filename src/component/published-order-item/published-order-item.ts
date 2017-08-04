@@ -4,8 +4,8 @@ import {Order} from "../../model/Order";
 
 @Component({
     selector: "publish-order-item",
-    templateUrl: "./publishOrderItem.html",
-    // styleUrls: ["./publishOrderItem.scss"]
+    templateUrl: "published-order-item.html",
+    // styleUrls: ["./published-order-item.scss"]
 })
 
 export class PublishOrderItemComponent {

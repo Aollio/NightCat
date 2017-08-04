@@ -9,7 +9,7 @@ declare let initializeFontSize: any
     templateUrl: 'designer-list.html'
 })
 
-export class DesingerListComponent {
+export class DesignerListMinComponent {
 
     @Input("users") users;
 

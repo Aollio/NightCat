@@ -17,11 +17,12 @@ import {OrderModule} from "./order/order.module";
 import {CustomIconsModule} from "ionic2-custom-icons";
 import {ImModule} from "../im/im.module";
 import {PublishTaskPageNew} from "./publish-task-new/publish-task";
-import {DesingerListComponent} from "./designer-list-min/designer-list";
+import {DesignerListMinComponent} from "./designer-list-min/designer-list";
 import {DesignerListMaxComponent} from "./designer-list-max/designer-list-max";
 
 @NgModule({
-    imports: [IonicPageModule.forChild(CommonModulePage),
+    imports: [
+        IonicPageModule.forChild(CommonModulePage),
         SecurityCenterModule,
         DesignerMeModule,
         OrderModule,
@@ -38,7 +39,7 @@ import {DesignerListMaxComponent} from "./designer-list-max/designer-list-max";
         ResetPasswordPage,
         PublishTaskPage,
         PublishTaskPageNew,
-        DesingerListComponent,
+        DesignerListMinComponent,
         DesignerListMaxComponent
     ],
     entryComponents: [
@@ -51,7 +52,7 @@ import {DesignerListMaxComponent} from "./designer-list-max/designer-list-max";
         ResetPasswordPage,
         PublishTaskPage,
         PublishTaskPageNew,
-        DesingerListComponent,
+        DesignerListMinComponent,
         DesignerListMaxComponent
     ],
     exports: [
@@ -66,7 +67,7 @@ import {DesignerListMaxComponent} from "./designer-list-max/designer-list-max";
         PublishTaskPage,
         PublishTaskPageNew,
         CommentOrderPage,
-        DesingerListComponent,
+        DesignerListMinComponent,
         DesignerListMaxComponent
     ],
     providers: []
