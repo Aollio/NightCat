@@ -21,31 +21,19 @@ export class EmployerHomePage {
 
     static isfirstCome = true;
     user = {};
-    users=[];
+    users = [];
 
 
     ionViewDidEnter() {
         initializeFontSize()
         this.util.updateObj(this.user, this.shared.getCurrentUser());
     }
-    openNotificationsPage(){
-        this.navCtrl.push(NotificationsPage);
-    }
-    //
-    // show() {
-    //     console.log("touch")
-    // }
-
-    designerMeDetailPage: DesignerMeDetailPage;
-    loginPage:LoginPage;
 
     constructor(public navCtrl: NavController,
                 private shared: SharedService,
-                private usersServ:UsersService,
+                private usersServ: UsersService,
                 private util: Util,
-                public alertCtrl: AlertController,
                 public modalCtrl: ModalController) {
-        // this.showAlert();
         this.util.updateObj(this.user, shared.getCurrentUser());
 
         this.usersServ.getUsersByRole(true).then(users => {
@@ -56,11 +44,11 @@ export class EmployerHomePage {
         }).catch(error => console.log(error));
 
     }
+
     openLoginPage(event) {
         let profileModal = this.modalCtrl.create(LoginPage);
         profileModal.present();
         event.stopPropagation();
-        // this.navCtrl.push(LoginPage);
     }
 
 

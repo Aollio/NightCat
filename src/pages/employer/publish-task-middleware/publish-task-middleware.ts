@@ -1,7 +1,7 @@
 import {Component} from "@angular/core";
 import {NavController} from "ionic-angular";
 import {PublishTaskPage} from "../../common/publishtask/publishtask";
-import {PublishTaskPageNew} from "../../common/publish-task-new/publish-task";
+
 declare let initializeFontSize:any
 declare let jQuery:any
 @Component({

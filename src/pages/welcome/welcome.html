@@ -1,21 +1,6 @@
 <ion-content>
-    <ion-buttons class="over_btn" *ngIf="state==1" end>
-        <button ion-button clear color="primary" (click)="enterRegister()">跳过</button>
-    </ion-buttons>
-    <div class="tutorial-page" *ngIf="state===1">
-        <ion-slides (ionSlideDidChange)="toggleEnterBtn()">
-            <ion-slide *ngFor="let slide of slidesImg">
-                <img [src]="slide" class="slide-image"/>
-            </ion-slide>
-            <ion-slide class="end-class">
-                <button id="enterbutton" (click)="enterRegister()">
-                    进入主页
-                </button>
-            </ion-slide>
-        </ion-slides>
-    </div>
 
-    <div class="welcome-page" *ngIf="state===2">
+    <div class="welcome-page">
 
         <div class="background-div">
             <img src="assets/img/SelectOption.png">
@@ -33,7 +18,6 @@
                 round>
             以雇主的身份开始
         </button>
-        <!--<br>-->
         <div class="or"></div>
         <button ion-button class="desbutton" color="des-primary"
                 (click)="openDesigner()"

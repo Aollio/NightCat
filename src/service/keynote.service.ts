@@ -1,5 +1,4 @@
 import {Injectable} from "@angular/core";
-import {SharedService} from "./share.service";
 import {Util} from "./util";
 
 @Injectable()

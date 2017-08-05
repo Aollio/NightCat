@@ -1,11 +1,9 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import { NavController, NavParams} from 'ionic-angular';
 import {SharedService} from "../../../../service/share.service";
 import {AbsCommonPage} from "../../abs";
-import {DesignerMeDetailPage} from "../../../designer/me/medetail/medetail";
 import {PayPage} from "../../../employer/pay/pay";
 import {CommentOrderPage} from "../comment-order/comment-order";
-import {ChatPage} from "../../../im/chat/chat";
 import {ProjectsService} from "../../../../service/ajax/projects.service";
 import {Util} from "../../../../service/util";
 import {GrabOrderPage} from "../grab-order/grab-order";
@@ -57,10 +55,6 @@ export class ProjectDetailPage extends AbsCommonPage {
         initializeFontSize()
     }
 
-    // openUserDetail() {
-    //     this.navCtrl.push(DesignerMeDetailPage, {})
-    // }
-
 
     open(page, option) {
         this.navCtrl.push(page, {})
@@ -88,9 +82,6 @@ export class ProjectDetailPage extends AbsCommonPage {
         let month = date.getMonth() + 1
         let day = date.getDate()
         return year + '-' + month + '-' + day;
-    }
-    openChat(operation) {
-        this.navCtrl.push(ChatPage, operation);
     }
 
     openGrabOrderPage(orderId) {

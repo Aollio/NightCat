@@ -5,10 +5,7 @@ import {NavController, Platform} from "ionic-angular";
 import {SplashScreen} from "@ionic-native/splash-screen";
 import {StatusBar} from "@ionic-native/status-bar";
 import {DesignerMePage} from "../me/me";
-import {TaskSquarePage} from "../tasksquare/tasksquare";
 import {NotificationsPage} from "../nofitications/notifications";
-import {DesignerModulePage} from "../designer";
-import {IMPage} from "../../im/im";
 import {DesignerProjectsPage} from "../projects/projects";
 
 @Component({
@@ -24,7 +21,7 @@ export class DesignerTabsPage {
 
 
     constructor(public navCtrl: NavController, public platform: Platform,
-                public statusBar: StatusBar, public splashScreen: SplashScreen) {
+    ) {
     }
 
 

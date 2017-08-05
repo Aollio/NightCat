@@ -43,7 +43,7 @@ export class NetworkService {
      * @param param
      * @returns {Promise<any>}
      */
-    async get(url, param?, header?): Promise<any> {
+    async get (url, param?, header?): Promise<any> {
 
         if (this.share.KEYNOTE) {
             return {status: 600}
@@ -75,14 +75,17 @@ export class NetworkService {
         }
 
         //using http mobile
-        let data
+        let response
         try {
-            data = await this.http_mobile.get(url, param || {}, {})
+            response = await this.http_mobile.get(url, param || {}, header || {})
         } catch (error) {
             console.log(error)
             return error
         }
-        return data.data
+        console.log("手机执行GET")
+        let body = JSON.parse(response.data)
+        console.log(body)
+        return body
 
     }
 
@@ -139,14 +142,17 @@ export class NetworkService {
 
         let response
         try {
-            response = await this.http_mobile.post(url, param = {}, headers)
+            response = await this.http_mobile.post(url, param, headers)
         } catch (error) {
             if (error.status == 401) {
                 this.event.publish('gotologin')
             }
             return error
         }
-        return response.data
+        console.log("手机执行POST")
+        let body = JSON.parse(response.data)
+        console.log(body)
+        return body
     }
 
 

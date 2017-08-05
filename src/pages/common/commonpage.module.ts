@@ -2,7 +2,6 @@ import {NgModule} from "@angular/core";
 import {SlideMenuComponment} from "./slidemenu/slidemenu";
 import {IonicPageModule} from "ionic-angular";
 import {AccountSecurityPage} from "./securitycenter/accountsecurity/accountsecurity";
-import {ProjectDetailPage} from "./order/orderdetail/orderdetail";
 import {SupportPage} from "./support/support";
 import {RegisterPage} from "./register/register";
 import {LoginPage} from "./login/login";
@@ -15,7 +14,6 @@ import {PublishTaskPage} from "./publishtask/publishtask";
 import {CommentOrderPage} from "./order/comment-order/comment-order";
 import {OrderModule} from "./order/order.module";
 import {CustomIconsModule} from "ionic2-custom-icons";
-import {ImModule} from "../im/im.module";
 import {PublishTaskPageNew} from "./publish-task-new/publish-task";
 import {DesignerListMinComponent} from "./designer-list-min/designer-list";
 import {DesignerListMaxComponent} from "./designer-list-max/designer-list-max";
@@ -26,7 +24,6 @@ import {DesignerListMaxComponent} from "./designer-list-max/designer-list-max";
         SecurityCenterModule,
         DesignerMeModule,
         OrderModule,
-        ImModule,
         CustomIconsModule ,// Add this!
     ],
     declarations: [

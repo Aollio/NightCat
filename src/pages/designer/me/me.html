@@ -10,12 +10,13 @@
             <img src="assets/img/logo.png"/>
         </div>
         <div class="login_btn_wrapper">
-            <button small ion-button outline color="light" (click)="openLoginPage($event)">请登录</button>
+            <button small ion-button outline color="light" tappable (click)="openLoginPage($event)">请登录</button>
         </div>
     </div>
 
     <!--用户已登录-->
-    <div *ngIf="!isNullObj(user)" class="me-header" (click)="opendetail(designerMeDetailPage,{isDesigner:true})">
+    <div *ngIf="!isNullObj(user)" class="me-header" tappable
+         (click)="opendetail(designerMeDetailPage,{isDesigner:true})">
         <div class="me-avatar">
             <img [src]="user.img_url || 'assets/img/logo.png'">
         </div>
@@ -31,35 +32,35 @@
     </div>
 
 
-    <ion-item (click)="openComments()">系统消息
+    <ion-item tappable (click)="openComments()">系统消息
         <ion-icon name="arrow-forward" item-end></ion-icon>
     </ion-item>
-    <!--<ion-item (click)="openNotifications()" >账户与安全-->
+    <!--<ion-item tappable (click)="openNotifications()" >账户与安全-->
     <!--<ion-icon name="arrow-forward" item-end></ion-icon>-->
     <!--</ion-item>-->
     <!--<ion-item >清除缓存-->
     <!--<ion-icon name="arrow-forward" item-end></ion-icon>-->
     <!--</ion-item>-->
-    <ion-item (click)="open(supportPage,{num:1})">帮助
+    <ion-item tappable (click)="open(supportPage,{num:1})">帮助
         <ion-icon name="arrow-forward" item-end></ion-icon>
     </ion-item>
-    <ion-item (click)="open(supportPage,{num:2})">问题反馈
+    <ion-item tappable (click)="open(supportPage,{num:2})">问题反馈
         <ion-icon name="arrow-forward" item-end></ion-icon>
     </ion-item>
-    <ion-item (click)="open(aboutPage,{})">关于夜猫
+    <ion-item tappable (click)="open(aboutPage,{})">关于夜猫
         <ion-icon name="arrow-forward" item-end></ion-icon>
     </ion-item>
     <ion-item-divider></ion-item-divider>
-    <ion-item (click)="exitApp()" *ngIf="isLogin()">退出登录
+    <ion-item tappable (click)="exitApp()" *ngIf="isLogin()">退出登录
         <ion-icon name="arrow-forward" item-end></ion-icon>
     </ion-item>
-    <ion-item (click)="exitApp()" *ngIf="!isLogin()">选择角色
+    <ion-item tappable (click)="exitApp()" *ngIf="!isLogin()">选择角色
         <ion-icon name="arrow-forward" item-end></ion-icon>
     </ion-item>
     <!--<page-slidemenu></page-slidemenu>-->
 </ion-content>
 <!--<ion-footer>-->
-    <!--<button class="exitbtn" ion-button [color]="maincolor" full (click)="exitApp()">-->
-        <!--退出-->
-    <!--</button>-->
+<!--<button class="exitbtn" ion-button [color]="maincolor" full tappable (click)="exitApp()">-->
+<!--退出-->
+<!--</button>-->
 <!--</ion-footer>-->
