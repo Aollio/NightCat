@@ -10,7 +10,7 @@ declare let initializeFontSize: any
 export class ProjectsPage {
 
     type: any = 1;
-
+    @ViewChild("orderlist") orderList;
 
     constructor() {
     }
@@ -20,13 +20,13 @@ export class ProjectsPage {
 
     select(type) {
         if (type === 'wait_design') {
-            this.type = 1
+            this.type = 0
         } else if (type === 'wait_outcome') {
-            this.type = 2
+            this.type = 1
         } else if (type === 'wait_comment') {
-            this.type = 3
+            this.type = 2
         } else if (type === 'all') {
-            this.type = 4
+            this.type = 3
         }
     }
     //todo 内容刷新

@@ -13,6 +13,7 @@ import {Tabs} from "ionic-angular/navigation/nav-interfaces";
 import {PublishTaskPage} from "../../common/publishtask/publishtask";
 import {PublishTaskMiddleWarePage} from "../publish-task-middleware/publish-task-middleware";
 import {IMPage} from "../../im/im";
+import {NotificationsPage} from "../../designer/nofitications/notifications";
 declare let initializeFontSize:any
 @Component({
     selector: 'page-employer-tabs',
@@ -25,7 +26,8 @@ export class EmployerTabsPage {
     home: any = EmployerHomePage;
     project: any = ProjectsPage;
     me: any = EmployerMePage;
-    im = IMPage;
+    im = NotificationsPage;
+
     helpchoose: any = MiddleWarePage;
 
     publishtask: any = PublishTaskMiddleWarePage;

@@ -17,17 +17,17 @@ export class AdsService {
     }
 
     async getDesHomeSlides() {
-        if (this.KEYNOTE) {
+        if (true) {
             console.log('演示模式, 返回内置轮播图')
             return this.keynote.ad_designer_home_slides;
         }
-        let response = await this.http.get(this.urls.ads_designer_home_slides_url)
-
-        if (response.status != 200) {
-            Promise.reject(response)
-        }
-
-        return response.content
+        // let response = await this.http.get(this.urls.ads_designer_home_slides_url)
+        //
+        // if (response.status != 200) {
+        //     Promise.reject(response)
+        // }
+        //
+        // return response.content
     }
 
 

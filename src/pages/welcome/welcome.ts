@@ -51,13 +51,10 @@ export class WelcomePage {
     rootPage: any;
     state: any = 1;
     register: any = RegisterPage;
-    // employerHome :any = EmployerHomePage;
-    // designerHome:any = DesignerHomePage;
 
 
-    /**
-     * 这是主页的快速入口，用于开发
-     * */
+
+
     orderDetailPage: any = ProjectDetailPage;
     orderListComponent: any = OrderListComponent;
 
@@ -134,7 +131,7 @@ export class WelcomePage {
     }
 
     customBtn() {
-        // this.im.initializeNim();
+
         State.INSTANCE.getUserByAccount('12')
             .then(user => console.log(user))
             .catch(error => console.log(error))
@@ -146,7 +143,7 @@ export class WelcomePage {
     }
 
 
-    //用于测试get/post请求
+
     private url = "http://localhost:3000/notifications"
 
     getTest() {
@@ -208,9 +205,7 @@ export class WelcomePage {
         this.navCtrl.setRoot(DesignerModulePage, {}, {animate: true});
     }
 
-    /**
-     * 打开登录/注册页面
-     * */
+
     openLogin(typeinfo) {
         this.navCtrl.push(LoginPage, {
             type: typeinfo
@@ -225,7 +220,7 @@ export class WelcomePage {
         "assets/img/Walkthrough_1.png",
         "assets/img/Walkthrough_2.png",
         "assets/img/Walkthrough_3.png",
-        // "assets/img/Walkthrough_4_2.png"
+
     ];
 
     @ViewChild(Slides) slides: Slides;

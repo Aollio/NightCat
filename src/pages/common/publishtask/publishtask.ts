@@ -55,14 +55,13 @@ export class PublishTaskPage {
         loading.present();
 
         setTimeout(()=>{
+            loading.dismiss();
             let alert = this.alertCtrl.create({
-                // title: '警告',
-                title: "发布成功！",
+                title: "发布",
                 buttons: [
                     {
                         text: 'Ok',
                         handler: data => {
-                            loading.dismiss();
                             this.navCtrl.pop();
                             console.log('Saved clicked');
                         }

@@ -1,4 +1,17 @@
 page-pulishtask {
+  .center{
+    h4{
+      display: block;
+      margin: auto;
+      text-align: center;
+      width: 60%;
+    }
+    text-align: center;
+    padding-top: 15rem;
+    //display: flex;
+    //justify-content: center;
+    //align-content: center;
+  }
   .preBudget {
     position: relative;
     ion-icon {

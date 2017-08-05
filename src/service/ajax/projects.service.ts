@@ -16,7 +16,7 @@ export class ProjectsService {
                 public keynote: KeynoteService,
                 private http: NetworkService, private urls: HttpUrls,) {
         this.KEYNOTE = shared.KEYNOTE;
-        this.projects = this.keynote.projects;
+        // this.projects = this.keynote.projects;
     }
 
     async getProjectsById(id): Promise<any> {
@@ -34,12 +34,10 @@ export class ProjectsService {
 
 
     async getProjects(param = {}): Promise<any> {
-        if (this.KEYNOTE) {
-            console.log('演示模式, 返回默认项目列表')
-            return this.keynote.projects
-        }
+
         let response = await this.http.get(this.urls.projects_url, param)
 
+        console.log(response.content);
         if (response.status != 200) {
             Promise.reject(response)
         }
