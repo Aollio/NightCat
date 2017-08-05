@@ -6,12 +6,6 @@
                 夜猫
             </button>
         </ion-buttons>
-        <ion-searchbar placeholder="搜索内容" class="header-search">
-            [(ngModel)]="myInput"
-            <!--[showCancelButton]="shouldShowCancel"-->
-            <!--(ionInput)="onInput($event)"-->
-            <!--(ionCancel)="onCancel($event)"-->
-        </ion-searchbar>
         <ion-buttons end>
             <button ion-button icon-only (click)="openNotificationsPage()">
                 <ion-icon name="text"></ion-icon>
@@ -39,11 +33,5 @@
         </ion-slide>
     </ion-slides>
 
-    <ion-scroll scrollX="true" class="buttons-slide">
-        <button class="order-type-btn" *ngFor="let type of types;let i=index"
-                [class.btn-active]="currentType === i" (click)="selectType(i)">{{type.name}}
-        </button>
-    </ion-scroll>
     <order-list></order-list>
-
 </ion-content>

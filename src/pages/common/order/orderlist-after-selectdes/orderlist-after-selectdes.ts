@@ -3,6 +3,7 @@ import {NavController, NavControllerBase} from "ionic-angular";
 import {OrderProcessModifyPage} from "../orderprocess/order-process-modify/order-process-modify";
 import {Component, Input} from '@angular/core';
 import {ProjectDetailPage} from "../orderdetail/orderdetail";
+import {SharedService} from "../../../../service/share.service";
 
 declare let initializeFontSize: any
 
@@ -210,9 +211,12 @@ export class OrderListAfterSelectDesignerPage {
     ];
 
     @Input("type") type;
-
-
-    constructor(public nav: NavController) {
+    projectStatus :any;
+    isDesigner;
+    constructor(public nav: NavController,
+                public shared:SharedService) {
+        this.isDesigner=this.shared.currentModuleIsDesigner;
+        this.projectStatus;
     }
 
     openProjectProcess(project) {
