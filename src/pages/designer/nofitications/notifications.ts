@@ -1,9 +1,12 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {ModalController, NavController} from 'ionic-angular';
 import {ProjectDetailPage} from "../../common/order/orderdetail/orderdetail";
 import {PublishTaskPage} from "../../common/publishtask/publishtask";
 import {SharedService} from "../../../service/share.service";
 import {KeynoteService} from "../../../service/keynote.service";
+import {Util} from "../../../service/util";
+import {ProjectsService} from "../../../service/ajax/projects.service";
+import {LoginPage} from "../../common/login/login";
 
 @Component({
     selector: 'page-notifications',
@@ -15,10 +18,29 @@ export class NotificationsPage {
 
     maincolor: string;
 
+    noticeses =[]
+
+
+    formatTime(create_time){
+        return this.util.formatDate(new Date(create_time));
+    }
+
     constructor(public navCtrl: NavController,
+                public util:Util,
+                public projectServ:ProjectsService,
                 public shared: SharedService,
+                public modalCtrl:ModalController,
                 public keynote:KeynoteService) {
         this.maincolor = shared.getPrimaryColor();
+
+        this.projectServ.getNotices().then(noticeses => {
+            if (this.isLogin()){
+                for (let notices of noticeses) {
+                    this.noticeses.push(notices);
+                }
+            }
+        }).catch(error => console.log(error));
+
     }
 
 
@@ -44,5 +66,21 @@ export class NotificationsPage {
             refresher.complete();
         }, 2000);
     }
+
+
+    isLogin() {
+        let login = JSON.stringify(this.shared.getCurrentUser()) != JSON.stringify({})
+        console.log("isLogin", login);
+        return login;
+    }
+
+
+    openLoginPage(event) {
+        let profileModal = this.modalCtrl.create(LoginPage);
+        profileModal.present();
+        // event.stopPropagation();
+        // this.navCtrl.push(LoginPage);
+    }
+
 
 }

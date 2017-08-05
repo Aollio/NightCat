@@ -1,6 +1,7 @@
 import {Component, ViewChild} from '@angular/core';
 import {el} from "@angular/platform-browser/testing/src/browser_util";
 import {EmpOrderListComponent} from "./emporderlist/emporderlist";
+import {Util} from "../../../service/util";
 declare let initializeFontSize: any
 
 @Component({
@@ -9,10 +10,11 @@ declare let initializeFontSize: any
 })
 export class ProjectsPage {
 
+
     type: any = 1;
     @ViewChild("orderlist") orderList;
 
-    constructor() {
+    constructor(public util:Util) {
     }
     ionViewDidEnter() {
         initializeFontSize()
@@ -37,5 +39,17 @@ export class ProjectsPage {
             console.log('Async operation has ended');
             refresher.complete();
         }, 2000);
+    }
+
+    getCurrent(){
+        return new Date();
+    }
+
+    getWeekDayyy(){
+        return this.util.stringifyDate(new Date(),true).withDay;
+    }
+
+    getDayyy(){
+        return this.util.stringifyDate(new Date(),true).day;
     }
 }

@@ -6,6 +6,10 @@ import {LoginPage} from "../../common/login/login";
 import {CommentPage} from "../../designer/comment/comment";
 import {NotificationsPage} from "../../designer/nofitications/notifications";
 import {PayProjectsListPage} from "./pay-projects-list/pay-projects-list";
+import {AccountSecurityPage} from "../../common/securitycenter/accountsecurity/accountsecurity";
+import {SupportPage} from "../../common/support/support";
+import {AboutPage} from "../../common/about/about";
+import {WelcomePage} from "../../welcome/welcome";
 
 declare let initializeFontSize: any;
 
@@ -25,14 +29,14 @@ export class EmployerMePage {
     }
 
     constructor(public  navCtrl: NavController,
-                public share: SharedService,
+                public shared: SharedService,
                 public modalCtrl: ModalController) {
-        this.user = share.getCurrentUser()
+        this.user = shared.getCurrentUser()
     }
 
     open(page, option) {
         // if (this.isNullObj1(this.user)) return;
-        this.navCtrl.push(EmpFavoriteDesignerPage, {})
+        this.navCtrl.push(page, option)
     }
 
     isNullObj(obj) {
@@ -47,14 +51,24 @@ export class EmployerMePage {
     }
 
     openComments() {
-        this.navCtrl.push(CommentPage, {})
+        this.navCtrl.push(NotificationsPage, {})
     }
 
     openNotifications() {
-        this.navCtrl.push(NotificationsPage, {})
+        this.navCtrl.push(AccountSecurityPage, {})
     }
 
     openPayProjects() {
         this.navCtrl.push(PayProjectsListPage, {})
+    }
+
+    supportPage: any = SupportPage;
+    aboutPage: any = AboutPage;
+
+    exitApp() {
+        for(var key in this.shared.getCurrentUser()){
+            delete this.shared.getCurrentUser()[key];
+        }
+        this.navCtrl.push(WelcomePage,{state:2});
     }
 }

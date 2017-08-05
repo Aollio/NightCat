@@ -62,7 +62,7 @@ export class SharedService {
         return this.currentUser;
     }
 
-    setCurrentUser(user: User) {
+    setCurrentUser(user) {
         this.util.updateObj(this.currentUser, user);
         if (user.role != 0) {
             this.currentModuleIsDesigner = false;

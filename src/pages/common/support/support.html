@@ -1,24 +1,22 @@
 <ion-header>
     <ion-navbar [color]="navColor">
-    <ion-title>问题反馈</ion-title>
+        <ion-title *ngIf="num=='1'">帮助</ion-title>
+        <ion-title *ngIf="num=='2'">问题反馈</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    <ion-item>
-        问题和意见
-    </ion-item>
-    <ion-item>
-        <textarea rows="8" ([ngModule])="suggest"
-                  placeholder="您在使用过程中遇到什么问题？请详细描述"
-        ></textarea>
-        <span>{{200-suggest.length}}</span>
-    </ion-item>
+    <div *ngIf="num==1" class="center1">
 
-    <ion-item>
-        联系方式（QQ/邮箱/电话）
-    </ion-item>
-    <ion-item>
-        <ion-input placeholder="选填，方便联系到你"></ion-input>
-    </ion-item>
+        <h5>1. 我是一名新用户， 请问如何进行项目发布等相关的操作</h5>
+        <p>答：建联夜猫是上海建联用于设计交流的一个平台。 为了保证项目真实性，目前采用线下为主， 线上为辅的运营模式。
+        如需要发布项目等操作， 请到上海建联注册相关信息再进行后续操作。</p>
+    </div>
+
+
+    <div *ngIf="num==2" class="center">
+        <h3>您在使用中需要帮助，请联系上海建联工作人员</h3>
+        <h4>联系电话：18217699893</h4>
+    </div>
+
 </ion-content>

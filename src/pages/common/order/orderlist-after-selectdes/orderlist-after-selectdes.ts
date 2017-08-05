@@ -4,6 +4,8 @@ import {OrderProcessModifyPage} from "../orderprocess/order-process-modify/order
 import {Component, Input} from '@angular/core';
 import {ProjectDetailPage} from "../orderdetail/orderdetail";
 import {ProjectsService} from "../../../../service/ajax/projects.service";
+import {Util} from "../../../../service/util";
+import {SharedService} from "../../../../service/share.service";
 
 declare let initializeFontSize: any
 
@@ -209,20 +211,29 @@ export class OrderListAfterSelectDesignerPage {
     //         "img_url": '/assets/img/des-1.png'
     //     },
     // ];
-    public orderlist=[];
+    public orderlist = [];
 
     @Input("type") type;
 
 
-    constructor(public nav: NavController, public projectServ: ProjectsService) {
+    constructor(public nav: NavController,
+                public shared: SharedService, public projectServ: ProjectsService,
+                public util: Util) {
 
+        this.orderlist.splice(0, this.orderlist.length);
 
         this.orderlist.length = 0;
         this.projectServ.getProjects().then(projects => {
-            for (let project of projects) {
-                this.orderlist.push(project);
+            if (this.isLogin()){
+                for (let project of projects) {
+                    this.orderlist.push(project);
+                }
             }
-        }).catch(error=>console.log(error));
+        }).catch(error => console.log(error));
+
+        if (!this.isLogin()) {
+            this.orderlist.splice(0, this.orderlist.length);
+        }
     }
 
     openProjectProcess(project) {
@@ -235,6 +246,12 @@ export class OrderListAfterSelectDesignerPage {
 
     isEmpty() {
         return 0 === this.orderlist.length;
+    }
+
+    isLogin() {
+        let login = JSON.stringify(this.shared.getCurrentUser()) != JSON.stringify({})
+        console.log("isLogin", login);
+        return login;
     }
 
     ionViewDidEnter() {

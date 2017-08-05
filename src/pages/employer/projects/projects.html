@@ -10,7 +10,7 @@
                 已发布
             </div>
             <div class="number-detail">
-                {{orderList.orderlist.length}}
+                {{orderList.orderlist.length||0}}
             </div>
         </ion-col>
 
@@ -25,10 +25,10 @@
         </ion-col>
         <ion-col col-6 class="header-right-col">
             <div class="head-time">
-                <div class="datetime">2017年2月<br/>
-                    星期一
+                <div class="datetime">{{getCurrent().getFullYear()}}年{{getCurrent().getMonth()+1}}月<br/>
+                    {{getWeekDayyy()}}
                 </div>
-                <div class="dayofmonth">27</div>
+                <div class="dayofmonth">{{getDayyy()}}</div>
             </div>
             <!--<div class="header-toast">-->
             <!--今日有一条订单需支付-->
@@ -74,7 +74,6 @@
 
 
 <ion-content>
-
 
     <ion-refresher (ionRefresh)="doRefresh($event)">
         <ion-refresher-content

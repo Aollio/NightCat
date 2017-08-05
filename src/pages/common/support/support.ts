@@ -10,10 +10,12 @@ declare let initializeFontSize: any
 export class SupportPage extends AbsCommonPage {
     suggest:any="";
     contact:any;
+    num;
     constructor(public navCtrl: NavController,
                 public navParams: NavParams,
                 public share: SharedService) {
         super(share);
+        this.num = this.navParams.get("num");
     }
     ionViewDidEnter() {
         initializeFontSize()

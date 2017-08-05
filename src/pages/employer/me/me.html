@@ -36,17 +36,29 @@
         <!--<ion-item>我的喵喵-->
             <!--<ion-icon name="arrow-forward" item-end></ion-icon>-->
         <!--</ion-item>-->
-        <ion-item (click)="openComments()">我的评论
+
+        <ion-item (click)="openComments()">系统消息
             <ion-icon name="arrow-forward" item-end></ion-icon>
         </ion-item>
-        <ion-item (click)="openNotifications()" >我的信息
+        <!--<ion-item (click)="openNotifications()" >账户与安全-->
+            <!--<ion-icon name="arrow-forward" item-end></ion-icon>-->
+        <!--</ion-item>-->
+        <!--<ion-item >清除缓存-->
+            <!--<ion-icon name="arrow-forward" item-end></ion-icon>-->
+        <!--</ion-item>-->
+        <ion-item (click)="open(supportPage,{num:1})">帮助
             <ion-icon name="arrow-forward" item-end></ion-icon>
         </ion-item>
-        <ion-item (click)="openPayProjects()">我的支付
+        <ion-item (click)="open(supportPage,{num:2})">问题反馈
             <ion-icon name="arrow-forward" item-end></ion-icon>
         </ion-item>
-        <ion-item (click)="open(follower,{})">我关注的设计师
+        <ion-item (click)="open(aboutPage,{})">关于夜猫
             <ion-icon name="arrow-forward" item-end></ion-icon>
         </ion-item>
     </ion-list>
 </ion-content>
+<ion-footer>
+    <button class="exitbtn" ion-button [color]="maincolor" full (click)="exitApp()">
+        退出登陆
+    </button>
+</ion-footer>

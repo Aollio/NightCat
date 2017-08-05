@@ -97,4 +97,36 @@ page-orderlist-after-selectdes{
     border:1px solid #FA4169;
     color: #FA4169;
   }
+  .null-project {
+    text-align: center;
+    //width: 100%;
+    height: auto;
+    margin-top: 2rem;
+    // padding-top: 3rem;
+  }
+
+  .null-project img {
+    //max-height: 100%;
+    height: 10rem;
+    width: 10rem;
+  }
+
+  .null-porject-toast {
+    margin-top: 10%;
+    font-size: 1.5rem;
+    width: 80%;
+    margin-left: 10%;
+    color: gray;
+  }
+
+  .null-project-button{
+    width: 60%;
+    color: $emp_primary;
+    font-size: 1.5rem;
+    background-color: white;
+    border: 1px solid;
+    margin: 0.5rem auto;
+    border-radius: .5em !important;
+  }
+
 }

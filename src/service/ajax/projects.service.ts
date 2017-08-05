@@ -19,6 +19,18 @@ export class ProjectsService {
         // this.projects = this.keynote.projects;
     }
 
+    async getNotices(): Promise<any> {
+
+        let response = await this.http.get(this.urls.notis);
+
+        console.log(response.content);
+        if (response.status != 200) {
+            Promise.reject(response)
+        }
+        return response.content
+
+    }
+
     async getProjectsById(id): Promise<any> {
         if (this.KEYNOTE) {
             console.log('演示模式, 返回默认用户');

@@ -64,7 +64,7 @@ export class Util {
         return map[type] || '未知消息类型'
     }
 
-   private stringifyDate(datetime, simple = false) {
+    stringifyDate(datetime, simple = false) {
         // let weekMap = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
         let weekMap = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
         datetime = new Date(datetime)
@@ -84,6 +84,7 @@ export class Util {
 
         if (simple) {
             return {
+                day:`${day}`,
                 withYear: `${day}/${month}/${simpleYear}`,
                 withMonth: `${month}-${day}`,
                 withDay: `${week}`,
@@ -93,18 +94,21 @@ export class Util {
             }
         } else {
             return {
+                day:`${day}`,
+
                 withYear: `${year}-${month}-${day} ${hour}:${min}`,
                 withMonth: `${month}-${day} ${hour}:${min}`,
                 withDay: `${week} ${hour}:${min}`,
                 withLastDay: `昨天 ${hour}:${min}`,
                 withHour: `${hour}:${min}`,
-                thatDay
+                thatDay,
             }
         }
     }
 
     /* 格式化日期 */
     formatDate(datetime, simple = false) {
+
         let tempDate = (new Date()).getTime()
         let result = this.stringifyDate(datetime, simple)
         let thatDay = result.thatDay

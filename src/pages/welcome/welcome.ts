@@ -49,7 +49,7 @@ declare let initializeFontSize: any;
 export class WelcomePage {
 
     rootPage: any;
-    state: any = 1;
+    state: any = 2;
     register: any = RegisterPage;
 
 
