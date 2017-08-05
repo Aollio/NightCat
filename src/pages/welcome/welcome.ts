@@ -96,6 +96,8 @@ export class WelcomePage {
                 public navParam: NavParams,
                 public imagePicker: ImagePicker) {
 
+
+
         console.log('enter welcome')
         let isregister = this.navParam.get('register')
         console.log(isregister)

@@ -1,5 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
 import {el} from "@angular/platform-browser/testing/src/browser_util";
+import {Util} from "../../../service/util";
 declare let initializeFontSize: any
 
 @Component({
@@ -11,10 +12,21 @@ export class DesignerProjectsPage {
 
     type: any = 1;
 
-    constructor() {
+    constructor(public util :Util) {
     }
     ionViewDidEnter() {
         initializeFontSize()
+    }
+
+    getCurrent(){
+        return new Date();
+    }
+    getWeekDayyy(){
+        return this.util.stringifyDate(new Date(),true).withDay;
+    }
+
+    getDayyy(){
+        return this.util.stringifyDate(new Date(),true).day;
     }
 
     select(type) {

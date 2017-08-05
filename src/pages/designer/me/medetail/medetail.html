@@ -1,12 +1,4 @@
-<!--<ion-header>-->
-    <!--<ion-toolbar>-->
-        <!--<ion-buttons start>-->
-            <!--<button ion-button icon-only color="royal">-->
-                <!--<ion-icon name="arrow-back"></ion-icon>-->
-            <!--</button>-->
-        <!--</ion-buttons>-->
-    <!--</ion-toolbar>-->
-<!--</ion-header>-->
+
 <ion-content>
     <div class="my-bac">
         <img src="assets/img/BG_01.png">
@@ -15,9 +7,6 @@
         <button ion-button class="menu-item" clear icon-only item-start navPop>
             <ion-icon name="md-arrow-back" [color]="maincolor"></ion-icon>
         </button>
-        <!--<button *ngIf="isDesigner" ion-button class="menu-item menu-item-right" icon-only item-end>-->
-        <!--上传封面-->
-        <!--</button>-->
     </div>
     <div center class="me-avatar">
         <img [src]="user.img_url || 'assets/img/logo1.png'">
@@ -45,15 +34,6 @@
         </ion-col>
     </ion-row>
 
-    <div class="row_buttons" *ngIf="!isDesigner">
-        <button ion-button round class="attention_btn">
-            <ion-icon name="ios-heart"></ion-icon>
-            关 注 我</button>
-        <button ion-button round icon-only class="sed_msg_btn"
-                (click)="openChat({sessionId: 'hgyuguyg'})">
-            <ion-icon name="ios-chatbubbles"></ion-icon>
-        </button>
-    </div>
     <div class="card-personal-desc">
         <ion-item class="desc-header">
             <!--<div>-->
@@ -62,17 +42,7 @@
                 <span class="desc-header-type">
                           {{user.type}}
                     </span>
-            </div>
-            <!--<div>-->
 
-            <!--</div>-->
-            <div class="touch-expand-div" (click)="modify()">
-                <div class="desc-header-modify" *ngIf="isDesigner">修改
-                    <ion-icon class="desc-header-modify-icon" name="md-create"></ion-icon>
-                </div>
-            </div>
-
-            <!--</div>-->
 
             <p class="desc-head-experience">
                 {{user.service_length}}&nbsp;{{user.school}}
@@ -84,9 +54,9 @@
                 <ion-icon name="ios-star"></ion-icon>
                 <ion-icon name="ios-star"></ion-icon>
                 <ion-icon name="ios-star"></ion-icon>
-                <!--todo  button 图标提示-->
-                <ion-icon class="help-btn" (click)="showHelp()" name="md-help-circle"></ion-icon>
+
             </p>
+            </div>
 
 
         </ion-item>
@@ -101,65 +71,65 @@
     </div>
 
 
-    <div class="type-buttons">
-        <button ion-button clear [class.active]="btnState===1" (click)="case()" class="type-btn active">案例
-        </button>
-        <button ion-button clear [class.active]="btnState===2" (click)="honor()" class="type-btn">荣誉
-        </button>
-        <button ion-button clear [class.active]="btnState===3" (click)="experice()" class="type-btn">工作经历&nbsp;
-        </button>
-    </div>
+    <!--<div class="type-buttons">-->
+        <!--<button ion-button clear [class.active]="btnState===1" (click)="case()" class="type-btn active">案例-->
+        <!--</button>-->
+        <!--<button ion-button clear [class.active]="btnState===2" (click)="honor()" class="type-btn">荣誉-->
+        <!--</button>-->
+        <!--<button ion-button clear [class.active]="btnState===3" (click)="experice()" class="type-btn">工作经历&nbsp;-->
+        <!--</button>-->
+    <!--</div>-->
 
-    <ion-card class="case-card">
-        <ion-list *ngIf="btnState===1||btnState===3">
-            <ion-card-content *ngFor="let case of cases" (click)="openCaseDetail()" class="case-item">
-                <div class="case-item-main-div">
-                    <div class="case-item-avatar">
-                        <img src="assets/img/first.png"/>
-                    </div>
-                    <div class="case-item-desc-main">
-                        <p class="case-item-title">{{ case.title}}</p>
-                        <p class="case-item-desc-word">
-                            {{ case.desc }}
-                        </p>
-                    </div>
-                </div>
-                <ion-row>
-                    <ion-col col-3>
-                        <button ion-button icon-left clear small class="case-icon-btn">
-                            <ion-icon name="thumbs-up"></ion-icon>
-                            <div>{{ case.fav_count }}</div>
-                        </button>
-                    </ion-col>
-                    <ion-col col-2>
-                        <button ion-button icon-left clear small class="case-icon-btn">
-                            <ion-icon name="text"></ion-icon>
-                            <div>{{ case.comment_count}}</div>
-                        </button>
-                    </ion-col>
-                    <ion-col col-4></ion-col>
-                    <ion-col col-3 item-right class="case-item-time-before">
-                        <button ion-button icon-left clear small disabled>
-                            <div>{{ case.time }}</div>
-                        </button>
-                    </ion-col>
-                </ion-row>
-            </ion-card-content>
-        </ion-list>
-        <ion-list *ngIf="btnState===2">
-            <ion-card-content *ngFor="let case of cases" class="case-item">
-                <div class="case-item-main-div">
-                    <div class="case-item-avatar">
-                        <img src="assets/img/first.png"/>
-                    </div>
-                    <div class="case-item-desc-main">
-                        <p class="case-item-title">{{ case.title}}</p>
-                        <p class="case-item-desc-word">
-                            {{ case.desc }}
-                        </p>
-                    </div>
-                </div>
-            </ion-card-content>
-        </ion-list>
-    </ion-card>
+    <!--<ion-card class="case-card">-->
+        <!--<ion-list *ngIf="btnState===1||btnState===3">-->
+            <!--<ion-card-content *ngFor="let case of cases" (click)="openCaseDetail()" class="case-item">-->
+                <!--<div class="case-item-main-div">-->
+                    <!--<div class="case-item-avatar">-->
+                        <!--<img src="assets/img/first.png"/>-->
+                    <!--</div>-->
+                    <!--<div class="case-item-desc-main">-->
+                        <!--<p class="case-item-title">{{ case.title}}</p>-->
+                        <!--<p class="case-item-desc-word">-->
+                            <!--{{ case.desc }}-->
+                        <!--</p>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<ion-row>-->
+                    <!--<ion-col col-3>-->
+                        <!--<button ion-button icon-left clear small class="case-icon-btn">-->
+                            <!--<ion-icon name="thumbs-up"></ion-icon>-->
+                            <!--<div>{{ case.fav_count }}</div>-->
+                        <!--</button>-->
+                    <!--</ion-col>-->
+                    <!--<ion-col col-2>-->
+                        <!--<button ion-button icon-left clear small class="case-icon-btn">-->
+                            <!--<ion-icon name="text"></ion-icon>-->
+                            <!--<div>{{ case.comment_count}}</div>-->
+                        <!--</button>-->
+                    <!--</ion-col>-->
+                    <!--<ion-col col-4></ion-col>-->
+                    <!--<ion-col col-3 item-right class="case-item-time-before">-->
+                        <!--<button ion-button icon-left clear small disabled>-->
+                            <!--<div>{{ case.time }}</div>-->
+                        <!--</button>-->
+                    <!--</ion-col>-->
+                <!--</ion-row>-->
+            <!--</ion-card-content>-->
+        <!--</ion-list>-->
+        <!--<ion-list *ngIf="btnState===2">-->
+            <!--<ion-card-content *ngFor="let case of cases" class="case-item">-->
+                <!--<div class="case-item-main-div">-->
+                    <!--<div class="case-item-avatar">-->
+                        <!--<img src="assets/img/first.png"/>-->
+                    <!--</div>-->
+                    <!--<div class="case-item-desc-main">-->
+                        <!--<p class="case-item-title">{{ case.title}}</p>-->
+                        <!--<p class="case-item-desc-word">-->
+                            <!--{{ case.desc }}-->
+                        <!--</p>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</ion-card-content>-->
+        <!--</ion-list>-->
+    <!--</ion-card>-->
 </ion-content>

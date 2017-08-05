@@ -1,4 +1,4 @@
-import {Loading, LoadingController, ToastController} from "ionic-angular";
+import {Loading, LoadingController, NavController, ToastController} from "ionic-angular";
 import {Injectable} from "@angular/core";
 
 @Injectable()
@@ -7,8 +7,9 @@ export class Util {
     //NOTE!!!单例的初始化在IMService中初始化
     public static INSTANCE: Util;
 
+
     constructor(public loaderCtrl: LoadingController,
-                public toastCtrl: ToastController) {
+                public toastCtrl: ToastController,) {
     }
 
 

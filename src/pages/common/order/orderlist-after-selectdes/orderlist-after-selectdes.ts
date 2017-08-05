@@ -1,11 +1,13 @@
-// import {Component} from '@angular/core';
-import {NavController, NavControllerBase} from "ionic-angular";
+import {NavController} from "ionic-angular";
 import {OrderProcessModifyPage} from "../orderprocess/order-process-modify/order-process-modify";
 import {Component, Input} from '@angular/core';
-import {ProjectDetailPage} from "../orderdetail/orderdetail";
 import {ProjectsService} from "../../../../service/ajax/projects.service";
 import {Util} from "../../../../service/util";
 import {SharedService} from "../../../../service/share.service";
+import {OrderProcessComplete} from "../orderprocess/order-process-complete/complete";
+import {OrderProcessWaitcomment} from "../orderprocess/order-process-waitcomment/waitcomment";
+import {OrderProcessPayment} from "../orderprocess/order-process-payment/order-process-payment";
+import {ProjectDetailPage} from "../orderdetail/orderdetail";
 
 declare let initializeFontSize: any
 
@@ -17,200 +19,7 @@ declare let initializeFontSize: any
 export class OrderListAfterSelectDesignerPage {
 
 
-    // orderlist: Array<any> = [
-    //     {
-    //         status: 1,
-    //         img: 'assets/img/fav-avatar.png',
-    //         title: '自建别墅设计/自建房设计/精品自建住宅\n' +
-    //         '商业地产工程bim建筑设计策划',
-    //         time: '6天1小时',
-    //
-    //         "id": "id0",
-    //
-    //         "type": "建筑设计",
-    //         "content": "项目内容, 画出一个设计图",
-    //         "budget": 100000000,
-    //         "area_count": 100,
-    //         "depth": 0,
-    //         "period": 129,
-    //         "start_time": 1500882001493,
-    //         "end_time": 1500882001493,
-    //         "create_by": "1",
-    //         "create_time": 1500882001493,
-    //         "good": true,
-    //         "modify_by": "",
-    //         "modify_time": "",
-    //         "modify_remark": "",
-    //         "due_time": 1500882001493,
-    //         "view_count": 0,
-    //         "fav_count": 0,
-    //         "bidder": "",
-    //         "bid_time": "",
-    //         "audit_by": "",
-    //         "audit_time": "",
-    //         "img_url": '/assets/img/des-1.png'
-    //     },
-    //     {
-    //         status: 1,
-    //         img: 'assets/img/detail-default.png',
-    //         title: '自建别墅设计/自建房设计/精品自建住宅\n' +
-    //         '商业地产工程bim建筑设计策划',
-    //         time: '6天1小时'
-    //         ,
-    //         "id": "id0",
-    //
-    //         "type": "建筑设计",
-    //         "content": "项目内容, 画出一个设计图",
-    //         "budget": 100000000,
-    //         "area_count": 100,
-    //         "depth": 0,
-    //         "period": 129,
-    //         "start_time": 1500882001493,
-    //         "end_time": 1500882001493,
-    //         "create_by": "1",
-    //         "create_time": 1500882001493,
-    //         "good": true,
-    //         "modify_by": "",
-    //         "modify_time": "",
-    //         "modify_remark": "",
-    //         "due_time": 1500882001493,
-    //         "view_count": 0,
-    //         "fav_count": 0,
-    //         "bidder": "",
-    //         "bid_time": "",
-    //         "audit_by": "",
-    //         "audit_time": "",
-    //         "img_url": '/assets/img/des-1.png'
-    //     },
-    //     {
-    //         status: 1,
-    //         img: 'assets/img/fav-avatar.png',
-    //         title: '自建别墅设计/自建房设计/精品自建住宅\n' +
-    //         '商业地产工程bim建筑设计策划',
-    //         time: '6天1小时',
-    //
-    //         "id": "id0",
-    //
-    //         "type": "建筑设计",
-    //         "content": "项目内容, 画出一个设计图",
-    //         "budget": 100000000,
-    //         "area_count": 100,
-    //         "depth": 0,
-    //         "period": 129,
-    //         "start_time": 1500882001493,
-    //         "end_time": 1500882001493,
-    //         "create_by": "1",
-    //         "create_time": 1500882001493,
-    //         "good": true,
-    //         "modify_by": "",
-    //         "modify_time": "",
-    //         "modify_remark": "",
-    //         "due_time": 1500882001493,
-    //         "view_count": 0,
-    //         "fav_count": 0,
-    //         "bidder": "",
-    //         "bid_time": "",
-    //         "audit_by": "",
-    //         "audit_time": "",
-    //         "img_url": '/assets/img/des-1.png'
-    //     },
-    //     {
-    //         status: 1,
-    //         img: 'assets/img/fav-avatar.png',
-    //         title: '自建别墅设计/自建房设计/精品自建住宅\n' +
-    //         '商业地产工程bim建筑设计策划',
-    //         time: '6天1小时',
-    //
-    //         "id": "id0",
-    //
-    //         "type": "建筑设计",
-    //         "content": "项目内容, 画出一个设计图",
-    //         "budget": 100000000,
-    //         "area_count": 100,
-    //         "depth": 0,
-    //         "period": 129,
-    //         "start_time": 1500882001493,
-    //         "end_time": 1500882001493,
-    //         "create_by": "1",
-    //         "create_time": 1500882001493,
-    //         "good": true,
-    //         "modify_by": "",
-    //         "modify_time": "",
-    //         "modify_remark": "",
-    //         "due_time": 1500882001493,
-    //         "view_count": 0,
-    //         "fav_count": 0,
-    //         "bidder": "",
-    //         "bid_time": "",
-    //         "audit_by": "",
-    //         "audit_time": "",
-    //         "img_url": '/assets/img/des-1.png'
-    //     },
-    //     {
-    //         status: 2,
-    //         img: 'assets/img/detail-default.png',
-    //         title: '自建别墅设计/自建房设计/精品自建住宅\n' +
-    //         '商业地产工程bim建筑设计策划',
-    //         time: '6天1小时',
-    //
-    //         "id": "id0",
-    //
-    //         "type": "建筑设计",
-    //         "content": "项目内容, 画出一个设计图",
-    //         "budget": 100000000,
-    //         "area_count": 100,
-    //         "depth": 0,
-    //         "period": 129,
-    //         "start_time": 1500882001493,
-    //         "end_time": 1500882001493,
-    //         "create_by": "1",
-    //         "create_time": 1500882001493,
-    //         "good": true,
-    //         "modify_by": "",
-    //         "modify_time": "",
-    //         "modify_remark": "",
-    //         "due_time": 1500882001493,
-    //         "view_count": 0,
-    //         "fav_count": 0,
-    //         "bidder": "",
-    //         "bid_time": "",
-    //         "audit_by": "",
-    //         "audit_time": "",
-    //         "img_url": '/assets/img/des-1.png'
-    //     },
-    //     {
-    //         status: 3,
-    //         img: 'assets/img/fav-avatar.png',
-    //         title: '自建别墅设计/自建房设计/精品自建住宅\n' +
-    //         '商业地产工程bim建筑设计策划',
-    //         time: '6天1小时',
-    //
-    //         "id": "id0",
-    //
-    //         "type": "建筑设计",
-    //         "content": "项目内容, 画出一个设计图",
-    //         "budget": 100000000,
-    //         "area_count": 100,
-    //         "depth": 0,
-    //         "period": 129,
-    //         "start_time": 1500882001493,
-    //         "end_time": 1500882001493,
-    //         "create_by": "1",
-    //         "create_time": 1500882001493,
-    //         "good": true,
-    //         "modify_by": "",
-    //         "modify_time": "",
-    //         "modify_remark": "",
-    //         "due_time": 1500882001493,
-    //         "view_count": 0,
-    //         "fav_count": 0,
-    //         "bidder": "",
-    //         "bid_time": "",
-    //         "audit_by": "",
-    //         "audit_time": "",
-    //         "img_url": '/assets/img/des-1.png'
-    //     },
-    // ];
+
     public orderlist = [];
 
     @Input("type") type;
@@ -224,9 +33,20 @@ export class OrderListAfterSelectDesignerPage {
 
         this.orderlist.length = 0;
         this.projectServ.getProjects().then(projects => {
-            if (this.isLogin()){
-                for (let project of projects) {
-                    this.orderlist.push(project);
+            if (this.isLogin()) {
+                let user = this.shared.getCurrentUser();
+                if (!this.shared.isDesigner) {
+                    for (let project of projects) {
+                        if (user["uid"] == project.create_by) {
+                            this.orderlist.push(project);
+                        }
+                    }
+                }else {
+                    for (let project of projects) {
+                        if (user["uid"] == project.bidder) {
+                            this.orderlist.push(project);
+                        }
+                    }
                 }
             }
         }).catch(error => console.log(error));
@@ -237,11 +57,26 @@ export class OrderListAfterSelectDesignerPage {
     }
 
     openProjectProcess(project) {
-        if (project.status == 1) {
-            this.nav.push(ProjectDetailPage, {project: project});
-        } else {
-            this.nav.push(OrderProcessModifyPage, {});
+
+        switch(project.status){
+            case 0:
+                this.nav.push(ProjectDetailPage, {project: project});
+                break;
+            case 1:
+                this.nav.push(OrderProcessModifyPage, {project: project});
+                break;
+            case 2:
+                this.nav.push(OrderProcessModifyPage, {project: project});
+                break;
+            case 4:
+                this.nav.push(OrderProcessComplete, {project: project});
+                break;
         }
+        // if (project.status == 1) {
+        //     this.nav.push(ProjectDetailPage, {project: project});
+        // } else {
+        //     this.nav.push(OrderProcessModifyPage, {});
+        // }
     }
 
     isEmpty() {
@@ -257,5 +92,56 @@ export class OrderListAfterSelectDesignerPage {
     ionViewDidEnter() {
         initializeFontSize()
     }
+
+
+    getStatus(status){
+        switch (status){
+            case 0:return "发布项目，等待抢单";
+            case 1:return "等待支付";
+            case 2:return "等待支付";
+            case 3:return "等待设计";
+            case 4:return "完成";
+        }
+
+        // /**
+        //  * 发布项目后, 项目处于发布状态. 这时候设计师可以进行抢单.
+        //  * 如果没有设计师抢单, 并且项目到达截止时间后会进入'Cancel'状态
+        //  */
+        // Publish,
+        //     /**
+        //      * 雇主选择一位设计师后, 等待设计师确认
+        //      */
+        //     ConfirmDesigner_WaitDesignerConfitm,
+        //     /**
+        //      * 设计时确认后(双方确认), 等待雇主支付. 这时会生成一个对应的支付订单
+        //      */
+        //     BothConfirm_WaitEmployerPay,
+        //     /**
+        //      * 支付完成后, 等待设计师设计
+        //      */
+        //     PayComplete_WaitDesign,
+        //     /**
+        //      * 设计完成后, 由雇主进行确认设计完成. 等待评价项目. 这时将款项转给设计师账户
+        //      */
+        //     DesignComplete_WaitComment,
+        //     /**
+        //      * 若在设计过程中, 雇主和设计师之间发生了无法私下协调的问题. 由平台介入协调. 称为会审
+        //      */
+        //     Platform_InterPose,
+        //     /**
+        //      * 订单正常完成. 评价后状态为完成
+        //      */
+        //     Complete,
+        //     /**
+        //      * 订单非正常完成. e.g. 项目超时未抢单; 会审失败; 雇主没有支付; 等等
+        //      */
+        //     Break;
+
+
+
+
+
+    }
+
 }
 

@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {NavController} from "ionic-angular";
+import {NavController, NavParams} from "ionic-angular";
 import {PublishTaskPage} from "../../../publishtask/publishtask";
 
 declare let initializeFontSize: any;
@@ -10,8 +10,10 @@ declare let initializeFontSize: any;
 })
 export class OrderProcessModifyPage {
 
+    project;
 
-    constructor(private nav: NavController) {
+    constructor(private nav: NavController, private navParams: NavParams) {
+        this.project = navParams.get("project")
     }
 
 
@@ -21,5 +23,14 @@ export class OrderProcessModifyPage {
 
     ionViewDidEnter() {
         initializeFontSize()
+    }
+
+    formatTime1(create_time){
+        console.log(create_time);
+        let date = new Date(create_time);
+        let year = date.getFullYear()
+        let month = date.getMonth() + 1
+        let day = date.getDate()
+        return year + '-' + month + '-' + day;
     }
 }

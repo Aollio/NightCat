@@ -10,48 +10,47 @@
     <div style="height: 30%">
         <div style="height: 70%">
         </div>
-        <div class="my-font-size" text-center  [ngClass]="{'designer':isDesigner,'employer':!isDesigner}"  >
+        <div class="my-font-size" text-center [ngClass]="{'designer':isDesigner,'employer':!isDesigner}">
             {{user.nickname || '昵称'}}
         </div>
     </div>
 
     <ion-list no-lines class="bg-tran">
-        <button ion-item (click)="open(messagePage)"[ngClass]="{'designer':isDesigner,'employer':!isDesigner}" >
+        <button ion-item (click)="open(messagePage)" [ngClass]="{'designer':isDesigner,'employer':!isDesigner}">
             <custom-icon set="cat" name="mybell" class="custom-icon"
-
                          item-start></custom-icon>
             系统消息
         </button>
 
-        <button ion-item (click)="open(accountSecurityPage)" [ngClass]="{'designer':isDesigner,'employer':!isDesigner}">
+        <button ion-item (click)="open(supportPage,{num:1})" [ngClass]="{'designer':isDesigner,'employer':!isDesigner}">
 
             <custom-icon set="cat" name="my-user-outline" class="custom-icon"
                          [ngClass]="{'designer':isDesigner,'employer':!isDesigner}"
                          item-start></custom-icon>
-            账户与安全
+            帮助
         </button>
-        <button ion-item (click)="clearCache('comfirm')"
+        <button ion-item (click)="open(supportPage,{num:2})"
                 [ngClass]="{'designer':isDesigner,'employer':!isDesigner}">
 
             <custom-icon set="cat" name="my-delete" class="custom-icon"
                          [ngClass]="{'designer':isDesigner,'employer':!isDesigner}"
                          item-start></custom-icon>
-            清除缓存
+            问题反馈
         </button>
-        <button ion-item (click)="open(supportPage)"
+        <button ion-item (click)="open(aboutPage)"
                 [ngClass]="{'designer':isDesigner,'employer':!isDesigner}">
             <custom-icon set="cat" name="open_bangzhu" class="custom-icon"
                          [ngClass]="{'designer':isDesigner,'employer':!isDesigner}"
                          item-start></custom-icon>
-            帮助反馈
-        </button>
-        <button ion-item (click)="open(aboutPage)"
-                [ngClass]="{'designer':isDesigner,'employer':!isDesigner}">
-            <custom-icon set="cat" name="about02" class="custom-icon"
-                         [ngClass]="{'designer':isDesigner,'employer':!isDesigner}"
-                         item-start></custom-icon>
             关于夜猫
         </button>
+        <!--<button ion-item (click)="open(aboutPage)"-->
+        <!--[ngClass]="{'designer':isDesigner,'employer':!isDesigner}">-->
+        <!--<custom-icon set="cat" name="about02" class="custom-icon"-->
+        <!--[ngClass]="{'designer':isDesigner,'employer':!isDesigner}"-->
+        <!--item-start></custom-icon>-->
+        <!--关于夜猫-->
+        <!--</button>-->
     </ion-list>
 </ion-content>
 <ion-footer>

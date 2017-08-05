@@ -12,6 +12,9 @@ import {Util} from "../../../service/util";
 import {FavoriteProjectsPage} from "./favorite-projects/favorite-projects";
 import {SlideMenuComponment} from "./slidemenu/slidemenu";
 import {WelcomePage} from "../../welcome/welcome";
+import {NotificationsPage} from "../nofitications/notifications";
+import {AboutPage} from "../../common/about/about";
+import {SupportPage} from "../../common/support/support";
 declare let initializeFontSize: any;
 
 @IonicPage()
@@ -39,14 +42,14 @@ export class DesignerMePage {
     authenticate: any = AuthenticationPage;
     comment: any = CommentPage;
     designerMeDetailPage: any = DesignerMeDetailPage;
-
+    supportPage: any = SupportPage;
+    aboutPage: any = AboutPage;
     opendetail(page, option) {
         // console.log(Object.keys(this.user).length);
         // if(this.isNullObj(this.user)) return;
         this.navCtrl.push(page, option)
     }
     open(page, option) {
-
         this.navCtrl.push(page, option)
     }
     isNullObj(obj){
@@ -60,7 +63,20 @@ export class DesignerMePage {
         // this.navCtrl.push(LoginPage);
     }
     exitApp() {
-        // this.platform.exitApp();
-        this.navCtrl.push(WelcomePage,{state:2});
+        for(let key in this.shared.getCurrentUser()){
+            delete this.shared.getCurrentUser()[key];
+        }
+        let profileModal = this.modalCtrl.create(WelcomePage);
+        profileModal.present();
+    }
+
+    openComments() {
+        this.navCtrl.push(NotificationsPage, {})
+    }
+
+    isLogin() {
+        let login = JSON.stringify(this.shared.getCurrentUser()) != JSON.stringify({})
+        console.log("isLogin", login);
+        return login;
     }
 }

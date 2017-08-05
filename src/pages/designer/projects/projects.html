@@ -13,13 +13,13 @@
         </ion-col>
         <ion-col col-6 class="header-right-col">
             <div class="head-time">
-                <div class="datetime">2017年2月<br/>
-                    星期一
+                <div class="datetime">{{getCurrent().getFullYear()}}年{{getCurrent().getMonth()+1}}月<br/>
+                    {{getWeekDayyy()}}
                 </div>
-                <div class="dayofmonth">27</div>
+                <div class="dayofmonth">{{getDayyy()}}</div>
             </div>
             <!--<div class="header-toast">-->
-                <!--今日有一条订单需支付-->
+            <!--今日有一条订单需支付-->
             <!--</div>-->
         </ion-col>
     </ion-row>
@@ -28,40 +28,40 @@
 
 
 <ion-content>
-    <ion-row class="type-nav">
-        <ion-col (click)="select('wait_design')"
-                 col-3 class="order-type-col order-type-color" text-center>
-            <div [class.active]="type === 1">
-                <custom-icon class="custom-icon" set="cat" name="projects-waitdesign"></custom-icon>
-                <br>
-                未确定
-            </div>
-        </ion-col>
-        <ion-col (click)="select('wait_outcome')"
-                 col-3 class="order-type-col order-type-color" text-center>
-            <div [class.active]="type === 2">
-                <custom-icon class="custom-icon" set="cat" name="projects-waitorder"></custom-icon>
-                <br>
-                未支付
-            </div>
-        </ion-col>
-        <ion-col (click)="select('wait_comment')"
-                 col-3 class="order-type-col order-type-color " text-center>
-            <div [class.active]="type === 3">
-                <custom-icon class="custom-icon" set="cat" name="my-comment"></custom-icon>
-                <br>
-                已支付
-            </div>
-        </ion-col>
-        <ion-col (click)="select('all')"
-                 col-3 class="order-type-col order-type-color" text-center>
-            <div [class.active]="type === 4">
-                <custom-icon class="custom-icon" set="cat" name="projects-all"></custom-icon>
-                <br>
-                已完成
-            </div>
-        </ion-col>
-    </ion-row>
+    <!--<ion-row class="type-nav">-->
+        <!--<ion-col (click)="select('wait_design')"-->
+                 <!--col-3 class="order-type-col order-type-color" text-center>-->
+            <!--<div [class.active]="type === 1">-->
+                <!--<custom-icon class="custom-icon" set="cat" name="projects-waitdesign"></custom-icon>-->
+                <!--<br>-->
+                <!--未确定-->
+            <!--</div>-->
+        <!--</ion-col>-->
+        <!--<ion-col (click)="select('wait_outcome')"-->
+                 <!--col-3 class="order-type-col order-type-color" text-center>-->
+            <!--<div [class.active]="type === 2">-->
+                <!--<custom-icon class="custom-icon" set="cat" name="projects-waitorder"></custom-icon>-->
+                <!--<br>-->
+                <!--未支付-->
+            <!--</div>-->
+        <!--</ion-col>-->
+        <!--<ion-col (click)="select('wait_comment')"-->
+                 <!--col-3 class="order-type-col order-type-color " text-center>-->
+            <!--<div [class.active]="type === 3">-->
+                <!--<custom-icon class="custom-icon" set="cat" name="my-comment"></custom-icon>-->
+                <!--<br>-->
+                <!--已支付-->
+            <!--</div>-->
+        <!--</ion-col>-->
+        <!--<ion-col (click)="select('all')"-->
+                 <!--col-3 class="order-type-col order-type-color" text-center>-->
+            <!--<div [class.active]="type === 4">-->
+                <!--<custom-icon class="custom-icon" set="cat" name="projects-all"></custom-icon>-->
+                <!--<br>-->
+                <!--已完成-->
+            <!--</div>-->
+        <!--</ion-col>-->
+    <!--</ion-row>-->
 
     <ion-refresher (ionRefresh)="doRefresh($event)">
         <ion-refresher-content

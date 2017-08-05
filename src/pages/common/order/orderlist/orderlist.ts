@@ -3,6 +3,7 @@ import {NavController} from 'ionic-angular';
 import {ProjectDetailPage} from "../orderdetail/orderdetail";
 import {KeynoteService} from "../../../../service/keynote.service";
 import {Util} from "../../../../service/util";
+import {ProjectsService} from "../../../../service/ajax/projects.service";
 
 declare let initializeFontSize: any
 
@@ -16,11 +17,19 @@ export class OrderListComponent {
 
     constructor(public navCtrl: NavController,
                 public keynote: KeynoteService,
+                public projectServ:ProjectsService,
                 private util: Util) {
-        for (let proj of this.keynote.projects) {
-            proj['show_time'] = this.util.formatDate(proj.due_time,true);
-            this.projects.push(proj)
-        }
+
+        this.projectServ.getProjects().then(projects => {
+                for (let project of projects) {
+                    this.projects.push(project);
+                }
+        }).catch(error => console.log(error));
+
+        // for (let proj of this.keynote.projects) {
+        //     proj['show_time'] = this.util.formatDate(proj.due_time,true);
+        //     this.projects.push(proj)
+        // }
     }
 
     ionViewDidEnter() {

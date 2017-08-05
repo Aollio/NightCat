@@ -28,6 +28,7 @@ export class ProjectDetailPage extends AbsCommonPage {
     project;
 
     creator = {};
+    nickname = '';
 
     isDesigner: boolean;
     collectstate: any = 0;
@@ -49,6 +50,7 @@ export class ProjectDetailPage extends AbsCommonPage {
         this.project = navParams.get('project');
         this.isDesigner = share.currentModuleIsDesigner;
         this.util.updateObj(this.creator, this.userServ.getUserByUid(this.project.create_by))
+        this.getProjectCreator(this.project).then(nickname => this.nickname = nickname)
     }
 
     ionViewDidEnter() {
@@ -79,7 +81,14 @@ export class ProjectDetailPage extends AbsCommonPage {
             .catch(error => {
             })
     }
-
+    formatTime1(create_time){
+        console.log(create_time);
+        let date = new Date(create_time);
+        let year = date.getFullYear()
+        let month = date.getMonth() + 1
+        let day = date.getDate()
+        return year + '-' + month + '-' + day;
+    }
     openChat(operation) {
         this.navCtrl.push(ChatPage, operation);
     }
@@ -87,4 +96,16 @@ export class ProjectDetailPage extends AbsCommonPage {
     openGrabOrderPage(orderId) {
         this.navCtrl.push(GrabOrderPage, orderId);
     }
+
+
+    async getProjectCreator(project) {
+        let users = await this.userServ.allUser();
+        for (let user of users) {
+            if (project.create_by == user.uid) {
+                return user.nickname;
+            }
+        }
+    }
+
+
 }

@@ -5,21 +5,27 @@
 </ion-header>
 
 <ion-content>
-    <ion-row>
-        <ion-col class="respect-title more-weight" col-3>
-            项目标题:
-        </ion-col>
-        <ion-col class="respect-content more-weight" col-9>
-            {{project.title}}
-        </ion-col>
-    </ion-row>
+    <!--<ion-row>-->
+        <!--<ion-col class="respect-title more-weight" col-3>-->
+            <!--项目标题:-->
+        <!--</ion-col>-->
+        <!--<ion-col class="respect-content more-weight" col-9>-->
+            <!--{{project.title}}-->
+        <!--</ion-col>-->
+    <!--</ion-row>-->
     <div class="item-divider-cus-20"></div>
     <ion-item no-lines class="person-item">
         <!--<ion-icon name="person" item-start></ion-icon>-->
-        <ion-avatar class="comment-avatar" item-start>
-            <img src="/assets/img/first.png">
-        </ion-avatar>
-        <h3>{{ creator.nickname}}</h3>
+        <!--<ion-avatar class="comment-avatar" item-start>-->
+            <!--<img src="/assets/img/first.png">-->
+        <!--</ion-avatar>-->
+        <ion-col class="respect-title more-weight" col-4>
+            创建者:
+        </ion-col>
+        <ion-col class="respect-content more-weight" col-8>
+            {{nickname}}
+        </ion-col>
+        <!--<h3>创建者：{{ nickname }}</h3>-->
         <!--<ion-icon class="person-arrow-icon" name="arrow-forward" item-end></ion-icon>-->
     </ion-item>
 
@@ -55,7 +61,7 @@
             设计面积:
         </ion-col>
         <ion-col class="respect-content" col-9>
-            {{project.area_count}}平方米
+            {{project.area_count  ||'未填写'}}
         </ion-col>
     </ion-row>
     <ion-row>
@@ -63,7 +69,7 @@
             设计深度:
         </ion-col>
         <ion-col class="respect-content" col-9>
-            {{project.depth}}
+            {{project.depth || '未填写'}}
         </ion-col>
     </ion-row>
     <ion-row>
@@ -71,16 +77,16 @@
             工时:
         </ion-col>
         <ion-col class="respect-content" col-9>
-            {{project.period}}
+            {{project.period || '未填写'}}
         </ion-col>
     </ion-row>
     <div class="item-divider-cus-10"></div>
     <ion-row>
         <ion-col class="respect-title" col-3>
-            下单时间:
+            创建时间:
         </ion-col>
         <ion-col class="respect-content" col-9>
-            2017-07-01 21:07
+            {{formatTime1(project.create_time)}}
         </ion-col>
     </ion-row>
     <div class="item-divider-cus-10"></div>
@@ -93,31 +99,31 @@
         </ion-col>
     </ion-row>
 
-    <ion-row class="order-photo">
-        <ion-col>
-            <img src="assets/img/detail-default.png">
-        </ion-col>
-        <ion-col>
-            <img src="assets/img/detail-default.png">
-        </ion-col>
-        <ion-col>
-            <img src="assets/img/detail-default.png">
-        </ion-col>
-    </ion-row>
+    <!--<ion-row class="order-photo">-->
+        <!--<ion-col>-->
+            <!--<img src="assets/img/detail-default.png">-->
+        <!--</ion-col>-->
+        <!--<ion-col>-->
+            <!--<img src="assets/img/detail-default.png">-->
+        <!--</ion-col>-->
+        <!--<ion-col>-->
+            <!--<img src="assets/img/detail-default.png">-->
+        <!--</ion-col>-->
+    <!--</ion-row>-->
 
 
 </ion-content>
 
 <ion-footer class="footer-btns" *ngIf="isDesigner">
 
-    <P>如需抢单请电话联系工作人员18217699893</P>
+    <p>如需抢单请电话联系工作人员18217699893</p>
 
 </ion-footer>
 
 <ion-footer class="footer-btns" *ngIf="!isDesigner">
 
-    <button ion-button color="emp-primary" (click)="open(pay)" style="width: 33.3%!important;">支付</button>
-    <button ion-button color="emp-primary" (click)="open(commentorder)" style="width: 33.3%!important;">确认结单</button>
-    <button ion-button color="emp-primary" style="width: 33.3%!important;">延时接单</button>
+    <!--<button ion-button color="emp-primary" (click)="open(pay)" style="width: 33.3%!important;">支付</button>-->
+    <!--<button ion-button color="emp-primary" (click)="open(commentorder)" style="width: 33.3%!important;">确认结单</button>-->
+    <!--<button ion-button color="emp-primary" style="width: 33.3%!important;">延时接单</button>-->
 
 </ion-footer>

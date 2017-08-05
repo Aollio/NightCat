@@ -10,6 +10,7 @@ import {AccountSecurityPage} from "../../common/securitycenter/accountsecurity/a
 import {SupportPage} from "../../common/support/support";
 import {AboutPage} from "../../common/about/about";
 import {WelcomePage} from "../../welcome/welcome";
+import {Util} from "../../../service/util";
 
 declare let initializeFontSize: any;
 
@@ -29,6 +30,7 @@ export class EmployerMePage {
     }
 
     constructor(public  navCtrl: NavController,
+                public util :Util,
                 public shared: SharedService,
                 public modalCtrl: ModalController) {
         this.user = shared.getCurrentUser()
@@ -66,9 +68,17 @@ export class EmployerMePage {
     aboutPage: any = AboutPage;
 
     exitApp() {
-        for(var key in this.shared.getCurrentUser()){
+        for(let key in this.shared.getCurrentUser()){
             delete this.shared.getCurrentUser()[key];
         }
-        this.navCtrl.push(WelcomePage,{state:2});
+        let profileModal = this.modalCtrl.create(WelcomePage);
+        profileModal.present();
+
+    }
+
+    isLogin() {
+        let login = JSON.stringify(this.shared.getCurrentUser()) != JSON.stringify({})
+        console.log("isLogin", login);
+        return login;
     }
 }
