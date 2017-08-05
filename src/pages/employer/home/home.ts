@@ -9,6 +9,7 @@ import {SharedService} from "../../../service/share.service";
 import {Util} from "../../../service/util";
 import {NotificationsPage} from "../../designer/nofitications/notifications";
 import {LoginPage} from "../../common/login/login";
+import {UsersService} from "../../../service/ajax/users.service";
 
 declare let initializeFontSize: any
 
@@ -20,69 +21,50 @@ export class EmployerHomePage {
 
     static isfirstCome = true;
     user = {};
+    users=[];
 
 
     ionViewDidEnter() {
         initializeFontSize()
         this.util.updateObj(this.user, this.shared.getCurrentUser());
-
     }
     openNotificationsPage(){
         this.navCtrl.push(NotificationsPage);
     }
+    //
+    // show() {
+    //     console.log("touch")
+    // }
 
     designerMeDetailPage: DesignerMeDetailPage;
     loginPage:LoginPage;
 
     constructor(public navCtrl: NavController,
                 private shared: SharedService,
+                private usersServ:UsersService,
                 private util: Util,
                 public alertCtrl: AlertController,
                 public modalCtrl: ModalController) {
-        this.showAlert();
+        // this.showAlert();
         this.util.updateObj(this.user, shared.getCurrentUser());
+
+        this.usersServ.getUsersByRole(true).then(users => {
+            for (let user of users) {
+                this.users.push(user)
+                console.log(user);
+            }
+        }).catch(error => console.log(error));
+
     }
     openLoginPage(event) {
         let profileModal = this.modalCtrl.create(LoginPage);
         profileModal.present();
         event.stopPropagation();
-
-    }
-    showAlert() {
-
-        let alert = this.alertCtrl.create({
-            title: 'new message!',
-            subTitle: '有新设计师接单，请查看',
-            buttons: ['OK']
-        });
-        alert.present();
+        // this.navCtrl.push(LoginPage);
     }
 
 
     open(page, option) {
         this.navCtrl.push(page, option)
-
     }
-
-    openMeDetail(option) {
-        this.navCtrl.push(DesignerMeDetailPage, option)
-    }
-
-    btn_designer() {
-        this.navCtrl.push(DesignerListPage);
-    }
-
-    btn_fullstack() {
-        this.navCtrl.push(DesignerListPage);
-    }
-
-    btn_types() {
-        this.navCtrl.push(DesingerTypePage);
-    }
-
-    btn_helpChoosePage() {
-        this.navCtrl.push(HelpChoosePage);
-
-    }
-
 }

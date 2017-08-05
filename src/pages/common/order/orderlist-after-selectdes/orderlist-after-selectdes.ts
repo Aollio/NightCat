@@ -4,6 +4,7 @@ import {OrderProcessModifyPage} from "../orderprocess/order-process-modify/order
 import {Component, Input} from '@angular/core';
 import {ProjectDetailPage} from "../orderdetail/orderdetail";
 import {SharedService} from "../../../../service/share.service";
+import {ProjectsService} from "../../../../service/ajax/projects.service";
 
 declare let initializeFontSize: any
 
@@ -213,10 +214,16 @@ export class OrderListAfterSelectDesignerPage {
     @Input("type") type;
     projectStatus :any;
     isDesigner;
-    constructor(public nav: NavController,
-                public shared:SharedService) {
-        this.isDesigner=this.shared.currentModuleIsDesigner;
-        this.projectStatus;
+
+    constructor(public nav: NavController, public projectServ: ProjectsService) {
+
+
+        this.orderlist.length = 0;
+        this.projectServ.getProjects().then(projects => {
+            for (let project of projects) {
+                this.orderlist.push(project);
+            }
+        }).catch(error=>console.log(error));
     }
 
     openProjectProcess(project) {

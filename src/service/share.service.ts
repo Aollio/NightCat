@@ -9,7 +9,7 @@ import {Util} from "./util";
 export class SharedService {
 
     //是否为演示模式, 各个和网络连接有关的, 如果检测到为true, 则不进行网络传送, 使用测试数据进行演示
-    KEYNOTE: boolean = true;
+    KEYNOTE: boolean = false;
 
     //是否为开发模式, 开发模式在使用开发服务器.
     DEBUG: boolean = true;
@@ -64,7 +64,7 @@ export class SharedService {
 
     setCurrentUser(user: User) {
         this.util.updateObj(this.currentUser, user);
-        if (user.role != 'designer') {
+        if (user.role != 0) {
             this.currentModuleIsDesigner = false;
         } else {
             this.currentModuleIsDesigner = true;

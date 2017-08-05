@@ -25,6 +25,9 @@ page-employer-projects {
     border-right-color: white;
     border-image: linear-gradient($emp_primary, rgba(255, 255, 255, 0.24), white) 5 5;
   }
+  .header-number:nth-child(2){
+    border:0;
+  }
 
   .number-label {
     height: 30%;

@@ -2,7 +2,7 @@
     <div (click)="openDesignerPage(item)" class="my-list" *ngFor="let item of users">
         <div class="my-li">
             <div class="my-li-img">
-                <img [src]='item.img_url' alt=""/>
+                <img [src]='item.img_url||"assets/img/if_cat_emoji_face_smily-38-01_2361877.png" ' alt=""/>
             </div>
             <div class="my-li-right1">
                 <div class="my-li-right-t1">
@@ -13,8 +13,8 @@
                         <img src="assets/img/yinzhang.png">
                     </div>
                 </div>
-                <div class="my-li-right-c1">{{item.type}}</div>
-                <div class="my-li-right-b1">{{item.summary}}</div>
+                <div class="my-li-right-c1">{{item.type||"用户未填写类型"}}</div>
+                <div class="my-li-right-b1">{{item.summary||"用户为填写描述"}}</div>
             </div>
         </div>
     </div>

@@ -27,6 +27,7 @@ export class EmployerTabsPage {
     project: any = ProjectsPage;
     me: any = EmployerMePage;
     im = NotificationsPage;
+
     helpchoose: any = MiddleWarePage;
 
     publishtask: any = PublishTaskMiddleWarePage;
