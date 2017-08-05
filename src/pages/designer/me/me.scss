@@ -1,4 +1,18 @@
 page-me-designer {
+  .exitbtn {
+    color: white !important;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 4.5rem;
+  }
+  .exitbtn span {
+    margin: auto;
+    text-align: left;
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+
+  }
+
 
   ion-item{
     box-sizing: content-box!important;

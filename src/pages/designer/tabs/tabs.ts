@@ -20,7 +20,7 @@ export class DesignerTabsPage {
     console = DesignerProjectsPage;
     me = DesignerMePage;
     message = NotificationsPage;
-    im = IMPage;
+    im = NotificationsPage;
 
 
     constructor(public navCtrl: NavController, public platform: Platform,

@@ -1,0 +1,62 @@
+page-slidemenu {
+  .my-slide-bgi{
+  position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top:0;
+ }
+  .my-slide-bgi img{
+    min-height: 100%
+  }
+
+  .bg-tran button{
+    background-color: transparent;
+  }
+
+
+ ion-list {
+   margin-top: 1rem !important;
+   margin-left: .5rem;
+ }
+
+ button {
+   height: 4rem;
+   font-size: 2rem;
+ }
+
+ .my-font-size {
+   font-size: 2rem;
+ }
+
+ .designer {
+  //color: map_get($colors, nav-des-bg) !important;
+   color: #333;
+ }
+
+ .employer {
+// color: $emp_primary !important;
+   color: #333;
+ }
+
+ .exitbtn {
+   color: white !important;
+   margin-top: 0;
+   margin-bottom: 0;
+   height: 4.5rem;
+ }
+ .exitbtn span {
+   margin: auto;
+   text-align: left;
+   justify-content: flex-start;
+   -webkit-justify-content: flex-start;
+
+ }
+ .custom-icon {
+   min-height: 0 !important;
+   font-size: 2rem !important;
+   padding-left: -10%;
+   padding-right: 10%;
+ }
+
+}

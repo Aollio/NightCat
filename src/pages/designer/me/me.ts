@@ -10,6 +10,8 @@ import {LoginPage} from "../../common/login/login";
 import { ModalController, NavParams } from 'ionic-angular';
 import {Util} from "../../../service/util";
 import {FavoriteProjectsPage} from "./favorite-projects/favorite-projects";
+import {SlideMenuComponment} from "./slidemenu/slidemenu";
+import {WelcomePage} from "../../welcome/welcome";
 declare let initializeFontSize: any;
 
 @IonicPage()
@@ -20,7 +22,7 @@ declare let initializeFontSize: any;
 export class DesignerMePage {
     favoriteProjectsPage:any=FavoriteProjectsPage;
     user = {};
-
+    a :any=SlideMenuComponment;
     ionViewDidEnter() {
         initializeFontSize()
     }
@@ -57,5 +59,8 @@ export class DesignerMePage {
         $event.stopPropagation();
         // this.navCtrl.push(LoginPage);
     }
-
+    exitApp() {
+        // this.platform.exitApp();
+        this.navCtrl.push(WelcomePage,{state:2});
+    }
 }

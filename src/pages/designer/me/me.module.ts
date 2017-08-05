@@ -12,6 +12,8 @@ import {WalletModule} from "../wallet/wallet.module";
 import {IonicPageModule} from "ionic-angular";
 import {DesignerModule} from "../designer.module";
 import {OrderModule} from "../../common/order/order.module";
+import {SlideMenuComponment} from "./slidemenu/slidemenu";
+import {CustomIconsModule} from "ionic2-custom-icons";
 
 @NgModule({
     declarations: [
@@ -21,7 +23,8 @@ import {OrderModule} from "../../common/order/order.module";
         AddHonorPage,
         AddCasePage,
         CaseDetailPage,
-        FavoriteProjectsPage
+        FavoriteProjectsPage,
+        SlideMenuComponment
     ],
     entryComponents: [
         DesignerMePage,
@@ -30,12 +33,14 @@ import {OrderModule} from "../../common/order/order.module";
         AddCasePage,
         AddHonorPage,
         CaseDetailPage,
-        FavoriteProjectsPage
+        FavoriteProjectsPage,
+        SlideMenuComponment
     ],
     imports: [
         WalletModule,
         IonicPageModule.forChild(DesignerMePage),
-        OrderModule
+        OrderModule,
+        CustomIconsModule, // Add this!
     ],
     exports: [
         CaseDetailPage,

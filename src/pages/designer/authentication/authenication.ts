@@ -3,10 +3,7 @@
  */
 import {NavController} from "ionic-angular";
 import {Component} from "@angular/core";
-// import {ImagePicker} from '@ionic-native/image-picker';
-
 declare let initializeFontSize: any;
-
 @Component({
     selector: 'page-authenication',
     templateUrl: 'authentication.html'
@@ -29,14 +26,6 @@ export class AuthenticationPage {
         initializeFontSize()
     }
 
-    //
-    uploading_img() {
-        // this.imagePicker;
-        // this.imagePicker.getPictures(options).then((results) => {
-        //     for (var i = 0; i < results.length; i++) {
-        //         console.log('Image URI: ' + results[i]);
-        //     }
-        // }, (err) => { });
-    }
+
 
 }

@@ -1,11 +1,6 @@
 <ion-header no-border>
     <ion-navbar [color]="navColor" no-border>
         <ion-title>项目详情</ion-title>
-        <ion-buttons end>
-            <button ion-button (click)="open(orderrocessPreSelectdesPage)">
-                项目动态
-            </button>
-        </ion-buttons>
     </ion-navbar>
 </ion-header>
 
@@ -114,18 +109,8 @@
 </ion-content>
 
 <ion-footer class="footer-btns" *ngIf="isDesigner">
-    <button class="footer-clear-btn" clear ion-button color="primary" (click)="collect()" icon-start style="width: 50%">
-        <ion-icon name="ios-star-outline" *ngIf="collectstate===0"></ion-icon>
-        <ion-icon name="ios-star" *ngIf="collectstate===1" class="order-state"></ion-icon>
-        收藏
-    </button>
-    <button class="footer-clear-btn" (click)="openChat({sessionId: 'hgyuguyg'})" clear ion-button color="primary"
-            icon-start style="width: 50%">
-        <ion-icon name="text-outline"></ion-icon>
-        喵喵
-    </button>
-    <!--todo orderId-->
-    <button ion-button color="primary" (click)="openGrabOrderPage()" style="width: 60%!important;">立即抢单</button>
+
+    <P>如需抢单请电话联系工作人员18217699893</P>
 
 </ion-footer>
 
