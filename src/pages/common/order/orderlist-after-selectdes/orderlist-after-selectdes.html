@@ -1,8 +1,6 @@
-
-
 <div class="my-list">
     <div class="my-ul" *ngFor="let item of orderlist">
-        <div class="my-li"
+        <div class="my-li" tappable
              (click)="openProjectProcess(item)">
             <div class="my-li-img">
                 <img [src]='item.img||"assets/img/fav-avatar.png"' alt=""/>
@@ -15,15 +13,9 @@
 
 
                     <div class="my-li-right-b-l">{{getStatus(item.status)}}</div>
-                    <!--<div class="my-li-right-b-l">{{item.fav_count}}人抢单</div>-->
-                    <!--<div class="my-li-right-b-r">{{item.time}}后截止</div>-->
                 </div>
             </div>
         </div>
-        <!--<div class="my-bottom" *ngIf="type==item.status">-->
-            <!--<div class="my-bottom-li act">提交订单</div>-->
-            <!--<div class="my-bottom-li">修改订单</div>-->
-        <!--</div>-->
     </div>
 </div>
 
@@ -34,8 +26,5 @@
     <p class="null-porject-toast">
         当前没有工程, 海量资深设计师任你选
     </p>
-
-    <!--<button ion-button class="null-project-button" (click)="openFindOrder()">寻找项目</button>-->
-    <!--<button ion-button class="null-project-button" (click)="openPulishTask()">自己发布项目</button>-->
 
 </ion-content>

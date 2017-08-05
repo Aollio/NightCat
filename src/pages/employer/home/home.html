@@ -10,7 +10,7 @@
 <ion-content class="ion-content">
 
     <div class="my-title" *ngIf="user.nickname != null">嗨, {{user.nickname}}</div>
-    <div class="my-title" *ngIf="user.nickname == null">嗨, 请<a class="aclass" (click)="openLoginPage($event)">登录</a></div>
+    <div class="my-title" *ngIf="user.nickname == null">嗨, 请<a class="aclass" tappable (click)="openLoginPage($event)">登录</a></div>
 
     <designer-list [users] = "users"></designer-list>
 </ion-content>

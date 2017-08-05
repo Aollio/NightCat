@@ -1,6 +1,6 @@
 <div class="my-list">
     <div class="my-ul"
-         (click)="openProjectDetail(item)"
+         tappable (click)="openProjectDetail(item)"
          *ngFor="let item of projects">
         <div class="my-li">
             <div class="my-li-img">
@@ -18,7 +18,6 @@
                 </div>
                 <div class="my-li-right-b">
                     <div class="my-li-right-b-l">{{item.fav_count||0}}人收藏</div>
-                    <!--<div class="my-li-right-b-r">{{item.show_time}}截止</div>-->
                 </div>
                 <div class="my-bar">
                     <div class="my-bar-l"></div>
