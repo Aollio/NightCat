@@ -10,18 +10,18 @@
                 已发布
             </div>
             <div class="number-detail">
-                0
+                {{orderList.orderlist.length}}
             </div>
         </ion-col>
 
         <ion-col col-3
                  class="header-number">
-            <div class="number-label">
-                成交数
-            </div>
-            <div class="number-detail">
-                0
-            </div>
+            <!--<div class="number-label">-->
+                <!--成交数-->
+            <!--</div>-->
+            <!--<div class="number-detail">-->
+                <!--0-->
+            <!--</div>-->
         </ion-col>
         <ion-col col-6 class="header-right-col">
             <div class="head-time">
@@ -35,41 +35,41 @@
             <!--</div>-->
         </ion-col>
     </ion-row>
-    <ion-row class="type-nav">
-        <ion-col (click)="select('wait_design')"
-                 col-3 class="order-type-col order-type-color" text-center>
-            <div [class.active]="type === 1">
-                <custom-icon class="custom-icon" set="cat" name="projects-waitdesign"></custom-icon>
-                <br>
-                待处理
-            </div>
-        </ion-col>
-        <ion-col (click)="select('wait_outcome')"
-                 col-3 class="order-type-col order-type-color" text-center>
-            <div [class.active]="type === 2">
-                <custom-icon class="custom-icon" set="cat" name="projects-waitorder"></custom-icon>
-                <br>
-                待支付
-            </div>
-        </ion-col>
-        <ion-col (click)="select('wait_comment')"
-                 col-3 class="order-type-col order-type-color " text-center>
-            <div [class.active]="type === 3">
-                <custom-icon class="custom-icon" set="cat" name="my-comment"></custom-icon>
-                <br>
-                待交付
-                <!--已支付-->
-            </div>
-        </ion-col>
-        <ion-col (click)="select('all')"
-                 col-3 class="order-type-col order-type-color" text-center>
-            <div [class.active]="type === 4">
-                <custom-icon class="custom-icon" set="cat" name="projects-all"></custom-icon>
-                <br>
-                已完成
-            </div>
-        </ion-col>
-    </ion-row>
+    <!--<ion-row class="type-nav">-->
+        <!--<ion-col (click)="select('wait_design')"-->
+                 <!--col-3 class="order-type-col order-type-color" text-center>-->
+            <!--<div [class.active]="type === 0">-->
+                <!--<custom-icon class="custom-icon" set="cat" name="projects-waitdesign"></custom-icon>-->
+                <!--<br>-->
+                <!--待处理-->
+            <!--</div>-->
+        <!--</ion-col>-->
+        <!--<ion-col (click)="select('wait_outcome')"-->
+                 <!--col-3 class="order-type-col order-type-color" text-center>-->
+            <!--<div [class.active]="type === 1">-->
+                <!--<custom-icon class="custom-icon" set="cat" name="projects-waitorder"></custom-icon>-->
+                <!--<br>-->
+                <!--待支付-->
+            <!--</div>-->
+        <!--</ion-col>-->
+        <!--<ion-col (click)="select('wait_comment')"-->
+                 <!--col-3 class="order-type-col order-type-color " text-center>-->
+            <!--<div [class.active]="type === 2">-->
+                <!--<custom-icon class="custom-icon" set="cat" name="my-comment"></custom-icon>-->
+                <!--<br>-->
+                <!--待交付-->
+                <!--&lt;!&ndash;已支付&ndash;&gt;-->
+            <!--</div>-->
+        <!--</ion-col>-->
+        <!--<ion-col (click)="select('all')"-->
+                 <!--col-3 class="order-type-col order-type-color" text-center>-->
+            <!--<div [class.active]="type === 3">-->
+                <!--<custom-icon class="custom-icon" set="cat" name="projects-all"></custom-icon>-->
+                <!--<br>-->
+                <!--已完成-->
+            <!--</div>-->
+        <!--</ion-col>-->
+    <!--</ion-row>-->
 </ion-header>
 
 
@@ -85,7 +85,7 @@
         </ion-refresher-content>
     </ion-refresher>
 
-    <page-orderlist-after-selectdes [type]="type">
+    <page-orderlist-after-selectdes #orderlist>
 
     </page-orderlist-after-selectdes>
 

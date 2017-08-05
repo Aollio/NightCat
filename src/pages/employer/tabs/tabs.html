@@ -1,9 +1,9 @@
-<ion-tabs selectedIndex="0" class="tabs-icon-text">
+<ion-tabs selectedIndex="0" >
     <ion-tab [root]="home" tabTitle="首页" tabIcon="home"></ion-tab>
     <ion-tab [root]="project" tabTitle="已发布" tabIcon="ios-list-box-outline"></ion-tab>
     <!--todo-->
-   <ion-tab [root]="publishtask" customIconSet="cat" customIconName="about" class="fabicon">
+   <ion-tab [root]="publishtask"  tabTitle="代发" tabIcon="add">
     </ion-tab>
-    <ion-tab [root]="im" tabTitle="喵喵" tabIcon="ios-chatboxes-outline"></ion-tab>
+    <ion-tab [root]="im" tabTitle="推送" tabIcon="ios-chatboxes-outline"></ion-tab>
     <ion-tab [root]="me" tabTitle="我的" tabIcon="ios-person-outline"></ion-tab>
 </ion-tabs>

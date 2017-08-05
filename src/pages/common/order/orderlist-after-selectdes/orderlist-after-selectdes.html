@@ -1,23 +1,24 @@
 <div class="my-list">
     <div class="my-ul" *ngFor="let item of orderlist">
-        <div class="my-li" *ngIf="type==item.status" (click)="openProjectProcess(item)">
+        <div class="my-li"
+             (click)="openProjectProcess(item)">
             <div class="my-li-img">
-                <img [src]=item.img alt=""/>
+                <img [src]='item.img||"assets/img/fav-avatar.png"' alt=""/>
             </div>
             <div class="my-li-right">
                 <div class="my-li-right-t">
-                    <div class="my-li-right-t-name">{{item.title}}</div>
+                    <div class="my-li-right-t-name">{{item.content}}</div>
                 </div>
                 <div class="my-li-right-b">
                     <div class="my-li-right-b-l">{{item.fav_count}}人抢单</div>
-                    <div class="my-li-right-b-r">{{item.time}}后截止</div>
+                    <!--<div class="my-li-right-b-r">{{item.time}}后截止</div>-->
                 </div>
             </div>
         </div>
-        <div class="my-bottom" *ngIf="type==item.status">
-            <div class="my-bottom-li act">提交订单</div>
-            <div class="my-bottom-li">修改订单</div>
-        </div>
+        <!--<div class="my-bottom" *ngIf="type==item.status">-->
+            <!--<div class="my-bottom-li act">提交订单</div>-->
+            <!--<div class="my-bottom-li">修改订单</div>-->
+        <!--</div>-->
     </div>
 </div>
 

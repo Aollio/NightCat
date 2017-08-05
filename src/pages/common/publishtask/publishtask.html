@@ -8,173 +8,19 @@
         <ion-title>
             发布项目
         </ion-title>
-        <ion-buttons end>
-            <button ion-button (click)="publish()">
-                发布
-            </button>
-        </ion-buttons>
+        <!--<ion-buttons end>-->
+            <!--<button ion-button (click)="publish()">-->
+                <!--发布-->
+            <!--</button>-->
+        <!--</ion-buttons>-->
     </ion-navbar>
 </ion-header>
 
 <ion-content class="content" [class.designer]="designer" [class.employer]="!designer">
-    <div class="blank-10px"></div>
-    <ion-item class="my-item" no-lines>
-        <ion-label class="labelcolor">项目类型 *</ion-label>
-        <ion-select [(ngModel)]="gaming" input interface="popover" placeholder="请选择">
-            <ion-option value="0">概预算</ion-option>
-            <ion-option value="1">项目经理</ion-option>
-            <ion-option value="2">审图</ion-option>
-            <ion-option value="3">策划</ion-option>
-            <ion-option value="4">规划设计</ion-option>
-            <ion-option value="5">建筑设计</ion-option>
-            <ion-option value="6">电气设计</ion-option>
-            <ion-option value="7">结构设计</ion-option>
-            <ion-option value="8">软装设计</ion-option>
-            <ion-option value="9">给排水设计</ion-option>
-            <ion-option value="10">室内设计</ion-option>
-            <ion-option value="11">暖通设计</ion-option>
-            <ion-option value="12">景观设计</ion-option>
 
-        </ion-select>
-    </ion-item>
-    <div class="blank-10px"></div>
-    <!--<ion-item class="my-item" no-lines>-->
-    <!--<ion-label floating [color]='maincolor' fixed>* 项目标题</ion-label>-->
-    <!--<ion-input smaxlength="10" type="text" value="" ></ion-input>-->
-    <!--</ion-item>-->
-    <ion-item [class.]>
-        <ion-label floating>项目标题 *</ion-label>
-        <ion-input type="text" [(ngModel)]="event.title"></ion-input>
-    </ion-item>
-    <div class="blank-10px"></div>
-    <ion-item class="my-item" no-lines>
-        <ion-textarea [(ngModel)]="event.description" rows="5" placeholder="详细描述一下项目的内容"></ion-textarea>
-        <!--<div>-->
-        <!--<img src="assets/img/jiahao.png" height="200" width="200"/>-->
-        <!--</div>-->
-    </ion-item>
-    <div class="blank-10px"></div>
-    <!--<ion-item class="my-item" no-lines>-->
-    <!--<ion-label floating fixed [color]='maincolor'>* 预算</ion-label>-->
-    <!--<ion-input type="text" value=""></ion-input>-->
-    <!--</ion-item>-->
-    <div class="preBudget">
-        <ion-item>
-            <ion-label floating>预算 *</ion-label>
-            <ion-input [(ngModel)]="event.preBudget" type="number"></ion-input>
-        </ion-item>
-        <ion-icon end name="logo-yen"></ion-icon>
+    <div class="center">
+        <h4>请联系上海建联工作人员代发项目</h4>
+        <p>18217699893</p>
     </div>
-
-
-    <div class="blank-10px"></div>
-
-    <ion-item class="my-item" no-lines *ngIf="designer === false">
-        <ion-label class="labelcolor">抢单截止时间 *</ion-label>
-        <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="event.employer_deadline"></ion-datetime>
-    </ion-item>
-    <div *ngIf="designer === false" class="tip-small-label">设计单位(面积/个数)</div>
-    <!--<ion-item class="my-item" no-lines>-->
-    <!--<ion-label fixed [color]='maincolor'>{{ designer ? '* ' : '' }}设计面积</ion-label>-->
-    <!--<ion-input type="text" value="" placeholder="请输入设计面积"></ion-input>-->
-    <!--</ion-item>-->
-    <ion-item>
-        <ion-label floating>设计面积</ion-label>
-        <ion-input [(ngModel)]="event.designArea" type="text"></ion-input>
-    </ion-item>
-    <div class="blank-10px"></div>
-    <!--<ion-item class="my-item" no-lines *ngIf="designer === false">-->
-    <!--<ion-label fixed [color]='maincolor'>个数</ion-label>-->
-    <!--<ion-input type="text" value="" placeholder="请输入设计个数"></ion-input>-->
-    <!--</ion-item>-->
-    <ion-item>
-        <ion-label floating>个数</ion-label>
-        <ion-input [(ngModel)]="event.count" type="text"></ion-input>
-    </ion-item>
-    <div class="blank-10px"></div>
-    <!--<ion-item class="my-item no-bottom-radius" no-lines>-->
-    <!--<ion-label fixed [color]='maincolor'>* 设计深度</ion-label>-->
-    <!--</ion-item>-->
-    <!--<div style="width: 50%">-->
-    <!--<ion-item class="my-item no-up-radius" no-lines>-->
-    <!--<ion-segment [(ngModel)]="relationship" [color]="maincolor">-->
-    <!--<ion-segment-button small value="key">-->
-    <!--方案-->
-    <!--</ion-segment-button>-->
-    <!--<ion-segment-button small value="add">-->
-    <!--扩出-->
-    <!--</ion-segment-button>-->
-    <!--<ion-segment-button small value="action">-->
-    <!--施工-->
-    <!--</ion-segment-button>-->
-    <!--</ion-segment>-->
-    <!--</ion-item>-->
-
-    <ion-item class="my-item" no-lines>
-        <ion-label class="labelcolor">设计深度 *</ion-label>
-        <ion-select [(ngModel)]="relationship" input interface="popover" placeholder="请选择">
-            <ion-option value="0">方案</ion-option>
-            <ion-option value="1">扩出</ion-option>
-            <ion-option value="2">施工</ion-option>
-        </ion-select>
-    </ion-item>
-
-    <!--<ion-list radio-group style="margin-bottom: 0">-->
-    <!--<ion-list-header>-->
-    <!--设计深度 *-->
-    <!--</ion-list-header>-->
-
-    <!--<ion-item>-->
-    <!--<ion-label>方案</ion-label>-->
-    <!--<ion-radio checked="true" value="go"></ion-radio>-->
-    <!--</ion-item>-->
-
-    <!--<ion-item>-->
-    <!--<ion-label>扩出</ion-label>-->
-    <!--<ion-radio value="rust"></ion-radio>-->
-    <!--</ion-item>-->
-
-    <!--<ion-item>-->
-    <!--<ion-label>施工</ion-label>-->
-    <!--<ion-radio value="Python"></ion-radio>-->
-    <!--</ion-item>-->
-    <!--</ion-list>-->
-    <div class="blank-10px"></div>
-    <!--<ion-item class="my-item" no-lines>-->
-    <!--<ion-label fixed [color]='maincolor'>* 工时</ion-label>-->
-    <!--<ion-input type="text" value=""></ion-input>-->
-    <!--</ion-item>-->
-    <ion-item>
-        <ion-label floating>工时 </ion-label>
-        <ion-input [(ngModel)]="event.workTime" type="text"></ion-input>
-    </ion-item>
-    <div class="blank-10px"></div>
-    <ion-item class="my-item" no-lines>
-        <ion-label fixed class="labelcolor">设计时间 *</ion-label>
-    </ion-item>
-    <ion-item class="my-item no-radius">
-        <ion-label [color]='cat-gray'>开始</ion-label>
-        <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="event.timeStarts"></ion-datetime>
-    </ion-item>
-    <ion-item class="my-item no-up-radius">
-        <ion-label [color]='cat-gray'>结束</ion-label>
-        <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="event.timeEnds"></ion-datetime>
-    </ion-item>
-    <div class="blank-10px"></div>
-
-    <ion-item class="divcss" *ngIf="designer">
-        <!--<div >-->
-        <p class="pcss">订单备注 * </p>
-        <div class="div1css">
-            <textarea class="summary-textarea"></textarea>
-        </div>
-        <!--</div>-->
-    </ion-item>
-    <div class="blank-10px"></div>
-    <!--<div>-->
-    <!--<ion-datetime displayFormat="YYYY-MM-DD"-->
-    <!--[(ngModel)]="event.timeStar">-->
-    <!--</ion-datetime>-->
-    <!--</div>-->
 
 </ion-content>

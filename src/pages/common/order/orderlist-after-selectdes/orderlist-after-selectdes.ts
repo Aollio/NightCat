@@ -3,6 +3,7 @@ import {NavController, NavControllerBase} from "ionic-angular";
 import {OrderProcessModifyPage} from "../orderprocess/order-process-modify/order-process-modify";
 import {Component, Input} from '@angular/core';
 import {ProjectDetailPage} from "../orderdetail/orderdetail";
+import {ProjectsService} from "../../../../service/ajax/projects.service";
 
 declare let initializeFontSize: any
 
@@ -14,205 +15,214 @@ declare let initializeFontSize: any
 export class OrderListAfterSelectDesignerPage {
 
 
-    orderlist: Array<any> = [
-        {
-            status: 1,
-            img: 'assets/img/fav-avatar.png',
-            title: '自建别墅设计/自建房设计/精品自建住宅\n' +
-            '商业地产工程bim建筑设计策划',
-            time: '6天1小时',
-
-            "id": "id0",
-
-            "type": "建筑设计",
-            "content": "项目内容, 画出一个设计图",
-            "budget": 100000000,
-            "area_count": 100,
-            "depth": 0,
-            "period": 129,
-            "start_time": 1500882001493,
-            "end_time": 1500882001493,
-            "create_by": "1",
-            "create_time": 1500882001493,
-            "good": true,
-            "modify_by": "",
-            "modify_time": "",
-            "modify_remark": "",
-            "due_time": 1500882001493,
-            "view_count": 0,
-            "fav_count": 0,
-            "bidder": "",
-            "bid_time": "",
-            "audit_by": "",
-            "audit_time": "",
-            "img_url": '/assets/img/des-1.png'
-        },
-        {
-            status: 1,
-            img: 'assets/img/detail-default.png',
-            title: '自建别墅设计/自建房设计/精品自建住宅\n' +
-            '商业地产工程bim建筑设计策划',
-            time: '6天1小时'
-            ,
-            "id": "id0",
-
-            "type": "建筑设计",
-            "content": "项目内容, 画出一个设计图",
-            "budget": 100000000,
-            "area_count": 100,
-            "depth": 0,
-            "period": 129,
-            "start_time": 1500882001493,
-            "end_time": 1500882001493,
-            "create_by": "1",
-            "create_time": 1500882001493,
-            "good": true,
-            "modify_by": "",
-            "modify_time": "",
-            "modify_remark": "",
-            "due_time": 1500882001493,
-            "view_count": 0,
-            "fav_count": 0,
-            "bidder": "",
-            "bid_time": "",
-            "audit_by": "",
-            "audit_time": "",
-            "img_url": '/assets/img/des-1.png'
-        },
-        {
-            status: 1,
-            img: 'assets/img/fav-avatar.png',
-            title: '自建别墅设计/自建房设计/精品自建住宅\n' +
-            '商业地产工程bim建筑设计策划',
-            time: '6天1小时',
-
-            "id": "id0",
-
-            "type": "建筑设计",
-            "content": "项目内容, 画出一个设计图",
-            "budget": 100000000,
-            "area_count": 100,
-            "depth": 0,
-            "period": 129,
-            "start_time": 1500882001493,
-            "end_time": 1500882001493,
-            "create_by": "1",
-            "create_time": 1500882001493,
-            "good": true,
-            "modify_by": "",
-            "modify_time": "",
-            "modify_remark": "",
-            "due_time": 1500882001493,
-            "view_count": 0,
-            "fav_count": 0,
-            "bidder": "",
-            "bid_time": "",
-            "audit_by": "",
-            "audit_time": "",
-            "img_url": '/assets/img/des-1.png'
-        },
-        {
-            status: 1,
-            img: 'assets/img/fav-avatar.png',
-            title: '自建别墅设计/自建房设计/精品自建住宅\n' +
-            '商业地产工程bim建筑设计策划',
-            time: '6天1小时',
-
-            "id": "id0",
-
-            "type": "建筑设计",
-            "content": "项目内容, 画出一个设计图",
-            "budget": 100000000,
-            "area_count": 100,
-            "depth": 0,
-            "period": 129,
-            "start_time": 1500882001493,
-            "end_time": 1500882001493,
-            "create_by": "1",
-            "create_time": 1500882001493,
-            "good": true,
-            "modify_by": "",
-            "modify_time": "",
-            "modify_remark": "",
-            "due_time": 1500882001493,
-            "view_count": 0,
-            "fav_count": 0,
-            "bidder": "",
-            "bid_time": "",
-            "audit_by": "",
-            "audit_time": "",
-            "img_url": '/assets/img/des-1.png'
-        },
-        {
-            status: 2,
-            img: 'assets/img/detail-default.png',
-            title: '自建别墅设计/自建房设计/精品自建住宅\n' +
-            '商业地产工程bim建筑设计策划',
-            time: '6天1小时',
-
-            "id": "id0",
-
-            "type": "建筑设计",
-            "content": "项目内容, 画出一个设计图",
-            "budget": 100000000,
-            "area_count": 100,
-            "depth": 0,
-            "period": 129,
-            "start_time": 1500882001493,
-            "end_time": 1500882001493,
-            "create_by": "1",
-            "create_time": 1500882001493,
-            "good": true,
-            "modify_by": "",
-            "modify_time": "",
-            "modify_remark": "",
-            "due_time": 1500882001493,
-            "view_count": 0,
-            "fav_count": 0,
-            "bidder": "",
-            "bid_time": "",
-            "audit_by": "",
-            "audit_time": "",
-            "img_url": '/assets/img/des-1.png'
-        },
-        {
-            status: 3,
-            img: 'assets/img/fav-avatar.png',
-            title: '自建别墅设计/自建房设计/精品自建住宅\n' +
-            '商业地产工程bim建筑设计策划',
-            time: '6天1小时',
-
-            "id": "id0",
-
-            "type": "建筑设计",
-            "content": "项目内容, 画出一个设计图",
-            "budget": 100000000,
-            "area_count": 100,
-            "depth": 0,
-            "period": 129,
-            "start_time": 1500882001493,
-            "end_time": 1500882001493,
-            "create_by": "1",
-            "create_time": 1500882001493,
-            "good": true,
-            "modify_by": "",
-            "modify_time": "",
-            "modify_remark": "",
-            "due_time": 1500882001493,
-            "view_count": 0,
-            "fav_count": 0,
-            "bidder": "",
-            "bid_time": "",
-            "audit_by": "",
-            "audit_time": "",
-            "img_url": '/assets/img/des-1.png'
-        },
-    ];
+    // orderlist: Array<any> = [
+    //     {
+    //         status: 1,
+    //         img: 'assets/img/fav-avatar.png',
+    //         title: '自建别墅设计/自建房设计/精品自建住宅\n' +
+    //         '商业地产工程bim建筑设计策划',
+    //         time: '6天1小时',
+    //
+    //         "id": "id0",
+    //
+    //         "type": "建筑设计",
+    //         "content": "项目内容, 画出一个设计图",
+    //         "budget": 100000000,
+    //         "area_count": 100,
+    //         "depth": 0,
+    //         "period": 129,
+    //         "start_time": 1500882001493,
+    //         "end_time": 1500882001493,
+    //         "create_by": "1",
+    //         "create_time": 1500882001493,
+    //         "good": true,
+    //         "modify_by": "",
+    //         "modify_time": "",
+    //         "modify_remark": "",
+    //         "due_time": 1500882001493,
+    //         "view_count": 0,
+    //         "fav_count": 0,
+    //         "bidder": "",
+    //         "bid_time": "",
+    //         "audit_by": "",
+    //         "audit_time": "",
+    //         "img_url": '/assets/img/des-1.png'
+    //     },
+    //     {
+    //         status: 1,
+    //         img: 'assets/img/detail-default.png',
+    //         title: '自建别墅设计/自建房设计/精品自建住宅\n' +
+    //         '商业地产工程bim建筑设计策划',
+    //         time: '6天1小时'
+    //         ,
+    //         "id": "id0",
+    //
+    //         "type": "建筑设计",
+    //         "content": "项目内容, 画出一个设计图",
+    //         "budget": 100000000,
+    //         "area_count": 100,
+    //         "depth": 0,
+    //         "period": 129,
+    //         "start_time": 1500882001493,
+    //         "end_time": 1500882001493,
+    //         "create_by": "1",
+    //         "create_time": 1500882001493,
+    //         "good": true,
+    //         "modify_by": "",
+    //         "modify_time": "",
+    //         "modify_remark": "",
+    //         "due_time": 1500882001493,
+    //         "view_count": 0,
+    //         "fav_count": 0,
+    //         "bidder": "",
+    //         "bid_time": "",
+    //         "audit_by": "",
+    //         "audit_time": "",
+    //         "img_url": '/assets/img/des-1.png'
+    //     },
+    //     {
+    //         status: 1,
+    //         img: 'assets/img/fav-avatar.png',
+    //         title: '自建别墅设计/自建房设计/精品自建住宅\n' +
+    //         '商业地产工程bim建筑设计策划',
+    //         time: '6天1小时',
+    //
+    //         "id": "id0",
+    //
+    //         "type": "建筑设计",
+    //         "content": "项目内容, 画出一个设计图",
+    //         "budget": 100000000,
+    //         "area_count": 100,
+    //         "depth": 0,
+    //         "period": 129,
+    //         "start_time": 1500882001493,
+    //         "end_time": 1500882001493,
+    //         "create_by": "1",
+    //         "create_time": 1500882001493,
+    //         "good": true,
+    //         "modify_by": "",
+    //         "modify_time": "",
+    //         "modify_remark": "",
+    //         "due_time": 1500882001493,
+    //         "view_count": 0,
+    //         "fav_count": 0,
+    //         "bidder": "",
+    //         "bid_time": "",
+    //         "audit_by": "",
+    //         "audit_time": "",
+    //         "img_url": '/assets/img/des-1.png'
+    //     },
+    //     {
+    //         status: 1,
+    //         img: 'assets/img/fav-avatar.png',
+    //         title: '自建别墅设计/自建房设计/精品自建住宅\n' +
+    //         '商业地产工程bim建筑设计策划',
+    //         time: '6天1小时',
+    //
+    //         "id": "id0",
+    //
+    //         "type": "建筑设计",
+    //         "content": "项目内容, 画出一个设计图",
+    //         "budget": 100000000,
+    //         "area_count": 100,
+    //         "depth": 0,
+    //         "period": 129,
+    //         "start_time": 1500882001493,
+    //         "end_time": 1500882001493,
+    //         "create_by": "1",
+    //         "create_time": 1500882001493,
+    //         "good": true,
+    //         "modify_by": "",
+    //         "modify_time": "",
+    //         "modify_remark": "",
+    //         "due_time": 1500882001493,
+    //         "view_count": 0,
+    //         "fav_count": 0,
+    //         "bidder": "",
+    //         "bid_time": "",
+    //         "audit_by": "",
+    //         "audit_time": "",
+    //         "img_url": '/assets/img/des-1.png'
+    //     },
+    //     {
+    //         status: 2,
+    //         img: 'assets/img/detail-default.png',
+    //         title: '自建别墅设计/自建房设计/精品自建住宅\n' +
+    //         '商业地产工程bim建筑设计策划',
+    //         time: '6天1小时',
+    //
+    //         "id": "id0",
+    //
+    //         "type": "建筑设计",
+    //         "content": "项目内容, 画出一个设计图",
+    //         "budget": 100000000,
+    //         "area_count": 100,
+    //         "depth": 0,
+    //         "period": 129,
+    //         "start_time": 1500882001493,
+    //         "end_time": 1500882001493,
+    //         "create_by": "1",
+    //         "create_time": 1500882001493,
+    //         "good": true,
+    //         "modify_by": "",
+    //         "modify_time": "",
+    //         "modify_remark": "",
+    //         "due_time": 1500882001493,
+    //         "view_count": 0,
+    //         "fav_count": 0,
+    //         "bidder": "",
+    //         "bid_time": "",
+    //         "audit_by": "",
+    //         "audit_time": "",
+    //         "img_url": '/assets/img/des-1.png'
+    //     },
+    //     {
+    //         status: 3,
+    //         img: 'assets/img/fav-avatar.png',
+    //         title: '自建别墅设计/自建房设计/精品自建住宅\n' +
+    //         '商业地产工程bim建筑设计策划',
+    //         time: '6天1小时',
+    //
+    //         "id": "id0",
+    //
+    //         "type": "建筑设计",
+    //         "content": "项目内容, 画出一个设计图",
+    //         "budget": 100000000,
+    //         "area_count": 100,
+    //         "depth": 0,
+    //         "period": 129,
+    //         "start_time": 1500882001493,
+    //         "end_time": 1500882001493,
+    //         "create_by": "1",
+    //         "create_time": 1500882001493,
+    //         "good": true,
+    //         "modify_by": "",
+    //         "modify_time": "",
+    //         "modify_remark": "",
+    //         "due_time": 1500882001493,
+    //         "view_count": 0,
+    //         "fav_count": 0,
+    //         "bidder": "",
+    //         "bid_time": "",
+    //         "audit_by": "",
+    //         "audit_time": "",
+    //         "img_url": '/assets/img/des-1.png'
+    //     },
+    // ];
+    public orderlist=[];
 
     @Input("type") type;
 
 
-    constructor(public nav: NavController) {
+    constructor(public nav: NavController, public projectServ: ProjectsService) {
+
+
+        this.orderlist.length = 0;
+        this.projectServ.getProjects().then(projects => {
+            for (let project of projects) {
+                this.orderlist.push(project);
+            }
+        }).catch(error=>console.log(error));
     }
 
     openProjectProcess(project) {
