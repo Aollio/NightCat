@@ -30,10 +30,6 @@ export class EmployerHomePage {
     openNotificationsPage(){
         this.navCtrl.push(NotificationsPage);
     }
-    //
-    // show() {
-    //     console.log("touch")
-    // }
 
     designerMeDetailPage: DesignerMeDetailPage;
     loginPage:LoginPage;
@@ -50,10 +46,10 @@ export class EmployerHomePage {
         let profileModal = this.modalCtrl.create(LoginPage);
         profileModal.present();
         event.stopPropagation();
-        // this.navCtrl.push(LoginPage);
+
     }
     showAlert() {
-        // todo  第一次进入提示抢单信息
+
         let alert = this.alertCtrl.create({
             title: 'new message!',
             subTitle: '有新设计师接单，请查看',

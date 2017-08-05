@@ -1,18 +1,10 @@
 <ion-header color="emp-primary" class="my-header">
-    <!--<ion-navbar no-lines>-->
         <ion-toolbar>
             <ion-buttons start>
                 <button menuToggle ion-button icon-only class="header-name" color="emp-primary">
                     夜猫
                 </button>
             </ion-buttons>
-            <!--todo add series event. if user want to search something -->
-            <ion-searchbar placeholder="搜索设计师" class="header-search">
-                [(ngModel)]="myInput"
-                [showCancelButton]="shouldShowCancel"
-                (ionInput)="onInput($event)"
-                (ionCancel)="onCancel($event)"
-            </ion-searchbar>
             <ion-buttons end>
                 <!--todo add the click event. -->
                 <button ion-button icon-only color="emp-primary"  (click)="openNotificationsPage()">
@@ -20,7 +12,6 @@
                 </button>
             </ion-buttons>
         </ion-toolbar>
-    <!--</ion-navbar>-->
 </ion-header>
 
 <ion-content>
@@ -59,18 +50,6 @@
                 分类
             </div>
             <div class="my-li-val">
-
-            </div>
-        </div>
-        <div class="my-li" (click)="btn_helpChoosePage()">
-            <div class="my-li-ioc">
-                H
-            </div>
-            <div class="my-li-name">
-                帮我选
-            </div>
-            <div class="my-li-val">
-
             </div>
         </div>
     </div>
