@@ -33,7 +33,8 @@ import {ProjectsService} from "../service/ajax/projects.service";
 import {OrderProcessModule} from "../pages/common/order/orderprocess/orderprocess.module";
 import {OrderModule} from "../pages/common/order/order.module";
 import {ComponentModule} from "../component/component.module";
-// import { Calendar } from '@ionic-native/calendar';
+import {Manager} from "../service/manager";
+//import { Calendar } from '@ionic-native/calendar';
 //import {DatePicker} from '@ionic-native/date-picker';
 
 export function provideStorage() {
@@ -79,21 +80,28 @@ export function provideStorage() {
     bootstrap: [IonicApp],
 
     providers: [
+        //service ajax
+        AdsService,
+        ProjectsService,
+        UsersService,
+        //service im
         ImService,
-        Util,
+        //service
         HttpUrls,
         KeynoteService,
-        AdsService,
+        Manager,
         NetworkService,
         SharedService,
-        UsersService,
-        ProjectsService,
-        StatusBar,
+        Util,
+        //Other
         // Calendar,
         //DatePicker,
         HTTP,
-        SplashScreen,
         ImagePicker,
+
+        //auto
+        StatusBar,
+        SplashScreen,
         {provide: ErrorHandler, useClass: IonicErrorHandler},
         {provide: Storage, useFactory: provideStorage},
     ]

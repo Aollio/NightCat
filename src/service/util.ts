@@ -14,9 +14,14 @@ export class Util {
 
     //如果str为空则提示。
     notEmptyOrToast(obj, msg) {
-        if (obj == null || obj == '') {
+        if (obj == null || this.isEmptyObj(obj) || obj == '') {
             this.toast(msg)
         }
+
+    }
+
+    isEmptyObj(obj) {
+        return JSON.stringify(obj) == JSON.stringify({});
     }
 
 
