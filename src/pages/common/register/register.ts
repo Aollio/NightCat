@@ -35,10 +35,10 @@ export class RegisterPage {
                 public util: Util,
                 public usersServ: UsersService) {
         this.role = navParams.get('role');
-        if (this.role == '00') {
-            this.user.role = '00'
+        if (this.role == 0) {
+            this.user.role = 1
         } else {
-            this.user.role = '01'
+            this.user.role = 0
         }
     }
 
@@ -85,37 +85,45 @@ export class RegisterPage {
 
         loading.present()
 
-        this.usersServ.register(this.user)
-            .then(user => {
-                loading.setContent('正在登录...')
-                this.usersServ.login(user)
-                    .then(() => {
+        setTimeout(() => {
+            loading.dismiss()
+            // this.util.toast('注册成功')
+            this.shared.setCurrentUser(this.user)
+            this.util.toast('登录成功')
+            this.openHome()
+        }, 500)
 
-                        loading.dismiss()
-                        this.util.toast('登录成功')
-                        console.log('login success')
-
-                        this.current = 3
-                    })
-                    .catch(eror => {
-                        loading.dismiss()
-                        this.util.toast('自动登录失败')
-
-                        console.log('login fail')
-
-                        this.navCtrl.push(LoginPage)
-                    })
-            })
-            .catch(error => {
-                console.log('注册失败', error)
-                loading.dismiss()
-                this.util.toast('注册失败, 请稍后重试')
-            })
-
+        // this.usersServ.register(this.user)
+        //     .then(user => {
+        //         loading.setContent('正在登录...')
+        //         this.usersServ.login(user)
+        //             .then(() => {
+        //
+        //                 loading.dismiss()
+        //                 this.util.toast('登录成功')
+        //                 console.log('login success')
+        //
+        //                 this.current = 3
+        //             })
+        //             .catch(eror => {
+        //                 loading.dismiss()
+        //                 this.util.toast('自动登录失败')
+        //
+        //                 console.log('login fail')
+        //
+        //                 this.navCtrl.push(LoginPage)
+        //             })
+        //     })
+        //     .catch(error => {
+        //         console.log('注册失败', error)
+        //         loading.dismiss()
+        //         this.util.toast('注册失败, 请稍后重试')
+        //     })
+        //
     }
 
     openHome() {
-        if (this.role === '00') {
+        if (this.role === 0) {
             this.navCtrl.setRoot(DesignerModulePage, {}, {animate: true})
         } else {
             this.navCtrl.setRoot(EmployerModulePage, {}, {animate: true});
@@ -152,16 +160,17 @@ export class RegisterPage {
         this.btn_avatar_state = any;
         if (any === 1) {
             this.avatar = "";
-        }if(this.avatar === ""){
+        }
+        if (this.avatar === "") {
             this.btn_avatar_state = 1;
         }
     }
 
-    select(item){
-        this.avatar=item;
+    select(item) {
+        this.avatar = item;
     }
 
-    pop(){
+    pop() {
         this.navCtrl.pop()
     }
 }

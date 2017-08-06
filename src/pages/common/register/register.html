@@ -6,12 +6,12 @@
             <div class="name">
                 <input type="number" name="phone" [(ngModel)]="user.phone" placeholder="请输入手机号">
             </div>
-            <div class="verify">
-                <input type="text" maxlength="5" placeholder="输入验证码">
-                <button class="butdiv">
-                    获取验证码
-                </button>
-            </div>
+            <!--<div class="verify">-->
+            <!--<input type="text" maxlength="5" placeholder="输入验证码">-->
+            <!--<button class="butdiv">-->
+            <!--获取验证码-->
+            <!--</button>-->
+            <!--</div>-->
             <div class="password">
                 <input type="password" name="passowrd" [(ngModel)]="user.password" placeholder="请输入密码">
             </div>
@@ -27,11 +27,11 @@
     <div [class.out-window]="current != 2" [class.on-window]="current == 2" class="ion-content-class">
 
         <div class="null-only-height">欢迎来夜猫</div>
-        <div class="avatar" (click)="chooseAvatar()">
-            <div *ngIf="btn_avatar_state===1">选择头像</div>
-            <img *ngIf="btn_avatar_state===3" src="{{avatar}}">
-        </div>
-
+        <!--<div class="avatar" (click)="chooseAvatar()">-->
+            <!--<div *ngIf="btn_avatar_state===1">选择头像</div>-->
+            <!--<img *ngIf="btn_avatar_state===3" src="{{avatar}}">-->
+        <!--</div>-->
+<!---->
         <div class="my-list" *ngIf="btn_avatar_state===2">
             <div class="my-ul clearfloat">
                 <div class="my-li"

@@ -9,13 +9,13 @@
     <ion-refresher (ionRefresh)="doRefresh($event)">
         <ion-refresher-content
                 pullingIcon="ios-arrow-down"
-                pullingText="Pull to refresh"
+                pullingText="下拉刷新"
                 refreshingSpinner="dots"
-                refreshingText="Refreshing...">
+                refreshingText="正在刷新...">
         </ion-refresher-content>
     </ion-refresher>
 
-    <ion-list >
+    <ion-list>
         <ion-card *ngFor="let notics of noticeses">
             <ion-card-header class="msg-header">
                 <div class="msg-type">{{notics.type}}</div>
@@ -27,7 +27,6 @@
                 {{notics.content}}
             </ion-card-content>
         </ion-card>
-
 
 
     </ion-list>

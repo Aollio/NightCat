@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import { NavController, NavParams} from 'ionic-angular';
+import {AlertController, NavController, NavParams} from 'ionic-angular';
 import {SharedService} from "../../../../service/share.service";
 import {AbsCommonPage} from "../../abs";
 import {PayPage} from "../../../employer/pay/pay";
@@ -14,6 +14,8 @@ declare let initializeFontSize: any
 /*
  * 订单详情
  * */
+
+declare let window: any;
 
 // @IonicPage()
 @Component({
@@ -43,7 +45,8 @@ export class ProjectDetailPage extends AbsCommonPage {
                 public share: SharedService,
                 private projsServ: ProjectsService,
                 private userServ: UsersService,
-                private util: Util) {
+                private util: Util,
+                private alertCtrl: AlertController) {
         super(share);
         this.project = navParams.get('project');
         this.isDesigner = share.currentModuleIsDesigner;
@@ -67,6 +70,25 @@ export class ProjectDetailPage extends AbsCommonPage {
         this.collectstate = (++this.collectstate) % 2;
     }
 
+    getTel() {
+
+        let alert = this.alertCtrl.create({
+            title: '联系电话',
+            message: '18217699893',
+            buttons: [
+                {
+                    text: '确认',
+                    handler: () => {
+                        window.location.href = "tel:" + 18217699893;
+                        alert.dismiss()
+                    }
+                }
+            ]
+        });
+        alert.present();
+
+    }
+
     grabOrder() {
         this.util.createLoading('正在抢单中')
         this.projsServ.grabProj('this is project\'s id')
@@ -75,7 +97,8 @@ export class ProjectDetailPage extends AbsCommonPage {
             .catch(error => {
             })
     }
-    formatTime1(create_time){
+
+    formatTime1(create_time) {
         console.log(create_time);
         let date = new Date(create_time);
         let year = date.getFullYear()

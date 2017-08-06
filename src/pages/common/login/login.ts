@@ -1,10 +1,14 @@
 import {Component} from '@angular/core';
-import {Events, IonicPage, NavController, NavParams, ToastController, ViewController} from 'ionic-angular';
+import {
+    Events, IonicPage, Loading, NavController, NavParams, Toast, ToastController,
+    ViewController
+} from 'ionic-angular';
 import {UsersService} from "../../../service/ajax/users.service";
 import {EmployerModulePage} from "../../employer/employer";
 import {DesignerModulePage} from "../../designer/designer";
 import {SharedService} from "../../../service/share.service";
 import {Util} from "../../../service/util";
+import {RegisterPage} from "../register/register";
 
 declare let initializeFontSize: any
 
@@ -36,6 +40,10 @@ export class LoginPage {
         this.viewCtrl.dismiss();
         // this.navCtrl.pop();
 
+    }
+
+    openRegister() {
+        this.navCtrl.push(RegisterPage, {role: 0})
     }
 
     pop() {
@@ -83,13 +91,32 @@ export class LoginPage {
         this.navCtrl.push(page, option);
     }
 
+//ads
+    loading = false;
+    _toast: Toast = null;
+
     toast(msg) {
-        let toast = this.toastCtrl.create({
+        if (this.loading) {
+            this._toast.setMessage(msg)
+            return
+        }
+        this._toast = this.toastCtrl.create({
             message: msg,
-            duration: 2000,
-            position: 'bottom'
+            position: 'bottom',
+            dismissOnPageChange: true
         });
-        toast.present();
+        this._toast.present();
+        this.loading = true
+        // toast.set
+        setTimeout(() => {
+            this._toast.dismiss().then(() => {
+                this._toast = null;
+                this.loading = false;
+            }).catch(() => {
+                this._toast.dismissAll()
+                this.loading = false
+            })
+        }, 500)
     }
 
 }
