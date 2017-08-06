@@ -90,4 +90,12 @@ export class BlankPage {
             caseTime: '6天1小时'
         },
     ]
+
+
+    setImg(){
+        let input = document.getElementById("inputImg");
+        console.log("file",input);
+        // console.log("file",input.offsetHeight.);
+        // console.log("file",input.files[0]);
+    }
 }
