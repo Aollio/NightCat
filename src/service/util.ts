@@ -1,4 +1,4 @@
-import {Loading, LoadingController, ToastController} from "ionic-angular";
+import {Loading, LoadingController, Toast, ToastController} from "ionic-angular";
 import {Injectable} from "@angular/core";
 
 @Injectable()
@@ -19,13 +19,32 @@ export class Util {
         }
     }
 
-    toast(message, duration = 1000) {
-        let toast = this.toastCtrl.create({
-            message: message,
-            duration: duration,
-            position: 'bottom'
+
+    loading = false;
+    _toast: Toast = null;
+
+    toast(msg) {
+        if (this.loading) {
+            this._toast.setMessage(msg)
+            return
+        }
+        this._toast = this.toastCtrl.create({
+            message: msg,
+            position: 'bottom',
+            dismissOnPageChange: true
         });
-        toast.present();
+        this._toast.present();
+        this.loading = true
+        // toast.set
+        setTimeout(() => {
+            this._toast.dismiss().then(() => {
+                this._toast = null;
+                this.loading = false;
+            }).catch(() => {
+                this._toast.dismiss()
+                this.loading = false
+            })
+        }, 500)
     }
 
 
@@ -41,7 +60,7 @@ export class Util {
 
 
     updateObj(oldObj, newObj) {
-        for (let attr in newObj){
+        for (let attr in newObj) {
             oldObj[attr] = newObj[attr];
         }
     }
@@ -64,7 +83,7 @@ export class Util {
         return map[type] || '未知消息类型'
     }
 
-   private stringifyDate(datetime, simple = false) {
+    private stringifyDate(datetime, simple = false) {
         // let weekMap = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
         let weekMap = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
         datetime = new Date(datetime)

@@ -1,16 +1,11 @@
 import {Component} from '@angular/core';
-import {Events, IonicPage, NavController, NavParams, ToastController, ViewController} from 'ionic-angular';
+import {Events, NavController, NavParams, ToastController, ViewController} from 'ionic-angular';
 import {RegisterPage} from "../register/register";
 import {ResetPasswordPage} from "../resetpassword/resetpassword";
-import {User} from "../../../model/user";
-import {AbsCommonPage} from "../abs";
 import {UsersService} from "../../../service/ajax/users.service";
-import {DesignerTabsPage} from "../../designer/tabs/tabs";
 import {EmployerModulePage} from "../../employer/employer";
 import {DesignerModulePage} from "../../designer/designer";
 import {SharedService} from "../../../service/share.service";
-import {WelcomePage} from "../../welcome/welcome";
-import {async} from "rxjs/scheduler/async";
 import {Util} from "../../../service/util";
 
 declare let initializeFontSize: any
@@ -41,30 +36,24 @@ export class LoginPage {
     }
 
     close() {
-        // console.log('asd');
         this.viewCtrl.dismiss();
-        // this.navCtrl.pop();
-
     }
 
-    pop(){
+    pop() {
         this.navCtrl.pop()
     }
 
 
     login() {
-
         if (this.user.phone == null || this.user.phone == '') {
-            this.toast('请输入手机号')
+            this.util.toast('请输入手机号')
             return
         }
         if (this.user.password == null || this.user.password == '') {
-            this.toast('请输入密码')
+            this.util.toast('请输入密码')
             return
         }
-
         console.log("开始登录");
-
         (async () => {
             let isDesigner = this.shared.currentModuleIsDesigner;
             let newuser = await this.userSev.loginWithKeynote(this.user)
@@ -84,7 +73,7 @@ export class LoginPage {
             }
 
         })().catch(error => {
-            this.toast("登录异常: " + error.message);
+            this.util.toast("登录异常: " + error.message);
             console.log("login.ts error", error)
         });
 
@@ -106,7 +95,7 @@ export class LoginPage {
         // }
         //
         // })().catch(error => {
-        //     this.toast("登录出现了异常");
+        //     this.util.toast("登录出现了异常");
         //     console.log("login.ts error", error)
         // });
 
@@ -126,13 +115,5 @@ export class LoginPage {
         this.navCtrl.push(page, option);
     }
 
-    toast(msg) {
-        let toast = this.toastCtrl.create({
-            message: msg,
-            duration: 2000,
-            position: 'bottom'
-        });
-        toast.present();
-    }
 
 }
