@@ -60,7 +60,7 @@ export class LoginPage {
             .then(userInfo => {
                 if (isDesigner != (userInfo.role == 0)) {
                     //登录用户身份和打开用户身份不一致
-                    this.util.toast("你登录的用户身份和打开的模块不一致")
+                    this.util.toast("你登录的用户身份和打开的模块不一致");
                     if (this.shared.currentModuleIsDesigner) {
                         this.viewCtrl.dismiss();
                         this.navCtrl.setRoot(DesignerModulePage)
@@ -73,6 +73,7 @@ export class LoginPage {
                 }
             }).catch(error => {
 
+
         })
 
         // (async () => {
@@ -83,7 +84,6 @@ export class LoginPage {
         //     this.util.toast("登录异常: " + error.message);
         //     console.log("login.ts error", error)
         // });
-
         //正常登录流程
         // (async ()=> {
         //     await this.userSev.login(this.user)

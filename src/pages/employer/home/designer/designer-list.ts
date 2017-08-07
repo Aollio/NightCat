@@ -4,6 +4,7 @@ import {NavController} from "ionic-angular";
 import {KeynoteService} from "../../../../service/keynote.service";
 import {UsersService} from "../../../../service/ajax/users.service";
 import {SharedService} from "../../../../service/share.service";
+import {Manager} from "../../../../service/manager";
 
 declare let initializeFontSize: any
 
@@ -14,19 +15,13 @@ declare let initializeFontSize: any
 export class DesignerListPage {
     miancolor;
 
-    users: Array<any> = [];
+    designers: Array<any> = [];
 
     designerMeDetailPage: DesignerMeDetailPage;
 
-    constructor(public navCtrl: NavController,
-                private usersServ: UsersService,
-                public shared:SharedService) {
-        this.miancolor=this.shared.getPrimaryColor();
-        this.usersServ.getDesigners().then(users => {
-            for (let user of users) {
-                this.users.push(user)
-            }
-        });
+    constructor(private manager: Manager) {
+        this.miancolor = this.manager.sharedServ.getPrimaryColor();
+
     }
 
     ionViewDidEnter() {
@@ -34,11 +29,11 @@ export class DesignerListPage {
     }
 
     open(page, option) {
-        this.navCtrl.push(page, option)
+        this.manager.navCtrl.push(page, option)
     }
 
     openDesignerrPage(user) {
-        this.navCtrl.push(DesignerMeDetailPage, {
+        this.manager.navCtrl.push(DesignerMeDetailPage, {
             user:
                 {
                     nickname: '金兔子耳朵金兔子耳朵金兔子耳朵',
@@ -59,12 +54,19 @@ export class DesignerListPage {
 
     //todo 内容刷新
     doRefresh(refresher) {
-        console.log('Begin async operation', refresher);
 
-        setTimeout(() => {
-            console.log('Async operation has ended');
+        this.manager.userServ.getDesigners()
+            .then(users => {
+                for (let user of users) {
+                    this.designers.push(user);
+                }
+
+                refresher.complete();
+            }).catch(error => {
+            //todo 异常捕获
+
             refresher.complete();
-        }, 2000);
+        });
     }
 
 }
