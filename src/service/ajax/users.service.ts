@@ -152,13 +152,12 @@ export class UsersService {
     //start
     // phone , password
     async login(userInfo) {
-        console.log("开始登录");
+        console.log("开始登录, params: ", userInfo);
 
         let data = await this.http.post(this.urls.user_login_post, userInfo);
         if (data.status != 200) {
             Promise.reject(data);
         }
-
         this.http.setToken(data.content.token);
         let user = await this.getInfo(data.content.uid);
         console.log(user);

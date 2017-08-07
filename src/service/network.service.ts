@@ -24,8 +24,8 @@ export class NetworkService {
 
     }
 
-    setToken(token){
-        this.token =token;
+    setToken(token) {
+        this.token = token;
     }
 
     doIfNoToken() {
@@ -34,7 +34,7 @@ export class NetworkService {
 
 
     async getWithToken(url, param = {}, header = {}) {
-        console.log("getWithToken",this.token);
+        console.log("getWithToken", this.token);
         if (this.token == null) {
             this.doIfNoToken()
             return {status: 401, messgae: 'TOKEN不存在, 用户是否登录?'}
@@ -49,12 +49,13 @@ export class NetworkService {
      * @param param
      * @returns {Promise<any>}
      */
-    async get(url, param?, header?): Promise<any> {
-        console.log("get params:",param);
+    async get (url, param = {}, header = {}): Promise<any> {
+        console.log("get params:", param);
 
         if (this.platform.is('core') || this.platform.is('mobileweb')) {
             let _params = {
-                params: param
+                params: param,
+                headers: new Headers(header)
             }
             try {
                 let res = await this.http_browser.get(url, _params).toPromise()
@@ -92,7 +93,7 @@ export class NetworkService {
     }
 
     async postWithToken(url, param = {}, header = {}) {
-        console.log("getWithToken",this.token);
+        console.log("getWithToken", this.token);
         if (this.token == null) {
             this.doIfNoToken()
             return {status: 401, message: 'TOKEN NOT EXIST'}
@@ -109,7 +110,7 @@ export class NetworkService {
      * @returns {Promise<any>}
      */
     async post(url, param = {}, headers = {}): Promise<any> {
-        console.log("post params:",param);
+        console.log("post params:", param);
         // if (this.share.KEYNOTE) {
         //     return {status: 600}
         // }
@@ -157,9 +158,9 @@ export class NetworkService {
     }
 
 
-    showError(response){
-        if(response){
-            if(response.starus===0){
+    showError(response) {
+        if (response) {
+            if (response.starus === 0) {
 
             }
         }
