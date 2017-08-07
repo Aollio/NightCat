@@ -1,4 +1,4 @@
-import {Loading, LoadingController, ToastController} from "ionic-angular";
+import {Loading, LoadingController, Toast, ToastController} from "ionic-angular";
 import {Injectable} from "@angular/core";
 
 @Injectable()
@@ -24,13 +24,32 @@ export class Util {
         return JSON.stringify(obj) == JSON.stringify({});
     }
 
-    toast(message, duration = 1000) {
-        let toast = this.toastCtrl.create({
-            message: message,
-            duration: duration,
-            position: 'bottom'
+
+    loading = false;
+    _toast: Toast = null;
+
+    toast(msg) {
+        if (this.loading) {
+            this._toast.setMessage(msg)
+            return
+        }
+        this._toast = this.toastCtrl.create({
+            message: msg,
+            position: 'bottom',
+            dismissOnPageChange: true
         });
-        toast.present();
+        this._toast.present();
+        this.loading = true
+        // toast.set
+        setTimeout(() => {
+            this._toast.dismiss().then(() => {
+                this._toast = null;
+                this.loading = false;
+            }).catch(() => {
+                this._toast.dismiss()
+                this.loading = false
+            })
+        }, 500)
     }
 
 
