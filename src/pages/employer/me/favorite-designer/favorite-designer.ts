@@ -13,7 +13,7 @@ export class EmpFavoriteDesignerPage {
 
     // favorite-designer
     constructor(private navCtrl: NavController, private usersServ: UsersService) {
-        this.usersServ.getUsersByRole(true).then(users => {
+        this.usersServ.getDesigners().then(users => {
             for (let user of users) {
                 this.users.push(user)
             }

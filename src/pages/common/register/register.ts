@@ -75,7 +75,6 @@ export class RegisterPage {
     }
 
     register() {
-
         if (this.user.nickname == null || this.user.nickname == '') {
             this.util.toast('请输入昵称')
             return
@@ -83,7 +82,7 @@ export class RegisterPage {
 
         let loading = this.util.createLoading('正在注册')
 
-        loading.present()
+        loading.present();
 
         this.usersServ.register(this.user)
             .then(user => {
@@ -97,11 +96,10 @@ export class RegisterPage {
 
                         this.current = 3
                     })
-                    .catch(eror => {
-                        loading.dismiss()
+                    .catch(error => {
+                        console.log('自动登录失败', error)
+                        loading.dismiss();
                         this.util.toast('自动登录失败')
-
-                        console.log('login fail')
 
                         this.navCtrl.push(LoginPage)
                     })
@@ -111,7 +109,6 @@ export class RegisterPage {
                 loading.dismiss()
                 this.util.toast('注册失败, 请稍后重试')
             })
-
     }
 
     openHome() {

@@ -22,7 +22,7 @@ export class DesignerListPage {
                 private usersServ: UsersService,
                 public shared:SharedService) {
         this.miancolor=this.shared.getPrimaryColor();
-        this.usersServ.getUsersByRole(true).then(users => {
+        this.usersServ.getDesigners().then(users => {
             for (let user of users) {
                 this.users.push(user)
             }

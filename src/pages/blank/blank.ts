@@ -63,7 +63,7 @@ export class BlankPage {
     }
 
     showFile() {
-        this.util.toast(this.file, 2000)
+        this.util.toast(this.file)
     }
 
 

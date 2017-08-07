@@ -4,8 +4,8 @@ import {SharedService} from "./share.service";
 @Injectable()
 export class HttpUrls {
 
-    // server_url: string = "http://smalollio.com";
-    server_url: string = "http://smallcat.aollio.com";
+    // server_url: string = "http://smalllio.com";
+    server_url: string = "http://192.168.10.131:3000";
 
     //start 用户
     _users :string = this.server_url +"/users";
@@ -72,8 +72,32 @@ export class HttpUrls {
     //  */
     // user_cover_post:string= this.user_cover_get;
 
+    designer_list :string = this._users+"/designers";
 
     //end 用户
+
+
+
+    //start 项目
+    _projects :string = this.server_url+"/projects";
+
+    //项目详情
+    project_info_get:string = this._projects+"/show";
+    //项目动态
+    project_dynamics_get:string = this._projects+"/dynamics";
+    //项目评论
+    project_comments_get:string = this._projects+"/comments";
+
+    //获取项目列表
+    projects_list_get:string = this._projects+"/timeline";
+
+    //用户项目列表
+    projects_of_user_get:string = this._projects+"/user_timeline";
+
+
+
+
+    //end 项目
 
 
     projects_url: string = this.server_url + '/projects'
