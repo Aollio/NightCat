@@ -74,6 +74,8 @@ export class HttpUrls {
 
     designer_list :string = this._users+"/designers";
 
+    user_authentications:string = this._users+"/authentications";
+
     //end 用户
 
 

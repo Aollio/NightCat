@@ -18,8 +18,6 @@ export class UsersService {
                 public shared: SharedService,
                 public util: Util) {
     }
-
-
     // async getUsersByRole(isDesigner: boolean) {
     //     let result = []
     //     for (let index in this.users) {
@@ -149,10 +147,10 @@ export class UsersService {
         return null;
     }
 
-    //start
+    //startnew
     // phone , password
     async login(userInfo) {
-        console.log("开始登录, params: ", userInfo);
+        console.log("开始登录");
 
         let data = await this.http.post(this.urls.user_login_post, userInfo);
         if (data.status != 200) {
@@ -208,12 +206,9 @@ export class UsersService {
         return data.content;
     }
 
-    async setHonors(name, img_url, get_time) {
-        let data = await this.http.postWithToken(this.urls.user_honors_get, {
-            name: name,
-            img_url: img_url,
-            get_time: get_time,
-        });
+    //name, img_url, get_time
+    async setHonors(params) {
+        let data = await this.http.postWithToken(this.urls.user_honors_get, params);
 
         if (data.status != 200) {
             Promise.reject(data);
@@ -243,10 +238,16 @@ export class UsersService {
         return data.content;
     }
 
-    //todo
-    async setAuthentications() {
+    //type level name id_number img
+    async setAuthentications(params) {
+        let data = await this.http.postWithToken(this.urls.user_authentications, params);
 
+        if (data.status != 200) {
+            Promise.reject(data);
+        }
+        return data.content;
     }
+
 
     // nickname,position,official,page,limit
     async getDesigners(params = {}) {

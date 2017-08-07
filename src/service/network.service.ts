@@ -18,6 +18,7 @@ export class NetworkService {
 
     constructor(private http_browser: Http,
                 private http_mobile: HTTP,
+                private util: Util,
                 private platform: Platform,
                 private event: Events,
                 private share: SharedService) {
@@ -49,8 +50,30 @@ export class NetworkService {
      * @param param
      * @returns {Promise<any>}
      */
-    async get (url, param = {}, header = {}): Promise<any> {
-        console.log("get params:", param);
+    async get(url, param = {}, header = {}): Promise<any> {
+
+        console.log(" ");
+        console.log("get url", url);
+        console.log("get params", param);
+
+        // let _params = {
+        //     params: param,
+        //     headers: new Headers(header)
+        // }
+        // let response;
+        // try {
+        //     if (this.platform.is('core') || this.platform.is('mobileweb')) {
+        //         response = await this.http_browser.get(url, _params).toPromise();
+        //     } else {
+        //         response = await this.http_mobile.get(url, param || {}, {})
+        //     }
+        //     console.log("get response", response.json());
+        //     console.log("get end");
+        //     return response.json();
+        // } catch (error) {
+        //     this.showError(error);
+        //     return error;
+        // }
 
         if (this.platform.is('core') || this.platform.is('mobileweb')) {
             let _params = {
@@ -59,21 +82,17 @@ export class NetworkService {
             }
             try {
                 let res = await this.http_browser.get(url, _params).toPromise()
-                console.log("post " + url + ":", res.json());
+                console.log("get response", res.json());
+                console.log(" ");
                 return res.json();
             } catch (error) {
+
                 // error 是 response对象 ,含有属性
                 //ok:false;status:404,statusText:"OK",type:2,url:"http://localhost:8080/user"
                 //angular http模块 出现错误是返回的error.json()对象,包含数据,
                 // a = error.json(), a.status,a.nofitications,a.error, a.timestamp, a.path
-                console.log(error)
-                console.log(error.status)
-                console.log(error.ok)
-                console.log(error.message)
-                //error.status 401 means that unautnenication
-                if (error.status == 401) {
-                    this.doIfNoToken()
-                }
+
+                this.showError(error);
                 return error
             }
         }
@@ -83,13 +102,13 @@ export class NetworkService {
         try {
             data = await this.http_mobile.get(url, param || {}, {})
         } catch (error) {
-            console.log(error)
+            this.showError(error);
             return error
         }
 
-        console.log("get " + url + ":", data.data);
-        return data.data
-
+        console.log("get response", data.data);
+        console.log(" ");
+        return data.data;
     }
 
     async postWithToken(url, param = {}, header = {}) {
@@ -110,12 +129,25 @@ export class NetworkService {
      * @returns {Promise<any>}
      */
     async post(url, param = {}, headers = {}): Promise<any> {
-        console.log("post params:", param);
-        // if (this.share.KEYNOTE) {
-        //     return {status: 600}
-        // }
+        console.log(" ");
+        console.log("post url", url);
+        console.log("post params", param);
 
-        // console.log(this.platform.platforms())
+        // let response;
+        // try {
+        //     if (this.platform.is('core') || this.platform.is('mobileweb')) {
+        //         console.log('开始post请求', '在浏览器中')
+        //         headers['Accept'] = 'application/json,text/json,*/*'
+        //         headers['content-type'] = 'application/x-www-form-urlencoded'
+        //         let _headers = new Headers(headers);
+        //
+        //         response = await this.http_browser.post(url, this.trans(param), {headers: _headers}).toPromise();
+        //     }else {
+        //         response = await this.http_mobile.post(url, param = {}, headers);
+        //     }
+        //
+        // } catch (error) {
+        // }
 
         if (this.platform.is('core') || this.platform.is('mobileweb')) {
             //由于angular 传送post数据方式的不同, 需要添加一下headers和将param转化为可识别格式,才能被后端所接受
@@ -125,43 +157,41 @@ export class NetworkService {
 
             let _headers = new Headers(headers)
 
-            let response
             try {
-                response = await this.http_browser.post(url, this.trans(param), {headers: _headers}).toPromise()
+                let response = await this.http_browser.post(url, this.trans(param), {headers: _headers}).toPromise()
+                console.log("post response", response.json());
+                console.log(" ");
+                return response.json();
             } catch (error) {
-                //     error 是 response对象 ,含有属性
-                //     ok:false;status:404,statusText:"OK",type:2,url:"http://localhost:8080/user"
-                //     angular http模块 出现错误是返回的error.json()对象,包含数据,
-                //     a = error.json(), a.status,a.nofitications,a.error, a.timestamp, a.path
-                console.log('error', error)
-                if (error.status == 401) {
-                    this.event.publish('gotologin')
-                }
-                throw error
+                this.showError(error);
+                return error
             }
-            console.log("post " + url, response.json());
-            return response.json();
         }
 
         let response
         try {
             response = await this.http_mobile.post(url, param = {}, headers)
         } catch (error) {
-            if (error.status == 401) {
-                this.event.publish('gotologin')
-            }
+            this.showError(error);
             return error
         }
 
-        console.log("post " + url + ":", response.data);
+        console.log("get response", response.data);
+        console.log(" ");
         return response.data;
     }
 
 
-    showError(response) {
-        if (response) {
-            if (response.starus === 0) {
-
+    //
+    showError(error) {
+        console.log(error);
+        if (error) {
+            if (error.starus === 0) {
+                this.util.toast("网络未连接");
+            }
+        } else {
+            if (error.status == 401) {
+                this.doIfNoToken()
             }
         }
     }
