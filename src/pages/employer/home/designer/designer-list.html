@@ -31,7 +31,7 @@
             <!--</div>-->
         <!--</div>-->
     <!--</div>-->
-    <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher (ionRefresh)="doRefresh($event)" #refresher>
         <ion-refresher-content
                 pullingIcon="ios-arrow-down"
                 pullingText="Pull to refresh"
@@ -39,7 +39,10 @@
                 refreshingText="Refreshing...">
         </ion-refresher-content>
     </ion-refresher>
-    <page-designer-list-max [users]="designers"></page-designer-list-max>
+
+    <designer-item-max *ngFor="let des of designers" [designer]="des"></designer-item-max>
+
+    <!--<page-designer-list-max [users]="designers"></page-designer-list-max>-->
 
 
 </ion-content>

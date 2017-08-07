@@ -14,18 +14,13 @@ import {Manager} from "../service/manager";
 export class MyApp {
     rootPage: any = FirstPage;
 
-    constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, event:Events, manager:Manager
-    ,private navCtrl:NavController) {
+    constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
         platform.ready().then(() => {
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
             statusBar.styleDefault();
             splashScreen.hide();
         });
-
-        event.subscribe("manager-init", ()=> {
-            manager.navCtrl = navCtrl;
-        })
 
     }
 }
