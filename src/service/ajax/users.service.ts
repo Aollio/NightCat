@@ -150,7 +150,7 @@ export class UsersService {
     }
 
     //start
-    //phone, password
+    // phone , password
     async login(userInfo) {
         console.log("开始登录");
 
@@ -159,12 +159,18 @@ export class UsersService {
             Promise.reject(data);
         }
 
-        return data.content;
+        this.http.setToken(data.content.token);
+        let user = await this.getInfo(data.content.uid);
+        console.log(user);
+        this.shared.setCurrentUser(user);
+
+        return user;
     }
 
     //nickname, password, role, phone, img_url
     async register(userInfo) {
         console.log("开始注册");
+
         let data = await this.http.post(this.urls.user_register_post, userInfo);
         if (data.status != 200) {
             Promise.reject(data);
@@ -179,6 +185,7 @@ export class UsersService {
             console.log("cache user", user);
             return user;
         }
+
         let data = await this.http.getWithToken(this.urls.user_info_get, {uid: uid});
 
         if (data.status != 200) {
