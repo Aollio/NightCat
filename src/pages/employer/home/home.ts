@@ -52,14 +52,35 @@ export class EmployerHomePage {
         event.stopPropagation();
         // this.navCtrl.push(LoginPage);
     }
+    // showAlert() {
+    //     // todo  第一次进入提示抢单信息
+    //     let alert = this.alertCtrl.create({
+    //         title: 'new message!',
+    //         subTitle: '您发布的项目已有人接单，请查看',
+    //         buttons: ['OK']
+    //     });
+    //     alert.present();
+    // }
     showAlert() {
-        // todo  第一次进入提示抢单信息
-        let alert = this.alertCtrl.create({
-            title: 'new message!',
-            subTitle: '有新设计师接单，请查看',
-            buttons: ['OK']
+        let confirm = this.alertCtrl.create({
+            title: '最新消息',
+            message: '您发布的项目已有人接单',
+            buttons: [
+                {
+                    text: '立即查看',
+                    handler: () => {
+                        console.log('Disagree clicked');
+                    }
+                },
+                {
+                    text: '我知道了',
+                    handler: () => {
+                        console.log('Agree clicked');
+                    }
+                }
+            ]
         });
-        alert.present();
+        confirm.present();
     }
 
 

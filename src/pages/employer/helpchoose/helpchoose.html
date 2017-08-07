@@ -8,15 +8,15 @@
             完成问卷找到设计师
         </ion-title>
         <ion-buttons end>
-            <button ion-button clear (click)="openEmployer()">关闭</button>
+            <!--<button ion-button clear (click)="openEmployer()">关闭</button>-->
         </ion-buttons>
     </ion-navbar>
 </ion-header>
 <ion-content>
     <div class="con" *ngIf="state === 1">
-        <div class="content-title-div">您想设计哪一类建筑工程？</div>
+        <div class="content-title-div">您想找什么类型的设计师</div>
         <div class="my-ul">
-            <div class="my-li" >
+            <div class="my-li">
                 <img  class="my-li-img" src="assets/img/classification-01.png" alt="">
                 <div class="my-li-name">概预算</div>
             </div>
@@ -81,7 +81,7 @@
     </div>
 
     <div class="con" *ngIf="state === 2">
-        <div class="content-title-div">请选择设计师职称等级</div>
+        <div class="content-title-div">您想找什么级别的设计师</div>
         <div class="position-btns">
             <button class="tip selectbutton" [class.selected]="position === 1" (click)="selectPosition(1)">初级工程师
             </button>
