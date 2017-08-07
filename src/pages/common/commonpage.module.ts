@@ -1,4 +1,4 @@
-import {NgModule} from "@angular/core";
+import {Component, NgModule} from "@angular/core";
 import {SlideMenuComponment} from "./slidemenu/slidemenu";
 import {IonicPageModule} from "ionic-angular";
 import {AccountSecurityPage} from "./securitycenter/accountsecurity/accountsecurity";
@@ -18,7 +18,7 @@ import {CustomIconsModule} from "ionic2-custom-icons";
 import {ImModule} from "../im/im.module";
 import {PublishTaskPageNew} from "./publish-task-new/publish-task";
 import {DesignerListMinComponent} from "./designer-list-min/designer-list";
-import {DesignerListMaxComponent} from "./designer-list-max/designer-list-max";
+import {ComponentModule} from "../../component/component.module";
 
 @NgModule({
     imports: [
@@ -27,7 +27,8 @@ import {DesignerListMaxComponent} from "./designer-list-max/designer-list-max";
         DesignerMeModule,
         OrderModule,
         ImModule,
-        CustomIconsModule ,// Add this!
+        CustomIconsModule,// Add this!
+        ComponentModule
     ],
     declarations: [
         CommonModulePage,
@@ -40,7 +41,6 @@ import {DesignerListMaxComponent} from "./designer-list-max/designer-list-max";
         PublishTaskPage,
         PublishTaskPageNew,
         DesignerListMinComponent,
-        DesignerListMaxComponent
     ],
     entryComponents: [
         CommonModulePage,
@@ -53,7 +53,6 @@ import {DesignerListMaxComponent} from "./designer-list-max/designer-list-max";
         PublishTaskPage,
         PublishTaskPageNew,
         DesignerListMinComponent,
-        DesignerListMaxComponent
     ],
     exports: [
         AccountSecurityPage,
@@ -68,7 +67,6 @@ import {DesignerListMaxComponent} from "./designer-list-max/designer-list-max";
         PublishTaskPageNew,
         CommentOrderPage,
         DesignerListMinComponent,
-        DesignerListMaxComponent
     ],
     providers: []
 })

@@ -6,7 +6,6 @@ import {UsersService} from "../../../../service/ajax/users.service";
 import {SharedService} from "../../../../service/share.service";
 import {Manager} from "../../../../service/manager";
 
-declare let initializeFontSize: any
 
 @Component({
     selector: 'page-designer-list-home',
@@ -22,10 +21,6 @@ export class DesignerListPage {
     constructor(private manager: Manager) {
         this.miancolor = this.manager.sharedServ.getPrimaryColor();
 
-    }
-
-    ionViewDidEnter() {
-        initializeFontSize()
     }
 
     open(page, option) {

@@ -5,6 +5,7 @@ import {DesingerTypePage} from "./desinger-types/desinger-types";
 import {DesignerListPage} from "./designer/designer-list";
 import {CommonModule} from "@angular/common";
 import {CommonPageModule} from "../../common/commonpage.module";
+import {ComponentModule} from "../../../component/component.module";
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import {CommonPageModule} from "../../common/commonpage.module";
     imports: [
         IonicModule,
         CommonModule,
-        CommonPageModule
+        CommonPageModule,
+        ComponentModule,
     ],
     exports: [
         DesignerListPage,

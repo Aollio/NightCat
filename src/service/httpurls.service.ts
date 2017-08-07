@@ -5,7 +5,8 @@ import {SharedService} from "./share.service";
 export class HttpUrls {
 
     // server_url: string = "http://smalllio.com";
-    server_url: string = "http://192.168.10.131:3000";
+    // server_url: string = "http://192.168.10.131:3000";
+    server_url: string = "http://192.168.100.154:3000";
 
     //start 用户
     _users :string = this.server_url +"/users";
