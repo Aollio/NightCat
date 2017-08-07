@@ -67,7 +67,7 @@ export class LoginPage {
 
         (async () => {
             let isDesigner = this.shared.currentModuleIsDesigner;
-            let newuser = await this.userSev.loginWithKeynote(this.user)
+            let newuser = await this.userSev.login(this.user)
             if (isDesigner != (newuser.role == 0)) {
                 //登录用户身份和打开用户身份不一致
                 this.util.toast("你登录的用户身份和打开的模块不一致")

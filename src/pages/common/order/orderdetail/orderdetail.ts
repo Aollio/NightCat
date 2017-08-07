@@ -48,7 +48,8 @@ export class ProjectDetailPage extends AbsCommonPage {
         super(share);
         this.project = navParams.get('project');
         this.isDesigner = share.currentModuleIsDesigner;
-        this.util.updateObj(this.creator, this.userServ.getUserByUid(this.project.create_by))
+        //todo
+        this.util.updateObj(this.creator, this.userServ._getCacheUserByUid(this.project.create_by))
     }
 
     ionViewDidEnter() {

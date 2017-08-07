@@ -9,10 +9,10 @@ import {Util} from "./util";
 export class SharedService {
 
     //是否为演示模式, 各个和网络连接有关的, 如果检测到为true, 则不进行网络传送, 使用测试数据进行演示
-    KEYNOTE: boolean = true;
+    KEYNOTE: boolean = false;
 
     //是否为开发模式, 开发模式在使用开发服务器.
-    DEBUG: boolean = true;
+    DEBUG: boolean = false;
 
     //是否是设计师, 如果用户是设计师, 则对于一些公共页面, 执行对应的修改, 例如主题颜色的不相同
     currentModuleIsDesigner: boolean;

@@ -1,7 +1,6 @@
 import {Injectable} from "@angular/core";
 import {User} from "../../model/user";
 import {SharedService} from "../share.service";
-
 import {HttpUrls} from "../httpurls.service";
 import 'rxjs/add/operator/toPromise';
 import {NetworkService} from "../network.service";
@@ -12,26 +11,16 @@ import {Util} from "../util";
 @Injectable()
 export class UsersService {
 
-    private KEYNOTE: boolean;
-
-    private users;
+    //缓存
+    private users = {};
 
     constructor(public keynote: KeynoteService,
                 private http: NetworkService,
                 private urls: HttpUrls,
                 public shared: SharedService,
                 public util: Util) {
-        this.KEYNOTE = shared.KEYNOTE;
-        this.users = this.keynote.users
     }
 
-    getUserByUid(uid) {
-        for (let index in this.users) {
-            if (this.users[index].uid == uid) {
-                return this.users[index];
-            }
-        }
-    }
 
     async getUsersByRole(isDesigner: boolean) {
         let result = []
@@ -71,32 +60,15 @@ export class UsersService {
 
     }
 
-    async getToken(user) {
-        if (this.KEYNOTE) {
-            console.log('演示模式, 返回默认TOKEN');
-            return this.keynote.token
-        }
-        let param = {
-            phone: user.phone,
-            password: user.password
-        }
-        console.log('开始获取TOKEN', param)
-        let data = await this.http.post(this.urls.tokens_url, param)
 
-        if (data.status != 200) {
-            throw data
-        }
-
-        let token = data.content
-
-        console.log('获取TOKEN成功', token)
-
-        return token
-
+    async getLoginUser() {
+        let uid = this.shared.currentUserId
+        let user = await this.getUser(uid)
+        return user
     }
 
     async getUser(uid): Promise<any> {
-        if (this.KEYNOTE) {
+        if (this.shared.KEYNOTE) {
             console.log('演示模式, 返回默认用户');
             for (let index in this.users) {
                 let temp = this.users[index];
@@ -106,9 +78,50 @@ export class UsersService {
             }
             return Promise.resolve(this.keynote.user)
         }
-        return await this.http.getWithToken(this.urls.tokens_url, {uid: uid})
+        return await this.http.getWithToken(this.urls.user_login_post, {uid: uid})
     }
 
+    async register(user) {
+
+        if (this.shared.KEYNOTE) {
+            console.log('演示模式, 注册成功用户')
+            user.id = 'default-id'
+            return user;
+        }
+
+        let data = await this.http.post(this.urls.user_register_post, user);
+        if (data.status != 200) {
+            Promise.reject(data);
+        }
+
+        let newuser = data.content
+        console.log('注册用户成功', newuser)
+        return newuser;
+    }
+
+    async getToken(user) {
+        if (this.shared.KEYNOTE) {
+            console.log('演示模式, 返回默认TOKEN');
+            return this.keynote.token
+        }
+        let param = {
+            phone: user.phone,
+            password: user.password
+        }
+        console.log('开始获取TOKEN', param)
+        let data = await this.http.post(this.urls.user_login_post, param)
+
+        if (data.status != 200) {
+            throw data;
+        }
+
+        let token = data.content
+
+        console.log('获取TOKEN成功', token)
+
+        return token
+
+    }
 
     /**
      * 用户进行登录, 登录成功将设置全局TOKEN.
@@ -123,35 +136,110 @@ export class UsersService {
             console.log('login', error)
             return Promise.reject(error)
         }
-
         this.shared.TOKEN = token.id
         this.shared.currentUserId = token.uid
         return 'ok'
     }
 
-    async getLoginUser() {
-        let uid = this.shared.currentUserId
-        let user = await this.getUser(uid)
-        return user
+
+
+    //new
+    _getCacheUserByUid(uid) {
+        for (let index in this.users) {
+            if (this.users[index].uid == uid) {
+                return this.users[index];
+            }
+        }
+        return null;
     }
 
-    async register(user) {
-
-        if (this.KEYNOTE) {
-            console.log('演示模式, 注册成功用户')
-            user.id = 'default-id'
-            return user
-        }
-
-        let data = await this.http.post(this.urls.users_register, user)
-        if (data.status != 200) {
-            Promise.reject(data)
-        }
-
-        let newuser = data.content
-        console.log('注册用户成功', newuser)
-        return newuser
-    }
-
+    // //start
+    // async login(phone, password) {
+    //     let data = await this.http.post(this.urls.user_login_post, {phone: phone, password: password});
+    //     if (data.status != 200) {
+    //         Promise.reject(data);
+    //     }
+    //     return data.content;
+    // }
+    //
+    // async register(nickname, password, role, phone, img_url) {
+    //     let data = await this.http.post(this.urls.user_register_post, {
+    //         nickname: nickname,
+    //         password: password,
+    //         role: role,
+    //         phone: phone,
+    //         img_url: img_url
+    //     });
+    //     if (data.status != 200) {
+    //         Promise.reject(data);
+    //     }
+    //     return data.content
+    // }
+    //
+    // async getInfo(uid) {
+    //     let user = this._getCacheUserByUid(uid);
+    //     if (user != null) {
+    //         return user;
+    //     }
+    //     let data = await this.http.getWithToken(this.urls.user_info_get, {uid: uid});
+    //
+    //     if (data.status != 200) {
+    //         Promise.reject(data);
+    //     }
+    //     return data.content;
+    // }
+    //
+    // //todo
+    // async resetPassword() {
+    //
+    // }
+    //
+    // async getHonors(uid) {
+    //     let data = await this.http.getWithToken(this.urls.user_honors_get, {uid: uid});
+    //
+    //     if (data.status != 200) {
+    //         Promise.reject(data);
+    //     }
+    //     return data.content;
+    // }
+    //
+    // async setHonors(name, img_url, get_time) {
+    //     let data = await this.http.postWithToken(this.urls.user_honors_get, {
+    //         name: name,
+    //         img_url:img_url,
+    //         get_time:get_time,
+    //     });
+    //
+    //     if (data.status != 200) {
+    //         Promise.reject(data);
+    //     }
+    //     return data.content;
+    // }
+    //
+    // async getExperience(uid) {
+    //     let data = await this.http.getWithToken(this.urls.user_experience_get, {uid: uid});
+    //
+    //     if (data.status != 200) {
+    //         Promise.reject(data);
+    //     }
+    //     return data.content;
+    // }
+    //
+    // async setExperience(name,description) {
+    //     let data = await this.http.getWithToken(this.urls.user_experience_get, {
+    //         name:name,
+    //         description:description,
+    //     });
+    //
+    //     if (data.status != 200) {
+    //         Promise.reject(data);
+    //     }
+    //     return data.content;
+    // }
+    //
+    // //todo
+    // async setAuthentications(){
+    //
+    // }
 
 }

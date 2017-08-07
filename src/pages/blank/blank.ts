@@ -93,9 +93,9 @@ export class BlankPage {
 
 
     setImg(){
-        let input = document.getElementById("inputImg");
+        var input = document.getElementById("inputImg");
         console.log("file",input);
         // console.log("file",input.offsetHeight.);
-        // console.log("file",input.files[0]);
+        // console.log("file",input.files);
     }
 }

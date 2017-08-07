@@ -33,7 +33,7 @@ export class NetworkService {
             this.doIfNoToken()
             return {status: 401, messgae: 'TOKEN不存在, 用户是否登录?'}
         }
-        header['token'] = this.token
+        header['token'] = this.token;
         return await this.get(url, param, header)
     }
 
@@ -56,6 +56,7 @@ export class NetworkService {
             }
             try {
                 let res = await this.http_browser.get(url, _params).toPromise()
+                console.log("post "+url+":",res.json());
                 return res.json()
             } catch (error) {
                 // error 是 response对象 ,含有属性
@@ -82,10 +83,11 @@ export class NetworkService {
             console.log(error)
             return error
         }
+
+        console.log("get "+url+":",data.data);
         return data.data
 
     }
-
 
     async postWithToken(url, param = {}, header = {}) {
         if (this.token == null) {
@@ -104,7 +106,6 @@ export class NetworkService {
      * @returns {Promise<any>}
      */
     async post(url, param = {}, headers = {}): Promise<any> {
-
 
         if (this.share.KEYNOTE) {
             return {status: 600}
@@ -134,7 +135,8 @@ export class NetworkService {
                 }
                 return error
             }
-            return response.json()
+            console.log("post "+url,response.json());
+            return response.json();
         }
 
         let response
@@ -146,7 +148,9 @@ export class NetworkService {
             }
             return error
         }
-        return response.data
+
+        console.log("post "+url+":",response.data);
+        return response.data;
     }
 
 
