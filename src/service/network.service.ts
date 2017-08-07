@@ -14,13 +14,18 @@ import {SharedService} from "./share.service";
 export class NetworkService {
 
 
-    private token: string
+    private token: string;
 
     constructor(private http_browser: Http,
                 private http_mobile: HTTP,
                 private platform: Platform,
                 private event: Events,
                 private share: SharedService) {
+
+    }
+
+    setToken(token){
+        this.token =token;
     }
 
     doIfNoToken() {
@@ -30,10 +35,11 @@ export class NetworkService {
 
     async getWithToken(url, param = {}, header = {}) {
         if (this.token == null) {
+            console.log(this.token);
             this.doIfNoToken()
             return {status: 401, messgae: 'TOKEN不存在, 用户是否登录?'}
         }
-        header['token'] = this.token
+        header['token'] = this.token;
         return await this.get(url, param, header)
     }
 
@@ -44,11 +50,7 @@ export class NetworkService {
      * @returns {Promise<any>}
      */
     async get(url, param?, header?): Promise<any> {
-
-        if (this.share.KEYNOTE) {
-            return {status: 600}
-        }
-
+        console.log("get params:",param);
 
         if (this.platform.is('core') || this.platform.is('mobileweb')) {
             let _params = {
@@ -56,7 +58,8 @@ export class NetworkService {
             }
             try {
                 let res = await this.http_browser.get(url, _params).toPromise()
-                return res.json()
+                console.log("post " + url + ":", res.json());
+                return res.json();
             } catch (error) {
                 // error 是 response对象 ,含有属性
                 //ok:false;status:404,statusText:"OK",type:2,url:"http://localhost:8080/user"
@@ -82,10 +85,11 @@ export class NetworkService {
             console.log(error)
             return error
         }
+
+        console.log("get " + url + ":", data.data);
         return data.data
 
     }
-
 
     async postWithToken(url, param = {}, header = {}) {
         if (this.token == null) {
@@ -104,13 +108,12 @@ export class NetworkService {
      * @returns {Promise<any>}
      */
     async post(url, param = {}, headers = {}): Promise<any> {
+        console.log("post params:",param);
+        // if (this.share.KEYNOTE) {
+        //     return {status: 600}
+        // }
 
-
-        if (this.share.KEYNOTE) {
-            return {status: 600}
-        }
-
-        console.log(this.platform.platforms())
+        // console.log(this.platform.platforms())
 
         if (this.platform.is('core') || this.platform.is('mobileweb')) {
             //由于angular 传送post数据方式的不同, 需要添加一下headers和将param转化为可识别格式,才能被后端所接受
@@ -128,13 +131,14 @@ export class NetworkService {
                 //     ok:false;status:404,statusText:"OK",type:2,url:"http://localhost:8080/user"
                 //     angular http模块 出现错误是返回的error.json()对象,包含数据,
                 //     a = error.json(), a.status,a.nofitications,a.error, a.timestamp, a.path
-                console.log(error)
+                console.log('error', error)
                 if (error.status == 401) {
                     this.event.publish('gotologin')
                 }
-                return error
+                throw error
             }
-            return response.json()
+            console.log("post " + url, response.json());
+            return response.json();
         }
 
         let response
@@ -146,9 +150,19 @@ export class NetworkService {
             }
             return error
         }
-        return response.data
+
+        console.log("post " + url + ":", response.data);
+        return response.data;
     }
 
+
+    showError(response){
+        if(response){
+            if(response.starus===0){
+
+            }
+        }
+    }
 
     trans(obj) {
         if (obj == null) {

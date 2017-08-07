@@ -53,11 +53,10 @@ export class LoginPage {
             this.util.toast('请输入密码')
             return
         }
-        console.log("开始登录");
-        (async () => {
-            let isDesigner = this.shared.currentModuleIsDesigner;
-            let newuser = await this.userSev.loginWithKeynote(this.user)
-            if (isDesigner != (newuser.role == 0)) {
+
+        let isDesigner = this.shared.currentModuleIsDesigner;
+        this.userSev.login(this.user).then(user => {
+            if (isDesigner != (user.role == 0)) {
                 //登录用户身份和打开用户身份不一致
                 this.util.toast("你登录的用户身份和打开的模块不一致")
                 if (this.shared.currentModuleIsDesigner) {
@@ -69,8 +68,15 @@ export class LoginPage {
                 }
             } else {
                 this.viewCtrl.dismiss()
-                // this.event.publish('backdoor', newuser)
             }
+        }).catch(error=>{
+
+        })
+
+        (async () => {
+            let newuser = await this.userSev.login(this.user);
+
+
 
         })().catch(error => {
             this.util.toast("登录异常: " + error.message);
