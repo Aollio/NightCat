@@ -4,6 +4,8 @@ import set = Reflect.set;
 import {Util} from "../../service/util";
 //import {Calendar} from '@ionic-native/calendar';
 import {BasePage} from "../base/base-page";
+import {Manager} from "../../service/manager";
+import {NavController, NavParams} from "ionic-angular";
 //import {DatePicker} from '@ionic-native/date-picker';
 
 
@@ -18,27 +20,36 @@ export class BlankPage {
 
     file: any;
 
-    constructor(public util: Util,
-              //  private datePicker: DatePicker,
-                ) {
+    //当前登录角色对应的颜色
+    main_color: any;
 
-
-        // this.datePicker.show({
-        //     date: new Date(),
-        //     mode: 'date',
-        //     androidTheme: this.datePicker.ANDROID_THEMES.THEME_HOLO_DARK
-        // }).then(
-        //     date => console.log('Got date: ', date),
-        //     err => console.log('Error occurred while getting date: ', err)
-        // );
-
-
-        // super.shared
-        // this.calendar.createCalendar('MyCalendar').then(
-        //     (msg) => { console.log(msg); },
-        //     (err) => { console.log(err); }
-        // );
+    constructor(private util: Util,
+                private manager: Manager,
+                private nav: NavController,
+                private navParam: NavParams) {
+        this.main_color = this.manager.sharedServ.getPrimaryColor();
     }
+
+    open(page, option, navparam) {
+        this.nav.push(page, option, navparam)
+    }
+
+    // this.datePicker.show({
+    //     date: new Date(),
+    //     mode: 'date',
+    //     androidTheme: this.datePicker.ANDROID_THEMES.THEME_HOLO_DARK
+    // }).then(
+    //     date => console.log('Got date: ', date),
+    //     err => console.log('Error occurred while getting date: ', err)
+    // );
+
+
+    // super.shared
+    // this.calendar.createCalendar('MyCalendar').then(
+    //     (msg) => { console.log(msg); },
+    //     (err) => { console.log(err); }
+    // );
+    // }
 
 
     images: Array<{ url }> = [
@@ -92,9 +103,9 @@ export class BlankPage {
     ]
 
 
-    setImg(){
+    setImg() {
         var input = document.getElementById("inputImg");
-        console.log("file",input);
+        console.log("file", input);
         // console.log("file",input.offsetHeight.);
         // console.log("file",input.files);
     }
