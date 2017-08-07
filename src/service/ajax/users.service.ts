@@ -159,12 +159,7 @@ export class UsersService {
             Promise.reject(data);
         }
 
-        this.http.setToken(data.content.token);
-        let user = await this.getInfo(data.content.uid);
-        console.log(user);
-        this.shared.setCurrentUser(user);
-
-        return user;
+        return data.content;
     }
 
     //nickname, password, role, phone, img_url
@@ -248,7 +243,7 @@ export class UsersService {
     }
 
     // nickname,position,official,page,limit
-    async getDesigners(params={}) {
+    async getDesigners(params = {}) {
         let data = await this.http.get(this.urls.designer_list, params);
 
         if (data.status != 200) {

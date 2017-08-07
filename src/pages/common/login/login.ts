@@ -55,27 +55,33 @@ export class LoginPage {
         }
 
         let isDesigner = this.shared.currentModuleIsDesigner;
-        this.userSev.login(this.user).then(user => {
-            if (isDesigner != (user.role == 0)) {
-                //登录用户身份和打开用户身份不一致
-                this.util.toast("你登录的用户身份和打开的模块不一致")
-                if (this.shared.currentModuleIsDesigner) {
-                    this.viewCtrl.dismiss();
-                    this.navCtrl.setRoot(DesignerModulePage)
-                } else {
-                    this.viewCtrl.dismiss();
-                    this.navCtrl.setRoot(EmployerModulePage)
-                }
-            } else {
-                this.viewCtrl.dismiss()
-            }
-        }).catch(error=>{
 
-        })
+        // this.userSev.login(this.user)
+        //     .then(user => {
+        //
+        //         // this.http.setToken(data.content.token);
+        //         // let user = await this.getInfo(data.content.uid);
+        //         // console.log(user);
+        //         // this.shared.setCurrentUser(user);
+        //         if (isDesigner != (user.role == 0)) {
+        //             //登录用户身份和打开用户身份不一致
+        //             // this.util.toast("你登录的用户身份和打开的模块不一致")
+        //             // if (this.shared.currentModuleIsDesigner) {
+        //             //     this.viewCtrl.dismiss();
+        //             //     this.navCtrl.setRoot(DesignerModulePage)
+        //             // } else {
+        //             //     this.viewCtrl.dismiss();
+        //             //     this.navCtrl.setRoot(EmployerModulePage)
+        //             // }
+        //         } else {
+        //             // this.viewCtrl.dismiss()
+        //         }
+        //     }).catch(error => {
+        //
+        // })
 
         (async () => {
             let newuser = await this.userSev.login(this.user);
-
 
 
         })().catch(error => {

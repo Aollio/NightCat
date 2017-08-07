@@ -34,8 +34,8 @@ export class NetworkService {
 
 
     async getWithToken(url, param = {}, header = {}) {
+        console.log("getWithToken",this.token);
         if (this.token == null) {
-            console.log(this.token);
             this.doIfNoToken()
             return {status: 401, messgae: 'TOKEN不存在, 用户是否登录?'}
         }
@@ -92,6 +92,7 @@ export class NetworkService {
     }
 
     async postWithToken(url, param = {}, header = {}) {
+        console.log("getWithToken",this.token);
         if (this.token == null) {
             this.doIfNoToken()
             return {status: 401, message: 'TOKEN NOT EXIST'}
