@@ -52,7 +52,7 @@
         <ion-input type="text"
                        [(ngModel)]="message"
                        class="message-input" placeholder="Type message..."></ion-input>
-        <button (click)="sendMessage()"
+        <button   tappable (click)="sendMessage()"
                 ion-button
                 [color]="miancolor"
                 class="message-submit">Send</button>

@@ -1,13 +1,9 @@
 import {Component} from "@angular/core";
 import {ImService} from "../../service/im/service.im";
-import {State} from "../../service/im/state.im";
 import {Util} from "../../service/util";
 import {ChatPage} from "./chat/chat";
 import {NavController} from "ionic-angular";
 import {SharedService} from "../../service/share.service";
-
-declare let initializeFontSize: any
-
 @Component({
     selector: 'page-im',
     templateUrl: 'im.html'
@@ -30,9 +26,6 @@ export class IMPage {
         // this.sessions = this.imServ.state.sessionlist
     }
 
-    ionViewDidEnter() {
-        initializeFontSize()
-    }
 
     // ionViewDidEnter(){
     //

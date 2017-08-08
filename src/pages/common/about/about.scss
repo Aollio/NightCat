@@ -1,3 +1,21 @@
 page-about {
-
+  .content-ios{
+    background-color: #efeff4;
+  }
+  .about{
+    width: 32rem;
+    height: 8rem;
+    margin: auto;
+    padding-top: 14rem;
+    text-align: center;
+  }
+  .about img{
+    width: 7rem;
+    height: 7rem;
+  }
+  .edition{
+    font-size: 1.4rem;
+    color: #999;
+    margin-top: 0.3rem;
+  }
 }
