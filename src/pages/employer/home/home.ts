@@ -23,10 +23,9 @@ export class EmployerHomePage {
 
 
     ionViewDidEnter() {
-        initializeFontSize()
         this.util.updateObj(this.user, this.shared.getCurrentUser());
-
     }
+
     openNotificationsPage(){
         this.navCtrl.push(NotificationsPage);
     }

@@ -15,17 +15,19 @@ export class NetworkService {
 
 
     private token: string;
+    private isWebCore:boolean;
 
     constructor(private http_browser: Http,
                 private http_mobile: HTTP,
+                private util: Util,
                 private platform: Platform,
                 private event: Events,
                 private share: SharedService) {
-
+        this.isWebCore = this.platform.is('core') || this.platform.is('mobileweb');
     }
 
-    setToken(token){
-        this.token =token;
+    setToken(token) {
+        this.token = token;
     }
 
     doIfNoToken() {
@@ -34,7 +36,7 @@ export class NetworkService {
 
 
     async getWithToken(url, param = {}, header = {}) {
-        console.log("getWithToken",this.token);
+        console.log("getWithToken", this.token);
         if (this.token == null) {
             this.doIfNoToken()
             return {status: 401, messgae: 'TOKEN不存在, 用户是否登录?'}
@@ -49,50 +51,65 @@ export class NetworkService {
      * @param param
      * @returns {Promise<any>}
      */
-    async get(url, param?, header?): Promise<any> {
-        console.log("get params:",param);
+    async get(url, param = {}, header = {}): Promise<any> {
+        console.log("\n get url", url);
+        console.log("get params", param);
 
-        if (this.platform.is('core') || this.platform.is('mobileweb')) {
-            let _params = {
-                params: param
-            }
-            try {
-                let res = await this.http_browser.get(url, _params).toPromise()
-                console.log("post " + url + ":", res.json());
-                return res.json();
-            } catch (error) {
-                // error 是 response对象 ,含有属性
-                //ok:false;status:404,statusText:"OK",type:2,url:"http://localhost:8080/user"
-                //angular http模块 出现错误是返回的error.json()对象,包含数据,
-                // a = error.json(), a.status,a.nofitications,a.error, a.timestamp, a.path
-                console.log(error)
-                console.log(error.status)
-                console.log(error.ok)
-                console.log(error.message)
-                //error.status 401 means that unautnenication
-                if (error.status == 401) {
-                    this.doIfNoToken()
-                }
-                return error
-            }
-        }
-
-        //using http mobile
-        let data
+        let response;
         try {
-            data = await this.http_mobile.get(url, param || {}, {})
+            if (this.isWebCore) {
+                let _params = {
+                    params: param,
+                    headers: new Headers(header)
+                }
+                response = await this.http_browser.get(url, _params).toPromise();
+                console.log("get response", response.json(),"\n");
+            } else {
+                response = await this.http_mobile.get(url, param || {}, {});
+                console.log("get response", response.content,"\n");
+            }
         } catch (error) {
-            console.log(error)
-            return error
+            this.showError(error);
+            return error;
         }
 
-        console.log("get " + url + ":", data.data);
-        return data.data
+        if (this.isWebCore)
+            return response.json();
+        else
+            return response.content;
 
+        // if (this.platform.is('core') || this.platform.is('mobileweb')) {
+        //     let _params = {
+        //         params: param,
+        //         headers: new Headers(header)
+        //     }
+        //     try {
+        //         let res = await this.http_browser.get(url, _params).toPromise()
+        //         console.log("get response", res.json());
+        //         console.log(" ");
+        //         return res.json();
+        //     } catch (error) {
+        //         this.showError(error);
+        //         return error
+        //     }
+        // }
+        //
+        // //using http mobile
+        // let data
+        // try {
+        //     data = await this.http_mobile.get(url, param || {}, {})
+        // } catch (error) {
+        //     this.showError(error);
+        //     return error
+        // }
+        //
+        // console.log("get response", data.data);
+        // console.log(" ");
+        // return data.data;
     }
 
     async postWithToken(url, param = {}, header = {}) {
-        console.log("getWithToken",this.token);
+        console.log("getWithToken", this.token);
         if (this.token == null) {
             this.doIfNoToken()
             return {status: 401, message: 'TOKEN NOT EXIST'}
@@ -109,58 +126,76 @@ export class NetworkService {
      * @returns {Promise<any>}
      */
     async post(url, param = {}, headers = {}): Promise<any> {
-        console.log("post params:",param);
-        // if (this.share.KEYNOTE) {
-        //     return {status: 600}
-        // }
+        console.log("\n post url", url);
+        console.log("post params", param);
 
-        // console.log(this.platform.platforms())
-
-        if (this.platform.is('core') || this.platform.is('mobileweb')) {
-            //由于angular 传送post数据方式的不同, 需要添加一下headers和将param转化为可识别格式,才能被后端所接受
-            console.log('开始post请求', '在浏览器中')
-            headers['Accept'] = 'application/json,text/json,*/*'
-            headers['content-type'] = 'application/x-www-form-urlencoded'
-
-            let _headers = new Headers(headers)
-
-            let response
-            try {
-                response = await this.http_browser.post(url, this.trans(param), {headers: _headers}).toPromise()
-            } catch (error) {
-                //     error 是 response对象 ,含有属性
-                //     ok:false;status:404,statusText:"OK",type:2,url:"http://localhost:8080/user"
-                //     angular http模块 出现错误是返回的error.json()对象,包含数据,
-                //     a = error.json(), a.status,a.nofitications,a.error, a.timestamp, a.path
-                console.log('error', error)
-                if (error.status == 401) {
-                    this.event.publish('gotologin')
-                }
-                throw error
-            }
-            console.log("post " + url, response.json());
-            return response.json();
-        }
-
-        let response
+        let response;
         try {
-            response = await this.http_mobile.post(url, param = {}, headers)
-        } catch (error) {
-            if (error.status == 401) {
-                this.event.publish('gotologin')
-            }
-            return error
-        }
+            if (this.isWebCore) {
+                console.log('开始post请求', '在浏览器中');
+                headers['Accept'] = 'application/json,text/json,*/*';
+                headers['content-type'] = 'application/x-www-form-urlencoded';
+                let _headers = new Headers(headers);
 
-        console.log("post " + url + ":", response.data);
-        return response.data;
+                response = await this.http_browser.post(url, this.trans(param), {headers: _headers}).toPromise();
+                console.log("post response", response.json(),"\n");
+            }else {
+                response = await this.http_mobile.post(url, param = {}, headers);
+                console.log("post response", response.data,"\n");
+            }
+
+        } catch (error) {
+            this.showError(error);
+            return error;
+        }
+        if (this.isWebCore)
+            return response.json();
+        else
+            return response.data;
+
+        // if (this.platform.is('core') || this.platform.is('mobileweb')) {
+        //     //由于angular 传送post数据方式的不同, 需要添加一下headers和将param转化为可识别格式,才能被后端所接受
+        //     console.log('开始post请求', '在浏览器中')
+        //     headers['Accept'] = 'application/json,text/json,*/*'
+        //     headers['content-type'] = 'application/x-www-form-urlencoded'
+        //
+        //     let _headers = new Headers(headers)
+        //
+        //     try {
+        //         let response = await this.http_browser.post(url, this.trans(param), {headers: _headers}).toPromise()
+        //         console.log("post response", response.json());
+        //         console.log(" ");
+        //         return response.json();
+        //     } catch (error) {
+        //         this.showError(error);
+        //         return error
+        //     }
+        // }
+        //
+        // let response
+        // try {
+        //     response = await this.http_mobile.post(url, param = {}, headers)
+        // } catch (error) {
+        //     this.showError(error);
+        //     return error
+        // }
+        //
+        // console.log("get response", response.data);
+        // console.log(" ");
+        // return response.data;
     }
 
 
-    showError(response){
-        if(response){
-            if(response.starus===0){
-
+    //
+    showError(error) {
+        console.log(error);
+        if (error) {
+            if (error.starus === 0) {
+                this.util.toast("网络未连接");
+            }
+        } else {
+            if (error.status == 401) {
+                this.doIfNoToken()
             }
         }
     }

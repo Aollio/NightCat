@@ -18,8 +18,6 @@ export class UsersService {
                 public shared: SharedService,
                 public util: Util) {
     }
-
-
     // async getUsersByRole(isDesigner: boolean) {
     //     let result = []
     //     for (let index in this.users) {
@@ -149,8 +147,8 @@ export class UsersService {
         return null;
     }
 
-    //start
-    //phone, password
+    //startnew
+    // phone , password
     async login(userInfo) {
         console.log("开始登录");
 
@@ -158,13 +156,18 @@ export class UsersService {
         if (data.status != 200) {
             Promise.reject(data);
         }
+        this.http.setToken(data.content.token);
+        let user = await this.getInfo(data.content.uid);
+        console.log(user);
+        this.shared.setCurrentUser(user);
 
-        return data.content;
+        return user;
     }
 
     //nickname, password, role, phone, img_url
     async register(userInfo) {
         console.log("开始注册");
+
         let data = await this.http.post(this.urls.user_register_post, userInfo);
         if (data.status != 200) {
             Promise.reject(data);
@@ -179,6 +182,7 @@ export class UsersService {
             console.log("cache user", user);
             return user;
         }
+
         let data = await this.http.getWithToken(this.urls.user_info_get, {uid: uid});
 
         if (data.status != 200) {
@@ -202,12 +206,9 @@ export class UsersService {
         return data.content;
     }
 
-    async setHonors(name, img_url, get_time) {
-        let data = await this.http.postWithToken(this.urls.user_honors_get, {
-            name: name,
-            img_url: img_url,
-            get_time: get_time,
-        });
+    //name, img_url, get_time
+    async setHonors(params) {
+        let data = await this.http.postWithToken(this.urls.user_honors_get, params);
 
         if (data.status != 200) {
             Promise.reject(data);
@@ -237,10 +238,16 @@ export class UsersService {
         return data.content;
     }
 
-    //todo
-    async setAuthentications() {
+    //type level name id_number img
+    async setAuthentications(params) {
+        let data = await this.http.postWithToken(this.urls.user_authentications, params);
 
+        if (data.status != 200) {
+            Promise.reject(data);
+        }
+        return data.content;
     }
+
 
     // nickname,position,official,page,limit
     async getDesigners(params = {}) {

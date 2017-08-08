@@ -10,12 +10,12 @@
             <img src="assets/img/logo.png"/>
         </div>
         <div class="login_btn_wrapper">
-            <button small ion-button outline color="light" (click)="openLoginPage($event)">请登录</button>
+            <button small ion-button outline color="light"   tappable (click)="openLoginPage($event)">请登录</button>
         </div>
     </div>
 
     <!--用户已登录-->
-    <div *ngIf="!isNullObj(user)" class="me-header" (click)="opendetail(designerMeDetailPage,{isDesigner:true})">
+    <div *ngIf="!isNullObj(user)" class="me-header"   tappable (click)="opendetail(designerMeDetailPage,{isDesigner:true})">
         <div class="me-avatar">
             <img [src]="user.img_url || 'assets/img/logo.png'">
         </div>
@@ -34,16 +34,16 @@
         <!--<ion-item>我的订单-->
         <!--<ion-icon name="arrow-forward" item-end></ion-icon>-->
         <!--</ion-item>-->
-        <ion-item (click)="opendetail(wallet,{})">我的钱包
+        <ion-item   tappable (click)="opendetail(wallet,{})">我的钱包
             <ion-icon name="arrow-forward" item-end></ion-icon>
         </ion-item>
-        <ion-item (click)="opendetail(authenticate,{})">认证中心
+        <ion-item   tappable (click)="opendetail(authenticate,{})">认证中心
             <ion-icon name="arrow-forward" item-end></ion-icon>
         </ion-item>
-        <ion-item (click)="opendetail(comment,{})">评论中心
+        <ion-item   tappable (click)="opendetail(comment,{})">评论中心
             <ion-icon name="arrow-forward" item-end></ion-icon>
         </ion-item>
-        <ion-item (click)="open(favoriteProjectsPage)">我的收藏
+        <ion-item   tappable (click)="open(favoriteProjectsPage)">我的收藏
             <ion-icon name="arrow-forward" item-end></ion-icon>
         </ion-item>
     </ion-list>

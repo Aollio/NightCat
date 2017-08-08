@@ -1,0 +1,31 @@
+<div class="my-ul" (click)="openDesignerPage(item)">
+    <div class="my-dl">
+        <div class="my-dt"><img [src]="userInfo.img_url||'assets/img/designer-default-avatar.png'" alt="" /></div>
+        <div class="my-dd">
+            <div class="my-title">
+                {{designer.nickname}}
+            </div>
+            <div class="my-introduction">
+                {{designer.summary}}
+            </div>
+            <div class="my-ol">
+                <div class="y-li">
+                    <div class="y-li-val">{{designer.service_length}}</div>
+                    <div class="y-li-name">工龄</div>
+                </div>
+                <div class="y-li">
+                    <div class="y-li-val">7</div>
+                    <div class="y-li-name">总工时</div>
+                </div>
+                <div class="y-li">
+                    <div class="y-li-val">¥500</div>
+                    <div class="y-li-name">时薪</div>
+                </div>
+            </div>
+            <div class="my-bar">
+                <div class="my-bar-l"></div>
+                <div class="my-bar-r"></div>
+            </div>
+        </div>
+    </div>
+</div>

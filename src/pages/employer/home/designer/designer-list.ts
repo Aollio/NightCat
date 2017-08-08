@@ -1,36 +1,43 @@
-import {Component} from "@angular/core";
+import {Component, ViewChild} from "@angular/core";
 import {DesignerMeDetailPage} from "../../../designer/me/medetail/medetail";
 import {NavController} from "ionic-angular";
 import {KeynoteService} from "../../../../service/keynote.service";
 import {UsersService} from "../../../../service/ajax/users.service";
 import {SharedService} from "../../../../service/share.service";
+import {Manager} from "../../../../service/manager";
 
-declare let initializeFontSize: any
 
 @Component({
     selector: 'page-designer-list-home',
     templateUrl: 'designer-list.html'
 })
 export class DesignerListPage {
+    // @ViewChild("refresher") refresher;
     miancolor;
 
-    users: Array<any> = [];
+    designers: Array<any> = [];
 
     designerMeDetailPage: DesignerMeDetailPage;
 
-    constructor(public navCtrl: NavController,
-                private usersServ: UsersService,
-                public shared:SharedService) {
-        this.miancolor=this.shared.getPrimaryColor();
-        this.usersServ.getDesigners().then(users => {
-            for (let user of users) {
-                this.users.push(user)
-            }
-        });
+    constructor(private manager: Manager,private navCtrl:NavController) {
+        this.miancolor = this.manager.sharedServ.getPrimaryColor();
+
+
     }
 
+
     ionViewDidEnter() {
-        initializeFontSize()
+        // console.log(this.refresher);
+        // this.refresher.doRefresh();
+        this.manager.userServ.getDesigners()
+            .then(users => {
+                for (let user of users) {
+                    this.designers.push(user);
+                }
+            }).catch(error => {
+                console.log(error);
+            //todo 异常捕获
+        });
     }
 
     open(page, option) {
@@ -59,12 +66,24 @@ export class DesignerListPage {
 
     //todo 内容刷新
     doRefresh(refresher) {
-        console.log('Begin async operation', refresher);
+        this.designers.length=0;
+        this.manager.userServ.getDesigners()
+            .then(users => {
+                for (let user of users) {
+                    this.designers.push(user);
+                }
 
-        setTimeout(() => {
-            console.log('Async operation has ended');
+                console.log(users);
+
+                refresher.complete();
+            }).catch(error => {
+            //todo 异常捕获
+            console.log(error);
             refresher.complete();
-        }, 2000);
+        });
+
     }
+
+
 
 }
