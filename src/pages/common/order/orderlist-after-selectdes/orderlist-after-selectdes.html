@@ -40,12 +40,10 @@
                 <div class="my-bottom-li">取消订单</div>
             </div>
             <!--待收货状态-->
-            <div class="my-bottom">
+            <div class="my-bottom" *ngIf="2==item.status||3==item.status||4==item.status">
                 <div class="my-bottom-li act" *ngIf="2==item.status||3==item.status">收货</div>
                 <div class="my-bottom-li" *ngIf="2==item.status">一键审图</div>
-                <div class="my-bottom" *ngIf="4==item.status">
-                    <div class="my-bottom-li act">评价</div>
-                </div>
+                <div class="my-bottom-li act" *ngIf="4==item.status">评价</div>
             </div>
 
 
