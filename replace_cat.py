@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-$Description$<
+该脚本在所有具有点击事件的HTML标签中, 加入一个tappable属性
 """
 import codecs
 
