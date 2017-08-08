@@ -7,7 +7,7 @@ declare let initializeFontSize: any;
     selector: "complete",
     templateUrl: 'complete.html'
 })
-export class OrderProcessComplete{
+export class OrerProcessCompleted{
 
     user;
     orderId;
