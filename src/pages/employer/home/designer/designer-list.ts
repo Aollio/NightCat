@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, ViewChild} from "@angular/core";
 import {DesignerMeDetailPage} from "../../../designer/me/medetail/medetail";
 import {NavController} from "ionic-angular";
 import {KeynoteService} from "../../../../service/keynote.service";
@@ -12,23 +12,40 @@ import {Manager} from "../../../../service/manager";
     templateUrl: 'designer-list.html'
 })
 export class DesignerListPage {
+    // @ViewChild("refresher") refresher;
     miancolor;
 
     designers: Array<any> = [];
 
     designerMeDetailPage: DesignerMeDetailPage;
 
-    constructor(private manager: Manager) {
+    constructor(private manager: Manager,private navCtrl:NavController) {
         this.miancolor = this.manager.sharedServ.getPrimaryColor();
 
+
+    }
+
+
+    ionViewDidEnter() {
+        // console.log(this.refresher);
+        // this.refresher.doRefresh();
+        this.manager.userServ.getDesigners()
+            .then(users => {
+                for (let user of users) {
+                    this.designers.push(user);
+                }
+            }).catch(error => {
+                console.log(error);
+            //todo 异常捕获
+        });
     }
 
     open(page, option) {
-        this.manager.navCtrl.push(page, option)
+        this.navCtrl.push(page, option)
     }
 
     openDesignerrPage(user) {
-        this.manager.navCtrl.push(DesignerMeDetailPage, {
+        this.navCtrl.push(DesignerMeDetailPage, {
             user:
                 {
                     nickname: '金兔子耳朵金兔子耳朵金兔子耳朵',
@@ -49,19 +66,24 @@ export class DesignerListPage {
 
     //todo 内容刷新
     doRefresh(refresher) {
-
+        this.designers.length=0;
         this.manager.userServ.getDesigners()
             .then(users => {
                 for (let user of users) {
                     this.designers.push(user);
                 }
 
+                console.log(users);
+
                 refresher.complete();
             }).catch(error => {
             //todo 异常捕获
-
+            console.log(error);
             refresher.complete();
         });
+
     }
+
+
 
 }

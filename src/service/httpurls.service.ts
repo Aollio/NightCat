@@ -4,9 +4,11 @@ import {SharedService} from "./share.service";
 @Injectable()
 export class HttpUrls {
 
-    // server_url: string = "http://smalllio.com";
+    // server_url: string = "http://smal.com";
     // server_url: string = "http://192.168.10.131:3000";
-    server_url: string = "http://192.168.100.154:3000";
+    // server_url: string = "http://smalllio.com";
+    server_url: string = "http://192.168.10.131:3000";
+    // server_url: string = "http://192.168.100.154:3000";
 
     //start 用户
     _users :string = this.server_url +"/users";
@@ -97,10 +99,11 @@ export class HttpUrls {
     //用户项目列表
     projects_of_user_get:string = this._projects+"/user_timeline";
 
-
-
-
     //end 项目
+
+
+
+
 
 
     projects_url: string = this.server_url + '/projects'

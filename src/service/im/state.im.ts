@@ -34,7 +34,7 @@ export class State {
     // 消息列表
     msgs: any = {}  // 以sessionId作为key
     // 会话列表
-    sessionlist: Array<any> = []
+    sessionlist: Array<any> = [];
     sessionMap: any = {}
     // 当前会话ID（即当前聊天列表，只有单聊群聊采用，可用于判别）
     currSessionId: any = null

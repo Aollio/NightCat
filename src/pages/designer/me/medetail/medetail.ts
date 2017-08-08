@@ -38,9 +38,10 @@ export class DesignerMeDetailPage {
                 public shared: SharedService,
                 public alertCtrl: AlertController,
                 public navParams: NavParams) {
-        this.isDesigner = navParams.get('isDesigner');
+        // this.isDesigner = navParams.get('isDesigner');
+        this.isDesigner = shared.isDesigner;
         this.user = navParams.get('user') || shared.getCurrentUser();
-        this.maincolor=this.shared.getPrimaryColor();
+        this.maincolor = this.shared.getPrimaryColor();
 
     }
 
@@ -81,4 +82,5 @@ export class DesignerMeDetailPage {
         });
         alert.present();
     }
+
 }

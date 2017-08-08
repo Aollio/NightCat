@@ -33,19 +33,6 @@ export class ProjectsService {
     }
 
 
-    async getProjects(param = {}): Promise<any> {
-        // if (this.KEYNOTE) {
-        //     console.log('演示模式, 返回默认项目列表')
-        //     return this.keynote.projects
-        // }
-        let response = await this.http.get(this.urls.projects_list_get, param)
-
-        if (response.status != 200) {
-            Promise.reject(response)
-        }
-        return response.content
-    }
-
     /*
     grabProj
     * */
@@ -58,6 +45,56 @@ export class ProjectsService {
             //this is keynote mode. so return not really data
         }
     }
+
+
+    //new
+    async getProjects(param = {}): Promise<any> {
+
+        let response = await this.http.get(this.urls.projects_list_get, param)
+
+        if (response.status != 200) {
+            Promise.reject(response)
+        }
+        return response.content
+    }
+
+    async getUserProjects(param = {}): Promise<any> {
+
+        let response = await this.http.get(this.urls.projects_list_get, param)
+
+        if (response.status != 200) {
+            Promise.reject(response)
+        }
+        return response.content;
+    }
+
+    async getProjectsInfo(id) {
+        let response = await this.http.get(this.urls.project_info_get, {id: id});
+
+        if (response.status != 200) {
+            Promise.reject(response);
+        }
+        return response.content;
+    }
+
+    async getProjectsDynamics(id) {
+        let response = await this.http.get(this.urls.project_dynamics_get, {id: id});
+
+        if (response.status != 200) {
+            Promise.reject(response);
+        }
+        return response.content;
+    }
+
+    async getProjectsComments(id) {
+        let response = await this.http.get(this.urls.project_comments_get, {id: id});
+
+        if (response.status != 200) {
+            Promise.reject(response);
+        }
+        return response.content;
+    }
+
 
 
 }
