@@ -4,7 +4,7 @@
             我的钱包
         </ion-title>
         <ion-buttons end>
-            <button ion-button (click)="open(designerWithDrawPage)">
+            <button ion-button   tappable (click)="open(designerWithDrawPage)">
                 提现
             </button>
         </ion-buttons>
@@ -17,10 +17,10 @@
         <div class="introduce">
             <div class="unit">钱包余额（元）</div>
             <div class="icon-show" item-end>
-                <custom-icon set="cat" name="my-eye" *ngIf="showBalance" (click)="toggleShowBalance()"></custom-icon>
-                <custom-icon set="cat" name="my-eye-close" *ngIf="!showBalance" (click)="toggleShowBalance()"></custom-icon>
-                <!--<ion-icon name="ios-eye-outline" *ngIf="showBalance" (click)="toggleShowBalance()"></ion-icon>-->
-                <!--<ion-icon name="ios-eye-off-outline" *ngIf="!showBalance" (click)="toggleShowBalance()"></ion-icon>-->
+                <custom-icon set="cat" name="my-eye" *ngIf="showBalance"   tappable (click)="toggleShowBalance()"></custom-icon>
+                <custom-icon set="cat" name="my-eye-close" *ngIf="!showBalance"   tappable (click)="toggleShowBalance()"></custom-icon>
+                <!--<ion-icon name="ios-eye-outline" *ngIf="showBalance"   tappable (click)="toggleShowBalance()"></ion-icon>-->
+                <!--<ion-icon name="ios-eye-off-outline" *ngIf="!showBalance"   tappable (click)="toggleShowBalance()"></ion-icon>-->
             </div>
         </div>
         <div class="money-amount" *ngIf="showBalance">0.00</div>
@@ -46,7 +46,7 @@
     <br/>
     <br/>
 
-    <ion-item no-lines class="money-detail" (click)="open(consumeDetail)">
+    <ion-item no-lines class="money-detail"   tappable (click)="open(consumeDetail)">
         <!--<custom-icon set="cat" name="detail" item-start></custom-icon>-->
         <!--<ion-icon name="ios-eye-outline" item-start></ion-icon>-->
         <img class="my-dollar" width="38" src="assets/img/detailed.png" alt="">

@@ -5,14 +5,14 @@
 </ion-header>
 
 <ion-content>
-    <img src="assets/img/home-default.png" class="img" *ngIf="showAd" (click)="toggleShowAd()"/>
+    <img src="assets/img/home-default.png" class="img" *ngIf="showAd"   tappable (click)="toggleShowAd()"/>
 
     <div class="type-buttons">
-        <button ion-button clear class="type-btn" (click)="selectType()">所有分类
+        <button ion-button clear class="type-btn"   tappable (click)="selectType()">所有分类
         </button>
-        <button ion-button clear class="type-btn" (click)="selectFilter()">筛选&nbsp;
+        <button ion-button clear class="type-btn"   tappable (click)="selectFilter()">筛选&nbsp;
         </button>
-        <button ion-button clear class="type-btn" (click)="selectSort()">排序&nbsp;
+        <button ion-button clear class="type-btn"   tappable (click)="selectSort()">排序&nbsp;
         </button>
     </div>
     <order-list></order-list>

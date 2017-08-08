@@ -1,4 +1,4 @@
-<!--<ion-card (click)="openProjectDetail('000000111111')">-->
+<!--<ion-card   tappable (click)="openProjectDetail('000000111111')">-->
 <!--<ion-card-content>-->
 <!--<div class="avatar"></div>-->
 <!--<div class="detail">-->
@@ -28,7 +28,7 @@
 <!--</ion-card>-->
 <div class="my-list">
     <div class="my-ul"
-         (click)="openProjectDetail(item)"
+           tappable (click)="openProjectDetail(item)"
          *ngFor="let item of projects">
         <div class="my-li">
             <div class="my-li-img">
