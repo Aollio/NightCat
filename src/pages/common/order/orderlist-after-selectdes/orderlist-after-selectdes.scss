@@ -63,6 +63,12 @@ page-orderlist-after-selectdes{
     font-size: 1rem;
     color: #666;
   }
+  .my-li-right-b-money{
+    -webkit-box-flex:1;
+    height: 1.6rem;
+    font-size: 1.6rem;
+    color: #ea9999;
+  }
   .my-li-right-b-r{
     -webkit-box-flex:1;
     height: 1.6rem;
@@ -81,7 +87,7 @@ page-orderlist-after-selectdes{
   }
   .my-bottom-li{
     height: 2rem;
-    width: 5rem;
+    width: 6rem;
     border:1px solid #666;
     margin-top: 0.5rem;
     float: right;

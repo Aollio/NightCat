@@ -3,22 +3,22 @@ import {CustomIconsModule} from "ionic2-custom-icons";
 import {OrderProcessPreSelectedPage} from "./order-process-pre-selectdes/order-process-pre-selectdes";
 import {IonicModule} from "ionic-angular";
 import {OrderProcessModifyPage} from "./order-process-modify/order-process-modify";
-import {OrderProcessComplete} from "./order-process-complete/complete";
 import {OrderProcessWaitcomment} from "./order-process-waitcomment/waitcomment";
 import {OrderProcessPayment} from "./order-process-payment/order-process-payment";
+import {OrerProcessCompleted} from "./order-process-complete/complete";
 
 @NgModule({
     declarations: [
         OrderProcessPreSelectedPage,
         OrderProcessModifyPage,
-        OrderProcessComplete,
+        OrerProcessCompleted,
         OrderProcessPayment,
         OrderProcessWaitcomment
     ],
     entryComponents: [
         OrderProcessPreSelectedPage,
         OrderProcessModifyPage,
-        OrderProcessComplete,
+        OrerProcessCompleted,
         OrderProcessPayment,
         OrderProcessWaitcomment
     ],
@@ -29,7 +29,9 @@ import {OrderProcessPayment} from "./order-process-payment/order-process-payment
     exports: [
         OrderProcessPreSelectedPage,
         OrderProcessModifyPage,
-        OrderProcessComplete
+        OrerProcessCompleted,
+        OrderProcessPayment,
+        OrderProcessWaitcomment
     ]
 })
 export class OrderProcessModule {

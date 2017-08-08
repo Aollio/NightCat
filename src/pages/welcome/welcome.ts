@@ -34,7 +34,7 @@ import {Slides} from 'ionic-angular';
 import {EmployerHomePage} from "../employer/home/home";
 import {DesignerHomePage} from "../designer/home/home";
 import {OrderProcessModifyPage} from "../common/order/orderprocess/order-process-modify/order-process-modify";
-import {OrderProcessComplete} from "../common/order/orderprocess/order-process-complete/complete";
+
 import {OrderProcessPayment} from "../common/order/orderprocess/order-process-payment/order-process-payment";
 import {OrderProcessWaitcomment} from "../common/order/orderprocess/order-process-waitcomment/waitcomment";
 
@@ -58,10 +58,6 @@ export class WelcomePage {
     /**
      * 这是主页的快速入口，用于开发
      * */
-    orderDetailPage: any = ProjectDetailPage;
-    orderListComponent: any = OrderListComponent;
-
-    employerHome: any = EmployerModulePage;
 
     loginPage: any = LoginPage;
 
@@ -86,7 +82,7 @@ export class WelcomePage {
     searchdesigner: any = SearchDesignerPage;
     commentOrderPage: any = CommentOrderPage;
     orderProcessModifyPage: any = OrderProcessModifyPage;
-    orderProcessComplete: any = OrderProcessComplete;
+
     orderProcessPayment: any = OrderProcessPayment;
     waitcomment: any = OrderProcessWaitcomment;
 
@@ -240,10 +236,6 @@ export class WelcomePage {
                 button.style.bottom = "-4.6rem";
             }
         }
-    }
-
-    openComplete() {
-        this.navCtrl.push(OrderProcessComplete, {})
     }
 
 }
