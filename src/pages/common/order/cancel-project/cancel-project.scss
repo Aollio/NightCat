@@ -1,0 +1,51 @@
+page-cancel-project{
+  .content-ios{
+    background-color: #efeff4;
+  }
+  .cancel-project-title{
+    height: 4rem;
+    font-size: 1.4rem;
+    line-height: 4rem;
+    padding-left: 1rem;
+    color: #666;
+    font-family: helvetica;
+  }
+  .cancel-project-li{
+    height: 5rem;
+    background-color: #fff;
+    display:-webkit-box;
+    /*border-bottom: 1px solid #ddd;*/
+  }
+  .cancel-project-radio{
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-top: 1.25rem;
+    padding-left: 1rem;
+  }
+  .cancel-project-radio img{
+    width: 100%;
+    height: 100%;
+  }
+  .cancel-project-name{
+    margin-left: 1.5rem;
+    height: 5rem;
+    line-height: 5rem;
+    font-size: 1.4rem;
+    font-family: helvetica;
+    color: #333;
+  }
+  .cancel-project-text{
+    height: 13rem;
+    background-color: #fff;
+    padding: 1rem;
+  }
+  .cancel-project-text textarea{
+    width: 100%;
+    height: 100%;
+    outline:0 none !important; blr:expression(this.onFocus=this.blur());
+    border: 0;
+    resize: none;
+    font-size: 1.4rem;
+    color: #333;
+  }
+}
