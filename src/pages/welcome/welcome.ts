@@ -1,7 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
 import {NavController, NavParams, Platform, ToastController} from 'ionic-angular';
 import {LoginPage} from "../common/login/login";
-import {ProjectDetailPage} from "../common/order/orderdetail/orderdetail"
 import {OrderListComponent} from "../common/order/orderlist/orderlist";
 import {EmployerModulePage} from "../employer/employer";
 import {DesignerModulePage} from "../designer/designer";
@@ -34,9 +33,9 @@ import {Slides} from 'ionic-angular';
 import {EmployerHomePage} from "../employer/home/home";
 import {DesignerHomePage} from "../designer/home/home";
 import {OrderProcessModifyPage} from "../common/order/orderprocess/order-process-modify/order-process-modify";
-import {OrderProcessComplete} from "../common/order/orderprocess/order-process-complete/complete";
 import {OrderProcessPayment} from "../common/order/orderprocess/order-process-payment/order-process-payment";
 import {OrderProcessWaitcomment} from "../common/order/orderprocess/order-process-waitcomment/waitcomment";
+import {ProjectDetailPage} from "../common/order/orderdetail/projectdetail";
 
 // import {Waitcomment} from "../common/order/orderprocess/order-process-waitcomment/waitcomment";
 
@@ -86,7 +85,6 @@ export class WelcomePage {
     searchdesigner: any = SearchDesignerPage;
     commentOrderPage: any = CommentOrderPage;
     orderProcessModifyPage: any = OrderProcessModifyPage;
-    orderProcessComplete: any = OrderProcessComplete;
     orderProcessPayment: any = OrderProcessPayment;
     waitcomment: any = OrderProcessWaitcomment;
 
@@ -242,9 +240,9 @@ export class WelcomePage {
         }
     }
 
-    openComplete() {
-        this.navCtrl.push(OrderProcessComplete, {})
-    }
+    // openComplete() {
+    //     this.navCtrl.push(OrderProcessComplete, {})
+    // }
 
     //todo 保存登陆信息  自动登录
 }
