@@ -96,16 +96,16 @@
         <div class="content-title-div">请选择设计师是否认证</div>
         <div class="position-btns">
             <button class="tip selectbutton" [class.selected]="authenticate === 0"   tappable (click)="selectAuthenticate(0)">
-                未认证工程师
+                全部工程师
             </button>
             <button class="tip selectbutton" [class.selected]="authenticate === 1"   tappable (click)="selectAuthenticate(1)">
-                已认证工程师
+                只看已认证
             </button>
         </div>
 
-        <div class="detail-require">
-            <textarea placeholder="填写更详细的需求，可以帮您更快的找到合适的设计师哦" class="summary-textarea"></textarea>
-        </div>
+        <!--<div class="detail-require">-->
+            <!--<textarea placeholder="填写更详细的需求，可以帮您更快的找到合适的设计师哦" class="summary-textarea"></textarea>-->
+        <!--</div>-->
     </div>
 
 </ion-content>
