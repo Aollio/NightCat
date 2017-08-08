@@ -17,6 +17,7 @@ import {OrderModule} from "../common/order/order.module";
 import {CustomIconsModule} from "ionic2-custom-icons";
 import {DesignerProjectsPage} from "./projects/projects";
 import {DesOrderListComponent} from "./projects/designerorderlist/designerorderlist";
+import {ComponentModule} from "../../component/component.module";
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import {DesOrderListComponent} from "./projects/designerorderlist/designerorderl
         DesOrderListComponent
     ],
     imports: [
+        ComponentModule,
         CommonPageModule,
         DesignerMeModule,
         WalletModule,

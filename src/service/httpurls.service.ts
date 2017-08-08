@@ -79,6 +79,9 @@ export class HttpUrls {
 
     user_authentications:string = this._users+"/authentications";
 
+    //
+    user_info_simple_get:string = this._users+"/show_simple";
+
     //end 用户
 
 
@@ -98,6 +101,9 @@ export class HttpUrls {
 
     //用户项目列表
     projects_of_user_get:string = this._projects+"/user_timeline";
+
+    //获取项目图片
+    project_imgs_get:string = this._projects+"/imgs";
 
     //end 项目
 

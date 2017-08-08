@@ -19,15 +19,16 @@ declare let initializeFontSize: any
 
 // @IonicPage()
 @Component({
-    selector: 'page-projectdetail',
+    selector: 'page-project-detail',
     templateUrl: 'projectdetail.html',
 })
 export class ProjectDetailPage extends AbsCommonPage {
 
-
     project;
+    imgs;
 
-    creator = {};
+
+    creator;
 
     isDesigner: boolean;
     collectstate: any = 0;
@@ -47,22 +48,21 @@ export class ProjectDetailPage extends AbsCommonPage {
                 private util: Util) {
         super(share);
         this.project = navParams.get('project');
+        this.imgs = navParams.get('imgs');
+
+        console.log("project",this.project);
         this.isDesigner = share.currentModuleIsDesigner;
-        //todo
-        this.util.updateObj(this.creator, this.userServ._getCacheUserByUid(this.project.create_by))
+        this.getCreatorSimpleInfo(this.project.create_by);
     }
 
-    ionViewDidEnter() {
-        initializeFontSize()
-    }
-
-    // openUserDetail() {
-    //     this.navCtrl.push(DesignerMeDetailPage, {})
-    // }
-
-
-    open(page, option) {
-        this.navCtrl.push(page, {})
+    private getCreatorSimpleInfo(uid){
+        console.log("get user simple info");
+        this.userServ.getInfoSimple(uid).then(user=>{
+            this.creator = user;
+            // this.util.updateObj(this.creator,user);
+        }).catch(error=>{
+            console.log(error);
+        })
     }
 
     /*

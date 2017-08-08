@@ -19,19 +19,15 @@ declare let initializeFontSize: any;
 })
 export class DesignerMePage {
     favoriteProjectsPage:any=FavoriteProjectsPage;
+
     user = {};
 
-    ionViewDidEnter() {
-        initializeFontSize()
-    }
     constructor(public navCtrl: NavController,
                 public shared: SharedService,
                 public modalCtrl: ModalController,
                 public util:Util) {
-        // util.updateObj(this.user,this.shared.getCurrentUser());
         this.user =  shared.getCurrentUser();
     }
-
 
     wallet: any = DesignerWalletPage;
     authenticate: any = AuthenticationPage;
@@ -43,18 +39,22 @@ export class DesignerMePage {
         // if(this.isNullObj(this.user)) return;
         this.navCtrl.push(page, option)
     }
+
+    openMeDetail(){
+        this.navCtrl.push(DesignerMeDetailPage,{isDesigner:true});
+    }
+
     open(page, option) {
 
         this.navCtrl.push(page, option)
     }
-    isNullObj(obj){
-       return JSON.stringify(obj)==JSON.stringify({});
-    }
-    openLoginPage($event){
+    // isNullObj(obj){
+    //    return JSON.stringify(obj)==JSON.stringify({});
+    // }
+    openLoginPage(){
         let profileModal = this.modalCtrl.create(LoginPage);
         profileModal.present();
-
-        $event.stopPropagation();
+        // $event.stopPropagation();
         // this.navCtrl.push(LoginPage);
     }
 

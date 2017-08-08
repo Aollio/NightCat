@@ -2,7 +2,7 @@
 import {NavController, NavControllerBase} from "ionic-angular";
 import {OrderProcessModifyPage} from "../orderprocess/order-process-modify/order-process-modify";
 import {Component, Input} from '@angular/core';
-import {ProjectDetailPage} from "../orderdetail/orderdetail";
+import {ProjectDetailPage} from "../orderdetail/projectdetail";
 
 declare let initializeFontSize: any
 

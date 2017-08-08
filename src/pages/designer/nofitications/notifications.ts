@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {ProjectDetailPage} from "../../common/order/orderdetail/orderdetail";
+import {ProjectDetailPage} from "../../common/order/orderdetail/projectdetail";
 import {PublishTaskPage} from "../../common/publishtask/publishtask";
 import {SharedService} from "../../../service/share.service";
 import {KeynoteService} from "../../../service/keynote.service";

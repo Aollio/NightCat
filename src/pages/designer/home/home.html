@@ -33,16 +33,20 @@
 
 
     <ion-slides class="slides" pager paginationType="bullets" loop>
-        <ion-slide *ngFor="let image of images">
+        <ion-slide *ngFor="let image of ad_images">
             <img src="{{image.url}}"/>
         </ion-slide>
     </ion-slides>
 
+    <!--项目类型-->
     <ion-scroll scrollX="true" class="buttons-slide">
-        <button class="order-type-btn" *ngFor="let type of types;let i=index"
-                [class.btn-active]="currentType === i" (click)="selectType(i)">{{type.name}}
-        </button>
+        <div *ngFor="let type of shared.project_type;let i=index">
+            <button class="order-type-btn" *ngIf="i>0"
+                    [class.btn-active]="currentType === i" (click)="selectType(i)">{{type}}
+            </button>
+        </div>
     </ion-scroll>
-    <order-list></order-list>
+    <!--<order-list></order-list>-->
+    <publish-order-item *ngFor="let project of projectsMap[currentType]" [project]="project"></publish-order-item>
 
 </ion-content>

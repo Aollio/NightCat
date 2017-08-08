@@ -19,8 +19,8 @@ export class DesignerListPage {
 
     designerMeDetailPage: DesignerMeDetailPage;
 
-    constructor(private manager: Manager,private navCtrl:NavController) {
-        this.miancolor = this.manager.sharedServ.getPrimaryColor();
+    constructor(private navCtrl:NavController,private shared:SharedService,private userServ:UsersService) {
+        this.miancolor = this.shared.getPrimaryColor();
 
 
     }
@@ -29,7 +29,7 @@ export class DesignerListPage {
     ionViewDidEnter() {
         // console.log(this.refresher);
         // this.refresher.doRefresh();
-        this.manager.userServ.getDesigners()
+        this.userServ.getDesigners()
             .then(users => {
                 for (let user of users) {
                     this.designers.push(user);
@@ -44,44 +44,23 @@ export class DesignerListPage {
         this.navCtrl.push(page, option)
     }
 
-    openDesignerrPage(user) {
-        this.navCtrl.push(DesignerMeDetailPage, {
-            user:
-                {
-                    nickname: '金兔子耳朵金兔子耳朵金兔子耳朵',
-                    role: '00',
-                    phone: '1234567890',
-                    password: '123456',
-                    realname: '王晓峰',
-                    summary: '我只是一个普通的设计师',
-                    position: '原型设计师',
-                    school: '某哈某佛大学',
-                    service_length: '7年',
-                    type: '建筑设计'
-                },
-            isDesigner: false
-        })
-    }
-
 
     //todo 内容刷新
     doRefresh(refresher) {
         this.designers.length=0;
-        this.manager.userServ.getDesigners()
+        this.userServ.getDesigners()
             .then(users => {
                 for (let user of users) {
                     this.designers.push(user);
                 }
 
                 console.log(users);
-
                 refresher.complete();
             }).catch(error => {
             //todo 异常捕获
             console.log(error);
             refresher.complete();
         });
-
     }
 
 

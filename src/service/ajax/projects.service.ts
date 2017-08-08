@@ -19,18 +19,18 @@ export class ProjectsService {
         this.projects = this.keynote.projects;
     }
 
-    async getProjectsById(id): Promise<any> {
-        // if (this.KEYNOTE) {
-        //     console.log('演示模式, 返回默认用户');
-        //     for (let index in this.projects) {
-        //         let temp = this.projects[index];
-        //         if (temp.create_by == id) {
-        //             return temp;
-        //         }
-        //     }
-        //     return Promise.resolve(this.keynote.projects[0])
-        // }
-    }
+    // async getProjectsById(id): Promise<any> {
+    //     // if (this.KEYNOTE) {
+    //     //     console.log('演示模式, 返回默认用户');
+    //     //     for (let index in this.projects) {
+    //     //         let temp = this.projects[index];
+    //     //         if (temp.create_by == id) {
+    //     //             return temp;
+    //     //         }
+    //     //     }
+    //     //     return Promise.resolve(this.keynote.projects[0])
+    //     // }
+    // }
 
 
     /*
@@ -48,14 +48,15 @@ export class ProjectsService {
 
 
     //new
+    // type, limit, since_time, max_time
     async getProjects(param = {}): Promise<any> {
 
         let response = await this.http.get(this.urls.projects_list_get, param)
 
         if (response.status != 200) {
-            Promise.reject(response)
+            throw response;
         }
-        return response.content
+        return response.content;
     }
 
     async getUserProjects(param = {}): Promise<any> {
@@ -63,7 +64,7 @@ export class ProjectsService {
         let response = await this.http.get(this.urls.projects_list_get, param)
 
         if (response.status != 200) {
-            Promise.reject(response)
+            throw response;
         }
         return response.content;
     }
@@ -72,7 +73,7 @@ export class ProjectsService {
         let response = await this.http.get(this.urls.project_info_get, {id: id});
 
         if (response.status != 200) {
-            Promise.reject(response);
+            throw response;
         }
         return response.content;
     }
@@ -81,7 +82,7 @@ export class ProjectsService {
         let response = await this.http.get(this.urls.project_dynamics_get, {id: id});
 
         if (response.status != 200) {
-            Promise.reject(response);
+            throw response;
         }
         return response.content;
     }
@@ -90,11 +91,18 @@ export class ProjectsService {
         let response = await this.http.get(this.urls.project_comments_get, {id: id});
 
         if (response.status != 200) {
-            Promise.reject(response);
+            throw response;
         }
         return response.content;
     }
 
+    async getProjectImgs(id) {
+        let response = await this.http.get(this.urls.project_imgs_get, {id: id});
 
+        if (response.status != 200) {
+            throw response;
+        }
+        return response.content;
+    }
 
 }

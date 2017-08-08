@@ -1,4 +1,4 @@
-page-projectdetail {
+page-project-detail {
 
   $font-color: #828282;
 
@@ -79,10 +79,15 @@ page-projectdetail {
     background-color: $bg-color;
   }
 
-  .order-photo ion-col {
-    width: 8rem;
-    height: 8rem;
-    //margin: .2rem 0.3rem 0.3rem;
+  .order-photo{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.5rem;
+    img {
+      max-width: 8rem;
+      max-height: 8rem;
+      //margin: .2rem 0.3rem 0.3rem;
+    }
   }
 
   .order-photo ion-icon img {

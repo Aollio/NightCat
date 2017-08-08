@@ -1,12 +1,3 @@
-<!--<ion-header>-->
-    <!--<ion-toolbar>-->
-        <!--<ion-buttons start>-->
-            <!--<button ion-button icon-only color="royal">-->
-                <!--<ion-icon name="arrow-back"></ion-icon>-->
-            <!--</button>-->
-        <!--</ion-buttons>-->
-    <!--</ion-toolbar>-->
-<!--</ion-header>-->
 <ion-content>
     <div class="my-bac">
         <img src="assets/img/BG_01.png">
@@ -24,7 +15,7 @@
     </div>
 
 
-    <ion-row class="card-footer-number" [class.margin_bottom_0]="isDesigner">
+    <ion-row class="card-footer-number" [class.margin_bottom_0]="shared.isDesigner">
         <ion-col center text-center>
             <div class="desc-bottom-number">162</div>
             <div class="desc-bottom-number-label">
@@ -45,7 +36,7 @@
         </ion-col>
     </ion-row>
 
-    <div class="row_buttons" *ngIf="!isDesigner">
+    <div class="row_buttons" *ngIf="!shared.isDesigner">
         <button ion-button round class="attention_btn">
             <ion-icon name="ios-heart"></ion-icon>
             关 注 我</button>

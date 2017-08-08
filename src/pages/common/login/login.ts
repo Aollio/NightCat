@@ -31,9 +31,9 @@ export class LoginPage {
                 public util: Util) {
     }
 
-    ionViewDidEnter() {
-        initializeFontSize()
-    }
+    // ionViewDidEnter() {
+    //     initializeFontSize()
+    // }
 
     close() {
         this.viewCtrl.dismiss();
@@ -42,7 +42,6 @@ export class LoginPage {
     pop() {
         this.navCtrl.pop()
     }
-
 
     login() {
         if (this.user.phone == null || this.user.phone == '') {
@@ -69,12 +68,15 @@ export class LoginPage {
                         this.navCtrl.setRoot(EmployerModulePage)
                     }
                 } else {
-                    this.viewCtrl.dismiss()
+                    this.viewCtrl.dismiss();
                 }
             }).catch(error => {
-
-
+            console.log(error);
+            if (error.status == 400) {
+                this.util.toast("用户名或密码不正确");
+            }
         })
+
 
         // (async () => {
         //     let newuser = await this.userSev.login(this.user);
@@ -109,9 +111,7 @@ export class LoginPage {
     }
 
     openRegisterPage() {
-        this.navCtrl.push(RegisterPage, {
-            register: 'true'
-        })
+        this.navCtrl.push(RegisterPage)
     }
 
     openResetPasswordPage() {

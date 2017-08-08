@@ -5,7 +5,7 @@
 
 <ion-content>
     <!--用户未登录-->
-    <div *ngIf="isNullObj(user)" class="me-header">
+    <div *ngIf="!shared.isLogin()" class="me-header">
         <div class="me-avatar">
             <img src="assets/img/logo.png"/>
         </div>
@@ -15,7 +15,7 @@
     </div>
 
     <!--用户已登录-->
-    <div *ngIf="!isNullObj(user)" class="me-header" (click)="opendetail(designerMeDetailPage,{isDesigner:true})">
+    <div *ngIf="shared.isLogin()" class="me-header" (click)="openMeDetail()">
         <div class="me-avatar">
             <img [src]="user.img_url || 'assets/img/logo.png'">
         </div>

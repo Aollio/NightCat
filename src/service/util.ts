@@ -88,7 +88,7 @@ export class Util {
         return map[type] || '未知消息类型'
     }
 
-    private stringifyDate(datetime, simple = false) {
+    public stringifyDate(datetime, simple = false) {
         // let weekMap = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
         let weekMap = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
         datetime = new Date(datetime)
@@ -128,7 +128,7 @@ export class Util {
     }
 
     /* 格式化日期 */
-    formatDate(datetime, simple = false) {
+    public formatDate(datetime, simple = false) {
         let tempDate = (new Date()).getTime()
         let result = this.stringifyDate(datetime, simple)
         let thatDay = result.thatDay
@@ -146,6 +146,12 @@ export class Util {
             return result.withYear
         }
     }
+
+    // public dateToNow(datetime, simple = false) {
+    //     let time = datetime - new Date().getTime();
+    //     time = time < 0 ? 0 : time;
+    //     return this.formatDate(time,simple);
+    // }
 
 
     encode = (_map, _content) => {
@@ -185,6 +191,5 @@ export class Util {
         userInfo.alias = userInfo.alias ? userInfo.alias.trim() : ''
         return userInfo.alias || userInfo.nick || userInfo.account
     }
-
 
 }

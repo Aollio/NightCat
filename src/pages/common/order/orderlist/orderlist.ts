@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {ProjectDetailPage} from "../orderdetail/orderdetail";
+import {ProjectDetailPage} from "../orderdetail/projectdetail";
 import {KeynoteService} from "../../../../service/keynote.service";
 import {Util} from "../../../../service/util";
 

@@ -23,7 +23,7 @@ export class SlideMenuComponment {
 
     user;
     isDesigner: boolean;
-    maincolor;
+    // maincolor;
 
     constructor(public navCtrl: NavController,
                 public platform: Platform,
@@ -31,8 +31,8 @@ export class SlideMenuComponment {
                 private toastCtrl: ToastController,
                 public shared: SharedService) {
         this.user = shared.getCurrentUser();
-        this.isDesigner = this.shared.getCurrentIsDesigner();
-        this.maincolor = this.shared.getPrimaryColor();
+        // this.isDesigner = this.shared.isDesigner();
+        // this.maincolor = this.shared.getPrimaryColor();
     }
 
 

@@ -5,6 +5,7 @@ import 'rxjs/add/operator/toPromise';
 import {NetworkService} from "../network.service";
 import {KeynoteService} from "../keynote.service";
 import {Util} from "../util";
+import {throttleTime} from "rxjs/operator/throttleTime";
 
 @Injectable()
 export class UsersService {
@@ -152,9 +153,10 @@ export class UsersService {
     async login(userInfo) {
         console.log("开始登录");
 
+
         let data = await this.http.post(this.urls.user_login_post, userInfo);
         if (data.status != 200) {
-            Promise.reject(data);
+            throw data
         }
         this.http.setToken(data.content.token);
         let user = await this.getInfo(data.content.uid);
@@ -170,23 +172,23 @@ export class UsersService {
 
         let data = await this.http.post(this.urls.user_register_post, userInfo);
         if (data.status != 200) {
-            Promise.reject(data);
+            throw data;
         }
         return data.content;
     }
 
     async getInfo(uid) {
         console.log("获取用户信息");
-        let user = this._getCacheUserByUid(uid);
-        if (user != null) {
-            console.log("cache user", user);
-            return user;
-        }
+        // let user = this._getCacheUserByUid(uid);
+        // if (user != null) {
+        //     console.log("cache user", user);
+        //     return user;
+        // }
 
         let data = await this.http.getWithToken(this.urls.user_info_get, {uid: uid});
 
         if (data.status != 200) {
-            Promise.reject(data);
+            throw data;
         }
         return data.content;
     }
@@ -201,7 +203,7 @@ export class UsersService {
         let data = await this.http.getWithToken(this.urls.user_honors_get, {uid: uid});
 
         if (data.status != 200) {
-            Promise.reject(data);
+            throw data;
         }
         return data.content;
     }
@@ -211,7 +213,7 @@ export class UsersService {
         let data = await this.http.postWithToken(this.urls.user_honors_get, params);
 
         if (data.status != 200) {
-            Promise.reject(data);
+            throw data;
         }
         return data.content;
     }
@@ -221,7 +223,7 @@ export class UsersService {
         let data = await this.http.getWithToken(this.urls.user_experience_get, {uid: uid});
 
         if (data.status != 200) {
-            Promise.reject(data);
+            throw data;
         }
         return data.content;
     }
@@ -233,7 +235,7 @@ export class UsersService {
         });
 
         if (data.status != 200) {
-            Promise.reject(data);
+            throw data;
         }
         return data.content;
     }
@@ -243,7 +245,7 @@ export class UsersService {
         let data = await this.http.postWithToken(this.urls.user_authentications, params);
 
         if (data.status != 200) {
-            Promise.reject(data);
+            throw data;
         }
         return data.content;
     }
@@ -254,7 +256,18 @@ export class UsersService {
         let data = await this.http.get(this.urls.designer_list, params);
 
         if (data.status != 200) {
-            Promise.reject(data);
+            throw data;
+        }
+        return data.content;
+    }
+
+
+    //response: nickname,img_url
+    async getInfoSimple(uid) {
+        let data = await this.http.get(this.urls.user_info_simple_get, {uid:uid});
+
+        if (data.status != 200) {
+            throw data;
         }
         return data.content;
     }

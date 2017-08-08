@@ -1,6 +1,8 @@
-import {Component, CUSTOM_ELEMENTS_SCHEMA, Input, NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
+import {Component, CUSTOM_ELEMENTS_SCHEMA, Input, NgModule, NO_ERRORS_SCHEMA, OnInit} from '@angular/core';
 import {DesignerMeDetailPage} from "../../pages/designer/me/medetail/medetail";
 import {UsersService} from "../../service/ajax/users.service";
+import {Util} from "../../service/util";
+import {NavController} from "ionic-angular";
 
 declare let initializeFontSize: any
 
@@ -10,22 +12,33 @@ declare let initializeFontSize: any
 })
 
 export class DesignerItemMax {
-    @Input("designer") designer;
+    // private designer;
 
-    private userInfo={};
-
-    constructor(private userServ: UsersService) {
-        this.userInfo['img_url']='';
+    constructor(private userServ: UsersService,
+                private navCtrl: NavController,
+                private  util: Util) {
     }
 
-    ionViewDidEnter() {
-        //获取用户信息 显示图片
-        console.log('get userInfo');
-        this.userServ.getInfo(this.designer.uid).then(user => {
-            this.userInfo = user;
+    private  _designer;
+
+    @Input("designer")
+    set designer(designer) {
+        this._designer = designer;
+
+        console.log('get user simple Info');
+        this.userServ.getInfoSimple(designer.uid).then(user => {
+            this.util.updateObj(this._designer,user);
         }).catch(error => {
             console.log(error);
         });
+
     }
+
+    openDesignerPage(designer) {
+        this.navCtrl.push(DesignerMeDetailPage, {
+            designer:designer
+        })
+    }
+
 }
 

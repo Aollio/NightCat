@@ -41,8 +41,9 @@ export class NetworkService {
             this.doIfNoToken()
             return {status: 401, messgae: 'TOKEN不存在, 用户是否登录?'}
         }
-        header['token'] = this.token;
-        return await this.get(url, param, header)
+        // header['token'] = this.token;
+        param['token'] = this.token;
+        return await this.get(url, param, header);
     }
 
     /**
@@ -70,7 +71,9 @@ export class NetworkService {
             }
         } catch (error) {
             this.showError(error);
-            return error;
+            if(error&&error.status!=0){
+                return error;
+            }
         }
 
         if (this.isWebCore)
@@ -109,12 +112,13 @@ export class NetworkService {
     }
 
     async postWithToken(url, param = {}, header = {}) {
-        console.log("getWithToken", this.token);
+        console.log("postWithToken", this.token);
         if (this.token == null) {
             this.doIfNoToken()
             return {status: 401, message: 'TOKEN NOT EXIST'}
         }
-        header['token'] = this.token
+        param['token'] = this.token;
+        // header['token'] = this.token
         return await this.post(url, param, header)
     }
 
@@ -146,7 +150,9 @@ export class NetworkService {
 
         } catch (error) {
             this.showError(error);
-            return error;
+            if(error&&error.status!=0){
+                return error;
+            }
         }
         if (this.isWebCore)
             return response.json();
@@ -188,9 +194,9 @@ export class NetworkService {
 
     //
     showError(error) {
-        console.log(error);
+        console.log("error",error);
         if (error) {
-            if (error.starus === 0) {
+            if (error.status === 0) {
                 this.util.toast("网络未连接");
             }
         } else {

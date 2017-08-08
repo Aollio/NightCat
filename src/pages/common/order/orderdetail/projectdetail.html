@@ -15,16 +15,16 @@
             项目标题:
         </ion-col>
         <ion-col class="respect-content more-weight" col-9>
-            {{project.title}}
+            {{project && project.title||"未填写"}}
         </ion-col>
     </ion-row>
     <div class="item-divider-cus-20"></div>
     <ion-item no-lines class="person-item">
         <!--<ion-icon name="person" item-start></ion-icon>-->
         <ion-avatar class="comment-avatar" item-start>
-            <img src="/assets/img/first.png">
+            <img [src]="creator&&creator.img_url||'assets/img/designer-default-avatar.png'">
         </ion-avatar>
-        <h3>{{ creator.nickname}}</h3>
+        <h3>{{creator&&creator.nickname||'未设置'}}</h3>
         <!--<ion-icon class="person-arrow-icon" name="arrow-forward" item-end></ion-icon>-->
     </ion-item>
 
@@ -35,7 +35,7 @@
             预计完成:
         </ion-col>
         <ion-col class="respect-content more-weight" col-8>
-            {{project.period}} Hour
+            {{project &&project.period||0 }} Hour
         </ion-col>
     </ion-row>
 
@@ -44,7 +44,7 @@
             项目预算:
         </ion-col>
         <ion-col class="respect-content order-price" col-9>
-            {{project.budget}}元
+            {{project &&project.budget||0 }}元
         </ion-col>
     </ion-row>
     <ion-row>
@@ -52,7 +52,7 @@
             项目类型:
         </ion-col>
         <ion-col class="respect-content" col-9>
-            {{project.type}}
+            {{project && share.project_type[project.type]}}
         </ion-col>
     </ion-row>
     <ion-row>
@@ -60,15 +60,16 @@
             设计面积:
         </ion-col>
         <ion-col class="respect-content" col-9>
-            {{project.area_count}}平方米
+            {{project && project.area_count || 0 }}平方米
         </ion-col>
     </ion-row>
     <ion-row>
         <ion-col class="respect-title" col-3>
             设计深度:
+            <!--todo 设计深度-->
         </ion-col>
         <ion-col class="respect-content" col-9>
-            {{project.depth}}
+            {{project &&project.depth}}
         </ion-col>
     </ion-row>
     <ion-row>
@@ -76,7 +77,7 @@
             工时:
         </ion-col>
         <ion-col class="respect-content" col-9>
-            {{project.period}}
+            {{project &&project.period || 0}}
         </ion-col>
     </ion-row>
     <div class="item-divider-cus-10"></div>
@@ -85,7 +86,8 @@
             下单时间:
         </ion-col>
         <ion-col class="respect-content" col-9>
-            2017-07-01 21:07
+            <!--2017-07-01 21:07-->
+            {{project && project.create_time && util.stringifyDate(project.create_time).withYear}}
         </ion-col>
     </ion-row>
     <div class="item-divider-cus-10"></div>
@@ -94,22 +96,13 @@
             项目详情:
         </ion-col>
         <ion-col class="respect-content" col-9>
-            {{project.content}}
+            {{project && project.content||"未设置"}}
         </ion-col>
     </ion-row>
-
+    <!--项目图片-->
     <ion-row class="order-photo">
-        <ion-col>
-            <img src="assets/img/detail-default.png">
-        </ion-col>
-        <ion-col>
-            <img src="assets/img/detail-default.png">
-        </ion-col>
-        <ion-col>
-            <img src="assets/img/detail-default.png">
-        </ion-col>
+        <img *ngFor="let img of imgs" [src]="img.img_url"/>
     </ion-row>
-
 
 </ion-content>
 

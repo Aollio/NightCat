@@ -34,12 +34,6 @@ export class RegisterPage {
                 public popoverCtrl: PopoverController,
                 public util: Util,
                 public usersServ: UsersService) {
-        this.role = navParams.get('role');
-        if (this.role == '00') {
-            this.user.role = '00'
-        } else {
-            this.user.role = '01'
-        }
     }
 
 
@@ -77,7 +71,13 @@ export class RegisterPage {
     register() {
         if (this.user.nickname == null || this.user.nickname == '') {
             this.util.toast('请输入昵称')
-            return
+            return;
+        }
+
+        if (this.shared.currentModuleIsDesigner) {
+            this.user.role = 0;
+        } else {
+            this.user.role = 1;
         }
 
         let loading = this.util.createLoading('正在注册')
@@ -95,19 +95,17 @@ export class RegisterPage {
                         console.log('login success')
 
                         this.current = 3
-                    })
-                    .catch(error => {
+                    }).catch(error => {
                         console.log('自动登录失败', error)
                         loading.dismiss();
                         this.util.toast('自动登录失败')
 
                         this.navCtrl.push(LoginPage)
                     })
-            })
-            .catch(error => {
-                console.log('注册失败', error)
-                loading.dismiss()
-                this.util.toast('注册失败, 请稍后重试')
+            }).catch(error => {
+                console.log('注册失败', error);
+                loading.dismiss();
+                this.util.toast('注册失败, 请稍后重试');
             })
     }
 
@@ -149,16 +147,17 @@ export class RegisterPage {
         this.btn_avatar_state = any;
         if (any === 1) {
             this.avatar = "";
-        }if(this.avatar === ""){
+        }
+        if (this.avatar === "") {
             this.btn_avatar_state = 1;
         }
     }
 
-    select(item){
-        this.avatar=item;
+    select(item) {
+        this.avatar = item;
     }
 
-    pop(){
+    pop() {
         this.navCtrl.pop()
     }
 }

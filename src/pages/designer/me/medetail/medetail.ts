@@ -38,11 +38,10 @@ export class DesignerMeDetailPage {
                 public shared: SharedService,
                 public alertCtrl: AlertController,
                 public navParams: NavParams) {
-        // this.isDesigner = navParams.get('isDesigner');
-        this.isDesigner = shared.isDesigner;
-        this.user = navParams.get('user') || shared.getCurrentUser();
+        // this.isDesigner = shared.isDesigner;
+        this.user = navParams.get('designer');
+        // this.user = navParams.get('designer') || shared.getCurrentUser();
         this.maincolor = this.shared.getPrimaryColor();
-
     }
 
     ionViewDidEnter() {
@@ -74,6 +73,7 @@ export class DesignerMeDetailPage {
         this.navCtrl.push(ChatPage, operation)
     }
 
+    //todo
     showHelp() {
         let alert = this.alertCtrl.create({
             title: 'star level',

@@ -14,26 +14,41 @@ export class SharedService {
     //是否为开发模式, 开发模式在使用开发服务器.
     DEBUG: boolean = false;
 
-    //是否是设计师, 如果用户是设计师, 则对于一些公共页面, 执行对应的修改, 例如主题颜色的不相同
+    //todo 是否是设计师, 如果用户是设计师, 则对于一些公共页面, 执行对应的修改, 例如主题颜色的不相同
     currentModuleIsDesigner: boolean;
+    //登录用户是否为设计师
     isDesigner = this.currentModuleIsDesigner;
 
     //第一次使用
     private _isFirstUse = true;
 
     //当前登录用户
-    private currentUser = {};
+    public currentUser = {};
 
     //用户角色的字符串
     ROLE_DESIGNER: string = 'designer';
     ROLE_EMPLOYER: string = 'employer';
 
-    ROLE_SERVER_DESIGNER: string = '00';
-    ROLE_SERVER_EMPLOYER: string = '01';
+    ROLE_SERVER_DESIGNER = 0;
+    ROLE_SERVER_EMPLOYER = 1;
 
 
-    TOKEN: string;
-    currentUserId: string;
+    public project_type = [
+        "未设置",
+        "概预算",
+        "项目经理",
+        "给排水设计",
+        "策划",
+        "规划设计",
+        "建筑设计",
+        "电气设计",
+        "结构设计",
+        "审图",
+        "软装设计",
+        "室内设计",
+        "暖通设计",
+        "景观设计",
+    ];
 
     constructor(private event: Events,
                 private util: Util,
@@ -42,11 +57,6 @@ export class SharedService {
             console.log('receive \'backdoor\' event');
             this.keynote.initDefaultUser(true, this);
         })
-    }
-
-
-    getCurrentIsDesigner() {
-        return this.currentModuleIsDesigner;
     }
 
     //获取导航栏的颜色
@@ -71,11 +81,22 @@ export class SharedService {
         }
     }
 
+
+    // isDesigner() {
+    //     return this.currentModuleIsDesigner;
+    // }
+
+    //用户是否登录
+    isLogin() {
+        return !this.util.isEmptyObj(this.currentUser);
+    }
+
     // 判断用户是否第一次使用
     isFirstUse() {
         return this._isFirstUse;
     }
-    setIsNotFirstUse(){
+
+    setIsNotFirstUse() {
         this._isFirstUse = false;
     }
 }

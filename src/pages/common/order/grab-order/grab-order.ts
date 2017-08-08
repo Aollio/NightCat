@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {AbsCommonPage} from "../../abs";
 import {SharedService} from "../../../../service/share.service";
-import {ProjectDetailPage} from "../orderdetail/orderdetail";
+import {ProjectDetailPage} from "../orderdetail/projectdetail";
 import {OrderProcessPreSelectedPage} from "../orderprocess/order-process-pre-selectdes/order-process-pre-selectdes";
 declare let initializeFontSize:any;
 /*
