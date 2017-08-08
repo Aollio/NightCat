@@ -4,13 +4,13 @@ import {DesignerItemMax} from "./designer-item-max/designer-item";
 import {IonicModule} from "ionic-angular";
 
 @NgModule({
-    imports:[IonicModule],
+    imports: [IonicModule],
 
     declarations: [
         PublishOrderItemComponent,
         DesignerItemMax
     ],
-    entryComponents:[
+    entryComponents: [
         DesignerItemMax
     ],
 

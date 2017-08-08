@@ -1,20 +1,17 @@
 import {Component, Input} from '@angular/core';
-import {DesignerMeDetailPage} from "../../designer/me/medetail/medetail";
+import {DesignerMeDetailPage} from "../../pages/designer/me/medetail/medetail";
 import {NavController} from "ionic-angular";
 
-declare let initializeFontSize: any
 
 @Component({
-   selector: 'page-designer-list-max',
+    selector: 'designer-list-max',
     templateUrl: 'designer-list-max.html'
 })
-
 export class DesignerListMaxComponent {
 
-    @Input("users") users;
+    @Input("users") public users;
 
     ionViewDidEnter() {
-        initializeFontSize()
     }
 
     designerMeDetailPage: DesignerMeDetailPage;

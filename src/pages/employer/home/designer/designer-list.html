@@ -1,35 +1,34 @@
-
 <ion-header>
     <ion-navbar [color]="miancolor">
         <!--todo 绑定事件-->
-            <ion-searchbar placeholder="搜索设计师" class="header-search">
-                <!--[(ngModel)]="myInput"-->
-                <!--[showCancelButton]="shouldShowCancel"-->
-                <!--(ionInput)="onInput($event)"-->
-                <!--(ionCancel)="onCancel($event)"-->
-            </ion-searchbar>
+        <ion-searchbar placeholder="搜索设计师" class="header-search">
+            <!--[(ngModel)]="myInput"-->
+            <!--[showCancelButton]="shouldShowCancel"-->
+            <!--(ionInput)="onInput($event)"-->
+            <!--(ionCancel)="onCancel($event)"-->
+        </ion-searchbar>
     </ion-navbar>
 </ion-header>
 
 <ion-content class="bodybg">
     <!--<div (click)="openDesignerPage()" class="my-list">-->
-        <!--<div class="my-li">-->
-            <!--<div class="my-li-img">-->
-                <!--<img src="assets/img/des-3.png" alt="" />-->
-            <!--</div>-->
-            <!--<div class="my-li-right1">-->
-                <!--<div class="my-li-right-t1">-->
-                    <!--<div class="my-li-right-t-name1">金兔子耳朵金兔子耳朵金兔子耳朵</div>-->
-                    <!--<div class="my-li-right-t-r1">-->
-                        <!--&lt;!&ndash;已认证&ndash;&gt;-->
-                        <!--&lt;!&ndash;todo 页面调整&ndash;&gt;-->
-                    <!--<img src="assets/img/yinzhang.png">-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="my-li-right-c1">建筑设计</div>-->
-                <!--<div class="my-li-right-b1">我只是一个普通的设计师</div>-->
-            <!--</div>-->
-        <!--</div>-->
+    <!--<div class="my-li">-->
+    <!--<div class="my-li-img">-->
+    <!--<img src="assets/img/des-3.png" alt="" />-->
+    <!--</div>-->
+    <!--<div class="my-li-right1">-->
+    <!--<div class="my-li-right-t1">-->
+    <!--<div class="my-li-right-t-name1">金兔子耳朵金兔子耳朵金兔子耳朵</div>-->
+    <!--<div class="my-li-right-t-r1">-->
+    <!--&lt;!&ndash;已认证&ndash;&gt;-->
+    <!--&lt;!&ndash;todo 页面调整&ndash;&gt;-->
+    <!--<img src="assets/img/yinzhang.png">-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="my-li-right-c1">建筑设计</div>-->
+    <!--<div class="my-li-right-b1">我只是一个普通的设计师</div>-->
+    <!--</div>-->
+    <!--</div>-->
     <!--</div>-->
     <ion-refresher (ionRefresh)="doRefresh($event)" #refresher>
         <ion-refresher-content
@@ -40,9 +39,13 @@
         </ion-refresher-content>
     </ion-refresher>
 
-    <!--<designer-item-max *ngFor="let des of designers" [designer]="des"></designer-item-max>-->
 
-    <page-designer-list-max [users]="designers"></page-designer-list-max>
+    <designer-item-max *ngFor="let des of designers" [designer]="des"></designer-item-max>
+
+    <!--<page-designer-list-max [users]="designers"></page-designer-list-max>-->
+
+    <!--<designer-list-max [users]="designers"></designer-list-max>-->
+
 
 
 </ion-content>

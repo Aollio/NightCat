@@ -6,7 +6,6 @@ import {UsersService} from "../../../../service/ajax/users.service";
 import {SharedService} from "../../../../service/share.service";
 import {Manager} from "../../../../service/manager";
 
-declare let initializeFontSize: any
 
 @Component({
     selector: 'page-designer-list-home',
@@ -25,6 +24,7 @@ export class DesignerListPage {
 
 
     }
+
 
     ionViewDidEnter() {
         // console.log(this.refresher);

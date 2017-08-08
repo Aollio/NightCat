@@ -1,6 +1,6 @@
 <div class="my-ul" (click)="openDesignerPage(item)">
     <div class="my-dl">
-        <div class="my-dt"><img [src]="userInfo.img_url" alt="" /></div>
+        <div class="my-dt"><img [src]="userInfo.img_url||'assets/img/designer-default-avatar.png'" alt="" /></div>
         <div class="my-dd">
             <div class="my-title">
                 {{designer.nickname}}

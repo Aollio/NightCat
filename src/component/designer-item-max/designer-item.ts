@@ -8,30 +8,24 @@ declare let initializeFontSize: any
     selector: 'designer-item-max',
     templateUrl: 'designer-item.html'
 })
-//
-// @NgModule({
-//     schemas: [
-//         CUSTOM_ELEMENTS_SCHEMA,
-//         NO_ERRORS_SCHEMA
-//     ],
-// })
 
 export class DesignerItemMax {
     @Input("designer") designer;
 
-    private userInfo;
+    private userInfo={};
 
     constructor(private userServ: UsersService) {
-
+        this.userInfo['img_url']='';
     }
 
     ionViewDidEnter() {
+        //获取用户信息 显示图片
+        console.log('get userInfo');
         this.userServ.getInfo(this.designer.uid).then(user => {
             this.userInfo = user;
         }).catch(error => {
             console.log(error);
         });
-
     }
 }
 
