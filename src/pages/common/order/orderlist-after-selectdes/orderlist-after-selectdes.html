@@ -1,6 +1,6 @@
 <div class="my-list">
     <div class="my-ul" *ngFor="let item of orderlist">
-        <div *ngIf="item.status >= statusMin &&item.status <= statusMax">
+        <div *ngIf="(item.status >= statusMin &&item.status <= statusMax)&&!isDesigner">
             <div class="my-li" tappable
                  (click)="openProjectProcess(item)">
                 <div class="my-li-img">
@@ -45,6 +45,59 @@
                 <div class="my-bottom-li" *ngIf="2==item.status">一键审图</div>
                 <div class="my-bottom" *ngIf="4==item.status">
                     <div class="my-bottom-li act">评价</div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="my-ul" *ngFor="let item of orderlist">
+        <div *ngIf="(item.status >= statusMin &&item.status <= statusMax)&&isDesigner">
+            <div class="my-li" tappable
+                 (click)="openProjectProcess(item)">
+                <div class="my-li-img">
+                    <img [src]=item.img alt=""/>
+                </div>
+                <div class="my-li-right">
+                    <div class="my-li-right-t">
+                        <div class="my-li-right-t-name">{{item.title}}</div>
+                    </div>
+                    <div class="my-li-right-b">
+                        <div class="my-li-right-b-l" *ngIf="item.status==0">{{item.fav_count}}人抢单</div>
+                        <div class="my-li-right-b-r" *ngIf="item.status ==0">等待雇主确认
+                        </div>
+
+                        <div class="my-li-right-b-money" *ngIf="item.status >= 1 &&item.status <= 5"
+                        >¥{{item.fav_count}}元
+                        </div>
+                        <div class="my-li-right-b-r" *ngIf="item.status ==3">正在审图
+                        </div>
+
+                        <div class="my-li-right-b-r"
+                             *ngIf="item.status >= 1 &&item.status <= 2">设计时间{{item.time}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--已发布状态-->
+
+            <!--选择设计师状态-->
+            <div class="my-bottom" *ngIf="0==item.status">
+                <div class="my-bottom-li act">接单</div>
+                <div class="my-bottom-li">取消抢单</div>
+            </div>
+            <!--支付状态-->
+            <div class="my-bottom" *ngIf="1==item.status">
+
+            </div>
+            <!--待收货状态-->
+            <div class="my-bottom">
+                <div class="my-bottom-li act" *ngIf="2==item.status||3==item.status">已交付</div>
+                <div class="my-bottom-li" *ngIf="2==item.status">一键审图</div>
+                <div class="my-bottom" *ngIf="4==item.status">
+
                 </div>
             </div>
 

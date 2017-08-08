@@ -6,6 +6,7 @@ import {ProjectDetailPage} from "../orderdetail/orderdetail";
 import {CancelProjectPage} from "../cancel-project/cancel-project";
 import {OrerProcessCompleted} from "../orderprocess/order-process-complete/complete";
 import {OrderProcessPayment} from "../orderprocess/order-process-payment/order-process-payment";
+import {SharedService} from "../../../../service/share.service";
 
 declare let initializeFontSize: any
 
@@ -432,9 +433,11 @@ export class OrderListAfterSelectDesignerPage {
 
     statusMin: number;
     statusMax: number;
+    isDesigner: any;
 
-    constructor(public nav: NavController) {
-
+    constructor(public nav: NavController,
+                public shared: SharedService) {
+        this.isDesigner = this.shared.currentModuleIsDesigner;
     }
 
     openProjectProcess(project) {
