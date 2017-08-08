@@ -1,9 +1,34 @@
 page-support{
- textarea{
-   width: 100%;
-   height: 35%;
-   min-height: 35%;
-   resize: none;
-
- }
+ //textarea{
+ //  width: 100%;
+ //  height: 35%;
+ //  min-height: 35%;
+ //  resize: none;
+ //
+ //}
+  .content-ios{
+    background-color: #efeff4;
+  }
+  .feedback-title{
+    height: 4rem;
+    font-size: 1.4rem;
+    line-height: 4rem;
+    padding-left: 1rem;
+    color: #666;
+    font-family: helvetica;
+  }
+  .feedback-text{
+    height: 13rem;
+    background-color: #fff;
+    padding: 1rem;
+  }
+  .feedback-text textarea{
+    width: 100%;
+    height: 100%;
+    outline:0 none !important; blr:expression(this.onFocus=this.blur());
+    border: 0;
+    resize: none;
+    font-size: 1.4rem;
+    color: #333;
+  }
 }
