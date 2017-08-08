@@ -124,4 +124,87 @@ page-projectdetail {
 .my-margin{
   margin: 0;
 }
+
+  .details-picture{
+    height: 14rem;
+    background-color: #fff;
+    width: 100%;
+  }
+  .details-picture img{
+    width: 100%;
+    height: 100%;
+  }
+  .details-title{
+    font-size: 1.6rem;
+    background-color: #fff;
+    line-height: 2.1rem;
+    padding: 1rem 1rem;
+    font-family: helvetica;
+    color: #333;
+  }
+  .details-browse{
+    display:-webkit-box;
+  }
+  .details-data{
+    background-color: #fff;
+    border-top: 1rem solid #efeff4;
+    padding: 2rem 1rem 2rem;
+  }
+  .details-data-top{
+    width: 100%;
+    display:-webkit-box;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+  }
+  .details-data-top-dt{
+    width: 10rem;
+    height: 5rem;
+    font-family: helvetica;
+    text-align: center;
+  }
+  .details-data-top-dt-name{
+    font-size: 1.4rem;
+    color: #999;
+  }
+  .details-data-top-dt-val{
+    margin-top: 0.5rem;
+    font-size: 1.8rem;
+    color: #333;
+  }
+  .details-data-bottom{
+    width: 100%;
+    display:-webkit-box;
+  }
+  .details-data-dd{
+    padding-top: 1rem;
+    -webkit-box-flex:1;
+    font-family: helvetica;
+    color: #999;
+    font-size: 1.2rem;
+  }
+  .details-data-dd div{
+    margin-top: 0.7rem;
+  }
+  .details-data-dd span{
+    color: #333;
+    font-size: 1.2rem;
+  }
+  .details-words{
+    background-color: #fff;
+    border-top: 1rem solid #efeff4;
+    padding: 1rem 1rem 2rem;
+  }
+  .details-words-title{
+    height: 4rem;
+    line-height: 4rem;
+    font-family: helvetica;
+    color: #666;
+    font-size: 1.4rem;
+  }
+  .details-words-text{
+    line-height: 2rem;
+    font-family: helvetica;
+    color: #999;
+    font-size: 1.2rem;
+  }
 }
