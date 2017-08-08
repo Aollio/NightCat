@@ -21,6 +21,7 @@
             <div class="number-label">
                 完成数
             </div>
+
         </ion-col>
         <ion-col col-6 class="header-right-col">
             <div class="head-time">
@@ -40,7 +41,7 @@
 
 <ion-content>
     <ion-row class="type-nav">
-        <ion-col (click)="select('wait_design')"
+        <ion-col   tappable (click)="select('wait_design')"
                  col-3 class="order-type-col order-type-color" text-center>
             <div [class.active]="type === 1">
                 <custom-icon class="custom-icon" set="cat" name="projects-waitdesign"></custom-icon>
@@ -48,7 +49,7 @@
                 未确定
             </div>
         </ion-col>
-        <ion-col (click)="select('wait_outcome')"
+        <ion-col   tappable (click)="select('wait_outcome')"
                  col-3 class="order-type-col order-type-color" text-center>
             <div [class.active]="type === 2">
                 <custom-icon class="custom-icon" set="cat" name="projects-waitorder"></custom-icon>
@@ -56,7 +57,7 @@
                 未支付
             </div>
         </ion-col>
-        <ion-col (click)="select('wait_comment')"
+        <ion-col   tappable (click)="select('wait_comment')"
                  col-3 class="order-type-col order-type-color " text-center>
             <div [class.active]="type === 3">
                 <custom-icon class="custom-icon" set="cat" name="my-comment"></custom-icon>
@@ -64,7 +65,7 @@
                 已支付
             </div>
         </ion-col>
-        <ion-col (click)="select('all')"
+        <ion-col   tappable (click)="select('all')"
                  col-3 class="order-type-col order-type-color" text-center>
             <div [class.active]="type === 4">
                 <custom-icon class="custom-icon" set="cat" name="projects-all"></custom-icon>
