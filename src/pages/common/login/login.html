@@ -6,7 +6,7 @@
         <img src="assets/img/SelectOption.png"/>
     </div>
     <div class="padding">
-        <button ion-button float-end clear icon-only (click)="close()">
+        <button ion-button float-end clear icon-only tappable (click)="close()">
             <!--<ion-icon name="close"></ion-icon>-->
             返回
         </button>
@@ -28,13 +28,13 @@
             </ion-item>
         </div>
 
-        <button ion-button round class="login-btn" (click)="login()">登录</button>
+        <button ion-button round class="login-btn" tappable (click)="login()">登录</button>
 
 
-        <button ion-button clear full class="forget-passowrd" (click)="openResetPasswordPage()">
+        <button ion-button clear full class="forget-passowrd" tappable (click)="openResetPasswordPage()">
             忘记密码？
         </button>
-        <div class="tip">还没有账号吗？<a class="order-id" (click)="openRegisterPage()">点击我注册</a></div>
+        <div class="tip">还没有账号吗？<a class="order-id" tappable (click)="openRegisterPage()">点击我注册</a></div>
     </div>
 
 </ion-content>

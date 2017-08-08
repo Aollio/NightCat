@@ -3,6 +3,7 @@ import {NavController, NavControllerBase} from "ionic-angular";
 import {OrderProcessModifyPage} from "../orderprocess/order-process-modify/order-process-modify";
 import {Component, Input} from '@angular/core';
 import {ProjectDetailPage} from "../orderdetail/orderdetail";
+import {CancelProjectPage} from "../cancel-project/cancel-project";
 
 declare let initializeFontSize: any
 
@@ -229,6 +230,9 @@ export class OrderListAfterSelectDesignerPage {
 
     ionViewDidEnter() {
         initializeFontSize()
+    }
+    cancelProject(){
+        this.nav.push(CancelProjectPage,{});
     }
 }
 

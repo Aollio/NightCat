@@ -16,7 +16,7 @@
         </div>
         <div class="my-bottom" *ngIf="type==item.status">
             <div class="my-bottom-li act">提交订单</div>
-            <div class="my-bottom-li">修改订单</div>
+            <div class="my-bottom-li" (click)="cancelProject()">取消订单</div>
         </div>
     </div>
 </div>
