@@ -38,7 +38,7 @@
         <div class="my-list" *ngIf="btn_avatar_state===2">
             <div class="my-ul clearfloat">
                 <div class="my-li"
-                     *ngFor="let item of emojiarray" [class.img-selected]="avatar === item">
+                     *ngFor="let item of emojiarray" [class.img-selected]="avatar === item&&avatar!='assets/img/Rectangle.png'">
                     <img [src]="item"   tappable (click)="select(item)" alt=""/></div>
 
             </div>

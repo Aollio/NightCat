@@ -130,18 +130,20 @@ export class RegisterPage {
     }
 
     emojiarray: Array<any> = [
-        'assets/img/if_cat_emoji_face_smily-9-01_2361853.png',
-        "assets/img/if_cat_emoji_face_smily-20-01_2361861.png",
-        "assets/img/if_cat_emoji_face_smily-24-01_2361865.png",
-        "assets/img/if_cat_emoji_face_smily-29-01_2361869.png",
-        "assets/img/if_cat_emoji_face_smily-35-01_2361874.png",
-        "assets/img/if_cat_emoji_face_smily-38-01_2361877.png",
+        'assets/img/cat-n23.png',
+        "assets/img/Rectangle.png",
+        "assets/img/cat-n54.png",
+        // "assets/img/if_cat_emoji_face_smily-24-01_2361865.png",
+        // "assets/img/if_cat_emoji_face_smily-29-01_2361869.png",
+        // "assets/img/if_cat_emoji_face_smily-35-01_2361874.png",
+        // "assets/img/if_cat_emoji_face_smily-38-01_2361877.png",
 
 
     ];
 
     chooseAvatar() {
         this.btn_avatar_state = 2;
+        this.util.toast(this.avatar)
     }
 
     complete(any) {
