@@ -6,16 +6,12 @@ import {ProjectDetailPage} from "../orderdetail/projectdetail";
 import {OrderProcessPreSelectedPage} from "../orderprocess/order-process-pre-selectdes/order-process-pre-selectdes";
 import {ProjectsService} from "../../../../service/ajax/projects.service";
 import {Util} from "../../../../service/util";
-
-declare let initializeFontSize: any;
-
 /*
  * 我要抢单
  * */
 @Component({
     selector: 'grab-order',
-    templateUrl: 'grab-order.html',
-
+    templateUrl: 'grab-order.html'
 })
 export class GrabOrderPage {
 

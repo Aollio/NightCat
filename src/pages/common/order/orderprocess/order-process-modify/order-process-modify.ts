@@ -1,6 +1,7 @@
 import {Component} from "@angular/core";
 import {NavController} from "ionic-angular";
 import {PublishTaskPage} from "../../../publishtask/publishtask";
+import {ProjectDetailPage} from "../../orderdetail/projectdetail";
 
 declare let initializeFontSize: any;
 
@@ -11,15 +12,16 @@ declare let initializeFontSize: any;
 export class OrderProcessModifyPage {
 
 
-    constructor(private nav: NavController) {
+    projectDetail:ProjectDetailPage
+    constructor(private navCtrl:NavController){}
+    open(page, option) {
+        this.navCtrl.push(page, option)
     }
 
 
     openPushProject() {
-        this.nav.push(PublishTaskPage, {})
+        this.navCtrl.push(PublishTaskPage, {})
     }
 
-    ionViewDidEnter() {
-        initializeFontSize()
-    }
+
 }
