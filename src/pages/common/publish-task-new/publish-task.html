@@ -1,7 +1,7 @@
 <ion-header>
     <ion-navbar [color]="maincolor" hideBackButton>
         <ion-buttons start>
-            <button ion-button   tappable (click)="goBack()">
+            <button ion-button tappable (click)="goBack()">
                 取消
             </button>
         </ion-buttons>
@@ -9,7 +9,7 @@
             发布任务
         </ion-title>
         <ion-buttons end>
-            <button ion-button   tappable (click)="publish()">
+            <button ion-button tappable (click)="publish()">
                 发布
             </button>
         </ion-buttons>
@@ -19,76 +19,93 @@
 <ion-content class="content" [class.designer]="designer" [class.employer]="!designer">
 
     <ion-item class="my-item" no-lines>
-        <ion-label [color]='maincolor'>项目类型 * </ion-label>
-        <ion-select [(ngModel)]="gaming" input interface="popover" placeholder="请选择任务类型">
-            <ion-option value="0">概预算</ion-option>
-            <ion-option value="1">项目经理</ion-option>
-            <ion-option value="2">审图</ion-option>
-            <ion-option value="3">策划</ion-option>
-            <ion-option value="4">规划设计 </ion-option>
-            <ion-option value="5">建筑设计</ion-option>
-            <ion-option value="6">电气设计</ion-option>
-            <ion-option value="7">结构设计</ion-option>
-            <ion-option value="8">软装设计</ion-option>
-            <ion-option value="9">给排水设计</ion-option>
-            <ion-option value="10">室内设计</ion-option>
-            <ion-option value="11">暖通设计</ion-option>
-            <ion-option value="12">景观设计</ion-option>
-
+        <ion-label [color]='maincolor'>项目类型 *</ion-label>
+        <ion-select [(ngModel)]="project.type" input interface="popover" placeholder="请选择任务类型">
+            <div *ngFor="let item of shared.project_type;let i=index">
+                <ion-option *ngIf="i>0" value={{i}}>{{item}}</ion-option>
+            </div>
+            <!--<ion-option value="0">概预算</ion-option>-->
+            <!--<ion-option value="1">项目经理</ion-option>-->
+            <!--<ion-option value="2">审图</ion-option>-->
+            <!--<ion-option value="3">策划</ion-option>-->
+            <!--<ion-option value="4">规划设计</ion-option>-->
+            <!--<ion-option value="5">建筑设计</ion-option>-->
+            <!--<ion-option value="6">电气设计</ion-option>-->
+            <!--<ion-option value="7">结构设计</ion-option>-->
+            <!--<ion-option value="8">软装设计</ion-option>-->
+            <!--<ion-option value="9">给排水设计</ion-option>-->
+            <!--<ion-option value="10">室内设计</ion-option>-->
+            <!--<ion-option value="11">暖通设计</ion-option>-->
+            <!--<ion-option value="12">景观设计</ion-option>-->
         </ion-select>
     </ion-item>
     <div class="blank-10px"></div>
 
-    <div class="myInput">
-        <div class="myInput-wrapper">
-            <input type="text" [(ngModel)]="event.title" placeholder="">
-            <div class="myInput-title">项目标题 * </div>
-        </div>
-    </div>
+    <!--<div class="myInput">-->
+        <!--<div class="myInput-wrapper">-->
+            <!--<input type="text" [(ngModel)]="project.title" placeholder="">-->
+            <!--<div class="myInput-title">项目标题 *</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+
 
     <ion-item>
-        <ion-label floating>项目标题 * </ion-label>
-        <ion-input type="text" [(ngModel)]="event.title"></ion-input>
+        <ion-label floating>项目标题 *</ion-label>
+        <ion-input type="text" [(ngModel)]="project.title"></ion-input>
     </ion-item>
     <div class="blank-10px"></div>
 
+
+
     <ion-item class="my-item" no-lines>
-        <ion-textarea [(ngModel)]="event.description" rows="5" placeholder="详细描述一下任务的内容"></ion-textarea>
+        <ion-textarea [(ngModel)]="project.content" rows="5" placeholder="详细描述一下任务的内容"></ion-textarea>
     </ion-item>
     <div class="blank-10px"></div>
+
+
 
     <div class="preBudget">
         <ion-item>
             <ion-label floating>预算 *</ion-label>
-            <ion-input [(ngModel)]="event.preBudget" type="number"></ion-input>
+            <ion-input [(ngModel)]="project.budget" type="number"></ion-input>
         </ion-item>
         <ion-icon end name="logo-yen"></ion-icon>
     </div>
     <div class="blank-10px"></div>
 
+
+
     <ion-item class="my-item" no-lines *ngIf="designer === false">
-        <ion-label [color]='maincolor'>抢单截止时间 * </ion-label>
-        <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="event.employer_deadline"></ion-datetime>
+        <ion-label [color]='maincolor'>抢单截止时间 *</ion-label>
+        <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="project.due_time"></ion-datetime>
     </ion-item>
+
+
+
     <div *ngIf="designer === false" class="tip-small-label">设计单位(面积/个数)</div>
     <ion-item>
         <ion-label floating>设计面积</ion-label>
-        <ion-input [(ngModel)]="event.designArea" type="text"></ion-input>
+        <ion-input [(ngModel)]="project.area" type="text"></ion-input>
     </ion-item>
     <div class="blank-10px"></div>
 
+
+
     <ion-item>
         <ion-label floating>个数</ion-label>
-        <ion-input [(ngModel)]="event.count" type="text"></ion-input>
+        <ion-input [(ngModel)]="project.area_count" type="text"></ion-input>
     </ion-item>
     <div class="blank-10px"></div>
+
+
 
     <ion-item class="my-item" no-lines>
         <ion-label fixed [color]='maincolor'>* 设计深度</ion-label>
     </ion-item>
     <!--<div style="width: 50%">-->
     <ion-item class="my-item" no-lines>
-        <ion-segment [(ngModel)]="relationship" [color]="maincolor">
+        <ion-segment [(ngModel)]="project.depth" [color]="maincolor">
             <ion-segment-button small value="key">
                 方案
             </ion-segment-button>
@@ -102,59 +119,60 @@
     </ion-item>
 
     <!--<ion-list radio-group style="margin-bottom: 0">-->
-        <!--<ion-list-header>-->
-           <!--设计深度 *-->
-        <!--</ion-list-header>-->
+    <!--<ion-list-header>-->
+    <!--设计深度 *-->
+    <!--</ion-list-header>-->
 
-        <!--<ion-item>-->
-            <!--<ion-label>方案</ion-label>-->
-            <!--<ion-radio checked="true" value="go"></ion-radio>-->
-        <!--</ion-item>-->
+    <!--<ion-item>-->
+    <!--<ion-label>方案</ion-label>-->
+    <!--<ion-radio checked="true" value="go"></ion-radio>-->
+    <!--</ion-item>-->
 
-        <!--<ion-item>-->
-            <!--<ion-label>扩出</ion-label>-->
-            <!--<ion-radio value="rust"></ion-radio>-->
-        <!--</ion-item>-->
+    <!--<ion-item>-->
+    <!--<ion-label>扩出</ion-label>-->
+    <!--<ion-radio value="rust"></ion-radio>-->
+    <!--</ion-item>-->
 
-        <!--<ion-item>-->
-            <!--<ion-label>施工</ion-label>-->
-            <!--<ion-radio value="Python"></ion-radio>-->
-        <!--</ion-item>-->
+    <!--<ion-item>-->
+    <!--<ion-label>施工</ion-label>-->
+    <!--<ion-radio value="Python"></ion-radio>-->
+    <!--</ion-item>-->
     <!--</ion-list>-->
     <div class="blank-10px"></div>
-    <!--<ion-item class="my-item" no-lines>-->
-        <!--<ion-label fixed [color]='maincolor'>* 工时</ion-label>-->
-        <!--<ion-input type="text" value=""></ion-input>-->
-    <!--</ion-item>-->
+
+
     <ion-item>
-        <ion-label floating>工时 * </ion-label>
-        <ion-input [(ngModel)]="event.workTime" type="text"></ion-input>
+        <ion-label floating>工时 *</ion-label>
+        <ion-input [(ngModel)]="project.period" type="text"></ion-input>
     </ion-item>
+
     <div class="blank-10px"></div>
     <ion-item class="my-item" no-lines>
-        <ion-label fixed [color]='maincolor'>设计时间 * </ion-label>
+        <ion-label fixed [color]='maincolor'>设计时间 *</ion-label>
     </ion-item>
+
+
     <ion-item class="my-item">
         <ion-label [color]='maincolor'>开始</ion-label>
-        <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="event.timeStarts"></ion-datetime>
+        <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="project.start_time"></ion-datetime>
     </ion-item>
+
+
     <ion-item class="my-item">
         <ion-label [color]='maincolor'>结束</ion-label>
-        <ion-datetime [color]="maincolor" displayFormat="YYYY-MM-DD" [(ngModel)]="event.timeEnds"></ion-datetime>
+        <ion-datetime [color]="maincolor" displayFormat="YYYY-MM-DD" [(ngModel)]="project.end_time"></ion-datetime>
     </ion-item>
+
     <div class="blank-10px"></div>
 
+
+    <!--todo 订单备注-->
     <div class="divcss" *ngIf="designer">
         <p class="pcss">订单备注 * </p>
         <div class="div1css">
             <textarea class="summary-textarea"></textarea>
         </div>
-
     </div>
-    <!--<div>-->
-        <!--<ion-datetime displayFormat="YYYY-MM-DD"-->
-                      <!--[(ngModel)]="event.timeStar">-->
-        <!--</ion-datetime>-->
-    <!--</div>-->
+
 
 </ion-content>

@@ -105,6 +105,10 @@ export class HttpUrls {
     //获取项目图片
     project_imgs_get:string = this._projects+"/imgs";
 
+
+    //发布项目
+    project_publish_post:string = this._projects;
+
     //end 项目
 
 
