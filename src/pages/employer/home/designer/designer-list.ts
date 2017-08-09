@@ -1,12 +1,8 @@
 import {Component, ViewChild} from "@angular/core";
 import {DesignerMeDetailPage} from "../../../designer/me/medetail/medetail";
-import {NavController} from "ionic-angular";
-import {KeynoteService} from "../../../../service/keynote.service";
+import {NavController, NavParams} from "ionic-angular";
 import {UsersService} from "../../../../service/ajax/users.service";
 import {SharedService} from "../../../../service/share.service";
-import {Manager} from "../../../../service/manager";
-
-
 @Component({
     selector: 'page-designer-list-home',
     templateUrl: 'designer-list.html'
@@ -14,15 +10,18 @@ import {Manager} from "../../../../service/manager";
 export class DesignerListPage {
     // @ViewChild("refresher") refresher;
     miancolor;
-
+    previousPage="";//前一页
     designers: Array<any> = [];
 
     designerMeDetailPage: DesignerMeDetailPage;
 
     constructor(private navCtrl: NavController,
                 private shared: SharedService,
-                private userServ: UsersService) {
+                private userServ: UsersService,
+                private navParams:NavParams) {
         this.miancolor = this.shared.getPrimaryColor();
+
+        this.previousPage = this.navParams.get("previousPage")
 
     }
 

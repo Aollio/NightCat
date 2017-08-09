@@ -7,9 +7,7 @@ import {OrerProcessCompleted} from "../orderprocess/order-process-complete/compl
 import {OrderProcessPayment} from "../orderprocess/order-process-payment/order-process-payment";
 import {SharedService} from "../../../../service/share.service";
 import {ProjectDetailPage} from "../orderdetail/projectdetail";
-
-declare let initializeFontSize: any
-
+import {DesignerListPage} from "../../../employer/home/designer/designer-list";
 @Component({
     selector: 'page-orderlist-after-selectdes',
     templateUrl: 'orderlist-after-selectdes.html'
@@ -17,7 +15,7 @@ declare let initializeFontSize: any
 
 export class OrderListAfterSelectDesignerPage {
 
-
+designerList:DesignerListPage;
     orderlist: Array<any> = [
         {
             status: 0,
@@ -469,12 +467,12 @@ export class OrderListAfterSelectDesignerPage {
         return 0 === this.orderlist.length;
     }
 
-    ionViewDidEnter() {
-        initializeFontSize()
-    }
 
     cancelProject() {
         this.nav.push(CancelProjectPage, {});
+    }
+    open(page,option){
+        this.nav.push(page,option);
     }
 }
 
