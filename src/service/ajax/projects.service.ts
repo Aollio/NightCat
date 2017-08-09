@@ -105,4 +105,13 @@ export class ProjectsService {
         return response.content;
     }
 
+    async publishProj(project) {
+        let response = await this.http.postWithToken(this.urls.project_publish_post, project);
+
+        if (response.status != 200) {
+            throw response;
+        }
+        return response.content;
+    }
+
 }

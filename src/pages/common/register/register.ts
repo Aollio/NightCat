@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {AlertController, NavController, NavParams, PopoverController} from 'ionic-angular';
 import {LoginPage} from "../login/login";
 import {SharedService} from "../../../service/share.service";
@@ -7,6 +7,7 @@ import {PopoverPage} from "../../popver/popver";
 import {EmployerModulePage} from "../../employer/employer";
 import {Util} from "../../../service/util";
 import {UsersService} from "../../../service/ajax/users.service";
+import {ANGULAR} from "@ionic/app-scripts/dist/webpack/common-chunks-plugins";
 
 declare let initializeFontSize: any
 
@@ -96,17 +97,17 @@ export class RegisterPage {
 
                         this.current = 3
                     }).catch(error => {
-                        console.log('自动登录失败', error)
-                        loading.dismiss();
-                        this.util.toast('自动登录失败')
+                    console.log('自动登录失败', error)
+                    loading.dismiss();
+                    this.util.toast('自动登录失败')
 
-                        this.navCtrl.push(LoginPage)
-                    })
+                    this.navCtrl.push(LoginPage)
+                })
             }).catch(error => {
-                console.log('注册失败', error);
-                loading.dismiss();
-                this.util.toast('注册失败, 请稍后重试');
-            })
+            console.log('注册失败', error);
+            loading.dismiss();
+            this.util.toast('注册失败, 请稍后重试');
+        })
     }
 
     openHome() {
@@ -159,5 +160,33 @@ export class RegisterPage {
 
     pop() {
         this.navCtrl.pop()
+    }
+
+
+    // @ViewChild("captcha") captcha;
+    // private captcha = ANGULAR.;
+
+    //获取验证码
+    private captchaText = "获取验证码";
+    captchaDisabled =false;
+
+
+    getCaptcha() {
+        this.sendMessage();
+        let time_s = 60;
+        this.captchaDisabled = true;
+        let timer = setInterval(() => {
+            time_s--;
+            if (time_s == 0) {
+                this.captchaText = "获取验证码";
+                this.captchaDisabled = false;
+                clearInterval(timer);
+            }
+            this.captchaText = time_s + "后重新获取";
+        }, 1000);
+    }
+    //todo
+    sendMessage(){
+
     }
 }

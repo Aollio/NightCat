@@ -2,6 +2,7 @@ import {Component} from "@angular/core";
 import {SharedService} from "../../../service/share.service";
 import {AlertController, NavController} from "ionic-angular";
 import {Util} from "../../../service/util";
+import {ProjectsService} from "../../../service/ajax/projects.service";
 
 
 declare let initializeFontSize: any;
@@ -16,101 +17,117 @@ export class PublishTaskPageNew {
     designer: boolean;
     relationship: any;
 
+    private project;
 
+    // public event = {
+    //     // type:'',
+    //     title: '',
+    //     description: "",
+    //     preBudget: "",
+    //     // grabDeadline:"",
+    //     designArea: "",
+    //     count: "",
+    //     workTime: "",
+    //
+    //     // relationship: 'key',
+    //     timeStarts: '2017-01-01',
+    //     timeEnds: '2017-01-01',
+    //     timeStar: '2017-01-01',
+    //     employer_deadline: '2017-01-01'
+    // };
 
-
-    public event = {
-        // type:'',
-        title:'',
-        description:"",
-        preBudget:"",
-        // grabDeadline:"",
-        designArea:"",
-        count:"",
-        workTime:"",
-
-        // relationship: 'key',
-        timeStarts: '2017-01-01',
-        timeEnds: '2017-01-01',
-        timeStar: '2017-01-01',
-        employer_deadline: '2017-01-01'
-    };
-
-    ionViewDidEnter() {
-        initializeFontSize();
-        console.log("com")
-    }
-
-    constructor(public util:Util,
+    constructor(public util: Util,
                 public shared: SharedService,
-                public navCtrl:NavController,
-                public alertCtrl:AlertController) {
+                public navCtrl: NavController,
+                private projectServ: ProjectsService,
+                public alertCtrl: AlertController) {
         this.maincolor = shared.getPrimaryColor();
-        this.designer = shared.currentModuleIsDesigner;
+        this.designer = shared.isDesigner;
     }
 
 
-    publish(){
-        let loading = this.util.createLoading("",{});
+    //start 订单发布
+
+    publish() {
+        let alertConfirm = this.alertCtrl.create({
+            title: "是否确认发布",
+            buttons: [
+                {
+                    text: '取消',
+                    handler: data => {
+                        alertConfirm.present();
+                    }
+                },
+                {
+                    text: '确认',
+                    handler: data => {
+                        alertConfirm.dismiss();
+                        this.publishTask();
+                    }
+                }
+            ]
+        });
+    }
+
+    publishTask() {
+        let loading = this.util.createLoading("", {});
         loading.present();
 
-        setTimeout(()=>{
-            let alert = this.alertCtrl.create({
-                // title: '警告',
-                title: "发布成功！",
-                buttons: [
-                    {
-                        text: 'Ok',
-                        handler: data => {
-                            loading.dismiss();
-                            this.navCtrl.pop();
-                            console.log('Saved clicked');
+        this.projectServ.publishProj(this.project)
+            .then(project => {
+                let alert = this.alertCtrl.create({
+                    title: "发布成功！",
+                    buttons: [
+                        {
+                            text: 'Ok',
+                            handler: data => {
+                                loading.dismiss();
+                                this.navCtrl.pop();
+                            }
                         }
-                    }
-                ]
+                    ]
+                });
+                alert.present();
+            })
+            .catch(error => {
+                this.util.toast("发布失败！");
             });
-            alert.present();
-        },500);
-
-
     }
 
-    goBack(){
-        if(this.isInputSome()){
+    //end 订单发布
+
+
+    goBack() {
+        if (this.isInputSome()) {
             let alert = this.alertCtrl.create({
-                title: '警告',
-                // subTitle: '有新设计师接单，请查看',
+                title: '提醒',
                 message: "确定要退出吗？ 您的项目将不会保存",
                 buttons: [
                     {
-                        text: 'Cancel',
-                        handler: data => {
-                            console.log('Cancel clicked');
-                        }
+                        text: '取消',
                     },
                     {
-                        text: 'Ok',
+                        text: '确定',
                         handler: data => {
                             this.navCtrl.pop();
-                            console.log('Saved clicked');
                         }
                     }
                 ]
             });
             alert.present();
-        }else {
+        } else {
             this.navCtrl.pop();
         }
     }
 
     //判断用户是否输入
-    isInputSome(){
-        if (this.event.title.trim()!="") return true;
-        if (this.event.description.trim()!="") return true;
-        if (this.event.preBudget.trim()!="") return true;
-        if (this.event.designArea.trim()!="") return true;
-        if (this.event.count.trim()!="") return true;
-        if (this.event.workTime.trim()!="") return true;
+    isInputSome() {
+        if (this.project.title && this.project.title.trim() != "") return true;
+        if (this.project.title && this.project.description.trim() != "") return true;
+        if (this.project.title && this.project.preBudget.trim() != "") return true;
+        if (this.project.title && this.project.designArea.trim() != "") return true;
+        if (this.project.title && this.project.count.trim() != "") return true;
+        if (this.project.title && this.project.workTime.trim() != "") return true;
 
         return false;
     }
