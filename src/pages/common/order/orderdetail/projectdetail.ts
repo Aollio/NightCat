@@ -64,6 +64,9 @@ export class ProjectDetailPage extends AbsCommonPage {
             console.log(error);
         })
     }
+    open(page,option){
+        this.navCtrl.push(page,option)
+    }
 
     /*
     * favorite one order

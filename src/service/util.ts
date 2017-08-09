@@ -64,6 +64,11 @@ export class Util {
     }
 
 
+
+    phoneInput(phone){
+        return phone && /^1[3|4|5|8]\d{9}$/.test(phone);
+    }
+
     updateObj(oldObj, newObj) {
         for (let attr in newObj) {
             oldObj[attr] = newObj[attr];
