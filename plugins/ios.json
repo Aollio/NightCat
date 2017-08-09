@@ -7,39 +7,21 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-compat": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-console": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-device": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-file": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-http": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-sqlite-storage": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
         "com.synconset.imagepicker": {
             "PHOTO_LIBRARY_USAGE_DESCRIPTION": "your usage message",
-            "PACKAGE_NAME": "io.ionic.starter"
+            "PACKAGE_NAME": "com.scu.jlyemao"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.scu.jlyemao"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.scu.jlyemao"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.scu.jlyemao"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.scu.jlyemao"
         }
     },
     "dependent_plugins": {}
