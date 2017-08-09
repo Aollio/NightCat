@@ -42,10 +42,11 @@ export class LoginPage {
     pop() {
         this.navCtrl.pop()
     }
-
+// todo 密码加密
     login() {
-        if (this.user.phone == null || this.user.phone == '') {
-            this.util.toast('请输入手机号')
+
+        if (!this.util.phoneInput(this.user.phone)) {
+            this.util.toast('请输入正确手机号')
             return
         }
         if (this.user.password == null || this.user.password == '') {
