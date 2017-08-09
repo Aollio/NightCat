@@ -14,7 +14,7 @@ declare let initializeFontSize: any
 export class ProjectsPage {
 
     type: any = 1;
-    // private publish_count = 0;
+
     private projects = [];
 
 
@@ -24,6 +24,7 @@ export class ProjectsPage {
     }
 
 
+    //start 内容刷新
     private date;
 
     ionViewDidEnter() {
@@ -32,6 +33,29 @@ export class ProjectsPage {
         });
     }
 
+
+    doRefresh(refresher) {
+        this._doRefresh(() => (refresher.complete()));
+    }
+
+    _doRefresh(completeFunc) {
+        if (!this.share.isLogin()) {
+            this.util.toast("未登录！");
+            completeFunc();
+            return;
+        }
+        this.projectServ.getUserProjects()
+            .then(projects => {
+                this.projects = projects;
+                completeFunc();
+            })
+            .catch(error => {
+                console.log(error);
+                completeFunc();
+            });
+    }
+
+    //end 内容刷新
 
     select(type) {
         if (type === 'wait_design') {
@@ -45,27 +69,5 @@ export class ProjectsPage {
         }
     }
 
-    //todo 内容刷新
-    doRefresh(refresher) {
-        this._doRefresh(refresher.complete);
-    }
 
-    _doRefresh(completeFunc) {
-        if (!this.share.isLogin()) {
-            this.util.toast("未登录！");
-            completeFunc();
-            return;
-        }
-
-        this.projectServ.getUserProjects()
-            .then(projects => {
-                this.projects = projects;
-                completeFunc();
-            })
-            .catch(error => {
-                console.log(error);
-                completeFunc();
-            });
-
-    }
 }
