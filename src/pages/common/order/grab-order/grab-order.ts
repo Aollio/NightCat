@@ -4,36 +4,51 @@ import {AbsCommonPage} from "../../abs";
 import {SharedService} from "../../../../service/share.service";
 import {ProjectDetailPage} from "../orderdetail/projectdetail";
 import {OrderProcessPreSelectedPage} from "../orderprocess/order-process-pre-selectdes/order-process-pre-selectdes";
-declare let initializeFontSize:any;
+import {ProjectsService} from "../../../../service/ajax/projects.service";
+import {Util} from "../../../../service/util";
+
+declare let initializeFontSize: any;
+
 /*
  * 我要抢单
  * */
 @Component({
-     selector: 'grab-order',
+    selector: 'grab-order',
     templateUrl: 'grab-order.html',
 
 })
-export class GrabOrderPage{
+export class GrabOrderPage {
 
-    // order_id: string;
+    private grab_info = {
+        id: null,
+        price: null,
+        cycle: null,
+        desicription: null
+    };
 
     constructor(public navCtrl: NavController,
                 public navParams: NavParams,
+                private util:Util,
+                private projectServ: ProjectsService,
                 public share: SharedService) {
-        // super(share);
+        this.grab_info.id = navParams.get('id');
     }
 
-    ionViewDidEnter(){
-        initializeFontSize();
+
+    grab_project() {
+        this.projectServ.grabProject(this.grab_info)
+            .then(grab_info => {
+                this.util.toast("已抢单");
+                this.openDetailPage();
+            }).catch(error => {
+            if (error.status == 406 || error.status == 407) {
+                this.util.toast(error.message);
+            }
+        })
     }
 
-    // open(page, option) {
-    //     this.navCtrl.push(ProjectDetailPage, {})
-    // }
-
-    openDetailPage(){
-
-        this.navCtrl.push(OrderProcessPreSelectedPage, {isGrab:true})
+    openDetailPage() {
+        this.navCtrl.push(OrderProcessPreSelectedPage, {isGrab: true})
     }
 
 }
