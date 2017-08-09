@@ -5,8 +5,6 @@ import {Util} from "../../../service/util";
 import {ProjectsService} from "../../../service/ajax/projects.service";
 
 
-declare let initializeFontSize: any;
-
 @Component({
     selector: "page-pulishtask",
     templateUrl: 'publishtask.html'
@@ -28,21 +26,21 @@ export class PublishTaskPage {
 
     //start 订单发布
 
-    private day = 24 * 60 * 60 * 1000;
-    private year = 12 * 30 * this.day;
+    public static day = 24 * 60 * 60 * 1000;
+    private static year = 12 * 30 * PublishTaskPage.day;
 
     private currentTime = new Date();
-    // private currentTime = new ;
-    private due_min = new Date(this.currentTime.getMilliseconds() + this.day);
-    private due_max = new Date(this.currentTime.getMilliseconds() + this.year);
+
+    public due_min = new Date(this.currentTime.getMilliseconds() + PublishTaskPage.day).toISOString();
+    public due_max = new Date(this.currentTime.getMilliseconds() + PublishTaskPage.year).toISOString();
 
 
-    private project = {
+    public project: any = {
         type: 0,
         title: null,
         content: null,
         budget: null,
-        due_time: this.currentTime.toISOString(),
+        due_time: new Date().toISOString(),
         area: null,
         area_count: 1,
         depth: null,
@@ -181,7 +179,7 @@ export class PublishTaskPage {
 
         if (project.title && project.title.trim() != "") return true;
         if (project.content && project.content.trim() != "") return true;
-        if (project.budget&& project.content.trim() != "") return true;
+        if (project.budget && project.content.trim() != "") return true;
         if (project.area && project.area.trim() != "") return true;
         if (project.area_count != 1) return true;
         if (project.period && project.period.trim() != "") return true;
