@@ -8,6 +8,8 @@ import {OrderProcessPayment} from "../orderprocess/order-process-payment/order-p
 import {SharedService} from "../../../../service/share.service";
 import {ProjectDetailPage} from "../orderdetail/projectdetail";
 import {DesignerListPage} from "../../../employer/home/designer/designer-list";
+import {OrderProcessWaitcomment} from "../orderprocess/order-process-waitcomment/waitcomment";
+
 @Component({
     selector: 'page-orderlist-after-selectdes',
     templateUrl: 'orderlist-after-selectdes.html'
@@ -439,26 +441,37 @@ designerList:DesignerListPage;
     }
 
     openProjectProcess(project) {
-        if (project.status == 0) {
-            this.nav.push(ProjectDetailPage, {project: project});
+        if(!this.isDesigner){
+            if (project.status == 0) {
+                this.nav.push(ProjectDetailPage, {project: project});
+            }
+            if (project.status == 1) {
+                this.nav.push(OrderProcessPayment, {project: project});
+            }
+            if (project.status == 2) {
+                this.nav.push(OrderProcessModifyPage, {project: project});
+            }
+            if (project.status == 3) {
+                this.nav.push(OrderProcessModifyPage, {project: project});
+            }
+            if (project.status == 4) {
+                this.nav.push(OrderProcessWaitcomment, {project: project});
+            }
+            if (project.status == 5) {
+                this.nav.push(OrerProcessCompleted, {project: project});
+            }
+            if (project.status == 6) {
+                this.nav.push(OrerProcessCompleted, {project: project});
+            }
         }
-        if (project.status == 1) {
-            this.nav.push(OrderProcessPayment, {project: project});
-        }
-        if (project.status == 2) {
-            this.nav.push(OrderProcessModifyPage, {project: project});
-        }
-        if (project.status == 3) {
-            this.nav.push(OrderProcessModifyPage, {project: project});
-        }
-        if (project.status == 4) {
-            this.nav.push(OrderProcessModifyPage, {project: project});
-        }
-        if (project.status == 5) {
-            this.nav.push(OrerProcessCompleted, {project: project});
-        }
-        if (project.status == 6) {
-            this.nav.push(OrerProcessCompleted, {project: project});
+        if(this.isDesigner){
+            if (project.status == 0) {
+                this.nav.push(ProjectDetailPage, {project: project});
+            }
+            if (project.status >= 1) {
+                this.nav.push(OrderProcessModifyPage, {project: project});
+            }
+
         }
 
     }
