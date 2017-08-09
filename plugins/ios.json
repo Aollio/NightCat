@@ -1,28 +1,43 @@
 {
-    "prepare_queue": {
-        "installed": [],
-        "uninstalled": []
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "com.synconset.imagepicker": {
+      "PHOTO_LIBRARY_USAGE_DESCRIPTION": "your usage message",
+      "PACKAGE_NAME": "com.scu.jlyemao"
     },
-    "config_munge": {
-        "files": {}
+    "cordova-plugin-compat": {
+      "PACKAGE_NAME": "com.scu.jlyemao"
     },
-    "installed_plugins": {
-        "com.synconset.imagepicker": {
-            "PHOTO_LIBRARY_USAGE_DESCRIPTION": "your usage message",
-            "PACKAGE_NAME": "com.scu.jlyemao"
-        },
-        "cordova-plugin-compat": {
-            "PACKAGE_NAME": "com.scu.jlyemao"
-        },
-        "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.scu.jlyemao"
-        },
-        "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.scu.jlyemao"
-        },
-        "cordova-plugin-file": {
-            "PACKAGE_NAME": "com.scu.jlyemao"
-        }
+    "cordova-plugin-console": {
+      "PACKAGE_NAME": "com.scu.jlyemao"
     },
-    "dependent_plugins": {}
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.scu.jlyemao"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.scu.jlyemao"
+    },
+    "cordova-plugin-http": {
+      "PACKAGE_NAME": "com.scu.jlyemao"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.scu.jlyemao"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.scu.jlyemao"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.scu.jlyemao"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "com.scu.jlyemao"
+    }
+  },
+  "dependent_plugins": {}
 }
