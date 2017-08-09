@@ -95,6 +95,7 @@ export class ProjectDetailPage extends AbsCommonPage {
 
 
     openGrabOrderPage() {
+        console.log("isLogin()",this.share.isLogin());
         if (!this.share.isLogin()) {
             let alert = this.alert.create({
                 title: '提醒',
@@ -106,11 +107,14 @@ export class ProjectDetailPage extends AbsCommonPage {
                     {
                         text: '确定',
                         handler: () => {
-                            this.modal.create(LoginPage);
+                            console.log("确定");
+                            this.modal.create(LoginPage).present();
                         }
                     }
                 ]
             })
+            alert.present();
+            return;
         }
         this.navCtrl.push(GrabOrderPage, {id: this.project.id});
     }

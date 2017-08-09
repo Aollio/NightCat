@@ -19,25 +19,17 @@ export class DesignerListPage {
 
     designerMeDetailPage: DesignerMeDetailPage;
 
-    constructor(private navCtrl:NavController,private shared:SharedService,private userServ:UsersService) {
+    constructor(private navCtrl: NavController,
+                private shared: SharedService,
+                private userServ: UsersService) {
         this.miancolor = this.shared.getPrimaryColor();
-
 
     }
 
 
     ionViewDidEnter() {
-        // console.log(this.refresher);
-        // this.refresher.doRefresh();
-        this.userServ.getDesigners()
-            .then(users => {
-                for (let user of users) {
-                    this.designers.push(user);
-                }
-            }).catch(error => {
-                console.log(error);
-            //todo 异常捕获
-        });
+        this._doRefresh(() => {
+        })
     }
 
     open(page, option) {
@@ -47,22 +39,23 @@ export class DesignerListPage {
 
     //todo 内容刷新
     doRefresh(refresher) {
-        this.designers.length=0;
+        this.designers.length = 0;
+        this._doRefresh(() => refresher.complete())
+    }
+
+    _doRefresh(completeFunc) {
         this.userServ.getDesigners()
             .then(users => {
                 for (let user of users) {
                     this.designers.push(user);
                 }
-
-                console.log(users);
-                refresher.complete();
+                completeFunc()
             }).catch(error => {
-            //todo 异常捕获
             console.log(error);
-            refresher.complete();
+            //todo 异常捕获
+            completeFunc()
         });
     }
-
 
 
 }

@@ -31,7 +31,7 @@ export class NetworkService {
     }
 
     doIfNoToken() {
-        this.event.publish('gotologin')
+        this.event.publish('gotologin');
     }
 
 
@@ -39,7 +39,7 @@ export class NetworkService {
         console.log("getWithToken", this.token);
         if (this.token == null) {
             this.doIfNoToken()
-            return {status: 401, messgae: 'TOKEN不存在, 用户是否登录?'}
+            throw {status: 401, messgae: 'TOKEN不存在, 用户是否登录?'}
         }
         // header['token'] = this.token;
         param['token'] = this.token;
@@ -115,7 +115,7 @@ export class NetworkService {
         console.log("postWithToken", this.token);
         if (this.token == null) {
             this.doIfNoToken()
-            return {status: 401, message: 'TOKEN NOT EXIST'}
+            throw {status: 401, message: 'TOKEN NOT EXIST'}
         }
         param['token'] = this.token;
         // header['token'] = this.token

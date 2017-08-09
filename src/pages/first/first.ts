@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {NavController, Events} from "ionic-angular";
+import {NavController, Events, ModalController} from "ionic-angular";
 import {Storage} from '@ionic/storage';
 import {WelcomePage} from "../welcome/welcome";
 import {RegisterPage} from "../common/register/register";
@@ -23,6 +23,7 @@ export class FirstPage {
     constructor(private nav: NavController,
                 private storage: Storage,
                 public event: Events,
+                private modal:ModalController,
                 public share: SharedService,
                 private util: Util) {
 
@@ -64,7 +65,8 @@ export class FirstPage {
 
         event.subscribe('gotologin', () => {
             util.toast('授权过期或者未登录');
-            this.nav.setRoot(LoginPage, {}, {animate: true})
+            this.modal.create(LoginPage);
+            // this.nav.setRoot(LoginPage, {}, {animate: true})
         })
 
 

@@ -31,8 +31,8 @@ export class PublishTaskPage {
 
     private currentTime = new Date();
 
-    public due_min = new Date(this.currentTime.getMilliseconds() + PublishTaskPage.day).toISOString();
-    public due_max = new Date(this.currentTime.getMilliseconds() + PublishTaskPage.year).toISOString();
+    public due_min = new Date(this.currentTime.getTime() + PublishTaskPage.day).toISOString();
+    public due_max = new Date(this.currentTime.getTime() + PublishTaskPage.year).toISOString();
 
 
     public project: any = {
@@ -124,6 +124,11 @@ export class PublishTaskPage {
         let loading = this.util.createLoading("", {});
         loading.present();
 
+
+        this.project.due_time = Date.parse(this.project.due_time);
+        this.project.start_time = Date.parse(this.project.start_time);
+        this.project.end_time = Date.parse(this.project.end_time);
+
         this.projectServ.publishProj(this.project)
             .then(project => {
                 let alert = this.alertCtrl.create({
@@ -141,7 +146,12 @@ export class PublishTaskPage {
                 alert.present();
             })
             .catch(error => {
-                this.util.toast("发布失败！");
+                loading.dismiss();
+                if(error.status==401){
+                    this.util.toast("未登陆，不能发布项目！");
+                }else {
+                    this.util.toast("发布失败！");
+                }
             });
     }
 

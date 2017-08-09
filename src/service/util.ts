@@ -29,6 +29,8 @@ export class Util {
     _toast: Toast = null;
 
     toast(msg) {
+        console.log("toast",msg);
+
         if (this.loading) {
             this._toast.setMessage(msg)
             return
@@ -118,6 +120,10 @@ export class Util {
                 withDay: `${week}`,
                 withLastDay: `昨天`,
                 withHour: `${hour}:${min}`,
+                year:year,
+                month:month,
+                day:day,
+                week:week,
                 thatDay
             }
         } else {
@@ -127,6 +133,10 @@ export class Util {
                 withDay: `${week} ${hour}:${min}`,
                 withLastDay: `昨天 ${hour}:${min}`,
                 withHour: `${hour}:${min}`,
+                year:year,
+                month:month,
+                day:day,
+                week:week,
                 thatDay
             }
         }

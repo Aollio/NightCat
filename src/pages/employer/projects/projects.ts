@@ -1,6 +1,10 @@
 import {Component, ViewChild} from '@angular/core';
 import {el} from "@angular/platform-browser/testing/src/browser_util";
 import {EmpOrderListComponent} from "./emporderlist/emporderlist";
+import {SharedService} from "../../../service/share.service";
+import {Util} from "../../../service/util";
+import {ProjectsService} from "../../../service/ajax/projects.service";
+
 declare let initializeFontSize: any
 
 @Component({
@@ -10,13 +14,24 @@ declare let initializeFontSize: any
 export class ProjectsPage {
 
     type: any = 1;
+    // private publish_count = 0;
+    private projects = [];
 
 
-    constructor() {
+    constructor(private share: SharedService,
+                private projectServ: ProjectsService,
+                private util: Util) {
     }
+
+
+    private date;
+
     ionViewDidEnter() {
-        initializeFontSize()
+        this.date = new Date();
+        this._doRefresh(() => {
+        });
     }
+
 
     select(type) {
         if (type === 'wait_design') {
@@ -29,13 +44,28 @@ export class ProjectsPage {
             this.type = 4
         }
     }
+
     //todo 内容刷新
     doRefresh(refresher) {
-        console.log('Begin async operation', refresher);
+        this._doRefresh(refresher.complete);
+    }
 
-        setTimeout(() => {
-            console.log('Async operation has ended');
-            refresher.complete();
-        }, 2000);
+    _doRefresh(completeFunc) {
+        if (!this.share.isLogin()) {
+            this.util.toast("未登录！");
+            completeFunc();
+            return;
+        }
+
+        this.projectServ.getUserProjects()
+            .then(projects => {
+                this.projects = projects;
+                completeFunc();
+            })
+            .catch(error => {
+                console.log(error);
+                completeFunc();
+            });
+
     }
 }
