@@ -13,16 +13,15 @@ declare let initializeFontSize: any
 })
 export class ProjectsPage {
 
-    type: any = 1;
+    processType: any = 0;
 
     private projects = [];
-
+    private currentProjs = [];
 
     constructor(private share: SharedService,
                 private projectServ: ProjectsService,
                 private util: Util) {
     }
-
 
     //start 内容刷新
     private date;
@@ -31,6 +30,7 @@ export class ProjectsPage {
         this.date = new Date();
         this._doRefresh(() => {
         });
+        console.log("projects:", this.projects);
     }
 
 
@@ -46,8 +46,12 @@ export class ProjectsPage {
         }
         this.projectServ.getUserProjects()
             .then(projects => {
-                this.projects = projects;
+                this.projects.length = 0;
+                for (let project of projects) {
+                    this.projects.push(project);
+                }
                 completeFunc();
+                this.select([this.processType]);
             })
             .catch(error => {
                 console.log(error);
@@ -57,17 +61,14 @@ export class ProjectsPage {
 
     //end 内容刷新
 
-    select(type) {
-        if (type === 'wait_design') {
-            this.type = 1
-        } else if (type === 'wait_outcome') {
-            this.type = 2
-        } else if (type === 'wait_comment') {
-            this.type = 3
-        } else if (type === 'all') {
-            this.type = 4
+
+    select(types) {
+        this.currentProjs.length = 0;
+        this.processType = types[0];
+        for (let project of this.projects) {
+            if (project && types.indexOf(project.status) >= 0) {
+                this.currentProjs.push(project);
+            }
         }
     }
-
-
 }

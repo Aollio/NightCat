@@ -1,0 +1,105 @@
+employer-project-status{
+  .my-list{
+    width: 100%;
+    background-color: #efeff4;
+  }
+  .my-ul{
+    margin:1.25rem 0.83333333rem 0;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow:0 1px 6px #ccc;
+  }
+  .my-li{
+    /*height: 6.66666666rem;*/
+    padding:0.9rem;
+    display:-webkit-box;
+  }
+  .my-li-img{
+    width: 6.66666666rem;
+    height: 6.66666666rem;
+    border-radius: 5px;
+  }
+  .my-li-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+  }
+  .my-li-right{
+    -webkit-box-flex:1;
+    margin-left: 1.25rem;
+    font-family: helvetica;
+  }
+  .my-li-right-t{
+    height: 4rem;
+    font-size: 1.6rem;
+    color: #333;
+    display:-webkit-box;
+    margin-top: 0.4rem;
+  }
+  .my-li-right-t-name{
+    -webkit-box-flex:1;
+    height: 3.5rem;
+    line-height: 1.8rem;
+    font-size: 1.5rem;
+    color: #333;
+    display:-webkit-box;
+    overflow:hidden;
+    white-space:normal!important;
+    text-overflow:ellipsis;
+    word-wrap:break-word;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+  }
+  .my-li-right-b{
+    height: 1.6rem;
+    color: #666;
+    display:-webkit-box;
+    margin-top: 0.4rem;
+  }
+  .my-li-right-b-l{
+    -webkit-box-flex:1;
+    height: 1.6rem;
+    font-size: 1rem;
+    color: #666;
+  }
+  .my-li-right-b-money{
+    -webkit-box-flex:1;
+    height: 1.6rem;
+    font-size: 1.6rem;
+    color: #ea9999;
+  }
+  .my-li-right-b-r{
+    -webkit-box-flex:1;
+    height: 1.6rem;
+    text-align: right;
+    font-size:1rem;
+    color: #FB865E;
+  }
+  .my-bottom{
+    height: 3rem;
+    background-color: #fff;
+    /*margin:0 0.83333333rem 0;*/
+    border-top: 1px solid #ddd;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+  }
+  .my-bottom-li{
+    height: 2rem;
+    width: 6rem;
+    border:1px solid #666;
+    margin-top: 0.5rem;
+    float: right;
+    margin-right: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 3px;
+    color: #666;
+    font-family: helvetica;
+  }
+  .act{
+    border:1px solid #FA4169;
+    color: #FA4169;
+  }
+}

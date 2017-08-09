@@ -8,6 +8,7 @@ import {OrderProcessPayment} from "../orderprocess/order-process-payment/order-p
 import {SharedService} from "../../../../service/share.service";
 import {ProjectDetailPage} from "../orderdetail/projectdetail";
 import {DesignerListPage} from "../../../employer/home/designer/designer-list";
+
 @Component({
     selector: 'page-orderlist-after-selectdes',
     templateUrl: 'orderlist-after-selectdes.html'
@@ -15,7 +16,7 @@ import {DesignerListPage} from "../../../employer/home/designer/designer-list";
 
 export class OrderListAfterSelectDesignerPage {
 
-designerList:DesignerListPage;
+    designerList: DesignerListPage;
     orderlist: Array<any> = [
         {
             status: 0,
@@ -460,7 +461,6 @@ designerList:DesignerListPage;
         if (project.status == 6) {
             this.nav.push(OrerProcessCompleted, {project: project});
         }
-
     }
 
     isEmpty() {
@@ -471,8 +471,9 @@ designerList:DesignerListPage;
     cancelProject() {
         this.nav.push(CancelProjectPage, {});
     }
-    open(page,option){
-        this.nav.push(page,option);
+
+    open(page, option) {
+        this.nav.push(page, option);
     }
 }
 

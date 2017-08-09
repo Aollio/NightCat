@@ -7,6 +7,8 @@ import {NavController} from "ionic-angular";
     selector: 'designer-list-max',
     templateUrl: 'designer-list-max.html'
 })
+
+//todo delete
 export class DesignerListMaxComponent {
 
     @Input("users") public users;

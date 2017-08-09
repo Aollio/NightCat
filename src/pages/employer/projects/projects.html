@@ -15,12 +15,12 @@
         </ion-col>
 
         <ion-col col-3>
-                 <!--class="header-number">-->
+            <!--class="header-number">-->
             <!--<div class="number-detail">-->
-                <!--0-->
+            <!--0-->
             <!--</div>-->
             <!--<div class="number-label">-->
-                <!--成交数-->
+            <!--成交数-->
             <!--</div>-->
         </ion-col>
 
@@ -37,34 +37,34 @@
         </ion-col>
     </ion-row>
     <ion-row class="type-nav">
-        <ion-col   tappable (click)="select('wait_design')"
+        <ion-col tappable (click)="select([0])"
                  col-3 class="order-type-col order-type-color" text-center>
-            <div [class.active]="type === 1">
+            <div [class.active]="processType === 0">
                 <custom-icon class="custom-icon" set="cat" name="projects-waitdesign"></custom-icon>
                 <br>
                 待处理
             </div>
         </ion-col>
-        <ion-col   tappable (click)="select('wait_outcome')"
+        <ion-col tappable (click)="select([1])"
                  col-3 class="order-type-col order-type-color" text-center>
-            <div [class.active]="type === 2">
+            <div [class.active]="processType === 1">
                 <custom-icon class="custom-icon" set="cat" name="projects-waitorder"></custom-icon>
                 <br>
                 待支付
             </div>
         </ion-col>
-        <ion-col   tappable (click)="select('wait_comment')"
+        <ion-col tappable (click)="select([2,3])"
                  col-3 class="order-type-col order-type-color " text-center>
-            <div [class.active]="type === 3">
+            <div [class.active]="processType === 2||processType===3">
                 <custom-icon class="custom-icon" set="cat" name="my-comment"></custom-icon>
                 <br>
                 待交付
                 <!--已支付-->
             </div>
         </ion-col>
-        <ion-col   tappable (click)="select('all')"
+        <ion-col tappable (click)="select([4,5])"
                  col-3 class="order-type-col order-type-color" text-center>
-            <div [class.active]="type === 4">
+            <div [class.active]="processType === 4||processType===5">
                 <custom-icon class="custom-icon" set="cat" name="projects-all"></custom-icon>
                 <br>
                 已完成
@@ -86,8 +86,8 @@
         </ion-refresher-content>
     </ion-refresher>
 
-    <page-orderlist-after-selectdes [type]="type">
+    <!--<page-orderlist-after-selectdes [type]="type"></page-orderlist-after-selectdes>-->
 
-    </page-orderlist-after-selectdes>
+    <employer-project-status *ngFor="let project of currentProjs" [project]="project"></employer-project-status>
 
 </ion-content>

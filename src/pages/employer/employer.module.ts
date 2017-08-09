@@ -22,6 +22,7 @@ import {EmployerHomeModule} from "./home/home.module";
 import {OrderModule} from "../common/order/order.module";
 import {EmployerHomePage} from "./home/home";
 import {EmployerProjectProcess} from "./projects/employer-project-process/employer-project-process";
+import {ComponentModule} from "../../component/component.module";
 
 @NgModule({
     declarations: [
@@ -69,6 +70,7 @@ import {EmployerProjectProcess} from "./projects/employer-project-process/employ
         CustomIconsModule ,// Add this!
         EmployerHomeModule,
         OrderModule,
+        ComponentModule
     ],
     exports: [
         ProjectsPage,

@@ -1,0 +1,51 @@
+<div class="my-ul">
+    <div class="my-li" tappable (click)="openProjectProcess(_project)">
+        <div class="my-li-img">
+            <img [src]='imgs&&imgs[0]&&imgs[0].img_url||"assets/img/home-default.png"' alt=""/>
+        </div>
+        <div class="my-li-right">
+            <div class="my-li-right-t">
+                <div class="my-li-right-t-name">{{_project.title||"未填写"}}</div>
+            </div>
+            <div class="my-li-right-b">
+                <div class="my-li-right-b-l" *ngIf="status==0">{{_project.fav_count||0}}人抢单</div>
+                <div class="my-li-right-b-r" *ngIf="status==0">{{_project.due_time&&util.stringifyDate(_project.due_time).withMonth||"未填写"}}后截止抢单
+                </div>
+
+                <div class="my-li-right-b-money" *ngIf="status >= 1 &&status <= 5"
+                >¥{{_project.budget||0}}元
+                </div>
+                <div class="my-li-right-b-r" *ngIf="status ==3">正在审图
+                </div>
+
+                <!--todo 设计时间-->
+                <div class="my-li-right-b-r"
+                     *ngIf="status >= 1 &&status <= 2">设计时间{{_project.time}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--已发布状态-->
+
+    <!--选择设计师状态-->
+    <div class="my-bottom" *ngIf="0==status">
+        <div class="my-bottom-li act"
+             (click)="openDesignerListPage()">选择设计师
+        </div>
+        <div class="my-bottom-li" tappable (click)="cancelProject()">取消订单</div>
+    </div>
+    <!--支付状态-->
+    <div class="my-bottom" *ngIf="1==status">
+        <div class="my-bottom-li act">支付</div>
+        <div class="my-bottom-li" tappable (click)="cancelProject()">取消订单</div>
+    </div>
+    <!--待收货状态-->
+    <div class="my-bottom" *ngIf="2==status||3==status||4==status">
+        <div class="my-bottom-li act" *ngIf="2==status||3==status">收货</div>
+        <div class="my-bottom-li" *ngIf="2==status">一键审图</div>
+        <div class="my-bottom-li act" *ngIf="4==status">评价</div>
+    </div>
+
+
+</div>
+

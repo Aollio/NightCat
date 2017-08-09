@@ -61,7 +61,7 @@ export class ProjectsService {
 
     async getUserProjects(): Promise<any> {
 
-        let response = await this.http.get(this.urls.projects_of_user_get, {})
+        let response = await this.http.getWithToken(this.urls.projects_of_user_get, {})
 
         if (response.status != 200) {
             throw response;
