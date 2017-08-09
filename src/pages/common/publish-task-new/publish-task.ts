@@ -54,19 +54,20 @@ export class PublishTaskPageNew {
             buttons: [
                 {
                     text: '取消',
-                    handler: data => {
+                    handler: () => {
                         alertConfirm.present();
                     }
                 },
                 {
                     text: '确认',
-                    handler: data => {
+                    handler: () => {
                         alertConfirm.dismiss();
-                        this.publishTask();
+                        // this.publishTask();
                     }
                 }
             ]
         });
+        alertConfirm.present();
     }
 
     publishTask() {
@@ -80,7 +81,7 @@ export class PublishTaskPageNew {
                     buttons: [
                         {
                             text: 'Ok',
-                            handler: data => {
+                            handler: () => {
                                 loading.dismiss();
                                 this.navCtrl.pop();
                             }
@@ -105,6 +106,8 @@ export class PublishTaskPageNew {
                 buttons: [
                     {
                         text: '取消',
+                        handler: data => {
+                        }
                     },
                     {
                         text: '确定',

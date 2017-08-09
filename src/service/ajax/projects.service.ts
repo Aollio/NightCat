@@ -36,15 +36,15 @@ export class ProjectsService {
     /*
     grabProj
     * */
-    async grabProj(id) {
-
-        //todo grad url
-        let response = await this.http.postWithToken('url', {})
-
-        if (response.status == 600) {
-            //this is keynote mode. so return not really data
-        }
-    }
+    // async grabProj(id) {
+    //
+    //     //todo grad url
+    //     let response = await this.http.postWithToken('url', {})
+    //
+    //     if (response.status == 600) {
+    //         //this is keynote mode. so return not really data
+    //     }
+    // }
 
 
     //new
@@ -107,6 +107,15 @@ export class ProjectsService {
 
     async publishProj(project) {
         let response = await this.http.postWithToken(this.urls.project_publish_post, project);
+
+        if (response.status != 200) {
+            throw response;
+        }
+        return response.content;
+    }
+
+    async grabProject(grabInfo) {
+        let response = await this.http.postWithToken(this.urls.project_grab_post, grabInfo);
 
         if (response.status != 200) {
             throw response;

@@ -109,6 +109,10 @@ export class HttpUrls {
     //发布项目
     project_publish_post:string = this._projects;
 
+    //抢单
+    project_grab_post:string = this._projects+"/grab";
+
+
     //end 项目
 
 
