@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {NavController} from "ionic-angular";
+import {AlertController, NavController} from "ionic-angular";
 import {ProjectDetailPage} from "../../pages/common/order/orderdetail/projectdetail";
 import {OrderProcessPayment} from "../../pages/common/order/orderprocess/order-process-payment/order-process-payment";
 import {OrderProcessModifyPage} from "../../pages/common/order/orderprocess/order-process-modify/order-process-modify";
@@ -9,7 +9,6 @@ import {ProjectsService} from "../../service/ajax/projects.service";
 import {DesignerListPage} from "../../pages/employer/home/designer/designer-list";
 import {Util} from "../../service/util";
 import {OrderProcessWaitcomment} from "../../pages/common/order/orderprocess/order-process-waitcomment/waitcomment";
-import {AlertController} from "_ionic-angular@3.5.0@ionic-angular/components/alert/alert-controller";
 
 declare let initializeFontSize: any
 

@@ -1,0 +1,68 @@
+<ion-header>
+
+</ion-header>
+
+
+<ion-content>
+    <!--用户未登录-->
+    <div *ngIf="!shared.isLogin()" class="me-header">
+        <div class="me-avatar">
+            <img src="assets/img/logo.png"/>
+        </div>
+        <div class="login_btn_wrapper">
+            <button small ion-button outline color="light"     tappable (click)="openLoginPage($event)">请登录</button>
+        </div>
+    </div>
+
+    <!--用户已登录-->
+    <div *ngIf="shared.isLogin()" class="me-header"   tappable (click)="openMeDetail()">
+        <div class="me-avatar">
+            <img [src]="user.img_url || 'assets/img/logo.png'">
+        </div>
+        <div *ngIf="!isNullObj(user)" class="me-name">
+            {{user.nickname || ''}}
+            <span><ion-label>
+                {{user.service_length || ''}}&nbsp;
+                {{user.school || ''}}
+                <br/>
+                {{user.position || ''}}
+            </ion-label></span>
+        </div>
+    </div>
+
+    <ion-list no-lines class="bg-tran">
+        <button ion-item  tappable (click)="open(messagePage)" class="slide-font-color">
+            <custom-icon set="cat" name="mybell" class="custom-icon"
+
+                         item-start></custom-icon>
+            系统消息
+        </button>
+
+        <button ion-item  tappable (click)="open(accountSecurityPage)" class="slide-font-color">
+
+            <custom-icon set="cat" name="my-user-outline" class="custom-icon slide-font-color"
+                         item-start></custom-icon>
+            账户与安全
+        </button>
+        <button ion-item  tappable (click)="clearCache('comfirm')"
+                class="slide-font-color">
+
+            <custom-icon set="cat" name="my-delete" class="custom-icon slide-font-color"
+
+                         item-start></custom-icon>
+            清除缓存
+        </button>
+        <button ion-item  tappable (click)="open(supportPage)"
+                class="slide-font-color">
+            <custom-icon set="cat" name="open_bangzhu" class="custom-icon slide-font-color"
+                         item-start></custom-icon>
+            帮助反馈
+        </button>
+        <button ion-item  tappable (click)="open(aboutPage)"
+                class="slide-font-color">
+            <custom-icon set="cat" name="about02" class="custom-icon slide-font-color"
+                         item-start></custom-icon>
+            关于夜猫
+        </button>
+    </ion-list>
+</ion-content>

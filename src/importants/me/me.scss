@@ -1,0 +1,76 @@
+page-me-designer {
+  .slide-font-color{
+    color: #333;
+  }
+
+  ion-item{
+    box-sizing: content-box!important;
+    border: 0!important;
+    .item-inner{
+      padding-left:0 !important;
+      border-bottom: 0.55px solid rgb(200, 199, 204)!important;
+    }
+  }
+  .label {
+    font-size: 1.5rem !important;
+    color: #333 !important;
+  }
+  ion-list{
+    margin-right: 2rem!important;
+  }
+
+
+
+  .me-header {
+    background-color: map_get($colors, nav-des-bg);
+    height: 23rem;
+    padding-top: 3rem;
+  }
+
+  .me-header .me-avatar {
+    border-radius: 4rem;
+    text-align: center;
+    margin: auto;
+    height: 8rem;
+    width: 8rem;
+    background-color: whitesmoke;
+  }
+
+  .login_btn_wrapper{
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .me-avatar img {
+    width: 5rem !important;
+    height: 5rem !important;
+    //max-width: 7rem;
+    //min-width: 7rem;
+    margin-top: 1.5rem;
+  }
+  .me-header .me-name {
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 1rem;
+    color: #ecf3ed;
+  }
+
+  .me-header .me-name ion-label {
+    font-size: 1.25rem;
+    color: #b7bfe5;
+  }
+
+  .me-header img {
+    width: 50%;
+    height: 50%;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  ion-item {
+    padding-left: 1rem !important;
+  }
+  ion-item ion-icon{
+    color: #d9d9d9;
+  }
+}
