@@ -105,7 +105,7 @@ export class EmployerProjectStatusComponent {
     }
 
     Pay(project){
-        this.nav.push(OrderProcessWaitcomment, {project: project});
+        this.nav.push(OrderProcessPayment, {project: project});
     }
 
 
