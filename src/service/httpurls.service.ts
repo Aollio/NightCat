@@ -111,8 +111,12 @@ export class HttpUrls {
     //抢单
     project_grab_post:string = this._projects+"/grab";
 
+
+    //项目抢单的设计师列表
+    project_grabber_list:string=this._projects+"/grabber_list";
+
     //雇主选择设计师
-    project_select_designer:string=this._projects
+    project_select_designer:string=this._projects+"/select";
 
 
     //end 项目

@@ -23,7 +23,8 @@ export class BlankPage {
     //当前登录角色对应的颜色
     main_color: any;
 
-    constructor(private util: Util,
+    constructor(
+        private util: Util,
                 private manager: Manager,
                 private nav: NavController,
                 private navParam: NavParams) {
@@ -102,11 +103,10 @@ export class BlankPage {
         },
     ]
 
+    sendimg() {
 
-    setImg() {
-        var input = document.getElementById("inputImg");
-        console.log("file", input);
-        // console.log("file",input.offsetHeight.);
-        // console.log("file",input.files);
+        console.log("click");
+        console.log(jQuery("#input")[0].files[0]);
     }
+
 }

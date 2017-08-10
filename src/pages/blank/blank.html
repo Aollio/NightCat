@@ -22,9 +22,16 @@
 
 
 
-    <div class="input-wrapper">
-        <input type="file" accept="image/*" id="inputImg" (change)="setImg()"/>
-    </div>
+
+
+
+    <form id="form" method="post" action="http://192.168.10.131:3000/files">
+        <input type="file" accept="image/*" name="file" id="input">
+        <!--<input type="text"  name="token" value="cc3525b7a3254fd68f139615914d89bf_827bebd6a7754b7c9f36b25fbdad8dbb">-->
+        <input type="submit">
+    </form>
+
+    <button (click)="sendimg()">123</button>
 
     <!--<ionic-datepicker date="currentDate" min="minDate" max="maxDate" callback="datePickerCallback">-->
         <!--<button class="button button-block button-positive"> {{ currentDate | date:'MMMM/dd/yyyy' }} </button>-->

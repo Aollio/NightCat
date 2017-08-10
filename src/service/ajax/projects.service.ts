@@ -123,4 +123,24 @@ export class ProjectsService {
         return response.content;
     }
 
+    //projectId
+    async grabberList(projectId) {
+        let response = await this.http.getWithToken(this.urls.project_grabber_list, {id:projectId});
+
+        if (response.status != 200) {
+            throw response;
+        }
+        return response.content;
+    }
+
+    //项目id	  设计师 uid
+    async selectDesigner(projectId,designerId) {
+        let response = await this.http.postWithToken(this.urls.project_select_designer, {id:projectId,uid:designerId});
+
+        if (response.status != 200) {
+            throw response;
+        }
+        return response.content;
+    }
+
 }

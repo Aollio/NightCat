@@ -17,18 +17,21 @@
     <!--用户已登录-->
     <div *ngIf="shared.isLogin()" class="me-header"   tappable (click)="openMeDetail()">
         <div class="me-avatar">
-            <img [src]="user.img_url || 'assets/img/logo.png'">
+            <img [src]="shared.getCurrentUser().img_url || 'assets/img/logo.png'">
         </div>
-        <div *ngIf="!isNullObj(user)" class="me-name">
-            {{user.nickname || ''}}
+        <div class="me-name">
+            {{shared.getCurrentUser().nickname || ''}}
             <span><ion-label>
-                {{user.service_length || ''}}&nbsp;
-                {{user.school || ''}}
+                {{shared.getCurrentUser().service_length || ''}}&nbsp;
+                {{shared.getCurrentUser().school || ''}}
                 <br/>
-                {{user.position || ''}}
+                {{shared.getCurrentUser().position || ''}}
             </ion-label></span>
         </div>
     </div>
+
+
+
 
     <ion-list>
         <!--<ion-item>我的订单-->
