@@ -471,9 +471,7 @@ designerList:DesignerListPage;
             if (project.status >= 1) {
                 this.nav.push(OrderProcessModifyPage, {project: project});
             }
-
         }
-
     }
 
     isEmpty() {

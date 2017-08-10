@@ -8,6 +8,7 @@ import {CancelProjectPage} from "../../pages/common/order/cancel-project/cancel-
 import {ProjectsService} from "../../service/ajax/projects.service";
 import {DesignerListPage} from "../../pages/employer/home/designer/designer-list";
 import {Util} from "../../service/util";
+import {OrderProcessWaitcomment} from "../../pages/common/order/orderprocess/order-process-waitcomment/waitcomment";
 
 declare let initializeFontSize: any
 
@@ -71,6 +72,19 @@ export class EmployerProjectStatusComponent {
             this.nav.push(OrerProcessCompleted, {project: project});
         }
     }
+
+    // openProjectProcess(project) {
+    //     if(this.isDesigner){
+    //         if (project.status == 0) {
+    //             this.nav.push(ProjectDetailPage, {project: project});
+    //         }
+    //         if (project.status >= 1) {
+    //             this.nav.push(OrderProcessModifyPage, {project: project});
+    //         }
+    //     }
+    // }
+
+
 
     cancelProject() {
         this.nav.push(CancelProjectPage, {});
