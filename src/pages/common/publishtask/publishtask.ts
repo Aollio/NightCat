@@ -1,8 +1,9 @@
 import {Component} from "@angular/core";
 import {SharedService} from "../../../service/share.service";
-import {AlertController, NavController} from "ionic-angular";
+import {AlertController, ModalController, NavController} from "ionic-angular";
 import {Util} from "../../../service/util";
 import {ProjectsService} from "../../../service/ajax/projects.service";
+import {LoginPage} from "../login/login";
 
 
 @Component({
@@ -11,31 +12,55 @@ import {ProjectsService} from "../../../service/ajax/projects.service";
 })
 export class PublishTaskPage {
 
-    maincolor: string;
     designer: boolean;
 
     constructor(public util: Util,
                 public shared: SharedService,
                 public navCtrl: NavController,
+                private modal: ModalController,
                 private projectServ: ProjectsService,
                 public alertCtrl: AlertController) {
-        this.maincolor = shared.getPrimaryColor();
-        this.designer = shared.currentModuleIsDesigner;
+        this.designer = shared.isDesModule();
+    }
+
+
+    //进入页面判断是否登录
+    ionViewDidEnter() {
+        if (this.shared.isLogin()) return;
+        this.alertCtrl.create({
+            title: "提示",
+            subTitle: '发布项目需要登录，是否登录？',
+            buttons: [
+                {
+                    text: '取消',
+                    handler: () => {
+                        this.navCtrl.pop();
+                    }
+                },
+                {
+                    text: '确认',
+                    handler: () => {
+                        this.navCtrl.pop();
+                        this.modal.create(LoginPage).present();
+                    }
+                }
+            ]
+        }).present();
     }
 
 
     //start 订单发布
 
-    public static day = 24 * 60 * 60 * 1000;
+    private static day = 24 * 60 * 60 * 1000;
     private static year = 12 * 30 * PublishTaskPage.day;
 
     private currentTime = new Date();
 
-    public due_min = new Date(this.currentTime.getTime() + PublishTaskPage.day).toISOString();
-    public due_max = new Date(this.currentTime.getTime() + PublishTaskPage.year).toISOString();
+    private due_min = new Date(this.currentTime.getTime() + PublishTaskPage.day).toISOString();
+    private due_max = new Date(this.currentTime.getTime() + PublishTaskPage.year).toISOString();
 
 
-    public project: any = {
+    private project: any = {
         type: 0,
         title: null,
         content: null,
@@ -147,9 +172,9 @@ export class PublishTaskPage {
             })
             .catch(error => {
                 loading.dismiss();
-                if(error.status==401){
+                if (error.status == 401) {
                     this.util.toast("未登陆，不能发布项目！");
-                }else {
+                } else {
                     this.util.toast("发布失败！");
                 }
             });
@@ -166,8 +191,6 @@ export class PublishTaskPage {
                 buttons: [
                     {
                         text: '取消',
-                        handler: data => {
-                        }
                     },
                     {
                         text: '确定',

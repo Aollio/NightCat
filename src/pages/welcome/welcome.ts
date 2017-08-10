@@ -197,12 +197,12 @@ export class WelcomePage {
 
 
     openEmployer() {
-        this.shared.currentModuleIsDesigner = false;
+        this.shared.setIsDesModule(false);
         this.navCtrl.setRoot(EmployerModulePage, {}, {animate: true})
     }
 
     openDesigner() {
-        this.shared.currentModuleIsDesigner = true;
+        this.shared.setIsDesModule(true);
         this.navCtrl.setRoot(DesignerModulePage, {}, {animate: true});
     }
 

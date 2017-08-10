@@ -22,7 +22,7 @@ export class IMPage {
                 public util: Util,
                 public shared: SharedService) {
         this.maincolor = this.shared.getPrimaryColor();
-        this.designer=this.shared.isDesigner;
+        this.designer=this.shared.isDesModule();
         // this.sessions = this.imServ.state.sessionlist
     }
 

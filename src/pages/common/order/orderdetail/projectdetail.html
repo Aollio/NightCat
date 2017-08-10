@@ -73,7 +73,7 @@
     </div>
 </ion-content>
 
-<ion-footer class="footer-btns" *ngIf="isDesigner">
+<ion-footer class="footer-btns" *ngIf="shared.isDesModule()">
     <button class="footer-clear-btn" clear ion-button color="primary"   tappable (click)="collect()" icon-start
             style="width: 50%">
         <ion-icon name="ios-star-outline" *ngIf="collectstate===0"></ion-icon>
@@ -92,7 +92,7 @@
 
 </ion-footer>
 
-<ion-footer class="footer-btns" *ngIf="!isDesigner">
+<ion-footer class="footer-btns" *ngIf="!shared.isDesModule()">
 
     <button ion-button color="emp-primary"   tappable (click)="open(pay)" style="width: 33.3%!important;">支付</button>
     <button ion-button color="emp-primary"   tappable (click)="open(commentorder)" style="width: 33.3%!important;">确认结单

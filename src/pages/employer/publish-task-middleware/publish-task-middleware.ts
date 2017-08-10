@@ -17,7 +17,7 @@ declare let jQuery: any
 export class PublishTaskMiddleWarePage {
     constructor(public nav: NavController,
                 private share: SharedService,
-                private util:Util) {
+                private util: Util) {
         console.log('create')
         this.nav.parent.select(0);
     }
@@ -59,14 +59,8 @@ export class PublishTaskMiddleWarePage {
     }
 
 
-
     openPublishTask() {
-        if (this.share.isLogin()) {
-            this.nav.push(PublishTaskPage, {});
-        }else {
-            //todo 提示文字 发布任务时未登录提醒
-            this.util.toast("请登录");
-        }
+        this.nav.push(PublishTaskPage, {});
     }
 
 

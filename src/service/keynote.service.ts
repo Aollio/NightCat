@@ -86,7 +86,7 @@ export class KeynoteService {
                 type: '建筑设计'
             }
 
-            share.currentModuleIsDesigner = true;
+            share.setIsDesModule(true);
         } else {
             newUser = {
                 nickname: 'Marty 薄荷创意',
@@ -100,7 +100,7 @@ export class KeynoteService {
                 service_length: '7年',
                 type: '建筑设计'
             };
-            share.currentModuleIsDesigner = false;
+            share.setIsDesModule(false);
         }
         this.util.updateObj(share.getCurrentUser(), newUser);
     }
