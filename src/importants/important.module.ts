@@ -1,18 +1,18 @@
 import {NgModule} from "@angular/core";
-import {MePage} from "./me/me";
+import {ImportantMePage} from "./me/me";
 
 @NgModule({
     imports: [
 
     ],
     declarations: [
-        MePage,
+        ImportantMePage,
     ],
     entryComponents: [
-        MePage
+        ImportantMePage
     ],
     exports: [
-        MePage
+        ImportantMePage
     ],
     providers: []
 })

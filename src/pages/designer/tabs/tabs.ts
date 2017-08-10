@@ -10,6 +10,7 @@ import {NotificationsPage} from "../nofitications/notifications";
 import {DesignerModulePage} from "../designer";
 import {IMPage} from "../../im/im";
 import {DesignerProjectsPage} from "../projects/projects";
+import {ImportantMePage} from "../../../importants/me/me";
 
 @Component({
     templateUrl: 'tabs.html'
@@ -18,7 +19,8 @@ export class DesignerTabsPage {
 
     home = DesignerHomePage;
     console = DesignerProjectsPage;
-    me = DesignerMePage;
+    //me = DesignerMePage;
+    me=ImportantMePage;
     message = NotificationsPage;
     im = IMPage;
 
