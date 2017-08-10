@@ -1,14 +1,14 @@
 <ion-header>
     <ion-navbar no-lines hideBackButton="true">
         <ion-buttons start>
-            <button ion-button clear   tappable (click)="goback()">
+            <button ion-button clear     tappable (click)="goback()">
                 <ion-icon name="ios-arrow-back"></ion-icon>返回</button>
         </ion-buttons>
         <ion-title>
             完成问卷找到设计师
         </ion-title>
         <ion-buttons end>
-            <!--<button ion-button clear   tappable (click)="openEmployer()">关闭</button>-->
+            <!--<button ion-button clear     tappable (click)="openEmployer()">关闭</button>-->
         </ion-buttons>
     </ion-navbar>
 </ion-header>
@@ -83,11 +83,11 @@
     <div class="con" *ngIf="state === 2">
         <div class="content-title-div">您想找什么级别的设计师</div>
         <div class="position-btns">
-            <button class="tip selectbutton" [class.selected]="position === 1"   tappable (click)="selectPosition(1)">初级工程师
+            <button class="tip selectbutton" [class.selected]="position === 1"     tappable (click)="selectPosition(1)">初级工程师
             </button>
-            <button class="tip selectbutton" [class.selected]="position === 2"   tappable (click)="selectPosition(2)">中级工程师
+            <button class="tip selectbutton" [class.selected]="position === 2"     tappable (click)="selectPosition(2)">中级工程师
             </button>
-            <button class="tip selectbutton" [class.selected]="position === 3"   tappable (click)="selectPosition(3)">高级工程师
+            <button class="tip selectbutton" [class.selected]="position === 3"     tappable (click)="selectPosition(3)">高级工程师
             </button>
         </div>
     </div>
@@ -95,10 +95,10 @@
     <div class="con" *ngIf="state === 3">
         <div class="content-title-div">请选择设计师是否认证</div>
         <div class="position-btns">
-            <button class="tip selectbutton" [class.selected]="authenticate === 0"   tappable (click)="selectAuthenticate(0)">
+            <button class="tip selectbutton" [class.selected]="authenticate === 0"     tappable (click)="selectAuthenticate(0)">
                 全部工程师
             </button>
-            <button class="tip selectbutton" [class.selected]="authenticate === 1"   tappable (click)="selectAuthenticate(1)">
+            <button class="tip selectbutton" [class.selected]="authenticate === 1"     tappable (click)="selectAuthenticate(1)">
                 只看已认证
             </button>
         </div>
@@ -113,10 +113,10 @@
 
     <div>
         <div class="footer-tip">共3问当前第{{state}}问&nbsp;&nbsp;
-            <a class="link"  *ngIf="state < 3" tappable (click)="openPage()">提交问卷</a>
+            <a class="link"  *ngIf="state < 3"   tappable (click)="openPage()">提交问卷</a>
         </div>
-        <button   tappable (click)="nextOrFinish()" *ngIf="state < 3" class="tip-button">下一问 ></button>
-        <button   tappable (click)="nextOrFinish()" *ngIf="state === 3" class="tip-button">确认提交</button>
+        <button     tappable (click)="nextOrFinish()" *ngIf="state < 3" class="tip-button">下一问 ></button>
+        <button     tappable (click)="nextOrFinish()" *ngIf="state === 3" class="tip-button">确认提交</button>
     </div>
     <div class="jump-question">
         <div *ngIf="state < 3">跳过</div>

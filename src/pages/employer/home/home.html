@@ -15,7 +15,7 @@
             </ion-searchbar>
             <ion-buttons end>
                 <!--todo add the click event. -->
-                <button ion-button icon-only color="emp-primary"    tappable (click)="openNotificationsPage()">
+                <button ion-button icon-only color="emp-primary"      tappable (click)="openNotificationsPage()">
                     <ion-icon name="text"></ion-icon>
                 </button>
             </ion-buttons>
@@ -26,10 +26,10 @@
 <ion-content>
 
     <div class="my-title" *ngIf="user.nickname != null">嗨, {{user.nickname}}</div>
-    <div class="my-title" *ngIf="user.nickname == null">嗨, 请<a class="aclass"   tappable (click)="openLoginPage($event)">登录</a></div>
+    <div class="my-title" *ngIf="user.nickname == null">嗨, 请<a class="aclass"     tappable (click)="openLoginPage($event)">登录</a></div>
     <div class="my-val">喵，今天还好吗，需要我帮你做些什么？</div>
     <div class="my-ul clearfloat">
-        <div class="my-li my-left"   tappable (click)="btn_designer()" >
+        <div class="my-li my-left"     tappable (click)="btn_designer()" >
             <div class="my-li-ioc">
                 <img src="assets/img/home01.png" alt="">
             </div>
@@ -40,7 +40,7 @@
 
             <!--</div>-->
         </div>
-        <div class="my-li"   tappable (click)="btn_fullstack()">
+        <div class="my-li"     tappable (click)="btn_fullstack()">
             <div class="my-li-ioc">
                 <img src="assets/img/home02.png" alt="">
             </div>
@@ -51,7 +51,7 @@
 
             <!--</div>-->
         </div>
-        <div class="my-li my-left"   tappable (click)="btn_types()">
+        <div class="my-li my-left"     tappable (click)="btn_types()">
             <div class="my-li-ioc">
                 <img src="assets/img/home03.png" alt="">
             </div>
@@ -62,7 +62,7 @@
 
             <!--</div>-->
         </div>
-        <div class="my-li"   tappable (click)="btn_helpChoosePage()">
+        <div class="my-li"     tappable (click)="btn_helpChoosePage()">
             <div class="my-li-ioc">
                 <img src="assets/img/home04.png" alt="">
             </div>

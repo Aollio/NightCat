@@ -41,7 +41,7 @@
             <ion-icon name="ios-heart"></ion-icon>
             关 注 我</button>
         <button ion-button round icon-only class="sed_msg_btn"
-                  tappable (click)="openChat({sessionId: 'hgyuguyg'})">
+                    tappable (click)="openChat({sessionId: 'hgyuguyg'})">
             <ion-icon name="ios-chatbubbles"></ion-icon>
         </button>
     </div>
@@ -57,7 +57,7 @@
             <!--<div>-->
 
             <!--</div>-->
-            <div class="touch-expand-div"   tappable (click)="modify()">
+            <div class="touch-expand-div"     tappable (click)="modify()">
                 <div class="desc-header-modify" *ngIf="isDesigner">修改
                     <ion-icon class="desc-header-modify-icon" name="md-create"></ion-icon>
                 </div>
@@ -76,7 +76,7 @@
                 <ion-icon name="ios-star"></ion-icon>
                 <ion-icon name="ios-star"></ion-icon>
                 <!--todo  button 图标提示-->
-                <ion-icon class="help-btn"   tappable (click)="showHelp()" name="md-help-circle"></ion-icon>
+                <ion-icon class="help-btn"     tappable (click)="showHelp()" name="md-help-circle"></ion-icon>
             </p>
 
 
@@ -93,17 +93,17 @@
 
 
     <div class="type-buttons">
-        <button ion-button clear [class.active]="btnState===1"   tappable (click)="case()" class="type-btn active">案例
+        <button ion-button clear [class.active]="btnState===1"     tappable (click)="case()" class="type-btn active">案例
         </button>
-        <button ion-button clear [class.active]="btnState===2"   tappable (click)="honor()" class="type-btn">荣誉
+        <button ion-button clear [class.active]="btnState===2"     tappable (click)="honor()" class="type-btn">荣誉
         </button>
-        <button ion-button clear [class.active]="btnState===3"   tappable (click)="experice()" class="type-btn">工作经历&nbsp;
+        <button ion-button clear [class.active]="btnState===3"     tappable (click)="experice()" class="type-btn">工作经历&nbsp;
         </button>
     </div>
 
     <ion-card class="case-card">
         <ion-list *ngIf="btnState===1||btnState===3">
-            <ion-card-content *ngFor="let case of cases"   tappable (click)="openCaseDetail()" class="case-item">
+            <ion-card-content *ngFor="let case of cases"     tappable (click)="openCaseDetail()" class="case-item">
                 <div class="case-item-main-div">
                     <div class="case-item-avatar">
                         <img src="assets/img/first.png"/>

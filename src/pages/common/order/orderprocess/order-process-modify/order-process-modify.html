@@ -1,7 +1,7 @@
 <ion-header>
     <ion-navbar>
         <ion-buttons end>
-            <button ion-button tappable (click)="open(projectDetail,{})">
+            <button ion-button  tappable (click)="open(projectDetail,{})">
                 项目详情
             </button>
         </ion-buttons>
@@ -59,7 +59,7 @@
 <ion-footer>
     <div class="my-bottom" *ngIf="!isDesigner">
         <div class="my-bottom-li act">收货</div>
-        <div class="my-bottom-li" tappable (click)="openPushProject()">一键审图</div> <!--*ngIf="3!=item.status"-->
+        <div class="my-bottom-li"  tappable (click)="openPushProject()">一键审图</div> <!--*ngIf="3!=item.status"-->
     </div>
 
     <div class="my-bottom" *ngIf="isDesigner">

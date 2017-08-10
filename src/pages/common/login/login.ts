@@ -42,6 +42,7 @@ export class LoginPage {
     pop() {
         this.navCtrl.pop()
     }
+
 // todo 密码加密
     login() {
 
@@ -72,9 +73,12 @@ export class LoginPage {
                     this.viewCtrl.dismiss();
                 }
             }).catch(error => {
-            console.log(error);
+            console.log("登录异常:");
+            console.log(error)
             if (error.status == 400) {
                 this.util.toast("用户名或密码不正确");
+            } else {
+                // this.util.toast("未知错误")
             }
         })
 
