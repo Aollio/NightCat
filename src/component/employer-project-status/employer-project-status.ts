@@ -9,6 +9,7 @@ import {ProjectsService} from "../../service/ajax/projects.service";
 import {DesignerListPage} from "../../pages/employer/home/designer/designer-list";
 import {Util} from "../../service/util";
 import {OrderProcessWaitcomment} from "../../pages/common/order/orderprocess/order-process-waitcomment/waitcomment";
+import {AlertController} from "_ionic-angular@3.5.0@ionic-angular/components/alert/alert-controller";
 
 declare let initializeFontSize: any
 
@@ -26,7 +27,8 @@ export class EmployerProjectStatusComponent {
 
     constructor(private nav: NavController,
                 private projServ: ProjectsService,
-                private util: Util) {
+                private util: Util,
+                private alertCtrl:AlertController) {
 
     }
 
@@ -63,7 +65,7 @@ export class EmployerProjectStatusComponent {
             this.nav.push(OrderProcessModifyPage, {project: project});
         }
         if (project.status == 4) {
-            this.nav.push(OrderProcessModifyPage, {project: project});
+            this.nav.push(OrderProcessWaitcomment, {project: project});
         }
         if (project.status == 5) {
             this.nav.push(OrerProcessCompleted, {project: project});
@@ -94,5 +96,39 @@ export class EmployerProjectStatusComponent {
         this.nav.push(DesignerListPage, {previousPage: 'chooseDesigner'});
     }
 
+    openPaymentPage(project){
+        this.nav.push(OrderProcessPayment, {project: project});
+    }
+
+    openWaitcommentPage(project){
+        this.nav.push(OrderProcessWaitcomment, {project: project});
+    }
+
+    Pay(project){
+        this.nav.push(OrderProcessWaitcomment, {project: project});
+    }
+
+
+    showAlert() {
+        let confirm = this.alertCtrl.create({
+            title: '审图',
+            message: '您对设计师的作品不满意，需要我们提供帮助吗？点击确认，我们会尽快联系您。',
+            buttons: [
+                {
+                    text: '确认',
+                    handler: () => {
+                        console.log('Disagree clicked');
+                    }
+                },
+                {
+                    text: '取消',
+                    handler: () => {
+                        console.log('Agree clicked');
+                    }
+                }
+            ]
+        });
+        confirm.present();
+    }
 }
 

@@ -23,21 +23,21 @@ page-me-employer {
   }
 
   .me-header .me-avatar {
-    border-radius: 10rem;
+    border-radius: 4rem;
     text-align: center;
     margin: auto;
-    height: 10rem;
-    width: 10rem;
+    height: 8rem;
+    width: 8rem;
     border-width: .15rem;
     background-color:whitesmoke;
   }
 
   .me-avatar img {
-    width: 7rem !important;
-    height: 7rem !important;
-    max-width: 7rem;
-    min-width: 7rem;
-   margin-top: 2rem;
+    width: 5rem !important;
+    height: 5rem !important;
+    //max-width: 7rem;
+    //min-width: 7rem;
+    margin-top: 1.5rem;
   }
 
   .me-header .me-name {
