@@ -4,7 +4,7 @@
             评论
         </ion-title>
         <ion-buttons end>
-            <button *ngIf="publish_complete === false" ion-button clear   tappable (click)="publish()">
+            <button *ngIf="publish_complete === false" ion-button clear     tappable (click)="publish()">
                 发布
             </button>
         </ion-buttons>
@@ -18,7 +18,7 @@
             <button ion-button clear icon-start
                     [class.active]="level === 3"
                     class="my-font-size"
-                      tappable (click)="select(3)">
+                        tappable (click)="select(3)">
                 <ion-icon name="ios-rose" *ngIf="level === 3"></ion-icon>
                 <ion-icon name="ios-rose-outline" *ngIf="level != 3"></ion-icon>
                 好评
@@ -26,7 +26,7 @@
             <button ion-button clear icon-start
                     [class.active]="level === 2"
                     class="my-font-size"
-                      tappable (click)="select(2)">
+                        tappable (click)="select(2)">
                 <ion-icon name="ios-rose" *ngIf="level === 2"></ion-icon>
                 <ion-icon name="ios-rose-outline" *ngIf="level != 2"></ion-icon>
                 中评
@@ -34,7 +34,7 @@
             <button ion-button clear icon-start
                     [class.active]="level === 1"
                     class="my-font-size"
-                      tappable (click)="select(1)">
+                        tappable (click)="select(1)">
                 <ion-icon name="ios-rose" *ngIf="level === 1"></ion-icon>
                 <ion-icon name="ios-rose-outline" *ngIf="level != 1"></ion-icon>
 
@@ -50,23 +50,23 @@
 
             <ion-col col-6>
                 <div class="stars">
-                    <div   tappable (click)="star(1)">
+                    <div     tappable (click)="star(1)">
                         <ion-icon name="star" *ngIf="grade >= 1"></ion-icon>
                         <ion-icon name="star-outline" *ngIf="grade < 1"></ion-icon>
                     </div>
-                    <div   tappable (click)="star(2)">
+                    <div     tappable (click)="star(2)">
                         <ion-icon name="star" *ngIf="grade >= 2"></ion-icon>
                         <ion-icon name="star-outline" *ngIf="grade < 2"></ion-icon>
                     </div>
-                    <div   tappable (click)="star(3)">
+                    <div     tappable (click)="star(3)">
                         <ion-icon name="star" *ngIf="grade >= 3"></ion-icon>
                         <ion-icon name="star-outline" *ngIf="grade < 3"></ion-icon>
                     </div>
-                    <div   tappable (click)="star(4)">
+                    <div     tappable (click)="star(4)">
                         <ion-icon name="star" *ngIf="grade >= 4"></ion-icon>
                         <ion-icon name="star-outline" *ngIf="grade < 4"></ion-icon>
                     </div>
-                    <div   tappable (click)="star(5)">
+                    <div     tappable (click)="star(5)">
                         <ion-icon name="star" *ngIf="grade >= 5"></ion-icon>
                         <ion-icon name="star-outline" *ngIf="grade < 5"></ion-icon>
                     </div>

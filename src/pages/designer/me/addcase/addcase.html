@@ -23,7 +23,7 @@
         <img *ngFor="let img of imgs" [src]="img">
     </div>
     <div class="add_btn_wrapper">
-        <button class="img_add_btn" ion-button outline icon-only   tappable (click)="openImagePicker()">
+        <button class="img_add_btn" ion-button outline icon-only     tappable (click)="openImagePicker()">
             <ion-icon name="md-add"></ion-icon>
         </button>
         <p> 添加图片 {{imgs.length}}/3</p>
@@ -33,5 +33,5 @@
 
 </ion-content>
 <ion-footer>
-    <button ion-button   tappable (click)="open(list)" full>上传案例</button>
+    <button ion-button     tappable (click)="open(list)" full>上传案例</button>
 </ion-footer>

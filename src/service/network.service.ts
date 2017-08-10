@@ -15,7 +15,7 @@ export class NetworkService {
 
 
     private token: string;
-    private isWebCore:boolean;
+    private isWebCore: boolean;
 
     constructor(private http_browser: Http,
                 private http_mobile: HTTP,
@@ -27,6 +27,7 @@ export class NetworkService {
     }
 
     setToken(token) {
+        console.log("setToken: ", token)
         this.token = token;
     }
     clearToken(){
@@ -40,7 +41,7 @@ export class NetworkService {
 
 
     async getWithToken(url, param = {}, header = {}) {
-        console.log("getWithToken", this.token);
+        console.log("getWithToken, token:", this.token);
         if (this.token == null) {
             this.doIfNoToken()
             throw {status: 401, messgae: 'TOKEN不存在, 用户是否登录?'}
@@ -56,7 +57,7 @@ export class NetworkService {
      * @param param
      * @returns {Promise<any>}
      */
-    async get(url, param = {}, header = {}): Promise<any> {
+    async get (url, param = {}, header = {}): Promise<any> {
         console.log("\n get url", url);
         console.log("get params", param);
 
@@ -68,22 +69,24 @@ export class NetworkService {
                     headers: new Headers(header)
                 }
                 response = await this.http_browser.get(url, _params).toPromise();
-                console.log("get response", response.json(),"\n");
+                console.log("get response", response.json(), "\n");
+
+                return response.json();
+
             } else {
-                response = await this.http_mobile.get(url, param || {}, {});
-                console.log("get response", response.content,"\n");
+                response = await this.http_mobile.get(url, param, header);
+                console.log("get response", response.data, "\n");
+
+                return JSON.parse(response.data);
+
+
             }
         } catch (error) {
             this.showError(error);
-            if(error&&error.status!=0){
-                return error;
+            if (error && error.status != 0) {
+                throw error;
             }
         }
-
-        if (this.isWebCore)
-            return response.json();
-        else
-            return response.content;
 
         // if (this.platform.is('core') || this.platform.is('mobileweb')) {
         //     let _params = {
@@ -138,6 +141,7 @@ export class NetworkService {
         console.log("post params", param);
 
         let response;
+
         try {
             if (this.isWebCore) {
                 console.log('开始post请求', '在浏览器中');
@@ -146,22 +150,25 @@ export class NetworkService {
                 let _headers = new Headers(headers);
 
                 response = await this.http_browser.post(url, this.trans(param), {headers: _headers}).toPromise();
-                console.log("post response", response.json(),"\n");
-            }else {
-                response = await this.http_mobile.post(url, param = {}, headers);
-                console.log("post response", response.data,"\n");
+                console.log("post response", response.json(), "\n");
+                return response.json();
+
+            } else {
+                console.log('开始post请求', '在手机中');
+
+                response = await this.http_mobile.post(url, param, headers);
+                console.log("post response", response.data, "\n");
+                return JSON.parse(response.data);
+
             }
 
         } catch (error) {
+
             this.showError(error);
-            if(error&&error.status!=0){
-                return error;
+            if (error && error.status != 0) {
+                throw error;
             }
         }
-        if (this.isWebCore)
-            return response.json();
-        else
-            return response.data;
 
         // if (this.platform.is('core') || this.platform.is('mobileweb')) {
         //     //由于angular 传送post数据方式的不同, 需要添加一下headers和将param转化为可识别格式,才能被后端所接受
@@ -198,10 +205,13 @@ export class NetworkService {
 
     //
     showError(error) {
-        console.log("error",error);
+        console.log("error: ", error);
         if (error) {
             if (error.status === 0) {
                 this.util.toast("网络未连接");
+            }
+            if (error.status == 500) {
+                this.util.toast("服务器开了小差, 请稍后再试");
             }
         } else {
             if (error.status == 401) {

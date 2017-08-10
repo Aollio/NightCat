@@ -39,20 +39,20 @@
     </ion-row>
     <div *ngIf="state === 2">
         <ion-list no-lines padding>
-            <ion-item class="pay-way"   tappable (click)="payment('ali')">
+            <ion-item class="pay-way"     tappable (click)="payment('ali')">
                 <ion-label>支付宝支付</ion-label>
                 <ion-icon name="star" item-start></ion-icon>
                 <ion-icon *ngIf="pay === 'ali'" name="ios-checkmark-circle-outline" item-end></ion-icon>
                 <ion-icon *ngIf="pay != 'ali'" name="ios-square-outline" item-end></ion-icon>
             </ion-item>
-            <ion-item class="pay-way"   tappable (click)="payment('wechat')">
+            <ion-item class="pay-way"     tappable (click)="payment('wechat')">
                 <ion-label>微信支付</ion-label>
                 <ion-icon name="star" item-start></ion-icon>
                 <ion-icon *ngIf="pay === 'wechat'" name="ios-checkmark-circle-outline" item-end></ion-icon>
                 <ion-icon *ngIf="pay != 'wechat'" name="ios-square-outline" item-end></ion-icon>
 
             </ion-item>
-            <ion-item class="pay-way"   tappable (click)="payment('bankcard')">
+            <ion-item class="pay-way"     tappable (click)="payment('bankcard')">
                 <ion-label>银行卡支付</ion-label>
                 <ion-icon name="star" item-start></ion-icon>
                 <ion-icon *ngIf="pay === 'bankcard'" name="ios-checkmark-circle-outline" item-end></ion-icon>
@@ -60,7 +60,7 @@
             </ion-item>
         </ion-list>
 
-        <button ion-button class="confirmbutton constract"   tappable (click)="comfirm_payment()">确&nbsp;定</button>
+        <button ion-button class="confirmbutton constract"     tappable (click)="comfirm_payment()">确&nbsp;定</button>
     </div>
 
     <div *ngIf="state === 3">
@@ -83,7 +83,7 @@
             <ion-label>需付款</ion-label>
             <ion-label class="item-content pay-money-amount">2000元</ion-label>
         </ion-item>
-        <button ion-button class="confirmbutton constract"   tappable (click)="comfirm_paymoney()">确认付款</button>
+        <button ion-button class="confirmbutton constract"     tappable (click)="comfirm_paymoney()">确认付款</button>
     </div>
 
     <div *ngIf="state === 4">

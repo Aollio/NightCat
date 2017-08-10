@@ -19,6 +19,7 @@ export class UsersService {
                 public shared: SharedService,
                 public util: Util) {
     }
+
     // async getUsersByRole(isDesigner: boolean) {
     //     let result = []
     //     for (let index in this.users) {
@@ -155,12 +156,24 @@ export class UsersService {
 
 
         let data = await this.http.post(this.urls.user_login_post, userInfo);
+
+
+        console.log("获取TOKEN OK: ", typeof data)
+        console.log(data)
+
         if (data.status != 200) {
+            console.log("data.status != 200")
             throw data
         }
+
+        console.log("Data Content:", typeof data.content)
+        console.log(data.content)
+
         this.http.setToken(data.content.token);
+
         let user = await this.getInfo(data.content.uid);
-        console.log(user);
+        console.log("获取用户信息 OK", user);
+
         this.shared.setCurrentUser(user);
 
         return user;
@@ -264,7 +277,7 @@ export class UsersService {
 
     //response: nickname,img_url
     async getInfoSimple(uid) {
-        let data = await this.http.get(this.urls.user_info_simple_get, {uid:uid});
+        let data = await this.http.get(this.urls.user_info_simple_get, {uid: uid});
 
         if (data.status != 200) {
             throw data;
