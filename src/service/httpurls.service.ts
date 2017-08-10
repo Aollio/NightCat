@@ -105,12 +105,14 @@ export class HttpUrls {
     //获取项目图片
     project_imgs_get:string = this._projects+"/imgs";
 
-
     //发布项目
     project_publish_post:string = this._projects;
 
     //抢单
     project_grab_post:string = this._projects+"/grab";
+
+    //雇主选择设计师
+    project_select_designer:string=this._projects
 
 
     //end 项目
@@ -134,3 +136,4 @@ export class HttpUrls {
         }
     }
 }
+

@@ -22,8 +22,7 @@ export class SharedService {
     //第一次使用
     private _isFirstUse = true;
 
-    //当前登录用户
-    public currentUser = {};
+
 
     //用户角色的字符串
     ROLE_DESIGNER: string = 'designer';
@@ -68,18 +67,27 @@ export class SharedService {
         }
     }
 
+
+    //当前登录用户
+    private currentUser = {};
+
     getCurrentUser() {
         return this.currentUser;
     }
 
-    setCurrentUser(user: User) {
-        this.util.updateObj(this.currentUser, user);
+    setCurrentUser(user) {
+        this.currentUser = user;
         if (user['role'] != 0) {
             this.currentModuleIsDesigner = false;
         } else {
             this.currentModuleIsDesigner = true;
         }
     }
+
+    clearCurrentUser(){
+        this.currentUser={};
+    }
+    //end 当前登录用户
 
 
     // isDesigner() {

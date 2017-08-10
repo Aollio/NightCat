@@ -1,12 +1,21 @@
-<div class="null-project">
-    <img src="assets/img/project-null.png">
-</div>
-<p class="null-porject-toast">
-    当前没有工程, 海量资深设计师任你选
-</p>
+<div class="ioncontent">
+    <div class="null-project">
+        <img src="assets/img/project-null.png">
+    </div>
+    <p class="null-porject-toast" *ngIf="share.isDesigner">
+        当前没有工程, 海量工程任你选
+    </p>
+    <p class="null-porject-toast" *ngIf="!share.isDesigner">
+        当前没有工程, 海量资深设计师任你选
+    </p>
 
-<button ion-button class="null-project-button"
-        [class.emp_primary]="!share.isDesigner" [class.des_primary]="share.isDesigner"
-        tappable (click)="openFindOrder()">
-    寻找项目
-</button>
+    <button ion-button class="null-project-button des_primary" *ngIf="share.isDesigner"
+            tappable (click)="openFindOrder()">
+        寻找工程
+    </button>
+    <button ion-button class="null-project-button emp_primary" *ngIf="!share.isDesigner"
+            tappable (click)="openFindOrder()">
+        寻找项目
+    </button>
+</div>
+
