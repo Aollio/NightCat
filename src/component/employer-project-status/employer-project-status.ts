@@ -63,7 +63,7 @@ export class EmployerProjectStatusComponent {
             this.nav.push(OrderProcessModifyPage, {project: project});
         }
         if (project.status == 4) {
-            this.nav.push(OrderProcessModifyPage, {project: project});
+            this.nav.push(OrderProcessWaitcomment, {project: project});
         }
         if (project.status == 5) {
             this.nav.push(OrerProcessCompleted, {project: project});
