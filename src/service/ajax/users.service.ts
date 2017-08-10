@@ -154,27 +154,16 @@ export class UsersService {
     async login(userInfo) {
         console.log("开始登录");
 
-
         let data = await this.http.post(this.urls.user_login_post, userInfo);
 
-
-        console.log("获取TOKEN OK: ", typeof data)
-        console.log(data)
-
         if (data.status != 200) {
-            console.log("data.status != 200")
             throw data
         }
-
-        console.log("Data Content:", typeof data.content)
-        console.log(data.content)
 
         this.http.setToken(data.content.token);
 
         let user = await this.getInfo(data.content.uid);
         console.log("获取用户信息 OK", user);
-
-        this.shared.setCurrentUser(user);
 
         return user;
     }

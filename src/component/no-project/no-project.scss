@@ -1,7 +1,9 @@
 no-project{
 
-  background-color: #f0f0f0 !important;
-  text-align: center;
+  .ioncontent {
+    background-color: #f0f0f0 !important;
+    text-align: center;
+  }
 
   .null-project {
     //text-align: center;
@@ -29,7 +31,8 @@ no-project{
     font-size: 1.5rem;
     background-color: white;
     border: 1px solid;
-    margin: 0.5rem auto;
+    margin-top: 0.5rem;
+    margin-left: 20%;
     border-radius: .5em !important;
   }
 

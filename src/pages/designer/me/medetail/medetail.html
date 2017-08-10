@@ -15,7 +15,7 @@
     </div>
 
 
-    <ion-row class="card-footer-number" [class.margin_bottom_0]="shared.isDesigner">
+    <ion-row class="card-footer-number" [class.margin_bottom_0]="shared.isDesModule()">
         <ion-col center text-center>
             <div class="desc-bottom-number">162</div>
             <div class="desc-bottom-number-label">
@@ -36,7 +36,7 @@
         </ion-col>
     </ion-row>
 
-    <div class="row_buttons" *ngIf="!shared.isDesigner">
+    <div class="row_buttons" *ngIf="!shared.isDesModule()">
         <button ion-button round class="attention_btn">
             <ion-icon name="ios-heart"></ion-icon>
             关 注 我</button>

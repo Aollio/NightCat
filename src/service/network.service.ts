@@ -30,6 +30,10 @@ export class NetworkService {
         console.log("setToken: ", token)
         this.token = token;
     }
+    clearToken(){
+        this.setToken(null);
+    }
+
 
     doIfNoToken() {
         this.event.publish('gotologin');

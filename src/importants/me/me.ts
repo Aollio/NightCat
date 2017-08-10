@@ -1,22 +1,19 @@
-import {Component} from '@angular/core';
-
-import {AboutPage} from '../about/about';
-import {AlertController, NavController, Platform, ToastController} from "ionic-angular";
-import {NotificationsPage} from "../../designer/nofitications/notifications";
-import {AccountSecurityPage} from "../securitycenter/accountsecurity/accountsecurity";
-import {SupportPage} from "../support/support";
-import {SharedService} from "../../../service/share.service";
-import {User} from "../../../model/user";
-import {WelcomePage} from "../../welcome/welcome";
-import {NetworkService} from "../../../service/network.service";
-
-declare let initializeFontSize: any
-
+import {Component} from "@angular/core";
+import {AlertController, IonicPage, ModalController, NavController, Platform, ToastController} from "ionic-angular";
+import {SharedService} from "../../service/share.service";
+import {Util} from "../../service/util";
+import {WelcomePage} from "../../pages/welcome/welcome";
+import {NetworkService} from "../../service/network.service";
+import {AboutPage} from "../../pages/common/about/about";
+import {AccountSecurityPage} from "../../pages/common/securitycenter/accountsecurity/accountsecurity";
+import {SupportPage} from "../../pages/common/support/support";
+import {NotificationsPage} from "../../pages/designer/nofitications/notifications";
+@IonicPage()
 @Component({
-    selector: 'page-slidemenu',
-    templateUrl: 'slidemenu.html'
+    selector: 'page-me-designer',
+    templateUrl: 'me.html'
 })
-export class SlideMenuComponment {
+export class MePage {
 
     messagePage: any = NotificationsPage;
     supportPage: any = SupportPage;
@@ -39,10 +36,6 @@ export class SlideMenuComponment {
         // this.maincolor = this.shared.getPrimaryColor();
     }
 
-
-    ionViewDidEnter() {
-        initializeFontSize()
-    }
 
     open(page, option) {
         this.navCtrl.push(page, option)

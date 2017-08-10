@@ -1,17 +1,32 @@
 <ion-header>
+
 </ion-header>
 
-<ion-content>
 
-    <div class="my-slide-bgi">
-        <img src="assets/img/SelectOption.png"/>
+<ion-content>
+    <!--用户未登录-->
+    <div *ngIf="!shared.isLogin()" class="me-header">
+        <div class="me-avatar">
+            <img src="assets/img/logo.png"/>
+        </div>
+        <div class="login_btn_wrapper">
+            <button small ion-button outline color="light"     tappable (click)="openLoginPage($event)">请登录</button>
+        </div>
     </div>
 
-    <div style="height: 30%">
-        <div style="height: 70%">
+    <!--用户已登录-->
+    <div *ngIf="shared.isLogin()" class="me-header"   tappable (click)="openMeDetail()">
+        <div class="me-avatar">
+            <img [src]="user.img_url || 'assets/img/logo.png'">
         </div>
-        <div class="my-font-size slide-font-color" text-center>
-            {{shared.getCurrentUser().nickname || '昵称'}}
+        <div *ngIf="!isNullObj(user)" class="me-name">
+            {{user.nickname || ''}}
+            <span><ion-label>
+                {{user.service_length || ''}}&nbsp;
+                {{user.school || ''}}
+                <br/>
+                {{user.position || ''}}
+            </ion-label></span>
         </div>
     </div>
 
@@ -51,9 +66,3 @@
         </button>
     </ion-list>
 </ion-content>
-
-<ion-footer>
-    <button class="exitbtn" ion-button [color]="shared.getPrimaryColor()" full  tappable (click)="exitApp()">
-        退出
-    </button>
-</ion-footer>

@@ -25,8 +25,8 @@
 
 <ion-content>
 
-    <div class="my-title" *ngIf="user.nickname != null">嗨, {{user.nickname}}</div>
-    <div class="my-title" *ngIf="user.nickname == null">嗨, 请<a class="aclass"     tappable (click)="openLoginPage($event)">登录</a></div>
+    <div class="my-title" *ngIf="shared.isLogin()">嗨, {{shared.getCurrentUser().nickname}}</div>
+    <div class="my-title" *ngIf="!shared.isLogin()">嗨, 请<a class="aclass"     tappable (click)="openLoginPage($event)">登录</a></div>
     <div class="my-val">喵，今天还好吗，需要我帮你做些什么？</div>
     <div class="my-ul clearfloat">
         <div class="my-li my-left"     tappable (click)="btn_designer()" >

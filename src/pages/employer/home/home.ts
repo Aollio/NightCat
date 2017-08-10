@@ -19,12 +19,9 @@ declare let initializeFontSize: any
 export class EmployerHomePage {
 
     static isfirstCome = true;
-    user = {};
 
-
-    ionViewDidEnter() {
-        this.util.updateObj(this.user, this.shared.getCurrentUser());
-    }
+    // ionViewDidEnter() {
+    // }
 
     openNotificationsPage(){
         this.navCtrl.push(NotificationsPage);
@@ -43,12 +40,12 @@ export class EmployerHomePage {
                 public alertCtrl: AlertController,
                 public modalCtrl: ModalController) {
         this.showAlert();
-        this.util.updateObj(this.user, shared.getCurrentUser());
     }
-    openLoginPage(event) {
-        let profileModal = this.modalCtrl.create(LoginPage);
-        profileModal.present();
-        event.stopPropagation();
+
+    openLoginPage() {
+        this.modalCtrl.create(LoginPage).present();
+        // profileModal.present();
+        // event.stopPropagation();
         // this.navCtrl.push(LoginPage);
     }
     // showAlert() {
@@ -88,9 +85,11 @@ export class EmployerHomePage {
 
     }
 
-    openMeDetail(option) {
-        this.navCtrl.push(DesignerMeDetailPage, option)
-    }
+    // openMeDetail(option) {
+    //     this.navCtrl.push(DesignerMeDetailPage, option)
+    // }
+
+
 
     btn_designer() {
         this.navCtrl.push(DesignerListPage);

@@ -1,8 +1,8 @@
 <ion-header no-border>
-    <ion-navbar [color]="navColor" no-border>
+    <ion-navbar [color]="shared.getPrimaryColor()" no-border>
         <ion-title>项目详情</ion-title>
         <ion-buttons end>
-            <button ion-button   tappable (click)="open(orderrocessPreSelectdesPage,{})">
+            <button ion-button   tappable (click)="openOrderrocessPreSelectdesPage()">
                 项目动态
             </button>
         </ion-buttons>
@@ -14,26 +14,27 @@
     <div class="details-picture">
         <ion-slides pager>
 
-            <!--todo 项目图片显示！！ 别删-->
+            <!--项目图片显示-->
+            <ion-slide style="background-color: green">
+                <img *ngFor="let img of imgs" [src]="img.img_url"/>
+                <img *ngIf="imgs.length==0" src="asset/img/home-default.png"/>
+            </ion-slide>
+
             <!--<ion-slide style="background-color: green">-->
-                <!--<img *ngFor="let img of imgs" [src]="img.img_url"/>-->
+                <!--<img src="assets/img/home-default.png" alt="">-->
             <!--</ion-slide>-->
 
-            <ion-slide style="background-color: green">
-                <img src="assets/img/home-default.png" alt="">
-            </ion-slide>
+            <!--<ion-slide style="background-color: blue">-->
+                <!--<img src="assets/img/home-default.png" alt="">-->
+            <!--</ion-slide>-->
 
-            <ion-slide style="background-color: blue">
-                <img src="assets/img/home-default.png" alt="">
-            </ion-slide>
-
-            <ion-slide style="background-color: red">
-                <img src="assets/img/home-default.png" alt="">
-            </ion-slide>
+            <!--<ion-slide style="background-color: red">-->
+                <!--<img src="assets/img/home-default.png" alt="">-->
+            <!--</ion-slide>-->
 
         </ion-slides>
     </div>
-    <div class="details-title">Google 的免费翻译服务可提供简体中文</div>
+    <div class="details-title">{{project &&project.title||"未填写" }}</div>
     <div class="details-browse">
         <div class="details-browse-l"></div>
         <div class="details-browse-r"></div>
@@ -50,7 +51,7 @@
             </div>
             <div class="details-data-top-dt">
                 <div class="details-data-top-dt-name">类型</div>
-                <div class="details-data-top-dt-val">{{project && share.project_type[project.type]}}</div>
+                <div class="details-data-top-dt-val">{{project && shared.project_type[project.type]}}</div>
             </div>
         </div>
         <div class="details-data-bottom">
@@ -73,7 +74,7 @@
     </div>
 </ion-content>
 
-<ion-footer class="footer-btns" *ngIf="isDesigner">
+<ion-footer class="footer-btns" *ngIf="shared.isDesModule()">
     <button class="footer-clear-btn" clear ion-button color="primary"   tappable (click)="collect()" icon-start
             style="width: 50%">
         <ion-icon name="ios-star-outline" *ngIf="collectstate===0"></ion-icon>
@@ -92,11 +93,10 @@
 
 </ion-footer>
 
-<ion-footer class="footer-btns" *ngIf="!isDesigner">
+<ion-footer class="footer-btns" *ngIf="!shared.isDesModule()">
 
-    <button ion-button color="emp-primary"   tappable (click)="open(pay)" style="width: 33.3%!important;">支付</button>
-    <button ion-button color="emp-primary"   tappable (click)="open(commentorder)" style="width: 33.3%!important;">确认结单
-    </button>
+    <button ion-button color="emp-primary"   tappable (click)="openPayPage()" style="width: 33.3%!important;">支付</button>
+    <button ion-button color="emp-primary"   tappable (click)="openCommentOrderPage()" style="width: 33.3%!important;">确认结单</button>
     <button ion-button color="emp-primary" style="width: 33.3%!important;">延时接单</button>
 
 </ion-footer>

@@ -42,7 +42,7 @@ export class PublishTaskPageNew {
                 private projectServ: ProjectsService,
                 public alertCtrl: AlertController) {
         this.maincolor = shared.getPrimaryColor();
-        this.designer = shared.isDesigner;
+        this.designer = shared.isDesModule();
     }
 
 

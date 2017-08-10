@@ -20,13 +20,10 @@ declare let initializeFontSize: any;
 export class DesignerMePage {
     favoriteProjectsPage:any=FavoriteProjectsPage;
 
-    user = {};
-
     constructor(public navCtrl: NavController,
                 public shared: SharedService,
                 public modalCtrl: ModalController,
                 public util:Util) {
-        this.user =  shared.getCurrentUser();
     }
 
     wallet: any = DesignerWalletPage;
@@ -48,14 +45,13 @@ export class DesignerMePage {
 
         this.navCtrl.push(page, option)
     }
+
     // isNullObj(obj){
     //    return JSON.stringify(obj)==JSON.stringify({});
     // }
+
     openLoginPage(){
-        let profileModal = this.modalCtrl.create(LoginPage);
-        profileModal.present();
-        // $event.stopPropagation();
-        // this.navCtrl.push(LoginPage);
+        this.modalCtrl.create(LoginPage).present();
     }
 
 }

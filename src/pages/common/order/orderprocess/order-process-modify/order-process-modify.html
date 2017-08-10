@@ -57,12 +57,12 @@
 
 </ion-content>
 <ion-footer>
-    <div class="my-bottom" *ngIf="!isDesigner">
+    <div class="my-bottom" *ngIf="!share.isDesModule()">
         <div class="my-bottom-li act">收货</div>
         <div class="my-bottom-li"  tappable (click)="openPushProject()">一键审图</div> <!--*ngIf="3!=item.status"-->
     </div>
 
-    <div class="my-bottom" *ngIf="isDesigner">
+    <div class="my-bottom" *ngIf="share.isDesModule()">
         <div class="my-bottom-li act">接单</div>
         <div class="my-bottom-li">取消抢单</div>
         <div class="my-bottom" *ngIf="2==item.status||3==item.status">

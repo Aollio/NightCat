@@ -29,33 +29,29 @@ export class ProjectDetailPage extends AbsCommonPage {
     imgs;
     creator;
 
-    isDesigner: boolean;
     collectstate: any = 0;
-    pay: any = PayPage;
-    commentorder: any = CommentOrderPage;
-    orderrocessPreSelectdesPage: any = OrderProcessPreSelectedPage;
 
-    /**
-     * 先暂时设为参数为order id，或者为order的对象。
-     * 构造器判断一下，如果是order id，则显示加载符号，如果是order直接显示
-     * */
+    // /**
+    //  * 先暂时设为参数为order id，或者为order的对象。
+    //  * 构造器判断一下，如果是order id，则显示加载符号，如果是order直接显示
+    //  * */
     constructor(public navCtrl: NavController,
                 public navParams: NavParams,
                 private modal: ModalController,
-                public share: SharedService,
+                public shared: SharedService,
                 private alert: AlertController,
                 private projsServ: ProjectsService,
                 private userServ: UsersService,
                 private util: Util) {
-        super(share);
+        super(shared);
         this.project = navParams.get('project');
         this.imgs = navParams.get('imgs');
 
         console.log("project", this.project);
-        this.isDesigner = share.currentModuleIsDesigner;
         this.getCreatorSimpleInfo(this.project.create_by);
     }
 
+    //获取雇主头像 昵称
     private getCreatorSimpleInfo(uid) {
         console.log("get user simple info");
         this.userServ.getInfoSimple(uid).then(user => {
@@ -66,8 +62,17 @@ export class ProjectDetailPage extends AbsCommonPage {
         })
     }
 
-    open(page, option) {
-        this.navCtrl.push(page, option)
+
+    openOrderrocessPreSelectdesPage(){
+        this.navCtrl.push(OrderProcessPreSelectedPage);
+    }
+
+    openPayPage(){
+        this.navCtrl.push(PayPage);
+    }
+
+    openCommentOrderPage(){
+        this.navCtrl.push(CommentOrderPage);
     }
 
     /*
@@ -92,11 +97,9 @@ export class ProjectDetailPage extends AbsCommonPage {
 
 
 
-
-
     openGrabOrderPage() {
-        console.log("isLogin()",this.share.isLogin());
-        if (!this.share.isLogin()) {
+        console.log("isLogin()",this.shared.isLogin());
+        if (!this.shared.isLogin()) {
             let alert = this.alert.create({
                 title: '提醒',
                 message: '抢单需要登录，是否登录？',

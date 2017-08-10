@@ -75,7 +75,7 @@ export class RegisterPage {
             return;
         }
 
-        if (this.shared.currentModuleIsDesigner) {
+        if (this.shared.isDesModule()) {
             this.user.role = 0;
         } else {
             this.user.role = 1;
@@ -90,19 +90,23 @@ export class RegisterPage {
                 loading.setContent('正在登录...')
                 this.usersServ.login(user)
                     .then(() => {
-
                         loading.dismiss()
-                        this.util.toast('登录成功')
-                        console.log('login success')
+                        this.util.toast('登录成功');
+                        console.log('login success');
 
-                        this.current = 3
+                        this.shared.setCurrentUser(user);
+                        this.openHome();
+                        // this.current = 3
                     }).catch(error => {
                     console.log('自动登录失败', error)
                     loading.dismiss();
                     this.util.toast('自动登录失败')
 
                     this.navCtrl.push(LoginPage)
-                })
+                });
+
+
+
             }).catch(error => {
             console.log('注册失败', error);
             loading.dismiss();
