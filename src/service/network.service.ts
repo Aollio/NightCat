@@ -202,6 +202,7 @@ export class NetworkService {
     //
     showError(error) {
         console.log("error: ", error);
+        console.log(error)
         if (error) {
             if (error.status === 0) {
                 this.util.toast("网络未连接");
