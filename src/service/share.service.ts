@@ -14,16 +14,24 @@ export class SharedService {
     //是否为开发模式, 开发模式在使用开发服务器.
     DEBUG: boolean = false;
 
-    //todo 是否是设计师, 如果用户是设计师, 则对于一些公共页面, 执行对应的修改, 例如主题颜色的不相同
-    currentModuleIsDesigner: boolean;
-    //登录用户是否为设计师
-    isDesigner = this.currentModuleIsDesigner;
+
+    //是否为 设计师模块    对于一些公共页面, 执行对应的修改, 例如主题颜色的不相同
+    private isDesignerModel: boolean;
+
+    isDesModule() {
+        return this.isDesignerModel;
+    }
+
+    setIsDesModule(isDesigner) {
+        this.isDesignerModel = isDesigner;
+    }
+
+    //end 是否为 设计师模块
+
 
     //第一次使用
     private _isFirstUse = true;
 
-    //当前登录用户
-    public currentUser = {};
 
     //用户角色的字符串
     ROLE_DESIGNER: string = 'designer';
@@ -61,25 +69,35 @@ export class SharedService {
 
     //获取导航栏的颜色
     getPrimaryColor() {
-        if (this.currentModuleIsDesigner) {
+        if (this.isDesModule()) {
             return 'des-primary';
         } else {
             return 'emp-primary';
         }
     }
 
+
+    //当前登录用户
+    private currentUser = {};
+
     getCurrentUser() {
         return this.currentUser;
     }
 
-    setCurrentUser(user: User) {
-        this.util.updateObj(this.currentUser, user);
-        if (user['role'] != 0) {
-            this.currentModuleIsDesigner = false;
+    setCurrentUser(user) {
+        this.currentUser = user;
+        if (user['role'] == 0) {
+            this.setIsDesModule(true);
         } else {
-            this.currentModuleIsDesigner = true;
+            this.setIsDesModule(false);
         }
     }
+
+    clearCurrentUser() {
+        this.currentUser = {};
+    }
+
+    //end 当前登录用户
 
 
     // isDesigner() {

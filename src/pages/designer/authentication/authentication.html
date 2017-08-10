@@ -2,10 +2,10 @@
     <ion-navbar color="nav-des-bg">
         <ion-title>认证中心</ion-title>
         <ion-buttons end>
-            <button ion-button   tappable (click)="nextOrFinish()" *ngIf="state < 3">
+            <button ion-button     tappable (click)="nextOrFinish()" *ngIf="state < 3">
                 下一步
             </button>
-            <button ion-button   tappable (click)="nextOrFinish()" *ngIf="state === 3">
+            <button ion-button     tappable (click)="nextOrFinish()" *ngIf="state === 3">
                 完成
             </button>
         </ion-buttons>
@@ -52,7 +52,7 @@
             <ion-input placeholder="请输入证件名称"></ion-input>
         </ion-item>
         <ion-item-divider></ion-item-divider>
-        <div class="upload"   tappable (click)="uploading_img()">
+        <div class="upload"     tappable (click)="uploading_img()">
             <input type="image" value="图片"/>
             <div class="upload-icon">
                 <ion-icon name="ios-camera-outline"></ion-icon>

@@ -29,7 +29,6 @@ export class ProjectDetailPage extends AbsCommonPage {
     imgs;
     creator;
 
-    isDesigner: boolean;
     collectstate: any = 0;
     pay: any = PayPage;
     commentorder: any = CommentOrderPage;
@@ -42,17 +41,16 @@ export class ProjectDetailPage extends AbsCommonPage {
     constructor(public navCtrl: NavController,
                 public navParams: NavParams,
                 private modal: ModalController,
-                public share: SharedService,
+                public shared: SharedService,
                 private alert: AlertController,
                 private projsServ: ProjectsService,
                 private userServ: UsersService,
                 private util: Util) {
-        super(share);
+        super(shared);
         this.project = navParams.get('project');
         this.imgs = navParams.get('imgs');
 
         console.log("project", this.project);
-        this.isDesigner = share.currentModuleIsDesigner;
         this.getCreatorSimpleInfo(this.project.create_by);
     }
 
@@ -95,8 +93,8 @@ export class ProjectDetailPage extends AbsCommonPage {
 
 
     openGrabOrderPage() {
-        console.log("isLogin()",this.share.isLogin());
-        if (!this.share.isLogin()) {
+        console.log("isLogin()",this.shared.isLogin());
+        if (!this.shared.isLogin()) {
             let alert = this.alert.create({
                 title: '提醒',
                 message: '抢单需要登录，是否登录？',

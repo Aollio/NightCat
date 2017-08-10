@@ -13,7 +13,7 @@
             <!--(ionCancel)="onCancel($event)"-->
         </ion-searchbar>
         <ion-buttons end>
-            <button ion-button icon-only   tappable (click)="openNotificationsPage()">
+            <button ion-button icon-only     tappable (click)="openNotificationsPage()">
                 <ion-icon name="text"></ion-icon>
             </button>
         </ion-buttons>
@@ -42,7 +42,7 @@
     <ion-scroll scrollX="true" class="buttons-slide">
         <div *ngFor="let type of shared.project_type;let i=index">
             <button class="order-type-btn" *ngIf="i>0"
-                    [class.btn-active]="currentType === i" (click)="selectType(i)">{{type}}
+                    [class.btn-active]="currentType === i"  tappable (click)="selectType(i)">{{type}}
             </button>
         </div>
     </ion-scroll>

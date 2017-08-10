@@ -8,13 +8,15 @@ import {SupportPage} from "../support/support";
 import {SharedService} from "../../../service/share.service";
 import {User} from "../../../model/user";
 import {WelcomePage} from "../../welcome/welcome";
+import {NetworkService} from "../../../service/network.service";
+
 declare let initializeFontSize: any
+
 @Component({
     selector: 'page-slidemenu',
     templateUrl: 'slidemenu.html'
 })
 export class SlideMenuComponment {
-
 
     messagePage: any = NotificationsPage;
     supportPage: any = SupportPage;
@@ -23,13 +25,15 @@ export class SlideMenuComponment {
 
     user;
     isDesigner: boolean;
+
     // maincolor;
 
     constructor(public navCtrl: NavController,
                 public platform: Platform,
                 private alertCtrl: AlertController,
                 private toastCtrl: ToastController,
-                public shared: SharedService) {
+                public shared: SharedService,
+                private http: NetworkService) {
         this.user = shared.getCurrentUser();
         // this.isDesigner = this.shared.isDesigner();
         // this.maincolor = this.shared.getPrimaryColor();
@@ -79,7 +83,9 @@ export class SlideMenuComponment {
     }
 
     exitApp() {
-       // this.platform.exitApp();
-        this.navCtrl.push(WelcomePage,{state:2});
+        // this.platform.exitApp();
+        this.shared.clearCurrentUser();
+        this.http.clearToken();
+        this.navCtrl.push(WelcomePage, {state: 2});
     }
 }

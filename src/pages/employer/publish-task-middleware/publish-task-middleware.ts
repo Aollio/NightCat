@@ -2,15 +2,22 @@ import {Component} from "@angular/core";
 import {NavController} from "ionic-angular";
 import {PublishTaskPage} from "../../common/publishtask/publishtask";
 import {PublishTaskPageNew} from "../../common/publish-task-new/publish-task";
-declare let initializeFontSize:any
-declare let jQuery:any
+import {share} from "rxjs/operator/share";
+import {SharedService} from "../../../service/share.service";
+import {Util} from "../../../service/util";
+
+declare let initializeFontSize: any
+declare let jQuery: any
+
 @Component({
     selector: 'publish-task-middleware',
     templateUrl: 'publish-task-middleware.html'
 })
 
 export class PublishTaskMiddleWarePage {
-    constructor(public nav: NavController) {
+    constructor(public nav: NavController,
+                private share: SharedService,
+                private util: Util) {
         console.log('create')
         this.nav.parent.select(0);
     }
@@ -18,8 +25,9 @@ export class PublishTaskMiddleWarePage {
     first_open: boolean = true;
     second_open: boolean = false;
 
+
+    //todo 发布任务中间页 跳转问题
     ionViewDidEnter() {
-        initializeFontSize()
         console.log(this.nav.parent.getSelected().index)
         if (this.second_open) {
             this.first_open = false;
@@ -31,33 +39,39 @@ export class PublishTaskMiddleWarePage {
             this.first_open = false;
             this.nav.parent.select(0);
             this.second_open = true;
-            this.nav.push(PublishTaskPage, {});
-            // this.nav.push(PublishTaskPageNew, {});
+
+            this.openPublishTask();
             console.log("end jump of first")
         }
         if (this.nav.parent.getSelected().index === 2) {
             this.nav.parent.select(0);
-            // this.nav.push(PublishTaskPageNew, {});
-            this.nav.push(PublishTaskPage, {});
+
+            this.openPublishTask();
             console.log("end jump because index == 1")
         }
         this.nav.parent.select(0);
         console.log("end jump")
 
 
-        setTimeout(()=>{
+        setTimeout(() => {
             this.setInput();
-        },100);
+        }, 100);
     }
 
-    setInput(){
+
+    openPublishTask() {
+        this.nav.push(PublishTaskPage, {});
+    }
+
+
+    setInput() {
         jQuery(".myInput").find("input").focus(function () {
             console.log("focus")
             jQuery(this).parent().addClass("myInput-wrapper-focus");
         }).blur(function () {
             console.log("blur")
             let input = jQuery(this);
-            if(input.val()==""){
+            if (input.val() == "") {
                 input.parent().removeClass("myInput-wrapper-focus");
             }
         })
@@ -66,4 +80,6 @@ export class PublishTaskMiddleWarePage {
             jQuery(this).siblings().focus();
         })
     }
+
+
 }

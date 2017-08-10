@@ -35,13 +35,18 @@ export class ProjectsPage {
 
 
     doRefresh(refresher) {
-        this._doRefresh(() => (refresher.complete()));
+        if (!this.share.isLogin()) {
+            refresher.complete();
+            this.util.toast("未登录！");
+            return;
+        }
+        this._doRefresh(() => {
+            refresher.complete()
+        });
     }
 
     _doRefresh(completeFunc) {
         if (!this.share.isLogin()) {
-            this.util.toast("未登录！");
-            completeFunc();
             return;
         }
         this.projectServ.getUserProjects()

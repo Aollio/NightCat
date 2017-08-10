@@ -437,7 +437,7 @@ designerList:DesignerListPage;
 
     constructor(public nav: NavController,
                 public shared: SharedService) {
-        this.isDesigner = this.shared.currentModuleIsDesigner;
+        this.isDesigner = this.shared.isDesModule();
     }
 
     openProjectProcess(project) {

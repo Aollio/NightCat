@@ -75,7 +75,7 @@ export class RegisterPage {
             return;
         }
 
-        if (this.shared.currentModuleIsDesigner) {
+        if (this.shared.isDesModule()) {
             this.user.role = 0;
         } else {
             this.user.role = 1;

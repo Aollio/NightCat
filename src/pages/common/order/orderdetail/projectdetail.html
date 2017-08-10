@@ -2,7 +2,7 @@
     <ion-navbar [color]="navColor" no-border>
         <ion-title>项目详情</ion-title>
         <ion-buttons end>
-            <button ion-button tappable (click)="open(orderrocessPreSelectdesPage,{})">
+            <button ion-button   tappable (click)="open(orderrocessPreSelectdesPage,{})">
                 项目动态
             </button>
         </ion-buttons>
@@ -73,29 +73,29 @@
     </div>
 </ion-content>
 
-<ion-footer class="footer-btns" *ngIf="isDesigner">
-    <button class="footer-clear-btn" clear ion-button color="primary" tappable (click)="collect()" icon-start
+<ion-footer class="footer-btns" *ngIf="shared.isDesModule()">
+    <button class="footer-clear-btn" clear ion-button color="primary"   tappable (click)="collect()" icon-start
             style="width: 50%">
         <ion-icon name="ios-star-outline" *ngIf="collectstate===0"></ion-icon>
         <ion-icon name="ios-star" *ngIf="collectstate===1" class="order-state"></ion-icon>
         收藏
     </button>
-    <button class="footer-clear-btn" tappable (click)="openChat({sessionId: 'hgyuguyg'})" clear ion-button
+    <button class="footer-clear-btn"   tappable (click)="openChat({sessionId: 'hgyuguyg'})" clear ion-button
             color="primary"
             icon-start style="width: 50%">
         <ion-icon name="text-outline"></ion-icon>
         喵喵
     </button>
     <!--todo orderId-->
-    <button ion-button color="primary" tappable (click)="openGrabOrderPage()" style="width: 60%!important;">立即抢单
+    <button ion-button color="primary"   tappable (click)="openGrabOrderPage()" style="width: 60%!important;">立即抢单
     </button>
 
 </ion-footer>
 
-<ion-footer class="footer-btns" *ngIf="!isDesigner">
+<ion-footer class="footer-btns" *ngIf="!shared.isDesModule()">
 
-    <button ion-button color="emp-primary" tappable (click)="open(pay)" style="width: 33.3%!important;">支付</button>
-    <button ion-button color="emp-primary" tappable (click)="open(commentorder)" style="width: 33.3%!important;">确认结单
+    <button ion-button color="emp-primary"   tappable (click)="open(pay)" style="width: 33.3%!important;">支付</button>
+    <button ion-button color="emp-primary"   tappable (click)="open(commentorder)" style="width: 33.3%!important;">确认结单
     </button>
     <button ion-button color="emp-primary" style="width: 33.3%!important;">延时接单</button>
 

@@ -11,7 +11,7 @@
             </div>
             <div class="verify">
                 <input type="text" maxlength="5" placeholder="输入验证码">
-                <button class="butdiv"  (click)="getCaptcha()" [disabled]='captchaDisabled'>
+                <button class="butdiv"   tappable (click)="getCaptcha()" [disabled]='captchaDisabled'>
                     {{captchaText}}
                 </button>
                 <!--<button >-->
@@ -25,15 +25,15 @@
                 <input type="password" name="confirm" [(ngModel)]="confirmPassword" placeholder="请确认密码">
             </div>
         </form>
-        <button ion-button round class="login-btn"   tappable (click)="next()">下一步</button>
-        <p class="login"   tappable (click)="pop()">已经拥有一个账号？</p>
+        <button ion-button round class="login-btn"     tappable (click)="next()">下一步</button>
+        <p class="login"     tappable (click)="pop()">已经拥有一个账号？</p>
     </div>
 
     <!--头像 昵称-->
     <div [class.out-window]="current != 2" [class.on-window]="current == 2" class="ion-content-class">
 
         <div class="null-only-height">欢迎来夜猫</div>
-        <div class="avatar"   tappable (click)="chooseAvatar()">
+        <div class="avatar"     tappable (click)="chooseAvatar()">
             <div *ngIf="btn_avatar_state===1">选择头像</div>
             <img *ngIf="btn_avatar_state===3" src="{{avatar}}">
         </div>
@@ -42,15 +42,15 @@
             <div class="my-ul clearfloat">
                 <div class="my-li"
                      *ngFor="let item of emojiarray" [class.img-selected]="avatar === item&&avatar!='assets/img/Rectangle.png'">
-                    <img [src]="item"   tappable (click)="select(item)" alt=""/></div>
+                    <img [src]="item"     tappable (click)="select(item)" alt=""/></div>
 
             </div>
             <div class="my-bottom">
                 <div class="my-bottom-l">
-                    <button   tappable (click)="complete(1)">取消</button>
+                    <button     tappable (click)="complete(1)">取消</button>
                 </div>
                 <div class="my-bottom-r my-selected">
-                    <button   tappable (click)="complete(3)">确定</button>
+                    <button     tappable (click)="complete(3)">确定</button>
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@
 
 
         </form>
-        <button ion-button round class="login-btn"   tappable (click)="register()">注册</button>
+        <button ion-button round class="login-btn"     tappable (click)="register()">注册</button>
 
     </div>
 
@@ -84,7 +84,7 @@
             <br>
             <div class="or">or</div>
             <button ion-button class="desbutton"
-                      tappable (click)="openHome()"
+                        tappable (click)="openHome()"
                     round>
                 直接进入主页
             </button>
@@ -115,7 +115,7 @@
 
             <ion-item class="verify-input" no-lines>
                 <ion-input type="text" value="" placeholder="验证码"></ion-input>
-                <button ion-button item-end (click)="getCaptcha()" disabled={{captchaDisabled}}>
+                <button ion-button item-end  tappable (click)="getCaptcha()" disabled={{captchaDisabled}}>
                     {{captchaText}}
                 </button>
             </ion-item>
@@ -131,7 +131,7 @@
             <br/>
         </div>
         <button ion-button round full class="register-button">注册</button>
-        <button ion-button clear full class="login-text"   tappable (click)="openLoginPage()">
+        <button ion-button clear full class="login-text"     tappable (click)="openLoginPage()">
             已有账号，登陆&nbsp;&nbsp;
             <ion-icon name="ios-help-circle-outline" end></ion-icon>
         </button>
