@@ -139,4 +139,16 @@ page-pulishtask {
   .labelcolor{
     color: $label-ios-text-color;
   }
+  .photo{
+    height: 8rem;
+    width: 70%;
+    margin-left: 15%;
+    border: 2px #9e9e9e solid;
+    border-radius: 0 0 0.5rem 0.5rem  !important;
+
+    img{
+      height: 2rem;
+      width: 2rem;
+    }
+  }
 }

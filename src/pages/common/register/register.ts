@@ -41,6 +41,7 @@ export class RegisterPage {
     ionViewDidEnter() {
         initializeFontSize()
     }
+
 // todo 密码加密
 
     next() {
@@ -51,6 +52,13 @@ export class RegisterPage {
             this.util.toast('请输入正确手机号')
             return
         }
+
+        // todo 验证密码
+        // 正则验证密码中是否有大小写字母，数字，和符号
+        // 大小写字母：(?=.*[A-Z])(?=.*[a-z])
+        // 数字：(?=.*\d)
+        // 符号：((?=[\x21-\x7e]+)[^A-Za-z0-9])
+        //  \d改为[0-9]问题就解决了
         if (this.user.password == null || this.user.password == '') {
             util.toast('请输入密码')
             return
@@ -114,7 +122,6 @@ export class RegisterPage {
 
                     this.navCtrl.push(LoginPage)
                 });
-
 
 
             }).catch(error => {
@@ -184,7 +191,7 @@ export class RegisterPage {
 
     //获取验证码
     private captchaText = "获取验证码";
-    captchaDisabled =false;
+    captchaDisabled = false;
 
 
     getCaptcha() {
@@ -201,8 +208,9 @@ export class RegisterPage {
             this.captchaText = time_s + "后重新获取";
         }, 1000);
     }
+
     //todo
-    sendMessage(){
+    sendMessage() {
 
     }
 }
