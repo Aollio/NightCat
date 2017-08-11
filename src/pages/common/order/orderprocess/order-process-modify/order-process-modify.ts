@@ -49,4 +49,48 @@ export class OrderProcessModifyPage {
         confirm.present();
     }
 
+    showPutInAlert() {
+        let confirm = this.alertCtrl.create({
+           // title: '取消抢单',
+            message: '确认交付作品？',
+            buttons: [
+                {
+                    text: '取消',
+                    handler: () => {
+                        console.log('Disagree clicked');
+                    }
+                },
+                {
+                    text: '确认',
+                    handler: () => {
+                        console.log('Agree clicked');
+                    }
+                }
+            ]
+        });
+        confirm.present();
+    }
+
+    showShentuAlert() {
+        let confirm = this.alertCtrl.create({
+            // title: '取消抢单',
+            message: '确认审图？',
+            buttons: [
+                {
+                    text: '取消',
+                    handler: () => {
+                        console.log('Disagree clicked');
+                    }
+                },
+                {
+                    text: '确认',
+                    handler: () => {
+                        console.log('Agree clicked');
+                    }
+                }
+            ]
+        });
+        confirm.present();
+    }
+
 }
