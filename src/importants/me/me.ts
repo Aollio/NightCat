@@ -12,7 +12,6 @@ import {SupportPage} from "../../pages/common/support/support";
 import {AboutPage} from "../../pages/common/about/about";
 import {WelcomePage} from "../../pages/welcome/welcome";
 
-@IonicPage()
 @Component({
     selector: 'page-me-designer',
     templateUrl: 'me.html'

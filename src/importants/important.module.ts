@@ -1,6 +1,5 @@
 import {NgModule} from "@angular/core";
 import {ImportantMePage} from "./me/me";
-import {MePage} from "./me/me";
 import {IonicModule} from "ionic-angular";
 import {CustomIconsModule} from "ionic2-custom-icons";
 
