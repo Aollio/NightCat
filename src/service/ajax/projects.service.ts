@@ -7,25 +7,25 @@ import {KeynoteService} from "../keynote.service";
 @Injectable()
 export class ProjectsService {
 
-    //项目状态
-    public Status = _Status;
+    //项目状态  枚举不能用
+    // public Status = _Status;
 
     //项目类型
     public type = [
         "未设置",
-        "概预算",
-        "项目经理",
-        "给排水设计",
         "策划",
         "规划设计",
         "建筑设计",
-        "电气设计",
         "结构设计",
-        "审图",
-        "软装设计",
-        "室内设计",
+        "给排水设计",
+        "电气设计",
         "暖通设计",
         "景观设计",
+        "室内设计",
+        "软装设计",
+        "项目经理",
+        "概预算",
+        "审图",
     ];
 
 
