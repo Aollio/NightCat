@@ -64,7 +64,7 @@
 
     <div class="my-bottom" *ngIf="share.isDesModule()">
         <div class="my-bottom-li act">接单</div>
-        <div class="my-bottom-li">取消抢单</div>
+        <div class="my-bottom-li" tappable (click)="showCancelAlert()" >取消抢单</div>
         <div class="my-bottom" *ngIf="2==item.status||3==item.status">
             <div class="my-bottom-li act" *ngIf="2==item.status||3==item.status">确认已交付</div>
             <div class="my-bottom-li" *ngIf="2==item.status">一键审图</div>
