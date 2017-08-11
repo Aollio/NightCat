@@ -15,9 +15,9 @@
         <ion-slides pager>
 
             <!--项目图片显示-->
-            <ion-slide style="background-color: green">
+            <ion-slide class="ion-slide">
                 <img *ngFor="let img of imgs" [src]="img.img_url"/>
-                <img *ngIf="imgs.length==0" src="asset/img/home-default.png"/>
+                <img *ngIf="imgs || imgs.length==0" src="asset/img/home-default.png"/>
             </ion-slide>
 
             <!--<ion-slide style="background-color: green">-->
@@ -69,24 +69,27 @@
         <div class="details-words-title">订单详情</div>
         <div class="details-words-text">
             {{project && project.content||"未设置"}}
-            知道如何建立网站吗? 那么你已经知道如何构建移动 应用程序。 离子框架提供了最好的web和本地应用程序组件 建筑高度交互的本地和进步的web应用程序。
+
+            <!--知道如何建立网站吗? 那么你已经知道如何构建移动 应用程序。 离子框架提供了最好的web和本地应用程序组件 建筑高度交互的本地和进步的web应用程序。-->
         </div>
     </div>
 </ion-content>
 
 <ion-footer class="footer-btns" *ngIf="shared.isDesModule()">
-    <button class="footer-clear-btn" clear ion-button color="primary"   tappable (click)="collect()" icon-start
-            style="width: 50%">
-        <ion-icon name="ios-star-outline" *ngIf="collectstate===0"></ion-icon>
-        <ion-icon name="ios-star" *ngIf="collectstate===1" class="order-state"></ion-icon>
-        收藏
-    </button>
-    <button class="footer-clear-btn"   tappable (click)="openChat({sessionId: 'hgyuguyg'})" clear ion-button
-            color="primary"
-            icon-start style="width: 50%">
-        <ion-icon name="text-outline"></ion-icon>
-        喵喵
-    </button>
+
+    <!--<button class="footer-clear-btn" clear ion-button color="primary"   tappable (click)="collect()" icon-start-->
+            <!--style="width: 50%">-->
+        <!--<ion-icon name="ios-star-outline" *ngIf="collectstate===0"></ion-icon>-->
+        <!--<ion-icon name="ios-star" *ngIf="collectstate===1" class="order-state"></ion-icon>-->
+        <!--收藏-->
+    <!--</button>-->
+    <!--<button class="footer-clear-btn"   tappable (click)="openChat({sessionId: 'hgyuguyg'})" clear ion-button-->
+            <!--color="primary"-->
+            <!--icon-start style="width: 50%">-->
+        <!--<ion-icon name="text-outline"></ion-icon>-->
+        <!--喵喵-->
+    <!--</button>-->
+
     <!--todo orderId-->
     <button ion-button color="primary"   tappable (click)="openGrabOrderPage()" style="width: 60%!important;">立即抢单
     </button>
@@ -95,8 +98,8 @@
 
 <ion-footer class="footer-btns" *ngIf="!shared.isDesModule()">
 
-    <button ion-button color="emp-primary"   tappable (click)="openPayPage()" style="width: 33.3%!important;">支付</button>
-    <button ion-button color="emp-primary"   tappable (click)="openCommentOrderPage()" style="width: 33.3%!important;">确认结单</button>
-    <button ion-button color="emp-primary" style="width: 33.3%!important;">延时接单</button>
+    <!--<button ion-button color="emp-primary"   tappable (click)="openPayPage()" style="width: 33.3%!important;">支付</button>-->
+    <!--<button ion-button color="emp-primary"   tappable (click)="openCommentOrderPage()" style="width: 33.3%!important;">确认结单</button>-->
+    <!--<button ion-button color="emp-primary" style="width: 33.3%!important;">延时接单</button>-->
 
 </ion-footer>

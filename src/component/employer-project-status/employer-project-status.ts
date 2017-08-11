@@ -51,9 +51,9 @@ export class EmployerProjectStatusComponent {
     private imgs;
 
 
-    openProjectProcess(project) {
+    openProjectProcess(project,imgs) {
         if (project.status == 0) {
-            this.nav.push(ProjectDetailPage, {project: project});
+            this.nav.push(ProjectDetailPage, {project: project,imgs:imgs});
         }
         if (project.status == 1) {
             this.nav.push(OrderProcessPayment, {project: project});

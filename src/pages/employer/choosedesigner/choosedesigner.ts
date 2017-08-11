@@ -29,15 +29,15 @@ export class ChooseDesignerPage {
 
     getGrabDesigners() {
         //todo getGrabDesigners
-        // this.projectServ.grabberList(this.projectId)
-        //     .then(designers => {
-        //         for (let designer of designers) {
-        //             this.designers.push(designer);
-        //         }
-        //     })
-        //     .catch(error => {
-        //         console.log(error);
-        //     })
+        this.projectServ.grabberList(this.projectId)
+            .then(designers => {
+                for (let designer of designers) {
+                    this.designers.push(designer);
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
 }

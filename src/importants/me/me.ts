@@ -8,7 +8,7 @@ import {AboutPage} from "../../pages/common/about/about";
 import {AccountSecurityPage} from "../../pages/common/securitycenter/accountsecurity/accountsecurity";
 import {SupportPage} from "../../pages/common/support/support";
 import {NotificationsPage} from "../../pages/designer/nofitications/notifications";
-@IonicPage()
+// @IonicPage()
 @Component({
     selector: 'page-me-designer',
     templateUrl: 'me.html'

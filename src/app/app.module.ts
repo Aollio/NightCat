@@ -36,9 +36,10 @@ import {ComponentModule} from "../component/component.module";
 import {Manager} from "../service/manager";
 import {FilesService} from "../service/ajax/files.service";
 import {ImagesService} from "../service/ajax/images.service";
+import {ImportantModule} from "../importants/important.module";
 //import { Calendar } from '@ionic-native/calendar';
 //import {DatePicker} from '@ionic-native/date-picker';
-import { FileTransfer} from '@ionic-native/file-transfer';
+// import { FileTransfer} from '@ionic-native/file-transfer';
 
 export function provideStorage() {
     return new Storage({});
@@ -77,7 +78,8 @@ export function provideStorage() {
         }),
         IonicStorageModule.forRoot({}),
         CustomIconsModule, // Add this!
-        ComponentModule//自定义模块
+        ComponentModule,//自定义模块
+        ImportantModule
     ],
     exports: [],
     bootstrap: [IonicApp],
@@ -103,7 +105,7 @@ export function provideStorage() {
         //DatePicker,
         HTTP,
         ImagePicker,
-        FileTransfer,
+        // FileTransfer,
 
         //auto
         StatusBar,
