@@ -17,7 +17,8 @@
         <div class="content-title-div">您想找什么类型的设计师</div>
         <ion-grid>
             <ion-row>
-                <ion-col col-3 *ngFor="let item of types">
+                <ion-col col-3 *ngFor="let item of types"
+                         [class.bar-bg-active]="item.name==chooseType">
                     <div class="my-li"
                          (click)="setChooseType(item.name)">
                         <img  class="my-li-img" src="{{item.img}}" alt="">
