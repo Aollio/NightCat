@@ -17,17 +17,14 @@ export class EmployerMePage {
 
     follower: EmpFavoriteDesignerPage;
 
-    user = {};
-
-
     ionViewDidEnter() {
         initializeFontSize()
     }
 
     constructor(public  navCtrl: NavController,
-                public share: SharedService,
+                public shared: SharedService,
                 public modalCtrl: ModalController) {
-        this.user = share.getCurrentUser()
+
     }
 
     open(page, option) {
@@ -35,9 +32,6 @@ export class EmployerMePage {
         this.navCtrl.push(EmpFavoriteDesignerPage, {})
     }
 
-    isNullObj(obj) {
-        return JSON.stringify(obj) == JSON.stringify({});
-    }
 
     openLoginPage(event) {
         let profileModal = this.modalCtrl.create(LoginPage);

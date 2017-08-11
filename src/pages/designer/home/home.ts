@@ -18,39 +18,8 @@ export class DesignerHomePage {
         initializeFontSize()
     }
 
-    ad_images: Array<{ url }> = [];
+    ad_images: Array<any> = [];
 
-    // types: Array<{ name, val }> = [
-    //     // UNDEFINDED("未设置"),
-    //     // Types_1("概预算"),
-    //     // Types_2("项目经理"),
-    //     // Types_3("给排水设计"),
-    //     // Types_4("策划"),
-    //     // Types_5("规划设计"),
-    //     // Types_6("建筑设计"),
-    //     // Types_7("电气设计"),
-    //     // Types_8("结构设计"),
-    //     // Types_9("审图"),
-    //     // Types_10("软装设计"),
-    //     // Types_11("室内设计"),
-    //     // Types_12("暖通设计"),
-    //     // Types_13("景观设计");
-    //     {name: '概预算', val: '1'},
-    //     {name: '项目经理', val: '2'},
-    //     {name: '给排水设计', val: '3'},
-    //
-    //     {name: '策划', val: '4'},
-    //     {name: '规划设计', val: '5'},
-    //     {name: '建筑设计', val: '6'},
-    //     {name: '电气设计', val: '7'},
-    //     {name: '结构设计', val: '8'},
-    //     {name: '审图', val: '9'},
-    //
-    //     {name: '软装设计', val: '10'},
-    //     {name: '室内设计', val: '11'},
-    //     {name: '暖通设计', val: '12'},
-    //     {name: '景观设计', val: '13'}
-    // ];
 
     private projectsMap = {};
 

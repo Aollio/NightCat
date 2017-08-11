@@ -1,4 +1,4 @@
-<ion-header >
+<ion-header>
     <ion-navbar [color]="mainColor">
         <ion-title>
             消息
@@ -7,27 +7,32 @@
 </ion-header>
 
 <ion-content>
-    <ion-list>
-        <ion-item class="friend" *ngFor="let session of sessions"     tappable (click)="chat(session.id)">
-            <ion-avatar item-start>
-                <img src="assets/img/des-3.png">
-            </ion-avatar>
-            <h2>{{ sessionNameMap[session.id] }}</h2>
-            <!--<h3>Don't Know What To Do!</h3>-->
-            <p>{{ session.lastMsg.type === 'text' ? session.lastMsg.text : '特殊消息类型' }}</p>
-            <p> {{ util.formatDate(session.updateTime) }}</p>
-        </ion-item>
-    </ion-list>
 
+    <button ion-button full (click)="picker()">Upload</button>
 
-
-
-    <div class="input-wrapper">
-        <input type="file" accept="image/*" id="inputImg" (change)="setImg()"/>
+    <div>
+        <img *ngFor="let img_url of imgurls" [src]="img_url">
     </div>
 
+    <!--<ion-list>-->
+    <!--<ion-item class="friend" *ngFor="let session of sessions"     tappable (click)="chat(session.id)">-->
+    <!--<ion-avatar item-start>-->
+    <!--<img src="assets/img/des-3.png">-->
+    <!--</ion-avatar>-->
+    <!--<h2>{{ sessionNameMap[session.id] }}</h2>-->
+    <!--&lt;!&ndash;<h3>Don't Know What To Do!</h3>&ndash;&gt;-->
+    <!--<p>{{ session.lastMsg.type === 'text' ? session.lastMsg.text : '特殊消息类型' }}</p>-->
+    <!--<p> {{ util.formatDate(session.updateTime) }}</p>-->
+    <!--</ion-item>-->
+    <!--</ion-list>-->
+
+
+    <!--<div class="input-wrapper">-->
+    <!--<input type="file" accept="image/*" id="inputImg" (change)="setImg()"/>-->
+    <!--</div>-->
+
     <!--<ionic-datepicker date="currentDate" min="minDate" max="maxDate" callback="datePickerCallback">-->
-        <!--<button class="button button-block button-positive"> {{ currentDate | date:'MMMM/dd/yyyy' }} </button>-->
+    <!--<button class="button button-block button-positive"> {{ currentDate | date:'MMMM/dd/yyyy' }} </button>-->
     <!--</ionic-datepicker>-->
 
 </ion-content>

@@ -1,11 +1,11 @@
-import {Component, ViewChild} from "@angular/core";
-import set = Reflect.set;
+import {Component} from "@angular/core";
 // import {console} from "../designer/tasksquare/tasksquare";
 import {Util} from "../../service/util";
 //import {Calendar} from '@ionic-native/calendar';
-import {BasePage} from "../base/base-page";
 import {Manager} from "../../service/manager";
-import {NavController, NavParams} from "ionic-angular";
+import {NavController} from "ionic-angular";
+import {ImagePicker} from "@ionic-native/image-picker";
+import {FilesService} from "../../service/ajax/files.service";
 //import {DatePicker} from '@ionic-native/date-picker';
 
 
@@ -23,11 +23,38 @@ export class BlankPage {
     //当前登录角色对应的颜色
     main_color: any;
 
+
+    imgurls = []
+
     constructor(private util: Util,
                 private manager: Manager,
                 private nav: NavController,
-                private navParam: NavParams) {
+                private imagePicker: ImagePicker,
+                private files: FilesService
+    ) {
         this.main_color = this.manager.sharedServ.getPrimaryColor();
+    }
+
+
+    picker() {
+        let options = {
+            maximumImagesCount: 15,
+            quality: 100,
+            outputType: 1
+        }
+        console.log("开始选择图片")
+        this.imagePicker.getPictures(options).then((results) => {
+            for (var i = 0; i < results.length; i++) {
+                console.log("选择图片后")
+                console.log('Image base64: ' + results[i]);
+                this.files.upload(results[i]).then(url => {
+                    console.log("上传成功, url is :", url)
+                    this.imgurls.push(url)
+                });
+            }
+        }, (err) => {
+            console.log(err)
+        });
     }
 
     open(page, option, navparam) {

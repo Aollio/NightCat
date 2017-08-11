@@ -28,20 +28,31 @@ with open(os.path.sep.join([dir_name, dir_name + '.html']), 'w+') as f:
     f.write('</ion-content>\n')
     f.flush()
 
-label_name = 'page-' + dir_name
+label_name = dir_name
 
 with open(os.path.sep.join([dir_name, dir_name + '.scss']), 'w+') as f:
     f.write(label_name + '{\n\n}')
     f.flush()
 
+tscontent = (       "   main_color: any;\n\n"
+                    "   constructor(private util: Util,\n"
+                    "               private manager: Manager,\n"
+                    "               private nav: NavController,\n"
+                    "               private navParam: NavParams) {\n"
+                    "       this.main_color = this.manager.sharedServ.getPrimaryColor();\n"
+                    "    }\n\n"
+                    "    open(page, option, navparam) {\n"
+                    "       this.nav.push(page, option, navparam)\n"
+                    "   }\n\n")
+
 with open(os.path.sep.join([dir_name, dir_name + '.ts']), 'w+') as f:
     f.write("import {Component} from '@angular/core';\n\n")
-    f.write("declare let initializeFontSize: any\n\n")
+    f.write('import {NavController, NavParams} from "ionic-angular";\n')
     f.write("@Component({\n")
     f.write("   selector: '%s',\n" % label_name)
-    f.write("    templateUrl: '%s'\n" % (dir_name + '.html'))
+    f.write("   templateUrl: '%s'\n" % (dir_name + '.html'))
     f.write("})\n\n")
     f.write("export class %s {\n\n" % page_name)
-    f.write("    ionViewDidEnter() { \n        initializeFontSize()\n    }\n")
+    f.write(tscontent)
     f.write("}\n\n")
     f.flush()

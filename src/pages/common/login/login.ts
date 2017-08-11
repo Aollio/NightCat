@@ -57,18 +57,25 @@ export class LoginPage {
 
 
         this.userSev.login(this.user)
-            .then(userInfo => {
+            .then(user => {
                 this.viewCtrl.dismiss();
 
-                if (this.shared.isDesModule() != (userInfo.role == 0)) {
+                console.log("isDes",this.shared.isDesModule(),"role",user.role);
+
+                if (this.shared.isDesModule() != (user.role == 0)) {
                     //登录用户身份和打开用户身份不一致
                     this.util.toast("你登录的用户身份和打开的模块不一致");
                     if (this.shared.isDesModule()) {
-                        this.navCtrl.setRoot(DesignerModulePage);
+                        this.navCtrl.setRoot(EmployerModulePage,{},{animate:true});
                     } else {
-                        this.navCtrl.setRoot(EmployerModulePage);
+                        this.navCtrl.setRoot(DesignerModulePage,{},{animate:true});
                     }
+                }else {
+                    console.log("登录的用户身份和打开的模块一致");
                 }
+
+                this.shared.setCurrentUser(user);
+
             }).catch(error => {
 
             console.log("登录异常:");

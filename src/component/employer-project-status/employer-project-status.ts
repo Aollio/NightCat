@@ -9,6 +9,7 @@ import {ProjectsService} from "../../service/ajax/projects.service";
 import {DesignerListPage} from "../../pages/employer/home/designer/designer-list";
 import {Util} from "../../service/util";
 import {OrderProcessWaitcomment} from "../../pages/common/order/orderprocess/order-process-waitcomment/waitcomment";
+import {ChooseDesignerPage} from "../../pages/employer/choosedesigner/choosedesigner";
 
 declare let initializeFontSize: any
 
@@ -92,7 +93,7 @@ export class EmployerProjectStatusComponent {
     }
 
     openDesignerListPage() {
-        this.nav.push(DesignerListPage, {previousPage: 'chooseDesigner'});
+        this.nav.push(ChooseDesignerPage, {projectId: this._project.id});
     }
 
     openPaymentPage(project){

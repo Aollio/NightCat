@@ -30,14 +30,11 @@ export class ProjectDetailPage extends AbsCommonPage {
     creator;
 
     collectstate: any = 0;
-    pay: any = PayPage;
-    commentorder: any = CommentOrderPage;
-    orderrocessPreSelectdesPage: any = OrderProcessPreSelectedPage;
 
-    /**
-     * 先暂时设为参数为order id，或者为order的对象。
-     * 构造器判断一下，如果是order id，则显示加载符号，如果是order直接显示
-     * */
+    // /**
+    //  * 先暂时设为参数为order id，或者为order的对象。
+    //  * 构造器判断一下，如果是order id，则显示加载符号，如果是order直接显示
+    //  * */
     constructor(public navCtrl: NavController,
                 public navParams: NavParams,
                 private modal: ModalController,
@@ -54,6 +51,7 @@ export class ProjectDetailPage extends AbsCommonPage {
         this.getCreatorSimpleInfo(this.project.create_by);
     }
 
+    //获取雇主头像 昵称
     private getCreatorSimpleInfo(uid) {
         console.log("get user simple info");
         this.userServ.getInfoSimple(uid).then(user => {
@@ -64,8 +62,17 @@ export class ProjectDetailPage extends AbsCommonPage {
         })
     }
 
-    open(page, option) {
-        this.navCtrl.push(page, option)
+
+    openOrderrocessPreSelectdesPage(){
+        this.navCtrl.push(OrderProcessPreSelectedPage);
+    }
+
+    openPayPage(){
+        this.navCtrl.push(PayPage);
+    }
+
+    openCommentOrderPage(){
+        this.navCtrl.push(CommentOrderPage);
     }
 
     /*
@@ -87,8 +94,6 @@ export class ProjectDetailPage extends AbsCommonPage {
     openChat(operation) {
         this.navCtrl.push(ChatPage, operation);
     }
-
-
 
 
 

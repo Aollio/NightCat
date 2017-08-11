@@ -3,9 +3,11 @@ import {SharedService} from "../share.service";
 import {NetworkService} from "../network.service";
 import {HttpUrls} from "../httpurls.service";
 import {KeynoteService} from "../keynote.service";
+import {FilesService} from "./files.service";
+import {ImagePicker} from "@ionic-native/image-picker";
 
 @Injectable()
-export class ProjectsService {
+export class ImagesService {
 
 
     // private KEYNOTE: boolean;
@@ -14,38 +16,34 @@ export class ProjectsService {
 
     constructor(public shared: SharedService,
                 public keynote: KeynoteService,
-                private http: NetworkService, private urls: HttpUrls,) {
-        // this.KEYNOTE = shared.KEYNOTE;
-        this.projects = this.keynote.projects;
+                private http: NetworkService, private urls: HttpUrls,
+                private imagePicker: ImagePicker,
+                private files: FilesService) {
     }
 
-    // async getProjectsById(id): Promise<any> {
-    //     // if (this.KEYNOTE) {
-    //     //     console.log('演示模式, 返回默认用户');
-    //     //     for (let index in this.projects) {
-    //     //         let temp = this.projects[index];
-    //     //         if (temp.create_by == id) {
-    //     //             return temp;
-    //     //         }
-    //     //     }
-    //     //     return Promise.resolve(this.keynote.projects[0])
-    //     // }
-    // }
 
+    async picker(options) {
+        options = options || {
+            maximumImagesCount: 15,
+            quality: 100,
+            outputType: 1
+        }
 
-    /*
-    grabProj
-    * */
-    // async grabProj(id) {
-    //
-    //     //todo grad url
-    //     let response = await this.http.postWithToken('url', {})
-    //
-    //     if (response.status == 600) {
-    //         //this is keynote mode. so return not really data
-    //     }
-    // }
+        console.log("开始选择图片")
 
+        let result = []
+
+        let imgs = await this.imagePicker.getPictures(options)
+
+        for (let i = 0; i < imgs.length; i++) {
+            console.log("选择图片后")
+            this.files.upload(imgs[i]).then(url => {
+                result.push(url)
+            });
+        }
+
+        return result;
+    }
 
     //new
     // type, limit, since_time, max_time
@@ -116,26 +114,6 @@ export class ProjectsService {
 
     async grabProject(grabInfo) {
         let response = await this.http.postWithToken(this.urls.project_grab_post, grabInfo);
-
-        if (response.status != 200) {
-            throw response;
-        }
-        return response.content;
-    }
-
-    //projectId
-    async grabberList(projectId) {
-        let response = await this.http.getWithToken(this.urls.project_grabber_list, {id:projectId});
-
-        if (response.status != 200) {
-            throw response;
-        }
-        return response.content;
-    }
-
-    //项目id	  设计师 uid
-    async selectDesigner(projectId,designerId) {
-        let response = await this.http.postWithToken(this.urls.project_select_designer, {id:projectId,uid:designerId});
 
         if (response.status != 200) {
             throw response;

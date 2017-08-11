@@ -5,21 +5,21 @@
 
 <ion-content>
     <!--用户未登录-->
-    <div *ngIf="isNullObj(user)" class="me-header">
+    <div *ngIf="!shared.isLogin()" class="me-header">
         <div class="me-avatar">
             <img src="assets/img/logo1.png"/>
         </div>
         <div class="login_btn_wrapper">
-            <button small ion-button outline color="light"     tappable (click)="openLoginPage($event)">请登录</button>
+            <button small ion-button outline color="light"  tappable (click)="openLoginPage($event)">请登录</button>
         </div>
     </div>
 
     <!--用户已登录-->
-    <div *ngIf="!isNullObj(user)" class="me-header">
+    <div *ngIf="shared.isLogin()" class="me-header">
         <div class="me-avatar">
-            <img [src]="user.img_url || 'assets/img/logo1.png'">
+            <img [src]="shared.getCurrentUser().img_url || 'assets/img/logo1.png'">
         </div>
-        <div class="me-name">{{user.nickname || ''}}
+        <div class="me-name">{{shared.getCurrentUser().nickname || ''}}
             <!--<span><ion-label>-->
                 <!--{{user.service_length || ''}}&nbsp;{{user.school || ''}}-->
             <!--<br/>-->

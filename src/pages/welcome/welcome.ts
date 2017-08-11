@@ -18,7 +18,7 @@ import {ProjectsPage} from "../employer/projects/projects";
 import {NetworkService} from "../../service/network.service";
 import {PayPage} from "../employer/pay/pay";
 import {CommentOrderPage} from "../common/order/comment-order/comment-order";
-import {ChooseDesignerPage} from "../employer/choosedesigner/choosedesigner";
+
 import {DesignerTabsPage} from "../designer/tabs/tabs";
 import {SharedService} from "../../service/share.service";
 import {EmployerTabsPage} from "../employer/tabs/tabs";
@@ -79,7 +79,7 @@ export class WelcomePage {
     addhonor: any = AddHonorPage;
     casedetail: any = CaseDetailPage;
     paypage: any = PayPage;
-    choosedesigner: any = ChooseDesignerPage;
+    // choosedesigner: any = ChooseDesignerPage;
     projectsPage: any = ProjectsPage;
     list: any = BlankPage;
     searchdesigner: any = SearchDesignerPage;
@@ -197,11 +197,13 @@ export class WelcomePage {
 
 
     openEmployer() {
+        console.log("雇主模块")
         this.shared.setIsDesModule(false);
         this.navCtrl.setRoot(EmployerModulePage, {}, {animate: true})
     }
 
     openDesigner() {
+        console.log("设计师模块")
         this.shared.setIsDesModule(true);
         this.navCtrl.setRoot(DesignerModulePage, {}, {animate: true});
     }

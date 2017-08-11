@@ -6,6 +6,7 @@ import {DesignerProjectStatusComponent} from "./designer-project-status/designer
 import {EmployerProjectStatusComponent} from "./employer-project-status/employer-project-status";
 import {NoProjectComponent} from "./no-project/no-project";
 import {DesignerListMaxComponent} from "./designer-list-max/designer-list-max";
+import {SelectPhoto} from "./select-photo/select-photo";
 
 @NgModule({
     imports: [IonicModule],
@@ -17,7 +18,9 @@ import {DesignerListMaxComponent} from "./designer-list-max/designer-list-max";
         EmployerProjectStatusComponent,
         NoProjectComponent,
         //todo delete
-        DesignerListMaxComponent
+        DesignerListMaxComponent,
+        SelectPhoto
+
     ],
     entryComponents: [
         DesignerItemMax
@@ -30,7 +33,8 @@ import {DesignerListMaxComponent} from "./designer-list-max/designer-list-max";
         EmployerProjectStatusComponent,
         NoProjectComponent,
         //todo delete
-        DesignerListMaxComponent
+        DesignerListMaxComponent,
+        SelectPhoto
     ]
 })
 

@@ -23,6 +23,7 @@ export class SharedService {
     }
 
     setIsDesModule(isDesigner) {
+        console.log("isDesigner",isDesigner);
         this.isDesignerModel = isDesigner;
     }
 
