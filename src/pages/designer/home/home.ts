@@ -45,6 +45,9 @@ export class DesignerHomePage {
 
 
         this.getProjects(0);
+
+
+        this.isFirstLogin = shared.isFirstUse();
     }
 
     selectType(index) {
@@ -86,5 +89,14 @@ export class DesignerHomePage {
 
             refresher['complete']&&refresher['complete']();
         });
+    }
+
+
+    isFirstLogin=true;
+
+    hideFab(){
+        //todo isfirstCome 记录
+        this.shared.setIsNotFirstUse();
+        this.isFirstLogin=false;
     }
 }

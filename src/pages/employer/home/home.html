@@ -25,6 +25,14 @@
 
 <ion-content>
 
+    <ion-fab class="ion-fab">
+        <button menuToggle ion-fab      tappable (click)="hideFab()" *ngIf="isFirstLogin">
+            <img src="assets/img/logo.png"/>
+        </button>
+    </ion-fab>
+
+
+
     <div class="my-title" *ngIf="shared.isLogin()">嗨, {{shared.getCurrentUser().nickname}}</div>
     <div class="my-title" *ngIf="!shared.isLogin()">嗨, 请<a class="aclass"     tappable (click)="openLoginPage($event)">登录</a></div>
     <div class="my-val">喵，今天还好吗，需要我帮你做些什么？</div>
