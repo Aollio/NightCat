@@ -26,7 +26,7 @@ declare let initializeFontSize: any
 export class ProjectDetailPage extends AbsCommonPage {
 
     project;
-    imgs;
+    // imgs;
     creator;
 
     collectstate: any = 0;
@@ -45,7 +45,7 @@ export class ProjectDetailPage extends AbsCommonPage {
                 private util: Util) {
         super(shared);
         this.project = navParams.get('project');
-        this.imgs = navParams.get('imgs');
+        // this.imgs = this.project.imgs;
 
         console.log("project", this.project);
         this.getCreatorSimpleInfo(this.project.create_by);

@@ -53,7 +53,7 @@ export class DesignerHomePage {
     selectType(index) {
         this.currentType = index;
         this.getProjects(index);
-        console.log("select project type",this.shared.project_type[index]);
+        console.log("select project type",this.projectServ.type[index]);
     }
 
     openNotificationsPage() {

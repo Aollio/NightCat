@@ -4,7 +4,8 @@ import {AlertController, ModalController, NavController} from "ionic-angular";
 import {Util} from "../../../service/util";
 import {ProjectsService} from "../../../service/ajax/projects.service";
 import {LoginPage} from "../login/login";
-
+import {ImagePicker} from "@ionic-native/image-picker";
+import {FilesService} from "../../../service/ajax/files.service";
 
 @Component({
     selector: "page-pulishtask",
@@ -15,6 +16,8 @@ export class PublishTaskPage {
     designer: boolean;
 
     constructor(public util: Util,
+                private imagePicker:ImagePicker,
+                private files: FilesService,
                 public shared: SharedService,
                 public navCtrl: NavController,
                 private modal: ModalController,
@@ -180,6 +183,32 @@ export class PublishTaskPage {
                     this.util.toast("发布失败！");
                 }
             });
+    }
+
+
+
+    //todo 显示上传图片;
+    imgurls = [];
+
+    picker() {
+        let options = {
+            maximumImagesCount: 15,
+            quality: 100,
+            outputType: 1
+        }
+        console.log("开始选择图片")
+        this.imagePicker.getPictures(options).then((results) => {
+            for (var i = 0; i < results.length; i++) {
+                console.log("选择图片后")
+                console.log('Image base64: ' + results[i]);
+                this.files.upload(results[i]).then(url => {
+                    console.log("上传成功, url is :", url)
+                    this.imgurls.push(url)
+                });
+            }
+        }, (err) => {
+            console.log(err)
+        });
     }
 
     //end 订单发布

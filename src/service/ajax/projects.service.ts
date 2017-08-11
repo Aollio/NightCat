@@ -7,6 +7,27 @@ import {KeynoteService} from "../keynote.service";
 @Injectable()
 export class ProjectsService {
 
+    //项目状态  枚举不能用
+    // public Status = _Status;
+
+    //项目类型
+    public type = [
+        "未设置",
+        "策划",
+        "规划设计",
+        "建筑设计",
+        "结构设计",
+        "给排水设计",
+        "电气设计",
+        "暖通设计",
+        "景观设计",
+        "室内设计",
+        "软装设计",
+        "项目经理",
+        "概预算",
+        "审图",
+    ];
+
 
     // private KEYNOTE: boolean;
 
@@ -125,7 +146,7 @@ export class ProjectsService {
 
     //projectId
     async grabberList(projectId) {
-        let response = await this.http.getWithToken(this.urls.project_grabber_list, {id:projectId});
+        let response = await this.http.getWithToken(this.urls.project_grabber_list, {id: projectId});
 
         if (response.status != 200) {
             throw response;
@@ -134,8 +155,11 @@ export class ProjectsService {
     }
 
     //项目id	  设计师 uid
-    async selectDesigner(projectId,designerId) {
-        let response = await this.http.postWithToken(this.urls.project_select_designer, {id:projectId,uid:designerId});
+    async selectDesigner(projectId, designerId) {
+        let response = await this.http.postWithToken(this.urls.project_select_designer, {
+            id: projectId,
+            uid: designerId
+        });
 
         if (response.status != 200) {
             throw response;
@@ -143,4 +167,41 @@ export class ProjectsService {
         return response.content;
     }
 
+}
+
+
+enum _Status {
+    /**
+     * 发布项目后, 项目处于发布状态. 这时候设计师可以进行抢单.
+     * 如果没有设计师抢单, 并且项目到达截止时间后会进入'Cancel'状态
+     */
+    Publish,
+        /**
+         * 雇主选择一位设计师后, 等待设计师确认
+         */
+    ConfirmDesigner_WaitDesignerConfitm,
+        /**
+         * 设计时确认后(双方确认), 等待雇主支付. 这时会生成一个对应的支付订单
+         */
+    BothConfirm_WaitEmployerPay,
+        /**
+         * 支付完成后, 等待设计师设计
+         */
+    PayComplete_WaitDesign,
+        /**
+         * 设计完成后, 由雇主进行确认设计完成. 等待评价项目. 这时将款项转给设计师账户
+         */
+    DesignComplete_WaitComment,
+        /**
+         * 若在设计过程中, 雇主和设计师之间发生了无法私下协调的问题. 由平台介入协调. 称为会审
+         */
+    Platform_InterPose,
+        /**
+         * 订单正常完成. 评价后状态为完成
+         */
+    Complete,
+        /**
+         * 订单非正常完成. e.g. 项目超时未抢单; 会审失败; 雇主没有支付; 等等
+         */
+    Cancel
 }

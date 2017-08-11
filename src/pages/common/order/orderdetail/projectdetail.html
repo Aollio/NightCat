@@ -2,9 +2,9 @@
     <ion-navbar [color]="shared.getPrimaryColor()" no-border>
         <ion-title>项目详情</ion-title>
         <!--<ion-buttons end>-->
-            <!--<button ion-button   tappable (click)="openOrderrocessPreSelectdesPage()">-->
-                <!--项目动态-->
-            <!--</button>-->
+        <!--<button ion-button   tappable (click)="openOrderrocessPreSelectdesPage()">-->
+        <!--项目动态-->
+        <!--</button>-->
         <!--</ion-buttons>-->
     </ion-navbar>
 </ion-header>
@@ -15,11 +15,13 @@
         <ion-slides pager>
 
             <!--项目图片显示-->
-            <ion-slide class="ion-slide">
-                <img *ngFor="let img of imgs" [src]="img.img_url"/>
-                <img *ngIf="imgs &&imgs.length==0" src="asset/img/home-default.png"/>
+            <ion-slide class="ion-slide" *ngFor="let img of project.imgs">
+                <img  [src]="img.img_url"/>
             </ion-slide>
 
+            <ion-slide class="ion-slide" *ngIf="project && project.imgs && project.imgs.length == 0">
+                <img  src="assets/img/home-default.png"/>
+            </ion-slide>
 
         </ion-slides>
     </div>
@@ -40,13 +42,15 @@
             </div>
             <div class="details-data-top-dt">
                 <div class="details-data-top-dt-name">类型</div>
-                <div class="details-data-top-dt-val">{{project && shared.project_type[project.type]}}</div>
+                <div class="details-data-top-dt-val">{{project && projsServ.type[project.type]}}</div>
             </div>
         </div>
         <div class="details-data-bottom">
             <div class="details-data-dd">
                 <div>设计深度：<span>{{project &&project.depth||'未填写'}}</span></div>
-                <div>下单时间：<span>{{project && project.create_time && util.stringifyDate(project.create_time).withYear}}</span></div>
+                <div>
+                    下单时间：<span>{{project && project.create_time && util.stringifyDate(project.create_time).withYear}}</span>
+                </div>
             </div>
             <div class="details-data-dd">
                 <div>工时：<span>{{project &&project.period || 0}}</span></div>
@@ -67,20 +71,20 @@
 <ion-footer class="footer-btns" *ngIf="shared.isDesModule()">
 
     <!--<button class="footer-clear-btn" clear ion-button color="primary"   tappable (click)="collect()" icon-start-->
-            <!--style="width: 50%">-->
-        <!--<ion-icon name="ios-star-outline" *ngIf="collectstate===0"></ion-icon>-->
-        <!--<ion-icon name="ios-star" *ngIf="collectstate===1" class="order-state"></ion-icon>-->
-        <!--收藏-->
+    <!--style="width: 50%">-->
+    <!--<ion-icon name="ios-star-outline" *ngIf="collectstate===0"></ion-icon>-->
+    <!--<ion-icon name="ios-star" *ngIf="collectstate===1" class="order-state"></ion-icon>-->
+    <!--收藏-->
     <!--</button>-->
     <!--<button class="footer-clear-btn"   tappable (click)="openChat({sessionId: 'hgyuguyg'})" clear ion-button-->
-            <!--color="primary"-->
-            <!--icon-start style="width: 50%">-->
-        <!--<ion-icon name="text-outline"></ion-icon>-->
-        <!--喵喵-->
+    <!--color="primary"-->
+    <!--icon-start style="width: 50%">-->
+    <!--<ion-icon name="text-outline"></ion-icon>-->
+    <!--喵喵-->
     <!--</button>-->
 
     <!--todo orderId-->
-    <button ion-button color="primary"   tappable (click)="openGrabOrderPage()" full>立即抢单
+    <button ion-button color="primary" tappable (click)="openGrabOrderPage()" full>立即抢单
     </button>
 
 </ion-footer>

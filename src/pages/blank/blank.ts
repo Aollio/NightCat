@@ -8,6 +8,7 @@ import {ImagePicker} from "@ionic-native/image-picker";
 import {FilesService} from "../../service/ajax/files.service";
 import {NetworkService} from "../../service/network.service";
 import {HttpUrls} from "../../service/httpurls.service";
+
 //import {DatePicker} from '@ionic-native/date-picker';
 
 
@@ -36,6 +37,11 @@ export class BlankPage {
                 private http: NetworkService,
                 private urls: HttpUrls) {
         this.main_color = this.manager.sharedServ.getPrimaryColor();
+
+
+
+
+
     }
 
 

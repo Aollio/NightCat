@@ -45,23 +45,6 @@ export class SharedService {
         return 2;
     }
 
-    public project_type = [
-        "未设置",
-        "概预算",
-        "项目经理",
-        "给排水设计",
-        "策划",
-        "规划设计",
-        "建筑设计",
-        "电气设计",
-        "结构设计",
-        "审图",
-        "软装设计",
-        "室内设计",
-        "暖通设计",
-        "景观设计",
-    ];
-
     constructor(private event: Events,
                 private util: Util,
                 private keynote: KeynoteService) {
@@ -124,3 +107,5 @@ export class SharedService {
         this._isFirstUse = false;
     }
 }
+
+
