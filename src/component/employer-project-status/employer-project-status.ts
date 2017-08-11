@@ -29,7 +29,7 @@ export class EmployerProjectStatusComponent {
     constructor(private nav: NavController,
                 private projServ: ProjectsService,
                 private util: Util,
-                private alertCtrl:AlertController) {
+                private alertCtrl: AlertController) {
 
     }
 
@@ -52,26 +52,26 @@ export class EmployerProjectStatusComponent {
     private imgs;
 
 
-    openProjectProcess(project,imgs) {
+    openProjectProcess(project, imgs) {
         if (project.status == 0) {
-            this.nav.push(ProjectDetailPage, {project: project,imgs:imgs});
+            this.nav.push(ProjectDetailPage, {project: project, imgs: imgs});
         }
-        if (project.status == 1) {
+        else if (project.status == 1) {
             this.nav.push(OrderProcessPayment, {project: project});
         }
-        if (project.status == 2) {
+        else if (project.status == 2) {
             this.nav.push(OrderProcessModifyPage, {project: project});
         }
-        if (project.status == 3) {
+        else if (project.status == 3) {
             this.nav.push(OrderProcessModifyPage, {project: project});
         }
-        if (project.status == 4) {
+        else if (project.status == 4) {
             this.nav.push(OrderProcessWaitcomment, {project: project});
         }
-        if (project.status == 5) {
+        else if (project.status == 5) {
             this.nav.push(OrerProcessCompleted, {project: project});
         }
-        if (project.status == 6) {
+        else if (project.status == 6) {
             this.nav.push(OrerProcessCompleted, {project: project});
         }
     }
@@ -88,7 +88,6 @@ export class EmployerProjectStatusComponent {
     // }
 
 
-
     cancelProject() {
         this.nav.push(CancelProjectPage, {});
     }
@@ -97,15 +96,15 @@ export class EmployerProjectStatusComponent {
         this.nav.push(OrderProcessPreSelectedPage, {projectId: this._project.id});
     }
 
-    openPaymentPage(project){
+    openPaymentPage(project) {
         this.nav.push(OrderProcessPayment, {project: project});
     }
 
-    openWaitcommentPage(project){
+    openWaitcommentPage(project) {
         this.nav.push(OrderProcessWaitcomment, {project: project});
     }
 
-    Pay(project){
+    Pay(project) {
         this.nav.push(OrderProcessPayment, {project: project});
     }
 
