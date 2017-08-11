@@ -47,7 +47,7 @@
                         {{grabber.desicription || "未填写" }}
                         <!--芝加哥建筑双年展的横向办公室展览“营地”着眼于城市规划策略，并将其适应旷野，形成传统营地的新类型。像他们之前的项目，北极适应  （在威尼斯双年展特别提到），“营营”探索了建筑能够同时保护和利用自然环境来应对和利用大自然的方式。-->
                     </div>
-                    <div class="my-li-card-bottom" tappable (click)="selectDesigner(grabber.uid)">
+                    <div class="my-li-card-bottom" tappable (click)="selectDesigner($event,grabber.uid)">
                         <div class="my-li-card-bottom-r">
                             确认设计师
                         </div>

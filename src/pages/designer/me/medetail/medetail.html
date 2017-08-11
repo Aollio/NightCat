@@ -11,7 +11,7 @@
         <!--</button>-->
     </div>
     <div center class="me-avatar">
-        <img [src]="user.img_url || 'assets/img/logo1.png'">
+        <img [src]="user&&user.img_url || 'assets/img/logo1.png'">
     </div>
 
 
@@ -49,9 +49,10 @@
         <ion-item class="desc-header">
             <!--<div>-->
             <div class="desc-header-name">
-                {{user.nickname}}
+                {{user&&user.nickname||"未填写"}}
                 <span class="desc-header-type">
-                          {{user.type}}
+                    <!--todo  设计师 type 映射-->
+                          {{user&&user.type||"未填写"}}
                     </span>
             </div>
             <!--<div>-->
@@ -66,10 +67,11 @@
             <!--</div>-->
 
             <p class="desc-head-experience">
-                {{user.service_length}}&nbsp;{{user.school}}
+                {{user&&user.service_length||0}}&nbsp;{{user&&user.school||"未填写"}}
             </p>
             <p class="desc-head-position">
-                {{user.position}} &nbsp;&nbsp;&nbsp;
+                <!--todo position??-->
+                {{user&&user.position||"未填写"}} &nbsp;&nbsp;&nbsp;
                 <ion-icon name="ios-star"></ion-icon>
                 <ion-icon name="ios-star"></ion-icon>
                 <ion-icon name="ios-star"></ion-icon>
@@ -84,7 +86,7 @@
         <ion-item>
             <!--todo-->
             <p class="desc-middle-introduce">
-                {{user.summary}}
+                {{user&&user.summary||"未填写"}}
             </p>
         </ion-item>
 

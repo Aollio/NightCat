@@ -6,7 +6,7 @@
         <ion-col col-3
                  class="header-number">
             <div class="number-detail">
-                0
+                {{projects.length||0}}
             </div>
             <div class="number-label">
                 接单数
@@ -15,25 +15,39 @@
 
         <ion-col col-3
                  class="header-number">
-            <div class="number-detail">
-                0
-            </div>
-            <div class="number-label">
-                完成数
-            </div>
+            <!--todo 完成数 -->
+            <!--<div class="number-detail">-->
+                <!--0-->
+            <!--</div>-->
+            <!--<div class="number-label">-->
+                <!--完成数-->
+            <!--</div>-->
 
         </ion-col>
+
         <ion-col col-6 class="header-right-col">
             <div class="head-time">
-                <div class="datetime">2017年2月<br/>
-                    星期一
+                <div class="datetime">{{util.stringifyDate(date).year}}年{{util.stringifyDate(date).month}}月<br/>
+                    {{util.stringifyDate(date).week}}
                 </div>
-                <div class="dayofmonth">27</div>
+                <div class="dayofmonth">{{util.stringifyDate(date).day}}</div>
             </div>
             <!--<div class="header-toast">-->
-                <!--今日有一条订单需支付-->
+            <!--今日有一条订单需支付-->
             <!--</div>-->
         </ion-col>
+
+        <!--<ion-col col-6 class="header-right-col">-->
+            <!--<div class="head-time">-->
+                <!--<div class="datetime">2017年2月<br/>-->
+                    <!--星期一-->
+                <!--</div>-->
+                <!--<div class="dayofmonth">27</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash;<div class="header-toast">&ndash;&gt;-->
+                <!--&lt;!&ndash;今日有一条订单需支付&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--</ion-col>-->
     </ion-row>
 
 </ion-header>
@@ -41,33 +55,33 @@
 
 <ion-content>
     <ion-row class="type-nav">
-        <ion-col     tappable (click)="select('wait_design')"
+        <ion-col     tappable (click)="select([0])"
                  col-3 class="order-type-col order-type-color" text-center>
-            <div [class.active]="type === 1">
+            <div [class.active]="type === 0">
                 <custom-icon class="custom-icon" set="cat" name="projects-waitdesign"></custom-icon>
                 <br>
                 未确定
             </div>
         </ion-col>
-        <ion-col     tappable (click)="select('wait_outcome')"
+        <ion-col     tappable (click)="select([1])"
                  col-3 class="order-type-col order-type-color" text-center>
-            <div [class.active]="type === 2">
+            <div [class.active]="type === 1">
                 <custom-icon class="custom-icon" set="cat" name="projects-waitorder"></custom-icon>
                 <br>
                 未支付
             </div>
         </ion-col>
-        <ion-col     tappable (click)="select('wait_comment')"
+        <ion-col     tappable (click)="select([2,3])"
                  col-3 class="order-type-col order-type-color " text-center>
-            <div [class.active]="type === 3">
+            <div [class.active]="type === 2||type==3">
                 <custom-icon class="custom-icon" set="cat" name="my-comment"></custom-icon>
                 <br>
                 未交付
             </div>
         </ion-col>
-        <ion-col     tappable (click)="select('all')"
+        <ion-col     tappable (click)="select([4,5])"
                  col-3 class="order-type-col order-type-color" text-center>
-            <div [class.active]="type === 4">
+            <div [class.active]="type === 4||type===5">
                 <custom-icon class="custom-icon" set="cat" name="projects-all"></custom-icon>
                 <br>
                 已完成
@@ -84,6 +98,10 @@
         </ion-refresher-content>
     </ion-refresher>
 
-   <page-orderlist-after-selectdes [type]="type"></page-orderlist-after-selectdes>
+   <!--<page-orderlist-after-selectdes [type]="type"></page-orderlist-after-selectdes>-->
+
+    <designer-project-status *ngFor="let project of currentProjs" [project]="project"></designer-project-status>
+
+    <no-project *ngIf="currentProjs.length===0"></no-project>
 
 </ion-content>

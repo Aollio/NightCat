@@ -23,7 +23,7 @@ export class SharedService {
     }
 
     setIsDesModule(isDesigner) {
-        console.log("isDesigner",isDesigner);
+        console.log("isDesigner", isDesigner);
         this.isDesignerModel = isDesigner;
     }
 
@@ -107,7 +107,9 @@ export class SharedService {
 
     //用户是否登录
     isLogin() {
-        return !this.util.isEmptyObj(this.currentUser);
+        let isLogin = !this.util.isEmptyObj(this.currentUser);
+        console.log('isLogin', isLogin);
+        return isLogin;
     }
 
     // 判断用户是否第一次使用

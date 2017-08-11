@@ -17,16 +17,17 @@
     <!--用户已登录-->
     <div *ngIf="shared.isLogin()" class="me-header"   tappable (click)="openMeDetail()">
         <div class="me-avatar">
-            <img [src]="user.img_url || 'assets/img/logo.png'">
+            <img [src]="shared.getCurrentUser().img_url || 'assets/img/logo.png'">
         </div>
-        <div *ngIf="!isNullObj(user)" class="me-name">
-            {{user.nickname || ''}}
-            <span><ion-label>
-                {{user.service_length || ''}}&nbsp;
-                {{user.school || ''}}
-                <br/>
-                {{user.position || ''}}
-            </ion-label></span>
+        <div class="me-name">
+            <!--todo 显示一些设计师信息-->
+            {{shared.getCurrentUser().nickname || '未填写'}}
+            <!--<span><ion-label>-->
+                <!--{{shared.getCurrentUser().service_length || '未填写'}}&nbsp;-->
+                <!--{{shared.getCurrentUser().school || '未填写'}}-->
+                <!--<br/>-->
+                <!--{{shared.getCurrentUser().position || '未填写'}}-->
+            <!--</ion-label></span>-->
         </div>
     </div>
 

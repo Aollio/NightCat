@@ -82,12 +82,13 @@ export class OrderProcessPreSelectedPage extends AbsCommonPage {
 
     openDesignerPage(disigner) {
         this.navCtrl.push(DesignerMeDetailPage, {
-            disigner: disigner,
+            designer: disigner,
             isDesigner: false
         })
     }
 
-    selectDesigner(designerId) {
+    selectDesigner($event,designerId) {
+        $event.stopPropagation();
         this.alert.create({
             title: "是否确认？",
             buttons: [{

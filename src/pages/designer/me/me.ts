@@ -38,7 +38,7 @@ export class DesignerMePage {
     }
 
     openMeDetail(){
-        this.navCtrl.push(DesignerMeDetailPage,{isDesigner:true});
+        this.navCtrl.push(DesignerMeDetailPage,{isDesigner:true,designer:this.shared.getCurrentUser()});
     }
 
     open(page, option) {
