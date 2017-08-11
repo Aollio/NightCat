@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-navbar>
+    <ion-navbar [class.designer]="shared.isDesModule()" [class.employer]="!shared.isDesModule()">
     </ion-navbar>
 </ion-header>
 <ion-content>
