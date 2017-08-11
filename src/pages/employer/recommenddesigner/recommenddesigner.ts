@@ -5,9 +5,6 @@ import {ChooseDesignerPage} from "../choosedesigner/choosedesigner";
 import {HelpChoosePage} from "../helpchoose/helpchoose";
 import {UsersService} from "../../../service/ajax/users.service";
 import {KeynoteService} from "../../../service/keynote.service";
-
-declare let initializeFontSize: any;
-
 @Component({
     selector: 'page-recommenddesigner',
     templateUrl: 'recommenddesigner.html'
@@ -20,10 +17,6 @@ export class RecommendDesignerPage {
 
     constructor(public navctrl: NavController, private keynote: KeynoteService) {
         this.users = this.keynote.users
-    }
-
-    ionViewDidEnter() {
-        initializeFontSize()
     }
 
     desarray: Array<{ avatar, name, time, describe }> = [

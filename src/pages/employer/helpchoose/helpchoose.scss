@@ -169,7 +169,7 @@ page-helpchoose {
   .clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
   .clearfloat{zoom:1}
   .my-li{
-    width: 7rem;
+    //width: 7rem;
     //height: 7rem;
     padding: 1rem;
     //float: left;
@@ -189,5 +189,9 @@ page-helpchoose {
     line-height: 2rem;
     text-align: center;
     color: #666;
+  }
+
+  .check{
+    color: green;
   }
 }
