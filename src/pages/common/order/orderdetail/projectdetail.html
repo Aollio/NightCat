@@ -15,12 +15,12 @@
         <ion-slides pager>
 
             <!--项目图片显示-->
-            <ion-slide class="ion-slide" *ngFor="let img of project.imgs">
-                <img  [src]="img.img_url"/>
+            <ion-slide class="ion-slide" *ngFor="let img of project.img_urls">
+                <img [src]="img"/>
             </ion-slide>
 
             <ion-slide class="ion-slide" *ngIf="project && project.imgs && project.imgs.length == 0">
-                <img  src="assets/img/home-default.png"/>
+                <img src="assets/img/home-default.png"/>
             </ion-slide>
 
         </ion-slides>

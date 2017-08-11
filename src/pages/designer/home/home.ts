@@ -6,7 +6,6 @@ import {ProjectsService} from "../../../service/ajax/projects.service";
 import {SharedService} from "../../../service/share.service";
 
 
-declare let initializeFontSize: any
 
 @Component({
     selector: 'page-home',
@@ -14,12 +13,8 @@ declare let initializeFontSize: any
 })
 export class DesignerHomePage {
 
-    ionViewDidEnter() {
-        initializeFontSize()
-    }
 
     ad_images: Array<any> = [];
-
 
     private projectsMap = {};
 

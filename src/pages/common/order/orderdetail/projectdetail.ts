@@ -45,7 +45,6 @@ export class ProjectDetailPage extends AbsCommonPage {
                 private util: Util) {
         super(shared);
         this.project = navParams.get('project');
-        // this.imgs = this.project.imgs;
 
         console.log("project", this.project);
         this.getCreatorSimpleInfo(this.project.create_by);
@@ -54,7 +53,7 @@ export class ProjectDetailPage extends AbsCommonPage {
     //获取雇主头像 昵称
     private getCreatorSimpleInfo(uid) {
         console.log("get user simple info");
-        this.userServ.getInfoSimple(uid).then(user => {
+        this.userServ.getInfo(uid).then(user => {
             this.creator = user;
             // this.util.updateObj(this.creator,user);
         }).catch(error => {

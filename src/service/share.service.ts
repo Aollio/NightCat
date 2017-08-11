@@ -41,8 +41,8 @@ export class SharedService {
     ROLE_SERVER_DESIGNER = 0;
     ROLE_SERVER_EMPLOYER = 1;
 
-    getFullStackType(){
-        return 2;
+    getFullStackType() {
+        return 11;
     }
 
     constructor(private event: Events,
@@ -64,8 +64,25 @@ export class SharedService {
     }
 
 
-    //当前登录用户
-    private currentUser = {};
+    designTypes = [    //十三项
+        "未设置",
+        "策划",
+        "规划设计",
+        "建筑设计",
+        "结构设计",
+        "给排水",
+        "电气设计",
+        "暖通设计",
+        "景观设计",
+        "室内设计",
+        "软装设计",
+        "项目经理",
+        "概预算",
+        "审图"]
+
+//当前登录用户
+    private
+    currentUser = {};
 
     getCurrentUser() {
         return this.currentUser;
@@ -84,21 +101,21 @@ export class SharedService {
         this.currentUser = {};
     }
 
-    //end 当前登录用户
+//end 当前登录用户
 
 
-    // isDesigner() {
-    //     return this.currentModuleIsDesigner;
-    // }
+// isDesigner() {
+//     return this.currentModuleIsDesigner;
+// }
 
-    //用户是否登录
+//用户是否登录
     isLogin() {
         let isLogin = !this.util.isEmptyObj(this.currentUser);
         // console.log('isLogin', isLogin);
         return isLogin;
     }
 
-    // 判断用户是否第一次使用
+// 判断用户是否第一次使用
     isFirstUse() {
         return this._isFirstUse;
     }

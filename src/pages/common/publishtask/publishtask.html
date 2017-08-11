@@ -1,7 +1,7 @@
 <ion-header>
     <ion-navbar [color]="shared.getPrimaryColor()" hideBackButton>
         <ion-buttons start>
-            <button ion-button   tappable (click)="goBack()">
+            <button ion-button tappable (click)="goBack()">
                 取消
             </button>
         </ion-buttons>
@@ -9,7 +9,7 @@
             发布项目
         </ion-title>
         <ion-buttons end>
-            <button ion-button   tappable (click)="publish()">
+            <button ion-button tappable (click)="publish()">
                 发布
             </button>
         </ion-buttons>
@@ -30,10 +30,6 @@
     <div class="blank-10px"></div>
 
 
-    <!--<ion-item class="my-item" no-lines>-->
-    <!--<ion-label floating [color]='maincolor' fixed>* 项目标题</ion-label>-->
-    <!--<ion-input smaxlength="10" type="text" value="" ></ion-input>-->
-    <!--</ion-item>-->
     <ion-item>
         <ion-label floating>项目标题 *</ion-label>
         <ion-input type="text" [(ngModel)]="project.title"></ion-input>
@@ -43,15 +39,8 @@
 
     <ion-item class="my-item" no-lines>
         <ion-textarea [(ngModel)]="project.content" rows="5" placeholder="详细描述一下项目的内容"></ion-textarea>
-        <!--<div>-->
-        <!--<img src="assets/img/jiahao.png" height="200" width="200"/>-->
-        <!--</div>-->
     </ion-item>
     <div class="blank-10px"></div>
-    <!--<ion-item class="my-item" no-lines>-->
-    <!--<ion-label floating fixed [color]='maincolor'>* 预算</ion-label>-->
-    <!--<ion-input type="text" value=""></ion-input>-->
-    <!--</ion-item>-->
     <div class="preBudget">
         <ion-item>
             <ion-label floating>预算 *</ion-label>
@@ -79,32 +68,11 @@
         <ion-input [(ngModel)]="project.area" type="number"></ion-input>
     </ion-item>
     <div class="blank-10px"></div>
-    <!--<ion-item class="my-item" no-lines *ngIf="designer === false">-->
-    <!--<ion-label fixed [color]='maincolor'>个数</ion-label>-->
-    <!--<ion-input type="text" value="" placeholder="请输入设计个数"></ion-input>-->
-    <!--</ion-item>-->
     <ion-item>
         <ion-label floating>个数</ion-label>
         <ion-input [(ngModel)]="project.area_count" type="number"></ion-input>
     </ion-item>
     <div class="blank-10px"></div>
-    <!--<ion-item class="my-item no-bottom-radius" no-lines>-->
-    <!--<ion-label fixed [color]='maincolor'>* 设计深度</ion-label>-->
-    <!--</ion-item>-->
-    <!--<div style="width: 50%">-->
-    <!--<ion-item class="my-item no-up-radius" no-lines>-->
-    <!--<ion-segment [(ngModel)]="relationship" [color]="maincolor">-->
-    <!--<ion-segment-button small value="key">-->
-    <!--方案-->
-    <!--</ion-segment-button>-->
-    <!--<ion-segment-button small value="add">-->
-    <!--扩出-->
-    <!--</ion-segment-button>-->
-    <!--<ion-segment-button small value="action">-->
-    <!--施工-->
-    <!--</ion-segment-button>-->
-    <!--</ion-segment>-->
-    <!--</ion-item>-->
 
     <ion-item class="my-item" no-lines>
         <ion-label class="labelcolor">设计深度 *</ion-label>
@@ -115,31 +83,7 @@
         </ion-select>
     </ion-item>
 
-    <!--<ion-list radio-group style="margin-bottom: 0">-->
-    <!--<ion-list-header>-->
-    <!--设计深度 *-->
-    <!--</ion-list-header>-->
-
-    <!--<ion-item>-->
-    <!--<ion-label>方案</ion-label>-->
-    <!--<ion-radio checked="true" value="go"></ion-radio>-->
-    <!--</ion-item>-->
-
-    <!--<ion-item>-->
-    <!--<ion-label>扩出</ion-label>-->
-    <!--<ion-radio value="rust"></ion-radio>-->
-    <!--</ion-item>-->
-
-    <!--<ion-item>-->
-    <!--<ion-label>施工</ion-label>-->
-    <!--<ion-radio value="Python"></ion-radio>-->
-    <!--</ion-item>-->
-    <!--</ion-list>-->
     <div class="blank-10px"></div>
-    <!--<ion-item class="my-item" no-lines>-->
-    <!--<ion-label fixed [color]='maincolor'>* 工时</ion-label>-->
-    <!--<ion-input type="text" value=""></ion-input>-->
-    <!--</ion-item>-->
     <ion-item>
         <ion-label floating>工时</ion-label>
         <ion-input [(ngModel)]="project.period" type="number"></ion-input>
@@ -175,7 +119,13 @@
         </div>
     </ion-item>
     <div class="blank-10px"></div>
-    <div class="photo">
-        <img src="assets/img/photo.png"/>
+
+    <div class="images-upload">
+        <div *ngFor="let img_url of project.img_urls">
+            <img [src]=img_url>
+        </div>
+        <div class="add" (click)="uploading_img()">
+            <ion-icon name="add"></ion-icon>
+        </div>
     </div>
 </ion-content>

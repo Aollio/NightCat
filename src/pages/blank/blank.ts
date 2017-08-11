@@ -5,7 +5,7 @@ import {Util} from "../../service/util";
 import {Manager} from "../../service/manager";
 import {NavController} from "ionic-angular";
 import {ImagePicker} from "@ionic-native/image-picker";
-import {FilesService} from "../../service/ajax/files.service";
+import {FileService} from "../../service/ajax/files.service";
 import {NetworkService} from "../../service/network.service";
 import {HttpUrls} from "../../service/httpurls.service";
 
@@ -33,7 +33,7 @@ export class BlankPage {
                 private manager: Manager,
                 private nav: NavController,
                 private imagePicker: ImagePicker,
-                private files: FilesService,
+                private files: FileService,
                 private http: NetworkService,
                 private urls: HttpUrls) {
         this.main_color = this.manager.sharedServ.getPrimaryColor();

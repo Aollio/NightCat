@@ -34,9 +34,9 @@ import {OrderProcessModule} from "../pages/common/order/orderprocess/orderproces
 import {OrderModule} from "../pages/common/order/order.module";
 import {ComponentModule} from "../component/component.module";
 import {Manager} from "../service/manager";
-import {FilesService} from "../service/ajax/files.service";
-import {ImagesService} from "../service/ajax/images.service";
+import {FileService} from "../service/ajax/files.service";
 import {ImportantModule} from "../importants/important.module";
+import {ImageService} from "../service/ajax/imgs.service";
 //import { Calendar } from '@ionic-native/calendar';
 //import {DatePicker} from '@ionic-native/date-picker';
 // import { FileTransfer} from '@ionic-native/file-transfer';
@@ -86,8 +86,8 @@ export function provideStorage() {
 
     providers: [
         //service ajax
-        ImagesService,
-        FilesService,
+        ImageService,
+        FileService,
         AdsService,
         ProjectsService,
         UsersService,
