@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-navbar>
+    <ion-navbar [color]="shared.getPrimaryColor()">
         <ion-title>
             选择设计师
         </ion-title>
@@ -12,20 +12,12 @@
 
 <ion-content>
 
-    <ion-list radio-group [(ngModel)]="autoManufacturers">
+
         <ion-item *ngFor="let designer of designers">
             <designer-item-max [designer]="designer"></designer-item-max>
-            <ion-label>Cord</ion-label>
-            <ion-radio [value]="designer.uid"></ion-radio>
+            <input type="radio" [(ngModel)]="choosedDesignerId" [value]="designer.uid">
         </ion-item>
-    </ion-list>
 
 
-    <!--<div *ngFor="let designer of designers" class="designer-wrapper">-->
-        <!--<designer-item-max [designer]="designer"></designer-item-max>-->
-        <!--&lt;!&ndash;todo 选择按钮&ndash;&gt;-->
-        <!--<div class="ok">-->
 
-        <!--</div>-->
-    <!--</div>-->
 </ion-content>
