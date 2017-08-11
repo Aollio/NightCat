@@ -16,11 +16,9 @@ export class DesignerModulePage {
 
     rootPage: any = DesignerTabsPage;
 
-    isFirstLogin = true;
-
     constructor(platform: Platform,
                 statusBar: StatusBar,
-                protected shared: SharedService,
+                protected shared:SharedService,
                 splashScreen: SplashScreen) {
         platform.ready().then(() => {
             // Okay, so the platform is ready and our plugins are available.
@@ -28,14 +26,10 @@ export class DesignerModulePage {
             statusBar.styleDefault();
             splashScreen.hide();
 
-            this.isFirstLogin = shared.isFirstUse();
+
         });
     }
 
-    hideFab() {
-        //todo isfirstCome 记录
-        this.shared.setIsNotFirstUse();
-        this.isFirstLogin = false;
-    }
+
 
 }

@@ -1,14 +1,28 @@
-<div class="my-ul"  tappable (click)="openDesignerPage(_designer)">
+<div class="my-ul" tappable (click)="openDesignerPage(_designer)">
     <div class="my-dl">
         <div class="my-dt"><img [src]="_designer && _designer.img_url || 'assets/img/designer-default-avatar.png' "
                                 alt=""/></div>
         <div class="my-dd">
-            <div class="my-title">
+            <span class="my-title">
                 {{_designer&&_designer.nickname||"未填写"}}
+            </span>
+
+            <!--<div class="my-introduction">-->
+            <!--{{_designer&&_designer.summary||"未填写"}}-->
+            <!--</div>-->
+
+            <span class="desc-head-position">
+                <ion-icon name="ios-star"></ion-icon>
+                <ion-icon name="ios-star"></ion-icon>
+                <ion-icon name="ios-star"></ion-icon>
+                <ion-icon name="ios-star"></ion-icon>
+                <ion-icon name="ios-star"></ion-icon>
+            </span>
+
+            <div style="  position: absolute;right: 1rem;top: 0.5rem;">
+                {{_designer && _designer.position||"未填写"}}
             </div>
-            <div class="my-introduction">
-                {{_designer&&_designer.summary||"未填写"}}
-            </div>
+
             <div class="my-ol">
                 <div class="y-li">
                     <div class="y-li-val">{{_designer&&_designer.service_length||"0"}}</div>
@@ -23,6 +37,7 @@
                     <div class="y-li-name">时薪</div>
                 </div>
             </div>
+
             <div class="my-bar">
                 <div class="my-bar-l"></div>
                 <div class="my-bar-r"></div>

@@ -41,6 +41,9 @@ export class EmployerHomePage {
                 public alertCtrl: AlertController,
                 ) {
         this.showAlert();
+
+        this.isFirstLogin = shared.isFirstUse();
+
     }
 
     openLoginPage() {
@@ -92,6 +95,16 @@ export class EmployerHomePage {
     btn_helpChoosePage() {
         this.navCtrl.push(HelpChoosePage);
 
+    }
+
+
+
+    isFirstLogin=true;
+
+    hideFab(){
+        //todo isfirstCome 记录
+        this.shared.setIsNotFirstUse();
+        this.isFirstLogin=false;
     }
 
 }

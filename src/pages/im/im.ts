@@ -2,8 +2,9 @@ import {Component} from "@angular/core";
 import {ImService} from "../../service/im/service.im";
 import {Util} from "../../service/util";
 import {ChatPage} from "./chat/chat";
-import {NavController} from "ionic-angular";
+import {ModalController, NavController} from "ionic-angular";
 import {SharedService} from "../../service/share.service";
+import {LoginPage} from "../common/login/login";
 @Component({
     selector: 'page-im',
     templateUrl: 'im.html'
@@ -20,6 +21,7 @@ export class IMPage {
     constructor(public imServ: ImService,
                 public nav: NavController,
                 public util: Util,
+                private modal:ModalController,
                 public shared: SharedService) {
         this.maincolor = this.shared.getPrimaryColor();
         this.designer=this.shared.isDesModule();
@@ -27,8 +29,12 @@ export class IMPage {
     }
 
 
-    // ionViewDidEnter(){
-    //
+    ionViewDidEnter(){
+
+        if(!this.shared.isLogin()){
+            this.modal.create(LoginPage).present();
+        }
+
     //     let loading = this.util.createLoading("加载消息列表中...")
     //
     //
@@ -51,7 +57,7 @@ export class IMPage {
     //         console.log(this.sessions)
     //         console.log(this.sessionNameMap)
     //     }
-    // }
+    }
 
 
     chat(sessionId) {

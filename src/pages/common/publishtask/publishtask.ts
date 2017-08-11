@@ -45,7 +45,9 @@ export class PublishTaskPage {
                     }
                 }
             ]
-        }).present();
+        });
+        this.modal.create(LoginPage).present();
+
     }
 
 

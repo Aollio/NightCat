@@ -1,10 +1,6 @@
-<ion-menu [content]="content" [persistent]="false">
+<ion-menu [content]="catcontent" [persistent]="false">
     <page-slidemenu></page-slidemenu>
 </ion-menu>
-<ion-fab>
-    <button menuToggle ion-fab tappable (click)="hideFab()" *ngIf="isFirstLogin">
-        <img src="assets/img/logo.png"/>
-    </button>
-</ion-fab>
 
-<ion-nav #content [root]="rootPage"></ion-nav>
+
+<ion-nav #catcontent [root]="rootPage"></ion-nav>

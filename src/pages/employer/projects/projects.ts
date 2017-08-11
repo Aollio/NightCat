@@ -4,6 +4,8 @@ import {EmpOrderListComponent} from "./emporderlist/emporderlist";
 import {SharedService} from "../../../service/share.service";
 import {Util} from "../../../service/util";
 import {ProjectsService} from "../../../service/ajax/projects.service";
+import {ModalController, NavController} from "ionic-angular";
+import {LoginPage} from "../../common/login/login";
 
 declare let initializeFontSize: any
 
@@ -18,7 +20,8 @@ export class ProjectsPage {
     private projects = [];
     private currentProjs = [];
 
-    constructor(private share: SharedService,
+    constructor(private shared: SharedService,
+                private modal:ModalController,
                 private projectServ: ProjectsService,
                 private util: Util) {
     }
@@ -27,6 +30,10 @@ export class ProjectsPage {
     private date;
 
     ionViewDidEnter() {
+        if(!this.shared.isLogin()){
+            this.modal.create(LoginPage).present();
+        }
+
         this.date = new Date();
         this._doRefresh(() => {
         });
@@ -35,7 +42,7 @@ export class ProjectsPage {
 
 
     doRefresh(refresher) {
-        if (!this.share.isLogin()) {
+        if (!this.shared.isLogin()) {
             refresher.complete();
             this.util.toast("未登录！");
             return;
@@ -46,7 +53,7 @@ export class ProjectsPage {
     }
 
     _doRefresh(completeFunc) {
-        if (!this.share.isLogin()) {
+        if (!this.shared.isLogin()) {
             return;
         }
         this.projectServ.getUserProjects()
