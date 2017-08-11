@@ -51,6 +51,12 @@ export class RegisterPage {
             this.util.toast('请输入正确手机号')
             return
         }
+
+        // todo 验证密码
+        // 正则验证密码中是否有大小写字母，数字，和符号
+        // 大小写字母：(?=.*[A-Z])(?=.*[a-z])
+        // 数字：(?=.*\d)
+        // 符号：((?=[\x21-\x7e]+)[^A-Za-z0-9])
         if (this.user.password == null || this.user.password == '') {
             util.toast('请输入密码')
             return
