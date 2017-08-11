@@ -10,6 +10,7 @@ import {PayProjectsListPage} from "../../pages/employer/me/pay-projects-list/pay
 import {SupportPage} from "../../pages/common/support/support";
 import {AboutPage} from "../../pages/common/about/about";
 import {WelcomePage} from "../../pages/welcome/welcome";
+import {DesignerMeDetailPage} from "../../pages/designer/me/medetail/medetail";
 
 // @IonicPage()
 @Component({
@@ -66,6 +67,10 @@ export class ImportantMePage {
         }
         let profileModal = this.modalCtrl.create(WelcomePage,{state:2});
         profileModal.present();
+    }
+
+    openMeDetail(){
+        this.navCtrl.push(DesignerMeDetailPage,{isDesigner:true,designer:this.shared.getCurrentUser()});
     }
 
     isLogin() {

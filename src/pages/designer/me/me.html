@@ -20,12 +20,12 @@
             <img [src]="shared.getCurrentUser().img_url || 'assets/img/logo.png'">
         </div>
         <div class="me-name">
-            {{shared.getCurrentUser().nickname || ''}}
+            {{shared.getCurrentUser().nickname || '未填写'}}
             <span><ion-label>
-                {{shared.getCurrentUser().service_length || ''}}&nbsp;
-                {{shared.getCurrentUser().school || ''}}
+                {{shared.getCurrentUser().service_length || '未填写'}}&nbsp;
+                {{shared.getCurrentUser().school || '未填写'}}
                 <br/>
-                {{shared.getCurrentUser().position || ''}}
+                {{shared.getCurrentUser().position || '未填写'}}
             </ion-label></span>
         </div>
     </div>
