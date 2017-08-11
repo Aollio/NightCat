@@ -1,4 +1,5 @@
 import {NgModule} from "@angular/core";
+import {ImportantMePage} from "./me/me";
 import {MePage} from "./me/me";
 import {IonicModule} from "ionic-angular";
 import {CustomIconsModule} from "ionic2-custom-icons";
@@ -9,13 +10,13 @@ import {CustomIconsModule} from "ionic2-custom-icons";
         CustomIconsModule,
     ],
     declarations: [
-        MePage,
+        ImportantMePage,
     ],
     entryComponents: [
-        MePage
+        ImportantMePage
     ],
     exports: [
-        MePage
+        ImportantMePage
     ],
     providers: []
 })
