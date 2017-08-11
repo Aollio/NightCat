@@ -44,6 +44,7 @@ export class EmployerProjectStatusComponent {
         console.log('get project imgs');
         this.projServ.getProjectImgs(project.id).then(imgs => {
             this.imgs = imgs;
+            this._project.imgs=imgs;
         }).catch(error => {
             console.log(error);
         });
@@ -52,9 +53,9 @@ export class EmployerProjectStatusComponent {
     private imgs;
 
 
-    openProjectProcess(project, imgs) {
+    openProjectProcess(project) {
         if (project.status == 0) {
-            this.nav.push(ProjectDetailPage, {project: project, imgs: imgs});
+            this.nav.push(ProjectDetailPage, {project: project});
         }
         else if (project.status == 1) {
             this.nav.push(OrderProcessPayment, {project: project});

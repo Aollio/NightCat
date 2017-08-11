@@ -7,6 +7,8 @@ import {ProjectsService} from "../../../service/ajax/projects.service";
 import {ModalController, NavController} from "ionic-angular";
 import {LoginPage} from "../../common/login/login";
 
+//注意导入
+
 declare let initializeFontSize: any
 
 @Component({

@@ -17,19 +17,19 @@
 
     <ion-row class="card-footer-number" [class.margin_bottom_0]="shared.isDesModule()">
         <ion-col center text-center>
-            <div class="desc-bottom-number">162</div>
+            <div class="desc-bottom-number">{{user&&user.bid_count||0}}</div>
             <div class="desc-bottom-number-label">
                 接单数
             </div>
         </ion-col>
         <ion-col center text-center>
-            <div class="desc-bottom-number">300</div>
+            <div class="desc-bottom-number">{{user&&user.total_works||0}}</div>
             <div class="desc-bottom-number-label ">
                 总工时
             </div>
         </ion-col>
         <ion-col center text-center>
-            <div class="desc-bottom-number">400</div>
+            <div class="desc-bottom-number">{{user&&user.hourly_wage||0}}</div>
             <div class="desc-bottom-number-label">
                 时薪
             </div>

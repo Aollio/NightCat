@@ -21,7 +21,7 @@
     <ion-item class="my-item" no-lines>
         <ion-label [color]='maincolor'>项目类型 *</ion-label>
         <ion-select [(ngModel)]="project.type" input interface="popover" placeholder="请选择任务类型">
-            <div *ngFor="let item of shared.project_type;let i=index">
+            <div *ngFor="let item of projectServ.type;let i=index">
                 <ion-option *ngIf="i>0" value={{i}}>{{item}}</ion-option>
             </div>
             <!--<ion-option value="0">概预算</ion-option>-->
