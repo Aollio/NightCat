@@ -77,6 +77,10 @@ export class RegisterPage {
         this.current = 2
     }
 
+    back(){
+        this.current = 1;
+    }
+
     register() {
         if (this.user.nickname == null || this.user.nickname == '') {
             this.util.toast('请输入昵称')
@@ -103,7 +107,13 @@ export class RegisterPage {
                         console.log('login success');
 
                         this.shared.setCurrentUser(user);
-                        this.openHome();
+
+                        if (this.shared.isDesModule()) {
+                            this.navCtrl.setRoot(DesignerModulePage,{},{animate:true});
+                        } else {
+                            this.navCtrl.setRoot(EmployerModulePage,{},{animate:true});
+                        }
+                        // this.openHome();
                         // this.current = 3
                     }).catch(error => {
                     console.log('自动登录失败', error)
@@ -117,12 +127,12 @@ export class RegisterPage {
             }).catch(error => {
             console.log('注册失败', error);
             loading.dismiss();
-            this.util.toast('注册失败, 请稍后重试');
+            this.util.toast('注册失败, '+error.message);
         })
     }
 
     openHome() {
-        if (this.role === '00') {
+        if (this.shared.isDesModule()) {
             this.navCtrl.setRoot(DesignerModulePage, {}, {animate: true})
         } else {
             this.navCtrl.setRoot(EmployerModulePage, {}, {animate: true});

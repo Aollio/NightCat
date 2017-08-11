@@ -1,5 +1,4 @@
-
-import {IonicPage, ModalController, NavController} from "ionic-angular";
+import {ModalController, NavController} from "ionic-angular";
 import {Component} from "@angular/core";
 import {EmpFavoriteDesignerPage} from "../../pages/employer/me/favorite-designer/favorite-designer";
 import {Util} from "../../service/util";
@@ -12,6 +11,7 @@ import {SupportPage} from "../../pages/common/support/support";
 import {AboutPage} from "../../pages/common/about/about";
 import {WelcomePage} from "../../pages/welcome/welcome";
 
+// @IonicPage()
 @Component({
     selector: 'page-me-designer',
     templateUrl: 'me.html'
@@ -21,8 +21,9 @@ export class ImportantMePage {
     follower: EmpFavoriteDesignerPage;
 
     user = {};
+
     constructor(public  navCtrl: NavController,
-                public util :Util,
+                public util: Util,
                 public shared: SharedService,
                 public modalCtrl: ModalController) {
         this.user = shared.getCurrentUser()
@@ -60,17 +61,16 @@ export class ImportantMePage {
     aboutPage: any = AboutPage;
 
     exitApp() {
-        for(let key in this.shared.getCurrentUser()){
+        for (let key in this.shared.getCurrentUser()) {
             delete this.shared.getCurrentUser()[key];
         }
-        let profileModal = this.modalCtrl.create(WelcomePage);
+        let profileModal = this.modalCtrl.create(WelcomePage,{state:2});
         profileModal.present();
-
     }
 
     isLogin() {
         let login = JSON.stringify(this.shared.getCurrentUser()) != JSON.stringify({})
-        console.log("isLogin", login);
+        // console.log("isLogin", login);
         return login;
     }
 }

@@ -8,7 +8,7 @@
                 <div class="my-li-right-t-name">{{_project.title||"未填写"}}</div>
             </div>
             <div class="my-li-right-b">
-                <div class="my-li-right-b-l" *ngIf="status==0">{{_project.fav_count||0}}人抢单</div>
+                <div class="my-li-right-b-l" *ngIf="status==0">{{_project.grab_count||0}}人抢单</div>
                 <div class="my-li-right-b-r" *ngIf="status==0">{{_project.due_time&&util.stringifyDate(_project.due_time).withMonth||"未填写"}}后截止抢单
                 </div>
 
@@ -30,7 +30,7 @@
     <!--选择设计师状态-->
     <div class="my-bottom" *ngIf="0==status">
         <div class="my-bottom-li act"
-             tappable (click)="openDesignerListPage()">选择设计师
+             tappable (click)="openDynamicProjectPage()">选择设计师
         </div>
         <div class="my-bottom-li"  tappable (click)="cancelProject()">取消订单</div>
     </div>

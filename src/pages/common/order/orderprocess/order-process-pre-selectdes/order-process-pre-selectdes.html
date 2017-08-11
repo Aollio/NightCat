@@ -2,10 +2,12 @@
 
     <ion-navbar [hideBackButton]="true" [color]="navColor">
         <!--<button ion-button clear     tappable (click)="goback()">-->
-            <!--<ion-icon name="ios-arrow-back"></ion-icon>返回</button>-->
+        <!--<ion-icon name="ios-arrow-back"></ion-icon>返回</button>-->
         <ion-buttons start>
-            <button ion-button clear     tappable (click)="goback()">
-            <ion-icon name="ios-arrow-back"></ion-icon>返回</button>
+            <button ion-button clear tappable (click)="goback()">
+                <ion-icon name="ios-arrow-back"></ion-icon>
+                返回
+            </button>
         </ion-buttons>
         <ion-title>
             订单动态
@@ -21,27 +23,31 @@
 <ion-content class="bodybg">
 
     <!--<div class="orderprocess-img">-->
-        <!--<img src="assets/img/first.png" alt=""/>-->
+    <!--<img src="assets/img/first.png" alt=""/>-->
     <!--</div>-->
     <div class="my-ul">
-        <div class="my-li">
+        <div class="my-li" *ngFor="let grabber of grabbers">
             <div class="my-li-line">
+                <!--todo 订单动态用户头像-->
                 <div class="my-li-line-circular"></div>
-                <div class="my-li-line-time">15:00</div>
+                <div class="my-li-line-time">
+                    {{grabber.create_time&&util.stringifyDate(grabber.create_time).withMonth}}
+                </div>
 
-                <div class="my-li-card">
+                <div class="my-li-card" tappable (click)="openDesignerPage(grabber.info)">
                     <div class="my-li-card-top">
                         <div class="my-li-card-top-l"></div>
-                        <div class="my-li-card-top-c">设计师小A</div>
-                        <div class="my-li-card-top-r">300元-10小时</div>
+                        <div class="my-li-card-top-c">{{grabber.info&&grabber.info.nickname||"未填写"}}</div>
+                        <div class="my-li-card-top-r">{{grabber.price||0}}元-{{grabber.cycle||0}}小时</div>
                     </div>
                     <!--<div class="my-li-card-title">-->
-                        <!--李笑来：10个原则帮你选到一本好书-->
+                    <!--李笑来：10个原则帮你选到一本好书-->
                     <!--</div>-->
                     <div class="my-li-card-text">
-                        芝加哥建筑双年展的横向办公室展览“营地”着眼于城市规划策略，并将其适应旷野，形成传统营地的新类型。像他们之前的项目，北极适应  （在威尼斯双年展特别提到），“营营”探索了建筑能够同时保护和利用自然环境来应对和利用大自然的方式。
+                        {{grabber.desicription || "未填写" }}
+                        <!--芝加哥建筑双年展的横向办公室展览“营地”着眼于城市规划策略，并将其适应旷野，形成传统营地的新类型。像他们之前的项目，北极适应  （在威尼斯双年展特别提到），“营营”探索了建筑能够同时保护和利用自然环境来应对和利用大自然的方式。-->
                     </div>
-                    <div class="my-li-card-bottom">
+                    <div class="my-li-card-bottom" tappable (click)="selectDesigner(grabber.uid)">
                         <div class="my-li-card-bottom-r">
                             确认设计师
                         </div>
