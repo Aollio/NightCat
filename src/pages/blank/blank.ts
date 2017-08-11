@@ -6,6 +6,8 @@ import {Manager} from "../../service/manager";
 import {NavController} from "ionic-angular";
 import {ImagePicker} from "@ionic-native/image-picker";
 import {FilesService} from "../../service/ajax/files.service";
+import {NetworkService} from "../../service/network.service";
+import {HttpUrls} from "../../service/httpurls.service";
 //import {DatePicker} from '@ionic-native/date-picker';
 
 
@@ -30,8 +32,9 @@ export class BlankPage {
                 private manager: Manager,
                 private nav: NavController,
                 private imagePicker: ImagePicker,
-                private files: FilesService
-    ) {
+                private files: FilesService,
+                private http: NetworkService,
+                private urls: HttpUrls) {
         this.main_color = this.manager.sharedServ.getPrimaryColor();
     }
 
@@ -57,27 +60,16 @@ export class BlankPage {
         });
     }
 
+    post() {
+        let one = ["one", "two", "three"]
+        this.http.post(this.urls.server_url + "/ads", {img_urls: one})
+            .then(reslt => console.log(reslt))
+            .catch(error => console.log(error))
+    }
+
     open(page, option, navparam) {
         this.nav.push(page, option, navparam)
     }
-
-    // this.datePicker.show({
-    //     date: new Date(),
-    //     mode: 'date',
-    //     androidTheme: this.datePicker.ANDROID_THEMES.THEME_HOLO_DARK
-    // }).then(
-    //     date => console.log('Got date: ', date),
-    //     err => console.log('Error occurred while getting date: ', err)
-    // );
-
-
-    // super.shared
-    // this.calendar.createCalendar('MyCalendar').then(
-    //     (msg) => { console.log(msg); },
-    //     (err) => { console.log(err); }
-    // );
-    // }
-
 
     images: Array<{ url }> = [
         {url: 'assets/img/home-default.png'},
@@ -98,42 +90,5 @@ export class BlankPage {
                 .children().css("top", "-100%");
             setTimeout(() => jQuery(this).remove(), 500);
         });
-    }
-
-    showFile() {
-        this.util.toast(this.file)
-    }
-
-
-    caseArray: Array<{ caseImg, caseDesc, caseMoney, caseFav, caseTime }> = [
-        {
-            caseImg: '/assets/img/des-1.png',
-            caseDesc: '园区导视，布点规划，文化导入，精神堡垒，展厅，室内软装设计等许多内容、不一一展示',
-            caseMoney: '500',
-            caseFav: '8',
-            caseTime: '6天1小时'
-        },
-        {
-            caseImg: '/assets/img/des-1.png',
-            caseDesc: '园区导视，布点规划，文化导入，精神堡垒，展厅，室内软装设计等许多内容、不一一展示',
-            caseMoney: '500',
-            caseFav: '8',
-            caseTime: '6天1小时'
-        },
-        {
-            caseImg: '/assets/img/des-1.png',
-            caseDesc: '园区导视，布点规划，文化导入，精神堡垒，展厅，室内软装设计等许多内容、不一一展示',
-            caseMoney: '500',
-            caseFav: '8',
-            caseTime: '6天1小时'
-        },
-    ]
-
-
-    setImg() {
-        var input = document.getElementById("inputImg");
-        console.log("file", input);
-        // console.log("file",input.offsetHeight.);
-        // console.log("file",input.files);
     }
 }

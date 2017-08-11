@@ -41,6 +41,9 @@ export class SharedService {
     ROLE_SERVER_DESIGNER = 0;
     ROLE_SERVER_EMPLOYER = 1;
 
+    getFullStackType(){
+        return 2;
+    }
 
     public project_type = [
         "未设置",
