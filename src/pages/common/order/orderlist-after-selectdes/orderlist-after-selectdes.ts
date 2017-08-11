@@ -447,30 +447,30 @@ export class OrderListAfterSelectDesignerPage {
             if (project.status == 0) {
                 this.nav.push(ProjectDetailPage, {project: project});
             }
-            if (project.status == 1) {
+            else if (project.status == 1) {
                 this.nav.push(OrderProcessPayment, {project: project});
             }
-            if (project.status == 2) {
+            else if (project.status == 2) {
                 this.nav.push(OrderProcessModifyPage, {project: project});
             }
-            if (project.status == 3) {
+            else if (project.status == 3) {
                 this.nav.push(OrderProcessModifyPage, {project: project});
             }
-            if (project.status == 4) {
+            else if (project.status == 4) {
                 this.nav.push(OrderProcessWaitcomment, {project: project});
             }
-            if (project.status == 5) {
+            else if (project.status == 5) {
                 this.nav.push(OrerProcessCompleted, {project: project});
             }
-            if (project.status == 6) {
+            else if (project.status == 6) {
                 this.nav.push(OrerProcessCompleted, {project: project});
             }
         }
-        if (this.isDesigner) {
+        else if (this.isDesigner) {
             if (project.status == 0) {
                 this.nav.push(ProjectDetailPage, {project: project});
             }
-            if (project.status >= 1) {
+            else if (project.status >= 1) {
                 this.nav.push(OrderProcessModifyPage, {project: project});
             }
         }

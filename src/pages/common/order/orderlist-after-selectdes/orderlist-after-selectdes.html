@@ -1,6 +1,6 @@
 <div class="my-list">
     <div class="my-ul" *ngFor="let item of orderlist">
-        <div *ngIf="(item.status >= statusMin && item.status <= statusMax) &&! isDesigner">
+        <div *ngIf="(item.status >= statusMin && item.status <= statusMax) && !isDesigner">
             <div class="my-li"
                  tappable (click)="openProjectProcess(item)">
                 <div class="my-li-img">
@@ -18,7 +18,7 @@
                         <div class="my-li-right-b-money" *ngIf="item.status >= 1 &&item.status <= 5"
                         >¥{{item.fav_count}}元
                         </div>
-                        <div class="my-li-right-b-r" *ngIf="item.status ==3">正在审图
+                        <div class="my-li-right-b-r" *ngIf="item.status == 3">正在审图
                         </div>
 
                         <div class="my-li-right-b-r"
@@ -30,9 +30,9 @@
             <!--已发布状态-->
 
             <!--选择设计师状态-->
-            <div class="my-bottom" *ngIf="0==item.status">
-                <div class="my-bottom-li act"
-                     tappable (click)="open(designerList,{previousPage:'chooseDesigner'})">选择设计师
+            <div class="my-bottom" *ngIf="0 == item.status">
+                <div class="my-bottom-li act" tappable (click)="open(designerList,{previousPage:'chooseDesigner'})">
+                    选择设计师
                 </div>
                 <div class="my-bottom-li" tappable (click)="cancelProject()">取消订单</div>
             </div>
@@ -103,7 +103,7 @@
     </div>
 </div>
 
-<ion-content *ngIf="isEmpty()" class="ioncontent">
+<div *ngIf="isEmpty()" class="ioncontent">
     <div class="null-project">
         <img src="assets/img/project-null.png">
     </div>
@@ -114,4 +114,4 @@
     <button ion-button class="null-project-button" tappable (click)="openFindOrder()">寻找项目</button>
     <!--<button ion-button class="null-project-button"     tappable (click)="openPulishTask()">自己发布项目</button>-->
 
-</ion-content>
+</div>
