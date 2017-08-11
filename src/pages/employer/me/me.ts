@@ -6,6 +6,8 @@ import {LoginPage} from "../../common/login/login";
 import {CommentPage} from "../../designer/comment/comment";
 import {NotificationsPage} from "../../designer/nofitications/notifications";
 import {PayProjectsListPage} from "./pay-projects-list/pay-projects-list";
+import {WelcomePage} from "../../welcome/welcome";
+import {NetworkService} from "../../../service/network.service";
 
 declare let initializeFontSize: any;
 
@@ -23,6 +25,7 @@ export class EmployerMePage {
 
     constructor(public  navCtrl: NavController,
                 public shared: SharedService,
+                private http:NetworkService,
                 public modalCtrl: ModalController) {
 
     }
@@ -50,5 +53,13 @@ export class EmployerMePage {
 
     openPayProjects() {
         this.navCtrl.push(PayProjectsListPage, {})
+    }
+
+    exitApp() {
+        this.shared.clearCurrentUser();
+        this.http.clearToken();
+        let profileModal = this.modalCtrl.create(WelcomePage,{state:2});
+        profileModal.present();
+
     }
 }

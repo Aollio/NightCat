@@ -32,6 +32,10 @@
     <!--头像 昵称-->
     <div [class.out-window]="current != 2" [class.on-window]="current == 2" class="ion-content-class">
 
+        <button ion-button clear margin-top>
+            <ion-icon clear name="ios-arrow-back" (click)="back()"></ion-icon>
+        </button>
+
         <div class="null-only-height">欢迎来夜猫</div>
         <div class="avatar"     tappable (click)="chooseAvatar()">
             <div *ngIf="btn_avatar_state===1">选择头像</div>

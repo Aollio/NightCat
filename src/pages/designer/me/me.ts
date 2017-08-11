@@ -7,11 +7,9 @@ import {DesignerWalletPage} from "../wallet/wallet";
 import {SharedService} from "../../../service/share.service";
 import {User} from "../../../model/user";
 import {LoginPage} from "../../common/login/login";
-import {ModalController, NavParams} from 'ionic-angular';
+import { ModalController, NavParams } from 'ionic-angular';
 import {Util} from "../../../service/util";
 import {FavoriteProjectsPage} from "./favorite-projects/favorite-projects";
-import {ImportantMePage} from "../../../importants/me/me";
-
 declare let initializeFontSize: any;
 
 @IonicPage()
@@ -20,12 +18,12 @@ declare let initializeFontSize: any;
     templateUrl: 'me.html'
 })
 export class DesignerMePage {
-    favoriteProjectsPage: any = FavoriteProjectsPage;
+    favoriteProjectsPage:any=FavoriteProjectsPage;
 
     constructor(public navCtrl: NavController,
                 public shared: SharedService,
                 public modalCtrl: ModalController,
-                public util: Util) {
+                public util:Util) {
     }
 
     wallet: any = DesignerWalletPage;
@@ -39,8 +37,8 @@ export class DesignerMePage {
         this.navCtrl.push(page, option)
     }
 
-    openMeDetail() {
-        this.navCtrl.push(DesignerMeDetailPage, {isDesigner: true, designer: this.shared.getCurrentUser()});
+    openMeDetail(){
+        this.navCtrl.push(DesignerMeDetailPage,{isDesigner:true,designer:this.shared.getCurrentUser()});
     }
 
     open(page, option) {
@@ -52,8 +50,8 @@ export class DesignerMePage {
     //    return JSON.stringify(obj)==JSON.stringify({});
     // }
 
-    openLoginPage() {
-        this.util.presentLoginPage(this.navCtrl)
+    openLoginPage(){
+        this.modalCtrl.create(LoginPage).present();
     }
 
 }

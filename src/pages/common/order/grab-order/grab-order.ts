@@ -44,7 +44,7 @@ export class GrabOrderPage {
     }
 
     openDetailPage() {
-        this.navCtrl.push(OrderProcessPreSelectedPage, {isGrab: true})
+        this.navCtrl.push(OrderProcessPreSelectedPage, {isGrab: true,projectId:this.grab_info.id});
     }
 
 }

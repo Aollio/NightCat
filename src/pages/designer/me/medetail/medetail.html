@@ -11,7 +11,7 @@
         <!--</button>-->
     </div>
     <div center class="me-avatar">
-        <img [src]="user.img_url || 'assets/img/logo1.png'">
+        <img [src]="user&&user.img_url || 'assets/img/logo1.png'">
     </div>
 
 
@@ -39,10 +39,9 @@
     <div class="row_buttons" *ngIf="!shared.isDesModule()">
         <button ion-button round class="attention_btn">
             <ion-icon name="ios-heart"></ion-icon>
-            &nbsp;关 注 我 &nbsp;
-        </button>
+            关 注 我</button>
         <button ion-button round icon-only class="sed_msg_btn"
-                tappable (click)="openChat({sessionId: 'hgyuguyg'})">
+                    tappable (click)="openChat({sessionId: 'hgyuguyg'})">
             <ion-icon name="ios-chatbubbles"></ion-icon>
         </button>
     </div>
@@ -50,15 +49,16 @@
         <ion-item class="desc-header">
             <!--<div>-->
             <div class="desc-header-name">
-                {{user.nickname}}
+                {{user&&user.nickname||"未填写"}}
                 <span class="desc-header-type">
-                          {{ shared.project_type[user.type] }}
+                    <!--todo  设计师 type 映射-->
+                          {{user&&user.type||"未填写"}}
                     </span>
             </div>
             <!--<div>-->
 
             <!--</div>-->
-            <div class="touch-expand-div" tappable (click)="modify()">
+            <div class="touch-expand-div"     tappable (click)="modify()">
                 <div class="desc-header-modify" *ngIf="isDesigner">修改
                     <ion-icon class="desc-header-modify-icon" name="md-create"></ion-icon>
                 </div>
@@ -66,19 +66,19 @@
 
             <!--</div>-->
 
-
             <p class="desc-head-experience">
-                {{user.service_length || '工龄未填写' }}&nbsp;{{user.school || '学历未填写' }}
+                {{user&&user.service_length||0}}&nbsp;{{user&&user.school||"未填写"}}
             </p>
             <p class="desc-head-position">
-                {{user.position || '职位未填写' }} &nbsp;&nbsp;&nbsp;
+                <!--todo position??-->
+                {{user&&user.position||"未填写"}} &nbsp;&nbsp;&nbsp;
                 <ion-icon name="ios-star"></ion-icon>
                 <ion-icon name="ios-star"></ion-icon>
                 <ion-icon name="ios-star"></ion-icon>
                 <ion-icon name="ios-star"></ion-icon>
                 <ion-icon name="ios-star"></ion-icon>
                 <!--todo  button 图标提示-->
-                <ion-icon class="help-btn" tappable (click)="showHelp()" name="md-help-circle"></ion-icon>
+                <ion-icon class="help-btn"     tappable (click)="showHelp()" name="md-help-circle"></ion-icon>
             </p>
 
 
@@ -86,7 +86,7 @@
         <ion-item>
             <!--todo-->
             <p class="desc-middle-introduce">
-                {{user.summary}}
+                {{user&&user.summary||"未填写"}}
             </p>
         </ion-item>
 
@@ -95,17 +95,17 @@
 
 
     <div class="type-buttons">
-        <button ion-button clear [class.active]="btnState===1" tappable (click)="case()" class="type-btn active">案例
+        <button ion-button clear [class.active]="btnState===1"     tappable (click)="case()" class="type-btn active">案例
         </button>
-        <button ion-button clear [class.active]="btnState===2" tappable (click)="honor()" class="type-btn">荣誉
+        <button ion-button clear [class.active]="btnState===2"     tappable (click)="honor()" class="type-btn">荣誉
         </button>
-        <button ion-button clear [class.active]="btnState===3" tappable (click)="experice()" class="type-btn">工作经历&nbsp;
+        <button ion-button clear [class.active]="btnState===3"     tappable (click)="experice()" class="type-btn">工作经历&nbsp;
         </button>
     </div>
 
     <ion-card class="case-card">
         <ion-list *ngIf="btnState===1||btnState===3">
-            <ion-card-content *ngFor="let case of cases" tappable (click)="openCaseDetail()" class="case-item">
+            <ion-card-content *ngFor="let case of cases"     tappable (click)="openCaseDetail()" class="case-item">
                 <div class="case-item-main-div">
                     <div class="case-item-avatar">
                         <img src="assets/img/first.png"/>
