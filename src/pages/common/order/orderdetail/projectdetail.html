@@ -1,11 +1,11 @@
 <ion-header no-border>
     <ion-navbar [color]="shared.getPrimaryColor()" no-border>
         <ion-title>项目详情</ion-title>
-        <ion-buttons end>
-            <button ion-button   tappable (click)="openOrderrocessPreSelectdesPage()">
-                项目动态
-            </button>
-        </ion-buttons>
+        <!--<ion-buttons end>-->
+            <!--<button ion-button   tappable (click)="openOrderrocessPreSelectdesPage()">-->
+                <!--项目动态-->
+            <!--</button>-->
+        <!--</ion-buttons>-->
     </ion-navbar>
 </ion-header>
 
@@ -17,7 +17,7 @@
             <!--项目图片显示-->
             <ion-slide class="ion-slide">
                 <img *ngFor="let img of imgs" [src]="img.img_url"/>
-                <img *ngIf="imgs || imgs.length==0" src="asset/img/home-default.png"/>
+                <img *ngIf="imgs &&imgs.length==0" src="asset/img/home-default.png"/>
             </ion-slide>
 
             <!--<ion-slide style="background-color: green">-->

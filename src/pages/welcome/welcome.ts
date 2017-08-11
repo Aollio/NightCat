@@ -225,7 +225,6 @@ export class WelcomePage {
         "assets/img/Walkthrough_1.png",
         "assets/img/Walkthrough_2.png",
         "assets/img/Walkthrough_3.png",
-        // "assets/img/Walkthrough_4_2.png"
     ];
 
     @ViewChild(Slides) slides: Slides;

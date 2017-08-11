@@ -15,6 +15,7 @@ import {SharedService} from "../../service/share.service";
 export class EmployerModulePage {
 
     rootPage: any = EmployerTabsPage;
+
     isFirstLogin = true;
 
     constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,

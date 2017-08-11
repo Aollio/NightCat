@@ -10,6 +10,7 @@ import {Manager} from "../service/manager";
     templateUrl: 'app.html'
 })
 export class MyApp {
+
     rootPage: any = FirstPage;
 
     constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, event: Events, manager: Manager) {

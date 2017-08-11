@@ -1,7 +1,7 @@
 <ion-content>
     <!--<ion-toolbar >-->
     <ion-buttons class="over_btn" *ngIf="state==1" end>
-        <button ion-button clear color="primary"   tappable (click)="enterRegister()">跳过</button>
+        <button ion-button clear color="primary" tappable (click)="enterRegister()">跳过</button>
     </ion-buttons>
     <!--</ion-toolbar>-->
     <div class="tutorial-page" *ngIf="state===1">
@@ -10,7 +10,8 @@
                 <img [src]="slide" class="slide-image"/>
             </ion-slide>
             <ion-slide class="end-class">
-                <button id="enterbutton"   tappable (click)="enterRegister()">
+                <img src="assets/img/Walkthrough_4.png"/>
+                <button id="enterbutton" tappable (click)="enterRegister()">
                     进入主页
                 </button>
             </ion-slide>
@@ -31,14 +32,14 @@
         </div>
 
         <button ion-button class="empbutton" color="emp-primary"
-                  tappable (click)="openEmployer()"
+                tappable (click)="openEmployer()"
                 round>
             以雇主的身份开始
         </button>
         <!--<br>-->
         <div class="or"></div>
         <button ion-button class="desbutton" color="des-primary"
-                  tappable (click)="openDesigner()"
+                tappable (click)="openDesigner()"
                 round>
             以设计师的身份开始
         </button>
@@ -59,7 +60,7 @@
 
     <!--<button ion-button color="green" full     tappable (click)="getTest()">NetworkGet</button>-->
     <!--<button ion-button color="green" full     tappable (click)="postTest()">NetworkPost</button>-->
-    <button ion-button   tappable (click)="open(list)" full>空白页</button>
+    <!--<button ion-button   tappable (click)="open(list)" full>空白页</button>-->
     <!--<button ion-button     tappable (click)="open(orderProcessModifyPage)" full>OrderProcessModifyPage</button>-->
     <!--<button ion-button     tappable (click)="open(orderProcessComplete,{})" full>orderProcessCompletePage</button>-->
     <!--<button ion-button     tappable (click)="open(orderProcessPayment,{})" full>orderProcessPaymentPage</button>-->

@@ -90,4 +90,20 @@ designer-item-max{
     background: -moz-linear-gradient(right,#FA4169 , #fac1c7); /* Firefox 3.6 - 15 */
     background: linear-gradient(to right, #FA4169 , #fac1c7); /* 标准的语法 */
   }
+
+
+//  start
+  .desc-head-position {
+    display: inline-flex;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    height: 2rem;
+    //padding-top: .3rem;
+    border: none;
+  }
+
+  .desc-head-position ion-icon {
+    color: #FEC328;
+  }
+
 }

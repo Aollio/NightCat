@@ -41,11 +41,13 @@ export class PublishTaskPage {
                     text: '确认',
                     handler: () => {
                         this.navCtrl.pop();
-                        this.modal.create(LoginPage).present();
+                        this.util.presentLoginPage(this.navCtrl)
                     }
                 }
             ]
-        }).present();
+        });
+        this.modal.create(LoginPage).present();
+
     }
 
 

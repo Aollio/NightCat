@@ -1,4 +1,3 @@
-
 import {NgModule} from "@angular/core";
 import {DesignerMePage} from "./me";
 import {DesignerMeDetailPage} from "./medetail/medetail";
@@ -12,6 +11,7 @@ import {WalletModule} from "../wallet/wallet.module";
 import {IonicPageModule} from "ionic-angular";
 import {DesignerModule} from "../designer.module";
 import {OrderModule} from "../../common/order/order.module";
+import {ImportantModule} from "../../../importants/important.module";
 
 @NgModule({
     declarations: [
@@ -35,7 +35,8 @@ import {OrderModule} from "../../common/order/order.module";
     imports: [
         WalletModule,
         IonicPageModule.forChild(DesignerMePage),
-        OrderModule
+        OrderModule,
+        ImportantModule
     ],
     exports: [
         CaseDetailPage,

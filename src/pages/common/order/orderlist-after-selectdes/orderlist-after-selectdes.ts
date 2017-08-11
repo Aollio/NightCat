@@ -17,7 +17,7 @@ import {OrderProcessWaitcomment} from "../orderprocess/order-process-waitcomment
 
 export class OrderListAfterSelectDesignerPage {
 
-designerList:DesignerListPage;
+    designerList: DesignerListPage;
     orderlist: Array<any> = [
         {
             status: 0,
@@ -441,7 +441,9 @@ designerList:DesignerListPage;
     }
 
     openProjectProcess(project) {
-        if(!this.isDesigner){
+        if (!project) return;
+        console.log(project.status)
+        if (!this.isDesigner) {
             if (project.status == 0) {
                 this.nav.push(ProjectDetailPage, {project: project});
             }
@@ -464,7 +466,7 @@ designerList:DesignerListPage;
                 this.nav.push(OrerProcessCompleted, {project: project});
             }
         }
-        if(this.isDesigner){
+        if (this.isDesigner) {
             if (project.status == 0) {
                 this.nav.push(ProjectDetailPage, {project: project});
             }
@@ -482,8 +484,9 @@ designerList:DesignerListPage;
     cancelProject() {
         this.nav.push(CancelProjectPage, {});
     }
-    open(page,option){
-        this.nav.push(page,option);
+
+    open(page, option) {
+        this.nav.push(page, option);
     }
 }
 

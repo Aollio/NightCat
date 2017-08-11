@@ -3,6 +3,8 @@ import {el} from "@angular/platform-browser/testing/src/browser_util";
 import {SharedService} from "../../../service/share.service";
 import {ProjectsService} from "../../../service/ajax/projects.service";
 import {Util} from "../../../service/util";
+import {LoginPage} from "../../common/login/login";
+import {ModalController} from "ionic-angular";
 declare let initializeFontSize: any
 
 @Component({
@@ -14,7 +16,8 @@ export class DesignerProjectsPage {
 
     type: any = 1;
 
-    constructor(private share: SharedService,
+    constructor(private shared: SharedService,
+                private modal:ModalController,
                 private projectServ: ProjectsService,
                 private util: Util) {
     }
@@ -60,6 +63,10 @@ export class DesignerProjectsPage {
     private date;
 
     ionViewDidEnter() {
+        if(!this.shared.isLogin()){
+            this.modal.create(LoginPage).present();
+        }
+
         this.date = new Date();
         this._doRefresh(() => {
         });
@@ -68,7 +75,7 @@ export class DesignerProjectsPage {
 
 
     doRefresh(refresher) {
-        if (!this.share.isLogin()) {
+        if (!this.shared.isLogin()) {
             refresher.complete();
             this.util.toast("未登录！");
             return;
@@ -79,7 +86,7 @@ export class DesignerProjectsPage {
     }
 
     _doRefresh(completeFunc) {
-        if (!this.share.isLogin()) {
+        if (!this.shared.isLogin()) {
             return;
         }
         this.projectServ.getUserProjects()

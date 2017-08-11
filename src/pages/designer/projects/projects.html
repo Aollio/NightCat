@@ -16,12 +16,12 @@
         <ion-col col-3
                  class="header-number">
             <!--todo 完成数 -->
-            <!--<div class="number-detail">-->
-                <!--0-->
-            <!--</div>-->
-            <!--<div class="number-label">-->
-                <!--完成数-->
-            <!--</div>-->
+            <div class="number-detail">
+            0
+            </div>
+            <div class="number-label">
+            完成数
+            </div>
 
         </ion-col>
 
@@ -38,15 +38,15 @@
         </ion-col>
 
         <!--<ion-col col-6 class="header-right-col">-->
-            <!--<div class="head-time">-->
-                <!--<div class="datetime">2017年2月<br/>-->
-                    <!--星期一-->
-                <!--</div>-->
-                <!--<div class="dayofmonth">27</div>-->
-            <!--</div>-->
-            <!--&lt;!&ndash;<div class="header-toast">&ndash;&gt;-->
-                <!--&lt;!&ndash;今日有一条订单需支付&ndash;&gt;-->
-            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--<div class="head-time">-->
+        <!--<div class="datetime">2017年2月<br/>-->
+        <!--星期一-->
+        <!--</div>-->
+        <!--<div class="dayofmonth">27</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash;<div class="header-toast">&ndash;&gt;-->
+        <!--&lt;!&ndash;今日有一条订单需支付&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
         <!--</ion-col>-->
     </ion-row>
 
@@ -55,33 +55,33 @@
 
 <ion-content>
     <ion-row class="type-nav">
-        <ion-col     tappable (click)="select([0])"
+        <ion-col tappable (click)="select([0])"
                  col-3 class="order-type-col order-type-color" text-center>
-            <div [class.active]="type === 0">
+            <div [class.active]="processType === 0">
                 <custom-icon class="custom-icon" set="cat" name="projects-waitdesign"></custom-icon>
                 <br>
                 未确定
             </div>
         </ion-col>
-        <ion-col     tappable (click)="select([1])"
+        <ion-col tappable (click)="select([1])"
                  col-3 class="order-type-col order-type-color" text-center>
-            <div [class.active]="type === 1">
+            <div [class.active]="processType === 1">
                 <custom-icon class="custom-icon" set="cat" name="projects-waitorder"></custom-icon>
                 <br>
                 未支付
             </div>
         </ion-col>
-        <ion-col     tappable (click)="select([2,3])"
+        <ion-col tappable (click)="select([2,3])"
                  col-3 class="order-type-col order-type-color " text-center>
-            <div [class.active]="type === 2||type==3">
+            <div [class.active]="processType === 2||processType==3">
                 <custom-icon class="custom-icon" set="cat" name="my-comment"></custom-icon>
                 <br>
                 未交付
             </div>
         </ion-col>
-        <ion-col     tappable (click)="select([4,5])"
+        <ion-col tappable (click)="select([4,5])"
                  col-3 class="order-type-col order-type-color" text-center>
-            <div [class.active]="type === 4||type===5">
+            <div [class.active]="processType === 4||processType===5">
                 <custom-icon class="custom-icon" set="cat" name="projects-all"></custom-icon>
                 <br>
                 已完成
@@ -98,7 +98,7 @@
         </ion-refresher-content>
     </ion-refresher>
 
-   <!--<page-orderlist-after-selectdes [type]="type"></page-orderlist-after-selectdes>-->
+    <!--<page-orderlist-after-selectdes [type]="processType"></page-orderlist-after-selectdes>-->
 
     <designer-project-status *ngFor="let project of currentProjs" [project]="project"></designer-project-status>
 

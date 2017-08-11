@@ -62,7 +62,8 @@ import {ImportantModule} from "../../importants/important.module";
         DesignerWalletPage,
         TaskSquarePage,
         ChatMessagePage,
-        CaseDetailPage
+        CaseDetailPage,
+        DesignerTabsPage
     ]
 })
 export class DesignerModule {

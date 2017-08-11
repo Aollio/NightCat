@@ -62,7 +62,11 @@ export class RecommendDesignerPage {
     }
 
     open(page, {}) {
-        this.navctrl.push(page, {});
+        this.navctrl.goToRoot({animate: true})
+    }
+
+    goToRoot() {
+        this.navctrl.goToRoot({animate: true})
     }
 
     // //todo 内容刷新

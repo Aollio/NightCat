@@ -15,7 +15,6 @@ import {SharedService} from "../../service/share.service";
 export class DesignerModulePage {
 
     rootPage: any = DesignerTabsPage;
-    isFirstLogin=true;
 
     constructor(platform: Platform,
                 statusBar: StatusBar,
@@ -27,14 +26,10 @@ export class DesignerModulePage {
             statusBar.styleDefault();
             splashScreen.hide();
 
-            this.isFirstLogin = shared.isFirstUse();
+
         });
     }
 
-    hideFab(){
-        //todo isfirstCome 记录
-        this.shared.setIsNotFirstUse();
-        this.isFirstLogin=false;
-    }
+
 
 }

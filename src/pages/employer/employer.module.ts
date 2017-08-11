@@ -67,7 +67,7 @@ import {ComponentModule} from "../../component/component.module";
         DesignerMeModule,
         IonicPageModule.forChild(EmployerTabsPage),
         EmployerMeModule,
-        CustomIconsModule ,// Add this!
+        CustomIconsModule,// Add this!
         EmployerHomeModule,
         OrderModule,
         ComponentModule
@@ -78,9 +78,10 @@ import {ComponentModule} from "../../component/component.module";
         EmployerHomePage,
         PayPage,
         ChooseDesignerPage,
-        EmployerProjectProcess
+        EmployerProjectProcess,
+        EmployerTabsPage
     ],
-    schemas:[CUSTOM_ELEMENTS_SCHEMA]
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class EmployerModule {
 }
