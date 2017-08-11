@@ -9,11 +9,11 @@
         当前没有工程, 海量资深设计师任你选
     </p>
 
-    <button ion-button class="null-project-button des_primary" *ngIf="share.isDesModule()"
+    <button ion-button class="null-project-button" color="des-primary" outline *ngIf="share.isDesModule()"
             tappable (click)="openFindOrder()">
         寻找工程
     </button>
-    <button ion-button class="null-project-button emp_primary" *ngIf="!share.isDesModule()"
+    <button ion-button class="null-project-button" color="emp-primary" outline *ngIf="!share.isDesModule()"
             tappable (click)="openFindOrder()">
         寻找设计师
     </button>
