@@ -15,67 +15,101 @@
 <ion-content>
     <div class="con" *ngIf="state === 1">
         <div class="content-title-div">您想找什么类型的设计师</div>
-        <div class="my-ul">
-            <div class="my-li">
-                <img  class="my-li-img" src="assets/img/classification-01.png" alt="">
-                <div class="my-li-name">概预算</div>
-            </div>
-            <div class="my-li">
-                <img  class="my-li-img" src="assets/img/classification-02.png" alt="">
-                <div class="my-li-name">项目经理</div>
-            </div>
-            <div class="my-li">
-                <img  class="my-li-img" src="assets/img/classification-03.png" alt="">
-                <div class="my-li-name">审图</div>
-            </div>
-            <div class="my-li">
-                <img  class="my-li-img" src="assets/img/classification-04.png" alt="">
-                <div class="my-li-name">策划</div>
-            </div>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-3 *ngFor="let item of types"
+                         [class.bar-bg-active]="item.name==chooseType">
+                    <div class="my-li"
+                         (click)="setChooseType(item.name)">
+                        <img  class="my-li-img" src="{{item.img}}" alt="">
+                        <div class="my-li-name">{{item.name}}</div>
+                    </div>
+                </ion-col>
+            </ion-row>
 
-        </div>
-        <div class="my-ul">
-            <div class="my-li">
-                <img  class="my-li-img" src="assets/img/classification-05.png" alt="">
-                <div class="my-li-name">规划设计</div>
-            </div>
-            <div class="my-li">
-                <img  class="my-li-img" src="assets/img/classification-06.png" alt="">
-                <div class="my-li-name">建筑设计</div>
-            </div>
-            <div class="my-li">
-                <img  class="my-li-img" src="assets/img/classification-07.png" alt="">
-                <div class="my-li-name">电气设计</div>
-            </div>
-            <div class="my-li">
-                <img  class="my-li-img" src="assets/img/classification-08.png" alt="">
-                <div class="my-li-name">结构设计</div>
-            </div>
-        </div>
-        <div class="my-ul">
-            <div class="my-li">
-                <img  class="my-li-img" src="assets/img/classification-09.png" alt="">
-                <div class="my-li-name">软装设计</div>
-            </div>
-            <div class="my-li">
-                <img  class="my-li-img" src="assets/img/classification-10.png" alt="">
-                <div class="my-li-name">给排水</div>
-            </div>
-            <div class="my-li">
-                <img  class="my-li-img" src="assets/img/classification-11.png" alt="">
-                <div class="my-li-name">室内设计</div>
-            </div>
-            <div class="my-li">
-                <img  class="my-li-img" src="assets/img/classification-12.png" alt="">
-                <div class="my-li-name">暖通设计</div>
-            </div>
-        </div>
-        <div class="my-ul">
-            <div class="my-li">
-                <img  class="my-li-img" src="assets/img/classification-13.png" alt="">
-                <div class="my-li-name">景观设计</div>
-            </div>
-        </div>
+        </ion-grid>
+        <!--<div class="my-ul">-->
+           <!---->
+            <!--<div class="my-li">-->
+                <!--<img  class="my-li-img" src="assets/img/classification-02.png" alt="">-->
+                <!--<div class="my-li-name">项目经理-->
+                    <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="my-li">-->
+                <!--<img  class="my-li-img" src="assets/img/classification-03.png" alt="">-->
+                <!--<div class="my-li-name">审图-->
+                    <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="my-li">-->
+                <!--<img  class="my-li-img" src="assets/img/classification-04.png" alt="">-->
+                <!--<div class="my-li-name">策划-->
+                    <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
+                <!--</div>-->
+            <!--</div>-->
+
+        <!--</div>-->
+        <!--<div class="my-ul">-->
+            <!--<div class="my-li">-->
+                <!--<img  class="my-li-img" src="assets/img/classification-05.png" alt="">-->
+                <!--<div class="my-li-name">规划设计-->
+                    <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="my-li">-->
+                <!--<img  class="my-li-img" src="assets/img/classification-06.png" alt="">-->
+                <!--<div class="my-li-name">建筑设计-->
+                    <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="my-li">-->
+                <!--<img  class="my-li-img" src="assets/img/classification-07.png" alt="">-->
+                <!--<div class="my-li-name">电气设计-->
+                    <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="my-li">-->
+                <!--<img  class="my-li-img" src="assets/img/classification-08.png" alt="">-->
+                <!--<div class="my-li-name">结构设计-->
+                    <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="my-ul">-->
+            <!--<div class="my-li">-->
+                <!--<img  class="my-li-img" src="assets/img/classification-09.png" alt="">-->
+                <!--<div class="my-li-name">软装设计-->
+                    <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="my-li">-->
+                <!--<img  class="my-li-img" src="assets/img/classification-10.png" alt="">-->
+                <!--<div class="my-li-name">给排水-->
+                    <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="my-li">-->
+                <!--<img  class="my-li-img" src="assets/img/classification-11.png" alt="">-->
+                <!--<div class="my-li-name">室内设计-->
+                    <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="my-li">-->
+                <!--<img  class="my-li-img" src="assets/img/classification-12.png" alt="">-->
+                <!--<div class="my-li-name">暖通设计-->
+                    <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="my-ul">-->
+            <!--<div class="my-li">-->
+                <!--<img  class="my-li-img" src="assets/img/classification-13.png" alt="">-->
+                <!--<div class="my-li-name">景观设计-->
+                    <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
         <div class="blank"></div>
 
     </div>

@@ -5,58 +5,52 @@ import {Tabs} from "ionic-angular/navigation/nav-interfaces";
 import {RecommendDesignerPage} from "../recommenddesigner/recommenddesigner";
 import {EmployerHomePage} from "../home/home";
 import {EmployerModulePage} from "../employer";
-
-declare let initializeFontSize: any
-
-
 @Component({
     templateUrl: 'helpchoose.html',
     selector: 'page-helpchoose'
 })
 export class HelpChoosePage {
-
-    ionViewDidEnter() {
-        initializeFontSize()
-    }
-
     employerhome: any=EmployerHomePage;
-    types: Array<{ name, icon, color }> = [
-        {
-            name: '建筑设计', icon: 'ios-list-box-outline', color: '#be84ff'
-        },
-        {
-            name: '结构设计', icon: 'ios-list-box-outline', color: '#be84ff'
-        },
-        {
-            name: '软装设计', icon: 'add', color: '#ff9769'
-        },
-        {
-            name: '工艺设计', icon: 'close', color: '#be84ff'
-        },
 
-        {
-            name: '建筑工程12', icon: 'add', color: '#ff7384'
-        },
-        {
-            name: '建筑工程12', icon: 'ios-calendar-outline', color: '#be84ff'
-        },
-        {
-            name: '建筑工程23', icon: 'ios-briefcase-outline', color: '#89ffc3'
-        }, {
-            name: '建筑工程23', icon: 'ios-briefcase-outline', color: '#ff6633'
-        }
-    ]
 
     state: number = 1;
 
     position: number = -1;
 
     authenticate: number = -1;
-
+    chooseType:any;
     constructor(public navCtrl: NavController, private param: NavParams) {
     }
 
 
+types: Array<{img,name}>=[
+    {img:"assets/img/classification-01.png",
+    name:"概预算"},
+    {img:"assets/img/classification-02.png",
+        name:"项目经理"},
+    {img:"assets/img/classification-03.png",
+        name:"审图"},
+    {img:"assets/img/classification-04.png",
+        name:"策划"},
+    {img:"assets/img/classification-05.png",
+        name:"规划设计"},
+    {img:"assets/img/classification-06.png",
+        name:"建筑设计"},
+    {img:"assets/img/classification-07.png",
+        name:"电气设计"},
+    {img:"assets/img/classification-08.png",
+        name:"结构设计"},
+    {img:"assets/img/classification-09.png",
+        name:"软装设计"},
+    {img:"assets/img/classification-10.png",
+        name:"给排水"},
+    {img:"assets/img/classification-11.png",
+        name:"室内设计"},
+    {img:"assets/img/classification-12.png",
+        name:"暖通设计"},
+    {img:"assets/img/classification-13.png",
+        name:"景观设计"},
+];
     selectPosition(position) {
         this.position = position;
     }
@@ -91,5 +85,7 @@ export class HelpChoosePage {
         //this.keynote.isDesigner = false;
         this.navCtrl.push(EmployerModulePage, {})
     }
-
+    setChooseType(name){
+        this.chooseType=name;
+    }
 }
