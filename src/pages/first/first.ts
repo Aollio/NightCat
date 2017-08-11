@@ -65,8 +65,7 @@ export class FirstPage {
 
         event.subscribe('gotologin', () => {
             util.toast('授权过期或者未登录');
-            this.modal.create(LoginPage);
-            // this.nav.setRoot(LoginPage, {}, {animate: true})
+            this.util.presentLoginPage(this.nav)
         })
 
 

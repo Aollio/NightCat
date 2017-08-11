@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Events, NavController, NavParams, ToastController, ViewController} from 'ionic-angular';
+import {Events, ModalController, NavController, NavParams, ToastController, ViewController} from 'ionic-angular';
 import {RegisterPage} from "../register/register";
 import {ResetPasswordPage} from "../resetpassword/resetpassword";
 import {UsersService} from "../../../service/ajax/users.service";
@@ -7,8 +7,10 @@ import {EmployerModulePage} from "../../employer/employer";
 import {DesignerModulePage} from "../../designer/designer";
 import {SharedService} from "../../../service/share.service";
 import {Util} from "../../../service/util";
+import {EmployerTabsPage} from "../../employer/tabs/tabs";
+import {DesignerTabsPage} from "../../designer/tabs/tabs";
+import {el} from "@angular/platform-browser/testing/src/browser_util";
 
-declare let initializeFontSize: any
 
 @Component({
     selector: 'page-login',
@@ -22,18 +24,21 @@ export class LoginPage {
     //the view that jump
     resetPasswordPage: ResetPasswordPage;
 
+
+    _one = null;
+
     constructor(public navCtrl: NavController, public navParams: NavParams,
-                public toastCtrl: ToastController,
                 public viewCtrl: ViewController,
                 public event: Events,
                 public userSev: UsersService,
                 public shared: SharedService,
-                public util: Util) {
+                public util: Util,
+    ) {
+        this._one = navParams.get("nav")
+
     }
 
-    // ionViewDidEnter() {
-    //     initializeFontSize()
-    // }
+
 
     close() {
         this.viewCtrl.dismiss();
@@ -60,17 +65,27 @@ export class LoginPage {
             .then(user => {
                 this.viewCtrl.dismiss();
 
-                console.log("isDes",this.shared.isDesModule(),"role",user.role);
+                console.log("isDes", this.shared.isDesModule(), "role", user.role);
 
                 if (this.shared.isDesModule() != (user.role == 0)) {
                     //登录用户身份和打开用户身份不一致
                     this.util.toast("你登录的用户身份和打开的模块不一致");
                     if (this.shared.isDesModule()) {
-                        this.navCtrl.setRoot(EmployerModulePage,{},{animate:true});
+                        if (this._one != null) {
+                            this._one.setRoot(EmployerTabsPage, {}, {animate: true});
+                        }
+                        else {
+                            this.navCtrl.setRoot(EmployerTabsPage, {}, {animate: true});
+                        }
                     } else {
-                        this.navCtrl.setRoot(DesignerModulePage,{},{animate:true});
+                        if (this._one != null) {
+                            this._one.setRoot(DesignerTabsPage, {}, {animate: true});
+                        }
+                        else {
+                            this.navCtrl.setRoot(DesignerTabsPage, {}, {animate: true});
+                        }
                     }
-                }else {
+                } else {
                     console.log("登录的用户身份和打开的模块一致");
                 }
 
@@ -86,38 +101,6 @@ export class LoginPage {
                 // this.util.toast("未知错误")
             }
         })
-
-
-        // (async () => {
-        //     let newuser = await this.userSev.login(this.user);
-        //
-        //
-        // })().catch(error => {
-        //     this.util.toast("登录异常: " + error.message);
-        //     console.log("login.ts error", error)
-        // });
-        //正常登录流程
-        // (async ()=> {
-        //     await this.userSev.login(this.user)
-        //     let user = await this.userSev.getLoginUser()
-        // todo登陆成功
-        // if (user.role == '00'){
-        // this.navCtrl.setRoot(DesignerModulePage)
-        // this.viewCtrl.dismiss();
-        // this.event.publish('backdoor')
-        // }else if (user.role == '01'){
-        // this.navCtrl.setRoot(EmployerModulePage)
-        // this.viewCtrl.dismiss();
-        // this.event.publish('backdoor')
-        // }else {
-        //     throw {}
-        // }
-        //
-        // })().catch(error => {
-        //     this.util.toast("登录出现了异常");
-        //     console.log("login.ts error", error)
-        // });
-
     }
 
     openRegisterPage() {

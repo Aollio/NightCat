@@ -1,5 +1,6 @@
-import {Loading, LoadingController, Toast, ToastController} from "ionic-angular";
+import {Loading, LoadingController, ModalController, Toast, ToastController} from "ionic-angular";
 import {Injectable} from "@angular/core";
+import {LoginPage} from "../pages/common/login/login";
 
 @Injectable()
 export class Util {
@@ -8,9 +9,13 @@ export class Util {
     public static INSTANCE: Util;
 
     constructor(public loaderCtrl: LoadingController,
-                public toastCtrl: ToastController) {
+                public toastCtrl: ToastController,
+                public modal: ModalController) {
     }
 
+    presentLoginPage(nav) {
+        this.modal.create(LoginPage, {nav: nav}).present();
+    }
 
     //如果str为空则提示。
     notEmptyOrToast(obj, msg) {
@@ -25,11 +30,11 @@ export class Util {
     }
 
 
-    loading = false;
-    _toast: Toast = null;
+    private loading = false;
+    private _toast: Toast = null;
 
     toast(msg) {
-        console.log("toast",msg);
+        console.log("toast", msg);
 
         if (this.loading) {
             this._toast.setMessage(msg)
@@ -66,8 +71,7 @@ export class Util {
     }
 
 
-
-    phoneInput(phone){
+    phoneInput(phone) {
         return phone && /^1[3|4|5|8]\d{9}$/.test(phone);
     }
 
@@ -120,10 +124,10 @@ export class Util {
                 withDay: `${week}`,
                 withLastDay: `昨天`,
                 withHour: `${hour}:${min}`,
-                year:year,
-                month:month,
-                day:day,
-                week:week,
+                year: year,
+                month: month,
+                day: day,
+                week: week,
                 thatDay
             }
         } else {
@@ -133,10 +137,10 @@ export class Util {
                 withDay: `${week} ${hour}:${min}`,
                 withLastDay: `昨天 ${hour}:${min}`,
                 withHour: `${hour}:${min}`,
-                year:year,
-                month:month,
-                day:day,
-                week:week,
+                year: year,
+                month: month,
+                day: day,
+                week: week,
                 thatDay
             }
         }
