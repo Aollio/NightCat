@@ -3,42 +3,11 @@
         <!--<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>-->
         <ion-title>推荐设计师</ion-title>
         <ion-buttons end>
-            <button class="but-com"     tappable (click)="open(helpchoosePage)">完成</button>
+            <button class="but-com" tappable (click)="goToRoot()">完成</button>
         </ion-buttons>
     </ion-navbar>
 </ion-header>
 <ion-content>
-    <!--<ion-grid class="designer-list-grid">-->
-        <!--<ion-row>-->
-            <!--<ion-col *ngFor="let desitem of desarray; let i=index"-->
-                     <!--col-4 class="des-card" text-center-->
-                     <!--    tappable (click)="open(designerMeDetailPage,{id:10000000})">-->
-                <!--<div class="des-card-avatar">-->
-                    <!--&lt;!&ndash;<div class="avatar-icon-div">&ndash;&gt;-->
-                        <!--&lt;!&ndash;<ion-icon *ngIf="selected_index === i" name="ios-checkmark-circle"></ion-icon>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<ion-icon *ngIf="selected_index != i" name="ios-checkmark-circle-outline"></ion-icon>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                    <!--<img class="des-card-img" src="{{desitem.avatar}}">-->
-                <!--</div>-->
-                <!--<div class="des-card-middiv">-->
-                    <!--<span class="des-card-name">{{desitem.name}}</span>-->
-                    <!--<span class="des-card-time">{{desitem.time}}</span>-->
-                <!--</div>-->
-                <!--<div class="des-card-short">-->
-                    <!--{{desitem.describe}}-->
-                <!--</div>-->
-            <!--</ion-col>-->
-        <!--</ion-row>-->
-        <!--&lt;!&ndash;</ion-row>&ndash;&gt;-->
-    <!--</ion-grid>-->
+    <designer-item-max *ngFor="let item of designers" [designer]="item"></designer-item-max>
 
-    <!--<ion-refresher (ionRefresh)="doRefresh($event)">-->
-        <!--<ion-refresher-content-->
-                <!--pullingIcon="ios-arrow-down"-->
-                <!--pullingText="Pull to refresh"-->
-                <!--refreshingSpinner="crescent"-->
-                <!--refreshingText="Refreshing...">-->
-        <!--</ion-refresher-content>-->
-    <!--</ion-refresher>-->
-    <designer-list [users]="users"></designer-list>
 </ion-content>

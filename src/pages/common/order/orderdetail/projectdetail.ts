@@ -111,7 +111,7 @@ export class ProjectDetailPage extends AbsCommonPage {
                         text: '确定',
                         handler: () => {
                             console.log("确定");
-                            this.modal.create(LoginPage).present();
+                            this.util.presentLoginPage(this.navCtrl)
                         }
                     }
                 ]

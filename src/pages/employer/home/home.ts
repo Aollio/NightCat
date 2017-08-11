@@ -23,40 +23,30 @@ export class EmployerHomePage {
     // ionViewDidEnter() {
     // }
 
-    openNotificationsPage(){
+    openNotificationsPage() {
         this.navCtrl.push(NotificationsPage);
     }
+
     //
     // show() {
     //     console.log("touch")
     // }
 
     designerMeDetailPage: DesignerMeDetailPage;
-    loginPage:LoginPage;
+    loginPage: LoginPage;
 
     constructor(public navCtrl: NavController,
                 private shared: SharedService,
                 private util: Util,
                 public alertCtrl: AlertController,
-                public modalCtrl: ModalController) {
+                ) {
         this.showAlert();
     }
 
     openLoginPage() {
-        this.modalCtrl.create(LoginPage).present();
-        // profileModal.present();
-        // event.stopPropagation();
-        // this.navCtrl.push(LoginPage);
+        this.util.presentLoginPage(this.navCtrl)
     }
-    // showAlert() {
-    //     // todo  第一次进入提示抢单信息
-    //     let alert = this.alertCtrl.create({
-    //         title: 'new message!',
-    //         subTitle: '您发布的项目已有人接单，请查看',
-    //         buttons: ['OK']
-    //     });
-    //     alert.present();
-    // }
+
     showAlert() {
         let confirm = this.alertCtrl.create({
             title: '最新消息',
@@ -84,10 +74,6 @@ export class EmployerHomePage {
         this.navCtrl.push(page, option)
 
     }
-
-    // openMeDetail(option) {
-    //     this.navCtrl.push(DesignerMeDetailPage, option)
-    // }
 
 
 

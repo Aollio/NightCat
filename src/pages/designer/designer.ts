@@ -15,11 +15,12 @@ import {SharedService} from "../../service/share.service";
 export class DesignerModulePage {
 
     rootPage: any = DesignerTabsPage;
-    isFirstLogin=true;
+
+    isFirstLogin = true;
 
     constructor(platform: Platform,
                 statusBar: StatusBar,
-                protected shared:SharedService,
+                protected shared: SharedService,
                 splashScreen: SplashScreen) {
         platform.ready().then(() => {
             // Okay, so the platform is ready and our plugins are available.
@@ -31,10 +32,10 @@ export class DesignerModulePage {
         });
     }
 
-    hideFab(){
+    hideFab() {
         //todo isfirstCome 记录
         this.shared.setIsNotFirstUse();
-        this.isFirstLogin=false;
+        this.isFirstLogin = false;
     }
 
 }

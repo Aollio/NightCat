@@ -8,7 +8,9 @@ import {SharedService} from "../../../../service/share.service";
     templateUrl: 'designer-list.html'
 })
 export class DesignerListPage {
+
     // @ViewChild("refresher") refresher;
+
     miancolor;
     previousPage="";//前一页
     designers: Array<any> = [];

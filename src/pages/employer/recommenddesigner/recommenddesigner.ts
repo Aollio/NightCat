@@ -6,7 +6,6 @@ import {HelpChoosePage} from "../helpchoose/helpchoose";
 import {UsersService} from "../../../service/ajax/users.service";
 import {KeynoteService} from "../../../service/keynote.service";
 
-declare let initializeFontSize: any;
 
 @Component({
     selector: 'page-recommenddesigner',
@@ -16,49 +15,20 @@ export class RecommendDesignerPage {
     designerMeDetailPage: any = DesignerMeDetailPage;
     helpchoosePage: any = HelpChoosePage;
 
-    users;
+    designers = [];
 
-    constructor(public navctrl: NavController, private keynote: KeynoteService) {
-        this.users = this.keynote.users
+    constructor(public navctrl: NavController,
+                private userServ: UsersService) {
+        this.userServ.getDesigners()
+            .then(users => {
+                for (let user of users) {
+                    this.designers.push(user);
+                }
+            }).catch(error => {
+            console.log(error);
+        });
     }
 
-    ionViewDidEnter() {
-        initializeFontSize()
-    }
-
-    desarray: Array<{ avatar, name, time, describe }> = [
-        {
-            avatar: 'assets/img/des-1.png', name: '张三', time: '100/时',
-            describe: '帮助你是希望你成长、成功以后和我一样帮助他人帮助你是希望你成长、成功以后和我一样帮助他人'
-        },
-        {
-            avatar: 'assets/img/des-2.png', name: '张三', time: '100/时',
-            describe: '帮助你是希望你成长、成功以后和我一样帮助他人帮助你是希望你成长、成功以后和我一样帮助他人'
-        },
-        {
-            avatar: 'assets/img/des-3.png', name: '张三', time: '100/时',
-            describe: '帮助你是希望你成长、成功以后和我一样帮助他人帮助你是希望你成长、成功以后和我一样帮助他人'
-        },
-        {
-            avatar: 'assets/img/des-4.png', name: '张三', time: '100/时',
-            describe: '帮助你是希望你成长、成功以后和我一样帮助他人帮助你是希望你成长、成功以后和我一样帮助他人'
-        },
-        {
-            avatar: 'assets/img/des-1.png', name: '张三', time: '100/时',
-            describe: '帮助你是希望你成长、成功以后和我一样帮助他人帮助你是希望你成长、成功以后和我一样帮助他人'
-        },
-        {
-            avatar: 'assets/img/des-2.png', name: '张三', time: '100/时',
-            describe: '帮助你是希望你成长、成功以后和我一样帮助他人帮助你是希望你成长、成功以后和我一样帮助他人'
-        },
-        {
-            avatar: 'assets/img/des-3.png', name: '张三', time: '100/时',
-            describe: '帮助你是希望你成长、成功以后和我一样帮助他人帮助你是希望你成长、成功以后和我一样帮助他人'
-        },
-        {
-            avatar: 'assets/img/des-4.png', name: '张三', time: '100/时',
-            describe: '帮助你是希望你成长、成功以后和我一样帮助他人帮助你是希望你成长、成功以后和我一样帮助他人'
-        }];
 
     selected_index = -1;
     selected: any = null;
@@ -69,7 +39,11 @@ export class RecommendDesignerPage {
     }
 
     open(page, {}) {
-        this.navctrl.push(page, {});
+        this.navctrl.goToRoot({animate: true})
+    }
+
+    goToRoot() {
+        this.navctrl.goToRoot({animate: true})
     }
 
     // //todo 内容刷新

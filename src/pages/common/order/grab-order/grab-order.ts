@@ -19,7 +19,7 @@ export class GrabOrderPage {
         id: null,
         price: null,
         cycle: null,
-        desicription: null
+        description: null
     };
 
     constructor(public navCtrl: NavController,
