@@ -6,6 +6,7 @@ import {Manager} from "../../service/manager";
 import {NavController} from "ionic-angular";
 import {ImagePicker} from "@ionic-native/image-picker";
 import {FilesService} from "../../service/ajax/files.service";
+import {Status} from "../../service/share.service";
 //import {DatePicker} from '@ionic-native/date-picker';
 
 
@@ -33,6 +34,15 @@ export class BlankPage {
                 private files: FilesService
     ) {
         this.main_color = this.manager.sharedServ.getPrimaryColor();
+
+
+        this.util.toast(Status)
+        this.util.toast(Status&&Status.Publish)
+        console.log(Status.Publish);
+        console.log("Status.Publish==0",Status.Publish==0);
+        console.log("Status.Publish===0",Status.Publish===0);
+
+
     }
 
 

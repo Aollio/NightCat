@@ -15,7 +15,10 @@ export class OrderProcessModifyPage {
 
     projectDetail:ProjectDetailPage
     constructor(private navCtrl:NavController,
-                private share:SharedService){}
+                private share:SharedService){
+
+
+    }
     open(page, option) {
         this.navCtrl.push(page, option)
     }
