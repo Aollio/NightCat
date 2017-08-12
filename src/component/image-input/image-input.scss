@@ -1,0 +1,25 @@
+image-input {
+  .images-upload {
+    display: flex;
+
+    div {
+      width: 7rem;
+      height: 7rem;
+      margin-left: .5rem;
+      margin-right: .5rem;
+    }
+
+    img {
+      max-height: 100%;
+      min-height: 100%;
+    }
+
+    ion-icon {
+      font-size: 7rem;
+      text-align: center;
+      margin: auto;
+      color: #666666;
+      line-height: 7rem;
+    }
+  }
+}

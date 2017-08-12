@@ -128,7 +128,10 @@ export class HttpUrls {
     //todo 设计师确认订单
 
 
-    //
+
+    //取消订单
+    project_cancel :string = this._projects+"/cancel";
+
 
     //end process
 

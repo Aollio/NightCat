@@ -8,12 +8,11 @@
 
 <ion-content>
 
-    <button ion-button full (click)="post()">Hello</button>
-    <button ion-button full (click)="picker()">Upload</button>
+    <!--<button ion-button full (click)="post()">Hello</button>-->
 
-    <div>
-        <img *ngFor="let img_url of imgurls" [src]="img_url">
-    </div>
+    <image-input [(ngModel)]="imgurls"></image-input>
+
+    <button ion-button full (click)="show()">Show</button>
 
     <!--<ion-list>-->
     <!--<ion-item class="friend" *ngFor="let session of sessions"     tappable (click)="chat(session.id)">-->

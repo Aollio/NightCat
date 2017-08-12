@@ -17,7 +17,7 @@ declare let initializeFontSize: any
 })
 export class ProjectsPage {
 
-    processType: any = 0;
+    processType: any = [0];
 
     private projects = [];
     private currentProjs = [];
@@ -65,7 +65,7 @@ export class ProjectsPage {
                     this.projects.push(project);
                 }
                 completeFunc();
-                this.select([this.processType]);
+                this.select(this.processType);
             })
             .catch(error => {
                 console.log(error);
@@ -78,7 +78,7 @@ export class ProjectsPage {
 
     select(types) {
         this.currentProjs.length = 0;
-        this.processType = types[0];
+        this.processType = types;
         for (let project of this.projects) {
             if (project && types.indexOf(project.status) >= 0) {
                 this.currentProjs.push(project);
