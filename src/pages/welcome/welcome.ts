@@ -37,9 +37,6 @@ import {OrderProcessPayment} from "../common/order/orderprocess/order-process-pa
 import {OrderProcessWaitcomment} from "../common/order/orderprocess/order-process-waitcomment/waitcomment";
 import {ProjectDetailPage} from "../common/order/orderdetail/projectdetail";
 
-// import {Waitcomment} from "../common/order/orderprocess/order-process-waitcomment/waitcomment";
-
-declare let initializeFontSize: any;
 
 @Component({
     selector: 'page-welcome',
@@ -50,42 +47,9 @@ export class WelcomePage {
     rootPage: any;
     state: any = 1;
     register: any = RegisterPage;
-    // employerHome :any = EmployerHomePage;
-    // designerHome:any = DesignerHomePage;
 
 
-    /**
-     * 这是主页的快速入口，用于开发
-     * */
-    orderDetailPage: any = ProjectDetailPage;
-    orderListComponent: any = OrderListComponent;
-
-    employerHome: any = EmployerModulePage;
-
-    loginPage: any = LoginPage;
-
-    designerLogin: any = LoginPage;
-
-    designerHome: any = DesignerModulePage;
-
-
-    pulishtaskPage: any = PublishTaskPage;
-    designerWalletPage: any = DesignerWalletPage;
-    taskSquarePage: any = TaskSquarePage;
-    commentPage: any = CommentPage;
-    chatMessagePage: any = ChatMessagePage;
-    designerMeDetailPage: any = DesignerMeDetailPage;
-    addcase: any = AddCasePage;
-    addhonor: any = AddHonorPage;
-    casedetail: any = CaseDetailPage;
-    paypage: any = PayPage;
-    // choosedesigner: any = ChooseDesignerPage;
-    projectsPage: any = ProjectsPage;
     list: any = BlankPage;
-    searchdesigner: any = SearchDesignerPage;
-    commentOrderPage: any = CommentOrderPage;
-    orderProcessModifyPage: any = OrderProcessModifyPage;
-    orderProcessPayment: any = OrderProcessPayment;
     waitcomment: any = OrderProcessWaitcomment;
 
     constructor(public navCtrl: NavController, public navParams: NavParams,
@@ -109,10 +73,6 @@ export class WelcomePage {
         }
     }
 
-    ionViewDidEnter() {
-        initializeFontSize();
-        console.log("com")
-    }
 
     openImagePicker() {
         this.imagePicker.getPictures({}).then((results) => {
@@ -129,6 +89,10 @@ export class WelcomePage {
 
     openMsgs() {
         this.navCtrl.push(IMPage, {})
+    }
+
+    openBlank() {
+        this.navCtrl.push(BlankPage, {})
     }
 
     customBtn() {
@@ -241,9 +205,6 @@ export class WelcomePage {
         }
     }
 
-    // openComplete() {
-    //     this.navCtrl.push(OrderProcessComplete, {})
-    // }
 
     //todo 保存登陆信息  自动登录
 }

@@ -39,9 +39,6 @@ export class BlankPage {
         this.main_color = this.manager.sharedServ.getPrimaryColor();
 
 
-
-
-
     }
 
 
@@ -84,17 +81,6 @@ export class BlankPage {
     ]
 
     show() {
-        let pop_bg = jQuery("<div id='pop_bg'>" +
-            "<div class='pop'></div>" +
-            "</div>");
-        jQuery("body").append(pop_bg);
-        pop_bg.fadeIn(500)
-            .children().css("top", "0");
-
-        pop_bg.click(function () {
-            jQuery(this).fadeOut(500)
-                .children().css("top", "-100%");
-            setTimeout(() => jQuery(this).remove(), 500);
-        });
+        console.log(this.imgurls)
     }
 }
