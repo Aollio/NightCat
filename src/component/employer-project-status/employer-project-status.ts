@@ -53,6 +53,7 @@ export class EmployerProjectStatusComponent {
     @Input()
     set project(project) {
         this._project = project;
+        this._project = project;
         this.status = project.status;
 
         console.log('get project imgs');
@@ -102,16 +103,12 @@ export class EmployerProjectStatusComponent {
         this.nav.push(OrderProcessPreSelectedPage, {projectId: this._project.id});
     }
 
-    openPaymentPage(project) {
-        this.nav.push(OrderProcessPayment, {project: project});
+    openPaymentPage() {
+        this.nav.push(OrderProcessPayment, {project: this._project});
     }
 
-    openWaitcommentPage(project) {
-        this.nav.push(OrderProcessWaitcomment, {project: project});
-    }
-
-    Pay(project) {
-        this.nav.push(OrderProcessPayment, {project: project});
+    openWaitcommentPage() {
+        this.nav.push(OrderProcessWaitcomment, {project: this._project});
     }
 
 
