@@ -36,9 +36,6 @@
         },
         "com.synconset.imagepicker": {
             "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-file-transfer": {
-            "PACKAGE_NAME": "com.scu.jlyemao"
         }
     },
     "dependent_plugins": {
