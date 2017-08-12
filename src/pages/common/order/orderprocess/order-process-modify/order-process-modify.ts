@@ -148,4 +148,14 @@ export class OrderProcessModifyPage {
     openPublishTask() {
         this.nav.push(PublishTaskPage, {project:this.project});
     }
+
+    commitProject(){
+        this.projectServ.commit(this.project.id)
+            .then(()=>{
+                this.nav.pop();
+            }).catch(error=>{
+            console.log(error);
+            this.util.toast("确认失败，请稍后再试");
+        })
+    }
 }
