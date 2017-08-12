@@ -5,6 +5,7 @@ import {NavController} from "ionic-angular";
 import {ProjectsService} from "../../service/ajax/projects.service";
 import {DesignerListPage} from "../../pages/employer/home/designer/designer-list";
 import {CancelProjectPage} from "../../pages/common/order/cancel-project/cancel-project";
+import {OrerProcessCompleted} from "../../pages/common/order/orderprocess/order-process-complete/complete";
 
 declare let initializeFontSize: any
 
@@ -51,12 +52,11 @@ export class DesignerProjectStatusComponent {
         });
     }
 
-
     openProjectProcess(project) {
-        if (project.status == 0) {
-            this.nav.push(ProjectDetailPage, {project: project});
+        if (project.status == 7||project.status == 8) {
+            this.nav.push(OrerProcessCompleted, {project: project});
         }
-        if (project.status >= 1) {
+        else {
             this.nav.push(OrderProcessModifyPage, {project: project});
         }
     }

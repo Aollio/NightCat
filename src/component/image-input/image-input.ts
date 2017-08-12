@@ -5,7 +5,6 @@ import {Manager} from "../../service/manager";
 import {Util} from "../../service/util";
 import {ImageService} from "../../service/ajax/imgs.service";
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
-import {removeUnusedFonts} from "@ionic/app-scripts/dist/optimization/remove-unused-fonts";
 
 const noop = () => {
 };

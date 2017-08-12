@@ -1,7 +1,7 @@
 <ion-header>
     <ion-navbar [class.designer]="shared.isDesModule()" [class.employer]="!shared.isDesModule()">
         <ion-buttons end>
-            <button ion-button  tappable (click)="open(projectDetail,{})">
+            <button ion-button  tappable (click)="openDetailPage()">
                 项目详情
             </button>
         </ion-buttons>
@@ -9,18 +9,20 @@
 </ion-header>
 
 <ion-content>
+
+    <!--todo 进度图标-->
     <div class="my-nav">
         <img src="assets/img/d-Group3.png" alt="" />
     </div>
-    <div class="my-title">
-        <div class="my-title-l">
-            <div class="my-title-circular"></div>
-        </div>
-        <div class="my-title-r">
-            <div class="my-title-time">今天下午 16:45</div>
-            <div class="my-title-word">设计师接受了订单, 请你提交订单</div>
-        </div>
-    </div>
+    <!--<div class="my-title">-->
+        <!--<div class="my-title-l">-->
+            <!--<div class="my-title-circular"></div>-->
+        <!--</div>-->
+        <!--<div class="my-title-r">-->
+            <!--<div class="my-title-time">今天下午 16:45</div>-->
+            <!--<div class="my-title-word">设计师接受了订单, 请你提交订单</div>-->
+        <!--</div>-->
+    <!--</div>-->
     <!--<div class="my-text">-->
         <!--<div class="my-text-l">-->
             <!--<div class="my-text-circular"></div>-->
@@ -32,8 +34,8 @@
     <!--</div>-->
     <div class="my-order">
         <div class="my-list">
-            <div class="my-list-l"><img src="/assets/img/des-2.png"/></div>
-            <div class="my-list-r">园区导师, 布点规划, 文化导入</div>
+            <div class="my-list-l"><img [src]="project&&project.img_urls[0] ||'/assets/img/project-default-img.png'"/></div>
+            <div class="my-list-r">{{project&&project.title||"未填写"}}</div>
         </div>
         <div class="my-order-t">
             <div class="my-order-t-1">
@@ -57,12 +59,12 @@
 
 </ion-content>
 <ion-footer>
-    <div class="my-bottom" *ngIf="!share.isDesModule()">
+    <div class="my-bottom" *ngIf="!shared.isDesModule()">
         <div class="my-bottom-li act">收货</div>
         <div class="my-bottom-li"  tappable (click)="openPushProject()">一键审图</div> <!--*ngIf="3!=item.status"-->
     </div>
 
-    <div class="my-bottom" *ngIf="share.isDesModule()">
+    <div class="my-bottom" *ngIf="shared.isDesModule()">
         <div class="my-bottom-li act">接单</div>
         <div class="my-bottom-li" tappable (click)="showCancelAlert()" >取消抢单</div>
         <div class="my-bottom" *ngIf="2==item.status||3==item.status">

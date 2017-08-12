@@ -24,7 +24,6 @@
                 </div>
 
 
-
                 <!--&lt;!&ndash;todo 设计时间&ndash;&gt;-->
                 <!--<div class="my-li-right-b-r"-->
                 <!--*ngIf="status >= 1 &&status <= 2">设计时间{{_project.time}}-->
@@ -41,37 +40,37 @@
         </div>
         <div class="my-bottom-li act" *ngIf="status==3" tappable (click)="Pay(_project)">支付</div>
 
-    <!--选择设计师状态-->
-    <div class="my-bottom" *ngIf="0==status">
-        <div class="my-bottom-li act" *ngIf="_project.grab_count>0"
-             tappable (click)="openDynamicProjectPage()">选择设计师
+        <!--选择设计师状态-->
+        <div class="my-bottom">
+            <div class="my-bottom-li act" *ngIf="_project.grab_count>0"
+                 tappable (click)="openDynamicProjectPage()">选择设计师
+            </div>
+            <!--<div class="my-bottom-li"  tappable (click)="cancelProject()">取消订单</div>-->
+            <div class="my-bottom-li act" *ngIf="status==5" tappable (click)="openWaitcommentPage(_project)">收货</div>
+            <div class="my-bottom-li act" *ngIf="status==5" tappable (click)="showAlert()">一键审图</div>
+
+            <div class="my-bottom-li" *ngIf="status<=3" tappable (click)="cancelProject()">取消订单</div>
         </div>
-        <div class="my-bottom-li"  tappable (click)="cancelProject()">取消订单</div>
-        <div class="my-bottom-li act" *ngIf="status==5" tappable (click)="openWaitcommentPage(_project)">收货</div>
-        <div class="my-bottom-li act" *ngIf="status==5" tappable (click)="showAlert()">一键审图</div>
 
-        <div class="my-bottom-li" *ngIf="status<=3" tappable (click)="cancelProject()">取消订单</div>
+
+        <!--<div class="my-bottom">-->
+        <!--<div class="my-bottom-li act"-->
+        <!--tappable (click)="openDynamicProjectPage()">选择设计师-->
+        <!--</div>-->
+        <!--<div class="my-bottom-li"  tappable (click)="cancelProject()">取消订单</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash;支付状态&ndash;&gt;-->
+        <!--<div class="my-bottom" *ngIf="1==status">-->
+        <!--<div class="my-bottom-li act" tappable (click)=" Pay(_project)">支付</div>-->
+        <!--<div class="my-bottom-li"  tappable (click)="cancelProject()">取消订单</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash;待收货状态&ndash;&gt;-->
+        <!--<div class="my-bottom" *ngIf="2==status||3==status||4==status">-->
+        <!--<div class="my-bottom-li act" *ngIf="2==status||3==status" tappable (click)=" openWaitcommentPage(_project)" >收货</div>-->
+        <!--<div class="my-bottom-li" *ngIf="2==status" tappable (click)=" showAlert()">一键审图</div>-->
+        <!--<div class="my-bottom-li act" *ngIf="4==status" tappable (click)="openWaitcommentPage(_project)">评价</div>-->
+        <!--</div>-->
+
+
     </div>
-
-
-    <!--<div class="my-bottom">-->
-    <!--<div class="my-bottom-li act"-->
-    <!--tappable (click)="openDynamicProjectPage()">选择设计师-->
-    <!--</div>-->
-    <!--<div class="my-bottom-li"  tappable (click)="cancelProject()">取消订单</div>-->
-    <!--</div>-->
-    <!--&lt;!&ndash;支付状态&ndash;&gt;-->
-    <!--<div class="my-bottom" *ngIf="1==status">-->
-    <!--<div class="my-bottom-li act" tappable (click)=" Pay(_project)">支付</div>-->
-    <!--<div class="my-bottom-li"  tappable (click)="cancelProject()">取消订单</div>-->
-    <!--</div>-->
-    <!--&lt;!&ndash;待收货状态&ndash;&gt;-->
-    <!--<div class="my-bottom" *ngIf="2==status||3==status||4==status">-->
-    <!--<div class="my-bottom-li act" *ngIf="2==status||3==status" tappable (click)=" openWaitcommentPage(_project)" >收货</div>-->
-    <!--<div class="my-bottom-li" *ngIf="2==status" tappable (click)=" showAlert()">一键审图</div>-->
-    <!--<div class="my-bottom-li act" *ngIf="4==status" tappable (click)="openWaitcommentPage(_project)">评价</div>-->
-    <!--</div>-->
-
-
-</div>
 

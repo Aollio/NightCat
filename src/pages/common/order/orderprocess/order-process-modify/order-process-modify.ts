@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {AlertController, NavController} from "ionic-angular";
+import {AlertController, NavController, NavParams} from "ionic-angular";
 import {PublishTaskPage} from "../../../publishtask/publishtask";
 import {ProjectDetailPage} from "../../orderdetail/projectdetail";
 import {SharedService} from "../../../../../service/share.service";
@@ -12,15 +12,18 @@ declare let initializeFontSize: any;
 })
 export class OrderProcessModifyPage {
 
-    projectDetail:ProjectDetailPage
-    constructor(private navCtrl:NavController,
-                private share:SharedService,
-                private alertCtrl:AlertController
-    ){
+    private project;
 
+    constructor(private navCtrl: NavController,
+                private shared: SharedService,
+                private navParams: NavParams,
+                private alertCtrl: AlertController) {
+        this.project = this.navParams.get("project");
     }
-    open(page, option) {
-        this.navCtrl.push(page, option)
+
+
+    openDetailPage() {
+        this.navCtrl.push(ProjectDetailPage,{project:this.project});
     }
 
     openPushProject() {
@@ -51,7 +54,7 @@ export class OrderProcessModifyPage {
 
     showPutInAlert() {
         let confirm = this.alertCtrl.create({
-           // title: '取消抢单',
+            // title: '取消抢单',
             message: '确认交付作品？',
             buttons: [
                 {
