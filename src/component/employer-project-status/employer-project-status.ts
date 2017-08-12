@@ -108,12 +108,31 @@ export class EmployerProjectStatusComponent {
     }
 
     openWaitcommentPage() {
-        this.nav.push(OrderProcessWaitcomment, {project: this._project});
+        this.alertCtrl.create({
+            subTitle: '是否确认收货？',
+            buttons: [
+                {
+                    text: '取消',
+                },
+                {
+                    text: '确认',
+                    handler: () => {
+                        this.projServ.employerHarvest(this._project.id).then(() => {
+                            this.util.toast("确认成功")
+                            this.nav.push(OrderProcessWaitcomment, {project: this._project});
+                        }).catch(error => {
+                            console.log(error);
+                            this.util.toast("确认失败");
+                        })
+                    }
+                }
+            ]
+        }).present();
     }
 
 
-    openCommentOrderPage(){
-        this.nav.push(CommentOrderPage,{project: this._project});
+    openCommentOrderPage() {
+        this.nav.push(CommentOrderPage, {project: this._project});
     }
 
 

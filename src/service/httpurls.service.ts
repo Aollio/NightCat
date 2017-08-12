@@ -130,10 +130,15 @@ export class HttpUrls {
 
     //设计师完善订单
     project_modify:string = this._projects+"/modify";
+
     //设计师交付
     project_commit:string = this._projects+"/commit";
+
     //雇主评价
     project_comment:string = this._projects+"/comment";
+
+    //雇主收货
+    employer_harvest:string = this._projects+"/harvest";
 
     //取消订单
     project_cancel :string = this._projects+"/cancel";

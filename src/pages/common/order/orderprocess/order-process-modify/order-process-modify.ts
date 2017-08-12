@@ -17,6 +17,7 @@ declare let initializeFontSize: any;
 export class OrderProcessModifyPage {
 
     private project;
+    private status;
 
     constructor(private navCtrl: NavController,
                 private shared: SharedService,
@@ -26,6 +27,7 @@ export class OrderProcessModifyPage {
                 private navParams: NavParams,
                 private alertCtrl: AlertController) {
         this.project = this.navParams.get("project");
+        this.status = this.project.status;
     }
 
 
@@ -105,7 +107,26 @@ export class OrderProcessModifyPage {
 
 
     openWaitcommentPage() {
-        this.nav.push(OrderProcessWaitcomment, {project: this.project});
+        this.alertCtrl.create({
+            subTitle: '是否确认收货？',
+            buttons: [
+                {
+                    text: '取消',
+                },
+                {
+                    text: '确认',
+                    handler: () => {
+                        this.projectServ.employerHarvest(this.project.id).then(() => {
+                            this.util.toast("确认成功")
+                            this.nav.push(OrderProcessWaitcomment, {project: this.project});
+                        }).catch(error => {
+                            console.log(error);
+                            this.util.toast("确认失败");
+                        })
+                    }
+                }
+            ]
+        }).present();
     }
 
     cancelProject() {
@@ -143,7 +164,6 @@ export class OrderProcessModifyPage {
             this.util.toast("确认失败，请稍后再试");
         })
     }
-
 
     openPublishTask() {
         this.nav.push(PublishTaskPage, {project:this.project});

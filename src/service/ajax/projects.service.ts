@@ -224,6 +224,16 @@ export class ProjectsService {
         return response.content;
     }
 
+    //项目id  content type score
+    async employerHarvest(id) {
+        let response = await this.http.postWithToken(this.urls.employer_harvest, {id:id});
+
+        if (response.status != 200) {
+            throw response;
+        }
+        return response.content;
+    }
+
 }
 
 

@@ -58,7 +58,7 @@ export class CancelProjectPage {
         this.projectServ.cancle(this.projectId,reason)
             .then(project=>{
                 this.util.toast("取消订单成功!");
-                this.nav.pop();
+                this.nav.goToRoot({});
             })
             .catch(error=>{
                 console.log(error);
