@@ -214,6 +214,16 @@ export class ProjectsService {
         return response.content;
     }
 
+    //项目id  content type score
+    async comment(comment) {
+        let response = await this.http.postWithToken(this.urls.project_comment, comment);
+
+        if (response.status != 200) {
+            throw response;
+        }
+        return response.content;
+    }
+
 }
 
 

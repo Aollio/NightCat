@@ -11,6 +11,7 @@ import {Util} from "../../service/util";
 import {OrderProcessWaitcomment} from "../../pages/common/order/orderprocess/order-process-waitcomment/waitcomment";
 import {ChooseDesignerPage} from "../../pages/employer/choosedesigner/choosedesigner";
 import {OrderProcessPreSelectedPage} from "../../pages/common/order/orderprocess/order-process-pre-selectdes/order-process-pre-selectdes";
+import {CommentOrderPage} from "../../pages/common/order/comment-order/comment-order";
 
 declare let initializeFontSize: any
 
@@ -111,6 +112,11 @@ export class EmployerProjectStatusComponent {
 
     Pay(project) {
         this.nav.push(OrderProcessPayment, {project: project});
+    }
+
+
+    openCommentOrderPage(){
+        this.nav.push(CommentOrderPage,{project: this._project});
     }
 
 

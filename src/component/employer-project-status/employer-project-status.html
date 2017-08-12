@@ -48,7 +48,7 @@
             <!--<div class="my-bottom-li"  tappable (click)="cancelProject()">取消订单</div>-->
             <div class="my-bottom-li act" *ngIf="status==5" tappable (click)="openWaitcommentPage(_project)">收货</div>
             <div class="my-bottom-li act" *ngIf="status==5" tappable (click)="showAlert()">一键审图</div>
-            <div class="my-bottom-li act" *ngIf="status==6" tappable (click)="showAlert()">评价</div>
+            <div class="my-bottom-li act" *ngIf="status==6" tappable (click)="openCommentOrderPage()">评价</div>
 
             <div class="my-bottom-li" *ngIf="status<=3" tappable (click)="cancelProject()">取消订单</div>
         </div>

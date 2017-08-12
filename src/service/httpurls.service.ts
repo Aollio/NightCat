@@ -132,6 +132,8 @@ export class HttpUrls {
     project_modify:string = this._projects+"/modify";
     //设计师交付
     project_commit:string = this._projects+"/commit";
+    //雇主评价
+    project_comment:string = this._projects+"/comment";
 
     //取消订单
     project_cancel :string = this._projects+"/cancel";
