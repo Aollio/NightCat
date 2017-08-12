@@ -1,12 +1,15 @@
 image-input {
   .images-upload {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 
     div {
       width: 7rem;
       height: 7rem;
       margin-left: .5rem;
       margin-right: .5rem;
+      text-align: center;
     }
 
     img {
