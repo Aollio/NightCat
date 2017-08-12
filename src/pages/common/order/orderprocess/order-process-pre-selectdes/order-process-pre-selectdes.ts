@@ -2,14 +2,10 @@ import {Component} from '@angular/core';
 import {AlertController, NavController, NavParams} from 'ionic-angular';
 import {AbsCommonPage} from "../../../abs";
 import {SharedService} from "../../../../../service/share.service";
-import {ProjectDetailPage} from "../../orderdetail/projectdetail";
 import {ProjectsService} from "../../../../../service/ajax/projects.service";
 import {Util} from "../../../../../service/util";
 import {UsersService} from "../../../../../service/ajax/users.service";
 import {DesignerMeDetailPage} from "../../../../designer/me/medetail/medetail";
-import {ProjectsPage} from "../../../../employer/projects/projects";
-
-declare let initializeFontSize: any;
 
 /*
  * 订单详情
@@ -63,7 +59,6 @@ export class OrderProcessPreSelectedPage extends AbsCommonPage {
     }
 
     ionViewDidEnter() {
-        initializeFontSize()
         console.log("com")
     }
 

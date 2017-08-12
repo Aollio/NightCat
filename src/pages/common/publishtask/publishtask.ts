@@ -30,7 +30,7 @@ export class PublishTaskPage {
 
         let _project = this.navParams.get("project");
 
-        for (let key in this.project) {
+        for (let key in _project) {
             if (key.endsWith("time")) {
                 this.project[key] = new Date(_project[key]).toISOString();
             } else {

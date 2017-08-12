@@ -4,6 +4,7 @@ import {NavParams} from "ionic-angular";
 import {Util} from "../../../service/util";
 import {ImService} from "../../../service/im/service.im";
 import {SharedService} from "../../../service/share.service";
+import {UsersService} from "../../../service/ajax/users.service";
 
 @Component({
     selector: 'page-chat',
@@ -12,14 +13,10 @@ import {SharedService} from "../../../service/share.service";
 export class ChatPage {
 
 
-    to: string
+    to = {}
     myInfo: any
 
-    userInfos: any
-
     sessionId: string
-
-    chatobject: string
 
     msglist: Array<any>
 
@@ -29,17 +26,21 @@ export class ChatPage {
 
     toAccount;
 
+    me;
 
     constructor(public param: NavParams,
                 public util: Util,
                 public imServ: ImService,
-                public shared: SharedService) {
+                public shared: SharedService,
+                public userServ: UsersService) {
 
         this.maincolor = this.shared.getPrimaryColor();
         let account = this.param.get('account')
 
         this.toAccount = account;
-        let user = this.param.get("to");
+        this.me = shared.getCurrentUser();
+
+        userServ.getInfoByAccid(account).then(user => util.updateObj(this.to, user));
 
         let sessionId = 'p2p-' + account;
 
@@ -62,18 +63,8 @@ export class ChatPage {
         console.log('chat:\n', state)
 
         this.sessionId = sessionId
-        this.userInfos = state.userInfos
         this.myInfo = state.myInfo
 
-        if (user == null) {
-            this.to = state.sessionMap[sessionId].to
-        } else this.to = user.nickname
-
-        this.chatobject = this.to
-        //set title is user's nickname, if error, show user's account
-        state.getUserByAccount(this.to)
-            .then(user => this.chatobject = user.nick)
-            .catch(error => console.log(error))
     }
 
     sendMessage() {
@@ -81,7 +72,7 @@ export class ChatPage {
             console.log('消息为空', this.message)
             return
         }
-        this.imServ.sendMessage(this.toAccount,this.message)
+        this.imServ.sendMessage(this.toAccount, this.message)
             .then((message) => {
                 console.log('发送消息成功', message)
                 this.message = ""

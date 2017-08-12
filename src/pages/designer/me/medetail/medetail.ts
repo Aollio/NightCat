@@ -6,6 +6,7 @@ import {User} from "../../../../model/user";
 import {CaseDetailPage} from "../casedetail/casedetail";
 import {ChatPage} from "../../../im/chat/chat";
 import {AlertController} from 'ionic-angular';
+import {Util} from "../../../../service/util";
 
 
 @Component({
@@ -36,7 +37,8 @@ export class DesignerMeDetailPage {
     constructor(public navCtrl: NavController,
                 public shared: SharedService,
                 public alertCtrl: AlertController,
-                public navParams: NavParams) {
+                public navParams: NavParams,
+                private util: Util) {
         // this.isDesigner = shared.isDesigner;
         this.user = navParams.get('designer');
         // this.user = navParams.get('designer') || shared.getCurrentUser();
@@ -65,14 +67,18 @@ export class DesignerMeDetailPage {
     }
 
     openChat(user) {
-        this.navCtrl.push(ChatPage, {account: user.accid, to: user})
+        if (this.shared.isLogin()) {
+            this.navCtrl.push(ChatPage, {account: user.accid, to: user})
+        } else {
+            this.util.presentLoginPage(this.navCtrl);
+        }
     }
 
     //todo
     showHelp() {
         let alert = this.alertCtrl.create({
-            title: 'star level',
-            subTitle: 'this is ...',
+            title: '星级',
+            subTitle: '星级越高, 设计师的综合评价就越高哦',
             buttons: ['OK']
         });
         alert.present();

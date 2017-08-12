@@ -16,7 +16,7 @@ export class IMPage {
 
     sessions: any
 
-    sessionNameMap: any = {}
+    userinfoMap: any = {}
 
     im = IMPage;
     maincolor;
@@ -57,7 +57,7 @@ export class IMPage {
         } else {
             this.initFriendlyName()
             console.log(this.sessions)
-            console.log(this.sessionNameMap)
+            console.log(this.userinfoMap)
         }
     }
 
@@ -72,9 +72,9 @@ export class IMPage {
     initFriendlyName() {
         console.log("初始化友好名字")
         for (let sess of this.sessions) {
-            this.sessionNameMap[sess.id] = sess.to
+            this.userinfoMap[sess.id] = sess.to
             this.userServ.getInfoByAccid(sess.to)
-                .then(user => this.sessionNameMap[sess.id] = user.nickname)
+                .then(user => this.userinfoMap[sess.id] = user)
         }
     }
 

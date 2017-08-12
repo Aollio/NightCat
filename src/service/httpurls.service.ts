@@ -112,7 +112,6 @@ export class HttpUrls {
     project_imgs_get: string = this._projects + "/imgs";
 
 
-
     //start process
     //发布项目
     project_publish_post: string = this._projects;
@@ -121,28 +120,32 @@ export class HttpUrls {
     project_grab_post: string = this._projects + "/grab";
 
     //项目抢单的设计师列表
-    project_grabber_list:string=this._projects+"/grabber_list";
+    project_grabber_list: string = this._projects + "/grabber_list";
 
     //雇主选择设计师
-    project_select_designer:string=this._projects+"/select";
+    project_select_designer: string = this._projects + "/select";
 
     // 设计师确认订单
-    designer_confirm:string=this._projects+"/designer_confirm";
+    designer_confirm: string = this._projects + "/designer_confirm";
 
     //设计师完善订单
-    project_modify:string = this._projects+"/modify";
+    project_modify: string = this._projects + "/modify";
+
+
+    //雇主支付
+    project_money: string = this._projects + "/money";
 
     //设计师交付
-    project_commit:string = this._projects+"/commit";
+    project_commit: string = this._projects + "/commit";
 
     //雇主评价
-    project_comment:string = this._projects+"/comment";
+    project_comment: string = this._projects + "/comment";
 
     //雇主收货
-    employer_harvest:string = this._projects+"/harvest";
+    employer_harvest: string = this._projects + "/harvest";
 
     //取消订单
-    project_cancel :string = this._projects+"/cancel";
+    project_cancel: string = this._projects + "/cancel";
 
 
     //end process

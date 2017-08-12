@@ -1,9 +1,9 @@
 <ion-header>
     <ion-navbar [class.designer]="shared.isDesModule()" [class.employer]="!shared.isDesModule()">
         <!--<ion-buttons end>-->
-            <!--<button ion-button  tappable (click)="open(projectDetail,{})">-->
-                <!--项目详情-->
-            <!--</button>-->
+        <!--<button ion-button  tappable (click)="open(projectDetail,{})">-->
+        <!--项目详情-->
+        <!--</button>-->
         <!--</ion-buttons>-->
     </ion-navbar>
 </ion-header>
@@ -12,7 +12,7 @@
         <img class="my-img" src="assets/img/d-Group2.png" alt=""/>
     </div>
     <div class="my-subtitle">感谢你对夜猫的信任，期待再次合作</div>
-    <div class="my-money">￥24000</div>
+    <div class="my-money">{{project.budget || "加载中"}}</div>
     <div class="my-list">
         <div class="my-list-dt">请选择支付方式</div>
         <div class="my-list-li">
@@ -34,5 +34,7 @@
 
 </ion-content>
 <ion-footer>
-    <div class="my-confirm"><button>确认支付</button></div>
+    <div class="my-confirm" (click)="toPay()">
+        <button>确认支付</button>
+    </div>
 </ion-footer>

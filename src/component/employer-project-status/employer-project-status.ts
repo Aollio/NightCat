@@ -57,15 +57,8 @@ export class EmployerProjectStatusComponent {
         this.status = project.status;
 
         console.log('get project imgs');
-        this.projServ.getProjectImgs(project.id).then(imgs => {
-            this.imgs = imgs;
-            this._project.imgs = imgs;
-        }).catch(error => {
-            console.log(error);
-        });
     }
 
-    private imgs;
 
 
     openProjectProcess(project) {

@@ -19,23 +19,17 @@
         <ion-item class="friend" *ngFor="let session of sessions" tappable (click)="chat(session)">
 
             <ion-avatar item-start>
-                <img src="assets/img/des-3.png">
+                <img [src]="userinfoMap[session.id].img_url">
             </ion-avatar>
-            <!--<h2>{{ sessionNameMap[session.id] }}</h2>-->
             <div class="massage">
                 <div>
-                    <span class="id">{{ sessionNameMap[session.id] }}</span>
+                    <span class="id">{{ userinfoMap[session.id].nickname }}</span>
                     <!--<span class="time"> {{ session.updateTime }}</span>-->
                     <span> {{  util.formatDate(session.updateTime) }}</span>
 
                 </div>
-
-                <!--<h3>Don't Know What To Do!</h3>-->
                 <p>{{ session.lastMsg.type === 'text' ? session.lastMsg.text : '特殊消息类型' }}</p>
-
-
             </div>
-
         </ion-item>
     </ion-list>
 </ion-content>

@@ -169,7 +169,7 @@ export class ProjectsService {
 
 
     //项目id	  取消原因
-    async cancle(projectId,cancle_eason) {
+    async cancle(projectId, cancle_eason) {
         let response = await this.http.postWithToken(this.urls.project_cancel, {
             id: projectId,
             cancel_reason: cancle_eason
@@ -206,7 +206,8 @@ export class ProjectsService {
 
     //项目id  设计师交付
     async commit(projectId) {
-        let response = await this.http.postWithToken(this.urls.project_commit, {projectId:projectId});
+        let response = await this.http.postWithToken(this.urls.project_commit,
+            {id: projectId});
 
         if (response.status != 200) {
             throw response;
@@ -226,14 +227,24 @@ export class ProjectsService {
 
     //项目id  content type score
     async employerHarvest(id) {
-        let response = await this.http.postWithToken(this.urls.employer_harvest, {id:id});
+        let response = await this.http.postWithToken(this.urls.employer_harvest, {id: id});
 
         if (response.status != 200) {
-            throw response;
+            throw response || response.message;
+
         }
         return response.content;
     }
 
+    async money(id) {
+        let response = await this.http.postWithToken(this.urls.project_money, {id: id})
+
+        if (response.status != 200) {
+            throw response || response.message;
+        }
+
+        return response.content
+    }
 }
 
 

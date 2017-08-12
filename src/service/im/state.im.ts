@@ -59,6 +59,10 @@ export class State {
 
     async setCurrentSessionAndPreareMsgs(sessionId): Promise<any> {
         this.currSessionId = sessionId
+        let currMsgs = this.msgs[sessionId];
+        if (currMsgs == null) {
+            this.msgs[sessionId] = []
+        }
         this.currSessionMsgs = this.msgs[sessionId]
 
         if (this.sessionMap[sessionId] == null) return;
