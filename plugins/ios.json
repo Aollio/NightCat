@@ -7,10 +7,6 @@
         "files": {}
     },
     "installed_plugins": {
-        "com.synconset.imagepicker": {
-            "PHOTO_LIBRARY_USAGE_DESCRIPTION": "your usage message",
-            "PACKAGE_NAME": "com.scu.jlyemao"
-        },
         "cordova-plugin-compat": {
             "PACKAGE_NAME": "com.scu.jlyemao"
         },
@@ -36,9 +32,6 @@
             "PACKAGE_NAME": "com.scu.jlyemao"
         },
         "cordova-sqlite-storage": {
-            "PACKAGE_NAME": "com.scu.jlyemao"
-        },
-        "cordova-plugin-file-transfer": {
             "PACKAGE_NAME": "com.scu.jlyemao"
         }
     },

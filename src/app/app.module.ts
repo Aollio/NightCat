@@ -28,7 +28,6 @@ import {IonicStorageModule} from "@ionic/storage";
 import {Storage} from '@ionic/storage';
 import {KeynoteService} from "../service/keynote.service";
 import {AdsService} from "../service/ajax/ads.service";
-import {ImagePicker} from "@ionic-native/image-picker";
 import {ProjectsService} from "../service/ajax/projects.service";
 import {OrderProcessModule} from "../pages/common/order/orderprocess/orderprocess.module";
 import {OrderModule} from "../pages/common/order/order.module";
@@ -37,9 +36,6 @@ import {Manager} from "../service/manager";
 import {FileService} from "../service/ajax/files.service";
 import {ImportantModule} from "../importants/important.module";
 import {ImageService} from "../service/ajax/imgs.service";
-//import { Calendar } from '@ionic-native/calendar';
-//import {DatePicker} from '@ionic-native/date-picker';
-// import { FileTransfer} from '@ionic-native/file-transfer';
 
 export function provideStorage() {
     return new Storage({});
@@ -101,11 +97,7 @@ export function provideStorage() {
         SharedService,
         Util,
         //Other
-        // Calendar,
-        //DatePicker,
         HTTP,
-        ImagePicker,
-        // FileTransfer,
 
         //auto
         StatusBar,

@@ -1,19 +1,11 @@
 import {Component} from "@angular/core";
-// import {console} from "../designer/tasksquare/tasksquare";
 import {Util} from "../../service/util";
-//import {Calendar} from '@ionic-native/calendar';
 import {Manager} from "../../service/manager";
 import {NavController} from "ionic-angular";
-import {ImagePicker} from "@ionic-native/image-picker";
 import {FileService} from "../../service/ajax/files.service";
 import {NetworkService} from "../../service/network.service";
 import {HttpUrls} from "../../service/httpurls.service";
 
-//import {DatePicker} from '@ionic-native/date-picker';
-
-
-// declare let initializeFontSize: any
-declare let jQuery: any
 
 @Component({
     selector: 'page-blank',
@@ -32,7 +24,6 @@ export class BlankPage {
     constructor(private util: Util,
                 private manager: Manager,
                 private nav: NavController,
-                private imagePicker: ImagePicker,
                 private files: FileService,
                 private http: NetworkService,
                 private urls: HttpUrls) {
@@ -42,26 +33,6 @@ export class BlankPage {
     }
 
 
-    picker() {
-        let options = {
-            maximumImagesCount: 15,
-            quality: 100,
-            outputType: 1
-        }
-        console.log("开始选择图片")
-        this.imagePicker.getPictures(options).then((results) => {
-            for (var i = 0; i < results.length; i++) {
-                console.log("选择图片后")
-                console.log('Image base64: ' + results[i]);
-                this.files.upload(results[i]).then(url => {
-                    console.log("上传成功, url is :", url)
-                    this.imgurls.push(url)
-                });
-            }
-        }, (err) => {
-            console.log(err)
-        });
-    }
 
     post() {
         let one = ["one", "two", "three"]

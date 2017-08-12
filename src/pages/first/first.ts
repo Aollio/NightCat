@@ -21,9 +21,7 @@ import {LoginPage} from "../common/login/login";
 export class FirstPage {
 
     constructor(private nav: NavController,
-                private storage: Storage,
                 public event: Events,
-                private modal:ModalController,
                 public share: SharedService,
                 private util: Util) {
 

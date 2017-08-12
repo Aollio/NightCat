@@ -39,9 +39,6 @@
         },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.scu.jlyemao"
-        },
-        "cordova-plugin-file-transfer": {
-            "PACKAGE_NAME": "com.scu.jlyemao"
         }
     },
     "dependent_plugins": {}
