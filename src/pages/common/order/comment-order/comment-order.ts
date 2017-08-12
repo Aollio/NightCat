@@ -1,6 +1,7 @@
 import {Component} from "@angular/core";
 import {ToastController} from "ionic-angular";
-declare let initializeFontSize:any
+import {ProjectsService} from "../../../../service/ajax/projects.service";
+
 @Component({
     selector: 'comment-order',
     templateUrl: 'comment-order.html'
@@ -12,12 +13,10 @@ export class CommentOrderPage {
 
     publish_complete: boolean = false;
 
-    constructor(public toastCtrl: ToastController) {
+    constructor(public toastCtrl: ToastController,
+                public projServ: ProjectsService) {
     }
 
-    ionViewDidEnter(){
-        initializeFontSize()
-    }
     publish() {
         if (this.level === 0) {
             this.toast("请选择评价等级")
