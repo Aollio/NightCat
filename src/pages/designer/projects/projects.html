@@ -55,7 +55,7 @@
 
 <ion-content>
     <ion-row class="type-nav">
-        <ion-col tappable (click)="select([0,2,3])"
+        <ion-col tappable (click)="select([0,1,2])"
                  col-3 class="order-type-col order-type-color" text-center>
             <div [class.active]="processType[0] === 0">
                 <custom-icon class="custom-icon" set="cat" name="projects-waitdesign"></custom-icon>
@@ -71,7 +71,7 @@
                 未支付
             </div>
         </ion-col>
-        <ion-col tappable (click)="select([4,5,6])"
+        <ion-col tappable (click)="select([4,5,7])"
                  col-3 class="order-type-col order-type-color " text-center>
             <div [class.active]="processType[0] === 4">
                 <custom-icon class="custom-icon" set="cat" name="my-comment"></custom-icon>
@@ -79,7 +79,7 @@
                 未交付
             </div>
         </ion-col>
-        <ion-col tappable (click)="select([7,8])"
+        <ion-col tappable (click)="select([6,8,9])"
                  col-3 class="order-type-col order-type-color" text-center>
             <div [class.active]="processType[0] === 7">
                 <custom-icon class="custom-icon" set="cat" name="projects-all"></custom-icon>

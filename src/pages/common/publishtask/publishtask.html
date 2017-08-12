@@ -5,14 +5,29 @@
                 取消
             </button>
         </ion-buttons>
-        <ion-title>
-            发布项目
-        </ion-title>
-        <ion-buttons end>
-            <button ion-button tappable (click)="publish()">
-                发布
-            </button>
-        </ion-buttons>
+
+        <div *ngIf="!designer">
+            <ion-title>
+                发布项目
+            </ion-title>
+            <ion-buttons end>
+                <button ion-button tappable (click)="publish()">
+                    发布
+                </button>
+            </ion-buttons>
+        </div>
+
+        <div *ngIf="designer">
+            <ion-title>
+                完善项目信息
+            </ion-title>
+            <ion-buttons end>
+                <button ion-button tappable (click)="commit()">
+                    提交
+                </button>
+            </ion-buttons>
+        </div>
+
     </ion-navbar>
 </ion-header>
 
@@ -21,7 +36,7 @@
 
     <ion-item class="my-item" no-lines>
         <ion-label class="labelcolor">项目类型 *</ion-label>
-        <ion-select [(ngModel)]="project.type" interface="popover" placeholder="请选择">
+        <ion-select [(ngModel)]="project.type" interface="popover" placeholder="请选择" [disabled]="designer">
             <div *ngFor="let item of projectServ.type;let i=index">
                 <ion-option *ngIf="i>0" value={{i}}>{{item}}</ion-option>
             </div>
@@ -32,7 +47,7 @@
 
     <ion-item>
         <ion-label floating>项目标题 *</ion-label>
-        <ion-input type="text" [(ngModel)]="project.title"></ion-input>
+        <ion-input type="text" [(ngModel)]="project.title" [disabled]="designer"></ion-input>
     </ion-item>
     <div class="blank-10px"></div>
 

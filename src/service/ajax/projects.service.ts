@@ -181,6 +181,59 @@ export class ProjectsService {
         return response.content;
     }
 
+    //项目id
+    async designerConfirm(projectId) {
+        let response = await this.http.postWithToken(this.urls.designer_confirm, {
+            id: projectId,
+        });
+
+        if (response.status != 200) {
+            throw response;
+        }
+        return response.content;
+    }
+
+    //项目id
+    async modify(project) {
+        let response = await this.http.postWithToken(this.urls.project_modify, project);
+
+        if (response.status != 200) {
+            throw response;
+        }
+        return response.content;
+    }
+
+
+    //项目id  设计师交付
+    async commit(projectId) {
+        let response = await this.http.postWithToken(this.urls.project_commit, {projectId:projectId});
+
+        if (response.status != 200) {
+            throw response;
+        }
+        return response.content;
+    }
+
+    //项目id  content type score
+    async comment(comment) {
+        let response = await this.http.postWithToken(this.urls.project_comment, comment);
+
+        if (response.status != 200) {
+            throw response;
+        }
+        return response.content;
+    }
+
+    //项目id  content type score
+    async employerHarvest(id) {
+        let response = await this.http.postWithToken(this.urls.employer_harvest, {id:id});
+
+        if (response.status != 200) {
+            throw response;
+        }
+        return response.content;
+    }
+
 }
 
 

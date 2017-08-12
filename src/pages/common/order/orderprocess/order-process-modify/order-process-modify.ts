@@ -1,8 +1,12 @@
 import {Component} from "@angular/core";
-import {AlertController, NavController} from "ionic-angular";
+import {AlertController, NavController, NavParams} from "ionic-angular";
 import {PublishTaskPage} from "../../../publishtask/publishtask";
 import {ProjectDetailPage} from "../../orderdetail/projectdetail";
 import {SharedService} from "../../../../../service/share.service";
+import {OrderProcessWaitcomment} from "../order-process-waitcomment/waitcomment";
+import {CancelProjectPage} from "../../cancel-project/cancel-project";
+import {ProjectsService} from "../../../../../service/ajax/projects.service";
+import {Util} from "../../../../../service/util";
 
 declare let initializeFontSize: any;
 
@@ -12,15 +16,23 @@ declare let initializeFontSize: any;
 })
 export class OrderProcessModifyPage {
 
-    projectDetail:ProjectDetailPage
-    constructor(private navCtrl:NavController,
-                private share:SharedService,
-                private alertCtrl:AlertController
-    ){
+    private project;
+    private status;
 
+    constructor(private navCtrl: NavController,
+                private shared: SharedService,
+                private util:Util,
+                private nav:NavController,
+                private projectServ:ProjectsService,
+                private navParams: NavParams,
+                private alertCtrl: AlertController) {
+        this.project = this.navParams.get("project");
+        this.status = this.project.status;
     }
-    open(page, option) {
-        this.navCtrl.push(page, option)
+
+
+    openDetailPage() {
+        this.navCtrl.push(ProjectDetailPage,{project:this.project});
     }
 
     openPushProject() {
@@ -51,7 +63,7 @@ export class OrderProcessModifyPage {
 
     showPutInAlert() {
         let confirm = this.alertCtrl.create({
-           // title: '取消抢单',
+            // title: '取消抢单',
             message: '确认交付作品？',
             buttons: [
                 {
@@ -93,4 +105,77 @@ export class OrderProcessModifyPage {
         confirm.present();
     }
 
+
+    openWaitcommentPage() {
+        this.alertCtrl.create({
+            subTitle: '是否确认收货？',
+            buttons: [
+                {
+                    text: '取消',
+                },
+                {
+                    text: '确认',
+                    handler: () => {
+                        this.projectServ.employerHarvest(this.project.id).then(() => {
+                            this.util.toast("确认成功")
+                            this.nav.push(OrderProcessWaitcomment, {project: this.project});
+                        }).catch(error => {
+                            console.log(error);
+                            this.util.toast("确认失败");
+                        })
+                    }
+                }
+            ]
+        }).present();
+    }
+
+    cancelProject() {
+        this.nav.push(CancelProjectPage, {projectId: this.project.id});
+    }
+
+    showAlert() {
+        let confirm = this.alertCtrl.create({
+            title: '审图',
+            message: '您对设计师的作品不满意，需要我们提供帮助吗？点击确认，我们会尽快联系您。',
+            buttons: [
+                {
+                    text: '确认',
+                    handler: () => {
+                        console.log('Disagree clicked');
+                    }
+                },
+                {
+                    text: '取消',
+                    handler: () => {
+                        console.log('Agree clicked');
+                    }
+                }
+            ]
+        });
+        confirm.present();
+    }
+
+    designerConfirm(){
+        this.projectServ.designerConfirm(this.project.id)
+            .then(()=>{
+                    this.nav.pop();
+            }).catch(error=>{
+            console.log(error);
+            this.util.toast("确认失败，请稍后再试");
+        })
+    }
+
+    openPublishTask() {
+        this.nav.push(PublishTaskPage, {project:this.project});
+    }
+
+    commitProject(){
+        this.projectServ.commit(this.project.id)
+            .then(()=>{
+                this.nav.pop();
+            }).catch(error=>{
+            console.log(error);
+            this.util.toast("确认失败，请稍后再试");
+        })
+    }
 }

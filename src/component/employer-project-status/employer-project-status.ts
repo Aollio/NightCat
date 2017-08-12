@@ -11,6 +11,7 @@ import {Util} from "../../service/util";
 import {OrderProcessWaitcomment} from "../../pages/common/order/orderprocess/order-process-waitcomment/waitcomment";
 import {ChooseDesignerPage} from "../../pages/employer/choosedesigner/choosedesigner";
 import {OrderProcessPreSelectedPage} from "../../pages/common/order/orderprocess/order-process-pre-selectdes/order-process-pre-selectdes";
+import {CommentOrderPage} from "../../pages/common/order/comment-order/comment-order";
 
 declare let initializeFontSize: any
 
@@ -36,13 +37,14 @@ export class EmployerProjectStatusComponent {
     private _project;
     private status;
 
-    private statusText=[
+    private statusText = [
         "已发布",
         "等待设计师确认",
-        "等待完善",
+        "等待设计师完善信息",
         "待支付",
-        "等待交付",
+        "等待设计师交付",
         "待收货",
+        "待评价",
         "审图中",
         "已完成",
         "已取消",
@@ -51,12 +53,13 @@ export class EmployerProjectStatusComponent {
     @Input()
     set project(project) {
         this._project = project;
+        this._project = project;
         this.status = project.status;
 
         console.log('get project imgs');
         this.projServ.getProjectImgs(project.id).then(imgs => {
             this.imgs = imgs;
-            this._project.imgs=imgs;
+            this._project.imgs = imgs;
         }).catch(error => {
             console.log(error);
         });
@@ -66,26 +69,17 @@ export class EmployerProjectStatusComponent {
 
 
     openProjectProcess(project) {
-        if (project.status == 0) {
-            this.nav.push(ProjectDetailPage, {project: project});
-        }
-        else if (project.status == 1) {
+        if (project.status == 3) {
             this.nav.push(OrderProcessPayment, {project: project});
         }
-        else if (project.status == 2) {
-            this.nav.push(OrderProcessModifyPage, {project: project});
-        }
-        else if (project.status == 3) {
-            this.nav.push(OrderProcessModifyPage, {project: project});
-        }
-        else if (project.status == 4) {
+        else if (project.status == 6) {
             this.nav.push(OrderProcessWaitcomment, {project: project});
         }
-        else if (project.status == 5) {
+        else if (project.status == 8 || project.status == 9) {
             this.nav.push(OrerProcessCompleted, {project: project});
         }
-        else if (project.status == 6) {
-            this.nav.push(OrerProcessCompleted, {project: project});
+        else {
+            this.nav.push(OrderProcessModifyPage, {project: project});
         }
     }
 
@@ -102,23 +96,43 @@ export class EmployerProjectStatusComponent {
 
 
     cancelProject() {
-        this.nav.push(CancelProjectPage, {projectId:this._project.id});
+        this.nav.push(CancelProjectPage, {projectId: this._project.id});
     }
 
     openDynamicProjectPage() {
         this.nav.push(OrderProcessPreSelectedPage, {projectId: this._project.id});
     }
 
-    openPaymentPage(project) {
-        this.nav.push(OrderProcessPayment, {project: project});
+    openPaymentPage() {
+        this.nav.push(OrderProcessPayment, {project: this._project});
     }
 
-    openWaitcommentPage(project) {
-        this.nav.push(OrderProcessWaitcomment, {project: project});
+    openWaitcommentPage() {
+        this.alertCtrl.create({
+            subTitle: '是否确认收货？',
+            buttons: [
+                {
+                    text: '取消',
+                },
+                {
+                    text: '确认',
+                    handler: () => {
+                        this.projServ.employerHarvest(this._project.id).then(() => {
+                            this.util.toast("确认成功")
+                            this.nav.push(OrderProcessWaitcomment, {project: this._project});
+                        }).catch(error => {
+                            console.log(error);
+                            this.util.toast("确认失败");
+                        })
+                    }
+                }
+            ]
+        }).present();
     }
 
-    Pay(project) {
-        this.nav.push(OrderProcessPayment, {project: project});
+
+    openCommentOrderPage() {
+        this.nav.push(CommentOrderPage, {project: this._project});
     }
 
 
