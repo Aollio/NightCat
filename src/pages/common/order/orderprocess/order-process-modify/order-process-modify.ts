@@ -73,7 +73,7 @@ export class OrderProcessModifyPage {
 
     showShentuAlert() {
         let confirm = this.alertCtrl.create({
-            // title: '取消抢单',
+            // title: '审图',
             message: '确认审图？',
             buttons: [
                 {

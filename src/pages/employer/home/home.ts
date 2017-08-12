@@ -58,6 +58,7 @@ export class EmployerHomePage {
                     text: '立即查看',
                     handler: () => {
                         console.log('Disagree clicked');
+                        this.navCtrl.parent.select(1);
                     }
                 },
                 {
