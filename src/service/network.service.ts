@@ -1,16 +1,9 @@
-import {Component, Injectable} from "@angular/core";
+import {Injectable} from "@angular/core";
 import {Http, Headers} from "@angular/http";
-import {HTTP} from "@ionic-native/http";
-import {Platform, NavController, Events} from "ionic-angular";
+import {Platform, Events} from "ionic-angular";
 import {Util} from "./util";
-import {LoginPage} from "../pages/common/login/login";
-import {KeynoteService} from "./keynote.service";
-import {SharedService} from "./share.service";
 
 @Injectable()
-// @Component({
-//     providers: [Http]
-// })
 export class NetworkService {
 
 
@@ -18,19 +11,20 @@ export class NetworkService {
     private isWebCore: boolean;
 
     constructor(private http_browser: Http,
-                private http_mobile: HTTP,
+                // private http_mobile: Http,
                 private util: Util,
                 private platform: Platform,
-                private event: Events,
-                private share: SharedService) {
-        this.isWebCore = this.platform.is('core') || this.platform.is('mobileweb');
+                private event: Events,) {
+        // this.isWebCore = this.platform.is('core') || this.platform.is('mobileweb');
+        this.isWebCore = true;
     }
 
     setToken(token) {
         console.log("setToken: ", token)
         this.token = token;
     }
-    clearToken(){
+
+    clearToken() {
         this.setToken(null);
     }
 
@@ -74,10 +68,11 @@ export class NetworkService {
                 return response.json();
 
             } else {
-                response = await this.http_mobile.get(url, param, header);
-                console.log("get response", response.data, "\n");
-
-                return JSON.parse(response.data);
+                //tdo
+                // response = await this.http_mobile.get(url, param, header);
+                // console.log("get response", response.data, "\n");
+                //
+                // return JSON.parse(response.data);
 
 
             }
@@ -154,11 +149,11 @@ export class NetworkService {
                 return response.json();
 
             } else {
-                console.log('开始post请求', '在手机中');
+                // console.log('开始post请求', '在手机中');
 
-                response = await this.http_mobile.post(url, param, headers);
-                console.log("post response", response.data, "\n");
-                return JSON.parse(response.data);
+                // response = await this.http_mobile.post(url, param, headers);
+                // console.log("post response", response.data, "\n");
+                // return JSON.parse(response.data);
 
             }
 

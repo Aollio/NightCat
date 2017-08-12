@@ -16,7 +16,6 @@ import {SharedService} from "../service/share.service";
 import {HttpUrls} from "../service/httpurls.service";
 import {FormsModule} from '@angular/forms';
 import {UsersService} from "../service/ajax/users.service";
-import {HTTP} from "@ionic-native/http";
 import {HttpModule} from "@angular/http";
 import {PopoverPage} from "../pages/popver/popver";
 import {CustomIconsModule} from 'ionic2-custom-icons';
@@ -25,25 +24,17 @@ import {ImModule} from "../pages/im/im.module";
 import {Util} from "../service/util";
 import {FirstPage} from "../pages/first/first";
 import {IonicStorageModule} from "@ionic/storage";
-import {Storage} from '@ionic/storage';
 import {KeynoteService} from "../service/keynote.service";
 import {AdsService} from "../service/ajax/ads.service";
-import {ImagePicker} from "@ionic-native/image-picker";
 import {ProjectsService} from "../service/ajax/projects.service";
 import {OrderProcessModule} from "../pages/common/order/orderprocess/orderprocess.module";
 import {OrderModule} from "../pages/common/order/order.module";
 import {ComponentModule} from "../component/component.module";
 import {Manager} from "../service/manager";
-import {FilesService} from "../service/ajax/files.service";
-import {ImagesService} from "../service/ajax/images.service";
+import {FileService} from "../service/ajax/files.service";
 import {ImportantModule} from "../importants/important.module";
-//import { Calendar } from '@ionic-native/calendar';
-//import {DatePicker} from '@ionic-native/date-picker';
-// import { FileTransfer} from '@ionic-native/file-transfer';
+import {ImageService} from "../service/ajax/imgs.service";
 
-export function provideStorage() {
-    return new Storage({});
-}
 
 @NgModule({
     declarations: [
@@ -86,8 +77,8 @@ export function provideStorage() {
 
     providers: [
         //service ajax
-        ImagesService,
-        FilesService,
+        ImageService,
+        FileService,
         AdsService,
         ProjectsService,
         UsersService,
@@ -101,17 +92,11 @@ export function provideStorage() {
         SharedService,
         Util,
         //Other
-        // Calendar,
-        //DatePicker,
-        HTTP,
-        ImagePicker,
-        // FileTransfer,
 
         //auto
         StatusBar,
         SplashScreen,
         {provide: ErrorHandler, useClass: IonicErrorHandler},
-        {provide: Storage, useFactory: provideStorage},
     ]
 })
 export class AppModule {

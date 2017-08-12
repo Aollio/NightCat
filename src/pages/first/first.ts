@@ -1,29 +1,18 @@
 import {Component} from "@angular/core";
-import {NavController, Events, ModalController} from "ionic-angular";
-import {Storage} from '@ionic/storage';
+import {NavController, Events} from "ionic-angular";
 import {WelcomePage} from "../welcome/welcome";
-import {RegisterPage} from "../common/register/register";
-import {DesignerModulePage} from "../designer/designer";
-import {EmployerModulePage} from "../employer/employer";
-import {provideStorage} from "../../app/app.module";
 import {SharedService} from "../../service/share.service";
 import {Util} from "../../service/util";
 import {LoginPage} from "../common/login/login";
 
 @Component({
     selector: "page-first",
-
-    templateUrl: "first.html",
-    providers: [
-        {provide: Storage, useFactory: provideStorage}
-    ]
+    templateUrl: "first.html"
 })
 export class FirstPage {
 
     constructor(private nav: NavController,
-                private storage: Storage,
                 public event: Events,
-                private modal:ModalController,
                 public share: SharedService,
                 private util: Util) {
 

@@ -7,9 +7,7 @@ import {PopoverPage} from "../../popver/popver";
 import {EmployerModulePage} from "../../employer/employer";
 import {Util} from "../../../service/util";
 import {UsersService} from "../../../service/ajax/users.service";
-import {ANGULAR} from "@ionic/app-scripts/dist/webpack/common-chunks-plugins";
 
-declare let initializeFontSize: any
 
 @Component({
     selector: 'page-register',
@@ -38,9 +36,6 @@ export class RegisterPage {
     }
 
 
-    ionViewDidEnter() {
-        initializeFontSize()
-    }
 
 // todo 密码加密
 

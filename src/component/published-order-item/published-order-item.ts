@@ -9,7 +9,6 @@ import {ProjectsService} from "../../service/ajax/projects.service";
 @Component({
     selector: "publish-order-item",
     templateUrl: "published-order-item.html",
-    // styleUrls: ["./published-order-item.scss"]
 })
 
 
@@ -20,22 +19,11 @@ export class PublishOrderItemComponent {
 
     }
 
-    private _project;
-
     @Input()
-    set project(project) {
-        this._project = project;
-        console.log('get project imgs');
-        this.projServ.getProjectImgs(project.id).then(imgs => {
-            this.imgs = imgs;
-        }).catch(error => {
-            console.log(error);
-        });
-    }
+    private project;
 
-    private imgs;
 
     openProjectDetail(project) {
-        this.navCtrl.push(ProjectDetailPage, {project: this._project,imgs:this.imgs});
+        this.navCtrl.push(ProjectDetailPage, {project: this.project});
     }
 }

@@ -167,10 +167,24 @@ export class ProjectsService {
         return response.content;
     }
 
+
+    //项目id	  取消原因
+    async cancle(projectId,cancle_eason) {
+        let response = await this.http.postWithToken(this.urls.project_cancel, {
+            id: projectId,
+            cancel_reason: cancle_eason
+        });
+
+        if (response.status != 200) {
+            throw response;
+        }
+        return response.content;
+    }
+
 }
 
 
-enum _Status {
+enum Status {
     /**
      * 发布项目后, 项目处于发布状态. 这时候设计师可以进行抢单.
      * 如果没有设计师抢单, 并且项目到达截止时间后会进入'Cancel'状态
@@ -179,11 +193,15 @@ enum _Status {
         /**
          * 雇主选择一位设计师后, 等待设计师确认
          */
-    ConfirmDesigner_WaitDesignerConfitm,
+    ConfirmDesigner_WaitDesignerConfirm,
         /**
-         * 设计时确认后(双方确认), 等待雇主支付. 这时会生成一个对应的支付订单
+         * 设计时确认后(双方确认)
          */
-    BothConfirm_WaitEmployerPay,
+    DesignerConfirm_WaitModify,
+        /**
+         * 等待设计师修改. 修改后,等待雇主支付. 这时会生成一个对应的支付订单
+         */
+    DesignerModify_WaitPay,
         /**
          * 支付完成后, 等待设计师设计
          */

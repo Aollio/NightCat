@@ -36,6 +36,18 @@ export class EmployerProjectStatusComponent {
     private _project;
     private status;
 
+    private statusText=[
+        "已发布",
+        "等待设计师确认",
+        "等待完善",
+        "待支付",
+        "等待交付",
+        "待收货",
+        "审图中",
+        "已完成",
+        "已取消",
+    ];
+
     @Input()
     set project(project) {
         this._project = project;
@@ -90,7 +102,7 @@ export class EmployerProjectStatusComponent {
 
 
     cancelProject() {
-        this.nav.push(CancelProjectPage, {});
+        this.nav.push(CancelProjectPage, {projectId:this._project.id});
     }
 
     openDynamicProjectPage() {

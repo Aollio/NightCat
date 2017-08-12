@@ -2,15 +2,10 @@ import {Injectable} from "@angular/core";
 import {NetworkService} from "../network.service";
 import {HttpUrls} from "../httpurls.service";
 
-// import {
-//     FileTransfer, FileUploadOptions,
-//     FileTransferObject
-// } from '@ionic-native/file-transfer';
 
 @Injectable()
-export class FilesService {
+export class FileService {
 
-    // fileTransfer: FileTransferObject = null;
 
     constructor(private http: NetworkService,
                 private urls: HttpUrls) {

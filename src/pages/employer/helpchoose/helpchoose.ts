@@ -7,8 +7,8 @@ import {EmployerHomePage} from "../home/home";
 import {EmployerModulePage} from "../employer";
 
 @Component({
-    templateUrl: 'helpchoose.html',
-    selector: 'page-helpchoose'
+    selector: 'page-helpchoose',
+    templateUrl: 'helpchoose.html'
 })
 export class HelpChoosePage {
     employerhome: any = EmployerHomePage;

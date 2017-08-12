@@ -7,7 +7,6 @@ import {CaseDetailPage} from "../casedetail/casedetail";
 import {ChatPage} from "../../../im/chat/chat";
 import {AlertController} from 'ionic-angular';
 
-declare let initializeFontSize: any
 
 @Component({
     selector: 'page-designer-me-detail',
@@ -42,10 +41,6 @@ export class DesignerMeDetailPage {
         this.user = navParams.get('designer');
         // this.user = navParams.get('designer') || shared.getCurrentUser();
         this.maincolor = this.shared.getPrimaryColor();
-    }
-
-    ionViewDidEnter() {
-        initializeFontSize()
     }
 
 

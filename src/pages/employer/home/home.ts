@@ -38,8 +38,7 @@ export class EmployerHomePage {
     constructor(public navCtrl: NavController,
                 private shared: SharedService,
                 private util: Util,
-                public alertCtrl: AlertController,
-                ) {
+                public alertCtrl: AlertController,) {
         this.showAlert();
 
         this.isFirstLogin = shared.isFirstUse();
@@ -59,6 +58,7 @@ export class EmployerHomePage {
                     text: '立即查看',
                     handler: () => {
                         console.log('Disagree clicked');
+                        this.navCtrl.parent.select(1);
                     }
                 },
                 {
@@ -79,13 +79,12 @@ export class EmployerHomePage {
     }
 
 
-
     btn_designer() {
         this.navCtrl.push(DesignerListPage);
     }
 
     btn_fullstack() {
-        this.navCtrl.push(DesignerListPage);
+        this.navCtrl.push(DesignerListPage, {type: this.shared.getFullStackType()});
     }
 
     btn_types() {
@@ -98,13 +97,12 @@ export class EmployerHomePage {
     }
 
 
+    isFirstLogin = true;
 
-    isFirstLogin=true;
-
-    hideFab(){
+    hideFab() {
         //todo isfirstCome 记录
         this.shared.setIsNotFirstUse();
-        this.isFirstLogin=false;
+        this.isFirstLogin = false;
     }
 
 }

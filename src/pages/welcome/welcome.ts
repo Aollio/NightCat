@@ -1,45 +1,19 @@
 import {Component, ViewChild} from '@angular/core';
 import {NavController, NavParams, Platform, ToastController} from 'ionic-angular';
 import {LoginPage} from "../common/login/login";
-import {OrderListComponent} from "../common/order/orderlist/orderlist";
 import {EmployerModulePage} from "../employer/employer";
 import {DesignerModulePage} from "../designer/designer";
-import {PublishTaskPage} from "../common/publishtask/publishtask";
-import {DesignerWalletPage} from "../designer/wallet/wallet";
-import {CommentPage} from "../designer/comment/comment";
-import {TaskSquarePage} from "../designer/tasksquare/tasksquare";
-import {ChatMessagePage} from "../designer/chatmessage/chatmessage";
 import {BlankPage} from "../blank/blank";
-import {DesignerMeDetailPage} from "../designer/me/medetail/medetail";
-import {AddCasePage} from "../designer/me/addcase/addcase";
-import {AddHonorPage} from "../designer/me/addhonor/addhonor";
-import {CaseDetailPage} from "../designer/me/casedetail/casedetail";
-import {ProjectsPage} from "../employer/projects/projects";
 import {NetworkService} from "../../service/network.service";
-import {PayPage} from "../employer/pay/pay";
-import {CommentOrderPage} from "../common/order/comment-order/comment-order";
-
-import {DesignerTabsPage} from "../designer/tabs/tabs";
 import {SharedService} from "../../service/share.service";
-import {EmployerTabsPage} from "../employer/tabs/tabs";
 import {ImService} from "../../service/im/service.im";
 import {IMPage} from "../im/im";
 import {ChatPage} from "../im/chat/chat";
 import {State} from "../../service/im/state.im";
-import {SearchDesignerPage} from "../employer/searchdesigner/searchdesigner";
 import {RegisterPage} from "../common/register/register";
-import {ImagePicker} from "@ionic-native/image-picker";
 import {Slides} from 'ionic-angular';
-import {EmployerHomePage} from "../employer/home/home";
-import {DesignerHomePage} from "../designer/home/home";
-import {OrderProcessModifyPage} from "../common/order/orderprocess/order-process-modify/order-process-modify";
-import {OrderProcessPayment} from "../common/order/orderprocess/order-process-payment/order-process-payment";
 import {OrderProcessWaitcomment} from "../common/order/orderprocess/order-process-waitcomment/waitcomment";
-import {ProjectDetailPage} from "../common/order/orderdetail/projectdetail";
 
-// import {Waitcomment} from "../common/order/orderprocess/order-process-waitcomment/waitcomment";
-
-declare let initializeFontSize: any;
 
 @Component({
     selector: 'page-welcome',
@@ -50,52 +24,19 @@ export class WelcomePage {
     rootPage: any;
     state: any = 1;
     register: any = RegisterPage;
-    // employerHome :any = EmployerHomePage;
-    // designerHome:any = DesignerHomePage;
 
 
-    /**
-     * 这是主页的快速入口，用于开发
-     * */
-    orderDetailPage: any = ProjectDetailPage;
-    orderListComponent: any = OrderListComponent;
-
-    employerHome: any = EmployerModulePage;
-
-    loginPage: any = LoginPage;
-
-    designerLogin: any = LoginPage;
-
-    designerHome: any = DesignerModulePage;
-
-
-    pulishtaskPage: any = PublishTaskPage;
-    designerWalletPage: any = DesignerWalletPage;
-    taskSquarePage: any = TaskSquarePage;
-    commentPage: any = CommentPage;
-    chatMessagePage: any = ChatMessagePage;
-    designerMeDetailPage: any = DesignerMeDetailPage;
-    addcase: any = AddCasePage;
-    addhonor: any = AddHonorPage;
-    casedetail: any = CaseDetailPage;
-    paypage: any = PayPage;
-    // choosedesigner: any = ChooseDesignerPage;
-    projectsPage: any = ProjectsPage;
     list: any = BlankPage;
-    searchdesigner: any = SearchDesignerPage;
-    commentOrderPage: any = CommentOrderPage;
-    orderProcessModifyPage: any = OrderProcessModifyPage;
-    orderProcessPayment: any = OrderProcessPayment;
     waitcomment: any = OrderProcessWaitcomment;
 
-    constructor(public navCtrl: NavController, public navParams: NavParams,
+    constructor(public navCtrl: NavController,
+                public navParams: NavParams,
                 public platform: Platform,
                 public toastCtrl: ToastController,
                 public http: NetworkService,
                 public shared: SharedService,
                 public im: ImService,
-                public navParam: NavParams,
-                public imagePicker: ImagePicker) {
+                public navParam: NavParams) {
 
         console.log('enter welcome')
         let isregister = this.navParam.get('register')
@@ -109,19 +50,6 @@ export class WelcomePage {
         }
     }
 
-    ionViewDidEnter() {
-        initializeFontSize();
-        console.log("com")
-    }
-
-    openImagePicker() {
-        this.imagePicker.getPictures({}).then((results) => {
-            for (var i = 0; i < results.length; i++) {
-                console.log('Image URI: ' + results[i]);
-            }
-        }, (err) => {
-        });
-    }
 
     openChat() {
         this.navCtrl.push(ChatPage, {})
@@ -129,6 +57,10 @@ export class WelcomePage {
 
     openMsgs() {
         this.navCtrl.push(IMPage, {})
+    }
+
+    openBlank() {
+        this.navCtrl.push(BlankPage, {})
     }
 
     customBtn() {
@@ -241,9 +173,6 @@ export class WelcomePage {
         }
     }
 
-    // openComplete() {
-    //     this.navCtrl.push(OrderProcessComplete, {})
-    // }
 
     //todo 保存登陆信息  自动登录
 }

@@ -3,6 +3,7 @@ import {DesignerMeDetailPage} from "../../../designer/me/medetail/medetail";
 import {NavController, NavParams} from "ionic-angular";
 import {UsersService} from "../../../../service/ajax/users.service";
 import {SharedService} from "../../../../service/share.service";
+
 @Component({
     selector: 'page-designer-list-home',
     templateUrl: 'designer-list.html'
@@ -12,21 +13,25 @@ export class DesignerListPage {
     // @ViewChild("refresher") refresher;
 
     miancolor;
-    previousPage="";//前一页
+    previousPage = "";//前一页
     designers: Array<any> = [];
 
     designerMeDetailPage: DesignerMeDetailPage;
 
+    type = 0;
+
     constructor(private navCtrl: NavController,
                 private shared: SharedService,
                 private userServ: UsersService,
-                private navParams:NavParams) {
+                private navParams: NavParams) {
         this.miancolor = this.shared.getPrimaryColor();
-
         this.previousPage = this.navParams.get("previousPage")
+        let typeindex = this.navParams.get("type")
+        if (typeindex != null) {
+            this.type = typeindex;
+        }
 
     }
-
 
     ionViewDidEnter() {
         this._doRefresh(() => {
@@ -45,7 +50,12 @@ export class DesignerListPage {
     }
 
     _doRefresh(completeFunc) {
-        this.userServ.getDesigners()
+
+        let params = {
+            type: this.type
+        }
+
+        this.userServ.getDesigners(params)
             .then(users => {
                 for (let user of users) {
                     this.designers.push(user);

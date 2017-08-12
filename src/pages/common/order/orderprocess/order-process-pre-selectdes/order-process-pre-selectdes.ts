@@ -7,6 +7,7 @@ import {ProjectsService} from "../../../../../service/ajax/projects.service";
 import {Util} from "../../../../../service/util";
 import {UsersService} from "../../../../../service/ajax/users.service";
 import {DesignerMeDetailPage} from "../../../../designer/me/medetail/medetail";
+import {ProjectsPage} from "../../../../employer/projects/projects";
 
 declare let initializeFontSize: any;
 
@@ -101,6 +102,7 @@ export class OrderProcessPreSelectedPage extends AbsCommonPage {
                 handler: data => {
                     let loading = this.util.createLoading("请稍后");
                     loading.present();
+                    this.navCtrl.goToRoot({});
 
                     //发送请求
                     this.projectServ.selectDesigner(this.projectId, designerId)
