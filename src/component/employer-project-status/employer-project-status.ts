@@ -41,8 +41,9 @@ export class EmployerProjectStatusComponent {
         "等待设计师确认",
         "等待设计师完善信息",
         "待支付",
-        "等待交付",
+        "等待设计师交付",
         "待收货",
+        "待评价",
         "审图中",
         "已完成",
         "已取消",
@@ -69,10 +70,10 @@ export class EmployerProjectStatusComponent {
         if (project.status == 3) {
             this.nav.push(OrderProcessPayment, {project: project});
         }
-        else if (project.status == 5) {
+        else if (project.status == 6) {
             this.nav.push(OrderProcessWaitcomment, {project: project});
         }
-        else if (project.status == 7 || project.status == 8) {
+        else if (project.status == 8 || project.status == 9) {
             this.nav.push(OrerProcessCompleted, {project: project});
         }
         else {

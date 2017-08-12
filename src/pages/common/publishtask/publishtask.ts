@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 import {SharedService} from "../../../service/share.service";
-import {AlertController, ModalController, NavController} from "ionic-angular";
+import {AlertController, ModalController, NavController, NavParams} from "ionic-angular";
 import {Util} from "../../../service/util";
 import {ProjectsService} from "../../../service/ajax/projects.service";
 import {LoginPage} from "../login/login";
@@ -21,11 +21,23 @@ export class PublishTaskPage {
                 private files: FileService,
                 public shared: SharedService,
                 public navCtrl: NavController,
+                private navParams: NavParams,
                 private modal: ModalController,
                 private projectServ: ProjectsService,
                 public alertCtrl: AlertController,
                 private imagesServ: ImageService) {
         this.designer = shared.isDesModule();
+
+        let _project = this.navParams.get("project");
+
+        for (let key in this.project) {
+            if (key.endsWith("time")) {
+                this.project[key] = new Date(_project[key]).toISOString();
+            } else {
+                this.project[key] = _project[key];
+            }
+        }
+
     }
 
 
@@ -236,4 +248,35 @@ export class PublishTaskPage {
 
         return false;
     }
+
+
+    //设计师修改订单后提交
+    commit() {
+        let alert = this.alertCtrl.create({
+            title: '提醒',
+            message: "确定要提交吗？",
+            buttons: [
+                {
+                    text: '取消',
+                },
+                {
+                    text: '确定',
+                    handler: data => {
+
+                        this.projectServ.modify(this.project)
+                            .then(() => {
+                                this.util.toast("完善信息成功！");
+                                this.navCtrl.pop()
+                            }).catch(error => {
+                            console.log(error);
+                            this.util.toast("修改失败，请稍后再试");
+                        })
+                        this.navCtrl.pop();
+                    }
+                }
+            ]
+        });
+        alert.present();
+    }
+
 }
