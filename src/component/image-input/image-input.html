@@ -1,0 +1,8 @@
+<div class="images-upload">
+    <div *ngFor="let img_url of imgs">
+        <img [src]=img_url>
+    </div>
+    <div class="add" (click)="uploading_img()">
+        <ion-icon name="add"></ion-icon>
+    </div>
+</div>
