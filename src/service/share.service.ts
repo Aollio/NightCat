@@ -82,7 +82,7 @@ export class SharedService {
 
 //当前登录用户
     private
-    currentUser = {};
+    currentUser: any = {};
 
     getCurrentUser() {
         return this.currentUser;

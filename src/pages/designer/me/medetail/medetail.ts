@@ -64,8 +64,8 @@ export class DesignerMeDetailPage {
         this.btnState = 3;
     }
 
-    openChat(operation) {
-        this.navCtrl.push(ChatPage, operation)
+    openChat(user) {
+        this.navCtrl.push(ChatPage, {account: user.accid, to: user})
     }
 
     //todo

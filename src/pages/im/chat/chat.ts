@@ -13,72 +13,81 @@ export class ChatPage {
 
 
     to: string
-    //
-    // myInfo: any
-    //
-    // userInfos: any
-    //
-    // sessionId: string
-    //
-    // chatobject: string
-    //
-    // msglist: Array<any>
-    //
+    myInfo: any
+
+    userInfos: any
+
+    sessionId: string
+
+    chatobject: string
+
+    msglist: Array<any>
+
     message: string = ''
 
     maincolor;
 
-    constructor(public imServ: ImService,
-                public shared:SharedService) {
-        this.maincolor=this.shared.getPrimaryColor();
-        this.imServ.initializeNim()
+    toAccount;
+
+
+    constructor(public param: NavParams,
+                public util: Util,
+                public imServ: ImService,
+                public shared: SharedService) {
+
+        this.maincolor = this.shared.getPrimaryColor();
+        let account = this.param.get('account')
+
+        this.toAccount = account;
+        let user = this.param.get("to");
+
+        let sessionId = 'p2p-' + account;
+
+        let state = State.INSTANCE
+
+        let loading = util.createLoading('正在加载消息')
+
+        // set currentSession
+        state.setCurrentSessionAndPreareMsgs(sessionId)
+            .then((obj) => {
+                loading.dismiss()
+                console.log(state)
+                this.msglist = state.currSessionMsgs
+            })
+            .catch((err) => {
+                console.log('chat set session id failed')
+                loading.setContent('加载失败')
+                setTimeout(() => loading.dismiss(), 2000)
+            })
+        console.log('chat:\n', state)
+
+        this.sessionId = sessionId
+        this.userInfos = state.userInfos
+        this.myInfo = state.myInfo
+
+        if (user == null) {
+            this.to = state.sessionMap[sessionId].to
+        } else this.to = user.nickname
+
+        this.chatobject = this.to
+        //set title is user's nickname, if error, show user's account
+        state.getUserByAccount(this.to)
+            .then(user => this.chatobject = user.nick)
+            .catch(error => console.log(error))
     }
 
-    // constructor(public param: NavParams,
-    //             public util: Util,
-    //             public imServ: ImService) {
-    //   //  let sessionId = this.param.get('sessionId')
-    //     let state = State.INSTANCE
-    //
-    //     let loading = util.createLoading('正在加载消息')
-    //
-    //     //set currentSession
-    //     // state.setCurrentSessionAndPreareMsgs(sessionId)
-    //     //     .then((obj) => {
-    //     //         loading.dismiss()
-    //     //         console.log(state)
-    //     //         this.msglist = state.currSessionMsgs
-    //     //     })
-    //     //     .catch((err) => {
-    //     //         console.log('chat set session id failed')
-    //     //         loading.setContent('加载失败')
-    //     //         setTimeout(() => loading.dismiss(), 2000)
-    //     //     })
-    //
-    // //     console.log('chat:\n', state)
-    // //
-    // //     this.sessionId = sessionId
-    // //     this.userInfos = state.userInfos
-    // //     this.myInfo = state.myInfo
-    // //     this.to = state.sessionMap[sessionId].to
-    // //
-    // //     this.chatobject = this.to
-    // //     //set title is user's nickname, if error, show user's account
-    // //     state.getUserByAccount(this.to)
-    // //         .then(user => this.chatobject = user.nick)
-    // //         .catch(error => console.log(error))
-    // // }
-    //
-    //
-    // // sendMessage() {
-    // //     if (this.nofitications == null || this.nofitications == '') {
-    // //         console.log('消息为空', this.nofitications)
-    // //         return
-    // //     }
-    // //     this.imServ.sendMessage(this.nofitications)
-    // //         .then((nofitications) => console.log('发送消息成功', nofitications))
-    // //         .catch((error) => console.log('发送消息失败', error))
-    //  }
+    sendMessage() {
+        if (this.message == null || this.message == '') {
+            console.log('消息为空', this.message)
+            return
+        }
+        this.imServ.sendMessage(this.toAccount,this.message)
+            .then((message) => {
+                console.log('发送消息成功', message)
+                this.message = ""
+            })
+            .catch((error) => console.log('发送消息失败', error))
+    }
 
 
 // <ion-content>

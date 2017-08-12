@@ -26,6 +26,7 @@ export class HttpUrls {
      * response:
      */
     user_info_get: string = this._users + "/show";
+    user_info_accid_get: string = this._users + "/show_accid";
     // /**
     //  * 获取用户封面
     //  * params:UID

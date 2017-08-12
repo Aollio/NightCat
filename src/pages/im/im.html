@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-navbar >
+    <ion-navbar>
         <ion-title [class.designer]="designer" [class.employer]="!designer">
             喵喵
         </ion-title>
@@ -7,16 +7,16 @@
 </ion-header>
 
 <ion-content>
-    <div>
-        <ion-searchbar placeholder="搜索消息" class="header-search">
-            [(ngModel)]="myInput"
-            [showCancelButton]="shouldShowCancel"
-            (ionInput)="onInput($event)"
-            (ionCancel)="onCancel($event)"
-        </ion-searchbar>
-    </div>
+    <!--<div>-->
+    <!--<ion-searchbar placeholder="搜索消息" class="header-search">-->
+    <!--[(ngModel)]="myInput"-->
+    <!--[showCancelButton]="shouldShowCancel"-->
+    <!--(ionInput)="onInput($event)"-->
+    <!--(ionCancel)="onCancel($event)"-->
+    <!--</ion-searchbar>-->
+    <!--</div>-->
     <ion-list>
-        <ion-item class="friend" *ngFor="let session of sessions"     tappable (click)="chat(session.id)">
+        <ion-item class="friend" *ngFor="let session of sessions" tappable (click)="chat(session)">
 
             <ion-avatar item-start>
                 <img src="assets/img/des-3.png">
@@ -24,14 +24,15 @@
             <!--<h2>{{ sessionNameMap[session.id] }}</h2>-->
             <div class="massage">
                 <div>
-                    <span class="id">{{ session.id }}</span>
-                    <span class="time"> {{ session.updateTime }}</span>
+                    <span class="id">{{ sessionNameMap[session.id] }}</span>
+                    <!--<span class="time"> {{ session.updateTime }}</span>-->
+                    <span> {{  util.formatDate(session.updateTime) }}</span>
+
                 </div>
 
-                <!--<span> {{  util.formatDate(session.updateTime) }}</span>-->
                 <!--<h3>Don't Know What To Do!</h3>-->
-                <!--<p>{{ session.lastMsg.type === 'text' ? session.lastMsg.text : '特殊消息类型' }}</p>-->
-                <p>{{session.message}}</p>
+                <p>{{ session.lastMsg.type === 'text' ? session.lastMsg.text : '特殊消息类型' }}</p>
+
 
             </div>
 

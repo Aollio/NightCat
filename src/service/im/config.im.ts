@@ -19,7 +19,7 @@ export class ImConfig {
             postUrl: 'https://apptest.netease.im'
         },
         online: {
-            appkey: '45c6af3c98409b18a84451215d0bdd6e',
+            appkey: '47045ca57e2ca57f805cb24563e34160',
             postUrl: 'https://app.netease.im'
         }
     }
