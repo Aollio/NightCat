@@ -57,9 +57,12 @@ export class State {
     searchedTeams: any = []
 
 
-    setCurrentSessionAndPreareMsgs(sessionId): Promise<any> {
+    async setCurrentSessionAndPreareMsgs(sessionId): Promise<any> {
         this.currSessionId = sessionId
         this.currSessionMsgs = this.msgs[sessionId]
+
+        if (this.sessionMap[sessionId] == null) return;
+
         if (this.msgs[sessionId] == null || this.msgs[sessionId].length == 0) {
             //获取历史记录
             return Messages.getHistoryMsgs(this.sessionMap[sessionId].to)
@@ -84,10 +87,10 @@ export class State {
                 )
                 .catch(error => {
                     console.log(error)
-                    return Promise.reject(error)
+                    throw error
                 })
         }
-        return Promise.resolve({})
+        return {}
     }
 
     //新收到的消息 递交到消息全局变量中

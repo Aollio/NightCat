@@ -10,7 +10,6 @@ import {Util} from "../../../service/util";
 import {NotificationsPage} from "../../designer/nofitications/notifications";
 import {LoginPage} from "../../common/login/login";
 
-declare let initializeFontSize: any
 
 @Component({
     selector: 'page-employer-home',
@@ -20,17 +19,10 @@ export class EmployerHomePage {
 
     static isfirstCome = true;
 
-    // ionViewDidEnter() {
-    // }
 
     openNotificationsPage() {
         this.navCtrl.push(NotificationsPage);
     }
-
-    //
-    // show() {
-    //     console.log("touch")
-    // }
 
     designerMeDetailPage: DesignerMeDetailPage;
     loginPage: LoginPage;

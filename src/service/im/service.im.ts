@@ -33,13 +33,12 @@ export class ImService {
     }
 
     //send text nofitications
-    sendMessage(text, scene = 'p2p'): Promise<any> {
-        let session = this.state.sessionMap[this.state.currSessionId]
+    sendMessage(account, text, scene = 'p2p'): Promise<any> {
         return new Promise((resolve, reject) => {
             let nim = this.state.nim
             let msg = nim.sendText({
                 scene: 'p2p',
-                to: session.to,
+                to: account,
                 text: text,
                 done: (error, msg) => {
                     if (!error) {
@@ -55,18 +54,20 @@ export class ImService {
             console.log('send nofitications not done ok')
 
             Messages.preHandleMessage(msg)
-            let belongmsgs = this.state.msgs[session.id]
+            let belongmsgs = this.state.msgs['p2p-' + account]
             if (belongmsgs == null) {
                 belongmsgs = []
-                this.state.msgs[session.id] = belongmsgs
+                this.state.msgs['p2p-' + account] = belongmsgs
             }
             belongmsgs.push(msg)
         })
     }
 
     //初始化NIM
-    initializeNim() {
+    initializeNim(user) {
         console.log(this.state)
+        this.options.token = user.imtoken;
+        this.options.account = user.accid;
         this.state.nim = NIM.getInstance(this.options)
     }
 
@@ -75,7 +76,7 @@ export class ImService {
         System.customSyncDone(() => func())
     }
 
-    registerSyncError(func){
+    registerSyncError(func) {
         System.customSyncError(() => func())
     }
 
@@ -85,4 +86,7 @@ export class ImService {
     }
 
 
+    setToken(user: any) {
+        this.initializeNim(user);
+    }
 }
