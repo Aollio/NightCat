@@ -38,7 +38,7 @@
         </ion-col>
     </ion-row>
     <ion-row class="type-nav">
-        <ion-col  tappable (click)="select([0,1,2,6])"
+        <ion-col  tappable (click)="select([0,1,2,7])"
                  col-3 class="order-type-col order-type-color" text-center>
             <div [class.active]="processType[0] === 0">
                 <custom-icon class="custom-icon" set="cat" name="projects-waitdesign"></custom-icon>
@@ -63,9 +63,9 @@
                 <!--已支付-->
             </div>
         </ion-col>
-        <ion-col  tappable (click)="select([7,8])"
+        <ion-col  tappable (click)="select([6,7,8])"
                  col-3 class="order-type-col order-type-color" text-center>
-            <div [class.active]="processType[0] === 7">
+            <div [class.active]="processType[0] === 6">
                 <custom-icon class="custom-icon" set="cat" name="projects-all"></custom-icon>
                 <br>
                 已完成

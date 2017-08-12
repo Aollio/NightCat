@@ -29,10 +29,9 @@
 
     <!--按钮-->
     <div class="my-bottom">
-        <div class="my-bottom-li act" *ngIf="status==1">接单</div>
-        <div class="my-bottom-li act" *ngIf="status==2">完善订单</div>
-        <div class="my-bottom-li act" *ngIf="status==4">确认交付</div>
-
+        <div class="my-bottom-li act" *ngIf="status==1" (click)="designerConfirm()">接单</div>
+        <div class="my-bottom-li act" *ngIf="status==2" (click)="openPublishTask()">完善订单</div>
+        <div class="my-bottom-li act" *ngIf="status==4" (click)="commitProject()">确认交付</div>
         <!--todo 取消按钮-->
     </div>
 
