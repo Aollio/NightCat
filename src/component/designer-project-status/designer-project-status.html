@@ -8,41 +8,44 @@
             <div class="my-li-right-t">
                 <div class="my-li-right-t-name">{{_project.title||"未填写"}}</div>
             </div>
+
             <div class="my-li-right-b">
                 <div class="my-li-right-b-l" *ngIf="status==0">{{_project.grab_count||0}}人抢单</div>
-                <div class="my-li-right-b-r" *ngIf="status ==0">等待雇主确认
-                </div>
+                <div class="my-li-right-b-r">{{statusText[status]}}</div>
 
-                <div class="my-li-right-b-money" *ngIf="status >= 1 &&status <= 5"
-                >¥{{_project.budget}}元
+                <div class="my-li-right-b-money" *ngIf="status >= 1 &&status <= 5">
+                    ¥{{_project.budget}}元
                 </div>
-                <div class="my-li-right-b-r" *ngIf="status ==3">正在审图
-                </div>
+                <!--<div class="my-li-right-b-r" *ngIf="status ==3">正在审图</div>-->
 
                 <!--todo 设计时间-->
-                <div class="my-li-right-b-r"
-                     *ngIf="status >= 1 &&status <= 2">设计时间{{_project.time}}
-                </div>
+                <!--<div class="my-li-right-b-r"-->
+                <!--*ngIf="status >= 1 &&status <= 2">设计时间{{_project.time}}-->
+                <!--</div>-->
             </div>
         </div>
     </div>
-    <!--已发布状态-->
 
-    <!--选择设计师状态-->
-    <div class="my-bottom" *ngIf="0==status">
-        <div class="my-bottom-li act">接单</div>
-        <div class="my-bottom-li">取消抢单</div>
+
+    <!--按钮-->
+    <div class="my-bottom">
+        <div class="my-bottom-li act" *ngIf="status==1">接单</div>
+        <div class="my-bottom-li act" *ngIf="status==2">完善订单</div>
+        <div class="my-bottom-li act" *ngIf="status==4">确认交付</div>
+
+        <!--todo 取消按钮-->
     </div>
+
     <!--支付状态-->
     <!--<div class="my-bottom" *ngIf="1==status">-->
     <!--</div>-->
     <!--待收货状态-->
-    <div class="my-bottom" *ngIf="2==status||3==status">
-        <div class="my-bottom-li act" *ngIf="2==status||3==status">
-            确认已交付
-        </div>
-        <div class="my-bottom-li" *ngIf="2==status">
-            一键审图
-        </div>
-    </div>
+    <!--<div class="my-bottom" *ngIf="2==status||3==status">-->
+        <!--<div class="my-bottom-li act" *ngIf="2==status||3==status">-->
+            <!--确认已交付-->
+        <!--</div>-->
+        <!--<div class="my-bottom-li" *ngIf="2==status">-->
+            <!--一键审图-->
+        <!--</div>-->
+    <!--</div>-->
 </div>
