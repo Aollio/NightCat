@@ -2,42 +2,69 @@
 <ion-header no-border>
     <ion-navbar [color]="miancolor">
         <ion-title>
-            {{to && to.nickname || "加载中..."}}
+            {{to}}
         </ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content>
-    <div class="my-dl">
-        <div *ngFor="let msg of msglist" [class.my-dd]="msg.flow === 'out'" [class.my-dt]="msg.flow !== 'out'">
-            <div [class.my-dd-portrait]="msg.flow === 'out'" [class.my-dt-portrait]="msg.flow !== 'out'"><img
-                    [src]="(msg.flow === 'out' ? (me && me.img_url) : ( to && to.img_url ) ) ||'assets/img/des-2.png'"/>
-            </div>
-            <div [class.my-dd-text]="msg.flow === 'out'" [class.my-dt-text]="msg.flow !== 'out'">
-                <div [class.my-dd-val]="msg.flow === 'out'" [class.my-dt-val]="msg.flow !== 'out'">
-                    <p>{{msg.showText}}</p>
-                </div>
+
+    <div *ngFor="let msg of msglist" [class.my-dd]="msg.flow === 'out'" [class.my-dt]="msg.flow !== 'out'">
+        <div [class.my-dd-portrait]="msg.flow === 'out'" [class.my-dt-portrait]="msg.flow !== 'out'"><img
+                [src]="(msg.flow === 'out' ? (me && me.img_url) : ( to && to.img_url ) ) ||'assets/img/des-2.png'"/>
+        </div>
+        <div [class.my-dd-text]="msg.flow === 'out'" [class.my-dt-text]="msg.flow !== 'out'">
+            <div [class.my-dd-val]="msg.flow === 'out'" [class.my-dt-val]="msg.flow !== 'out'">
+                <p>{{msg.showText}}</p>
             </div>
         </div>
+    </div>
+
+        <!--todo  例子-->
+        <div class="message-box">
+            <div class="avatar">
+                <img src="assets/img/des-2.png"/>
+            </div>
+            <div class="bubble">
+                <p>The top open source framework The top open source framework</p>
+            </div>
+        </div>
+        <div class="message-box send">
+            <div class="avatar">
+                <img src="assets/img/des-2.png"/>
+            </div>
+            <div class="bubble">
+                <p>The top open source framework</p>
+            </div>
+        </div>
+
+        <div class="message-box">
+            <div class="avatar">
+                <img src="assets/img/des-2.png"/>
+            </div>
+            <div class="bubble">
+                <p>The top rk</p>
+            </div>
+        </div>
+
+
         <!--<div class="my-dd">-->
-        <!--<div class="my-dd-portrait"><img src="assets/img/des-2.png"/></div>-->
-        <!--<div class="my-dd-text">-->
-        <!--<div class="my-dd-name">金兔子耳朵</div>-->
-        <!--<div class="my-dd-val">-->
-        <!--<p>The top open source framework</p>-->
+            <!--<div class="my-dd-portrait"><img src="assets/img/des-2.png"/></div>-->
+            <!--<div class="my-dd-text">-->
+                <!--&lt;!&ndash;<div class="my-dd-name">金兔子耳朵</div>&ndash;&gt;-->
+                <!--<div class="my-dd-val">-->
+                    <!--<p>The top open source framework</p>-->
+                <!--</div>-->
+            <!--</div>-->
         <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-
-
         <!--<div class="my-dt">-->
-        <!--<div class="my-dt-portrait"><img src="assets/img/des-2.png"/></div>-->
-        <!--<div class="my-dt-text">-->
-        <!--<div class="my-dt-name">金兔子耳朵</div>-->
-        <!--<div class="my-dt-val">-->
-        <!--<p>The top open source framewor</p>-->
-        <!--</div>-->
-        <!--</div>-->
+            <!--<div class="my-dt-portrait"><img src="assets/img/des-2.png"/></div>-->
+            <!--<div class="my-dt-text">-->
+                <!--&lt;!&ndash;<div class="my-dt-name">金兔子耳朵</div>&ndash;&gt;-->
+                <!--<div class="my-dt-val">-->
+                    <!--<p>The top open source framewor</p>-->
+                <!--</div>-->
+            <!--</div>-->
         <!--</div>-->
     </div>
 </ion-content>
