@@ -34,11 +34,12 @@ export class ImageService {
 
         for (let i = 0; i < imgs.length; i++) {
             console.log("选择图片后")
-            this.files.upload(imgs[i]).then(url => {
-                result.push(url)
-            });
+            let url = await this.files.upload(imgs[i])
+            result.push(url)
         }
 
+        console.log("picker: return urls")
+        console.log(result)
         return result;
     }
 
