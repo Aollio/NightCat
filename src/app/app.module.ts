@@ -16,7 +16,6 @@ import {SharedService} from "../service/share.service";
 import {HttpUrls} from "../service/httpurls.service";
 import {FormsModule} from '@angular/forms';
 import {UsersService} from "../service/ajax/users.service";
-import {HTTP} from "@ionic-native/http";
 import {HttpModule} from "@angular/http";
 import {PopoverPage} from "../pages/popver/popver";
 import {CustomIconsModule} from 'ionic2-custom-icons';
@@ -25,7 +24,6 @@ import {ImModule} from "../pages/im/im.module";
 import {Util} from "../service/util";
 import {FirstPage} from "../pages/first/first";
 import {IonicStorageModule} from "@ionic/storage";
-import {Storage} from '@ionic/storage';
 import {KeynoteService} from "../service/keynote.service";
 import {AdsService} from "../service/ajax/ads.service";
 import {ProjectsService} from "../service/ajax/projects.service";
@@ -37,9 +35,6 @@ import {FileService} from "../service/ajax/files.service";
 import {ImportantModule} from "../importants/important.module";
 import {ImageService} from "../service/ajax/imgs.service";
 
-export function provideStorage() {
-    return new Storage({});
-}
 
 @NgModule({
     declarations: [
@@ -97,13 +92,11 @@ export function provideStorage() {
         SharedService,
         Util,
         //Other
-        HTTP,
 
         //auto
         StatusBar,
         SplashScreen,
         {provide: ErrorHandler, useClass: IonicErrorHandler},
-        {provide: Storage, useFactory: provideStorage},
     ]
 })
 export class AppModule {

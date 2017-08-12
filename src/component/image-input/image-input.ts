@@ -1,10 +1,9 @@
-import {Component, forwardRef, Input} from '@angular/core';
+import {Component, forwardRef} from '@angular/core';
 
-import {NavController, NavParams} from "ionic-angular";
-import {Manager} from "../../service/manager";
-import {Util} from "../../service/util";
+import {NavController} from "ionic-angular";
 import {ImageService} from "../../service/ajax/imgs.service";
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
+
 
 const noop = () => {
 };
@@ -75,4 +74,3 @@ export class ImageInputComponent implements ControlValueAccessor {
 
 
 }
-

@@ -1,7 +1,5 @@
 import {Injectable} from "@angular/core";
 import {SharedService} from "../share.service";
-import {NetworkService} from "../network.service";
-import {HttpUrls} from "../httpurls.service";
 import {KeynoteService} from "../keynote.service";
 import {FileService} from "./files.service";
 import {ImagePicker} from "@ionic-native/image-picker";
@@ -12,7 +10,6 @@ export class ImageService {
 
     constructor(public shared: SharedService,
                 public keynote: KeynoteService,
-                private http: NetworkService, private urls: HttpUrls,
                 private imagePicker: ImagePicker,
                 private files: FileService) {
     }
