@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController, NavParams} from 'ionic-angular';
+import {AlertController, NavController, NavParams} from 'ionic-angular';
 import {AbsCommonPage} from "../../abs";
 import {SharedService} from "../../../../service/share.service";
 import {ProjectDetailPage} from "../orderdetail/projectdetail";
@@ -26,7 +26,8 @@ export class GrabOrderPage {
                 public navParams: NavParams,
                 private util:Util,
                 private projectServ: ProjectsService,
-                public share: SharedService) {
+                public share: SharedService,
+                private alertCtrl:AlertController) {
         this.grab_info.id = navParams.get('id');
     }
 
@@ -34,8 +35,9 @@ export class GrabOrderPage {
     grab_project() {
         this.projectServ.grabProject(this.grab_info)
             .then(grab_info => {
-                this.util.toast("已抢单");
-                this.openDetailPage();
+                //this.util.toast("已抢单");
+                this.util.toast("抢单成功")
+                this.navCtrl.goToRoot({})
             }).catch(error => {
             if (error.status == 406 || error.status == 407) {
                 this.util.toast(error.message);
@@ -43,8 +45,6 @@ export class GrabOrderPage {
         })
     }
 
-    openDetailPage() {
-        this.navCtrl.push(OrderProcessPreSelectedPage, {isGrab: true,projectId:this.grab_info.id});
-    }
+
 
 }

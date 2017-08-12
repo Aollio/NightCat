@@ -29,7 +29,7 @@
 
     <!--选择设计师状态-->
     <div class="my-bottom" *ngIf="0==status">
-        <div class="my-bottom-li act"
+        <div class="my-bottom-li act" *ngIf="_project.grab_count>0"
              tappable (click)="openDynamicProjectPage()">选择设计师
         </div>
         <div class="my-bottom-li"  tappable (click)="cancelProject()">取消订单</div>
