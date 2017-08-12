@@ -23,14 +23,16 @@ export class NetworkService {
                 private platform: Platform,
                 private event: Events,
                 private share: SharedService) {
-        this.isWebCore = this.platform.is('core') || this.platform.is('mobileweb');
+        // this.isWebCore = this.platform.is('core') || this.platform.is('mobileweb');
+        this.isWebCore = true;
     }
 
     setToken(token) {
         console.log("setToken: ", token)
         this.token = token;
     }
-    clearToken(){
+
+    clearToken() {
         this.setToken(null);
     }
 

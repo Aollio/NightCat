@@ -3,6 +3,7 @@ import {DesignerMeDetailPage} from "../../pages/designer/me/medetail/medetail";
 import {UsersService} from "../../service/ajax/users.service";
 import {Util} from "../../service/util";
 import {NavController} from "ionic-angular";
+import {SharedService} from "../../service/share.service";
 
 declare let initializeFontSize: any
 
@@ -16,27 +17,17 @@ export class DesignerItemMax {
 
     constructor(private userServ: UsersService,
                 private navCtrl: NavController,
-                private  util: Util) {
+                private  util: Util,
+                private shared: SharedService) {
     }
-
-    private  _designer;
 
     @Input("designer")
-    set designer(designer) {
-        this._designer = designer;
+    designer;
 
-        console.log('get user simple Info');
-        this.userServ.getInfoSimple(designer.uid).then(user => {
-            this.util.updateObj(this._designer,user);
-        }).catch(error => {
-            console.log(error);
-        });
-
-    }
 
     openDesignerPage(designer) {
         this.navCtrl.push(DesignerMeDetailPage, {
-            designer:designer
+            designer: designer
         })
     }
 

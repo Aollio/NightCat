@@ -8,7 +8,7 @@ import {HttpUrls} from "../httpurls.service";
 // } from '@ionic-native/file-transfer';
 
 @Injectable()
-export class FilesService {
+export class FileService {
 
     // fileTransfer: FileTransferObject = null;
 
