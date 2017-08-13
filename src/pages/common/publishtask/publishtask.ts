@@ -252,9 +252,6 @@ export class PublishTaskPage {
 
     //设计师修改订单后提交
     commit() {
-
-
-
         let alert = this.alertCtrl.create({
             title: '提醒',
             message: "确定要提交吗？",
@@ -270,7 +267,6 @@ export class PublishTaskPage {
                         this.project.start_time = Date.parse(this.project.start_time);
                         this.project.end_time = Date.parse(this.project.end_time);
 
-
                         this.projectServ.modify(this.project)
                             .then(() => {
                                 this.util.toast("完善信息成功！");
@@ -279,6 +275,7 @@ export class PublishTaskPage {
                             console.log(error);
                             this.util.toast("修改失败，请稍后再试");
                         })
+                        this.navCtrl.pop();
                     }
                 }
             ]
