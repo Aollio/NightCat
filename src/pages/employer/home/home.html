@@ -1,5 +1,6 @@
 <ion-header color="emp-primary" class="my-header">
     <ion-toolbar>
+
         <ion-buttons start>
             <button menuToggle ion-button icon-only class="header-name" color="emp-primary">
                 建联夜猫
@@ -22,11 +23,11 @@
 
 <ion-content>
 
-    <ion-fab class="ion-fab">
-        <button menuToggle ion-fab tappable (click)="hideFab()" *ngIf="isFirstLogin">
-            <img src="assets/img/logo1.png"/>
-        </button>
-    </ion-fab>
+    <!--<ion-fab class="ion-fab">-->
+        <!--<button menuToggle ion-fab tappable (click)="hideFab()" *ngIf="isFirstLogin">-->
+            <!--<img src="assets/img/logo1.png"/>-->
+        <!--</button>-->
+    <!--</ion-fab>-->
 
 
     <div class="my-title" *ngIf="shared.isLogin()">嗨, {{shared.getCurrentUser().nickname}}</div>
