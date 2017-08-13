@@ -13,7 +13,7 @@
             <!--(ionCancel)="onCancel($event)"-->
         </ion-searchbar>
         <ion-buttons end>
-            <button ion-button icon-only     tappable (click)="openNotificationsPage()">
+            <button ion-button icon-only tappable (click)="openNotificationsPage()">
                 <ion-icon name="text"></ion-icon>
             </button>
         </ion-buttons>
@@ -23,7 +23,7 @@
 <ion-content>
 
     <ion-fab class="ion-fab">
-        <button menuToggle ion-fab      tappable (click)="hideFab()" *ngIf="isFirstLogin">
+        <button menuToggle ion-fab tappable (click)="hideFab()" *ngIf="isFirstLogin">
             <img src="assets/img/logo.png"/>
         </button>
     </ion-fab>
@@ -32,9 +32,9 @@
     <ion-refresher (ionRefresh)="doRefresh($event)">
         <ion-refresher-content
                 pullingIcon="ios-arrow-down"
-                pullingText="Pull to refresh"
+                pullingText="下拉刷新"
                 refreshingSpinner="dots"
-                refreshingText="Refreshing...">
+                refreshingText="刷新中">
         </ion-refresher-content>
     </ion-refresher>
 
@@ -49,7 +49,7 @@
     <ion-scroll scrollX="true" class="buttons-slide">
         <div *ngFor="let type of projectServ.type;let i=index">
             <button class="order-type-btn" *ngIf="i>0"
-                    [class.btn-active]="currentType === i"  tappable (click)="selectType(i)">{{type}}
+                    [class.btn-active]="currentType === i" tappable (click)="selectType(i)">{{type}}
             </button>
         </div>
     </ion-scroll>

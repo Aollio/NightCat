@@ -15,20 +15,24 @@
     <div class="my-money">{{project.budget || "加载中"}}</div>
     <div class="my-list">
         <div class="my-list-dt">请选择支付方式</div>
-        <div class="my-list-li">
+        <div class="my-list-li" (click)="select(1)">
             <div class="my-list-icon"><img src="assets/img/alipay.png"/></div>
             <div class="my-list-name">支付宝</div>
-            <div class="my-list-radio"><img src="assets/img/radio01.png"/></div>
+            <div class="my-list-radio">
+                <img [src]=" selected == 1 ? 'assets/img/radio01.png' 'assets/img/radio02.png' "/></div>
         </div>
-        <div class="my-list-li">
+        <div class="my-list-li" (click)="select(2)">
             <div class="my-list-icon"><img src="assets/img/bank-card.png"/></div>
             <div class="my-list-name">银行卡支付</div>
-            <div class="my-list-radio"><img src="assets/img/radio02.png"/></div>
+            <div class="my-list-radio">
+                <img [src]=" selected == 2 ? 'assets/img/radio01.png' 'assets/img/radio02.png' "/></div>
         </div>
-        <div class="my-list-li">
+        <div class="my-list-li" (click)="select(3)">
             <div class="my-list-icon"><img src="assets/img/wechat.png"/></div>
             <div class="my-list-name">微信支付</div>
-            <div class="my-list-radio"><img src="assets/img/radio02.png"/></div>
+            <div class="my-list-radio">
+                <img [src]=" selected == 3 ? 'assets/img/radio01.png' 'assets/img/radio02.png' "/></div>
+
         </div>
     </div>
 

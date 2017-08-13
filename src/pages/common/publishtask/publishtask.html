@@ -135,12 +135,13 @@
     </ion-item>
     <div class="blank-10px"></div>
 
-    <div class="images-upload">
-        <div *ngFor="let img_url of project.img_urls">
-            <img [src]=img_url>
-        </div>
-        <div class="add" (click)="uploading_img()">
-            <ion-icon name="add"></ion-icon>
-        </div>
-    </div>
+    <!--<div class="images-upload">-->
+    <!--<div *ngFor="let img_url of project.img_urls">-->
+    <!--<img [src]=img_url>-->
+    <!--</div>-->
+    <!--<div class="add" (click)="uploading_img()">-->
+    <!--<ion-icon name="add"></ion-icon>-->
+    <!--</div>-->
+    <!--</div>-->
+    <image-input [(ngModel)]="project.img_urls"></image-input>
 </ion-content>

@@ -9,7 +9,8 @@ import {NetworkService} from "../../../../../service/network.service";
 declare let BC: any;
 declare let md5: any;
 declare let getRandomHost: any;
-declare let getPayChannel:any;
+declare let getPayChannel: any;
+
 @Component({
     selector: 'page-payment',
     templateUrl: 'order-process-payment.html'
@@ -34,6 +35,12 @@ export class OrderProcessPayment {
                 public http: NetworkService) {
         this.project = navParams.get("project")
 
+    }
+
+    selected = 1
+
+    select(index) {
+        this.selected = index;
     }
 
     open(page, option) {
