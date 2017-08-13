@@ -11,8 +11,9 @@ import {ImService} from "../im/service.im";
 @Injectable()
 export class UsersService {
 
-    //缓存
-    // private users = {};
+    // 缓存
+    private users_uidmap = {};
+    private users_accidmap = {};
 
     constructor(public keynote: KeynoteService,
                 private http: NetworkService,
@@ -20,6 +21,11 @@ export class UsersService {
                 public shared: SharedService,
                 private imServ: ImService,
                 public util: Util) {
+    }
+
+    cacheUser(user) {
+        this.users_uidmap[user.uid] = user;
+        this.users_accidmap[user.accid] = user;
     }
 
 
@@ -60,6 +66,11 @@ export class UsersService {
 
     async getInfo(uid) {
         console.log("获取用户信息");
+
+        if (this.users_uidmap[uid] != null) {
+            return this.users_uidmap[uid];
+        }
+
         // let user = this._getCacheUserByUid(uid);
         // if (user != null) {
         //     console.log("cache user", user);
@@ -71,21 +82,28 @@ export class UsersService {
         if (data.status != 200) {
             throw data;
         }
+        this.cacheUser(data.content);
         return data.content;
     }
 
     async getInfoByAccid(accid) {
         console.log("获取用户信息 accid");
 
+
+        if (this.users_uidmap[accid] != null) {
+            return this.users_uidmap[accid];
+        }
+
         let data = await this.http.getWithToken(this.urls.user_info_accid_get, {accid: accid});
 
         if (data.status != 200) {
             throw data;
         }
+        this.cacheUser(data.content)
         return data.content;
     }
 
-//todo
+    //todo
     async resetPassword() {
 
     }
