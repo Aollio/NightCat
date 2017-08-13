@@ -32,6 +32,8 @@ import {Manager} from "../service/manager";
 import {FileService} from "../service/ajax/files.service";
 import {ImportantModule} from "../importants/important.module";
 import {ImageService} from "../service/ajax/imgs.service";
+import {ImagePicker} from "@ionic-native/image-picker";
+import {MessageService} from "../service/ajax/message.serveic";
 
 
 @NgModule({
@@ -81,6 +83,7 @@ import {ImageService} from "../service/ajax/imgs.service";
         AdsService,
         ProjectsService,
         UsersService,
+        MessageService,
         //service im
         ImService,
         //service

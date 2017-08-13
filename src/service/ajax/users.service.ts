@@ -110,7 +110,7 @@ export class UsersService {
 
     async getHonors(uid) {
         console.log("获取荣誉", uid);
-        let data = await this.http.getWithToken(this.urls.user_honors_get, {uid: uid});
+        let data = await this.http.get(this.urls.user_honors_get, {uid: uid});
 
         if (data.status != 200) {
             throw data;

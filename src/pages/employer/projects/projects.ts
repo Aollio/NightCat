@@ -1,10 +1,8 @@
-import {Component, ViewChild} from '@angular/core';
-import {el} from "@angular/platform-browser/testing/src/browser_util";
-import {EmpOrderListComponent} from "./emporderlist/emporderlist";
+import {Component} from '@angular/core';
 import {SharedService} from "../../../service/share.service";
 import {Util} from "../../../service/util";
 import {ProjectsService} from "../../../service/ajax/projects.service";
-import {ModalController, NavController} from "ionic-angular";
+import {ModalController} from "ionic-angular";
 import {LoginPage} from "../../common/login/login";
 
 //注意导入
