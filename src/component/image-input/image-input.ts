@@ -43,7 +43,7 @@ export class ImageInputComponent implements ControlValueAccessor {
                 }
             })
             .catch(error => console.log(error))
-        this.imgs.push("http://yemaotest.shanghai-cu.com/files/15025091100358078.jpg")
+
     }
 
 

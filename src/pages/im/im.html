@@ -15,7 +15,7 @@
     <!--(ionCancel)="onCancel($event)"-->
     <!--</ion-searchbar>-->
     <!--</div>-->
-    <ion-list>
+    <!--<ion-list>-->
         <ion-item class="friend" *ngFor="let session of sessions" tappable (click)="chat(session)">
 
             <ion-avatar item-start>
@@ -31,5 +31,10 @@
                 <p>{{ session.lastMsg.type === 'text' ? session.lastMsg.text : '特殊消息类型' }}</p>
             </div>
         </ion-item>
-    </ion-list>
+    <!--</ion-list>-->
+
+    <div class="no-firend" *ngIf="sessions.length==0">
+        <ion-icon name="ios-chatboxes-outline"></ion-icon>
+        <p>暂时没有消息</p>
+    </div>
 </ion-content>

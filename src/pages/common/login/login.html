@@ -6,7 +6,7 @@
         <img src="assets/img/SelectOption.png"/>
     </div>
     <div class="padding">
-        <button ion-button float-start clear icon-only     tappable (click)="close()">
+        <button ion-button float-start clear icon-only tappable (click)="close()" style="width: auto">
             <!--<ion-icon name="close"></ion-icon>-->
             返回
         </button>
@@ -14,52 +14,52 @@
         <div class="null-only-height">欢迎回来！</div>
 
         <!--<div class="name">-->
-            <!--<ion-item>-->
-                <!--<ion-label floating >请输入账号</ion-label>-->
-                <!--<ion-input type="text" [(ngModel)]="user.phone" [ngModelOptions]="{standalone: true}"></ion-input>-->
-            <!--</ion-item>-->
+        <!--<ion-item>-->
+        <!--<ion-label floating >请输入账号</ion-label>-->
+        <!--<ion-input type="text" [(ngModel)]="user.phone" [ngModelOptions]="{standalone: true}"></ion-input>-->
+        <!--</ion-item>-->
         <!--</div>-->
 
         <!--<div class="password">-->
-            <!--<ion-icon class="icondiv" name="ios-help-circle"></ion-icon>-->
-            <!--<ion-item>-->
-                <!--<ion-label floating >请输入密码</ion-label>-->
-                <!--<ion-input type="password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}"></ion-input>-->
-            <!--</ion-item>-->
+        <!--<ion-icon class="icondiv" name="ios-help-circle"></ion-icon>-->
+        <!--<ion-item>-->
+        <!--<ion-label floating >请输入密码</ion-label>-->
+        <!--<ion-input type="password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}"></ion-input>-->
+        <!--</ion-item>-->
         <!--</div>-->
 
         <div class="myInput">
-            <input type="text" placeholder="请输入账号" [(ngModel)]="user.phone" [ngModelOptions]="{standalone: true}"/>
+            <input type="text" placeholder="请输入账号" name="phone" [(ngModel)]="user.phone" [ngModelOptions]="{standalone: true}"/>
         </div>
 
         <div class="myInput">
-            <input type="password" [(ngModel)]="user.password"
+            <input type="password" name="passowrd" [(ngModel)]="user.password"
                    [ngModelOptions]="{standalone: true}" placeholder="请输入密码"/>
         </div>
 
 
         <!--<div class="name">-->
-            <!--<ion-item>-->
-                <!--<ion-label floating >请输入账号</ion-label>-->
-                <!--<ion-input type="text" [(ngModel)]="user.phone" [ngModelOptions]="{standalone: true}"></ion-input>-->
-            <!--</ion-item>-->
+        <!--<ion-item>-->
+        <!--<ion-label floating >请输入账号</ion-label>-->
+        <!--<ion-input type="text" [(ngModel)]="user.phone" [ngModelOptions]="{standalone: true}"></ion-input>-->
+        <!--</ion-item>-->
         <!--</div>-->
 
         <!--<div class="password">-->
-            <!--<ion-icon class="icondiv" name="ios-help-circle"></ion-icon>-->
-            <!--<ion-item>-->
-                <!--<ion-label floating >请输入密码</ion-label>-->
-                <!--<ion-input type="password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}"></ion-input>-->
-            <!--</ion-item>-->
+        <!--<ion-icon class="icondiv" name="ios-help-circle"></ion-icon>-->
+        <!--<ion-item>-->
+        <!--<ion-label floating >请输入密码</ion-label>-->
+        <!--<ion-input type="password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}"></ion-input>-->
+        <!--</ion-item>-->
         <!--</div>-->
 
-        <button ion-button round class="login-btn"     tappable (click)="login()">登录</button>
+        <button ion-button round class="login-btn" tappable (click)="login()">登录</button>
 
 
-        <button ion-button clear full class="forget-passowrd"     tappable (click)="openResetPasswordPage()">
+        <button ion-button clear full class="forget-passowrd" tappable (click)="openResetPasswordPage()">
             忘记密码？
         </button>
-        <div class="tip">还没有账号吗？<a class="order-id"     tappable (click)="openRegisterPage()">点击我注册</a></div>
+        <div (click)="openRegisterPage()" class="tip">还没有账号吗？<a class="order-id">点击我注册</a></div>
     </div>
 
 </ion-content>

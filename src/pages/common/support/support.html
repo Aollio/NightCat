@@ -24,7 +24,7 @@
 <!--</ion-content>-->
 <ion-content>
     <div class="feedback-title">问题和意见</div>
-    <div class="feedback-text"><textarea placeholder="您在使用过程中遇到什么问题？请详细描述"></textarea></div>
+    <div class="feedback-text"><textarea [(ngModel)]="suggest" placeholder="您在使用过程中遇到什么问题？请详细描述"></textarea></div>
     <div class="feedback-title">联系方式(可选)</div>
     <ion-list>
 
@@ -41,6 +41,6 @@
 
     </ion-list>
     <div padding>
-        <button ion-button block color="danger">提交</button>
+        <button ion-button block color="danger" (click)="commit()">提交</button>
     </div>
 </ion-content>
