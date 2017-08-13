@@ -4,10 +4,12 @@ import {SharedService} from "../../../../../service/share.service";
 import {NavController, NavParams} from 'ionic-angular';
 import {ProjectsService} from "../../../../../service/ajax/projects.service";
 import {Util} from "../../../../../service/util";
+import {NetworkService} from "../../../../../service/network.service";
 
 declare let BC: any;
 declare let md5: any;
-
+declare let getRandomHost: any;
+declare let getPayChannel:any;
 @Component({
     selector: 'page-payment',
     templateUrl: 'order-process-payment.html'
@@ -19,7 +21,7 @@ export class OrderProcessPayment {
 
     project;
 
-    ionDidViewEnter(){
+    ionDidViewEnter() {
 
     }
 
@@ -28,7 +30,8 @@ export class OrderProcessPayment {
                 private shared: SharedService,
                 public navParams: NavParams,
                 public projServ: ProjectsService,
-                public util: Util) {
+                public util: Util,
+                public http: NetworkService) {
         this.project = navParams.get("project")
 
     }
@@ -36,7 +39,6 @@ export class OrderProcessPayment {
     open(page, option) {
         this.navCtrl.push(page, option)
     }
-
 
 
     toPay() {
@@ -48,10 +50,16 @@ export class OrderProcessPayment {
             })
             .catch((error) => this.util.toast(error))
 
-        this.toPayBeeCloud();
+        // this.toPayBeeCloud();
+    }
+
+    toPayJs() {
+
     }
 
 
+    doPay(payData, cbsuccess, cberror) {
+    }
 
 
     toPayBeeCloud() {

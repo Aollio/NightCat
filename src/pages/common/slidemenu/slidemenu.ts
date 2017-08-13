@@ -10,7 +10,6 @@ import {User} from "../../../model/user";
 import {WelcomePage} from "../../welcome/welcome";
 import {NetworkService} from "../../../service/network.service";
 
-declare let initializeFontSize: any
 
 @Component({
     selector: 'page-slidemenu',
@@ -40,9 +39,6 @@ export class SlideMenuComponment {
     }
 
 
-    ionViewDidEnter() {
-        initializeFontSize()
-    }
 
     open(page, option) {
         this.navCtrl.push(page, option)
