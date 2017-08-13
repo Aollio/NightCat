@@ -10,6 +10,7 @@ import {WelcomePage} from "../../welcome/welcome";
 import {NetworkService} from "../../../service/network.service";
 import {AboutPage} from "../../common/about/about";
 import {SupportPage} from "../../common/support/support";
+import {HelpPage} from "../../common/help/help";
 
 declare let initializeFontSize: any;
 
@@ -51,6 +52,10 @@ export class EmployerMePage {
 
     openComments() {
         this.navCtrl.push(NotificationsPage, {})
+    }
+
+    openHelpPage(){
+        this.navCtrl.push(HelpPage)
     }
 
     openNotifications() {
