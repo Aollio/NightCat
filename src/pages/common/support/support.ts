@@ -1,7 +1,8 @@
 import {Component} from '@angular/core';
-import {NavController, NavParams} from 'ionic-angular';
+import {AlertController, NavController, NavParams} from 'ionic-angular';
 import {AbsCommonPage} from "../abs";
 import {SharedService} from "../../../service/share.service";
+import {Util} from "../../../service/util";
 declare let initializeFontSize: any
 @Component({
     selector: 'page-support',
@@ -10,7 +11,11 @@ declare let initializeFontSize: any
 export class SupportPage extends AbsCommonPage {
     suggest:any="";
     contact:any;
+
+
     constructor(public navCtrl: NavController,
+                private alert:AlertController,
+                private util:Util,
                 public navParams: NavParams,
                 public share: SharedService) {
         super(share);
@@ -20,4 +25,22 @@ export class SupportPage extends AbsCommonPage {
         console.log("com")
     }
 
+
+    commit(){
+        this.alert.create({
+            subTitle: '确认提交？',
+            buttons: [
+                {
+                    text: '取消',
+                },
+                {
+                    text: '确认',
+                    handler: () => {
+                        this.util.toast("提交成功");
+                        this.navCtrl.pop();
+                    }
+                }
+            ]
+        }).present();
+    }
 }

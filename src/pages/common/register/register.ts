@@ -68,6 +68,11 @@ export class RegisterPage {
             return
         }
 
+        if(this.captcha!=this.user.captcha){
+            util.toast('验证码错误');
+            return
+        }
+
         this.current = 2
     }
 
@@ -80,6 +85,8 @@ export class RegisterPage {
             this.util.toast('请输入昵称')
             return;
         }
+
+
 
         if (this.shared.isDesModule()) {
             this.user.role = 0;
@@ -188,11 +195,19 @@ export class RegisterPage {
 
     //获取验证码
     private captchaText = "获取验证码";
-    captchaDisabled = false;
+    private captchaDisabled = false;
 
+    captcha;
 
     getCaptcha() {
-        this.sendMessage();
+
+        this.usersServ.getVerifyCode().then(captcha=>{
+            this.user.captcha = captcha;
+        }).catch(error=>{
+            console.log(error);
+            this.util.toast("手机号格式不正确");
+        })
+
         let time_s = 60;
         this.captchaDisabled = true;
         let timer = setInterval(() => {

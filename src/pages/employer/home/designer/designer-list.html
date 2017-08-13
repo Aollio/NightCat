@@ -14,14 +14,19 @@
     <ion-refresher (ionRefresh)="doRefresh($event)" #refresher>
         <ion-refresher-content
                 pullingIcon="ios-arrow-down"
-                pullingText="Pull to refresh"
+                pullingText="下拉刷新"
                 refreshingSpinner="dots"
-                refreshingText="Refreshing...">
+                refreshingText="刷新中">
         </ion-refresher-content>
     </ion-refresher>
 
 
     <designer-item-max *ngFor="let des of designers" [designer]="des"></designer-item-max>
+
+    <div *ngIf="designers && designers.length == 0" class="no-list">
+        <ion-icon name="ios-people-outline"></ion-icon>
+        <p>暂时没有设计师入驻</p>
+    </div>
 
 
 

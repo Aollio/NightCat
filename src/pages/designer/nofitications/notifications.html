@@ -9,9 +9,9 @@
     <ion-refresher (ionRefresh)="doRefresh($event)">
         <ion-refresher-content
                 pullingIcon="ios-arrow-down"
-                pullingText="Pull to refresh"
+                pullingText="下拉刷新"
                 refreshingSpinner="dots"
-                refreshingText="Refreshing...">
+                refreshingText="刷新中">
         </ion-refresher-content>
     </ion-refresher>
 
@@ -27,6 +27,11 @@
                 {{notics.content}}
             </ion-card-content>
         </ion-card>
+
+        <div class="no-list" *ngIf="noticeses&&noticeses.length==0">
+            <ion-icon name="ios-sad-outline"></ion-icon>
+            <p>暂时没有消息</p>
+        </div>
         <!--<ion-card>-->
             <!--<ion-card-header class="msg-header">-->
                 <!--<div class="msg-type">消息标题</div>-->

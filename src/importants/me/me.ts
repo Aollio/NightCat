@@ -12,6 +12,7 @@ import {AboutPage} from "../../pages/common/about/about";
 import {WelcomePage} from "../../pages/welcome/welcome";
 import {DesignerMeDetailPage} from "../../pages/designer/me/medetail/medetail";
 import {NetworkService} from "../../service/network.service";
+import {HelpPage} from "../../pages/common/help/help";
 
 // @IonicPage()
 @Component({
@@ -97,5 +98,13 @@ export class ImportantMePage {
         let login = JSON.stringify(this.shared.getCurrentUser()) != JSON.stringify({})
         // console.log("isLogin", login);
         return login;
+    }
+
+    openHelpPage(){
+        this.navCtrl.push(HelpPage);
+    }
+
+    openSupportPage(){
+        this.navCtrl.push(SupportPage);
     }
 }
