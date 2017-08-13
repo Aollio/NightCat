@@ -3,7 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
 import {MyApp} from './app.component';
 
-
+import {ImagePicker} from "@ionic-native/image-picker";
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {WelcomePage} from "../pages/welcome/welcome";
@@ -79,6 +79,7 @@ import {ImagePicker} from "@ionic-native/image-picker";
     providers: [
         //service ajax
         ImageService,
+        ImagePicker,
         FileService,
         AdsService,
         ProjectsService,
