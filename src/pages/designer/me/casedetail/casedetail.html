@@ -10,10 +10,10 @@
     <ion-card no-border>
         <ion-item>
             <ion-avatar item-start>
-                <img [src]="(exp && exp.creator && exp.creator.nickname) || 'assets/img/first.png'">
+                <img [src]="(exp && exp.creator && exp.creator.img_url) || 'assets/img/first.png'">
             </ion-avatar>
-            <h2>{{ (exp && exp.creator && exp.creator.nickname) || "未填写" }}</h2>
-            <p>{{exp.create_time | date:'YYYY-mm-dd'}}</p>
+            <h2>{{ (exp && exp.creator && exp.creator.nickname) || "匿名用户" }}</h2>
+            <p>{{exp.create_time | date:'yyyy/MM/dd'}}</p>
 
             <!--<button navPop ion-button clear large item-end icon-only class="close-btn">-->
             <!--<ion-icon name="close"></ion-icon>-->
@@ -21,7 +21,7 @@
 
         </ion-item>
 
-        <img [src]="(exp && exp.img_url) || 'assets/img/first.png'">
+        <img [src]="(exp && exp.img_url) || 'assets/img/home-default.png'">
 
         <ion-row>
             <ion-col col-2>
@@ -56,12 +56,12 @@
                         <div class="comment-avatar" item-start small>
                             <img [src]="(cmt && cmt.creator && cmt.creator.img_url) || 'assets/img/first.png'">
                         </div>
-                        <div class="comment-title">{{(cmt && cmt.creator && cmt.creator.nickname) || "未填写"}}</div>
+                        <div class="comment-title">{{(cmt && cmt.creator && cmt.creator.nickname) || "匿名用户"}}</div>
                     </div>
                     <div class="comment-content-time">
                         <div class="comment-content">{{ cmt && cmt.content}}</div>
                         <div class="comment-content-bottom">
-                            <div class="comment-time">{{ cmt.comment_time | date:"YYYY-mm-dd" }}</div>
+                            <div class="comment-time">{{ cmt.comment_time | date:"yyyy/MM/dd" }}</div>
                             <!--<ion-buttons end>-->
                             <!--<button ion-button clear small class="comment-heart">-->
                             <!--<ion-icon name="thumbs-up"></ion-icon>-->
