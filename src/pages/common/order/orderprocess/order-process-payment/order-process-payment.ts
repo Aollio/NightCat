@@ -19,12 +19,18 @@ export class OrderProcessPayment {
 
     project;
 
+    ionDidViewEnter(){
+
+    }
+
+
     constructor(private navCtrl: NavController,
                 private shared: SharedService,
                 public navParams: NavParams,
                 public projServ: ProjectsService,
                 public util: Util) {
         this.project = navParams.get("project")
+
     }
 
     open(page, option) {
@@ -32,18 +38,25 @@ export class OrderProcessPayment {
     }
 
 
+
     toPay() {
+        console.log("toPay");
         this.projServ.money(this.project.id)
             .then(() => {
                 this.util.toast("支付成功")
                 this.navCtrl.pop();
             })
             .catch((error) => this.util.toast(error))
+
+        this.toPayBeeCloud();
     }
+
+
+
 
     toPayBeeCloud() {
 
-        console.log("toPay")
+        console.log("toPayBeeCloud")
 
         let _appid = "07028a19-f3a8-44f6-b3d7-839ec59cf63c";
 
