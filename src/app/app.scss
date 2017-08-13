@@ -91,10 +91,10 @@ body {
 //主题色
 .designer {
   .toolbar-title {
-    color: $des-primary!important;
+    color: $des-primary !important;
   }
-  .bar-button-default-ios{
-    color: $des-primary!important;
+  .bar-button-default-ios {
+    color: $des-primary !important;
   }
 }
 
@@ -102,19 +102,22 @@ body {
   .toolbar-title {
     color: $emp-primary !important;
   }
-  .bar-button-default-ios{
+  .bar-button-default-ios {
     color: $emp-primary !important;
   }
 
+}
 
+.no-list {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #999;
+  padding-top: 15rem;
 
-
-
-
-
-
-
-
-
+  ion-icon {
+    font-size: 6rem;
+    //transform: scale(-1,1);
+  }
 
 }
