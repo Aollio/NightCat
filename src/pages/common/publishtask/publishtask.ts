@@ -263,6 +263,10 @@ export class PublishTaskPage {
                     text: '确定',
                     handler: data => {
 
+                        this.project.due_time = Date.parse(this.project.due_time);
+                        this.project.start_time = Date.parse(this.project.start_time);
+                        this.project.end_time = Date.parse(this.project.end_time);
+
                         this.projectServ.modify(this.project)
                             .then(() => {
                                 this.util.toast("完善信息成功！");
