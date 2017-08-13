@@ -42,15 +42,18 @@ export class IMPage {
         }
 
         let loading = this.util.createLoading("加载消息列表中...")
-
+        let show = false;
 
         if (this.imServ.state.isLoading) {
             loading.present()
+            show = true
             console.log("正在加载")
             //如果还没有初始化NIM模块, 则开始初始化
-            this.imServ.initializeNim(this.shared.getCurrentUser().imtoken)
+            this.imServ.initializeNim(this.shared.getCurrentUser())
             this.imServ.registerSyncDone(() => {
+                console.log("Im Page Sync Done Listener")
                 loading.dismiss();
+                show = false
                 this.initFriendlyName()
             })
 
@@ -59,6 +62,11 @@ export class IMPage {
             console.log(this.sessions)
             console.log(this.userinfoMap)
         }
+        setTimeout(() => {
+            if (show) {
+                loading.dismiss()
+            }
+        }, 4000)
     }
 
 

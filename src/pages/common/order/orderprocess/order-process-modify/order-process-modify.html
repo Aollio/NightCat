@@ -11,7 +11,16 @@
 <ion-content>
 
     <!--todo 进度图标-->
-    <div class="my-nav">
+    <div *ngIf="!shared.isDesModule()" class="my-nav">
+        <img *ngIf="status==0||status==1||status==2" src="assets/img/emp_project_process1.png" alt=""/>
+        <img *ngIf="status==3" src="assets/img/d-Group2.png" alt=""/>
+        <img *ngIf="status==4||status==5" src="assets/img/d-Group3.png" alt=""/>
+        <img *ngIf="status==7" src="assets/img/d-Group4.png" alt=""/>
+        <img *ngIf="status==6||status==8" src="assets/img/d-Group5.png" alt=""/>
+    </div>
+
+
+    <div *ngIf="shared.isDesModule()" class="my-nav">
         <img *ngIf="status==0||status==1||status==2" src="assets/img/d-Group1.png" alt=""/>
         <img *ngIf="status==3" src="assets/img/d-Group2.png" alt=""/>
         <img *ngIf="status==4||status==5" src="assets/img/d-Group3.png" alt=""/>

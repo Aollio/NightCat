@@ -2,8 +2,6 @@ import {NgModule, ErrorHandler} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
 import {MyApp} from './app.component';
-
-
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {WelcomePage} from "../pages/welcome/welcome";
@@ -35,7 +33,6 @@ import {FileService} from "../service/ajax/files.service";
 import {ImportantModule} from "../importants/important.module";
 import {ImageService} from "../service/ajax/imgs.service";
 
-import {ImagePicker} from "@ionic-native/image-picker";
 
 @NgModule({
     declarations: [
@@ -79,6 +76,7 @@ import {ImagePicker} from "@ionic-native/image-picker";
     providers: [
         //service ajax
         ImageService,
+        ImagePicker,
         FileService,
         AdsService,
         ProjectsService,

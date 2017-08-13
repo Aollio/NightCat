@@ -154,9 +154,8 @@ export class WelcomePage {
     }
 
     slidesImg = [
-        "assets/img/Walkthrough_1.png",
-        "assets/img/Walkthrough_2.png",
-        "assets/img/Walkthrough_3.png",
+        "assets/img/Walkthrough_1.jpg",
+        "assets/img/Walkthrough_2.jpg",
     ];
 
     @ViewChild(Slides) slides: Slides;

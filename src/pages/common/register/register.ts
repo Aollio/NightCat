@@ -36,7 +36,6 @@ export class RegisterPage {
     }
 
 
-
 // todo 密码加密
 
     next() {
@@ -72,7 +71,7 @@ export class RegisterPage {
         this.current = 2
     }
 
-    back(){
+    back() {
         this.current = 1;
     }
 
@@ -104,9 +103,9 @@ export class RegisterPage {
                         this.shared.setCurrentUser(user);
 
                         if (this.shared.isDesModule()) {
-                            this.navCtrl.setRoot(DesignerModulePage,{},{animate:true});
+                            this.navCtrl.setRoot(DesignerModulePage, {}, {animate: true});
                         } else {
-                            this.navCtrl.setRoot(EmployerModulePage,{},{animate:true});
+                            this.navCtrl.setRoot(EmployerModulePage, {}, {animate: true});
                         }
                         // this.openHome();
                         // this.current = 3
@@ -122,7 +121,7 @@ export class RegisterPage {
             }).catch(error => {
             console.log('注册失败', error);
             loading.dismiss();
-            this.util.toast('注册失败, '+error.message);
+            this.util.toast('注册失败, ' + error.message);
         })
     }
 
@@ -147,8 +146,8 @@ export class RegisterPage {
 
     emojiarray: Array<any> = [
         'assets/img/cat-n23.png',
-        "assets/img/Rectangle.png",
         "assets/img/cat-n54.png",
+        "assets/img/photo.png",
         // "assets/img/if_cat_emoji_face_smily-24-01_2361865.png",
         // "assets/img/if_cat_emoji_face_smily-29-01_2361869.png",
         // "assets/img/if_cat_emoji_face_smily-35-01_2361874.png",
@@ -159,7 +158,7 @@ export class RegisterPage {
 
     chooseAvatar() {
         this.btn_avatar_state = 2;
-        this.util.toast(this.avatar)
+        // this.util.toast(this.avatar)
     }
 
     complete(any) {
@@ -174,6 +173,9 @@ export class RegisterPage {
 
     select(item) {
         this.avatar = item;
+        if (this.avatar == "assets/img/photo.png") {
+
+        }
     }
 
     pop() {
