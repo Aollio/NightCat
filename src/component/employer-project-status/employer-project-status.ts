@@ -5,7 +5,7 @@ import {OrderProcessPayment} from "../../pages/common/order/orderprocess/order-p
 import {OrderProcessModifyPage} from "../../pages/common/order/orderprocess/order-process-modify/order-process-modify";
 import {OrerProcessCompleted} from "../../pages/common/order/orderprocess/order-process-complete/complete";
 import {CancelProjectPage} from "../../pages/common/order/cancel-project/cancel-project";
-import {ProjectsService} from "../../service/ajax/projects.service";
+import {ProjectService} from "../../service/ajax/projects.service";
 import {DesignerListPage} from "../../pages/employer/home/designer/designer-list";
 import {Util} from "../../service/util";
 import {OrderProcessWaitcomment} from "../../pages/common/order/orderprocess/order-process-waitcomment/waitcomment";
@@ -28,7 +28,7 @@ export class EmployerProjectStatusComponent {
     }
 
     constructor(private nav: NavController,
-                private projServ: ProjectsService,
+                private projServ: ProjectService,
                 private util: Util,
                 private alertCtrl: AlertController) {
 

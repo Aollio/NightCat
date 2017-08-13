@@ -18,7 +18,7 @@ export class FirstPage {
 
     constructor(private nav: NavController,
                 public event: Events,
-                private http:NetworkService,
+                private http: NetworkService,
                 private userServ: UsersService,
                 public shared: SharedService,
                 private util: Util) {
@@ -30,26 +30,26 @@ export class FirstPage {
 
     }
 
-    ionViewDidEnter(){
+    ionViewDidEnter() {
         this.firstUseApp();
     }
 
     firstUseApp() {
-        console.log("firstUserApp",localStorage[SharedService.FIRST_USE_APP]);
+        console.log("firstUserApp", localStorage[SharedService.FIRST_USE_APP]);
         if (!localStorage[SharedService.FIRST_USE_APP]) {
             console.log("第一次使用")
             localStorage[SharedService.FIRST_USE_APP] = true;
-            this.gotoWelcome({state:1});
+            this.gotoWelcome({state: 1});
             return;
         }
 
         if (!localStorage[SharedService.TOKEN]) {
             console.log("没有token");
-            this.gotoWelcome({state:2});
+            this.gotoWelcome({state: 2});
             return;
         }
 
-        console.log("自动登录","token",localStorage[SharedService.TOKEN]);
+        console.log("自动登录", "token", localStorage[SharedService.TOKEN]);
         this.http.setToken(localStorage[SharedService.TOKEN]);
         this.userServ.getInfo(localStorage[SharedService.TOKEN].split("_")[0])
             .then(user => {
@@ -62,7 +62,7 @@ export class FirstPage {
     }
 
 
-    gotoWelcome(option  = {}) {
+    gotoWelcome(option = {}) {
         this.nav.setRoot(WelcomePage, option, {animate: true})
     }
 
@@ -70,7 +70,7 @@ export class FirstPage {
         this.nav.setRoot(LoginPage, {}, {animate: true})
     }
 
-    gotoHome(type){
+    gotoHome(type) {
         if (type == 0) {
             this.nav.setRoot(DesignerModulePage, {animate: true})
         } else {

@@ -89,6 +89,9 @@ export class HttpUrls {
     //
     user_info_simple_get: string = this._users + "/show_simple";
 
+    user_exp_comments_get: string = this.user_experience_get + "/comments";
+
+
     //end 用户
 
 
@@ -153,7 +156,7 @@ export class HttpUrls {
 
     //
 
-    notices:string= this.server_url+"/notices";
+    notices: string = this.server_url + "/notices";
 
 
     //end 项目

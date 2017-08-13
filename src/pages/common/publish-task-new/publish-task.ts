@@ -2,7 +2,7 @@ import {Component} from "@angular/core";
 import {SharedService} from "../../../service/share.service";
 import {AlertController, NavController} from "ionic-angular";
 import {Util} from "../../../service/util";
-import {ProjectsService} from "../../../service/ajax/projects.service";
+import {ProjectService} from "../../../service/ajax/projects.service";
 
 
 declare let initializeFontSize: any;
@@ -39,7 +39,7 @@ export class PublishTaskPageNew {
     constructor(public util: Util,
                 public shared: SharedService,
                 public navCtrl: NavController,
-                private projectServ: ProjectsService,
+                private projectServ: ProjectService,
                 public alertCtrl: AlertController) {
         this.maincolor = shared.getPrimaryColor();
         this.designer = shared.isDesModule();

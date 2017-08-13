@@ -6,7 +6,7 @@ import {SharedService} from "../../../service/share.service";
 import {KeynoteService} from "../../../service/keynote.service";
 import {LoginPage} from "../../common/login/login";
 import {Util} from "../../../service/util";
-import {ProjectsService} from "../../../service/ajax/projects.service";
+import {ProjectService} from "../../../service/ajax/projects.service";
 import {MessageService} from "../../../service/ajax/message.serveic";
 
 @Component({
@@ -31,7 +31,7 @@ export class NotificationsPage {
 
     constructor(public navCtrl: NavController,
                 public util:Util,
-                public projectServ:ProjectsService,
+                public projectServ:ProjectService,
                 private msgServ:MessageService,
                 public shared: SharedService,
                 public modalCtrl:ModalController,
