@@ -76,7 +76,7 @@ import {ImageService} from "../service/ajax/imgs.service";
     providers: [
         //service ajax
         ImageService,
-        ImagePicker,
+       // ImagePicker,
         FileService,
         AdsService,
         ProjectsService,
@@ -91,7 +91,7 @@ import {ImageService} from "../service/ajax/imgs.service";
         SharedService,
         Util,
         //Other
-        ImagePicker,
+      //  ImagePicker,
         //auto
         StatusBar,
         SplashScreen,
