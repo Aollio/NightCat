@@ -151,6 +151,11 @@ export class HttpUrls {
     //end process
 
 
+    //
+
+    notices:string= this.server_url+"/notices";
+
+
     //end 项目
 
 
