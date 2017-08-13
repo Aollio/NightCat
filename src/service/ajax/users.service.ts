@@ -1,11 +1,9 @@
 import {Injectable} from "@angular/core";
 import {SharedService} from "../share.service";
 import {HttpUrls} from "../httpurls.service";
-import 'rxjs/add/operator/toPromise';
 import {NetworkService} from "../network.service";
 import {KeynoteService} from "../keynote.service";
 import {Util} from "../util";
-import {throttleTime} from "rxjs/operator/throttleTime";
 import {ImService} from "../im/service.im";
 
 @Injectable()
@@ -29,8 +27,8 @@ export class UsersService {
     }
 
 
-//startnew
-// phone , password
+    //startnew
+    // phone , password
     async login(userInfo) {
         console.log("开始登录");
 
@@ -41,7 +39,7 @@ export class UsersService {
         }
 
         //set token
-        localStorage[SharedService.TOKEN]=data.content.token;
+        localStorage[SharedService.TOKEN] = data.content.token;
         this.http.setToken(data.content.token);
 
         let user = await
@@ -54,7 +52,7 @@ export class UsersService {
         return user;
     }
 
-//nickname, password, role, phone, img_url
+    //nickname, password, role, phone, img_url
     async register(userInfo) {
         console.log("开始注册");
 
@@ -71,12 +69,6 @@ export class UsersService {
         if (this.users_uidmap[uid] != null) {
             return this.users_uidmap[uid];
         }
-
-        // let user = this._getCacheUserByUid(uid);
-        // if (user != null) {
-        //     console.log("cache user", user);
-        //     return user;
-        // }
 
         let data = await this.http.getWithToken(this.urls.user_info_get, {uid: uid});
 
@@ -119,7 +111,7 @@ export class UsersService {
         return data.content;
     }
 
-//name, img_url, get_time
+    //name, img_url, get_time
     async setHonors(params) {
         let data = await this.http.postWithToken(this.urls.user_honors_get, params);
 
@@ -151,7 +143,7 @@ export class UsersService {
         return data.content;
     }
 
-//type level name id_number img
+    //type level name id_number img
     async setAuthentications(params) {
         let data = await this.http.postWithToken(this.urls.user_authentications, params);
 
@@ -162,7 +154,7 @@ export class UsersService {
     }
 
 
-// nickname,position,official,page,limit
+    // nickname,position,official,page,limit
     async getDesigners(params = {}) {
         let data = await this.http.get(this.urls.designer_list, params);
 
@@ -185,6 +177,15 @@ export class UsersService {
 
     async getExperienceComments(id) {
         let data = await this.http.get(this.urls.user_exp_comments_get, {id: id});
+
+        if (data.status != 200) {
+            throw data;
+        }
+        return data.content;
+    }
+
+    async getVerifyCode() {
+        let data = await this.http.get(this.urls.verify_get);
 
         if (data.status != 200) {
             throw data;

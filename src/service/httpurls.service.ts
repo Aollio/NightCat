@@ -14,6 +14,7 @@ export class HttpUrls {
     //start 用户
     _users: string = this.server_url + "/users";
 
+    verify_get:string = this.server_url + "/verify_code";
 
     /**
      * upload image

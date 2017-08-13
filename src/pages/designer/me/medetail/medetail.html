@@ -117,6 +117,8 @@
             <p class="have-no-case">暂无案例</p>
         </ion-list>
         <ion-list *ngIf="btnState===3">
+            <p class="have-no-case" *ngIf="experiences && experiences.length == 0">暂无经历</p>
+
             <ion-card-content *ngFor="let exp of experiences" tappable (click)="openExpCommenttDetail(exp)"
                               class="case-item">
                 <div class="case-item-main-div">
@@ -137,13 +139,13 @@
                             <div>{{ exp.fav_count || 0 }}</div>
                         </button>
                     </ion-col>
-                    <ion-col col-2>
+                    <ion-col col-3>
                         <button ion-button icon-left clear small class="case-icon-btn">
                             <ion-icon name="text"></ion-icon>
                             <div>{{ exp.comment_count || 0 }}</div>
                         </button>
                     </ion-col>
-                    <ion-col col-4></ion-col>
+                    <ion-col col-3></ion-col>
                     <ion-col col-3 item-right class="case-item-time-before">
                         <button ion-button icon-left clear small disabled>
                             <div>{{ (exp.create_time || 0) | date:'yyyy/MM/dd' }}</div>

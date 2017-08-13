@@ -16,20 +16,20 @@
     </div>
 
     <ion-list no-lines class="bg-tran">
-        <button ion-item  tappable (click)="open(messagePage)" class="slide-font-color">
+        <button ion-item tappable (click)="open(messagePage)" class="slide-font-color">
             <custom-icon set="cat" name="mybell" class="custom-icon"
 
                          item-start></custom-icon>
             系统消息
         </button>
 
-        <button ion-item  tappable (click)="open(accountSecurityPage)" class="slide-font-color">
-
-            <custom-icon set="cat" name="my-user-outline" class="custom-icon slide-font-color"
-                         item-start></custom-icon>
-            账户与安全
-        </button>
-        <button ion-item  tappable (click)="clearCache('comfirm')"
+        <!--<button ion-item  tappable (click)="open(accountSecurityPage)" class="slide-font-color">-->
+        <!---->
+        <!--<custom-icon set="cat" name="my-user-outline" class="custom-icon slide-font-color"-->
+        <!--item-start></custom-icon>-->
+        <!--账户与安全-->
+        <!--</button>-->
+        <button ion-item tappable (click)="clearCache('comfirm')"
                 class="slide-font-color">
 
             <custom-icon set="cat" name="my-delete" class="custom-icon slide-font-color"
@@ -37,13 +37,13 @@
                          item-start></custom-icon>
             清除缓存
         </button>
-        <button ion-item  tappable (click)="open(supportPage)"
+        <button ion-item tappable (click)="open(supportPage)"
                 class="slide-font-color">
             <custom-icon set="cat" name="open_bangzhu" class="custom-icon slide-font-color"
                          item-start></custom-icon>
             帮助反馈
         </button>
-        <button ion-item  tappable (click)="open(aboutPage)"
+        <button ion-item tappable (click)="open(aboutPage)"
                 class="slide-font-color">
             <custom-icon set="cat" name="about02" class="custom-icon slide-font-color"
                          item-start></custom-icon>
@@ -53,7 +53,7 @@
 </ion-content>
 
 <ion-footer>
-    <button class="exitbtn" ion-button [color]="shared.getPrimaryColor()" full  tappable (click)="exitApp()">
+    <button class="exitbtn" ion-button [color]="shared.getPrimaryColor()" full tappable (click)="exitApp()">
         退出
     </button>
 </ion-footer>
