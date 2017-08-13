@@ -19,8 +19,8 @@ declare let initializeFontSize: any
 export class DesignerProjectStatusComponent {
 
     constructor(private nav: NavController,
-                private util: Util,
-                private projectServ: ProjectsService,
+                private util:Util,
+                private projectServ:ProjectsService,
                 private projServ: ProjectsService,) {
     }
 
@@ -30,7 +30,7 @@ export class DesignerProjectStatusComponent {
     private imgs;
 
 
-    private statusText = [
+    private statusText=[
         "等待雇主确认",
         "待确认",
         "待修改",
@@ -57,7 +57,7 @@ export class DesignerProjectStatusComponent {
     }
 
     openProjectProcess(project) {
-        if (project.status == 8 || project.status == 9 || project.status == 6) {
+        if (project.status == 8||project.status == 9||project.status == 6) {
             this.nav.push(OrerProcessCompleted, {project: project});
         }
         else {
@@ -66,29 +66,29 @@ export class DesignerProjectStatusComponent {
     }
 
     cancelProject() {
-        this.nav.push(CancelProjectPage, {projectId: this._project.id});
+        this.nav.push(CancelProjectPage, {projectId:this._project.id});
     }
 
-    designerConfirm() {
+    designerConfirm(){
         this.projectServ.designerConfirm(this._project.id)
-            .then(() => {
-                this.nav.pop();
-            }).catch(error => {
+            .then(()=>{
+                this.util.toast("接单成功");
+                this.nav.goToRoot({});
+            }).catch(error=>{
             console.log(error);
             this.util.toast("确认失败，请稍后再试");
         })
     }
 
     openPublishTask() {
-        this.nav.push(PublishTaskPage, {project: this._project});
+        this.nav.push(PublishTaskPage, {project:this._project});
     }
 
-    commitProject() {
+    commitProject(){
         this.projectServ.commit(this._project.id)
-            .then(() => {
-                this.util.toast("交付成功, 等待雇主确认");
-                // this.nav.pop();
-            }).catch(error => {
+            .then(()=>{
+                this.nav.pop();
+            }).catch(error=>{
             console.log(error);
             this.util.toast("确认失败，请稍后再试");
         })
