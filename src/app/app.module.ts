@@ -36,7 +36,7 @@ import {ImportantModule} from "../importants/important.module";
 import {ImageService} from "../service/ajax/imgs.service";
 import {ImagePicker} from "@ionic-native/image-picker";
 
-import {ImagePicker} from "@ionic-native/image-picker";
+// import {ImagePicker} from "@ionic-native/image-picker";
 
 @NgModule({
     declarations: [
