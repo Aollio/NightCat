@@ -42,15 +42,15 @@ page-welcome {
     max-width: 100%;
     margin: 30% 0;
   }
-
+  .logo>img {
+    max-height: 10rem;
+    max-width: 10rem;
+    margin: 27% 0 .5rem;
+    padding-left: 0%;
+  }
   .logo {
     font-size: 1.8rem;
-    img {
-      max-height: 100%;
-      max-width: 100%;
-      margin: 27% 0 .5rem;
-      padding-left: 0%;
-    }
+
     div img{
       max-width: 35%;
 
@@ -58,7 +58,7 @@ page-welcome {
       // margin-bottom: 3.5em;
 
     }
-    margin-bottom: 5rem;
+    margin-bottom: 13rem;
   }
 
   .desbutton, .empbutton {
