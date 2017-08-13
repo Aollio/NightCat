@@ -7,6 +7,7 @@ import {CaseDetailPage} from "../casedetail/casedetail";
 import {ChatPage} from "../../../im/chat/chat";
 import {AlertController} from 'ionic-angular';
 import {Util} from "../../../../service/util";
+import {UsersService} from "../../../../service/ajax/users.service";
 
 
 @Component({
@@ -15,9 +16,11 @@ import {Util} from "../../../../service/util";
 })
 export class DesignerMeDetailPage {
     btnState: any = 1;
-    user = {};
+    user: any = {};
     maincolor;
     public isDesigner: boolean;
+
+    honors = [];
 
     cases: Array<{ title, desc, fav_count, comment_count, time }> = [
         {
@@ -38,11 +41,18 @@ export class DesignerMeDetailPage {
                 public shared: SharedService,
                 public alertCtrl: AlertController,
                 public navParams: NavParams,
-                private util: Util) {
+                private util: Util,
+                private userServ: UsersService) {
         // this.isDesigner = shared.isDesigner;
         this.user = navParams.get('designer');
         // this.user = navParams.get('designer') || shared.getCurrentUser();
         this.maincolor = this.shared.getPrimaryColor();
+        this.userServ.getHonors(this.user.uid).then(honors => {
+            for (let honor of honors) {
+                this.honors.push(honor)
+            }
+        })
+
     }
 
 
