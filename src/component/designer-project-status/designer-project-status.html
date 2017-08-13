@@ -11,11 +11,18 @@
 
             <div class="my-li-right-b">
                 <div class="my-li-right-b-l" *ngIf="status==0">{{_project.grab_count||0}}人抢单</div>
-                <div class="my-li-right-b-r">{{statusText[status]}}</div>
 
-                <div class="my-li-right-b-money" *ngIf="status >= 1 &&status <= 5">
+
+                <div class="my-li-right-b-l my-li-right-b-money" *ngIf="status >= 1 &&status <= 5">
                     ¥{{_project.budget}}元
                 </div>
+
+                <div class="my-li-right-b-r" *ngIf="status==0">
+                    <!--{{_project.due_time&&util.stringifyDate(_project.due_time).withMonth||"未填写"}} 后截止抢单-->
+                    {{_project.due_time|date:"MM-dd"||"未填写"}} 后截止抢单
+                </div>
+
+                <div class="my-li-right-b-r" *ngIf="status > 0">{{statusText[status]}}</div>
                 <!--<div class="my-li-right-b-r" *ngIf="status ==3">正在审图</div>-->
 
                 <!--todo 设计时间-->
