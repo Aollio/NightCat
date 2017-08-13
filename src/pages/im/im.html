@@ -23,7 +23,7 @@
             </ion-avatar>
             <div class="massage">
                 <div>
-                    <span class="id">{{ userinfoMap[session.id].nickname }}</span>
+                    <span class="id">{{ (userinfoMap[session.id] && userinfoMap[session.id].nickname) || "加载中" }}</span>
                     <!--<span class="time"> {{ session.updateTime }}</span>-->
                     <span> {{  util.formatDate(session.updateTime) }}</span>
 
