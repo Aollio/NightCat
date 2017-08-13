@@ -131,7 +131,7 @@ export class UsersService {
 
     async getExperience(uid) {
         console.log("获取经历");
-        let data = await this.http.getWithToken(this.urls.user_experience_get, {uid: uid});
+        let data = await this.http.get(this.urls.user_experience_get, {uid: uid});
 
         if (data.status != 200) {
             throw data;
@@ -183,4 +183,12 @@ export class UsersService {
         return data.content;
     }
 
+    async getExperienceComments(id) {
+        let data = await this.http.get(this.urls.user_exp_comments_get, {id: id});
+
+        if (data.status != 200) {
+            throw data;
+        }
+        return data.content;
+    }
 }

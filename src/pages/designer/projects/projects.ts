@@ -1,7 +1,7 @@
 import {Component, ViewChild} from '@angular/core';
 import {el} from "@angular/platform-browser/testing/src/browser_util";
 import {SharedService} from "../../../service/share.service";
-import {ProjectsService} from "../../../service/ajax/projects.service";
+import {ProjectService} from "../../../service/ajax/projects.service";
 import {Util} from "../../../service/util";
 import {LoginPage} from "../../common/login/login";
 import {ModalController} from "ionic-angular";
@@ -18,7 +18,7 @@ export class DesignerProjectsPage {
 
     constructor(private shared: SharedService,
                 private modal:ModalController,
-                private projectServ: ProjectsService,
+                private projectServ: ProjectService,
                 private util: Util) {
     }
 

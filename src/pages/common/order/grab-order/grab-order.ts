@@ -4,7 +4,7 @@ import {AbsCommonPage} from "../../abs";
 import {SharedService} from "../../../../service/share.service";
 import {ProjectDetailPage} from "../orderdetail/projectdetail";
 import {OrderProcessPreSelectedPage} from "../orderprocess/order-process-pre-selectdes/order-process-pre-selectdes";
-import {ProjectsService} from "../../../../service/ajax/projects.service";
+import {ProjectService} from "../../../../service/ajax/projects.service";
 import {Util} from "../../../../service/util";
 /*
  * 我要抢单
@@ -25,7 +25,7 @@ export class GrabOrderPage {
     constructor(public navCtrl: NavController,
                 public navParams: NavParams,
                 private util:Util,
-                private projectServ: ProjectsService,
+                private projectServ: ProjectService,
                 public share: SharedService,
                 private alertCtrl:AlertController) {
         this.grab_info.id = navParams.get('id');

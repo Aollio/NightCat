@@ -22,6 +22,8 @@ export class DesignerMeDetailPage {
 
     honors = [];
 
+    experiences = [];
+
     cases: Array<{ title, desc, fav_count, comment_count, time }> = [
         {
             title: '案例标题', desc: 'It’s often necessary to create social cards within an application.',
@@ -51,8 +53,24 @@ export class DesignerMeDetailPage {
             for (let honor of honors) {
                 this.honors.push(honor)
             }
+        }).catch(e => {
+            console.log(e);
+            this.util.toast("获取荣耀信息错误")
+        })
+        this.userServ.getExperience(this.user.uid).then(exps => {
+            for (let exp of exps) {
+                this.experiences.push(exp)
+            }
+        }).catch(e => {
+            console.log(e);
+            this.util.toast("获取荣耀信息错误")
         })
 
+    }
+
+
+    openExpCommenttDetail(exp) {
+        this.navCtrl.push(CaseDetailPage, {exp: exp})
     }
 
 

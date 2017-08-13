@@ -2,7 +2,7 @@ import {Component} from "@angular/core";
 import {ProjectDetailPage} from "../../orderdetail/projectdetail";
 import {SharedService} from "../../../../../service/share.service";
 import {NavController, NavParams} from 'ionic-angular';
-import {ProjectsService} from "../../../../../service/ajax/projects.service";
+import {ProjectService} from "../../../../../service/ajax/projects.service";
 import {Util} from "../../../../../service/util";
 import {NetworkService} from "../../../../../service/network.service";
 
@@ -30,7 +30,7 @@ export class OrderProcessPayment {
     constructor(private navCtrl: NavController,
                 private shared: SharedService,
                 public navParams: NavParams,
-                public projServ: ProjectsService,
+                public projServ: ProjectService,
                 public util: Util,
                 public http: NetworkService) {
         this.project = navParams.get("project")

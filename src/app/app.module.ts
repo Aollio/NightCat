@@ -24,7 +24,7 @@ import {FirstPage} from "../pages/first/first";
 import {IonicStorageModule} from "@ionic/storage";
 import {KeynoteService} from "../service/keynote.service";
 import {AdsService} from "../service/ajax/ads.service";
-import {ProjectsService} from "../service/ajax/projects.service";
+import {ProjectService} from "../service/ajax/projects.service";
 import {OrderProcessModule} from "../pages/common/order/orderprocess/orderprocess.module";
 import {OrderModule} from "../pages/common/order/order.module";
 import {ComponentModule} from "../component/component.module";
@@ -81,7 +81,7 @@ import {MessageService} from "../service/ajax/message.serveic";
         ImagePicker,
         FileService,
         AdsService,
-        ProjectsService,
+        ProjectService,
         UsersService,
         MessageService,
         //service im

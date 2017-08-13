@@ -6,7 +6,7 @@ import {DesignerMeDetailPage} from "../../../designer/me/medetail/medetail";
 import {PayPage} from "../../../employer/pay/pay";
 import {CommentOrderPage} from "../comment-order/comment-order";
 import {ChatPage} from "../../../im/chat/chat";
-import {ProjectsService} from "../../../../service/ajax/projects.service";
+import {ProjectService} from "../../../../service/ajax/projects.service";
 import {Util} from "../../../../service/util";
 import {GrabOrderPage} from "../grab-order/grab-order";
 import {OrderProcessPreSelectedPage} from "../orderprocess/order-process-pre-selectdes/order-process-pre-selectdes";
@@ -40,7 +40,7 @@ export class ProjectDetailPage extends AbsCommonPage {
                 private modal: ModalController,
                 public shared: SharedService,
                 private alert: AlertController,
-                private projsServ: ProjectsService,
+                private projsServ: ProjectService,
                 private userServ: UsersService,
                 private util: Util) {
         super(shared);

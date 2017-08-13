@@ -1,7 +1,7 @@
 import {Component} from "@angular/core";
 import {SharedService} from "../../../../../service/share.service";
 import {NavController, NavParams} from "ionic-angular";
-import {ProjectsService} from "../../../../../service/ajax/projects.service";
+import {ProjectService} from "../../../../../service/ajax/projects.service";
 import {Util} from "../../../../../service/util";
 
 @Component({
@@ -30,7 +30,7 @@ export class OrderProcessWaitcomment {
     constructor(public shared: SharedService,
                 private navParams: NavParams,
                 private util: Util,
-                private projectServ: ProjectsService,
+                private projectServ: ProjectService,
                 private nav: NavController) {
         this.user = shared.getCurrentUser();
         this.project = this.navParams.get("project")

@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {SharedService} from "../../../service/share.service";
 import {Util} from "../../../service/util";
-import {ProjectsService} from "../../../service/ajax/projects.service";
+import {ProjectService} from "../../../service/ajax/projects.service";
 import {ModalController} from "ionic-angular";
 import {LoginPage} from "../../common/login/login";
 
@@ -22,7 +22,7 @@ export class ProjectsPage {
 
     constructor(private shared: SharedService,
                 private modal:ModalController,
-                private projectServ: ProjectsService,
+                private projectServ: ProjectService,
                 private util: Util) {
     }
 

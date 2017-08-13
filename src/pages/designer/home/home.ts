@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {NotificationsPage} from "../nofitications/notifications";
 import {AdsService} from "../../../service/ajax/ads.service";
-import {ProjectsService} from "../../../service/ajax/projects.service";
+import {ProjectService} from "../../../service/ajax/projects.service";
 import {SharedService} from "../../../service/share.service";
 
 
@@ -27,7 +27,7 @@ export class DesignerHomePage {
 
 
     constructor(public navCtrl: NavController,
-                private projectServ: ProjectsService,
+                private projectServ: ProjectService,
                 private shared:SharedService,
                 public adsServ: AdsService) {
         this.adsServ.getDesHomeSlides().then(slides => {

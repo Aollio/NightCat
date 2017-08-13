@@ -2,7 +2,7 @@ import {Component} from "@angular/core";
 import {Util} from "../../../../service/util";
 import {Manager} from "../../../../service/manager";
 import {NavController, NavParams} from "ionic-angular";
-import {ProjectsService} from "../../../../service/ajax/projects.service";
+import {ProjectService} from "../../../../service/ajax/projects.service";
 
 @Component({
     selector: 'page-cancel-project',
@@ -22,7 +22,7 @@ export class CancelProjectPage {
     constructor(private util: Util,
                 private manager: Manager,
                 private nav: NavController,
-                private projectServ:ProjectsService,
+                private projectServ:ProjectService,
                 private navParam: NavParams) {
         this.main_color = this.manager.sharedServ.getPrimaryColor();
 

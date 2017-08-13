@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 import {NavParams} from "ionic-angular";
-import {ProjectsService} from "../../../service/ajax/projects.service";
+import {ProjectService} from "../../../service/ajax/projects.service";
 
 declare let initializeFontSize: any
 
@@ -18,7 +18,7 @@ export class ChooseDesignerPage {
     private designers = [];
 
     constructor(private navParams: NavParams,
-                private projectServ: ProjectsService) {
+                private projectServ: ProjectService) {
         this.projectId = navParams.get("projectId");
         this.getGrabDesigners();
     }

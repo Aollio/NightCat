@@ -2,7 +2,7 @@ import {Component} from "@angular/core";
 import {SharedService} from "../../../service/share.service";
 import {AlertController, ModalController, NavController, NavParams} from "ionic-angular";
 import {Util} from "../../../service/util";
-import {ProjectsService} from "../../../service/ajax/projects.service";
+import {ProjectService} from "../../../service/ajax/projects.service";
 import {LoginPage} from "../login/login";
 import {ImagePicker} from "@ionic-native/image-picker";
 import {FileService} from "../../../service/ajax/files.service";
@@ -23,7 +23,7 @@ export class PublishTaskPage {
                 public navCtrl: NavController,
                 private navParams: NavParams,
                 private modal: ModalController,
-                private projectServ: ProjectsService,
+                private projectServ: ProjectService,
                 public alertCtrl: AlertController,
                 private imagesServ: ImageService) {
         this.designer = shared.isDesModule();

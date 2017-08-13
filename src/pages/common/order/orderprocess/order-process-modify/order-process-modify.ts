@@ -5,7 +5,7 @@ import {ProjectDetailPage} from "../../orderdetail/projectdetail";
 import {SharedService} from "../../../../../service/share.service";
 import {OrderProcessWaitcomment} from "../order-process-waitcomment/waitcomment";
 import {CancelProjectPage} from "../../cancel-project/cancel-project";
-import {ProjectsService} from "../../../../../service/ajax/projects.service";
+import {ProjectService} from "../../../../../service/ajax/projects.service";
 import {Util} from "../../../../../service/util";
 
 declare let initializeFontSize: any;
@@ -23,7 +23,7 @@ export class OrderProcessModifyPage {
                 private shared: SharedService,
                 private util:Util,
                 private nav:NavController,
-                private projectServ:ProjectsService,
+                private projectServ:ProjectService,
                 private navParams: NavParams,
                 private alertCtrl: AlertController) {
         this.project = this.navParams.get("project");

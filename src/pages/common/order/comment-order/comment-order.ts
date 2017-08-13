@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 import {NavController, NavParams, ToastController} from "ionic-angular";
-import {ProjectsService} from "../../../../service/ajax/projects.service";
+import {ProjectService} from "../../../../service/ajax/projects.service";
 import {Util} from "../../../../service/util";
 import {SharedService} from "../../../../service/share.service";
 
@@ -29,7 +29,7 @@ export class CommentOrderPage {
                 private shared:SharedService,
                 private util:Util,
                 private nav:NavController,
-                public projServ: ProjectsService) {
+                public projServ: ProjectService) {
         this.project = this.navParams.get("project")
     }
 

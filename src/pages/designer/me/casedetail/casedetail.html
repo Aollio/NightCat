@@ -1,7 +1,7 @@
 <ion-header no-border>
     <ion-navbar [color]="mainColor">
         <ion-title>
-            案例详情
+            经历
         </ion-title>
     </ion-navbar>
 </ion-header>
@@ -10,10 +10,10 @@
     <ion-card no-border>
         <ion-item>
             <ion-avatar item-start>
-                <img src="assets/img/first.png">
+                <img [src]="(exp && exp.creator && exp.creator.nickname) || 'assets/img/first.png'">
             </ion-avatar>
-            <h2>单声道工作室</h2>
-            <p>2017-05-25</p>
+            <h2>{{ (exp && exp.creator && exp.creator.nickname) || "未填写" }}</h2>
+            <p>{{exp.create_time | date:'YYYY-mm-dd'}}</p>
 
             <!--<button navPop ion-button clear large item-end icon-only class="close-btn">-->
             <!--<ion-icon name="close"></ion-icon>-->
@@ -21,18 +21,19 @@
 
         </ion-item>
 
-        <img src="assets/img/home-default.png">
+        <img [src]="(exp && exp.img_url) || 'assets/img/first.png'">
+
         <ion-row>
             <ion-col col-2>
                 <button ion-button icon-left clear small>
                     <ion-icon name="thumbs-up"></ion-icon>
-                    <div>15</div>
+                    <div>{{exp.comment_count || 0}}</div>
                 </button>
             </ion-col>
             <ion-col col-2>
                 <button ion-button icon-left clear small>
                     <ion-icon name="text"></ion-icon>
-                    <div>2</div>
+                    <div>{{exp.view_count || 0}}</div>
                 </button>
             </ion-col>
             <!--<ion-col col-2>-->
@@ -48,90 +49,25 @@
         </ion-row>
 
         <ion-list padding-bottom>
-            <ion-item class="comment-item">
+
+            <ion-item class="comment-item" *ngFor="let cmt of comments">
                 <div class="comment-container">
                     <div class="comment-avatar-title">
                         <div class="comment-avatar" item-start small>
-                            <img src="assets/img/first.png">
+                            <img [src]="(cmt && cmt.creator && cmt.creator.img_url) || 'assets/img/first.png'">
                         </div>
-                        <div class="comment-title">风呀工作室</div>
+                        <div class="comment-title">{{(cmt && cmt.creator && cmt.creator.nickname) || "未填写"}}</div>
                     </div>
                     <div class="comment-content-time">
-                        <div class="comment-content">做的好!</div>
+                        <div class="comment-content">{{ cmt && cmt.content}}</div>
                         <div class="comment-content-bottom">
-                            <div class="comment-time">6天前</div>
-                            <ion-buttons end>
-                                <button ion-button clear small class="comment-heart">
-                                    <ion-icon name="thumbs-up"></ion-icon>
-                                    <div>15</div>
-                                </button>
-                            </ion-buttons>
-                        </div>
-                    </div>
-                </div>
-            </ion-item>
-            <ion-item class="comment-item">
-                <div class="comment-container">
-                    <div class="comment-avatar-title">
-                        <div class="comment-avatar" item-start small>
-                            <img src="assets/img/first.png">
-                        </div>
-                        <div class="comment-title">风呀工作室</div>
-                    </div>
-                    <div class="comment-content-time">
-                        <div class="comment-content">做的好!</div>
-                        <div class="comment-content-bottom">
-                            <div class="comment-time">6天前 </div>
-                            <ion-buttons end>
-                                <button ion-button clear small class="comment-heart">
-                                    <ion-icon name="thumbs-up"></ion-icon>
-                                    <div>15</div>
-                                </button>
-                            </ion-buttons>
-                        </div>
-                    </div>
-                </div>
-            </ion-item>
-            <ion-item class="comment-item">
-                <div class="comment-container">
-                    <div class="comment-avatar-title">
-                        <div class="comment-avatar" item-start small>
-                            <img src="assets/img/first.png">
-                        </div>
-                        <div class="comment-title">风呀工作室</div>
-                    </div>
-                    <div class="comment-content-time">
-                        <div class="comment-content">做的好!</div>
-                        <div class="comment-content-bottom">
-                            <div class="comment-time">6天前 </div>
-                            <ion-buttons end>
-                                <button ion-button clear small class="comment-heart">
-                                    <ion-icon name="thumbs-up"></ion-icon>
-                                    <div>15</div>
-                                </button>
-                            </ion-buttons>
-                        </div>
-                    </div>
-                </div>
-            </ion-item>
-            <ion-item class="comment-item">
-                <div class="comment-container">
-                    <div class="comment-avatar-title">
-                        <div class="comment-avatar" item-start small>
-                            <img src="assets/img/first.png">
-                        </div>
-                        <div class="comment-title">风呀工作室</div>
-                    </div>
-                    <div class="comment-content-time">
-                        <div class="comment-content">做的好!</div>
-                        <div class="comment-content-bottom">
-                            <div class="comment-time">6天前 </div>
-                            <ion-buttons end>
-                                <button ion-button clear small class="comment-heart">
-                                    <ion-icon name="thumbs-up"></ion-icon>
-                                    <div>15</div>
-                                </button>
-                            </ion-buttons>
+                            <div class="comment-time">{{ cmt.comment_time | date:"YYYY-mm-dd" }}</div>
+                            <!--<ion-buttons end>-->
+                            <!--<button ion-button clear small class="comment-heart">-->
+                            <!--<ion-icon name="thumbs-up"></ion-icon>-->
+                            <!--<div>15</div>-->
+                            <!--</button>-->
+                            <!--</ion-buttons>-->
                         </div>
                     </div>
                 </div>

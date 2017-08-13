@@ -2,7 +2,7 @@ import {Component, Input} from '@angular/core';
 import {ProjectDetailPage} from "../../pages/common/order/orderdetail/projectdetail";
 import {OrderProcessModifyPage} from "../../pages/common/order/orderprocess/order-process-modify/order-process-modify";
 import {NavController} from "ionic-angular";
-import {ProjectsService} from "../../service/ajax/projects.service";
+import {ProjectService} from "../../service/ajax/projects.service";
 import {DesignerListPage} from "../../pages/employer/home/designer/designer-list";
 import {CancelProjectPage} from "../../pages/common/order/cancel-project/cancel-project";
 import {OrerProcessCompleted} from "../../pages/common/order/orderprocess/order-process-complete/complete";
@@ -20,8 +20,8 @@ export class DesignerProjectStatusComponent {
 
     constructor(private nav: NavController,
                 private util:Util,
-                private projectServ:ProjectsService,
-                private projServ: ProjectsService,) {
+                private projectServ:ProjectService,
+                private projServ: ProjectService,) {
     }
 
     private _project;

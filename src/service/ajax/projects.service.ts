@@ -5,7 +5,7 @@ import {HttpUrls} from "../httpurls.service";
 import {KeynoteService} from "../keynote.service";
 
 @Injectable()
-export class ProjectsService {
+export class ProjectService {
 
     //项目状态  枚举不能用
     // public Status = _Status;
