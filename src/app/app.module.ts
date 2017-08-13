@@ -78,7 +78,7 @@ import {MessageService} from "../service/ajax/message.serveic";
     providers: [
         //service ajax
         ImageService,
-        ImagePicker,
+       // ImagePicker,
         FileService,
         AdsService,
         ProjectsService,
@@ -94,7 +94,7 @@ import {MessageService} from "../service/ajax/message.serveic";
         SharedService,
         Util,
         //Other
-        ImagePicker,
+      //  ImagePicker,
         //auto
         StatusBar,
         SplashScreen,
