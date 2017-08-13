@@ -19,7 +19,7 @@
         <ion-item class="friend" *ngFor="let session of sessions" tappable (click)="chat(session)">
 
             <ion-avatar item-start>
-                <img [src]="userinfoMap[session.id].img_url">
+                <img [src]="(userinfoMap[session.id] && userinfoMap[session.id].img_url) || 'assets/img/des-2.png'">
             </ion-avatar>
             <div class="massage">
                 <div>

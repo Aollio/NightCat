@@ -10,7 +10,7 @@ export class NetworkService {
     private token: string;
     private isWebCore: boolean;
 
-    constructor(private http_browser: Http,
+    constructor(public http_browser: Http,
                 // private http_mobile: Http,
                 private util: Util,
                 private platform: Platform,

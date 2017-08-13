@@ -3,6 +3,8 @@
 .tmp-custom-icons/
 platforms/
 www/
+plugins/
+!plugins/*.json
 dump.rdb
 package-lock.json
 .DS_Store
