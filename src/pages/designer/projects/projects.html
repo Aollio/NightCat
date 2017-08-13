@@ -1,7 +1,5 @@
 <ion-header class="projects-header">
 
-    <!--<ion-row class="projects-blank-row">-->
-    <!--</ion-row>-->
     <ion-row class="projects-header-row">
         <ion-col col-3
                  class="header-number">
@@ -17,10 +15,10 @@
                  class="header-number">
             <!--todo 完成数 -->
             <div class="number-detail">
-            0
+                0
             </div>
             <div class="number-label">
-            完成数
+                完成数
             </div>
 
         </ion-col>
@@ -50,10 +48,7 @@
         <!--</ion-col>-->
     </ion-row>
 
-</ion-header>
 
-
-<ion-content>
     <ion-row class="type-nav">
         <ion-col tappable (click)="select([0,1,2])"
                  col-3 class="order-type-col order-type-color" text-center>
@@ -89,16 +84,21 @@
         </ion-col>
     </ion-row>
 
+
+</ion-header>
+
+
+<ion-content>
+
     <ion-refresher (ionRefresh)="doRefresh($event)">
         <ion-refresher-content
                 pullingIcon="ios-arrow-down"
-                pullingText="Pull to refresh"
+                pullingText="下拉刷新"
                 refreshingSpinner="dots"
-                refreshingText="Refreshing...">
+                refreshingText="刷新中">
         </ion-refresher-content>
     </ion-refresher>
 
-    <!--<page-orderlist-after-selectdes [type]="processType"></page-orderlist-after-selectdes>-->
 
     <designer-project-status *ngFor="let project of currentProjs" [project]="project"></designer-project-status>
 

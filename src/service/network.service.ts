@@ -209,7 +209,6 @@ export class NetworkService {
             if (error.status == 500) {
                 this.util.toast("服务器开了小差, 请稍后再试");
             }
-        } else {
             if (error.status == 401) {
                 this.doIfWrongToken()
             }

@@ -21,7 +21,7 @@ export class ProjectsPage {
     private currentProjs = [];
 
     constructor(private shared: SharedService,
-                private modal:ModalController,
+                private modal: ModalController,
                 private projectServ: ProjectService,
                 private util: Util) {
     }
@@ -30,7 +30,7 @@ export class ProjectsPage {
     private date;
 
     ionViewDidEnter() {
-        if(!this.shared.isLogin()){
+        if (!this.shared.isLogin()) {
             this.modal.create(LoginPage).present();
         }
 
