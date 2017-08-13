@@ -68,7 +68,7 @@ export class RegisterPage {
             return
         }
 
-        if(this.captcha!=this.user.captcha){
+        if (this.captcha != this.user.captcha) {
             util.toast('验证码错误');
             return
         }
@@ -85,7 +85,6 @@ export class RegisterPage {
             this.util.toast('请输入昵称')
             return;
         }
-
 
 
         if (this.shared.isDesModule()) {
@@ -201,9 +200,13 @@ export class RegisterPage {
 
     getCaptcha() {
 
-        this.usersServ.getVerifyCode().then(captcha=>{
+        if (!this.util.phoneInput(this.user.phone)) {
+            this.util.toast("手机号格式非法")
+            return
+        }
+        this.usersServ.getVerifyCode(this.user.phone).then(captcha => {
             this.user.captcha = captcha;
-        }).catch(error=>{
+        }).catch(error => {
             console.log(error);
             this.util.toast("手机号格式不正确");
         })

@@ -3,6 +3,7 @@ import {Http, Headers} from "@angular/http";
 import {Platform, Events} from "ionic-angular";
 import {Util} from "./util";
 import {SharedService} from "./share.service";
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class NetworkService {

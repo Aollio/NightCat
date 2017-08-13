@@ -184,8 +184,8 @@ export class UsersService {
         return data.content;
     }
 
-    async getVerifyCode() {
-        let data = await this.http.get(this.urls.verify_get);
+    async getVerifyCode(phone) {
+        let data = await this.http.get(this.urls.verify_get, {phone: phone});
 
         if (data.status != 200) {
             throw data;
