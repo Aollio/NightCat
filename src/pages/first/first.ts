@@ -57,7 +57,7 @@ export class FirstPage {
                 this.gotoHome(user.type);
             }).catch(error => {
             console.log(error);
-            this.gotoWelcome({state:2});
+            this.gotoWelcome({state: 2});
         })
     }
 
