@@ -147,8 +147,8 @@ export class RegisterPage {
 
     emojiarray: Array<any> = [
         'assets/img/cat-n23.png',
-        "assets/img/Rectangle.png",
         "assets/img/cat-n54.png",
+        "assets/img/Rectangle.png",
         // "assets/img/if_cat_emoji_face_smily-24-01_2361865.png",
         // "assets/img/if_cat_emoji_face_smily-29-01_2361869.png",
         // "assets/img/if_cat_emoji_face_smily-35-01_2361874.png",

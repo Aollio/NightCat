@@ -15,13 +15,13 @@
         </ion-col>
 
         <ion-col col-3
-            class="header-number">
+                 class="header-number">
             <!--todo 成交数-->
             <div class="number-detail">
-            0
+                0
             </div>
             <div class="number-label">
-            成交数
+                成交数
             </div>
         </ion-col>
 
@@ -38,7 +38,7 @@
         </ion-col>
     </ion-row>
     <ion-row class="type-nav">
-        <ion-col  tappable (click)="select([0,1,2])"
+        <ion-col tappable (click)="select([0,1,2])"
                  col-3 class="order-type-col order-type-color" text-center>
             <div [class.active]="processType[0] === 0">
                 <custom-icon class="custom-icon" set="cat" name="projects-waitdesign"></custom-icon>
@@ -46,7 +46,7 @@
                 待处理
             </div>
         </ion-col>
-        <ion-col  tappable (click)="select([3])"
+        <ion-col tappable (click)="select([3])"
                  col-3 class="order-type-col order-type-color" text-center>
             <div [class.active]="processType[0] === 3">
                 <custom-icon class="custom-icon" set="cat" name="projects-waitorder"></custom-icon>
@@ -54,7 +54,7 @@
                 待支付
             </div>
         </ion-col>
-        <ion-col  tappable (click)="select([4,5,7])"
+        <ion-col tappable (click)="select([4,5,7])"
                  col-3 class="order-type-col order-type-color " text-center>
             <div [class.active]="processType[0] === 4">
                 <custom-icon class="custom-icon" set="cat" name="my-comment"></custom-icon>
@@ -63,7 +63,7 @@
                 <!--已支付-->
             </div>
         </ion-col>
-        <ion-col  tappable (click)="select([6,7,8])"
+        <ion-col tappable (click)="select([6,7,8])"
                  col-3 class="order-type-col order-type-color" text-center>
             <div [class.active]="processType[0] === 6">
                 <custom-icon class="custom-icon" set="cat" name="projects-all"></custom-icon>
@@ -77,16 +77,15 @@
 <ion-content>
 
 
-    <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher (ionRefresh)="doRefresh(event)">
         <ion-refresher-content
                 pullingIcon="ios-arrow-down"
-                pullingText="Pull to refresh"
+                pullingText="下拉刷新"
                 refreshingSpinner="dots"
-                refreshingText="Refreshing...">
+                refreshingText="刷新中">
         </ion-refresher-content>
     </ion-refresher>
 
-    <!--<page-orderlist-after-selectdes [type]="type"></page-orderlist-after-selectdes>-->
 
     <employer-project-status *ngFor="let project of currentProjs" [project]="project"></employer-project-status>
 

@@ -18,80 +18,80 @@ page-login {
     color: #6E6E6E;
     text-align: center;
   }
-  //.myInput {
-  //  width: 90%;
-  //  margin-left: 5%;
-  //}
-  //
-  //.myInput input, select, textarea, button {
-  //  width: 100%;
-  //  margin-bottom: 1em;
-  //  height: 3.2em;
-  //  padding: 0 1em;
-  //  border: 0.1em solid #dce4ec;
-  //  background: #f5f5f5;
-  //  border-radius: 0.25em;
-  //  outline: 0;
-  //  transition: border 0.4s linear, background 0.3s;
-  //}
-  //
-  //.myInput input[type='radio'] {
-  //  width: 1em;
-  //  height: 1em;
-  //}
-  //
-  //.myInput input:focus {
-  //  border-color: #2483bc;
-  //}
-  //
-  //.myInput select:focus {
-  //  border-color: #1abc9c;
-  //}
-  //
-  //.myInput input:read-only {
-  //  border: 0.15em solid #eaeded;
-  //  background: #eaeded;
-  //}
-  //
-  //.myInput input[type="submit"], input[type="button"], input[type="reset"], button {
-  //  width: 8em;
-  //  height: 2.5em;
-  //  border: 0;
-  //  color: white;
-  //  background: #1abc9c;
-  //}
-  //
-  //.myInput input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover, button:hover {
-  //  background: #2fe2bf;
-  //}
-  //
-  //.myInput select {
-  //  width: 12.3em;
-  //  height: 2.5em;
-  //  padding-left: 1em;
-  //  padding-right: 0;
-  //}
-  //
-  //.myInput select:hover {
-  //}
-  //
-  //.myInput textarea {
-  //  width: 20em;
-  //  height: 10em;
-  //  border: 0.1em solid #7c8185;
-  //}
-  //
-  //.myInput textarea:focus {
-  //  border-color: #1abc9c;
-  //}
-  //
-  //.myInput-danger {
-  //  /*background: #cf5045;*/
-  //}
-  //
-  //.myInput-danger:hover {
-  //  background: #cf5045;
-  //}
+  .myInput {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .myInput input, select, textarea, button {
+    width: 100%;
+    margin-bottom: 1em;
+    height: 3.2em;
+    padding: 0 1em;
+    border: 0.1em solid #dce4ec;
+    background: #f5f5f5;
+    border-radius: 0.25em;
+    outline: 0;
+    transition: border 0.4s linear, background 0.3s;
+  }
+
+  .myInput input[type='radio'] {
+    width: 1em;
+    height: 1em;
+  }
+
+  .myInput input:focus {
+    border-color: #2483bc;
+  }
+
+  .myInput select:focus {
+    border-color: #1abc9c;
+  }
+
+  .myInput input:read-only {
+    border: 0.15em solid #eaeded;
+    background: #eaeded;
+  }
+
+  .myInput input[type="submit"], input[type="button"], input[type="reset"], button {
+    width: 8em;
+    height: 2.5em;
+    border: 0;
+    color: white;
+    background: #1abc9c;
+  }
+
+  .myInput input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover, button:hover {
+    background: #2fe2bf;
+  }
+
+  .myInput select {
+    width: 12.3em;
+    height: 2.5em;
+    padding-left: 1em;
+    padding-right: 0;
+  }
+
+  .myInput select:hover {
+  }
+
+  .myInput textarea {
+    width: 20em;
+    height: 10em;
+    border: 0.1em solid #7c8185;
+  }
+
+  .myInput textarea:focus {
+    border-color: #1abc9c;
+  }
+
+  .myInput-danger {
+    /*background: #cf5045;*/
+  }
+
+  .myInput-danger:hover {
+    background: #cf5045;
+  }
   ion-label{
     color: #666!important;
   }
