@@ -8,6 +8,8 @@ import {NotificationsPage} from "../../designer/nofitications/notifications";
 import {PayProjectsListPage} from "./pay-projects-list/pay-projects-list";
 import {WelcomePage} from "../../welcome/welcome";
 import {NetworkService} from "../../../service/network.service";
+import {AboutPage} from "../../common/about/about";
+import {SupportPage} from "../../common/support/support";
 
 declare let initializeFontSize: any;
 
@@ -19,9 +21,9 @@ export class EmployerMePage {
 
     follower: EmpFavoriteDesignerPage;
 
-    ionViewDidEnter() {
-        initializeFontSize()
-    }
+    // ionViewDidEnter() {
+    //     initializeFontSize()
+    // }
 
     constructor(public  navCtrl: NavController,
                 public shared: SharedService,
@@ -30,9 +32,12 @@ export class EmployerMePage {
 
     }
 
+    supportPage: any = SupportPage;
+    aboutPage: any = AboutPage;
+
     open(page, option) {
         // if (this.isNullObj1(this.user)) return;
-        this.navCtrl.push(EmpFavoriteDesignerPage, {})
+        this.navCtrl.push(page, option)
     }
 
 
@@ -44,7 +49,7 @@ export class EmployerMePage {
     }
 
     openComments() {
-        this.navCtrl.push(CommentPage, {})
+        this.navCtrl.push(NotificationsPage, {})
     }
 
     openNotifications() {
