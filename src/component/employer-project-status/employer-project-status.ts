@@ -72,17 +72,6 @@ export class EmployerProjectStatusComponent {
         }
     }
 
-    // openProjectProcess(project) {
-    //     if(this.isDesigner){
-    //         if (project.status == 0) {
-    //             this.nav.push(ProjectDetailPage, {project: project});
-    //         }
-    //         if (project.status >= 1) {
-    //             this.nav.push(OrderProcessModifyPage, {project: project});
-    //         }
-    //     }
-    // }
-
 
     cancelProject() {
         this.nav.push(CancelProjectPage, {projectId: this._project.id});
