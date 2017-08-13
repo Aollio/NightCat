@@ -15,7 +15,7 @@ import {UsersService} from "../../../../service/ajax/users.service";
     templateUrl: 'medetail.html'
 })
 export class DesignerMeDetailPage {
-    btnState: any = 1;
+    btnState: any = 3;
     user: any = {};
     maincolor;
     public isDesigner: boolean;
@@ -93,5 +93,21 @@ export class DesignerMeDetailPage {
         });
         alert.present();
     }
+
+
+    //todo 关注设计师
+    // attentionMe() {
+    //     this.alertCtrl.create({
+    //         subTitle: '是否要关注此设计师？',
+    //         buttons: [{
+    //             text: '取消',
+    //         }, {
+    //             text: "确定",
+    //             handler: () => {
+    //                 this.util.toast("成功");
+    //             }
+    //         }]
+    //     }).present();
+    // }
 
 }

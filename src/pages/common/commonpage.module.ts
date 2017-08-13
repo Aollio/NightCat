@@ -19,6 +19,7 @@ import {ImModule} from "../im/im.module";
 import {PublishTaskPageNew} from "./publish-task-new/publish-task";
 import {DesignerListMinComponent} from "./designer-list-min/designer-list";
 import {ComponentModule} from "../../component/component.module";
+import {HelpPage} from "./help/help";
 
 @NgModule({
     imports: [
@@ -41,6 +42,7 @@ import {ComponentModule} from "../../component/component.module";
         PublishTaskPage,
         PublishTaskPageNew,
         DesignerListMinComponent,
+        HelpPage,
     ],
     entryComponents: [
         CommonModulePage,
@@ -53,6 +55,7 @@ import {ComponentModule} from "../../component/component.module";
         PublishTaskPage,
         PublishTaskPageNew,
         DesignerListMinComponent,
+        HelpPage,
     ],
     exports: [
         AccountSecurityPage,

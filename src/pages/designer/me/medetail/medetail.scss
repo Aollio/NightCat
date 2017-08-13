@@ -1,8 +1,8 @@
 page-designer-me-detail {
   ion-list{
     text-align: center;
-    p{
-      margin-top: 10rem;
+    p.have-no-case{
+      margin: 10rem 0;
     }
   }
 
@@ -273,6 +273,8 @@ page-designer-me-detail {
       font-size: 1.5rem;
     }
 
+
+
     .attention_btn {
       left: 3rem;;
       width: 50%;
@@ -282,6 +284,11 @@ page-designer-me-detail {
       right: 3rem;
       width: 4rem;
       background-color: #C13638;
+    }
+
+    .chat{
+      left:auto;
+      margin: auto;
     }
   }
   .touch-expand-div {

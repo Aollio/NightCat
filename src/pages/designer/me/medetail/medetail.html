@@ -37,13 +37,17 @@
     </ion-row>
 
     <div class="row_buttons" *ngIf="!shared.isDesModule()">
-        <button ion-button round class="attention_btn">
-            <ion-icon name="ios-heart"></ion-icon>
-            &nbsp; 关 注 我
-        </button>
-        <button ion-button round icon-only class="sed_msg_btn"
-                tappable (click)="openChat(user)">
+        <!--<button ion-button round class="attention_btn"  (click)="attentionMe()">-->
+        <!--<ion-icon name="ios-heart"></ion-icon>-->
+        <!--&nbsp; 关 注 我-->
+        <!--</button>-->
+        <!--<button ion-button round icon-only class="sed_msg_btn"-->
+        <!--tappable (click)="openChat(user)">-->
+        <!--<ion-icon name="ios-chatbubbles"></ion-icon>-->
+        <!--</button>-->
+        <button ion-button round class="attention_btn chat" (click)="openChat(user)">
             <ion-icon name="ios-chatbubbles"></ion-icon>
+            &nbsp; 联 系 我
         </button>
     </div>
     <div class="card-personal-desc">
@@ -52,7 +56,7 @@
             <div class="desc-header-name">
                 {{user&&user.nickname||"未填写"}}
                 <span class="desc-header-type">
-                                    {{user && shared.designTypes[user.type] ||"未填写"}}
+                                    类型：{{user && shared.designTypes[user.type] ||"未填写"}}
                     </span>
             </div>
             <!--<div>-->
@@ -67,11 +71,14 @@
             <!--</div>-->
 
             <p class="desc-head-experience">
-                {{user&&user.service_length||0}}&nbsp;{{user&&user.school||"未填写"}}
+                工时：{{user&&user.service_length||0}}
+            </p>
+            <p class="desc-head-experience">
+                学历：{{user&&user.school||"未填写"}}
             </p>
             <p class="desc-head-position">
                 <!--todo position??-->
-                {{user&&user.position||"未填写"}} &nbsp;&nbsp;&nbsp;
+                职位：{{user&&user.position||"未填写"}} &nbsp;&nbsp;&nbsp;
                 <ion-icon name="ios-star"></ion-icon>
                 <ion-icon name="ios-star"></ion-icon>
                 <ion-icon name="ios-star"></ion-icon>
@@ -88,7 +95,7 @@
         <ion-item>
             <!--todo-->
             <p class="desc-middle-introduce">
-                {{user&&user.summary||"未填写"}}
+                简介：{{user&&user.summary||"未填写"}}
             </p>
         </ion-item>
 
