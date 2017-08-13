@@ -275,7 +275,6 @@ export class PublishTaskPage {
                             console.log(error);
                             this.util.toast("修改失败，请稍后再试");
                         })
-                        this.navCtrl.pop();
                     }
                 }
             ]

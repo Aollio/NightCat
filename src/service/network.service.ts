@@ -52,7 +52,7 @@ export class NetworkService {
      * @param param
      * @returns {Promise<any>}
      */
-    async get (url, param = {}, header = {}): Promise<any> {
+    async get(url, param = {}, header = {}): Promise<any> {
         console.log("\n get url", url);
         console.log("get params", param);
 
@@ -222,7 +222,9 @@ export class NetworkService {
         }
         let str = [];
         for (let p in obj)
-            str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+            if (obj[p]) {
+                str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+            }
         return str.join("&");
     }
 

@@ -27,8 +27,8 @@ export class ImportantMePage {
 
     constructor(public  navCtrl: NavController,
                 public util: Util,
-                private alert:AlertController,
-                private http:NetworkService,
+                private alert: AlertController,
+                private http: NetworkService,
                 public shared: SharedService,
                 public modalCtrl: ModalController) {
         this.user = shared.getCurrentUser()
@@ -67,7 +67,14 @@ export class ImportantMePage {
 
     exitApp() {
 
-        let alert = this.alert.create({
+        if (!this.isLogin()) {
+            let profileModal = this.modalCtrl.create(WelcomePage, {state: 2});
+            profileModal.present();
+            return;
+        }
+
+
+        this.alert.create({
             subTitle: "是否退出？",
             buttons: [{
                 text: "取消",
@@ -90,8 +97,8 @@ export class ImportantMePage {
         // profileModal.present();
     }
 
-    openMeDetail(){
-        this.navCtrl.push(DesignerMeDetailPage,{isDesigner:true,designer:this.shared.getCurrentUser()});
+    openMeDetail() {
+        this.navCtrl.push(DesignerMeDetailPage, {isDesigner: true, designer: this.shared.getCurrentUser()});
     }
 
     isLogin() {
@@ -100,11 +107,11 @@ export class ImportantMePage {
         return login;
     }
 
-    openHelpPage(){
+    openHelpPage() {
         this.navCtrl.push(HelpPage);
     }
 
-    openSupportPage(){
+    openSupportPage() {
         this.navCtrl.push(SupportPage);
     }
 }

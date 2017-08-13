@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
 import {SharedService} from "../../../../../service/share.service";
+import {NavController} from "ionic-angular";
 // import {SharedService} from "../../../service/share.service";
 declare let initializeFontSize: any;
 
@@ -12,7 +13,8 @@ export class OrerProcessCompleted{
     user;
     orderId;
 
-    constructor(public shared: SharedService) {
+    constructor(public shared: SharedService,
+    private nav:NavController) {
         this.user = this.shared.getCurrentUser();
     }
 
@@ -20,4 +22,5 @@ export class OrerProcessCompleted{
         initializeFontSize();
         console.log("com")
     }
+
 }

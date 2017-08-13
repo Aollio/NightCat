@@ -47,19 +47,19 @@ export class ProjectDetailPage extends AbsCommonPage {
         this.project = navParams.get('project');
 
         console.log("project", this.project);
-        this.getCreatorSimpleInfo(this.project.create_by);
+        // this.getCreatorSimpleInfo(this.project.create_by);
     }
 
     //获取雇主头像 昵称
-    private getCreatorSimpleInfo(uid) {
-        console.log("get user simple info");
-        this.userServ.getInfo(uid).then(user => {
-            this.creator = user;
-            // this.util.updateObj(this.creator,user);
-        }).catch(error => {
-            console.log(error);
-        })
-    }
+    // private getCreatorSimpleInfo(uid) {
+    //     console.log("get user simple info");
+    //     this.userServ.getInfo(uid).then(user => {
+    //         this.creator = user;
+    //         // this.util.updateObj(this.creator,user);
+    //     }).catch(error => {
+    //         console.log(error);
+    //     })
+    // }
 
 
     openOrderrocessPreSelectdesPage(){

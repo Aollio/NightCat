@@ -10,22 +10,33 @@
 
 <ion-content>
 
-    <!--todo 进度图标-->
+    <!-- 进度图标-->
     <div *ngIf="!shared.isDesModule()" class="my-nav">
         <img *ngIf="status==0||status==1||status==2" src="assets/img/emp_project_process1.png" alt=""/>
         <img *ngIf="status==3" src="assets/img/emp_project_process2.png" alt=""/>
-        <img *ngIf="status==4||status==5" src="assets/img/emp_project_process3.png" alt=""/>
-        <img *ngIf="status==7" src="assets/img/emp_project_process4.png" alt=""/>
+        <img *ngIf="status==4||status==5||status==7" src="assets/img/emp_project_process3.png" alt=""/>
+        <img *ngIf="status==6||status==8||status==9" src="assets/img/emp_project_process4.png" alt=""/>
     </div>
-
 
     <div *ngIf="shared.isDesModule()" class="my-nav">
         <img *ngIf="status==0||status==1||status==2" src="assets/img/des_project_process1.png" alt=""/>
-        <img *ngIf="status==3" src="des_project_process2.png" alt=""/>
-        <img *ngIf="status==4||status==5" src="des_project_process3.png" alt=""/>
-        <img *ngIf="status==7" src="assets/img/des_project_process4.png" alt=""/>
-        <img *ngIf="status==6||status==8" src="assets/img/des_project_process4.png" alt=""/>
+        <img *ngIf="status==3" src="assets/img/des_project_process2.png" alt=""/>
+        <img *ngIf="status==4||status==5||status==7" src="assets/img/des_project_process3.png" alt=""/>
+        <img *ngIf="status==6||status==8||status==9" src="assets/img/des_project_process4.png" alt=""/>
     </div>
+    <!-- 进度图标-->
+
+
+    <!--设计师   显示雇主-->
+    <ion-card *ngIf="shared.isDesModule()" class="user" tappable (click)="openChat(project.creator)">
+        <ion-item>
+            <ion-avatar class="avatar" item-start>
+                <img [src]='project&&project.creator&&project.creator.img_url||"assest/img/first.png"'/>
+            </ion-avatar>
+            <h3>{{project&&project.creator&&project.creator.nickname||"匿名用户"}}</h3>
+        </ion-item>
+    </ion-card>
+
     <!--<div class="my-title">-->
     <!--<div class="my-title-l">-->
     <!--<div class="my-title-circular"></div>-->
@@ -69,6 +80,20 @@
         <!--<div class="my-order-b-val">￥50.00</div>-->
         <!--</div>-->
     </div>
+
+
+    <!--雇主  显示接单用户-->
+    <ion-card *ngIf="!shared.isDesModule()&&project&&project.bidder" class="user" tappable
+              (click)="openDesignerPage(project.bidder)">
+        <ion-item>
+            <ion-avatar class="avatar" item-start>
+                <img [src]='project.bidder.img_url||"assest/img/first.png"'/>
+            </ion-avatar>
+            <h3>{{project&&project.bidder&&project.bidder.nickname||"匿名用户"}}</h3>
+        </ion-item>
+    </ion-card>
+
+
 
 </ion-content>
 <ion-footer>

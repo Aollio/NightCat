@@ -7,6 +7,8 @@ import {OrderProcessWaitcomment} from "../order-process-waitcomment/waitcomment"
 import {CancelProjectPage} from "../../cancel-project/cancel-project";
 import {ProjectService} from "../../../../../service/ajax/projects.service";
 import {Util} from "../../../../../service/util";
+import {DesignerMeDetailPage} from "../../../../designer/me/medetail/medetail";
+import {ChatPage} from "../../../../im/chat/chat";
 
 declare let initializeFontSize: any;
 
@@ -178,4 +180,21 @@ export class OrderProcessModifyPage {
             this.util.toast("确认失败，请稍后再试");
         })
     }
+
+    openDesignerPage(designer) {
+        this.navCtrl.push(DesignerMeDetailPage, {
+            designer: designer
+        })
+    }
+
+
+    //与之交流
+    openChat(user) {
+        if (this.shared.isLogin()) {
+            this.navCtrl.push(ChatPage, {account: user.accid, to: user})
+        } else {
+            this.util.presentLoginPage(this.navCtrl);
+        }
+    }
+
 }

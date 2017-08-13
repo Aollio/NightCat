@@ -1,13 +1,12 @@
 <ion-header>
-    <ion-navbar [color]="navColor">
-        <ion-title *ngIf="num=='1'">帮助</ion-title>
-        <ion-title *ngIf="num=='2'">问题反馈</ion-title>
+    <ion-navbar  [class.designer]="shared.isDesModule()" [class.employer]="!shared.isDesModule()">
+        <ion-title >帮助</ion-title>
+        <!--<ion-title *ngIf="num=='2'">问题反馈</ion-title>-->
     </ion-navbar>
 </ion-header>
 
 <ion-content padding>
     <div class="center1">
-
         <h5>1. 我是一名新用户， 请问如何进行项目发布等相关的操作</h5>
         <p>答：建联夜猫是上海建联用于设计交流的一个平台。跟着app界面操作即可完成你想要的操作。如对app有有不满意的地方，请提交你的建议和意见。</p>
     </div>

@@ -33,15 +33,15 @@ export class GrabOrderPage {
 
 
     grab_project() {
-        if(this.grab_info.price.trim()==""){
+        if(!this.grab_info.price || this.grab_info.price.trim()==""){
             this.util.toast("请输入报价");
             return
         }
-        if(this.grab_info.cycle.trim()==""){
+        if(!this.grab_info.cycle || this.grab_info.cycle.trim()==""){
             this.util.toast("请输入任务周期");
             return
         }
-        if(this.grab_info.description.trim()==""){
+        if(!this.grab_info.description || this.grab_info.description.trim()==""){
             this.util.toast("请输入方案说明");
             return
         }
@@ -53,6 +53,7 @@ export class GrabOrderPage {
                 this.util.toast("抢单成功")
                 this.navCtrl.goToRoot({})
             }).catch(error => {
+                console.log(error);
             if (error.status == 406 || error.status == 407) {
                 this.util.toast(error.message);
             }

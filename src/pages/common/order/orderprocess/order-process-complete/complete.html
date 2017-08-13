@@ -4,7 +4,8 @@
 </ion-header>
 <ion-content>
     <div class="my-nav">
-        <img class="my-img" src="assets/img/d-Group5.png" alt=""/>
+        <img *ngIf="!shared.isDesModule()" class="my-img" src="assets/img/emp_project_process4.png" alt=""/>
+        <img *ngIf="shared.isDesModule()" class="my-img" src="assets/img/des_project_process4.png" alt=""/>
     </div>
     <div class="my-title">谢谢你</div>
     <img class="my-icon" src="assets/img/ok.png"/>
@@ -15,6 +16,6 @@
 
 </ion-content>
 <ion-footer>
-    <div class="my-confirm"><button>确定</button></div>
-    <div class="my-index"><button>返回首页</button></div>
+    <!--<button ion-button full (click)="nav.pop()" [color]="shared.getPrimaryColor()">确定</button>-->
+    <div class="my-index"><button (click)="nav.pop()">确定</button></div>
 </ion-footer>
