@@ -23,15 +23,17 @@ export class System {
     }
 
 
-    private static customSyncDoneFunc = null
+    private static customSyncDoneFunc = () => {
+    }
 
-    private static customSyncErrorFunc = null
+    private static customSyncErrorFunc = () => {
+    }
 
     static customSyncDone(func) {
         System.customSyncDoneFunc = func
     }
 
-    static customSyncError(func){
+    static customSyncError(func) {
         System.customSyncErrorFunc = func
     }
 
@@ -42,9 +44,8 @@ export class System {
         console.log("onSyncDone\n", state)
         state.isLoading = false
 
-        if (System.customSyncDoneFunc != null) {
-            System.customSyncDoneFunc()
-        }
+        console.log("执行自定义NIM 同步完成方法")
+        System.customSyncDoneFunc()
         console.log("同步完成")
     }
 
@@ -75,9 +76,8 @@ export class System {
     }
 
     static onError(error, obj) {
-        if (System.customSyncErrorFunc != null){
-            System.customSyncErrorFunc()
-        }
+        console.log("执行自定义NIM 同步错误方法")
+        System.customSyncErrorFunc()
         console.log('发生错误', error, obj);
     }
 }

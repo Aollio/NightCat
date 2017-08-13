@@ -53,12 +53,8 @@ export class EmployerProjectStatusComponent {
     @Input()
     set project(project) {
         this._project = project;
-        this._project = project;
         this.status = project.status;
-
-        console.log('get project imgs');
     }
-
 
 
     openProjectProcess(project) {

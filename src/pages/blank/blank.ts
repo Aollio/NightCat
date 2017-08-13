@@ -32,6 +32,12 @@ export class BlankPage {
 
     }
 
+    savelocal(){
+        localStorage.testmsg=new Date().toISOString();
+    }
+    showlocal(){
+        this.util.toast(localStorage.testmsg);
+    }
 
 
     post() {

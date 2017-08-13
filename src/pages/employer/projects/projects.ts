@@ -44,11 +44,6 @@ export class ProjectsPage {
 
 
     doRefresh(refresher) {
-        if (!this.shared.isLogin()) {
-            refresher.complete();
-            this.util.toast("未登录！");
-            return;
-        }
         this._doRefresh(() => {
             refresher.complete()
         });
@@ -56,6 +51,7 @@ export class ProjectsPage {
 
     _doRefresh(completeFunc) {
         if (!this.shared.isLogin()) {
+            this.util.toast("未登录！");
             return;
         }
         this.projectServ.getUserProjects()

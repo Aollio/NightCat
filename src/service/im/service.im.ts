@@ -73,11 +73,11 @@ export class ImService {
 
     //注册第一次初始化的回调事件
     registerSyncDone(func) {
-        System.customSyncDone(() => func())
+        System.customSyncDone(func)
     }
 
     registerSyncError(func) {
-        System.customSyncError(() => func())
+        System.customSyncError(func)
     }
 
     //关闭NIM
