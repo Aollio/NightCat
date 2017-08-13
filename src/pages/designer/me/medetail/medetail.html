@@ -97,16 +97,19 @@
 
 
     <div class="type-buttons">
-        <button ion-button clear [class.active]="btnState===1" tappable (click)="case()" class="type-btn active">案例
+        <button ion-button clear [class.active]="btnState===3" tappable (click)="experice()" class="type-btn">工作经历&nbsp;
         </button>
         <button ion-button clear [class.active]="btnState===2" tappable (click)="honor()" class="type-btn">荣誉
         </button>
-        <button ion-button clear [class.active]="btnState===3" tappable (click)="experice()" class="type-btn">工作经历&nbsp;
+        <button ion-button clear [class.active]="btnState===1" tappable (click)="case()" class="type-btn active">案例
         </button>
     </div>
 
     <ion-card class="case-card">
-        <ion-list *ngIf="btnState===1||btnState===3">
+        <ion-list *ngIf="btnState===1">
+            <p class="have-no-case">暂无案例</p>
+        </ion-list>
+        <ion-list *ngIf="btnState===3">
             <ion-card-content *ngFor="let case of cases" tappable (click)="openCaseDetail()" class="case-item">
                 <div class="case-item-main-div">
                     <div class="case-item-avatar">

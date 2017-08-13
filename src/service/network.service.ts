@@ -2,6 +2,7 @@ import {Injectable} from "@angular/core";
 import {Http, Headers} from "@angular/http";
 import {Platform, Events} from "ionic-angular";
 import {Util} from "./util";
+import {SharedService} from "./share.service";
 
 @Injectable()
 export class NetworkService {
@@ -26,18 +27,17 @@ export class NetworkService {
 
     clearToken() {
         this.setToken(null);
+        localStorage.removeItem(SharedService.TOKEN);
     }
 
-
-    doIfNoToken() {
+    doIfWrongToken() {
         this.event.publish('gotologin');
     }
-
 
     async getWithToken(url, param = {}, header = {}) {
         console.log("getWithToken, token:", this.token);
         if (this.token == null) {
-            this.doIfNoToken()
+            this.doIfWrongToken()
             throw {status: 401, messgae: 'TOKEN不存在, 用户是否登录?'}
         }
         // header['token'] = this.token;
@@ -116,7 +116,7 @@ export class NetworkService {
     async postWithToken(url, param = {}, header = {}) {
         console.log("postWithToken", this.token);
         if (this.token == null) {
-            this.doIfNoToken()
+            this.doIfWrongToken()
             throw {status: 401, message: 'TOKEN NOT EXIST'}
         }
         param['token'] = this.token;
@@ -211,7 +211,7 @@ export class NetworkService {
             }
         } else {
             if (error.status == 401) {
-                this.doIfNoToken()
+                this.doIfWrongToken()
             }
         }
     }

@@ -9,6 +9,11 @@ Mixins
 
   .messages {
 
+    #bottom-message{
+      height: 0;
+    }
+
+
     .message-box {
       margin: 2.5rem 0;
       display: flex;

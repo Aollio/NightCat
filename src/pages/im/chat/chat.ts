@@ -28,6 +28,11 @@ export class ChatPage {
 
     me;
 
+
+    ionViewDidEnter() {
+        this.scollToBottom();
+    }
+
     constructor(public param: NavParams,
                 public util: Util,
                 public imServ: ImService,
@@ -65,6 +70,13 @@ export class ChatPage {
         this.sessionId = sessionId
         this.myInfo = state.myInfo
 
+
+    }
+
+    scollToBottom() {
+        console.log("scoll to buttom")
+        let scrolls = document.getElementsByClassName("scroll-content");
+        scrolls[scrolls.length - 1].scrollTop = scrolls[scrolls.length - 1].scrollHeight;
     }
 
     sendMessage() {

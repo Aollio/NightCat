@@ -41,6 +41,7 @@ export class UsersService {
         }
 
         //set token
+        localStorage[SharedService.TOKEN]=data.content.token;
         this.http.setToken(data.content.token);
 
         let user = await

@@ -4,9 +4,20 @@ import {User} from "../model/user";
 import {KeynoteService} from "./keynote.service";
 import {Events} from "ionic-angular";
 import {Util} from "./util";
+import {ImService} from "./im/service.im";
 
 @Injectable()
 export class SharedService {
+    static FIRST_USE_APP = "firstUseApp";
+    static TOKEN = "token";
+
+
+
+
+
+
+
+
 
     //是否为演示模式, 各个和网络连接有关的, 如果检测到为true, 则不进行网络传送, 使用测试数据进行演示
     KEYNOTE: boolean = false;
@@ -47,6 +58,7 @@ export class SharedService {
 
     constructor(private event: Events,
                 private util: Util,
+                private imServ:ImService,
                 private keynote: KeynoteService) {
         event.subscribe('backdoor', (user) => {
             console.log('receive \'backdoor\' event');
@@ -89,6 +101,7 @@ export class SharedService {
     }
 
     setCurrentUser(user) {
+        this.imServ.setToken(user);
         this.currentUser = user;
         if (user['role'] == 0) {
             this.setIsDesModule(true);
@@ -108,6 +121,10 @@ export class SharedService {
 //     return this.currentModuleIsDesigner;
 // }
 
+
+
+
+
 //用户是否登录
     isLogin() {
         let isLogin = !this.util.isEmptyObj(this.currentUser);
@@ -115,13 +132,18 @@ export class SharedService {
         return isLogin;
     }
 
+
+
+
+
+
 // 判断用户是否第一次使用
     isFirstUse() {
-        return this._isFirstUse;
+        return localStorage[SharedService.FIRST_USE_APP];
     }
 
     setIsNotFirstUse() {
-        this._isFirstUse = false;
+        localStorage[SharedService.FIRST_USE_APP]=false;
     }
 }
 

@@ -22,7 +22,6 @@ export class Util {
         if (obj == null || this.isEmptyObj(obj) || obj == '') {
             this.toast(msg)
         }
-
     }
 
     isEmptyObj(obj) {
