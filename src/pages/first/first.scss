@@ -9,19 +9,38 @@ page-first {
     background-size: 100% 100%;
   }
 
-  .logo div {
-    color: map_get($colors, login-des);
-    text-align: center;
-    margin-bottom: 3.5em;
-    font-size: 1.2em;
-    font-weight: 300;
-  }
+  //.logo div {
+  //  color: map_get($colors, login-des);
+  //  text-align: center;
+  //  margin-bottom: 3.5em;
+  //  font-size: 1.2em;
+  //  font-weight: 300;
+  //}
+  //
+  //.logo img {
+  //  max-height: 100%;
+  //  max-width: 100%;
+  //  margin: 27% 0 0;
+  //  padding-left: 0%;
+  //}
 
-  .logo img {
-    max-height: 100%;
-    max-width: 100%;
-    margin: 27% 0 0;
+  .logo>img {
+    max-height: 10rem;
+    max-width: 10rem;
+    margin: 27% 0 .5rem;
     padding-left: 0%;
+  }
+  .logo {
+    font-size: 1.8rem;
+
+    div img{
+      max-width: 35%;
+
+      margin: auto;
+      // margin-bottom: 3.5em;
+
+    }
+    margin-bottom: 13rem;
   }
 
 }
