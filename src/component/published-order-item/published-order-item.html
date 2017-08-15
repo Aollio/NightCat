@@ -1,7 +1,7 @@
 <div class="publish-order-card" tappable (click)="openProjectDetail(project)">
     <div class="publish-order-content">
         <div class="publish-order-img">
-            <img src="{{project&&project.img_urls[0] || 'assets/img/project-default-img.png'}}"/>
+            <img src="{{project&&project.img_urls&&project.img_urls[0] || 'assets/img/project-default-img.png'}}"/>
         </div>
         <div class="publish-order-content-right">
             <div class="publish-order-top">

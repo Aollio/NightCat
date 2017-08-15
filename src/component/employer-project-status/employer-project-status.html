@@ -1,23 +1,22 @@
 <div class="my-ul">
     <div class="my-li" tappable (click)="openProjectProcess(_project)">
         <div class="my-li-img">
-            <img [src]='_project&&_project.img_urls[0]||"assets/img/home-default.png"' alt=""/>
+            <img [src]='_project && _project.img_urls && _project.img_urls[0]||"assets/img/home-default.png"'/>
         </div>
         <div class="my-li-right">
             <div class="my-li-right-t">
-                <div class="my-li-right-t-name">{{_project.title||"未填写"}}</div>
+                <div class="my-li-right-t-name">{{_project && _project.title||"未填写"}}</div>
             </div>
             <div class="my-li-right-b">
-                <div class="my-li-right-b-l" *ngIf="status==0">{{_project.grab_count||0}}人抢单</div>
+                <div class="my-li-right-b-l" *ngIf="status==0">{{_project && _project.grab_count||0}}人抢单</div>
 
                 <div class="my-li-right-b-l my-li-right-b-money" *ngIf="status >= 1 &&status <= 5">
-                    ¥{{_project.budget||0}}元
+                    ¥{{_project && _project.budget||0}}元
                 </div>
-
 
                 <div class="my-li-right-b-r" *ngIf="status==0">
                     <!--{{_project.due_time&&util.stringifyDate(_project.due_time).withMonth||"未填写"}} 后截止抢单-->
-                    {{_project.due_time|date:"MM-dd"||"未填写"}} 后截止抢单
+                    {{ _project && _project.due_time|date:"MM-dd"||"未填写"}} 后截止抢单
                 </div>
                 <div class="my-li-right-b-r" *ngIf="status > 0">
                     {{statusText[status]}}
@@ -37,7 +36,10 @@
         <div class="my-bottom-li act" *ngIf="status==0&&_project.grab_count>0" tappable
              (click)="openDynamicProjectPage()">选择设计师
         </div>
-        <div class="my-bottom-li act" *ngIf="status==3" tappable (click)="openPaymentPage()">支付</div>
+        <div class="my-bottom-li act" *ngIf="status==3"
+             tappable (click)="openPaymentPage()">
+            联系支付
+        </div>
 
         <!--选择设计师状态-->
         <div class="my-bottom">
@@ -45,7 +47,6 @@
             <div class="my-bottom-li act" *ngIf="status==5" tappable (click)="openWaitcommentPage()">收货</div>
             <div class="my-bottom-li act" *ngIf="status==5" tappable (click)="showAlert()">一键审图</div>
             <div class="my-bottom-li act" *ngIf="status==6" tappable (click)="openCommentOrderPage()">评价</div>
-
             <div class="my-bottom-li" *ngIf="status<=3" tappable (click)="cancelProject()">取消订单</div>
         </div>
 

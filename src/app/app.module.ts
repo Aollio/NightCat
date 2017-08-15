@@ -35,7 +35,6 @@ import {ImageService} from "../service/ajax/imgs.service";
 import {ImagePicker} from "@ionic-native/image-picker";
 import {MessageService} from "../service/ajax/message.serveic";
 
-
 @NgModule({
     declarations: [
         MyApp,

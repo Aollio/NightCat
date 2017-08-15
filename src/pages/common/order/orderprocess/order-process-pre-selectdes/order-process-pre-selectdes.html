@@ -31,14 +31,14 @@
                 <!--todo 订单动态用户头像-->
                 <div class="my-li-line-circular"></div>
                 <div class="my-li-line-time">
-                    {{grabber.create_time&&util.stringifyDate(grabber.create_time).withMonth}}
+                    {{grabber&&grabber.create_time&&util.stringifyDate(grabber.create_time).withMonth}}
                 </div>
 
                 <div class="my-li-card" tappable (click)="openDesignerPage(grabber.info)">
                     <div class="my-li-card-top">
                         <div class="my-li-card-top-l"></div>
-                        <div class="my-li-card-top-c">{{grabber.info&&grabber.info.nickname||"未填写"}}</div>
-                        <div class="my-li-card-top-r">{{grabber.price||0}}元-{{grabber.cycle||0}}小时</div>
+                        <div class="my-li-card-top-c">{{grabber&&grabber.info&&grabber.info.nickname||"未填写"}}</div>
+                        <div class="my-li-card-top-r">{{grabber&&grabber.price||0}}元-{{grabber&&grabber.cycle||0}}</div>
                     </div>
 
                     <div class="my-li-card-text">

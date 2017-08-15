@@ -54,8 +54,8 @@ export class EmployerMePage {
         this.navCtrl.push(NotificationsPage, {})
     }
 
-    openHelpPage(){
-        this.navCtrl.push(HelpPage)
+    openHelpPage() {
+        this.navCtrl.push(HelpPage, {})
     }
 
     openNotifications() {
@@ -67,6 +67,12 @@ export class EmployerMePage {
     }
 
     exitApp() {
+
+        if (!this.shared.isLogin()) {
+            let profileModal = this.modalCtrl.create(WelcomePage, {state: 2});
+            profileModal.present();
+            return;
+        }
 
         let alert = this.alert.create({
             subTitle: "是否退出？",

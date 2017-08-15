@@ -3,6 +3,7 @@ import {DesignerMeDetailPage} from "../../../designer/me/medetail/medetail";
 import {NavController, NavParams} from "ionic-angular";
 import {UsersService} from "../../../../service/ajax/users.service";
 import {SharedService} from "../../../../service/share.service";
+import {Util} from "../../../../service/util";
 
 @Component({
     selector: 'page-designer-list-home',
@@ -23,7 +24,8 @@ export class DesignerListPage {
     constructor(private navCtrl: NavController,
                 private shared: SharedService,
                 private userServ: UsersService,
-                private navParams: NavParams) {
+                private navParams: NavParams,
+                private util: Util) {
         this.miancolor = this.shared.getPrimaryColor();
         this.previousPage = this.navParams.get("previousPage")
         let typeindex = this.navParams.get("type")
@@ -33,8 +35,22 @@ export class DesignerListPage {
 
     }
 
+    isloading = false;
+    syncComplete = false;
+
     ionViewDidEnter() {
+
+        let loading = this.util.createLoading("加载中")
+        this.isloading = true;
+
+        loading.present()
+
         this._doRefresh(() => {
+            if (this.isloading) {
+                loading.dismiss()
+                this.isloading = false;
+                this.syncComplete = true;
+            }
         })
     }
 
@@ -46,7 +62,11 @@ export class DesignerListPage {
     //todo 内容刷新
     doRefresh(refresher) {
         this.designers.length = 0;
-        this._doRefresh(() => refresher.complete())
+        this.syncComplete = false;
+        this._doRefresh(() => {
+            refresher.complete();
+            this.syncComplete = true;
+        })
     }
 
     _doRefresh(completeFunc) {

@@ -4,7 +4,7 @@
         <button ion-button clear color="primary" tappable (click)="enterRegister()">跳过</button>
     </ion-buttons>
     <!--</ion-toolbar>-->
-    <div class="tutorial-page" *ngIf="state===1">
+    <div class="tutorial-page welcome-page" *ngIf="state===1">
         <ion-slides (ionSlideDidChange)="toggleEnterBtn()" pager>
             <ion-slide *ngFor="let slide of slidesImg">
                 <img [src]="slide" class="slide-image"/>
@@ -44,5 +44,5 @@
             以设计师的身份开始
         </button>
     </div>
-    <!--<button ion-button tappable (click)="openBlank()" full>空白页</button>-->
+    <!--<button ion-button tappable (click)="openTest()" full>空白页</button>-->
 </ion-content>

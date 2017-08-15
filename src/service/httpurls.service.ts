@@ -155,6 +155,8 @@ export class HttpUrls {
     //取消订单
     project_cancel: string = this._projects + "/cancel";
 
+    project_man: string = this._projects + "/tester";
+
 
     //end process
 

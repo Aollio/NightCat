@@ -123,15 +123,15 @@ export class PublishTaskPage {
 
         if (project.depth === null) return '请填写设计深度';
 
-        if (!project.period) return '请填写项目工时';
-        else if (project.period < 1) return '请填写项目工时';
-
+        if (project.period != null && project.period < 0) {
+            return '项目工时不应为负数';
+        }
 
         //todo time
         if (project.start_time == this.currentTime.toISOString()) return '请选择开始时间';
         if (project.end_time == this.currentTime.toISOString()) return '请选择结束时间';
 
-        if (project.due_time >= project.start_time) return '开始时间应大于截至时间';
+        if (project.due_time >= project.start_time) return '开始时间应大于抢单截至时间';
         else if (project.start_time >= project.end_time) return '结束时间应大于开始时间';
 
         console.log("project", project);

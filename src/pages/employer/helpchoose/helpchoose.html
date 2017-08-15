@@ -1,14 +1,16 @@
 <ion-header>
     <ion-navbar no-lines hideBackButton="true">
         <ion-buttons start>
-            <button ion-button clear     tappable (click)="goback()">
-                <ion-icon name="ios-arrow-back"></ion-icon>返回</button>
+            <button ion-button clear tappable (click)="goback()">
+                <ion-icon name="ios-arrow-back"></ion-icon>
+                返回
+            </button>
         </ion-buttons>
         <ion-title>
             完成问卷找到设计师
         </ion-title>
         <ion-buttons end>
-            <!--<button ion-button clear     tappable (click)="openEmployer()">关闭</button>-->
+            <button ion-button clear tappable (click)="close()">关闭</button>
         </ion-buttons>
     </ion-navbar>
 </ion-header>
@@ -21,7 +23,7 @@
                          [class.bar-bg-active]="item.name==chooseType">
                     <div class="my-li"
                          (click)="setChooseType(item.name)">
-                        <img  class="my-li-img" src="{{item.img}}" alt="">
+                        <img class="my-li-img" src="{{item.img}}" alt="">
                         <div class="my-li-name">{{item.name}}</div>
                     </div>
                 </ion-col>
@@ -29,86 +31,86 @@
 
         </ion-grid>
         <!--<div class="my-ul">-->
-           <!---->
-            <!--<div class="my-li">-->
-                <!--<img  class="my-li-img" src="assets/img/classification-02.png" alt="">-->
-                <!--<div class="my-li-name">项目经理-->
-                    <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="my-li">-->
-                <!--<img  class="my-li-img" src="assets/img/classification-03.png" alt="">-->
-                <!--<div class="my-li-name">审图-->
-                    <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="my-li">-->
-                <!--<img  class="my-li-img" src="assets/img/classification-04.png" alt="">-->
-                <!--<div class="my-li-name">策划-->
-                    <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
-                <!--</div>-->
-            <!--</div>-->
+        <!---->
+        <!--<div class="my-li">-->
+        <!--<img  class="my-li-img" src="assets/img/classification-02.png" alt="">-->
+        <!--<div class="my-li-name">项目经理-->
+        <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="my-li">-->
+        <!--<img  class="my-li-img" src="assets/img/classification-03.png" alt="">-->
+        <!--<div class="my-li-name">审图-->
+        <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="my-li">-->
+        <!--<img  class="my-li-img" src="assets/img/classification-04.png" alt="">-->
+        <!--<div class="my-li-name">策划-->
+        <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
+        <!--</div>-->
+        <!--</div>-->
 
         <!--</div>-->
         <!--<div class="my-ul">-->
-            <!--<div class="my-li">-->
-                <!--<img  class="my-li-img" src="assets/img/classification-05.png" alt="">-->
-                <!--<div class="my-li-name">规划设计-->
-                    <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="my-li">-->
-                <!--<img  class="my-li-img" src="assets/img/classification-06.png" alt="">-->
-                <!--<div class="my-li-name">建筑设计-->
-                    <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="my-li">-->
-                <!--<img  class="my-li-img" src="assets/img/classification-07.png" alt="">-->
-                <!--<div class="my-li-name">电气设计-->
-                    <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="my-li">-->
-                <!--<img  class="my-li-img" src="assets/img/classification-08.png" alt="">-->
-                <!--<div class="my-li-name">结构设计-->
-                    <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
-                <!--</div>-->
-            <!--</div>-->
+        <!--<div class="my-li">-->
+        <!--<img  class="my-li-img" src="assets/img/classification-05.png" alt="">-->
+        <!--<div class="my-li-name">规划设计-->
+        <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="my-li">-->
+        <!--<img  class="my-li-img" src="assets/img/classification-06.png" alt="">-->
+        <!--<div class="my-li-name">建筑设计-->
+        <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="my-li">-->
+        <!--<img  class="my-li-img" src="assets/img/classification-07.png" alt="">-->
+        <!--<div class="my-li-name">电气设计-->
+        <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="my-li">-->
+        <!--<img  class="my-li-img" src="assets/img/classification-08.png" alt="">-->
+        <!--<div class="my-li-name">结构设计-->
+        <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
+        <!--</div>-->
+        <!--</div>-->
         <!--</div>-->
         <!--<div class="my-ul">-->
-            <!--<div class="my-li">-->
-                <!--<img  class="my-li-img" src="assets/img/classification-09.png" alt="">-->
-                <!--<div class="my-li-name">软装设计-->
-                    <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="my-li">-->
-                <!--<img  class="my-li-img" src="assets/img/classification-10.png" alt="">-->
-                <!--<div class="my-li-name">给排水-->
-                    <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="my-li">-->
-                <!--<img  class="my-li-img" src="assets/img/classification-11.png" alt="">-->
-                <!--<div class="my-li-name">室内设计-->
-                    <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="my-li">-->
-                <!--<img  class="my-li-img" src="assets/img/classification-12.png" alt="">-->
-                <!--<div class="my-li-name">暖通设计-->
-                    <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
-                <!--</div>-->
-            <!--</div>-->
+        <!--<div class="my-li">-->
+        <!--<img  class="my-li-img" src="assets/img/classification-09.png" alt="">-->
+        <!--<div class="my-li-name">软装设计-->
+        <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="my-li">-->
+        <!--<img  class="my-li-img" src="assets/img/classification-10.png" alt="">-->
+        <!--<div class="my-li-name">给排水-->
+        <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="my-li">-->
+        <!--<img  class="my-li-img" src="assets/img/classification-11.png" alt="">-->
+        <!--<div class="my-li-name">室内设计-->
+        <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="my-li">-->
+        <!--<img  class="my-li-img" src="assets/img/classification-12.png" alt="">-->
+        <!--<div class="my-li-name">暖通设计-->
+        <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
+        <!--</div>-->
+        <!--</div>-->
         <!--</div>-->
         <!--<div class="my-ul">-->
-            <!--<div class="my-li">-->
-                <!--<img  class="my-li-img" src="assets/img/classification-13.png" alt="">-->
-                <!--<div class="my-li-name">景观设计-->
-                    <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
-                <!--</div>-->
-            <!--</div>-->
+        <!--<div class="my-li">-->
+        <!--<img  class="my-li-img" src="assets/img/classification-13.png" alt="">-->
+        <!--<div class="my-li-name">景观设计-->
+        <!--<ion-icon name="md-checkmark-circle-outline" class="check"> </ion-icon>-->
+        <!--</div>-->
+        <!--</div>-->
         <!--</div>-->
         <div class="blank"></div>
 
@@ -117,11 +119,14 @@
     <div class="con" *ngIf="state === 2">
         <div class="content-title-div">您想找什么级别的设计师</div>
         <div class="position-btns">
-            <button class="tip selectbutton" [class.selected]="position === 1"     tappable (click)="selectPosition(1)">初级工程师
+            <button class="tip selectbutton" [class.selected]="position === 1" tappable (click)="selectPosition(1)">
+                初级工程师
             </button>
-            <button class="tip selectbutton" [class.selected]="position === 2"     tappable (click)="selectPosition(2)">中级工程师
+            <button class="tip selectbutton" [class.selected]="position === 2" tappable (click)="selectPosition(2)">
+                中级工程师
             </button>
-            <button class="tip selectbutton" [class.selected]="position === 3"     tappable (click)="selectPosition(3)">高级工程师
+            <button class="tip selectbutton" [class.selected]="position === 3" tappable (click)="selectPosition(3)">
+                高级工程师
             </button>
         </div>
     </div>
@@ -129,16 +134,18 @@
     <div class="con" *ngIf="state === 3">
         <div class="content-title-div">请选择设计师是否认证</div>
         <div class="position-btns">
-            <button class="tip selectbutton" [class.selected]="authenticate === 0"     tappable (click)="selectAuthenticate(0)">
+            <button class="tip selectbutton" [class.selected]="authenticate === 0" tappable
+                    (click)="selectAuthenticate(0)">
                 全部工程师
             </button>
-            <button class="tip selectbutton" [class.selected]="authenticate === 1"     tappable (click)="selectAuthenticate(1)">
+            <button class="tip selectbutton" [class.selected]="authenticate === 1" tappable
+                    (click)="selectAuthenticate(1)">
                 只看已认证
             </button>
         </div>
 
         <!--<div class="detail-require">-->
-            <!--<textarea placeholder="填写更详细的需求，可以帮您更快的找到合适的设计师哦" class="summary-textarea"></textarea>-->
+        <!--<textarea placeholder="填写更详细的需求，可以帮您更快的找到合适的设计师哦" class="summary-textarea"></textarea>-->
         <!--</div>-->
     </div>
 
@@ -147,13 +154,13 @@
 
     <div>
         <div class="footer-tip">共3问当前第{{state}}问&nbsp;&nbsp;
-            <a class="link"  *ngIf="state < 3"   tappable (click)="openPage()">提交问卷</a>
+            <a class="link" *ngIf="state < 3" tappable (click)="openPage()">提交问卷</a>
         </div>
-        <button     tappable (click)="nextOrFinish()" *ngIf="state < 3" class="tip-button">下一问 ></button>
-        <button     tappable (click)="nextOrFinish()" *ngIf="state === 3" class="tip-button">确认提交</button>
+        <button tappable (click)="nextOrFinish()" *ngIf="state < 3" class="tip-button">下一问 ></button>
+        <button tappable (click)="nextOrFinish()" *ngIf="state === 3" class="tip-button">确认提交</button>
     </div>
-    <div class="jump-question">
-        <div *ngIf="state < 3">跳过</div>
-    </div>
+    <!--<div class="jump-question">-->
+    <!--<div *ngIf="state < 3">跳过</div>-->
+    <!--</div>-->
 
 </ion-footer>

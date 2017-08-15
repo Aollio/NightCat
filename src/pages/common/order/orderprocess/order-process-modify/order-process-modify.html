@@ -57,7 +57,7 @@
     <!--</div>-->
     <div class="my-order">
         <div class="my-list">
-            <div class="my-list-l"><img [src]="project&&project.img_urls[0] ||'/assets/img/project-default-img.png'"/>
+            <div class="my-list-l"><img [src]="project&& project.img_urls && project.img_urls[0] ||'assets/img/project-default-img.png'"/>
             </div>
             <div class="my-list-r">{{project&&project.title||"未填写"}}</div>
         </div>

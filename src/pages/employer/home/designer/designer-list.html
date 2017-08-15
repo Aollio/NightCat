@@ -23,7 +23,7 @@
 
     <designer-item-max *ngFor="let des of designers" [designer]="des"></designer-item-max>
 
-    <div *ngIf="designers && designers.length == 0" class="no-list">
+    <div *ngIf="(designers && designers.length == 0)&&(syncComplete)" class="no-list">
         <ion-icon name="ios-people-outline"></ion-icon>
         <p>暂时没有设计师入驻</p>
     </div>

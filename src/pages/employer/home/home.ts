@@ -31,8 +31,9 @@ export class EmployerHomePage {
                 private shared: SharedService,
                 private util: Util,
                 public alertCtrl: AlertController,) {
-        this.showAlert();
-
+        if (this.shared.isLogin()) {
+            this.showAlert();
+        }
         this.isFirstLogin = shared.isFirstUse();
 
     }

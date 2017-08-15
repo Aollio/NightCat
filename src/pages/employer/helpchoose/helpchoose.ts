@@ -5,6 +5,7 @@ import {Tabs} from "ionic-angular/navigation/nav-interfaces";
 import {RecommendDesignerPage} from "../recommenddesigner/recommenddesigner";
 import {EmployerHomePage} from "../home/home";
 import {EmployerModulePage} from "../employer";
+import {DesignerListPage} from "../home/designer/designer-list";
 
 @Component({
     selector: 'page-helpchoose',
@@ -91,7 +92,8 @@ export class HelpChoosePage {
     nextOrFinish() {
         this.state++;
         if (this.state > 3) {
-            this.navCtrl.push(RecommendDesignerPage);
+            this.state = 3
+            this.navCtrl.push(DesignerListPage);
         }
     }
 
@@ -102,6 +104,10 @@ export class HelpChoosePage {
         if (this.state > 1) {
             this.state--;
         }
+    }
+
+    close() {
+        this.navCtrl.pop();
     }
 
     open(page) {

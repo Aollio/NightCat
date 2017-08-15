@@ -13,6 +13,7 @@ import {State} from "../../service/im/state.im";
 import {RegisterPage} from "../common/register/register";
 import {Slides} from 'ionic-angular';
 import {OrderProcessWaitcomment} from "../common/order/orderprocess/order-process-waitcomment/waitcomment";
+import {OrderProcessPayment} from "../common/order/orderprocess/order-process-payment/order-process-payment";
 
 
 @Component({
@@ -50,6 +51,9 @@ export class WelcomePage {
         }
     }
 
+    openTest() {
+        this.navCtrl.push(OrderProcessPayment, {})
+    }
 
     openChat() {
         this.navCtrl.push(ChatPage, {})

@@ -8,7 +8,8 @@
         <img *ngIf="shared.isDesModule()" class="my-img" src="assets/img/des_project_process4.png" alt=""/>
     </div>
     <div class="my-title">谢谢你</div>
-    <img class="my-icon" src="assets/img/ok.png"/>
+    <img class="my-icon"
+         [src]="isdesigner ? 'assets/img/ok_des.png' : 'assets/img/ok_emp.png'"/>
     <div class="my-subtitle">感谢你对夜猫的信任，期待再次合作感谢你对夜猫的信任，期待再次合作感谢你对夜猫的信任，期待再次合作感谢你对夜猫的信任，期待再次合作</div>
     <!--<div class="my-text">
         <textarea name="" id="" rows="5" placeholder="作品还满意吗？来做出您宝贵的评价"></textarea>
@@ -17,5 +18,7 @@
 </ion-content>
 <ion-footer>
     <!--<button ion-button full (click)="nav.pop()" [color]="shared.getPrimaryColor()">确定</button>-->
-    <div class="my-index"><button (click)="nav.pop()">确定</button></div>
+    <div class="my-index">
+        <button (click)="nav.pop()">确定</button>
+    </div>
 </ion-footer>

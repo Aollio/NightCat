@@ -79,7 +79,7 @@
     <!--<ion-input type="text" value="" placeholder="请输入设计面积"></ion-input>-->
     <!--</ion-item>-->
     <ion-item>
-        <ion-label floating>设计面积</ion-label>
+        <ion-label floating>设计面积(平方米)</ion-label>
         <ion-input [(ngModel)]="project.area" type="number"></ion-input>
     </ion-item>
     <div class="blank-10px"></div>
@@ -100,7 +100,7 @@
 
     <div class="blank-10px"></div>
     <ion-item>
-        <ion-label floating>工时</ion-label>
+        <ion-label floating>工时(小时)</ion-label>
         <ion-input [(ngModel)]="project.period" type="number"></ion-input>
     </ion-item>
     <div class="blank-10px"></div>
@@ -144,4 +144,5 @@
     <!--</div>-->
     <!--</div>-->
     <image-input [(ngModel)]="project.img_urls"></image-input>
+
 </ion-content>

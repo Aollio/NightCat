@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.scu.jlyemao" version="1.2.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.scu.jlyemao" version="1.2.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>建联夜猫</name>
     <description>建联夜猫</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">夜猫团队</author>
@@ -7,6 +7,7 @@
     <access origin="*" />
     <allow-navigation href="http://*/*" />
     <allow-navigation href="https://*/*" />
+    <allow-navigation href="tel:*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
@@ -23,8 +24,15 @@
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="500" />
+
     <platform name="android">
         <allow-intent href="market:*" />
+        <allow-navigation href="http://*/*" />
+        <allow-navigation href="https://*/*" />
+        <allow-navigation href="tel:*" />
+        <allow-intent href="http://*/*" />
+        <allow-intent href="https://*/*" />
+        <allow-intent href="tel:*" />
         <icon density="ldpi" src="resources/android/icon/mipmap-ldpi/ic_launcher.png" />
         <icon density="mdpi" src="resources/android/icon/mipmap-mdpi/ic_launcher.png" />
         <icon density="hdpi" src="resources/android/icon/mipmap-hdpi/ic_launcher.png" />
@@ -38,8 +46,10 @@
         <splash density="port-xxhdpi" src="resources/android/splash/Default-736h.png" />
         <splash density="port-xxxhdpi" src="resources/android/splash/Default-736h.png" />
     </platform>
+
     <platform name="ios">
         <allow-intent href="itms:*" />
+        <allow-intent href="tel:*" />
         <allow-intent href="itms-apps:*" />
         <icon height="57" src="resources/ios/icon/icon.png" width="57" />
         <icon height="114" src="resources/ios/icon/icon@2x.png" width="114" />
@@ -82,6 +92,7 @@
     <plugin name="cordova-sqlite-storage" spec="~2.0.4" />
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
     <plugin name="com.synconset.imagepicker" spec="~2.1.8">
-        <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value="your usage message" />
+        <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value="yourusagemessage" />
     </plugin>
+    <plugin name="cordova-plugin-crosswalk-webview" />
 </widget>

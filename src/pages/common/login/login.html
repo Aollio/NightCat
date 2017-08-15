@@ -29,7 +29,8 @@
         <!--</div>-->
 
         <div class="myInput">
-            <input type="text" placeholder="请输入账号" name="phone" [(ngModel)]="user.phone" [ngModelOptions]="{standalone: true}"/>
+            <input type="text" placeholder="请输入账号" name="phone" [(ngModel)]="user.phone"
+                   [ngModelOptions]="{standalone: true}"/>
         </div>
 
         <div class="myInput">
@@ -56,9 +57,9 @@
         <button ion-button round class="login-btn" tappable (click)="login()">登录</button>
 
 
-        <button ion-button clear full class="forget-passowrd" tappable (click)="openResetPasswordPage()">
-            忘记密码？
-        </button>
+        <!--<button ion-button clear full class="forget-passowrd" tappable (click)="openResetPasswordPage()">-->
+        <!--忘记密码？-->
+        <!--</button>-->
         <div (click)="openRegisterPage()" class="tip">还没有账号吗？<a class="order-id">点击我注册</a></div>
     </div>
 

@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {Http, Headers} from "@angular/http";
-import {Platform, Events} from "ionic-angular";
+import {Events} from "ionic-angular";
 import {Util} from "./util";
 import {SharedService} from "./share.service";
 import 'rxjs/add/operator/toPromise';
@@ -13,9 +13,8 @@ export class NetworkService {
     private isWebCore: boolean;
 
     constructor(public http_browser: Http,
-                // private http_mobile: Http,
+                // private http_mobile: HTTP,
                 private util: Util,
-                private platform: Platform,
                 private event: Events,) {
         // this.isWebCore = this.platform.is('core') || this.platform.is('mobileweb');
         this.isWebCore = true;
@@ -52,7 +51,7 @@ export class NetworkService {
      * @param param
      * @returns {Promise<any>}
      */
-    async get(url, param = {}, header = {}): Promise<any> {
+    async get (url, param = {}, header = {}): Promise<any> {
         console.log("\n get url", url);
         console.log("get params", param);
 
@@ -121,9 +120,10 @@ export class NetworkService {
             throw {status: 401, message: 'TOKEN NOT EXIST'}
         }
         param['token'] = this.token;
-        // header['token'] = this.token
         return await this.post(url, param, header)
     }
+
+    // async postWithOur()
 
     /**
      * 返回get请求是的body部分的许诺,转化为json对象.
@@ -221,10 +221,17 @@ export class NetworkService {
             return "";
         }
         let str = [];
-        for (let p in obj)
-            if (obj[p]) {
+        for (let p in obj) {
+            if (p == "file") {
+                str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+                continue
+            }
+            if (obj[p] != null) {
+                console.log("参数p不存在")
+                console.log(p)
                 str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
             }
+        }
         return str.join("&");
     }
 

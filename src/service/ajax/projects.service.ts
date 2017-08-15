@@ -247,7 +247,15 @@ export class ProjectService {
     }
 
 
+    async man(id) {
+        let response = await this.http.postWithToken(this.urls.project_man, {id: id})
 
+        if (response.status != 200) {
+            throw response || response.message;
+        }
+
+        return response.content
+    }
 }
 
 

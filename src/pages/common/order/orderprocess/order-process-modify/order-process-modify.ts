@@ -23,9 +23,9 @@ export class OrderProcessModifyPage {
 
     constructor(private navCtrl: NavController,
                 private shared: SharedService,
-                private util:Util,
-                private nav:NavController,
-                private projectServ:ProjectService,
+                private util: Util,
+                private nav: NavController,
+                private projectServ: ProjectService,
                 private navParams: NavParams,
                 private alertCtrl: AlertController) {
         this.project = this.navParams.get("project");
@@ -34,7 +34,7 @@ export class OrderProcessModifyPage {
 
 
     openDetailPage() {
-        this.navCtrl.push(ProjectDetailPage,{project:this.project});
+        this.navCtrl.push(ProjectDetailPage, {project: this.project});
     }
 
     openPushProject() {
@@ -135,6 +135,7 @@ export class OrderProcessModifyPage {
         this.nav.push(CancelProjectPage, {projectId: this.project.id});
     }
 
+
     showAlert() {
         let confirm = this.alertCtrl.create({
             title: '审图',
@@ -144,6 +145,10 @@ export class OrderProcessModifyPage {
                     text: '确认',
                     handler: () => {
                         console.log('Disagree clicked');
+                        this.projectServ.man(this.project.id).then(() => {
+                            this.util.toast("会审成功")
+                            this.navCtrl.pop();
+                        })
                     }
                 },
                 {
@@ -157,25 +162,25 @@ export class OrderProcessModifyPage {
         confirm.present();
     }
 
-    designerConfirm(){
+    designerConfirm() {
         this.projectServ.designerConfirm(this.project.id)
-            .then(()=>{
-                    this.nav.pop();
-            }).catch(error=>{
+            .then(() => {
+                this.nav.pop();
+            }).catch(error => {
             console.log(error);
             this.util.toast("确认失败，请稍后再试");
         })
     }
 
     openPublishTask() {
-        this.nav.push(PublishTaskPage, {project:this.project});
+        this.nav.push(PublishTaskPage, {project: this.project});
     }
 
-    commitProject(){
+    commitProject() {
         this.projectServ.commit(this.project.id)
-            .then(()=>{
+            .then(() => {
                 this.nav.pop();
-            }).catch(error=>{
+            }).catch(error => {
             console.log(error);
             this.util.toast("确认失败，请稍后再试");
         })

@@ -13,7 +13,6 @@ import {ChooseDesignerPage} from "../../pages/employer/choosedesigner/choosedesi
 import {OrderProcessPreSelectedPage} from "../../pages/common/order/orderprocess/order-process-pre-selectdes/order-process-pre-selectdes";
 import {CommentOrderPage} from "../../pages/common/order/comment-order/comment-order";
 
-declare let initializeFontSize: any
 
 @Component({
     selector: 'employer-project-status',
@@ -23,10 +22,6 @@ declare let initializeFontSize: any
 export class EmployerProjectStatusComponent {
 
 
-    ionViewDidEnter() {
-
-    }
-
     constructor(private nav: NavController,
                 private projServ: ProjectService,
                 private util: Util,
@@ -35,6 +30,7 @@ export class EmployerProjectStatusComponent {
     }
 
     private _project;
+
     private status;
 
     private statusText = [
@@ -67,6 +63,7 @@ export class EmployerProjectStatusComponent {
         else if (project.status == 8 || project.status == 9) {
             this.nav.push(OrerProcessCompleted, {project: project});
         }
+
         else {
             this.nav.push(OrderProcessModifyPage, {project: project});
         }
@@ -82,7 +79,22 @@ export class EmployerProjectStatusComponent {
     }
 
     openPaymentPage() {
-        this.nav.push(OrderProcessPayment, {project: this._project});
+        console.log("使用预先联系客服支付")
+        let alert = this.alertCtrl.create({
+            title: '请联系客服人员支付订单',
+            subTitle: '13636534637',
+            buttons: [
+                {
+                    text: '确认',
+                    handler: () => {
+                        window.location.href = "tel:" + 13636534637;
+                        // alert.dismiss()
+                    }
+                }
+            ]
+        });
+        alert.present();
+        // this.nav.push(OrderProcessPayment, {project: this._project});
     }
 
     openWaitcommentPage() {
@@ -123,6 +135,9 @@ export class EmployerProjectStatusComponent {
                     text: '确认',
                     handler: () => {
                         console.log('Disagree clicked');
+                        this.projServ.man(this._project.id).then(() => {
+                            this.util.toast("会审成功")
+                        })
                     }
                 },
                 {
