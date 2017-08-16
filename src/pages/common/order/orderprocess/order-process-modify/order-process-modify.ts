@@ -9,6 +9,7 @@ import {ProjectService} from "../../../../../service/ajax/projects.service";
 import {Util} from "../../../../../service/util";
 import {DesignerMeDetailPage} from "../../../../designer/me/medetail/medetail";
 import {ChatPage} from "../../../../im/chat/chat";
+import {OrderProcessPreSelectedPage} from "../order-process-pre-selectdes/order-process-pre-selectdes";
 
 declare let initializeFontSize: any;
 
@@ -61,6 +62,10 @@ export class OrderProcessModifyPage {
             ]
         });
         confirm.present();
+    }
+
+    openDynamicProjectPage(){
+        this.nav.push(OrderProcessPreSelectedPage, {projectId: this.project.id});
     }
 
     showPutInAlert() {

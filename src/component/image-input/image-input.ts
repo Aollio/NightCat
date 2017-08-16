@@ -1,8 +1,8 @@
 import {Component, forwardRef} from '@angular/core';
 
-import {NavController} from "ionic-angular";
 import {ImageService} from "../../service/ajax/imgs.service";
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
+import {Events, NavController, Platform} from 'ionic-angular';
 
 
 const noop = () => {
@@ -27,7 +27,8 @@ export class ImageInputComponent implements ControlValueAccessor {
 
 
     constructor(private nav: NavController,
-                private imagesServ: ImageService) {
+                private imagesServ: ImageService,
+                private platform: Platform) {
     }
 
     uploading_img() {
@@ -44,6 +45,14 @@ export class ImageInputComponent implements ControlValueAccessor {
             })
             .catch(error => console.log(error))
 
+    }
+
+
+    show() {
+        if (this.platform.is("android")) {
+            return false;
+        }
+        return true;
     }
 
 

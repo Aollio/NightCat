@@ -87,7 +87,7 @@ export class EmployerProjectStatusComponent {
                 {
                     text: '确认',
                     handler: () => {
-                        window.location.href = "tel:" + 13636534637;
+                        // window.location.href = "tel:" + 13636534637;
                         // alert.dismiss()
                     }
                 }

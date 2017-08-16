@@ -1,25 +1,28 @@
 page-me-designer {
-  .slide-font-color{
+  .slide-font-color {
     color: #333;
   }
 
-  ion-item{
-    box-sizing: content-box!important;
-    border: 0!important;
-    .item-inner{
-      padding-left:0 !important;
-      border-bottom: 0.55px solid rgb(200, 199, 204)!important;
+  ion-item {
+    box-sizing: content-box !important;
+    border: 0 !important;
+    .item-inner {
+      padding-left: 0 !important;
+      border-bottom: 0.55px solid rgb(200, 199, 204) !important;
+    }
+
+    ion-icon {
+      margin-right: 1rem !important;
     }
   }
   .label {
     font-size: 1.5rem !important;
     color: #333 !important;
   }
-  ion-list{
-    margin-right: 2rem!important;
-  }
 
-
+  //ion-list {
+  //  margin-right: 2rem !important;
+  //}
 
   .me-header {
     background-color: map_get($colors, nav-des-bg);
@@ -36,7 +39,7 @@ page-me-designer {
     background-color: whitesmoke;
   }
 
-  .login_btn_wrapper{
+  .login_btn_wrapper {
     margin-top: 2rem;
     text-align: center;
   }
@@ -67,10 +70,14 @@ page-me-designer {
     text-align: center;
   }
 
-  ion-item {
-    padding-left: 1rem !important;
-  }
-  ion-item ion-icon{
+  //ion-item-divider {
+  //  width: 32rem !important;
+  //}
+  //
+  //ion-item {
+  //  padding-left: 1rem !important;
+  //}
+  ion-item ion-icon {
     color: #d9d9d9;
   }
 }

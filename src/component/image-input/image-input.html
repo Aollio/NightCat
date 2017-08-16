@@ -1,4 +1,4 @@
-<div class="images-upload">
+<div class="images-upload" *ngIf="show()">
     <div *ngFor="let img_url of imgs">
         <img [src]=img_url>
     </div>

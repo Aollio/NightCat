@@ -1,19 +1,23 @@
 page-me-employer {
 
-  ion-item{
-    box-sizing: content-box!important;
-    border: 0!important;
-    .item-inner{
-      padding-left:0 !important;
-      border-bottom: 0.55px solid rgb(200, 199, 204)!important;
+  ion-item {
+    box-sizing: content-box !important;
+    border: 0 !important;
+    .item-inner {
+      padding-left: 0 !important;
+      border-bottom: 0.55px solid rgb(200, 199, 204) !important;
+    }
+
+    ion-icon {
+      margin-right: 1rem !important;
     }
   }
   .label {
     font-size: 1.5rem !important;
     color: #333 !important;
   }
-  .ion-list{
-    margin-right: 2rem!important;
+  .ion-list {
+    margin-right: 2rem !important;
   }
 
   .me-header {
@@ -29,7 +33,7 @@ page-me-employer {
     height: 8rem;
     width: 8rem;
     border-width: .15rem;
-    background-color:whitesmoke;
+    background-color: whitesmoke;
   }
 
   .me-avatar img {
