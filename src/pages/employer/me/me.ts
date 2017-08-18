@@ -69,6 +69,8 @@ export class EmployerMePage {
     exitApp() {
 
         if (!this.shared.isLogin()) {
+            // this.navCtrl.push(WelcomePage, {state: 2});
+            //
             let profileModal = this.modalCtrl.create(WelcomePage, {state: 2});
             profileModal.present();
             return;
@@ -83,6 +85,8 @@ export class EmployerMePage {
                 handler: data => {
                     this.shared.clearCurrentUser();
                     this.http.clearToken();
+
+
                     let profileModal = this.modalCtrl.create(WelcomePage, {state: 2});
                     profileModal.present();
                 }

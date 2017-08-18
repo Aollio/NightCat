@@ -79,9 +79,24 @@ export class SlideMenuComponment {
     }
 
     exitApp() {
-        // this.platform.exitApp();
-        this.shared.clearCurrentUser();
-        this.http.clearToken();
-        this.navCtrl.push(WelcomePage, {state: 2});
+        if (!this.shared.isLogin()) {
+            this.navCtrl.push(WelcomePage, {state: 2});
+            return;
+        }
+
+        this.alertCtrl.create({
+            subTitle: "是否退出？",
+            buttons: [{
+                text: "取消",
+            }, {
+                text: "确定",
+                handler: data => {
+                    this.shared.clearCurrentUser();
+                    this.http.clearToken();
+
+                    this.navCtrl.push(WelcomePage, {state: 2});
+                }
+            }]
+        }).present();
     }
 }

@@ -8,6 +8,9 @@ export class Util {
     //NOTE!!!单例的初始化在IMService中初始化
     public static INSTANCE: Util;
 
+
+    public nav=null
+
     constructor(private loaderCtrl: LoadingController,
                 private toastCtrl: ToastController,
                 private modal: ModalController) {

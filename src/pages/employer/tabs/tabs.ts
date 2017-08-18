@@ -11,6 +11,7 @@ import {ProjectsPage} from "../projects/projects";
 import {MiddleWarePage} from "../helpchoose/middleware/middleware";
 import {PublishTaskMiddleWarePage} from "../publish-task-middleware/publish-task-middleware";
 import {IMPage} from "../../im/im";
+import {Util} from "../../../service/util";
 @Component({
     selector: 'page-employer-tabs',
     templateUrl: 'tabs.html'
@@ -27,7 +28,8 @@ export class EmployerTabsPage {
 
 
     constructor(public navCtrl: NavController, public platform: Platform,
-                public statusBar: StatusBar, public splashScreen: SplashScreen) {
+                public statusBar: StatusBar, public splashScreen: SplashScreen,
+                public util:Util) {
         this.navCtrl.swipeBackEnabled = false
     }
 

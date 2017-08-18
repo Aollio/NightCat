@@ -53,7 +53,10 @@
 </ion-content>
 
 <ion-footer>
-    <button class="exitbtn" ion-button [color]="shared.getPrimaryColor()" full tappable (click)="exitApp()">
+    <button class="exitbtn" *ngIf="shared.isLogin()" ion-button [color]="shared.getPrimaryColor()" full tappable (click)="exitApp()">
         退出
+    </button>
+    <button class="exitbtn" *ngIf="!shared.isLogin()" ion-button [color]="shared.getPrimaryColor()" full tappable (click)="exitApp()">
+        选择角色
     </button>
 </ion-footer>

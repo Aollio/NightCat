@@ -35,6 +35,9 @@ export class EmployerHomePage {
             this.showAlert();
         }
         this.isFirstLogin = shared.isFirstUse();
+        console.log("sdasdasda")
+        console.log(this.util.nav)
+
 
     }
 

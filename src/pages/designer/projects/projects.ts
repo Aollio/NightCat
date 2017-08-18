@@ -62,7 +62,7 @@ export class DesignerProjectsPage {
         this.date = new Date();
 
         if(!this.shared.isLogin()){
-
+            this.syncComplete=true;
             this.modal.create(LoginPage).present();
             return;
         }

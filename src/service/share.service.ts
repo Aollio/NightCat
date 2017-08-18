@@ -128,7 +128,7 @@ export class SharedService {
 //用户是否登录
     isLogin() {
         let isLogin = !this.util.isEmptyObj(this.currentUser);
-        console.log('isLogin', isLogin);
+        // console.log('isLogin', isLogin);
         return isLogin;
     }
 

@@ -27,6 +27,7 @@ export class FirstPage {
             util.toast('授权过期或者未登录');
             this.util.presentLoginPage(this.nav);
         })
+        this.util.nav = this.nav;
 
     }
 
@@ -54,7 +55,7 @@ export class FirstPage {
         this.userServ.getInfo(localStorage[SharedService.TOKEN].split("_")[0])
             .then(user => {
                 this.shared.setCurrentUser(user);
-                this.gotoHome(user.type);
+                this.gotoHome(user.role);
             }).catch(error => {
             console.log(error);
             this.gotoWelcome({state: 2});

@@ -1,22 +1,20 @@
 page-me-designer {
 
-  ion-item{
-    box-sizing: content-box!important;
-    border: 0!important;
-    .item-inner{
-      padding-left:0 !important;
-      border-bottom: 0.55px solid rgb(200, 199, 204)!important;
+  ion-item {
+    box-sizing: content-box !important;
+    border: 0 !important;
+    .item-inner {
+      padding-left: 0 !important;
+      border-bottom: 0.55px solid rgb(200, 199, 204) !important;
     }
   }
   .label {
     font-size: 1.5rem !important;
     color: #333 !important;
   }
-  ion-list{
-    margin-right: 2rem!important;
+  ion-list {
+    margin-right: 2rem !important;
   }
-
-
 
   .me-header {
     background-color: map_get($colors, nav-des-bg);
@@ -25,26 +23,26 @@ page-me-designer {
   }
 
   .me-header .me-avatar {
-    border-radius: 4rem;
-    text-align: center;
+    border-radius: 50%;
+
     margin: auto;
     height: 8rem;
     width: 8rem;
     background-color: whitesmoke;
+    img {
+      width: 100%;
+      height: 100%;
+      //max-width: 7rem;
+      //min-width: 7rem;
+      //margin-top: 1.5rem;
+    }
   }
 
-  .login_btn_wrapper{
+  .login_btn_wrapper {
     margin-top: 2rem;
     text-align: center;
   }
 
-  .me-avatar img {
-    width: 5rem !important;
-    height: 5rem !important;
-    //max-width: 7rem;
-    //min-width: 7rem;
-    margin-top: 1.5rem;
-  }
   .me-header .me-name {
     text-align: center;
     font-size: 2rem;
@@ -67,7 +65,7 @@ page-me-designer {
   ion-item {
     padding-left: 1rem !important;
   }
-  ion-item ion-icon{
+  ion-item ion-icon {
     color: #d9d9d9;
   }
 }
