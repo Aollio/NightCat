@@ -87,6 +87,7 @@ export class DesignerProjectStatusComponent {
     commitProject() {
         this.projectServ.commit(this._project.id)
             .then(() => {
+                // this.util.toast("提交成功");
                 this.nav.pop();
             }).catch(error => {
             console.log(error);

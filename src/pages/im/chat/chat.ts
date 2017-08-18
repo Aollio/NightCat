@@ -29,10 +29,6 @@ export class ChatPage {
     me;
 
 
-    ionViewDidEnter() {
-        this.scollToBottom();
-    }
-
     constructor(public param: NavParams,
                 public util: Util,
                 public imServ: ImService,
@@ -58,7 +54,7 @@ export class ChatPage {
             .then((obj) => {
                 loading.dismiss()
                 console.log(state)
-                this.msglist = state.currSessionMsgs
+                this.msglist = state.currSessionMsgs;
             })
             .catch((err) => {
                 console.log('chat set session id failed')
@@ -73,11 +69,6 @@ export class ChatPage {
 
     }
 
-    scollToBottom() {
-        console.log("scoll to buttom")
-        let scrolls = document.getElementsByClassName("scroll-content");
-        scrolls[scrolls.length - 1].scrollTop = scrolls[scrolls.length - 1].scrollHeight;
-    }
 
     sendMessage() {
         if (this.message == null || this.message == '') {
@@ -88,26 +79,54 @@ export class ChatPage {
             .then((message) => {
                 console.log('发送消息成功', message)
                 this.message = ""
+
+                this.scroll2bottom();
             })
             .catch((error) => console.log('发送消息失败', error))
     }
 
 
-// <ion-content>
-// <div class="chat">
-//     <div class="messages">
-//     <div class="messages-content">
-//     <div *ngFor="let nofitications of msglist">
-//     <div class="nofitications" [class.nofitications-personal]="nofitications.flow === 'out'">
-//         {{ nofitications.showText }}
-// <div class="timestamp"> {{ nofitications.showTime }}</div>
-// </div>
-// </div>
-// </div>
-// </div>
-//
-// </div>
-// <div class="bg"></div>
-//     </ion-content>
+    scroll;
+
+    ionViewDidLoad() {
+        this.scroll = document.querySelector("page-chat .messages");
+
+        setTimeout(()=>{
+            this.scroll.scrollTop = this.scroll.scrollHeight;
+        },100)
+    }
+
+    scroll2bottom() {
+        this.scroll_To(this.scroll, this.scroll.scrollHeight - this.scroll.clientHeight);
+    }
+
+    //滚动条函数封装
+    scroll_To(element, tar_y) { //tar_y 即滑动条顶端 距离页面最上面的距离
+        let step = 40; //步长系数 即剩余的距离除以40 每1ms 移动一段距离
+
+        let timer = setTimeout(() => {
+            let current_y = element.scrollTop;
+            if (tar_y > current_y) { //即向下滚动
+                let dist = Math.ceil((tar_y - current_y) / step)
+                let next_y = current_y + dist
+                if (next_y < tar_y) {
+                    element.scrollTop = next_y;
+                    this.scroll_To(element, tar_y)
+                } else {
+                    element.scrollTop = tar_y;
+                }
+            } else { // 即向上滚动
+                let dist = Math.floor((tar_y - current_y) / step)
+                let next_y = current_y + dist
+                if (next_y > tar_y) {
+                    element.scrollTop = next_y;
+                    this.scroll_To(element, tar_y)
+                } else {
+                    element.scrollTop = tar_y;
+                }
+            }
+        }, 1)
+    }
+
 
 }

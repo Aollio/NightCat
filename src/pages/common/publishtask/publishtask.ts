@@ -83,7 +83,7 @@ export class PublishTaskPage {
         type: 0,
         title: null,
         content: null,
-        budget: null,
+        budget: 0,
         due_time: new Date().toISOString(),
         area: null,
         area_count: 1,
@@ -241,7 +241,7 @@ export class PublishTaskPage {
 
         if (project.title && project.title.trim() != "") return true;
         if (project.content && project.content.trim() != "") return true;
-        if (project.budget && project.content.trim() != "") return true;
+        if (project.budget != 0) return true;
         if (project.area && project.area.trim() != "") return true;
         if (project.area_count != 1) return true;
         if (project.period && project.period.trim() != "") return true;

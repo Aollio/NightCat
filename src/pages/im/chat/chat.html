@@ -25,31 +25,31 @@
     <!--todo  例子-->
 
     <!--<div class="messages">-->
-        <!--<div class="message-box">-->
-            <!--<div class="avatar">-->
-                <!--<img src="assets/img/des-2.png"/>-->
-            <!--</div>-->
-            <!--<div class="bubble">-->
-                <!--<p>The top open source framework The top open source framework</p>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="message-box send">-->
-            <!--<div class="avatar">-->
-                <!--<img src="assets/img/des-2.png"/>-->
-            <!--</div>-->
-            <!--<div class="bubble">-->
-                <!--<p>The top open source framework</p>-->
-            <!--</div>-->
-        <!--</div>-->
-<!---->
-        <!--<div class="message-box">-->
-            <!--<div class="avatar">-->
-                <!--<img src="assets/img/des-2.png"/>-->
-            <!--</div>-->
-            <!--<div class="bubble">-->
-                <!--<p>The top rk</p>-->
-            <!--</div>-->
-        <!--</div>-->
+    <!--<div class="message-box">-->
+    <!--<div class="avatar">-->
+    <!--<img src="assets/img/des-2.png"/>-->
+    <!--</div>-->
+    <!--<div class="bubble">-->
+    <!--<p>The top open source framework The top open source framework</p>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="message-box send">-->
+    <!--<div class="avatar">-->
+    <!--<img src="assets/img/des-2.png"/>-->
+    <!--</div>-->
+    <!--<div class="bubble">-->
+    <!--<p>The top open source framework</p>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!---->
+    <!--<div class="message-box">-->
+    <!--<div class="avatar">-->
+    <!--<img src="assets/img/des-2.png"/>-->
+    <!--</div>-->
+    <!--<div class="bubble">-->
+    <!--<p>The top rk</p>-->
+    <!--</div>-->
+    <!--</div>-->
     <!--</div>-->
 
     <!--<div class="my-dd">-->
@@ -73,15 +73,9 @@
 
 </ion-content>
 
-<ion-footer class="ion-footer-msg">
-    <div class="message-box-input">
-        <ion-input type="text"
-                   [(ngModel)]="message"
-                   class="message-input" placeholder="Type message..."></ion-input>
-        <button tappable (click)="sendMessage()"
-                ion-button
-                [color]="miancolor"
-                class="message-submit">Send
-        </button>
-    </div>
+<ion-footer class="footer">
+    <ion-input class="message-input" type="text" [(ngModel)]="message"></ion-input>
+    <button class="message-send-btn" ion-button small float-end
+            (click)="sendMessage()" [color]="miancolor" [disabled]="message==''">发送
+    </button>
 </ion-footer>

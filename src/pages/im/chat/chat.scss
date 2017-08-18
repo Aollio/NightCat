@@ -2,17 +2,25 @@ page-chat {
   /*--------------------
 Mixins
 --------------------*/
-  .content-ios{
-    background-color: #f4f4f4;
+  $bg-color: #f4f4f4;
+  $receive-bubble: white;
+  $send-bubble: #2683f5;
+
+  .scroll-content {
+    height: calc(100% - 8rem);
   }
 
+  .content-ios {
+    background-color: $bg-color;
+  }
 
   .messages {
+    height: 100%;
+    overflow: scroll;
 
-    #bottom-message{
+    #bottom-message {
       height: 0;
     }
-
 
     .message-box {
       margin: 2.5rem 0;
@@ -33,20 +41,20 @@ Mixins
 
       .bubble {
         position: relative;
-        margin-top: 0.5rem;
+        margin: 0.5rem 0.5rem;
         max-width: 70%;
-        background-color: white;
+        background-color: $receive-bubble;
         border-radius: 1rem;
         padding: 1rem;
 
-        :before{
+        :before {
           content: '';
           position: absolute;
           left: -0.5rem;
           top: 0.5rem;
           width: 0.7rem;
           height: 1rem;
-          background-color: white;
+          background-color: $receive-bubble;
           border-top-left-radius: 0.7rem 1rem;
           transform: rotate(-60deg);
         }
@@ -57,25 +65,21 @@ Mixins
       }
     }
 
-
-    .send{
+    .send {
       flex-direction: row-reverse;
-      .bubble{
-        background-color: #2683f5;
+      .bubble {
+        background-color: $send-bubble;
         color: #eeeeee;
-        ::before{
+        ::before {
           left: auto;
           right: -0.5rem;
-          background-color: #2683f5;
+          background-color: $send-bubble;
           transform: scaleX(-1) rotate(-60deg);
         }
       }
     }
 
   }
-
-
-
 
   //}
   //.my-dl {
@@ -281,22 +285,46 @@ Mixins
   //  font-size: 1.3rem;
   //}
 
-  .message-box-input {
-    display: -webkit-box;
-    background-color: #e6e6e6;
-    height: 45px;
-  }
-  .message-input {
-    background-color: #e6e6e6;
-    width: auto;
-    padding: 0 5px;
-    height: 45px;
-  }
-  .message-submit {
-    background-color: #4a87ee;
-    width: 60px;
-    height: 45px !important;
-    font-size: 1rem;
-    font-weight: 400;
+  //.message-box-input {
+  //  display: -webkit-box;
+  //  background-color: #e6e6e6;
+  //  height: 45px;
+  //}
+  //.message-input {
+  //  background-color: #e6e6e6;
+  //  width: auto;
+  //  padding: 0 5px;
+  //  height: 45px;
+  //}
+  //.message-submit {
+  //  background-color: #4a87ee;
+  //  width: 60px;
+  //  height: 45px !important;
+  //  font-size: 1rem;
+  //  font-weight: 400;
+  //}
+
+  .footer {
+    display: flex;
+    height: 4rem;
+    padding: 0.5rem 1rem;
+    background-color: $bg-color;
+
+    .message-input {
+      height: 3rem;
+      background-color: white;
+      border-radius: 0.5rem;
+      padding-right: 0.5rem;
+      margin-right: 0.5rem;
+      input {
+        height: 2rem;
+        margin: 0.5rem;
+      }
+    }
+    .message-send-btn {
+      margin: 0;
+      height: 3rem !important;
+      //height: 100%;
+    }
   }
 }
