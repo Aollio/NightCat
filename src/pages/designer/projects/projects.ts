@@ -5,6 +5,7 @@ import {ProjectService} from "../../../service/ajax/projects.service";
 import {Util} from "../../../service/util";
 import {LoginPage} from "../../common/login/login";
 import {ModalController} from "ionic-angular";
+
 declare let initializeFontSize: any
 
 @Component({
@@ -17,7 +18,7 @@ export class DesignerProjectsPage {
     type: any = 1;
 
     constructor(private shared: SharedService,
-                private modal:ModalController,
+                private modal: ModalController,
                 private projectServ: ProjectService,
                 private util: Util) {
     }
@@ -36,8 +37,6 @@ export class DesignerProjectsPage {
     // }
 
 
-
-
     // //todo 内容刷新
     // doRefresh(refresher) {
     //     console.log('Begin async operation', refresher);
@@ -49,21 +48,17 @@ export class DesignerProjectsPage {
     // }
 
 
-
-
-
     processType: any = [0];
 
     private projects = [];
     private currentProjs = [];
 
 
-
     //start 内容刷新
     private date;
 
     ionViewDidEnter() {
-        if(!this.shared.isLogin()){
+        if (!this.shared.isLogin()) {
             this.modal.create(LoginPage).present();
         }
 

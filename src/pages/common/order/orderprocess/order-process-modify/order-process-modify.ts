@@ -28,7 +28,8 @@ export class OrderProcessModifyPage {
                 private nav: NavController,
                 private projectServ: ProjectService,
                 private navParams: NavParams,
-                private alertCtrl: AlertController) {
+                private alertCtrl: AlertController
+    ) {
         this.project = this.navParams.get("project");
         this.status = this.project.status;
     }
