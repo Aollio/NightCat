@@ -59,13 +59,10 @@ export class DesignerProjectsPage {
 
     private syncComplete = false;
     ionViewDidEnter() {
-<<<<<<< HEAD
         this.date = new Date();
 
         if(!this.shared.isLogin()){
-=======
-        if (!this.shared.isLogin()) {
->>>>>>> 715591593eb84abaf36d2a3aeef405f8eff19f3a
+
             this.modal.create(LoginPage).present();
             return;
         }
