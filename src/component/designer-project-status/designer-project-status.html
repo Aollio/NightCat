@@ -11,8 +11,6 @@
 
             <div class="my-li-right-b">
                 <div class="my-li-right-b-l" *ngIf="status==0">{{_project.grab_count||0}}人抢单</div>
-
-
                 <div class="my-li-right-b-l my-li-right-b-money" *ngIf="status >= 1 &&status <= 5">
                     ¥{{_project.budget}}元
                 </div>
@@ -38,7 +36,7 @@
     <div class="my-bottom">
         <div class="my-bottom-li act" *ngIf="status==1" (click)="designerConfirm()">接单</div>
         <div class="my-bottom-li act" *ngIf="status==2" (click)="openPublishTask()">完善订单</div>
-        <div class="my-bottom-li act" *ngIf="status==4" (click)="commitProject()">确认交付</div>
+        <div class="my-bottom-li act" *ngIf="status==5" (click)="commitProject()">确认交付</div>
         <!--todo 取消按钮-->
     </div>
 

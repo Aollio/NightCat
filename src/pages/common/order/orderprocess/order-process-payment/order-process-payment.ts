@@ -1,7 +1,7 @@
 import {Component} from "@angular/core";
 import {ProjectDetailPage} from "../../orderdetail/projectdetail";
 import {SharedService} from "../../../../../service/share.service";
-import {NavController, NavParams} from 'ionic-angular';
+import {NavController, NavParams, AlertController} from 'ionic-angular';
 import {ProjectService} from "../../../../../service/ajax/projects.service";
 import {Util} from "../../../../../service/util";
 import {NetworkService} from "../../../../../service/network.service";
@@ -43,7 +43,7 @@ export class OrderProcessPayment {
                 public util: Util,
                 public platform: Platform,
                 public http: NetworkService,
-    ) {
+                private alertCtrl: AlertController) {
         this.project = navParams.get("project")
 
         // console.log("进入支付页")
@@ -72,10 +72,29 @@ export class OrderProcessPayment {
 
     toPay() {
         console.log("toPay");
+
+        console.log("使用预先联系客服支付")
+        let alert = this.alertCtrl.create({
+            title: '请联系客服人员支付订单',
+            subTitle: '13636534637',
+            buttons: [
+                {
+                    text: '确认',
+                    handler: () => {
+                        // window.location.href = "tel:" + 13636534637;
+                        // alert.dismiss()
+                        this.navCtrl.pop();
+                    }
+                }
+            ]
+        });
+        alert.present();
+        // this.nav.push(OrderProcessPayment, {project: this._project});
+
         // this.projServ.money(this.project.id)
         //     .then(() => {
-        this.util.toast("支付成功")
-        this.navCtrl.pop();
+        // this.util.toast("支付成功")
+        // this.navCtrl.pop();
         // })
         // .catch((error) => this.util.toast(error))
 
@@ -87,16 +106,16 @@ export class OrderProcessPayment {
 
         // const alipayOrder: AlipayOrder = {
         //     todo
-            // app_id: "",
-            // method: "alipay.trade.app.pay",
-            // sign_type: "",
-            // sign: "",
-            // timestamp: this.util.currentformat(),
-            // notify_url: "",
-            // biz_content: "",
-            // charset: "UTF-8",
-            // format: "JSON",
-            // version: "1.0"
+        // app_id: "",
+        // method: "alipay.trade.app.pay",
+        // sign_type: "",
+        // sign: "",
+        // timestamp: this.util.currentformat(),
+        // notify_url: "",
+        // biz_content: "",
+        // charset: "UTF-8",
+        // format: "JSON",
+        // version: "1.0"
         // };
         //
         // this.alipay.pay(alipayOrder)
@@ -109,7 +128,7 @@ export class OrderProcessPayment {
         //         console.log(error); // Failed
         //         this.util.toast(error && error.message || "支付失败")
         //     });
-    //
+        //
 
     }
 
