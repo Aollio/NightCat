@@ -18,7 +18,7 @@
                  class="header-number">
             <!--todo 成交数-->
             <div class="number-detail">
-                0
+                {{completeCount||0}}
             </div>
             <div class="number-label">
                 成交数
@@ -89,6 +89,6 @@
 
     <employer-project-status *ngFor="let project of currentProjs" [project]="project"></employer-project-status>
 
-    <no-project *ngIf="currentProjs.length===0"></no-project>
+    <no-project *ngIf="currentProjs.length===0&&syncComplete"></no-project>
 
 </ion-content>

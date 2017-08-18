@@ -62,13 +62,24 @@ export class DesignerProjectsPage {
     //start 内容刷新
     private date;
 
+    private syncComplete = false;
     ionViewDidEnter() {
+        this.date = new Date();
+
         if(!this.shared.isLogin()){
             this.modal.create(LoginPage).present();
+            return;
         }
 
-        this.date = new Date();
+        let loading = this.util.createLoading("加载中");
+        loading.present();
+
+
         this._doRefresh(() => {
+            this.countComplete();
+
+            loading.dismiss();
+            this.syncComplete = true;
         });
         console.log("projects:", this.projects);
     }
@@ -81,12 +92,15 @@ export class DesignerProjectsPage {
             return;
         }
         this._doRefresh(() => {
-            refresher.complete()
+            refresher.complete();
+
+            this.countComplete();
         });
     }
 
     _doRefresh(completeFunc) {
         if (!this.shared.isLogin()) {
+            completeFunc();
             return;
         }
         this.projectServ.getUserProjects()
@@ -95,8 +109,8 @@ export class DesignerProjectsPage {
                 for (let project of projects) {
                     this.projects.push(project);
                 }
-                completeFunc();
                 this.select(this.processType);
+                completeFunc();
             })
             .catch(error => {
                 console.log(error);
@@ -116,6 +130,22 @@ export class DesignerProjectsPage {
             }
         }
     }
+
+
+
+    //完成数
+    private completeCount = 0;
+
+    //获得项目完成数
+    countComplete(){
+        this.completeCount=0;
+        for(let project of this.projects){
+            if([6,8,9].indexOf(project.status)>=0){
+                this.completeCount++;
+            }
+        }
+    }
+
 }
 
 

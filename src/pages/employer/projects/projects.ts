@@ -20,6 +20,9 @@ export class ProjectsPage {
     private projects = [];
     private currentProjs = [];
 
+    //完成数
+    private completeCount = 0;
+
     constructor(private shared: SharedService,
                 private modal: ModalController,
                 private projectServ: ProjectService,
@@ -29,13 +32,24 @@ export class ProjectsPage {
     //start 内容刷新
     private date;
 
+    private syncComplete = false;
     ionViewDidEnter() {
+        this.date = new Date();
+
         if (!this.shared.isLogin()) {
             this.modal.create(LoginPage).present();
+            this.syncComplete = true;
+            return;
         }
 
-        this.date = new Date();
+        let loading = this.util.createLoading("加载中");
+        loading.present();
+
         this._doRefresh(() => {
+            this.countComplete();
+
+            loading.dismiss();
+            this.syncComplete = true;
         });
         console.log("projects:", this.projects);
     }
@@ -44,12 +58,15 @@ export class ProjectsPage {
     doRefresh(refresher) {
         this._doRefresh(() => {
             refresher.complete()
+
+            this.countComplete();
         });
     }
 
     _doRefresh(completeFunc) {
         if (!this.shared.isLogin()) {
             this.util.toast("未登录！");
+            completeFunc();
             return;
         }
         this.projectServ.getUserProjects()
@@ -58,11 +75,13 @@ export class ProjectsPage {
                 for (let project of projects) {
                     this.projects.push(project);
                 }
-                completeFunc();
                 this.select(this.processType);
+
+                completeFunc();
             })
             .catch(error => {
                 console.log(error);
+
                 completeFunc();
             });
     }
@@ -76,6 +95,18 @@ export class ProjectsPage {
         for (let project of this.projects) {
             if (project && types.indexOf(project.status) >= 0) {
                 this.currentProjs.push(project);
+            }
+        }
+    }
+
+
+    //获得项目完成数
+    countComplete(){
+        this.completeCount=0;
+        console.log(this.projects)
+        for(let project of this.projects){
+            if([6,8,9].indexOf(project.status)>=0){
+                this.completeCount++;
             }
         }
     }
