@@ -51,7 +51,7 @@ export class NetworkService {
      * @param param
      * @returns {Promise<any>}
      */
-    async get (url, param = {}, header = {}): Promise<any> {
+    async get(url, param = {}, header = {}): Promise<any> {
         console.log("\n get url", url);
         console.log("get params", param);
 
@@ -63,9 +63,14 @@ export class NetworkService {
                     headers: new Headers(header)
                 }
                 response = await this.http_browser.get(url, _params).toPromise();
-                console.log("get response", response.json(), "\n");
 
-                return response.json();
+                let body = response.json()
+
+                console.log("get response", body, "\n");
+
+                if (body.status != 200) throw body
+
+                return body;
 
             } else {
                 //tdo
@@ -146,8 +151,14 @@ export class NetworkService {
                 let _headers = new Headers(headers);
 
                 response = await this.http_browser.post(url, this.trans(param), {headers: _headers}).toPromise();
-                console.log("post response", response.json(), "\n");
-                return response.json();
+
+                let body = response.json()
+
+                console.log("post response", body, "\n");
+
+                if (body.status != 200) throw body
+
+                return body;
 
             } else {
                 // console.log('开始post请求', '在手机中');
@@ -161,6 +172,7 @@ export class NetworkService {
         } catch (error) {
 
             this.showError(error);
+
             if (error && error.status != 0) {
                 throw error;
             }
