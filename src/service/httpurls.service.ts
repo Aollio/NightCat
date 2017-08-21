@@ -9,11 +9,11 @@ export class HttpUrls {
     // server_url: string = "http://192.168.100.154:3000";
 
     //test 服务器地址
-    // server_url: string = "http://yemaotest.shanghai-cu.com";
+    server_url: string = "http://yemaotest.shanghai-cu.com";
 
 
     // prod
-    server_url: string = "http://yemao.shanghai-cu.com";
+    // server_url: string = "http://yemao.shanghai-cu.com";
 
     //start 用户
     _users: string = this.server_url + "/users";
