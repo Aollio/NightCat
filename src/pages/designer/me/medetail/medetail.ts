@@ -18,6 +18,7 @@ export class DesignerMeDetailPage {
     btnState: any = 3;
     user: any = {};
     maincolor;
+    favorite: boolean = false;
     public isDesigner: boolean;
 
     honors = [];
@@ -68,6 +69,20 @@ export class DesignerMeDetailPage {
 
     }
 
+    ing = false;
+
+    favoriteHim(user){
+        if (this.shared.isLogin()) {
+
+            if (this.ing){
+                return
+            }
+            //todo
+            this.favorite=!this.favorite;
+        } else {
+            this.util.presentLoginPage(this.navCtrl);
+        }
+    }
 
     openExpCommenttDetail(exp) {
         this.navCtrl.push(CaseDetailPage, {exp: exp})

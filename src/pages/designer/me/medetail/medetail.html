@@ -37,18 +37,20 @@
     </ion-row>
 
     <div class="row_buttons" *ngIf="!shared.isDesModule()">
-        <!--<button ion-button round class="attention_btn"  (click)="attentionMe()">-->
-        <!--<ion-icon name="ios-heart"></ion-icon>-->
-        <!--&nbsp; 关 注 我-->
-        <!--</button>-->
-        <!--<button ion-button round icon-only class="sed_msg_btn"-->
-        <!--tappable (click)="openChat(user)">-->
-        <!--<ion-icon name="ios-chatbubbles"></ion-icon>-->
-        <!--</button>-->
-        <button ion-button round class="attention_btn chat" (click)="openChat(user)">
-            <ion-icon name="ios-chatbubbles"></ion-icon>
-            &nbsp; 联 系 我
+        <button tappable (click)="favoriteHim()" ion-button round class="attention_btn" (click)="attentionMe()">
+            <ion-icon *ngIf="favorite" name="ios-heart"></ion-icon>
+            <ion-icon *ngIf="!favorite" name="ios-heart-outline"></ion-icon>
+
+            &nbsp; 关 注 我
         </button>
+        <button ion-button round icon-only class="sed_msg_btn"
+                tappable (click)="openChat(user)">
+            <ion-icon name="ios-chatbubbles"></ion-icon>
+        </button>
+        <!--<button ion-button round class="attention_btn chat" (click)="openChat(user)">-->
+        <!--<ion-icon name="ios-chatbubbles"></ion-icon>-->
+        <!--&nbsp; 联 系 我-->
+        <!--</button>-->
     </div>
     <div class="card-personal-desc">
         <ion-item class="desc-header">
