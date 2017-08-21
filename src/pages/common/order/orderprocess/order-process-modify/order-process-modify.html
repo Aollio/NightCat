@@ -29,6 +29,10 @@
 
     <!--设计师   显示雇主-->
     <ion-card *ngIf="shared.isDesModule()" class="user" tappable (click)="openChat(project.creator)">
+        <!--<ion-item>雇主</ion-item>-->
+        <ion-card-content>
+            雇主
+        </ion-card-content>
         <ion-item>
             <ion-avatar class="avatar" item-start>
                 <img [src]='project&&project.creator&&project.creator.img_url||"assest/img/first.png"'/>
@@ -55,7 +59,7 @@
     <!--<div class="my-text-word">Ionic apps are made of high-level buildingIonic apps are made of high-level building</div>-->
     <!--</div>-->
     <!--</div>-->
-    <div class="my-order">
+    <ion-card >
         <div class="my-list">
             <div class="my-list-l"><img
                     [src]="project&& project.img_urls && project.img_urls[0] ||'assets/img/project-default-img.png'"/>
@@ -80,12 +84,15 @@
         <!--<div class="my-order-b-name">实付款</div>-->
         <!--<div class="my-order-b-val">￥50.00</div>-->
         <!--</div>-->
-    </div>
+    </ion-card>
 
 
     <!--雇主  显示接单用户-->
     <ion-card *ngIf="!shared.isDesModule()&&project&&project.bidder" class="user" tappable
               (click)="openDesignerPage(project.bidder)">
+        <ion-card-content>
+            设计师
+        </ion-card-content>
         <ion-item>
             <ion-avatar class="avatar" item-start>
                 <img [src]='project.bidder.img_url||"assest/img/first.png"'/>

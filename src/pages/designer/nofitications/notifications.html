@@ -16,7 +16,7 @@
     </ion-refresher>
 
     <ion-list>
-        <ion-card *ngFor="let notics of noticeses">
+        <ion-card *ngFor="let notics of noticeses" (click)="read(notics)">
             <ion-card-header class="msg-header">
                 <div class="msg-type">{{notics.type}}</div>
                 <div class="msg-time">{{formatTime(notics.create_time)}}</div>
@@ -25,6 +25,7 @@
                 <!--订单号<a class="order-id" (click)="openOrderDetail('100000000')">100000000</a>张三工程师参与工程厨房设计项目抢单敬请留意-->
                 <!--订单号100000000张三工程师参与工程厨房设计项目抢单敬请留意-->
                 {{notics.content}}
+                <div class="red-badges"></div>
             </ion-card-content>
         </ion-card>
 

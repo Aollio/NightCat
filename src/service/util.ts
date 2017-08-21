@@ -9,7 +9,7 @@ export class Util {
     public static INSTANCE: Util;
 
 
-    public nav=null
+    public nav = null
 
     constructor(private loaderCtrl: LoadingController,
                 private toastCtrl: ToastController,
@@ -238,6 +238,12 @@ export class Util {
     getFriendAlias = (userInfo) => {
         userInfo.alias = userInfo.alias ? userInfo.alias.trim() : ''
         return userInfo.alias || userInfo.nick || userInfo.account
+    }
+
+
+    check_id_card(id_card) {
+        let reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+        return reg.test(id_card);
     }
 
 }

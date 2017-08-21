@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {AlertController, NavController, NavParams, PopoverController} from 'ionic-angular';
+import {AlertController, Events, NavController, NavParams, PopoverController} from 'ionic-angular';
 import {LoginPage} from "../login/login";
 import {SharedService} from "../../../service/share.service";
 import {DesignerModulePage} from "../../designer/designer";
@@ -7,6 +7,7 @@ import {PopoverPage} from "../../popver/popver";
 import {EmployerModulePage} from "../../employer/employer";
 import {Util} from "../../../service/util";
 import {UsersService} from "../../../service/ajax/users.service";
+import {NoticesService} from "../../../service/ajax/notices.serveic";
 
 
 @Component({
@@ -32,6 +33,8 @@ export class RegisterPage {
                 public shared: SharedService,
                 public popoverCtrl: PopoverController,
                 public util: Util,
+                private event:Events,
+                private noticesServ:NoticesService,
                 public usersServ: UsersService) {
     }
 
@@ -107,6 +110,7 @@ export class RegisterPage {
                         console.log('login success');
 
                         this.shared.setCurrentUser(user);
+                        this.event.publish(this.noticesServ.s_get_notices);
 
                         if (this.shared.isDesModule()) {
                             this.navCtrl.setRoot(DesignerModulePage, {}, {animate: true});

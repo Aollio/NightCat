@@ -72,10 +72,10 @@ export class DesignerProjectsPage {
 
 
         this._doRefresh(() => {
-            this.countComplete();
-
             loading.dismiss();
             this.syncComplete = true;
+
+            this.countComplete();
         });
         console.log("projects:", this.projects);
     }
@@ -105,9 +105,9 @@ export class DesignerProjectsPage {
                 for (let project of projects) {
                     this.projects.push(project);
                 }
+                completeFunc();
                 this.sortProjects();
                 this.select(this.processType);
-                completeFunc();
             })
             .catch(error => {
                 console.log(error);

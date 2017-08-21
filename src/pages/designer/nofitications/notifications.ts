@@ -7,7 +7,7 @@ import {KeynoteService} from "../../../service/keynote.service";
 import {LoginPage} from "../../common/login/login";
 import {Util} from "../../../service/util";
 import {ProjectService} from "../../../service/ajax/projects.service";
-import {MessageService} from "../../../service/ajax/message.serveic";
+import {NoticesService} from "../../../service/ajax/notices.serveic";
 
 @Component({
     selector: 'page-notifications',
@@ -31,23 +31,30 @@ export class NotificationsPage {
     constructor(public navCtrl: NavController,
                 public util: Util,
                 public projectServ: ProjectService,
-                private msgServ: MessageService,
+                private noticesServ: NoticesService,
                 public shared: SharedService,
                 public modalCtrl: ModalController,
                 public keynote: KeynoteService) {
         this.maincolor = shared.getPrimaryColor();
 
-        this.msgServ.getNotices().then(noticeses => {
-            if (this.isLogin()) {
+        this.getNotices(() => {
+        });
+    }
+
+    //获取消息列表
+    getNotices(completeFunc) {
+        if (this.shared.isLogin()) {
+            this.noticesServ.getNotices().then(noticeses => {
                 for (let notices of noticeses) {
                     this.noticeses.push(notices);
                 }
                 this.sortNotices();
-            }
-        }).catch(error => console.log(error));
-
+                completeFunc();
+            }).catch(error => console.log(error));
+        }
     }
 
+    //对消息列表进行排序
     sortNotices() {
         this.noticeses.sort((a, b) => {
             if (a.create_time >= b.create_time) {
@@ -67,73 +74,28 @@ export class NotificationsPage {
         })
     }
 
-    openPage(page, option) {
-        this.navCtrl.push(page, option)
-    }
 
     //todo 内容刷新
     doRefresh(refresher) {
-        console.log('Begin async operation', refresher);
-
-        setTimeout(() => {
-            console.log('Async operation has ended');
-            refresher.complete();
-        }, 2000);
+        this.getNotices(() => {
+            refresher.complete()
+        });
     }
 
 
-    isLogin() {
-        let login = JSON.stringify(this.shared.getCurrentUser()) != JSON.stringify({})
-        console.log("isLogin", login);
-        return login;
-    }
-
-
-    openLoginPage(event) {
-        let profileModal = this.modalCtrl.create(LoginPage);
-        profileModal.present();
-        // event.stopPropagation();
-        // this.navCtrl.push(LoginPage);
+    //把消息设为已读
+    read(_notice) {
+        this.noticesServ.read_notices(_notice.id).then(notice => {
+            for (let index in this.noticeses) {
+                if (this.noticeses[index] == _notice) {
+                    this.noticeses[index] = notice;
+                }
+            }
+        }).catch(err => {
+            console.log(err);
+        })
     }
 
 
 }
 
-
-// export class NotificationsPage {
-//
-//     publishtaskpage = PublishTaskPage;
-//
-//     maincolor: string;
-//
-//     constructor(public navCtrl: NavController,
-//                 public shared: SharedService,
-//                 public keynote:KeynoteService) {
-//         this.maincolor = shared.getPrimaryColor();
-//     }
-//
-//
-//     /**
-//      * 打开订单详情页面，参数为订单id
-//      * */
-//     openOrderDetail(id) {
-//         this.navCtrl.push(ProjectDetailPage, {
-//             order: this.keynote.projects[0]
-//         })
-//     }
-//
-//     openPage(page, option) {
-//         this.navCtrl.push(page, option)
-//     }
-//
-//     //todo 内容刷新
-//     doRefresh(refresher) {
-//         console.log('Begin async operation', refresher);
-//
-//         setTimeout(() => {
-//             console.log('Async operation has ended');
-//             refresher.complete();
-//         }, 2000);
-//     }
-//
-// }
