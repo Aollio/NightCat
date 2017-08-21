@@ -15,37 +15,46 @@ import {MessageService} from "../../../service/ajax/message.serveic";
 })
 
 
-
 export class NotificationsPage {
 
     publishtaskpage = PublishTaskPage;
 
     maincolor: string;
 
-    noticeses =[]
+    noticeses = []
 
 
-    formatTime(create_time){
+    formatTime(create_time) {
         return this.util.formatDate(new Date(create_time));
     }
 
     constructor(public navCtrl: NavController,
-                public util:Util,
-                public projectServ:ProjectService,
-                private msgServ:MessageService,
+                public util: Util,
+                public projectServ: ProjectService,
+                private msgServ: MessageService,
                 public shared: SharedService,
-                public modalCtrl:ModalController,
-                public keynote:KeynoteService) {
+                public modalCtrl: ModalController,
+                public keynote: KeynoteService) {
         this.maincolor = shared.getPrimaryColor();
 
         this.msgServ.getNotices().then(noticeses => {
-            if (this.isLogin()){
+            if (this.isLogin()) {
                 for (let notices of noticeses) {
                     this.noticeses.push(notices);
                 }
+                this.sortNotices();
             }
         }).catch(error => console.log(error));
 
+    }
+
+    sortNotices() {
+        this.noticeses.sort((a, b) => {
+            if (a.create_time >= b.create_time) {
+                return -1;
+            }
+            return 1;
+        })
     }
 
 
@@ -89,7 +98,6 @@ export class NotificationsPage {
 
 
 }
-
 
 
 // export class NotificationsPage {

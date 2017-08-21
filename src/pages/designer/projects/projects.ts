@@ -105,6 +105,7 @@ export class DesignerProjectsPage {
                 for (let project of projects) {
                     this.projects.push(project);
                 }
+                this.sortProjects();
                 this.select(this.processType);
                 completeFunc();
             })
@@ -112,6 +113,15 @@ export class DesignerProjectsPage {
                 console.log(error);
                 completeFunc();
             });
+    }
+
+    sortProjects(){
+        this.projects.sort((a,b)=>{
+            if(a.create_time>=b.create_time){
+                return -1;
+            }
+            return 1;
+        })
     }
 
     //end 内容刷新
