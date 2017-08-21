@@ -19,8 +19,8 @@ export class DesignerTabsPage {
 
     home = DesignerHomePage;
     console = DesignerProjectsPage;
-    //me = DesignerMePage;
-    me=ImportantMePage;
+    me = DesignerMePage;
+   // me=ImportantMePage;
     message = NotificationsPage;
     im = IMPage;
 

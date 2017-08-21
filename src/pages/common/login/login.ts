@@ -1,15 +1,12 @@
 import {Component} from '@angular/core';
-import {Events, ModalController, NavController, NavParams, ToastController, ViewController} from 'ionic-angular';
+import {Events, NavController, NavParams, ViewController} from 'ionic-angular';
 import {RegisterPage} from "../register/register";
 import {ResetPasswordPage} from "../resetpassword/resetpassword";
 import {UsersService} from "../../../service/ajax/users.service";
-import {EmployerModulePage} from "../../employer/employer";
-import {DesignerModulePage} from "../../designer/designer";
 import {SharedService} from "../../../service/share.service";
 import {Util} from "../../../service/util";
 import {EmployerTabsPage} from "../../employer/tabs/tabs";
 import {DesignerTabsPage} from "../../designer/tabs/tabs";
-import {el} from "@angular/platform-browser/testing/src/browser_util";
 
 
 @Component({
@@ -32,12 +29,10 @@ export class LoginPage {
                 public event: Events,
                 public userSev: UsersService,
                 public shared: SharedService,
-                public util: Util,
-    ) {
+                public util: Util,) {
         this._one = navParams.get("nav")
 
     }
-
 
 
     close() {
