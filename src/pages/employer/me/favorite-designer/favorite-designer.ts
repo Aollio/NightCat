@@ -2,7 +2,6 @@ import {Component} from "@angular/core";
 import {NavController} from "ionic-angular";
 import {DesignerMeDetailPage} from "../../../designer/me/medetail/medetail";
 import {UsersService} from "../../../../service/ajax/users.service";
-
 @Component({
     templateUrl: 'favorite-designer.html',
     selector: 'page-favorite-designer'
