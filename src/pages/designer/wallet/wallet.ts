@@ -2,7 +2,6 @@ import {Component} from "@angular/core";
 import {IonicPage, NavController} from "ionic-angular";
 import {ConsumeDetail} from "./consumedetail/consumedetail";
 import {DesignerWithDrawPage} from "./withdraw/withdraw";
-declare let initializeFontSize: any
 
 @IonicPage({
     name: 'designer-wallet'
@@ -21,10 +20,6 @@ export class DesignerWalletPage {
 
     constructor(public navCtrl: NavController) {
 
-    }
-
-    ionViewDidEnter() {
-        initializeFontSize()
     }
 
     toggleShowBalance() {

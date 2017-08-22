@@ -3,9 +3,6 @@ import {NavController} from 'ionic-angular';
 import {ModifyPasswordPage} from "../modifypassword/modifypassword";
 import {ModifyPhonePage} from "../modifyphone/modifyphone";
 import {SharedService} from "../../../../service/share.service";
-
-declare let initializeFontSize: any
-
 @Component({
     selector: 'page-accountsecurity',
     templateUrl: 'accountsecurity.html'
@@ -26,11 +23,6 @@ export class AccountSecurityPage {
         this.maincolor = this.shared.getPrimaryColor();
         this.designer = this.shared.isDesModule();
 
-    }
-
-    ionViewDidEnter() {
-        initializeFontSize()
-        console.log("com")
     }
 
     open(page, option) {

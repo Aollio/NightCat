@@ -1,11 +1,8 @@
-import {Component, ViewChild} from '@angular/core';
-
-import {AboutPage} from '../../common/about/about';
+import {Component} from '@angular/core';
 import {AlertController, Events, NavController, Platform} from "ionic-angular";
 import {SplashScreen} from "@ionic-native/splash-screen";
 import {StatusBar} from "@ionic-native/status-bar";
 import {EmployerHomePage} from "../home/home";
-import {HelpChoosePage} from "../helpchoose/helpchoose";
 import {EmployerMePage} from "../me/me";
 import {ProjectsPage} from "../projects/projects";
 import {MiddleWarePage} from "../helpchoose/middleware/middleware";
@@ -14,7 +11,6 @@ import {IMPage} from "../../im/im";
 import {Util} from "../../../service/util";
 import {SharedService} from "../../../service/share.service";
 import {NoticesService} from "../../../service/ajax/notices.serveic";
-import {NotificationsPage} from "../../designer/nofitications/notifications";
 
 @Component({
     selector: 'page-employer-tabs',

@@ -4,8 +4,6 @@ import {ProjectDetailPage} from "../orderdetail/projectdetail";
 import {KeynoteService} from "../../../../service/keynote.service";
 import {Util} from "../../../../service/util";
 
-declare let initializeFontSize: any
-
 @Component({
     selector: 'order-list',
     templateUrl: 'orderlist.html'
@@ -23,9 +21,6 @@ export class OrderListComponent {
         }
     }
 
-    ionViewDidEnter() {
-        initializeFontSize()
-    }
 
     openProjectDetail(project) {
         this.navCtrl.push(ProjectDetailPage, {project: project})

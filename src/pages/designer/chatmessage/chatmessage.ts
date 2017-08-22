@@ -1,9 +1,4 @@
-
-
 import {Component} from "@angular/core";
-
-declare let initializeFontSize: any
-
 
 @Component({
     templateUrl:'chatmessage.html'
@@ -11,7 +6,4 @@ declare let initializeFontSize: any
 export class ChatMessagePage{
     constructor(){}
 
-    ionViewDidEnter() {
-        initializeFontSize()
-    }
 }

@@ -6,7 +6,6 @@ import {ProjectService} from "../../../../../service/ajax/projects.service";
 import {Util} from "../../../../../service/util";
 import {NetworkService} from "../../../../../service/network.service";
 import {Platform} from 'ionic-angular';
-
 declare let BC: any;
 declare let md5: any;
 declare let getRandomHost: any;

@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-
 import {NavController, NavParams} from "ionic-angular";
 import {Util} from "../../../service/util";
 import {Manager} from "../../../service/manager";

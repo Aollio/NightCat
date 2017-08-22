@@ -1,8 +1,7 @@
 import {Component} from '@angular/core';
-import {AlertController, IonicPage, ModalController, NavController, NavParams} from 'ionic-angular';
+import {AlertController, ModalController, NavController, NavParams} from 'ionic-angular';
 import {SharedService} from "../../../../service/share.service";
 import {AbsCommonPage} from "../../abs";
-import {DesignerMeDetailPage} from "../../../designer/me/medetail/medetail";
 import {PayPage} from "../../../employer/pay/pay";
 import {CommentOrderPage} from "../comment-order/comment-order";
 import {ChatPage} from "../../../im/chat/chat";
@@ -11,9 +10,7 @@ import {Util} from "../../../../service/util";
 import {GrabOrderPage} from "../grab-order/grab-order";
 import {OrderProcessPreSelectedPage} from "../orderprocess/order-process-pre-selectdes/order-process-pre-selectdes";
 import {UsersService} from "../../../../service/ajax/users.service";
-import {LoginPage} from "../../login/login";
 
-declare let initializeFontSize: any
 /*
  * 订单详情
  * */

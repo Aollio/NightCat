@@ -1,15 +1,9 @@
 import {Component} from "@angular/core";
-declare let initializeFontSize:any
 @Component({
     templateUrl: 'searchdesigner.html',
     selector:'page-searchdesigner'
 })
 export class SearchDesignerPage{
-
-
-    ionViewDidEnter(){
-        initializeFontSize()
-    }
 
     items;
 

@@ -6,8 +6,6 @@ import {OrderProcessModifyPage} from "./order-process-modify/order-process-modif
 import {OrderProcessWaitcomment} from "./order-process-waitcomment/waitcomment";
 import {OrderProcessPayment} from "./order-process-payment/order-process-payment";
 import {OrerProcessCompleted} from "./order-process-complete/complete";
-import {ProjectDetailPage} from "../orderdetail/projectdetail";
-import {OrderModule} from "../order.module";
 
 @NgModule({
     declarations: [

@@ -1,8 +1,5 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from "ionic-angular";
-import {EmployerTabsPage} from "../tabs/tabs";
-import {Tabs} from "ionic-angular/navigation/nav-interfaces";
-import {RecommendDesignerPage} from "../recommenddesigner/recommenddesigner";
 import {EmployerHomePage} from "../home/home";
 import {EmployerModulePage} from "../employer";
 import {DesignerListPage} from "../home/designer/designer-list";

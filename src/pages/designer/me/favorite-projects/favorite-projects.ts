@@ -1,8 +1,4 @@
 import {Component} from '@angular/core';
-import {OrderListComponent} from "../../../common/order/orderlist/orderlist";
-
-
-declare let initializeFontSize: any
 
 @Component({
     selector: 'page-favorite-projects',
@@ -10,10 +6,6 @@ declare let initializeFontSize: any
 })
 
 export class FavoriteProjectsPage {
-
-    ionViewDidEnter() {
-        initializeFontSize()
-    }
 
     //todo 内容刷新
     doRefresh(refresher) {

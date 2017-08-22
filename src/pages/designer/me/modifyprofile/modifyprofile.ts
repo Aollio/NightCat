@@ -1,5 +1,3 @@
-
-
 import {Component} from "@angular/core";
 import {NavController} from "ionic-angular";
 import {AddCasePage} from "../addcase/addcase";

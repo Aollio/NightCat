@@ -2,7 +2,6 @@ import {Component} from "@angular/core";
 import {NavController, NavParams} from "ionic-angular";
 import {ModifyProfilePage} from "../modifyprofile/modifyprofile";
 import {SharedService} from "../../../../service/share.service";
-import {User} from "../../../../model/user";
 import {CaseDetailPage} from "../casedetail/casedetail";
 import {ChatPage} from "../../../im/chat/chat";
 import {AlertController} from 'ionic-angular';

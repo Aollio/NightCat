@@ -6,10 +6,8 @@ import {AddHonorPage} from "./addhonor/addhonor";
 import {AddCasePage} from "./addcase/addcase";
 import {CaseDetailPage} from "./casedetail/casedetail";
 import {FavoriteProjectsPage} from "./favorite-projects/favorite-projects";
-import {CommonPageModule} from "../../common/commonpage.module";
 import {WalletModule} from "../wallet/wallet.module";
 import {IonicPageModule} from "ionic-angular";
-import {DesignerModule} from "../designer.module";
 import {OrderModule} from "../../common/order/order.module";
 import {ImportantModule} from "../../../importants/important.module";
 

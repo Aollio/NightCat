@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, Platform} from 'ionic-angular';
+import {IonicPage} from 'ionic-angular';
 import {ResetPasswordPage} from "./resetpassword/resetpassword";
 import {SharedService} from "../../service/share.service";
 

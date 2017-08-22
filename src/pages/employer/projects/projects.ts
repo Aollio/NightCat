@@ -6,9 +6,6 @@ import {ModalController} from "ionic-angular";
 import {LoginPage} from "../../common/login/login";
 
 //注意导入
-
-declare let initializeFontSize: any
-
 @Component({
     selector: 'page-employer-projects',
     templateUrl: 'projects.html'

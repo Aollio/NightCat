@@ -1,16 +1,9 @@
-/**
- * Created by Aollio on 7/7/17.
- */
 import {NavController} from "ionic-angular";
 import {Component} from "@angular/core";
 import {ImageService} from "../../../service/ajax/imgs.service";
-import {state} from "@angular/core/src/animation/dsl";
 import {UsersService} from "../../../service/ajax/users.service";
 import {Util} from "../../../service/util";
 // import {ImagePicker} from '@ionic-native/image-picker';
-
-declare let initializeFontSize: any;
-
 @Component({
     selector: 'page-authenication',
     templateUrl: 'authentication.html'

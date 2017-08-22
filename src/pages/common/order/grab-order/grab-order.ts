@@ -1,9 +1,6 @@
 import {Component} from '@angular/core';
 import {AlertController, NavController, NavParams} from 'ionic-angular';
-import {AbsCommonPage} from "../../abs";
 import {SharedService} from "../../../../service/share.service";
-import {ProjectDetailPage} from "../orderdetail/projectdetail";
-import {OrderProcessPreSelectedPage} from "../orderprocess/order-process-pre-selectdes/order-process-pre-selectdes";
 import {ProjectService} from "../../../../service/ajax/projects.service";
 import {Util} from "../../../../service/util";
 /*

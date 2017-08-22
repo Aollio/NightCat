@@ -1,9 +1,7 @@
 import {Component} from "@angular/core";
 import {NavController} from "ionic-angular";
 import {DesignerMeDetailPage} from "../../designer/me/medetail/medetail";
-import {ChooseDesignerPage} from "../choosedesigner/choosedesigner";
 import {HelpChoosePage} from "../helpchoose/helpchoose";
-import {UsersService} from "../../../service/ajax/users.service";
 import {KeynoteService} from "../../../service/keynote.service";
 @Component({
     selector: 'page-recommenddesigner',

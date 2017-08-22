@@ -3,10 +3,6 @@ import {SharedService} from "../../../service/share.service";
 import {AlertController, NavController} from "ionic-angular";
 import {Util} from "../../../service/util";
 import {ProjectService} from "../../../service/ajax/projects.service";
-
-
-declare let initializeFontSize: any;
-
 @Component({
     selector: "page-publish-task",
     templateUrl: 'publish-task.html'

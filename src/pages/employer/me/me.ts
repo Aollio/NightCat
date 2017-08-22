@@ -11,9 +11,6 @@ import {NetworkService} from "../../../service/network.service";
 import {AboutPage} from "../../common/about/about";
 import {SupportPage} from "../../common/support/support";
 import {HelpPage} from "../../common/help/help";
-
-declare let initializeFontSize: any;
-
 @Component({
     selector: 'page-me-employer',
     templateUrl: 'me.html'

@@ -1,16 +1,15 @@
-import {Component} from "@angular/core";
-import {NavController, Events, AlertController} from "ionic-angular";
-import {WelcomePage} from "../welcome/welcome";
-import {SharedService} from "../../service/share.service";
-import {Util} from "../../service/util";
-import {LoginPage} from "../common/login/login";
-import {el} from "@angular/platform-browser/testing/src/browser_util";
-import {UsersService} from "../../service/ajax/users.service";
-import {DesignerModulePage} from "../designer/designer";
-import {EmployerModulePage} from "../employer/employer";
-import {NetworkService} from "../../service/network.service";
-import {NoticesService} from "../../service/ajax/notices.serveic";
-import {NotificationsPage} from "../designer/nofitications/notifications";
+import {Component} from "@angular/core"
+import {NavController, Events, AlertController} from "ionic-angular"
+import {WelcomePage} from "../welcome/welcome"
+import {SharedService} from "../../service/share.service"
+import {Util} from "../../service/util"
+import {LoginPage} from "../common/login/login"
+import {UsersService} from "../../service/ajax/users.service"
+import {DesignerModulePage} from "../designer/designer"
+import {EmployerModulePage} from "../employer/employer"
+import {NetworkService} from "../../service/network.service"
+import {NoticesService} from "../../service/ajax/notices.serveic"
+import {NotificationsPage} from "../designer/nofitications/notifications"
 
 @Component({
     selector: "page-first",

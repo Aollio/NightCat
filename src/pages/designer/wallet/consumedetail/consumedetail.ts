@@ -1,5 +1,4 @@
 import {Component} from "@angular/core";
-declare let initializeFontSize: any
 
 @Component({
     selector: 'page-consumedetail',
@@ -9,9 +8,7 @@ export class ConsumeDetail {
     constructor() {
 
     }
-    ionViewDidEnter() {
-        initializeFontSize()
-    }
+
 
     //todo 内容刷新
     doRefresh(refresher) {

@@ -1,9 +1,8 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, Platform} from 'ionic-angular';
+import {IonicPage, Platform} from 'ionic-angular';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {DesignerTabsPage} from "./tabs/tabs";
-import {RegisterPage} from "../common/register/register";
 import {SharedService} from "../../service/share.service";
 
 @IonicPage({
