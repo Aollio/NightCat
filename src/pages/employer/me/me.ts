@@ -11,7 +11,7 @@ import {NetworkService} from "../../../service/network.service";
 import {AboutPage} from "../../common/about/about";
 import {SupportPage} from "../../common/support/support";
 import {HelpPage} from "../../common/help/help";
-import {CommentsPage} from "./Comments/Comments";
+// import {CommentsPage} from "./Comments/Comments";
 
 declare let initializeFontSize: any;
 

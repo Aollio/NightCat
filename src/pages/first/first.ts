@@ -23,8 +23,8 @@ export class FirstPage {
                 private http: NetworkService,
                 private userServ: UsersService,
                 public shared: SharedService,
-                private noticesServ:NoticesService,
-                private alertCtrl:AlertController,
+                private noticesServ: NoticesService,
+                private alertCtrl: AlertController,
                 private util: Util) {
 
         event.subscribe('gotologin', () => {
@@ -35,8 +35,9 @@ export class FirstPage {
 
 
         //监听新消息事件
-        event.subscribe(this.noticesServ.s_has_new_notices,()=>{
+        event.subscribe(this.noticesServ.s_has_new_notices, () => {
             if (this.shared.isLogin()) {
+                this.showAlert();
                 this.showAlert();
             }
         })
@@ -70,7 +71,7 @@ export class FirstPage {
                 this.gotoHome(user.role);
 
                 //发出读取消息事件
-                console.log("publish event","s_get_notices");
+                console.log("publish event", "s_get_notices");
                 this.event.publish(this.noticesServ.s_get_notices);
             }).catch(error => {
             console.log(error);
@@ -95,27 +96,28 @@ export class FirstPage {
         }
     }
 
-    showAlert() {
-        let confirm = this.alertCtrl.create({
-            title: '提示',
-            message: '您有新消息,请查看',
-            buttons: [
-                {
-                    text: '立即查看',
-                    handler: () => {
-                        console.log('Disagree clicked');
-                        this.nav.push(NotificationsPage);
-                    }
-                },
-                {
-                    text: '我知道了',
-                    handler: () => {
-                        console.log('Agree clicked');
-                    }
+
+    private alert_new_notice = this.alertCtrl.create({
+        title: '提示',
+        message: '您有新消息,请查看',
+        buttons: [
+            {
+                text: '立即查看',
+                handler: () => {
+                    this.nav.push(NotificationsPage);
                 }
-            ]
-        });
-        confirm.present();
+            },
+            {text: '我知道了'}
+        ]
+    });
+
+    //alert.present()不能调用两次，不然关不掉；
+    showAlert() {
+        if (this.alert_new_notice['isLoading']) {
+            return;
+        }
+        this.alert_new_notice.present();
+        this.alert_new_notice['isLoading'] = true;
     }
 
 }

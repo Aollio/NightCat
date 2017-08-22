@@ -28,12 +28,12 @@ export class NoticesService {
 
         //每100s 判断是否有新消息；
         setInterval(() => {
-            if (!shared.isLogin()){
+            if (!shared.isLogin()) {
                 this.new_notices = 0;
                 return;
             }
             this._getNotices();
-        }, 100 * 1000);
+        }, 5 * 60 * 1000);
 
 
         // 当用户做出可能产生新消息的操作时， 会发出s_get_msgs事件，
