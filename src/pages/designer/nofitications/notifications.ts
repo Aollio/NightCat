@@ -47,7 +47,6 @@ export class NotificationsPage {
         }).catch(error => console.log(error));
 
     }
-
     sortNotices() {
         this.noticeses.sort((a, b) => {
             if (a.create_time >= b.create_time) {

@@ -69,7 +69,7 @@ export class RecommendDesignerPage {
         this.navctrl.goToRoot({animate: true})
     }
 
-    // //todo 内容刷新
+    // todo 内容刷新
     // doRefresh(refresher) {
     //     console.log('Begin async operation', refresher);
     //
