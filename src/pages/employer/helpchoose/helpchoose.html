@@ -23,7 +23,7 @@
                          [class.bar-bg-active]="item.name==chooseType">
                     <div class="my-li"
                          (click)="setChooseType(item.name)">
-                        <img class="my-li-img" src="{{item.img}}" alt="">
+                        <img class="my-li-img" [src]="item.img" alt="">
                         <div class="my-li-name">{{item.name}}</div>
                     </div>
                 </ion-col>

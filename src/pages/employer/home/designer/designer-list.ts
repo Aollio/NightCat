@@ -30,7 +30,7 @@ export class DesignerListPage {
         this.previousPage = this.navParams.get("previousPage")
         let typeindex = this.navParams.get("type")
         if (typeindex != null) {
-            this.type = typeindex;
+            this.type = typeindex+1;
         }
 
     }
