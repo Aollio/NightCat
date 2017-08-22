@@ -42,36 +42,6 @@ export class EmployerTabsPage {
                 public util: Util) {
         this.navCtrl.swipeBackEnabled = false;
 
-        events.subscribe(this.noticesServ.s_has_new_notices,()=>{
-            if (this.shared.isLogin()) {
-                this.showAlert();
-            }
-        })
-
-    }
-
-
-    showAlert() {
-        let confirm = this.alertCtrl.create({
-            title: '提示',
-            message: '您有新消息,请查看',
-            buttons: [
-                {
-                    text: '立即查看',
-                    handler: () => {
-                        console.log('Disagree clicked');
-                        this.navCtrl.push(NotificationsPage);
-                    }
-                },
-                {
-                    text: '我知道了',
-                    handler: () => {
-                        console.log('Agree clicked');
-                    }
-                }
-            ]
-        });
-        confirm.present();
     }
 
 

@@ -18,17 +18,22 @@ export class NoticesService {
                 private shared: SharedService,
                 private events: Events) {
 
+
+        //1s后判断是否有新消息， 给登录时间
+        // setTimeout(()=>{
+        //     if (shared.isLogin()){
+        //         this._getNotices();
+        //     }
+        // },1000);
+
         //每100s 判断是否有新消息；
-        if (shared.isLogin()){
-            this._getNotices();
-        }
         setInterval(() => {
-            if (!shared.isLogin()){
+            if (!shared.isLogin()) {
                 this.new_notices = 0;
                 return;
             }
             this._getNotices();
-        }, 100 * 1000);
+        }, 5 * 60 * 1000);
 
 
         // 当用户做出可能产生新消息的操作时， 会发出s_get_msgs事件，
