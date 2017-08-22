@@ -31,9 +31,7 @@ export class EmployerHomePage {
                 private shared: SharedService,
                 private util: Util,
                 public alertCtrl: AlertController,) {
-        if (this.shared.isLogin()) {
-            this.showAlert();
-        }
+
         this.isFirstLogin = shared.isFirstUse();
         console.log("sdasdasda")
         console.log(this.util.nav)
@@ -45,28 +43,7 @@ export class EmployerHomePage {
         this.util.presentLoginPage(this.navCtrl)
     }
 
-    showAlert() {
-        let confirm = this.alertCtrl.create({
-            title: '最新消息',
-            message: '您发布的项目已有人接单',
-            buttons: [
-                {
-                    text: '立即查看',
-                    handler: () => {
-                        console.log('Disagree clicked');
-                        this.navCtrl.parent.select(1);
-                    }
-                },
-                {
-                    text: '我知道了',
-                    handler: () => {
-                        console.log('Agree clicked');
-                    }
-                }
-            ]
-        });
-        confirm.present();
-    }
+
 
 
     open(page, option) {

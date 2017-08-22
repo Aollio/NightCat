@@ -7,6 +7,7 @@ import {SharedService} from "../../../service/share.service";
 import {Util} from "../../../service/util";
 import {EmployerTabsPage} from "../../employer/tabs/tabs";
 import {DesignerTabsPage} from "../../designer/tabs/tabs";
+import {NoticesService} from "../../../service/ajax/notices.serveic";
 
 
 @Component({
@@ -24,11 +25,13 @@ export class LoginPage {
 
     _one = null;
 
-    constructor(public navCtrl: NavController, public navParams: NavParams,
+    constructor(public navCtrl: NavController,
+                public navParams: NavParams,
                 public viewCtrl: ViewController,
                 public event: Events,
                 public userSev: UsersService,
                 public shared: SharedService,
+                private noticesServ:NoticesService,
                 public util: Util,) {
         this._one = navParams.get("nav")
 
@@ -85,6 +88,7 @@ export class LoginPage {
                 }
 
                 this.shared.setCurrentUser(user);
+                this.event.publish(this.noticesServ.s_get_notices);
 
             }).catch(error => {
 

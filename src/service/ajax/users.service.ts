@@ -144,8 +144,9 @@ export class UsersService {
     }
 
     //type level name id_number img
-    async setAuthentications(params) {
-        let data = await this.http.postWithToken(this.urls.user_authentications, params);
+    async setAuthentication(params) {
+        console.log("上传用户证书认证");
+        let data = await this.http.postWithToken(this.urls.user_authentication, params);
 
         if (data.status != 200) {
             throw data;

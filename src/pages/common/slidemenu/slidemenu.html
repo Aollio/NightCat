@@ -16,11 +16,12 @@
     </div>
 
     <ion-list no-lines class="bg-tran">
-        <button ion-item tappable (click)="open(messagePage)" class="slide-font-color">
-            <custom-icon set="cat" name="mybell" class="custom-icon"
-
-                         item-start></custom-icon>
+        <button ion-item (click)="open(messagePage)" class="slide-font-color">
+            <custom-icon set="cat" name="mybell" class="custom-icon" item-start></custom-icon>
             系统消息
+            <ion-badge *ngIf="noticesServ.new_notices!=0" [color]="shared.getPrimaryColor()" item-end>
+                {{noticesServ.new_notices||0}}
+            </ion-badge>
         </button>
 
         <!--<button ion-item  tappable (click)="open(accountSecurityPage)" class="slide-font-color">-->
@@ -53,10 +54,12 @@
 </ion-content>
 
 <ion-footer>
-    <button class="exitbtn" *ngIf="shared.isLogin()" ion-button [color]="shared.getPrimaryColor()" full tappable (click)="exitApp()">
+    <button class="exitbtn" *ngIf="shared.isLogin()" ion-button [color]="shared.getPrimaryColor()" full tappable
+            (click)="exitApp()">
         退出
     </button>
-    <button class="exitbtn" *ngIf="!shared.isLogin()" ion-button [color]="shared.getPrimaryColor()" full tappable (click)="exitApp()">
+    <button class="exitbtn" *ngIf="!shared.isLogin()" ion-button [color]="shared.getPrimaryColor()" full tappable
+            (click)="exitApp()">
         选择角色
     </button>
 </ion-footer>

@@ -33,7 +33,7 @@ import {FileService} from "../service/ajax/files.service";
 import {ImportantModule} from "../importants/important.module";
 import {ImageService} from "../service/ajax/imgs.service";
 import {ImagePicker} from "@ionic-native/image-picker";
-import {MessageService} from "../service/ajax/message.serveic";
+import {NoticesService} from "../service/ajax/notices.serveic";
 
 @NgModule({
     declarations: [
@@ -82,7 +82,7 @@ import {MessageService} from "../service/ajax/message.serveic";
         AdsService,
         ProjectService,
         UsersService,
-        MessageService,
+        NoticesService,
         //service im
         ImService,
         //service

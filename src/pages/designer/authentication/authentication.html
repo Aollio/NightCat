@@ -2,10 +2,13 @@
     <ion-navbar color="nav-des-bg">
         <ion-title>认证中心</ion-title>
         <ion-buttons end>
-            <button ion-button     tappable (click)="nextOrFinish()" *ngIf="state < 3">
+            <button ion-button tappable (click)="nextOrFinish()" *ngIf="state === 1">
                 下一步
             </button>
-            <button ion-button     tappable (click)="nextOrFinish()" *ngIf="state === 3">
+            <button ion-button tappable (click)="nextOrFinish()" *ngIf="state === 2">
+                提交
+            </button>
+            <button ion-button tappable (click)="nextOrFinish()" *ngIf="state === 3">
                 完成
             </button>
         </ion-buttons>
@@ -14,14 +17,14 @@
 
 <ion-content>
     <ion-row class="process">
-        <ion-col [class.active]="state === 1">
+        <ion-col [class.active]="state === 1" (click)="setState(1)">
             <custom-icon set="cat" name="authentication-id">
             </custom-icon>
             <div>
                 身份认证
             </div>
         </ion-col>
-        <ion-col [class.active]="state === 2">
+        <ion-col [class.active]="state === 2" (click)="setState(2)">
             <custom-icon set="cat" name="authentication-education">
             </custom-icon>
             <div>
@@ -40,19 +43,19 @@
     <div *ngIf="state === 1">
         <ion-item>
             <ion-label>真实姓名</ion-label>
-            <ion-input placeholder="请输入真实姓名"></ion-input>
+            <ion-input placeholder="请输入真实姓名" [(ngModel)]="info.realname"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>身份证号</ion-label>
+            <ion-input placeholder="请输入身份证号码" [(ngModel)]="info.id_card"></ion-input>
         </ion-item>
         <ion-item-divider></ion-item-divider>
-        <ion-item>
-            <ion-label>手机号码</ion-label>
-            <ion-input placeholder="请输入手机号"></ion-input>
-        </ion-item>
         <ion-item>
             <ion-label>职称证书</ion-label>
-            <ion-input placeholder="请输入证件名称"></ion-input>
+            <ion-input placeholder="请输入证件名称" [(ngModel)]="info.position"></ion-input>
         </ion-item>
         <ion-item-divider></ion-item-divider>
-        <div class="upload"     tappable (click)="uploading_img()">
+        <div class="upload" tappable (click)="upload_postion_img()">
             <input type="image" value="图片"/>
             <div class="upload-icon">
                 <ion-icon name="ios-camera-outline"></ion-icon>
@@ -63,11 +66,19 @@
 
     <div *ngIf="state === 2">
         <ion-item>
-            <ion-label>职称证书</ion-label>
-            <ion-input placeholder="请输入证件名称"></ion-input>
+            <ion-label>学历</ion-label>
+            <ion-input placeholder="请输入学历" [(ngModel)]="info.school"></ion-input>
+            <!--<ion-select [(ngModel)]="gaming">-->
+            <!--<ion-option value="nes">NES</ion-option>-->
+            <!--<ion-option value="n64">Nintendo64</ion-option>-->
+            <!--<ion-option value="ps">PlayStation</ion-option>-->
+            <!--<ion-option value="genesis">Sega Genesis</ion-option>-->
+            <!--<ion-option value="saturn">Sega Saturn</ion-option>-->
+            <!--<ion-option value="snes">SNES</ion-option>-->
+            <!--</ion-select>-->
         </ion-item>
         <ion-item-divider></ion-item-divider>
-        <div class="upload">
+        <div class="upload" tappable (click)="upload_school_img()">
             <div class="upload-icon">
                 <ion-icon name="ios-camera-outline"></ion-icon>
             </div>

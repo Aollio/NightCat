@@ -9,6 +9,7 @@ import {SharedService} from "../../../service/share.service";
 import {User} from "../../../model/user";
 import {WelcomePage} from "../../welcome/welcome";
 import {NetworkService} from "../../../service/network.service";
+import {NoticesService} from "../../../service/ajax/notices.serveic";
 
 
 @Component({
@@ -32,6 +33,7 @@ export class SlideMenuComponment {
                 private alertCtrl: AlertController,
                 private toastCtrl: ToastController,
                 public shared: SharedService,
+                private noticesServ:NoticesService,
                 private http: NetworkService) {
         this.user = shared.getCurrentUser();
         // this.isDesigner = this.shared.isDesigner();

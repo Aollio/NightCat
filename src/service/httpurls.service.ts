@@ -8,6 +8,7 @@ export class HttpUrls {
     // server_url: string = "http://192.168.10.131:3000";
     // server_url: string = "http://192.168.100.154:3000";
 
+
     //test 服务器地址
     server_url: string = "http://yemaotest.shanghai-cu.com";
 
@@ -88,7 +89,7 @@ export class HttpUrls {
 
     designer_list: string = this._users + "/designers";
 
-    user_authentications: string = this._users + "/authentications";
+    user_authentication: string = this._users + "/authentication";
 
     //
     user_info_simple_get: string = this._users + "/show_simple";
@@ -156,19 +157,15 @@ export class HttpUrls {
 
     project_man: string = this._projects + "/tester";
 
-
     //end process
-
-
-    //
-
-    notices: string = this.server_url + "/notices";
-
-
     //end 项目
 
+    //start 消息
+    notices: string = this.server_url + "/notices";
+    notices_del:string = this.notices+"/del";
+    notices_read:string = this.notices+"/read";
+    //end 消息
 
-    projects_url: string = this.server_url + '/projects'
 
     //广告相关
     ads_designer_home_slides_url: string = this.server_url + '/ads/d/home/slides'
