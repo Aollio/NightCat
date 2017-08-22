@@ -6,7 +6,6 @@ import {ModalController, NavController} from "ionic-angular";
 import {SharedService} from "../../service/share.service";
 import {LoginPage} from "../common/login/login";
 import {UsersService} from "../../service/ajax/users.service";
-
 @Component({
     selector: 'page-im',
     templateUrl: 'im.html'
