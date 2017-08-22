@@ -9,6 +9,7 @@ import {Util} from "../../../service/util";
 import {UsersService} from "../../../service/ajax/users.service";
 import {NoticesService} from "../../../service/ajax/notices.serveic";
 
+declare let md5: any;
 
 @Component({
     selector: 'page-register',
@@ -20,10 +21,6 @@ export class RegisterPage {
     //页面切换状态, 页面切换特效的实现变量
     current = 1
 
-    isDesigner: boolean = true;
-
-    role: any;
-
     user: any = {}
 
     confirmPassword;
@@ -33,14 +30,13 @@ export class RegisterPage {
                 public shared: SharedService,
                 public popoverCtrl: PopoverController,
                 public util: Util,
-                private event:Events,
-                private noticesServ:NoticesService,
+                private event: Events,
+                private noticesServ: NoticesService,
                 public usersServ: UsersService) {
     }
 
 
-// todo 密码加密
-
+    // todo 验证码是否填写
     next() {
 
         let util = this.util
@@ -56,7 +52,7 @@ export class RegisterPage {
         // 数字：(?=.*\d)
         // 符号：((?=[\x21-\x7e]+)[^A-Za-z0-9])
         //  \d改为[0-9]问题就解决了
-        if (this.user.password == null || this.user.password == '') {
+        if (this.password == null || this.password == '') {
             util.toast('请输入密码')
             return
         }
@@ -66,7 +62,7 @@ export class RegisterPage {
             return
         }
 
-        if (this.confirmPassword !== this.user.password) {
+        if (this.confirmPassword !== this.password) {
             util.toast('两次密码输入不一致')
             return
         }
@@ -83,6 +79,10 @@ export class RegisterPage {
         this.current = 1;
     }
 
+
+    //保存密码  ，user.password为加密后的密码
+    password = "";
+
     register() {
         if (this.user.nickname == null || this.user.nickname == '') {
             this.util.toast('请输入昵称')
@@ -90,19 +90,29 @@ export class RegisterPage {
         }
 
 
+        //设置角色身份
         if (this.shared.isDesModule()) {
             this.user.role = 0;
         } else {
             this.user.role = 1;
         }
+        //设置头像
+        this.user.img_url = this.avatar;
 
-        let loading = this.util.createLoading('正在注册')
 
+        let loading = this.util.createLoading('正在注册');
         loading.present();
+
+
+        // 密码加密
+        this.user.password = md5(this.password);
 
         this.usersServ.register(this.user)
             .then(user => {
-                loading.setContent('正在登录...')
+                loading.setContent('正在登录...');
+
+                // 设置密码 后台没返回密码
+                user.password = this.user.password;
                 this.usersServ.login(user)
                     .then(() => {
                         loading.dismiss()
@@ -110,6 +120,7 @@ export class RegisterPage {
                         console.log('login success');
 
                         this.shared.setCurrentUser(user);
+                        //发出 读取新消息事件
                         this.event.publish(this.noticesServ.s_get_notices);
 
                         if (this.shared.isDesModule()) {
@@ -162,8 +173,6 @@ export class RegisterPage {
         // "assets/img/if_cat_emoji_face_smily-29-01_2361869.png",
         // "assets/img/if_cat_emoji_face_smily-35-01_2361874.png",
         // "assets/img/if_cat_emoji_face_smily-38-01_2361877.png",
-
-
     ];
 
     chooseAvatar() {
