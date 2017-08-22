@@ -17,7 +17,7 @@ export class PayProjectsListPage {
         this.miancolor=this.shared.getPrimaryColor();
     }
 
-    //todo 内容刷新
+    // todo 内容刷新
     doRefresh(refresher) {
         console.log('Begin async operation', refresher);
 

@@ -138,7 +138,13 @@ export class PublishTaskPage {
 
         return true;
     }
-
+pub(){
+        let regularResult = this.projectIsRegular();
+        if(regularResult !=true){
+            this.util.toast(regularResult);
+            return;
+        }
+}
 
     publish() {
         let regularResult = this.projectIsRegular();

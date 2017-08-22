@@ -11,6 +11,7 @@ import {NetworkService} from "../../../service/network.service";
 import {AboutPage} from "../../common/about/about";
 import {SupportPage} from "../../common/support/support";
 import {HelpPage} from "../../common/help/help";
+import {CommentsPage} from "./Comments/Comments";
 
 declare let initializeFontSize: any;
 
@@ -42,6 +43,10 @@ export class EmployerMePage {
         this.navCtrl.push(page, option)
     }
 
+    openEmpFavoriteDesignerPage() {
+        // if (this.isNullObj1(this.user)) return;
+        this.navCtrl.push(EmpFavoriteDesignerPage, {})
+    }
 
     openLoginPage(event) {
         let profileModal = this.modalCtrl.create(LoginPage);
@@ -51,7 +56,7 @@ export class EmployerMePage {
     }
 
     openComments() {
-        this.navCtrl.push(NotificationsPage, {})
+        this.navCtrl.push(CommentPage, {})
     }
 
     openHelpPage() {
