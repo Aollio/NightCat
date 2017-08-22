@@ -165,7 +165,6 @@ export class UsersService {
         return data.content;
     }
 
-
 //response: nickname,img_url
     async getInfoSimple(uid) {
         let data = await this.http.get(this.urls.user_info_simple_get, {uid: uid});

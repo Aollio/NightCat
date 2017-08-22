@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
-import {AlertController, ModalController, NavController} from 'ionic-angular';
+import {AlertController, NavController} from 'ionic-angular';
 import {DesignerMeDetailPage} from "../../designer/me/medetail/medetail";
-import {AppointPage} from "./appoint/appoint";
 import {DesingerTypePage} from "./desinger-types/desinger-types";
 import {DesignerListPage} from "./designer/designer-list";
 import {HelpChoosePage} from "../helpchoose/helpchoose";

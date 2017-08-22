@@ -1,4 +1,4 @@
-import {Component, ViewChild} from "@angular/core";
+import {Component} from "@angular/core";
 import {DesignerMeDetailPage} from "../../../designer/me/medetail/medetail";
 import {NavController, NavParams} from "ionic-angular";
 import {UsersService} from "../../../../service/ajax/users.service";
@@ -30,7 +30,7 @@ export class DesignerListPage {
         this.previousPage = this.navParams.get("previousPage")
         let typeindex = this.navParams.get("type")
         if (typeindex != null) {
-            this.type = typeindex+1;
+            this.type = typeindex + 1;
         }
 
     }
@@ -42,9 +42,7 @@ export class DesignerListPage {
 
         let loading = this.util.createLoading("加载中")
         this.isloading = true;
-
         loading.present()
-
         this._doRefresh(() => {
             if (this.isloading) {
                 loading.dismiss()
@@ -59,7 +57,7 @@ export class DesignerListPage {
     }
 
 
-    //todo 内容刷新
+    // todo 内容刷新
     doRefresh(refresher) {
         this.designers.length = 0;
         this.syncComplete = false;
@@ -83,7 +81,7 @@ export class DesignerListPage {
                 completeFunc()
             }).catch(error => {
             console.log(error);
-            //todo 异常捕获
+            // todo 异常捕获
             completeFunc()
         });
     }
