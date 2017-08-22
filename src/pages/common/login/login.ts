@@ -10,6 +10,8 @@ import {DesignerTabsPage} from "../../designer/tabs/tabs";
 import {NoticesService} from "../../../service/ajax/notices.serveic";
 
 
+declare let md5: any;
+
 @Component({
     selector: 'page-login',
     templateUrl: 'login.html',
@@ -31,7 +33,7 @@ export class LoginPage {
                 public event: Events,
                 public userSev: UsersService,
                 public shared: SharedService,
-                private noticesServ:NoticesService,
+                private noticesServ: NoticesService,
                 public util: Util,) {
         this._one = navParams.get("nav")
 
@@ -46,7 +48,6 @@ export class LoginPage {
         this.navCtrl.pop()
     }
 
-// todo 密码加密
     login() {
 
         if (!this.util.phoneInput(this.user.phone)) {
@@ -58,6 +59,8 @@ export class LoginPage {
             return
         }
 
+        // 密码加密
+        this.user.password = md5(this.user.password);
 
         this.userSev.login(this.user)
             .then(user => {

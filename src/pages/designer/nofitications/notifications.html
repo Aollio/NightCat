@@ -18,7 +18,7 @@
     <ion-list>
         <ion-card *ngFor="let notics of noticeses" (click)="read(notics)">
             <ion-card-header class="msg-header">
-                <div class="msg-type">{{notics.type}}</div>
+                <div class="msg-type">{{notics.title}}</div>
                 <div class="msg-time">{{formatTime(notics.create_time)}}</div>
             </ion-card-header>
             <ion-card-content class="content">
