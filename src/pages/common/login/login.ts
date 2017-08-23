@@ -48,19 +48,23 @@ export class LoginPage {
         this.navCtrl.pop()
     }
 
+
+    //此为加密前的密码
+    password = "";
+
     login() {
 
         if (!this.util.phoneInput(this.user.phone)) {
             this.util.toast('请输入正确手机号')
             return
         }
-        if (this.user.password == null || this.user.password == '') {
+        if (this.password == null || this.password == '') {
             this.util.toast('请输入密码')
             return
         }
 
         // 密码加密
-        this.user.password = md5(this.user.password);
+        this.user.password = md5(this.password);
 
         this.userSev.login(this.user)
             .then(user => {

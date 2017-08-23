@@ -34,6 +34,7 @@ import {ImportantModule} from "../importants/important.module";
 import {ImageService} from "../service/ajax/imgs.service";
 import {ImagePicker} from "@ionic-native/image-picker";
 import {NoticesService} from "../service/ajax/notices.serveic";
+import {ImgUploaderService} from "../service/img-uploader.service";
 
 @NgModule({
     declarations: [
@@ -92,6 +93,7 @@ import {NoticesService} from "../service/ajax/notices.serveic";
         NetworkService,
         SharedService,
         Util,
+        ImgUploaderService,
         //Other
         //auto
         StatusBar,

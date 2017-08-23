@@ -9,25 +9,27 @@
 <ion-content>
 
 
-
     <!--<image-input [(ngModel)]="imgurls"></image-input>-->
-<!---->
+    <!---->
     <!--<button ion-button full (click)="show()">Show</button>-->
-<button ion-button (click)="savelocal()">保存local</button>
-<button ion-button (click)="showlocal()">显示local</button>
+    <button ion-button (click)="savelocal()">保存local</button>
+    <button ion-button (click)="showlocal()">显示local</button>
 
 
-    <input type="file" accept="image/*" id=""/>
+    <!--选择图片-->
+    <div class="select-img">
+        <a class="input-file-wrapper">
+            <input type="file" accept="image/*" id="input" (change)="imgUploader.show_img()" multiple/>点击这里上传文件
+        </a>
+        <output id="output"></output>
+    </div>
 
-    <!--<ion-item-sliding>-->
-        <!--<ion-item>-->
-            <!--Item 1-->
-        <!--</ion-item>-->
-        <!--<ion-item-options side="right" (ionSwipe)="show()">-->
-            <!--<button ion-button expandable (click)="show()">-->
-                <!--<ion-icon name="star"></ion-icon>-->
-            <!--</button>-->
-        <!--</ion-item-options>-->
-    <!--</ion-item-sliding>-->
+
+    <button ion-button (click)="upLoad_img()">上传</button>
+    <br/>
+
+
+    <img *ngFor="let img of imgUploader.img_urls" [src]="img"/>
+
 
 </ion-content>

@@ -239,8 +239,7 @@ export class NetworkService {
                 continue
             }
             if (obj[p] != null) {
-                console.log("参数p不存在")
-                console.log(p)
+                console.log("参数'"+p+"'不存在")
                 str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
             }
         }

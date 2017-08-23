@@ -12,13 +12,13 @@ export class FileService {
     }
 
 
-    async upload(file_uri: string) {
+    async upload(fileInfo) {
+        console.log("文件上传。。。")
+        let data = await this.http.post(this.urls.upload, fileInfo);
 
-        let data = await this.http.post(this.urls.upload, {file: file_uri})
-
-        console.log("upload:")
-        console.log(data)
-
+        if (data.status != 200) {
+            throw data;
+        }
         return data.content
     }
 }

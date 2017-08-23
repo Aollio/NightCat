@@ -31,7 +31,7 @@ export class ImageService {
 
         for (let i = 0; i < imgs.length; i++) {
             console.log("选择图片后")
-            let url = await this.files.upload(imgs[i])
+            let url = await this.files.upload({file: imgs[i]})
             result.push(url)
         }
 
