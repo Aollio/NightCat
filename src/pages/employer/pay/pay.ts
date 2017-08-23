@@ -1,13 +1,9 @@
 import {Component} from "@angular/core";
-declare let initializeFontSize:any
 @Component({
     templateUrl: 'pay.html',
     selector: 'page-pay'
 })
 export class PayPage{
-    ionViewDidEnter(){
-        initializeFontSize()
-    }
 
     state: number = 2
 

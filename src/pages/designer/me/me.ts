@@ -5,12 +5,10 @@ import {CommentPage} from "../comment/comment";
 import {DesignerMeDetailPage} from "./medetail/medetail";
 import {DesignerWalletPage} from "../wallet/wallet";
 import {SharedService} from "../../../service/share.service";
-import {User} from "../../../model/user";
 import {LoginPage} from "../../common/login/login";
-import { ModalController, NavParams } from 'ionic-angular';
+import { ModalController} from 'ionic-angular';
 import {Util} from "../../../service/util";
 import {FavoriteProjectsPage} from "./favorite-projects/favorite-projects";
-declare let initializeFontSize: any;
 
 @IonicPage()
 @Component({

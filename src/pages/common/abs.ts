@@ -1,6 +1,4 @@
 import {SharedService} from "../../service/share.service";
-import {ToastController} from "ionic-angular";
-
 export class AbsCommonPage {
     navColor: string;
 

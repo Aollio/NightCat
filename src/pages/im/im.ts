@@ -5,9 +5,7 @@ import {ChatPage} from "./chat/chat";
 import {ModalController, NavController} from "ionic-angular";
 import {SharedService} from "../../service/share.service";
 import {LoginPage} from "../common/login/login";
-import {State} from "../../service/im/state.im";
 import {UsersService} from "../../service/ajax/users.service";
-
 @Component({
     selector: 'page-im',
     templateUrl: 'im.html'
@@ -68,7 +66,6 @@ export class IMPage {
             }
         }, 4000)
     }
-
 
     chat(session) {
         console.log('进入聊天界面: account', session)

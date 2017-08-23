@@ -1,9 +1,6 @@
 import {Component} from "@angular/core";
 import {NavController} from "ionic-angular";
 import {SharedService} from "../../../service/share.service";
-
-declare let initializeFontSize: any;
-
 @Component({
     selector: 'page-comment',
     templateUrl: 'comment.html'
@@ -17,9 +14,6 @@ export class CommentPage {
         this.maincolor = shared.getPrimaryColor();
     }
 
-    ionViewDidEnter() {
-        initializeFontSize()
-    }
 
     //todo 内容刷新
     doRefresh(refresher) {

@@ -1,6 +1,6 @@
 ///<reference path="modifyphone/modifyphone.ts"/>
 import {NgModule} from "@angular/core";
-import {IonicModule, IonicPageModule} from "ionic-angular";
+import {IonicModule} from "ionic-angular";
 import {ModifyPhonePage} from "./modifyphone/modifyphone";
 import {ModifyPasswordPage} from "./modifypassword/modifypassword";
 import {AccountSecurityPage} from "./accountsecurity/accountsecurity";

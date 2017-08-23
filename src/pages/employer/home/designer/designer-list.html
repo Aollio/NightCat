@@ -1,12 +1,12 @@
 <ion-header>
     <ion-navbar [color]="shared.getPrimaryColor()">
         <!--todo 绑定事件 搜索设计师-->
-        <!--<ion-searchbar *ngIf="previousPage!='chooseDesigner'" placeholder="搜索设计师" class="header-search">-->
-            <!--&lt;!&ndash;[(ngModel)]="myInput"&ndash;&gt;-->
-            <!--&lt;!&ndash;[showCancelButton]="shouldShowCancel"&ndash;&gt;-->
-            <!--&lt;!&ndash;(ionInput)="onInput($event)"&ndash;&gt;-->
-            <!--&lt;!&ndash;(ionCancel)="onCancel($event)"&ndash;&gt;-->
-        <!--</ion-searchbar>-->
+        <ion-searchbar *ngIf="previousPage!='chooseDesigner'" placeholder="搜索设计师" class="header-search">
+            <!--[(ngModel)]="myInput"-->
+            <!--[showCancelButton]="shouldShowCancel"-->
+            <!--(ionInput)="onInput($event)"-->
+            <!--(ionCancel)="onCancel($event)"-->
+        </ion-searchbar>
     </ion-navbar>
 </ion-header>
 
@@ -27,7 +27,6 @@
         <ion-icon name="ios-people-outline"></ion-icon>
         <p>暂时没有设计师入驻</p>
     </div>
-
 
 
 </ion-content>

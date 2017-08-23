@@ -1,7 +1,6 @@
 import {Component} from "@angular/core";
 import {SharedService} from "../../../../service/share.service";
-import {NavController, NavParams} from "ionic-angular";
-import {ProjectService} from "../../../../service/ajax/projects.service";
+import {NavParams} from "ionic-angular";
 import {UsersService} from "../../../../service/ajax/users.service";
 import {Util} from "../../../../service/util";
 

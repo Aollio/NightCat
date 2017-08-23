@@ -4,7 +4,6 @@ import {ProjectDetailPage} from "../../common/order/orderdetail/projectdetail";
 import {PublishTaskPage} from "../../common/publishtask/publishtask";
 import {SharedService} from "../../../service/share.service";
 import {KeynoteService} from "../../../service/keynote.service";
-import {LoginPage} from "../../common/login/login";
 import {Util} from "../../../service/util";
 import {ProjectService} from "../../../service/ajax/projects.service";
 import {NoticesService} from "../../../service/ajax/notices.serveic";

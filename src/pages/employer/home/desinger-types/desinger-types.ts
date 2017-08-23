@@ -1,10 +1,7 @@
 import {Component} from '@angular/core';
 import {SharedService} from "../../../../service/share.service";
 import {NavController} from "ionic-angular";
-import {DesignerMeDetailPage} from "../../../designer/me/medetail/medetail";
 import {DesignerListPage} from "../designer/designer-list";
-
-
 @Component({
     selector: 'page-desinger-types',
     templateUrl: 'desinger-types.html'

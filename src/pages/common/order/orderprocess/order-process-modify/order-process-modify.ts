@@ -11,7 +11,6 @@ import {DesignerMeDetailPage} from "../../../../designer/me/medetail/medetail";
 import {ChatPage} from "../../../../im/chat/chat";
 import {OrderProcessPreSelectedPage} from "../order-process-pre-selectdes/order-process-pre-selectdes";
 
-declare let initializeFontSize: any;
 
 @Component({
     selector: "page-order-process-modify",

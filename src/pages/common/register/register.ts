@@ -1,5 +1,5 @@
-import {Component, ViewChild} from '@angular/core';
-import {AlertController, Events, NavController, NavParams, PopoverController} from 'ionic-angular';
+import {Component} from '@angular/core';
+import {Events, NavController, NavParams, PopoverController} from 'ionic-angular';
 import {LoginPage} from "../login/login";
 import {SharedService} from "../../../service/share.service";
 import {DesignerModulePage} from "../../designer/designer";

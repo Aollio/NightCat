@@ -1,13 +1,9 @@
-import {Component, ViewChild} from '@angular/core';
-import {el} from "@angular/platform-browser/testing/src/browser_util";
+import {Component} from '@angular/core';
 import {SharedService} from "../../../service/share.service";
 import {ProjectService} from "../../../service/ajax/projects.service";
 import {Util} from "../../../service/util";
 import {LoginPage} from "../../common/login/login";
 import {ModalController} from "ionic-angular";
-
-declare let initializeFontSize: any
-
 @Component({
     selector: 'page-designer-projects',
     templateUrl: 'projects.html'

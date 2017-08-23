@@ -1,23 +1,12 @@
 import {Injectable} from "@angular/core";
-import {User} from "../model/user";
-
 import {KeynoteService} from "./keynote.service";
 import {Events} from "ionic-angular";
 import {Util} from "./util";
 import {ImService} from "./im/service.im";
-
 @Injectable()
 export class SharedService {
     static FIRST_USE_APP = "firstUseApp";
     static TOKEN = "token";
-
-
-
-
-
-
-
-
 
     //是否为演示模式, 各个和网络连接有关的, 如果检测到为true, 则不进行网络传送, 使用测试数据进行演示
     KEYNOTE: boolean = false;

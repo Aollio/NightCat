@@ -1,6 +1,5 @@
 import {Component} from "@angular/core";
 import {NavController} from "ionic-angular";
-declare let initializeFontSize: any
 @Component({
     selector: 'com-designerorderlist',
     templateUrl: 'designerorderlist.html'
@@ -12,10 +11,6 @@ export class DesOrderListComponent {
     ];
 
     constructor(public nav:NavController) {
-    }
-
-    ionViewDidEnter() {
-        initializeFontSize()
     }
 
     isEmpty() {

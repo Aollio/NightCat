@@ -1,12 +1,10 @@
 import {Component} from '@angular/core';
-
 import {AboutPage} from '../about/about';
 import {AlertController, NavController, Platform, ToastController} from "ionic-angular";
 import {NotificationsPage} from "../../designer/nofitications/notifications";
 import {AccountSecurityPage} from "../securitycenter/accountsecurity/accountsecurity";
 import {SupportPage} from "../support/support";
 import {SharedService} from "../../../service/share.service";
-import {User} from "../../../model/user";
 import {WelcomePage} from "../../welcome/welcome";
 import {NetworkService} from "../../../service/network.service";
 import {NoticesService} from "../../../service/ajax/notices.serveic";
