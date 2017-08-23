@@ -68,16 +68,27 @@ export class DesignerMeDetailPage {
 
     }
 
-    ing = false;
 
-    favoriteHim(user){
+    favoriteHim(user) {
         if (this.shared.isLogin()) {
-
-            if (this.ing){
-                return
+            if (!this.favorite) {
+                this.favorite = true;
+                this.user.follow(user.uid)
+            }else{
+                this.alertCtrl.create({
+                            subTitle: '是否要取消关注此设计师？',
+                            buttons: [{
+                                text: '取消',
+                            }, {
+                                text: "确定",
+                                handler: () => {
+                                    this.util.toast("成功");
+                                    this.favorite = false;
+                                    this.user.unfollow(user.uid)
+                                }
+                            }]
+                        }).present();
             }
-            //todo
-            this.favorite=!this.favorite;
         } else {
             this.util.presentLoginPage(this.navCtrl);
         }
