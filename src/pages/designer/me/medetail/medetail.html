@@ -37,11 +37,17 @@
     </ion-row>
 
     <div class="row_buttons" *ngIf="!shared.isDesModule()">
-        <button tappable (click)="favoriteHim()" ion-button round class="attention_btn" (click)="attentionMe()">
-            <ion-icon *ngIf="favorite" name="ios-heart"></ion-icon>
-            <ion-icon *ngIf="!favorite" name="ios-heart-outline"></ion-icon>
+        <button tappable (click)="favoriteHim(user)" ion-button round class="attention_btn" (click)="attentionMe()">
+            <div *ngIf="!favorite">
+                <ion-icon name="ios-heart-outline"></ion-icon>
+                &nbsp; 关 注 我
+            </div>
+            <div *ngIf="favorite">
+                <ion-icon  name="ios-heart"></ion-icon>
+                &nbsp;取消关注
+            </div>
 
-            &nbsp; 关 注 我
+
         </button>
         <button ion-button round icon-only class="sed_msg_btn"
                 tappable (click)="openChat(user)">

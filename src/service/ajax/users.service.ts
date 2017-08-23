@@ -192,4 +192,36 @@ export class UsersService {
         }
         return data.content;
     }
+
+// todo 关注功能 获取是否关注
+//uid,token
+    async follow(uid) {
+        console.log("关注");
+        let data = await this.http.postWithToken(this.urls.user_follow_post,
+            {uid: uid}
+        );
+        if (data.status != 200) {
+            throw data;
+        }
+        return data.content;
+    }
+
+    // uid,token
+    async unfollow(uid) {
+        console.log("取消关注");
+        let data = await this.http.getWithToken(this.urls.user_unfollow_post, {uid: uid});
+        if (data.status != 200) {
+            throw data;
+        }
+        return data.content;
+    }
+
+    async following_list(uid) {
+        console.log("获取关注列表");
+        let data = await  this.http.getWithToken(this.urls.user_folowing_get, {uid: uid});
+        if (data.status != 200) {
+            throw data;
+        }
+        return data.content;
+    }
 }

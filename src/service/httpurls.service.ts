@@ -45,7 +45,7 @@ export class HttpUrls {
      * response:
      */
     user_experience_get: string = this._users + "/experience";
-    /**
+    /***************************************
      *  获取用户荣誉
      * params:UID
      * response:
@@ -96,6 +96,10 @@ export class HttpUrls {
 
     user_exp_comments_get: string = this.user_experience_get + "/comments";
 
+   // 关注
+    user_folowing_get:string=this._users+"/following";
+    user_follow_post: string = this._users + "/follow";
+    user_unfollow_post:string = this._users + "/unfollow";
 
     //end 用户
 
@@ -162,8 +166,8 @@ export class HttpUrls {
 
     //start 消息
     notices: string = this.server_url + "/notices";
-    notices_del:string = this.notices+"/del";
-    notices_read:string = this.notices+"/read";
+    notices_del: string = this.notices + "/del";
+    notices_read: string = this.notices + "/read";
     //end 消息
 
 
