@@ -152,6 +152,10 @@ export class WelcomePage {
             type: typeinfo
         })
     }
+    openResister(){
+        this.navCtrl.push(RegisterPage,{current:2})
+    }
+
 
     enterRegister() {
         this.state = 2

@@ -14,8 +14,10 @@ export class ImgUploaderService {
 
         this._input = document.getElementById("input");
         this._output = document.getElementById("output");
-        if (this._input == null || this._output == null) {
-            throw new Error("dom对象不存在");
+        if (this._input == null ) {
+            throw new Error("id为input的dom对象不存在");
+        }else if(this._output == null){
+            throw new Error("id为output的dom对象不存在");
         }
 
         this._completeCount = 0;
@@ -24,6 +26,7 @@ export class ImgUploaderService {
     // 显示 与input change 绑定
     show_img() {
         this._initDom(); //这个为了防止 在之前页面调用后  input 还指向之前页面
+
         this._output.innerHTML = "";
 
         for (let img of this._limit_file()) {
@@ -80,6 +83,11 @@ export class ImgUploaderService {
             reader.readAsDataURL(img);
         }
     }
+
+    async getImgInfo(){
+
+    }
+
 
     //是否完成上传
     private _isComplete() {

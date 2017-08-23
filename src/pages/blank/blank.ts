@@ -80,4 +80,9 @@ export class BlankPage {
         })
     }
 
+    change(){
+        console.log("change 被触发")
+        this.imgUploader.show_img();
+    }
+
 }

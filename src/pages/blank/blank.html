@@ -8,7 +8,6 @@
 
 <ion-content>
 
-
     <!--<image-input [(ngModel)]="imgurls"></image-input>-->
     <!---->
     <!--<button ion-button full (click)="show()">Show</button>-->
@@ -19,7 +18,7 @@
     <!--选择图片-->
     <div class="select-img">
         <a class="input-file-wrapper">
-            <input type="file" accept="image/*" id="input" (change)="imgUploader.show_img()" multiple/>点击这里上传文件
+            <input type="file" accept="image/*" id="input" (change)="change()" multiple/>点击这里上传文件
         </a>
         <output id="output"></output>
     </div>

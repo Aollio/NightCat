@@ -8,6 +8,8 @@ import {EmployerModulePage} from "../../employer/employer";
 import {Util} from "../../../service/util";
 import {UsersService} from "../../../service/ajax/users.service";
 import {NoticesService} from "../../../service/ajax/notices.serveic";
+import {FileService} from "../../../service/ajax/files.service";
+import {ImgUploaderService} from "../../../service/img-uploader.service";
 
 declare let md5: any;
 
@@ -16,8 +18,7 @@ declare let md5: any;
     templateUrl: 'register.html',
 })
 export class RegisterPage {
-    avatar: any = "";
-    btn_avatar_state: any = 1;
+
     //页面切换状态, 页面切换特效的实现变量
     current = 1
 
@@ -31,8 +32,11 @@ export class RegisterPage {
                 public popoverCtrl: PopoverController,
                 public util: Util,
                 private event: Events,
+                private fileServ: FileService,
+                private imgUploader: ImgUploaderService,
                 private noticesServ: NoticesService,
                 public usersServ: UsersService) {
+        this.current = navParams.get("current") || 1;
     }
 
 
@@ -80,15 +84,20 @@ export class RegisterPage {
     }
 
 
-    //保存密码  ，user.password为加密后的密码
-    password = "";
-
-    register() {
+    before_register() {
+        if (
+            this.btn_avatar_state == 1 ||    //未选择
+            (this.btn_avatar_state == 3 &&   //自定义图片
+                (!this.imgUploader._input || this.imgUploader._input.files.length == 0) // 但未选择
+            )
+        ) {
+            this.util.toast('请选择头像');
+            return;
+        }
         if (this.user.nickname == null || this.user.nickname == '') {
             this.util.toast('请输入昵称')
             return;
         }
-
 
         //设置角色身份
         if (this.shared.isDesModule()) {
@@ -96,13 +105,32 @@ export class RegisterPage {
         } else {
             this.user.role = 1;
         }
+
         //设置头像
-        this.user.img_url = this.avatar;
+        if (this.btn_avatar_state == 2) {
+            this.user.img_url = this.avatar;
+            this.register();                                //开始注册
+        } else if (this.btn_avatar_state == 3) {
+            let img_uploader = this.imgUploader;
+
+            img_uploader.upload(async (img) => {
+                return this.fileServ.upload(img);
+            }, () => {
+                this.user.img_url = img_uploader.img_urls[0];
+                this.register();                            //开始注册
+            }, (err) => {
+                this.util.toast("图片上传失败，请稍后再试");
+            })
+        }
+    }
 
 
+    //保存密码  ，user.password为加密后的密码
+    password = "";
+
+    register() {
         let loading = this.util.createLoading('正在注册');
         loading.present();
-
 
         // 密码加密
         this.user.password = md5(this.password);
@@ -155,57 +183,63 @@ export class RegisterPage {
     }
 
 
-    selectAvatar() {
-        let popover = this.popoverCtrl.create(PopoverPage);
-        popover.present({});
-    }
+    //>>>>>>>>>>>>>> 选择头像 >>>>>>>>>>>>>
+    //头像url
+    avatar: any = "";
+    //1 未选择  2 已选择默认  3 已选择自定义
+    btn_avatar_state: any = 1;
+    //弹框是否显示
+    pop_is_open = false;
 
-
-    openLoginPage() {
-        this.navCtrl.push(LoginPage);
-    }
-
+    //默认头像
     emojiarray: Array<any> = [
         'assets/img/cat-n23.png',
         "assets/img/cat-n54.png",
-        "assets/img/photo.png",
-        // "assets/img/if_cat_emoji_face_smily-24-01_2361865.png",
-        // "assets/img/if_cat_emoji_face_smily-29-01_2361869.png",
-        // "assets/img/if_cat_emoji_face_smily-35-01_2361874.png",
-        // "assets/img/if_cat_emoji_face_smily-38-01_2361877.png",
     ];
 
-    chooseAvatar() {
-        this.btn_avatar_state = 2;
-        // this.util.toast(this.avatar)
+    open_pop() {
+        this.pop_is_open = true;
     }
 
-    complete(any) {
-        this.btn_avatar_state = any;
-        if (any === 1) {
+    close_pop() {
+        this.pop_is_open = false;
+    }
+
+    //显示 已选择头像
+    showImg() {
+        //让output显示 有一定的延迟 ，imgUploader才能获得output
+        this.btn_avatar_state = 3;
+        setTimeout(()=>{
+            this.imgUploader.show_img();
+            //不知为啥，不选图片 files 并不清空， 而black页的demo 却不是这样
+            if (!this.imgUploader._input || this.imgUploader._input.files.length == 0) { // 未选择
+                console.log("没有选择图片");
+                this.btn_avatar_state = 1;
+                this.close_pop();
+                return;
+            }
             this.avatar = "";
-        }
-        if (this.avatar === "") {
-            this.btn_avatar_state = 1;
-        }
+            this.close_pop();
+        },10);
+
+
     }
 
     select(item) {
+        this.close_pop();
         this.avatar = item;
-        if (this.avatar == "assets/img/photo.png") {
-
-        }
+        this.btn_avatar_state = 2;
     }
+
+    //<<<<<<<<<<<<<<< 选择头像 <<<<<<<<<<<<<<<
+
 
     pop() {
         this.navCtrl.pop()
     }
 
 
-    // @ViewChild("captcha") captcha;
-    // private captcha = ANGULAR.;
-
-    //获取验证码
+    //>>>>>>>>>>>>>>>>> 获取验证码 >>>>>>>>>>>>>>>>>>
     private captchaText = "获取验证码";
     private captchaDisabled = false;
 
@@ -237,8 +271,15 @@ export class RegisterPage {
         }, 1000);
     }
 
+    //<<<<<<<<<<<<<<<<< 获取验证码 <<<<<<<<<<<<<<<<<
+
     //todo
     sendMessage() {
 
     }
+
+    openLoginPage() {
+        this.navCtrl.push(LoginPage);
+    }
+
 }

@@ -36,7 +36,6 @@ export class LoginPage {
                 private noticesServ: NoticesService,
                 public util: Util,) {
         this._one = navParams.get("nav")
-
     }
 
 

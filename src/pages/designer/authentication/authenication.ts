@@ -5,7 +5,7 @@ import {UsersService} from "../../../service/ajax/users.service";
 import {Util} from "../../../service/util";
 // import {ImagePicker} from '@ionic-native/image-picker';
 @Component({
-    selector: 'page-authenication',
+    selector: 'page-authentication',
     templateUrl: 'authentication.html'
 })
 export class AuthenticationPage {

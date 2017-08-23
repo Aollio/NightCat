@@ -37,27 +37,50 @@
         </button>
 
         <div class="null-only-height">欢迎来夜猫</div>
-        <div class="avatar" tappable (click)="chooseAvatar()">
+        <div class="avatar" tappable (click)="open_pop()">
             <div *ngIf="btn_avatar_state===1">选择头像</div>
-            <img *ngIf="btn_avatar_state===3" src="{{avatar}}">
+            <img *ngIf="btn_avatar_state===2" src="{{avatar}}">
+            <output *ngIf="btn_avatar_state===3" id="output"></output>
         </div>
 
-        <div class="my-list" *ngIf="btn_avatar_state===2">
-            <div class="my-ul clearfloat">
-                <div class="my-li"
-                     *ngFor="let item of emojiarray"
-                     [class.img-selected]="avatar === item&&avatar!='assets/img/Rectangle.png'">
-                    <img [src]="item" tappable (click)="select(item)" alt=""/></div>
-            </div>
-            <div class="my-bottom">
-                <div class="my-bottom-l">
-                    <button tappable (click)="complete(1)">取消</button>
+
+        <!--弹出选择头像-->
+        <div class="pop-bg" *ngIf="pop_is_open">
+            <div class="choose">
+                <div class="title">头像选择</div>
+                <div class="imgs">
+                    <img *ngFor="let item of emojiarray"
+                         [src]="item" tappable (click)="select(item)"/>
+
+                    <!--选择图片-->
+                    <div class="select-img">
+                        <a class="input-file-wrapper">
+                            <img src="assets/img/photo.png"/>
+                            <input type="file" accept="image/*" id="input" (change)="showImg()"/>
+                        </a>
+                    </div>
                 </div>
-                <div class="my-bottom-r my-selected">
-                    <button tappable (click)="complete(3)">确定</button>
+                <div class="buttons">
+                    <button ion-button full color="transparent-color" (click)="close_pop()">取消</button>
                 </div>
             </div>
         </div>
+        <!--<div class="my-list" *ngIf="btn_avatar_state===10">-->
+        <!--<div class="my-ul clearfloat">-->
+        <!--<div class="my-li"-->
+        <!--*ngFor="let item of emojiarray"-->
+        <!--[class.img-selected]="avatar === item&&avatar!='assets/img/Rectangle.png'">-->
+        <!--<img [src]="item" tappable (click)="select(item)" alt=""/></div>-->
+        <!--</div>-->
+        <!--<div class="my-bottom">-->
+        <!--<div class="my-bottom-l">-->
+        <!--<button tappable (click)="complete(1)">取消</button>-->
+        <!--</div>-->
+        <!--<div class="my-bottom-r my-selected">-->
+        <!--<button tappable (click)="complete(3)">确定</button>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
         <form class="myInput">
             <div class="name">
                 <input type="text" name="nickname" [ngModelOptions]="{standalone: true}" [(ngModel)]="user.nickname"
@@ -65,9 +88,8 @@
             </div>
             <!--todo-->
 
-
         </form>
-        <button ion-button round class="login-btn" tappable (click)="register()">注册</button>
+        <button ion-button round class="login-btn" tappable (click)="before_register()">注册</button>
 
     </div>
 
