@@ -20,6 +20,8 @@ export class DesignerListPage {
     designerMeDetailPage: DesignerMeDetailPage;
 
     type = 0;
+    position = 0;
+    official = 0;
 
     constructor(private navCtrl: NavController,
                 private shared: SharedService,
@@ -32,7 +34,14 @@ export class DesignerListPage {
         if (typeindex != null) {
             this.type = typeindex + 1;
         }
-
+        let positionindex = this.navParams.get("position")
+        if (positionindex != null) {
+            this.position = positionindex
+        }
+        let officialindex = this.navParams.get("official")
+        if (officialindex != null) {
+            this.official = officialindex;
+        }
     }
 
     isloading = false;
@@ -70,7 +79,9 @@ export class DesignerListPage {
     _doRefresh(completeFunc) {
 
         let params = {
-            type: this.type
+            type: this.type,
+            official:this.official,
+            position:this.position
         }
 
         this.userServ.getDesigners(params)
@@ -84,6 +95,8 @@ export class DesignerListPage {
             // todo 异常捕获
             completeFunc()
         });
+
+        console.log(this.type+","+this.position+","+this.official);
     }
 
 
