@@ -36,6 +36,8 @@ import {ImagePicker} from "@ionic-native/image-picker";
 import {NoticesService} from "../service/ajax/notices.serveic";
 import {ImgUploaderService} from "../service/img-uploader.service";
 
+import {FileTransfer, FileUploadOptions, FileTransferObject} from '@ionic-native/file-transfer';
+
 @NgModule({
     declarations: [
         MyApp,
@@ -96,6 +98,7 @@ import {ImgUploaderService} from "../service/img-uploader.service";
         ImgUploaderService,
         //Other
         //auto
+        FileTransfer,
         StatusBar,
         SplashScreen,
         {provide: ErrorHandler, useClass: IonicErrorHandler},

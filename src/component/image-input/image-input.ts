@@ -8,6 +8,8 @@ import {Events, NavController, Platform} from 'ionic-angular';
 const noop = () => {
 };
 
+declare let window: any
+
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => ImageInputComponent),
@@ -26,33 +28,29 @@ export class ImageInputComponent implements ControlValueAccessor {
     private imgs;
 
 
-    constructor(private nav: NavController,
-                private imagesServ: ImageService,
-                private platform: Platform) {
+    constructor(
+                private imagesServ: ImageService,) {
     }
 
-    uploading_img() {
-
+    pick_image() {
         this.imagesServ.picker({})
             .then(result => {
                 console.log("async imagesServ: ")
                 console.log(result)
                 for (let x of result) {
-                    console.log("imagesServe:")
                     console.log(x)
                     this.imgs.push(x)
                 }
             })
             .catch(error => console.log(error))
-
     }
 
-
-    show() {
-        if (this.platform.is("android")) {
-            return false;
+    async upload() {
+        let result = await  this.imagesServ.upload(this.imgs)
+        this.imgs.length = 0
+        for (let x of result) {
+            this.imgs.push(x)
         }
-        return true;
     }
 
 
