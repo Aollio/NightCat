@@ -8,6 +8,7 @@ import {NoProjectComponent} from "./no-project/no-project";
 import {DesignerListMaxComponent} from "./designer-list-max/designer-list-max";
 import {SelectPhoto} from "./select-photo/select-photo";
 import {ImageInputComponent} from "./image-input/image-input";
+import {ImagePickerComponent} from "./image-picker/image-picker.component";
 
 @NgModule({
     imports: [IonicModule],
@@ -21,7 +22,8 @@ import {ImageInputComponent} from "./image-input/image-input";
         //todo delete
         DesignerListMaxComponent,
         SelectPhoto,
-        ImageInputComponent
+        ImageInputComponent,
+        ImagePickerComponent
 
     ],
     entryComponents: [
@@ -37,7 +39,8 @@ import {ImageInputComponent} from "./image-input/image-input";
         //todo delete
         DesignerListMaxComponent,
         SelectPhoto,
-        ImageInputComponent
+        ImageInputComponent,
+        ImagePickerComponent
     ]
 })
 

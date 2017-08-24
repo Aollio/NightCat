@@ -9,7 +9,6 @@ import {Util} from "../../../service/util";
 import {UsersService} from "../../../service/ajax/users.service";
 import {NoticesService} from "../../../service/ajax/notices.serveic";
 import {FileService} from "../../../service/ajax/files.service";
-import {ImgUploaderService} from "../../../service/img-uploader.service";
 
 declare let md5: any;
 
@@ -33,7 +32,6 @@ export class RegisterPage {
                 public util: Util,
                 private event: Events,
                 private fileServ: FileService,
-                private imgUploader: ImgUploaderService,
                 private noticesServ: NoticesService,
                 public usersServ: UsersService) {
         this.current = navParams.get("current") || 1;
@@ -85,12 +83,7 @@ export class RegisterPage {
 
 
     before_register() {
-        if (
-            this.btn_avatar_state == 1 ||    //未选择
-            (this.btn_avatar_state == 3 &&   //自定义图片
-                (!this.imgUploader._input || this.imgUploader._input.files.length == 0) // 但未选择
-            )
-        ) {
+        if (this.btn_avatar_state == 1) {    //未选择
             this.util.toast('请选择头像');
             return;
         }
@@ -111,14 +104,15 @@ export class RegisterPage {
             this.user.img_url = this.avatar;
             this.register();                                //开始注册
         } else if (this.btn_avatar_state == 3) {
-            let img_uploader = this.imgUploader;
 
-            img_uploader.upload(async (img) => {
-                return this.fileServ.upload(img);
-            }, () => {
-                this.user.img_url = img_uploader.img_urls[0];
+            this.fileServ.upload({  //上传图片
+                type: this.imgInfo['type'],
+                file: this.imgInfo['base64']
+            }).then(url => {
+                this.user.img_url = url;
                 this.register();                            //开始注册
-            }, (err) => {
+            }).catch((err) => {
+                console.log(err);
                 this.util.toast("图片上传失败，请稍后再试");
             })
         }
@@ -205,30 +199,26 @@ export class RegisterPage {
         this.pop_is_open = false;
     }
 
-    //显示 已选择头像
-    showImg() {
-        //让output显示 有一定的延迟 ，imgUploader才能获得output
-        this.btn_avatar_state = 3;
-        setTimeout(()=>{
-            this.imgUploader.show_img();
-            //不知为啥，不选图片 files 并不清空， 而black页的demo 却不是这样
-            if (!this.imgUploader._input || this.imgUploader._input.files.length == 0) { // 未选择
-                console.log("没有选择图片");
-                this.btn_avatar_state = 1;
-                this.close_pop();
-                return;
-            }
-            this.avatar = "";
-            this.close_pop();
-        },10);
-
-
-    }
-
     select(item) {
         this.close_pop();
         this.avatar = item;
         this.btn_avatar_state = 2;
+    }
+
+    //自定义图片
+    private localAvatar = "";
+    //自定义图片信息
+    private imgInfo = '';
+
+    setImgs(imgsInfo) {
+        console.log("img load",imgsInfo);
+        let imgInfo = imgsInfo[0];
+        if (imgInfo) {
+            this.close_pop();
+            this.btn_avatar_state = 3;
+            this.avatar = imgInfo.url;
+            this.imgInfo = imgInfo;
+        }
     }
 
     //<<<<<<<<<<<<<<< 选择头像 <<<<<<<<<<<<<<<

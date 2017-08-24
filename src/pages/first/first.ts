@@ -10,6 +10,7 @@ import {EmployerModulePage} from "../employer/employer"
 import {NetworkService} from "../../service/network.service"
 import {NoticesService} from "../../service/ajax/notices.serveic"
 import {NotificationsPage} from "../designer/nofitications/notifications"
+import {ImgBoxViewService} from "../../service/imgboxview.service";
 
 @Component({
     selector: "page-first",
@@ -21,10 +22,13 @@ export class FirstPage {
                 public event: Events,
                 private http: NetworkService,
                 private userServ: UsersService,
+                private imgBox:ImgBoxViewService,
                 public shared: SharedService,
                 private noticesServ: NoticesService,
                 private alertCtrl: AlertController,
                 private util: Util) {
+        imgBox.bindImg(".imgBox");
+
 
         event.subscribe('gotologin', () => {
             util.toast('授权过期或者未登录');
