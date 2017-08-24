@@ -73,7 +73,7 @@ export class DesignerMeDetailPage {
         if (this.shared.isLogin()) {
             if (!this.favorite) {
                 this.favorite = true;
-                this.user.follow(user.uid)
+                this.userServ.follow(user.uid)
             }else{
                 this.alertCtrl.create({
                             subTitle: '是否要取消关注此设计师？',

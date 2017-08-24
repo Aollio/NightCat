@@ -162,6 +162,7 @@ export class UsersService {
         if (data.status != 200) {
             throw data;
         }
+
         return data.content;
     }
 
@@ -216,12 +217,13 @@ export class UsersService {
         return data.content;
     }
 
-    async following_list(uid) {
+    async following_list() {
         console.log("获取关注列表");
-        let data = await  this.http.getWithToken(this.urls.user_folowing_get, {uid: uid});
+        let data = await  this.http.getWithToken(this.urls.user_folowing_get, );
         if (data.status != 200) {
             throw data;
         }
+        console.log(data.content);
         return data.content;
     }
 }

@@ -42,7 +42,7 @@ export class SharedService {
     ROLE_SERVER_EMPLOYER = 1;
 
     getFullStackType() {
-        return 11;
+        return 10;
     }
 
     constructor(private event: Events,
