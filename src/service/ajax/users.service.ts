@@ -210,7 +210,7 @@ export class UsersService {
     // uid,token
     async unfollow(uid) {
         console.log("取消关注");
-        let data = await this.http.getWithToken(this.urls.user_unfollow_post, {uid: uid});
+        let data = await this.http.postWithToken(this.urls.user_unfollow_post, {uid: uid});
         if (data.status != 200) {
             throw data;
         }
