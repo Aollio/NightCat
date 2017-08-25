@@ -10,7 +10,7 @@ import {DesignerListPage} from "../home/designer/designer-list";
 })
 export class HelpChoosePage {
     employerhome: any = EmployerHomePage;
-    type = 0;
+    type;
     position = 0;
     official = 0;
 
@@ -123,6 +123,6 @@ export class HelpChoosePage {
     }
 
     setChooseType(index) {
-        this.type =index+1;
+        this.type =index;
     }
 }

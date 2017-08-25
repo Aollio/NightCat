@@ -3,6 +3,7 @@ import {NavController} from "ionic-angular";
 import {DesignerMeDetailPage} from "../../../designer/me/medetail/medetail";
 import {UsersService} from "../../../../service/ajax/users.service";
 import {SharedService} from "../../../../service/share.service";
+
 @Component({
     templateUrl: 'favorite-designer.html',
     selector: 'page-favorite-designer'
@@ -10,22 +11,27 @@ import {SharedService} from "../../../../service/share.service";
 export class EmpFavoriteDesignerPage {
 
     users = [];
+    favorite: boolean = true;
 
     // favorite-designer
-    constructor(private navCtrl: NavController, private usersServ: UsersService,private share:SharedService) {
+    constructor(private navCtrl: NavController,
+                private usersServ: UsersService,
+                private share: SharedService,
+                private userServ: UsersService) {
         this.usersServ.following_list().then(users => {
             for (let user of users) {
-                this.users.push(user)
+                this.users.push(user.to)
             }
         });
     }
 
     openDesigner(user) {
         this.navCtrl.push(DesignerMeDetailPage, {
-            user: user,
+            designer: user,
             isDesigner: false
         });
     }
+
     //todo 内容刷新
     doRefresh(refresher) {
         console.log('Begin async operation', refresher);
@@ -34,5 +40,16 @@ export class EmpFavoriteDesignerPage {
             console.log('Async operation has ended');
             refresher.complete();
         }, 2000);
+    }
+
+    following(user) {
+        if (!this.favorite) {
+            this.favorite = true;
+            this.userServ.follow(user.uid)
+        } else {
+            this.favorite = false;
+            this.userServ.unfollow(user.uid)
+
+        }
     }
 }

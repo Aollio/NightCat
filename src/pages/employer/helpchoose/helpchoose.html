@@ -20,7 +20,8 @@
         <ion-grid>
             <ion-row>
                 <ion-col col-3 *ngFor="let item of types;let i = index"
-                         [class.bar-bg-active]="(i+1)==type">
+                         [class.bar-bg-active]="i==type"
+                         [class.my-selected]="i==type">
                     <div class="my-li"
                          (click)="setChooseType(i)">
                         <img class="my-li-img" [src]="item.img" alt="">

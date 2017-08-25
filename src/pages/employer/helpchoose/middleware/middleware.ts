@@ -1,7 +1,6 @@
 import {Component} from "@angular/core";
 import {NavController} from "ionic-angular";
 import {HelpChoosePage} from "../helpchoose";
-import {el} from "@angular/platform-browser/testing/src/browser_util";
 
 @Component({
     selector:'middleware',
