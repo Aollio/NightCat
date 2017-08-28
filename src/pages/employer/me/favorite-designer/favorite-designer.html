@@ -35,9 +35,15 @@
                 </div>
             </ion-item>
             <ion-item-options side="right">
-                <button ion-button color="emp-primary">
+                <button ion-button color="emp-primary" tappable (click)="following(item)">
                     <ion-icon name="delete"></ion-icon>
-                    &nbsp;取&nbsp;消&nbsp;关&nbsp;注&nbsp;
+                    <div *ngIf="favorite">
+                        取&nbsp;消&nbsp;关&nbsp;注&nbsp;
+                    </div>
+                    <div *ngIf="!favorite">
+                        重&nbsp;新&nbsp;关&nbsp;注&nbsp;
+                    </div>
+                    &nbsp;
                 </button>
             </ion-item-options>
         </ion-item-sliding>

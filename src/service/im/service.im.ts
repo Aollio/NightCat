@@ -1,7 +1,5 @@
 import {Injectable} from "@angular/core";
-import {ImConfig} from "./config.im";
 import {Messages} from "./msgs.im";
-import {Sessions} from "./sessions.im";
 import {State} from "./state.im";
 import {System} from "./system.im";
 import {Option} from "./option.im";
@@ -68,7 +66,7 @@ export class ImService {
         console.log(this.state)
         this.options.token = user.im_token;
         this.options.account = user.accid;
-        //todo 消息暂不能用
+
         this.state.nim = NIM.getInstance(this.options)
     }
 
