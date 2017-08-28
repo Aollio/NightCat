@@ -1,8 +1,9 @@
 import {Component} from "@angular/core";
-import {NavController} from "ionic-angular";
+import {NavController, AlertController, Events} from "ionic-angular";
 import {DesignerMeDetailPage} from "../../../designer/me/medetail/medetail";
 import {UsersService} from "../../../../service/ajax/users.service";
 import {SharedService} from "../../../../service/share.service";
+import {Util} from "../../../../service/util";
 
 @Component({
     templateUrl: 'favorite-designer.html',
@@ -10,38 +11,45 @@ import {SharedService} from "../../../../service/share.service";
 })
 export class EmpFavoriteDesignerPage {
 
+    static get_follow_des = "get_follow_des";
+
+    //设计师列表
     users = [];
+
+    //todo delete
     favorite: boolean = true;
 
     // favorite-designer
     constructor(private navCtrl: NavController,
-                private usersServ: UsersService,
+                private alert: AlertController,
+                private events: Events,
+                private util: Util,
                 private share: SharedService,
                 private userServ: UsersService) {
-        this.usersServ.following_list().then(users => {
-            for (let user of users) {
-                this.users.push(user.to)
-            }
+        this.users = userServ.follow_des;
+
+        this.get_follow_designers(() => {});
+    }
+
+    get_follow_designers(completeFunc) {
+        if (this.share.isDesModule()) return;    //设计师没有此功能
+        this.userServ.get_follow_des().then(users => {
+            completeFunc();
+        }).catch(err => {
+            console.log(err);
+            this.util.toast("获取关注设计师列表失败")
         });
     }
 
-    openDesigner(user) {
-        this.navCtrl.push(DesignerMeDetailPage, {
-            designer: user,
-            isDesigner: false
-        });
-    }
-
-    //todo 内容刷新
+    //内容刷新
     doRefresh(refresher) {
-        console.log('Begin async operation', refresher);
-
-        setTimeout(() => {
-            console.log('Async operation has ended');
+        this.get_follow_designers(() => {
             refresher.complete();
-        }, 2000);
+        })
     }
 
+
+    //todo delete
     following(user) {
         if (!this.favorite) {
             this.favorite = true;
@@ -49,7 +57,36 @@ export class EmpFavoriteDesignerPage {
         } else {
             this.favorite = false;
             this.userServ.unfollow(user.uid)
-
         }
     }
+
+    unfollow(user) {
+        this.alert.create({
+            subTitle: '确定取消关注吗？',
+            buttons: [
+                {
+                    text: '我再看看',
+                },
+                {
+                    text: '不再关注',
+                    handler: () => {
+                        this.userServ.unfollow(user.uid).then(() => {
+                            let index = this.users.indexOf(user);
+                            this.users.splice(index, 1);
+                        }).catch(err => {
+                            console.log(err);
+                            this.util.toast("取消关注失败，请稍后再试");
+                        })
+                    }
+                }
+            ]
+        }).present();
+    }
+
+    openDesigner(user) {
+        this.navCtrl.push(DesignerMeDetailPage, {
+            designer: user
+        });
+    }
+
 }

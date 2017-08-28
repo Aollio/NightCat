@@ -30,12 +30,7 @@ export class EmployerHomePage {
                 private shared: SharedService,
                 private util: Util,
                 public alertCtrl: AlertController,) {
-
         this.isFirstLogin = shared.isFirstUse();
-        console.log("sdasdasda")
-        console.log(this.util.nav)
-
-
     }
 
     openLoginPage() {
@@ -49,7 +44,6 @@ export class EmployerHomePage {
         this.navCtrl.push(page, option)
 
     }
-
 
     btn_designer() {
         this.navCtrl.push(DesignerListPage);

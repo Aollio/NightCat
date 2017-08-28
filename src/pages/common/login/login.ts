@@ -8,6 +8,7 @@ import {Util} from "../../../service/util";
 import {EmployerTabsPage} from "../../employer/tabs/tabs";
 import {DesignerTabsPage} from "../../designer/tabs/tabs";
 import {NoticesService} from "../../../service/ajax/notices.serveic";
+import {EmpFavoriteDesignerPage} from "../../employer/me/favorite-designer/favorite-designer";
 
 
 declare let md5: any;
@@ -69,32 +70,13 @@ export class LoginPage {
             .then(user => {
                 this.viewCtrl.dismiss();
 
+
                 console.log("isDes", this.shared.isDesModule(), "role", user.role);
 
-                if (this.shared.isDesModule() != (user.role == 0)) {
-                    //登录用户身份和打开用户身份不一致
-                    this.util.toast("你登录的用户身份和打开的模块不一致");
-                    if (this.shared.isDesModule()) {
-                        if (this._one != null) {
-                            this._one.setRoot(EmployerTabsPage, {}, {animate: true});
-                        }
-                        else {
-                            this.navCtrl.setRoot(EmployerTabsPage, {}, {animate: true});
-                        }
-                    } else {
-                        if (this._one != null) {
-                            this._one.setRoot(DesignerTabsPage, {}, {animate: true});
-                        }
-                        else {
-                            this.navCtrl.setRoot(DesignerTabsPage, {}, {animate: true});
-                        }
-                    }
-                } else {
-                    console.log("登录的用户身份和打开的模块一致");
-                }
+                this.gotoModuleByRole(user);
 
                 this.shared.setCurrentUser(user);
-                this.event.publish(this.noticesServ.s_get_notices);
+                this.event.publish(this.noticesServ.s_get_notices);//发出 读取新消息 事件
 
             }).catch(error => {
 
@@ -106,6 +88,31 @@ export class LoginPage {
                 // this.util.toast("未知错误")
             }
         })
+    }
+
+    //判断登录的用户身份和打开的模块是否一致，否则进行模块切换
+    gotoModuleByRole(user){
+        if (this.shared.isDesModule() != (user.role == 0)) {
+            //登录用户身份和打开用户身份不一致
+            this.util.toast("你登录的用户身份和打开的模块不一致");
+            if (this.shared.isDesModule()) {
+                if (this._one != null) {
+                    this._one.setRoot(EmployerTabsPage, {}, {animate: true});
+                }
+                else {
+                    this.navCtrl.setRoot(EmployerTabsPage, {}, {animate: true});
+                }
+            } else {
+                if (this._one != null) {
+                    this._one.setRoot(DesignerTabsPage, {}, {animate: true});
+                }
+                else {
+                    this.navCtrl.setRoot(DesignerTabsPage, {}, {animate: true});
+                }
+            }
+        } else {
+            console.log("登录的用户身份和打开的模块一致");
+        }
     }
 
     openRegisterPage() {

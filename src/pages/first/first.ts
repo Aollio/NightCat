@@ -11,6 +11,7 @@ import {NetworkService} from "../../service/network.service"
 import {NoticesService} from "../../service/ajax/notices.serveic"
 import {NotificationsPage} from "../designer/nofitications/notifications"
 import {ImgBoxViewService} from "../../service/imgboxview.service";
+import {EmpFavoriteDesignerPage} from "../employer/me/favorite-designer/favorite-designer";
 
 @Component({
     selector: "page-first",
@@ -27,6 +28,7 @@ export class FirstPage {
                 private noticesServ: NoticesService,
                 private alertCtrl: AlertController,
                 private util: Util) {
+
 
         //有class imgBox 的图片 能够点击放大
         imgBox.bindImg("img.imgBox");

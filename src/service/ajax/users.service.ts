@@ -204,16 +204,17 @@ export class UsersService {
         return data.content;
     }
 
-// todo 关注功能 获取是否关注
-//uid,token
+
+    //>>>>>>>>>>>>>>>雇主关注的设计师列表>>>>>>>>>>>>>>>>>
+    public follow_des = [];
+
     async follow(uid) {
         console.log("关注");
-        let data = await this.http.postWithToken(this.urls.user_follow_post,
-            {uid: uid}
-        );
-        if (data.status != 200) {
-            throw data;
-        }
+        let data = await this.http.postWithToken(this.urls.user_follow_post, {uid: uid});
+        if (data.status != 200) throw data;
+
+        this.follow_des.push({uid: uid});    //添加关注
+
         return data.content;
     }
 
@@ -221,19 +222,46 @@ export class UsersService {
     async unfollow(uid) {
         console.log("取消关注");
         let data = await this.http.postWithToken(this.urls.user_unfollow_post, {uid: uid});
-        if (data.status != 200) {
-            throw data;
+        if (data.status != 200) throw data;
+
+        for (let index in this.follow_des) {   //删除关注
+            if (uid == this.follow_des[index].uid) {
+                this.follow_des.splice(parseInt(index), 1);
+            }
         }
+
         return data.content;
     }
 
-    async following_list() {
+    /**
+     * 刷新操作 从网络获取数据
+     * 非刷新操作  返回已有数据 若没有数据，再从网络获取
+     * @param {boolean} refresh 是否进行刷新操作
+     * @returns {Promise<Array>}
+     */
+    async get_follow_des(refresh: boolean = true) {
+        if (!refresh && this.follow_des.length != 0) {  //返回已有数据
+            return this.follow_des;
+        }
+
         console.log("获取关注列表");
         let data = await  this.http.getWithToken(this.urls.user_folowing_get,);
         if (data.status != 200) {
             throw data;
         }
+        this.set_follow_des(data.content);
+
         console.log(data.content);
-        return data.content;
+        return this.follow_des;
     }
+
+    private set_follow_des(contents) {
+        this.follow_des.length = 0;
+        for (let content of contents) {
+            this.follow_des.push(content.to);
+        }
+    }
+
+    //<<<<<<<<<<<<<<<<<雇主关注的设计师列表<<<<<<<<<<<<<<<<<<<
+
 }

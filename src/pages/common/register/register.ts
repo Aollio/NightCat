@@ -11,6 +11,7 @@ import {NoticesService} from "../../../service/ajax/notices.serveic";
 import {FileService} from "../../../service/ajax/files.service";
 import {ImageInputComponent} from "../../../component/image-input/image-input";
 import {ImageService} from "../../../service/ajax/imgs.service";
+import {EmpFavoriteDesignerPage} from "../../employer/me/favorite-designer/favorite-designer";
 
 declare let md5: any;
 
@@ -142,16 +143,13 @@ export class RegisterPage {
                         console.log('login success');
 
                         this.shared.setCurrentUser(user);
-                        //发出 读取新消息事件
-                        this.event.publish(this.noticesServ.s_get_notices);
+                        this.event.publish(this.noticesServ.s_get_notices); //发出 读取新消息 事件
 
                         if (this.shared.isDesModule()) {
                             this.navCtrl.setRoot(DesignerModulePage, {}, {animate: true});
                         } else {
                             this.navCtrl.setRoot(EmployerModulePage, {}, {animate: true});
                         }
-                        // this.openHome();
-                        // this.current = 3
                     }).catch(error => {
                     console.log('自动登录失败', error)
                     loading.dismiss();

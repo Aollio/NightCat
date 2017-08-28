@@ -15,9 +15,11 @@ export class DesignerListPage {
 
     miancolor;
     previousPage = "";//前一页
+
+    // 设计师列表
     designers: Array<any> = [];
 
-    designerMeDetailPage: DesignerMeDetailPage;
+    designerMeD1etailPage: DesignerMeDetailPage;
 
     type = 0;
     position = 0;
@@ -28,6 +30,9 @@ export class DesignerListPage {
                 private userServ: UsersService,
                 private navParams: NavParams,
                 private util: Util) {
+
+
+
         this.miancolor = this.shared.getPrimaryColor();
         this.previousPage = this.navParams.get("previousPage")
         let typeindex = this.navParams.get("type")
@@ -44,31 +49,28 @@ export class DesignerListPage {
         }
     }
 
+
+
     isloading = false;
     syncComplete = false;
 
     ionViewDidEnter() {
-
         let loading = this.util.createLoading("加载中")
-        this.isloading = true;
         loading.present()
+        this.isloading = true;
+
         this._doRefresh(() => {
             if (this.isloading) {
-                loading.dismiss()
+                loading.dismiss();
+                console.log("-------after dismiss----- ",loading);
                 this.isloading = false;
                 this.syncComplete = true;
             }
         })
     }
 
-    open(page, option) {
-        this.navCtrl.push(page, option)
-    }
-
-
     // todo 内容刷新
     doRefresh(refresher) {
-        this.designers.length = 0;
         this.syncComplete = false;
         this._doRefresh(() => {
             refresher.complete();
@@ -77,15 +79,15 @@ export class DesignerListPage {
     }
 
     _doRefresh(completeFunc) {
-
         let params = {
             type: this.type,
-            official:this.official,
-            position:this.position
+            official: this.official,
+            position: this.position
         }
 
         this.userServ.getDesigners(params)
             .then(users => {
+                this.designers.length = 0;
                 for (let user of users) {
                     this.designers.push(user);
                 }
@@ -96,8 +98,10 @@ export class DesignerListPage {
             completeFunc()
         });
 
-        console.log(this.type+","+this.position+","+this.official);
+        console.log(this.type + "," + this.position + "," + this.official);
     }
 
-
+    open(page, option) {
+        this.navCtrl.push(page, option)
+    }
 }
