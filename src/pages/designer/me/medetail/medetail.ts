@@ -84,7 +84,7 @@ export class DesignerMeDetailPage {
                                 handler: () => {
                                     this.util.toast("成功");
                                     this.favorite = false;
-                                    this.user.unfollow(user.uid)
+                                    this.userServ.unfollow(user.uid)
                                 }
                             }]
                         }).present();

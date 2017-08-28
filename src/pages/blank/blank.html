@@ -15,20 +15,10 @@
     <button ion-button (click)="showlocal()">显示local</button>
 
 
-    <!--选择图片-->
-    <div class="select-img">
-        <a class="input-file-wrapper">
-            <input type="file" accept="image/*" id="input" (change)="change()" multiple/>点击这里上传文件
-        </a>
-        <output id="output"></output>
-    </div>
+    <!--&lt;!&ndash;选择图片&ndash;&gt;-->
 
-
-    <button ion-button (click)="upLoad_img()">上传</button>
-    <br/>
-
-
-    <img *ngFor="let img of imgUploader.img_urls" [src]="img"/>
-
+    <image-picker [max-count]="9" (onload)="set($event)"></image-picker>
+    <image-picker [max-count]="1" (onload)="set($event)"></image-picker>
+    <img class="imgBox" *ngFor="let imgInfo of imgsInfo" [src]="imgInfo.url  "/>
 
 </ion-content>

@@ -64,6 +64,13 @@ export class PublishTaskPage {
         });
         this.modal.create(LoginPage).present();
 
+
+
+    //    todo
+        setInterval(()=>{
+            console.log("publish"+this.project.img_urls.toString());
+        },1000);
+
     }
 
 

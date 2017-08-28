@@ -52,7 +52,7 @@ export class SharedService {
         event.subscribe('backdoor', (user) => {
             console.log('receive \'backdoor\' event');
             this.keynote.initDefaultUser(true, this);
-        })
+        });
     }
 
     //获取导航栏的颜色

@@ -28,7 +28,7 @@ export class DesignerListMaxComponent {
 
     openDesignerPage(user) {
         this.navCtrl.push(DesignerMeDetailPage, {
-            user: user,
+            designer: user,
         })
     }
 

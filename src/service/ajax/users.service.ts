@@ -5,6 +5,7 @@ import {NetworkService} from "../network.service";
 import {KeynoteService} from "../keynote.service";
 import {Util} from "../util";
 import {ImService} from "../im/service.im";
+import {Events} from "ionic-angular";
 
 @Injectable()
 export class UsersService {
@@ -14,11 +15,20 @@ export class UsersService {
     private users_accidmap = {};
 
     constructor(public keynote: KeynoteService,
+                public shared: SharedService,
+                public util: Util,
                 private http: NetworkService,
                 private urls: HttpUrls,
-                public shared: SharedService,
                 private imServ: ImService,
-                public util: Util) {
+                private event: Events) {
+        //刷新当前用户信息
+        event.subscribe("refresh_user", () => {
+            this.getInfo(shared.getCurrentUser().uid).then(user => {
+                shared.setCurrentUser(user);
+            }).catch(err => {
+                console.log(err);
+            })
+        })
     }
 
     cacheUser(user) {
@@ -66,9 +76,9 @@ export class UsersService {
     async getInfo(uid) {
         console.log("获取用户信息");
 
-        if (this.users_uidmap[uid] != null) {
-            return this.users_uidmap[uid];
-        }
+        // if (this.users_uidmap[uid] != null) {
+        //     return this.users_uidmap[uid];
+        // }
 
         let data = await this.http.getWithToken(this.urls.user_info_get, {uid: uid});
 
@@ -210,7 +220,7 @@ export class UsersService {
     // uid,token
     async unfollow(uid) {
         console.log("取消关注");
-        let data = await this.http.getWithToken(this.urls.user_unfollow_post, {uid: uid});
+        let data = await this.http.postWithToken(this.urls.user_unfollow_post, {uid: uid});
         if (data.status != 200) {
             throw data;
         }
@@ -219,7 +229,7 @@ export class UsersService {
 
     async following_list() {
         console.log("获取关注列表");
-        let data = await  this.http.getWithToken(this.urls.user_folowing_get, );
+        let data = await  this.http.getWithToken(this.urls.user_folowing_get,);
         if (data.status != 200) {
             throw data;
         }

@@ -10,6 +10,7 @@ import {EmployerModulePage} from "../employer/employer"
 import {NetworkService} from "../../service/network.service"
 import {NoticesService} from "../../service/ajax/notices.serveic"
 import {NotificationsPage} from "../designer/nofitications/notifications"
+import {ImgBoxViewService} from "../../service/imgboxview.service";
 
 @Component({
     selector: "page-first",
@@ -21,10 +22,15 @@ export class FirstPage {
                 public event: Events,
                 private http: NetworkService,
                 private userServ: UsersService,
+                private imgBox:ImgBoxViewService,
                 public shared: SharedService,
                 private noticesServ: NoticesService,
                 private alertCtrl: AlertController,
                 private util: Util) {
+
+        //有class imgBox 的图片 能够点击放大
+        imgBox.bindImg("img.imgBox");
+
 
         event.subscribe('gotologin', () => {
             util.toast('授权过期或者未登录');
@@ -36,7 +42,6 @@ export class FirstPage {
         //监听新消息事件
         event.subscribe(this.noticesServ.s_has_new_notices, () => {
             if (this.shared.isLogin()) {
-                this.showAlert();
                 this.showAlert();
             }
         })

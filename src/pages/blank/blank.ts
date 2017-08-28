@@ -5,7 +5,7 @@ import {NavController} from "ionic-angular";
 import {FileService} from "../../service/ajax/files.service";
 import {NetworkService} from "../../service/network.service";
 import {HttpUrls} from "../../service/httpurls.service";
-import {ImgUploaderService} from "../../service/img-uploader.service";
+import {ImgBoxViewService} from "../../service/imgboxview.service";
 
 
 @Component({
@@ -23,14 +23,13 @@ export class BlankPage {
     imgurls = []
 
     constructor(private util: Util,
+
                 private manager: Manager,
                 private nav: NavController,
                 private files: FileService,
                 private http: NetworkService,
-                private imgUploader: ImgUploaderService,
                 private urls: HttpUrls) {
         this.main_color = this.manager.sharedServ.getPrimaryColor();
-
 
     }
 
@@ -61,28 +60,14 @@ export class BlankPage {
     ];
 
 
+    imgsInfo = ''
 
-    //上传图片
-    upLoad_img() {
-        let img_uploader = this.imgUploader;
-        if (!img_uploader._input || img_uploader._input.files.length == 0) {
-            this.util.toast("请选择图片");
-            return;
+    set(imgsInfo) {
+        console.log("setImg", imgsInfo);
+        for (let imgInfo of imgsInfo) {
+            console.log("imgName:", imgInfo.name);
         }
-
-        img_uploader.upload(async (img) => {
-            return this.files.upload(img);
-        }, () => {
-            console.log("img_urls", img_uploader.img_urls);
-
-        }, (err) => {
-            this.util.toast("图片上传失败，请稍后再试");
-        })
-    }
-
-    change(){
-        console.log("change 被触发")
-        this.imgUploader.show_img();
+        this.imgsInfo = imgsInfo;
     }
 
 }

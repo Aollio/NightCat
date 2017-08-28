@@ -20,16 +20,13 @@ export class ImageService {
     /**
      * 选择图片, 返回文件URI. e.g. ['file://.......']
      */
-    public async picker(options: any = {}) {
+    public async picker(options) {
 
         options = options || {
             maximumImagesCount: 15,
             quality: 100,
-            outputType: 1
+            outputType: 0 //返回uri
         }
-
-        options["outputType"] = 0
-
 
         if (this.platform.is('android')) {
             console.log("在安卓环境中, 开始检测权限")
@@ -67,7 +64,7 @@ export class ImageService {
         let result = []
         for (let uri of uris) {
             let url = await this.files.upload(uri)
-            result.push(uri)
+            result.push(url)
         }
         return result
     }

@@ -39,26 +39,20 @@
         <div class="null-only-height">欢迎来夜猫</div>
         <div class="avatar" tappable (click)="open_pop()">
             <div *ngIf="btn_avatar_state===1">选择头像</div>
-            <img *ngIf="btn_avatar_state===2" src="{{avatar}}">
-            <output *ngIf="btn_avatar_state===3" id="output"></output>
+            <img *ngIf="btn_avatar_state != 1" [src]="avatar">
         </div>
-
 
         <!--弹出选择头像-->
         <div class="pop-bg" *ngIf="pop_is_open">
             <div class="choose">
                 <div class="title">头像选择</div>
                 <div class="imgs">
-                    <img *ngFor="let item of emojiarray"
-                         [src]="item" tappable (click)="select(item)"/>
+                    <img *ngFor="let item of emojiarray" [src]="item" tappable (click)="select(item)"/>
 
                     <!--选择图片-->
-                    <div class="select-img">
-                        <a class="input-file-wrapper">
-                            <img src="assets/img/photo.png"/>
-                            <input type="file" accept="image/*" id="input" (change)="showImg()"/>
-                        </a>
-                    </div>
+                    <a class="select-img" (click)="selectPhoto()">
+                        <img src="assets/img/photo.png"/>
+                    </a>
                 </div>
                 <div class="buttons">
                     <button ion-button full color="transparent-color" (click)="close_pop()">取消</button>

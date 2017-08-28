@@ -34,7 +34,7 @@ import {ImportantModule} from "../importants/important.module";
 import {ImageService} from "../service/ajax/imgs.service";
 import {ImagePicker} from "@ionic-native/image-picker";
 import {NoticesService} from "../service/ajax/notices.serveic";
-import {ImgUploaderService} from "../service/img-uploader.service";
+import {ImgBoxViewService} from "../service/imgboxview.service";
 
 import {FileTransfer, FileUploadOptions, FileTransferObject} from '@ionic-native/file-transfer';
 
@@ -94,8 +94,8 @@ import {FileTransfer, FileUploadOptions, FileTransferObject} from '@ionic-native
         Manager,
         NetworkService,
         SharedService,
+        ImgBoxViewService,
         Util,
-        ImgUploaderService,
         //Other
         //auto
         FileTransfer,

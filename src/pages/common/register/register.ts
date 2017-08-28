@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {Events, NavController, NavParams, PopoverController} from 'ionic-angular';
 import {LoginPage} from "../login/login";
 import {SharedService} from "../../../service/share.service";
@@ -9,7 +9,8 @@ import {Util} from "../../../service/util";
 import {UsersService} from "../../../service/ajax/users.service";
 import {NoticesService} from "../../../service/ajax/notices.serveic";
 import {FileService} from "../../../service/ajax/files.service";
-import {ImgUploaderService} from "../../../service/img-uploader.service";
+import {ImageInputComponent} from "../../../component/image-input/image-input";
+import {ImageService} from "../../../service/ajax/imgs.service";
 
 declare let md5: any;
 
@@ -33,7 +34,7 @@ export class RegisterPage {
                 public util: Util,
                 private event: Events,
                 private fileServ: FileService,
-                private imgUploader: ImgUploaderService,
+                private imagesServ: ImageService,
                 private noticesServ: NoticesService,
                 public usersServ: UsersService) {
         this.current = navParams.get("current") || 1;
@@ -85,12 +86,7 @@ export class RegisterPage {
 
 
     before_register() {
-        if (
-            this.btn_avatar_state == 1 ||    //未选择
-            (this.btn_avatar_state == 3 &&   //自定义图片
-                (!this.imgUploader._input || this.imgUploader._input.files.length == 0) // 但未选择
-            )
-        ) {
+        if (this.btn_avatar_state == 1) {    //未选择
             this.util.toast('请选择头像');
             return;
         }
@@ -109,18 +105,17 @@ export class RegisterPage {
         //设置头像
         if (this.btn_avatar_state == 2) {
             this.user.img_url = this.avatar;
-            this.register();                                //开始注册
+            this.register();                        //开始注册
         } else if (this.btn_avatar_state == 3) {
-            let img_uploader = this.imgUploader;
-
-            img_uploader.upload(async (img) => {
-                return this.fileServ.upload(img);
-            }, () => {
-                this.user.img_url = img_uploader.img_urls[0];
-                this.register();                            //开始注册
-            }, (err) => {
-                this.util.toast("图片上传失败，请稍后再试");
-            })
+            this.imagesServ.upload([this.avatar])
+                .then((urls) => {
+                    this.user.img_url = urls[0];
+                    this.register();                //开始注册
+                })
+                .catch(error => {
+                    console.log(error);
+                    this.util.toast("图片上传失败，请稍后再试");
+                })
         }
     }
 
@@ -134,7 +129,6 @@ export class RegisterPage {
 
         // 密码加密
         this.user.password = md5(this.password);
-
         this.usersServ.register(this.user)
             .then(user => {
                 loading.setContent('正在登录...');
@@ -205,30 +199,29 @@ export class RegisterPage {
         this.pop_is_open = false;
     }
 
-    //显示 已选择头像
-    showImg() {
-        //让output显示 有一定的延迟 ，imgUploader才能获得output
-        this.btn_avatar_state = 3;
-        setTimeout(()=>{
-            this.imgUploader.show_img();
-            //不知为啥，不选图片 files 并不清空， 而black页的demo 却不是这样
-            if (!this.imgUploader._input || this.imgUploader._input.files.length == 0) { // 未选择
-                console.log("没有选择图片");
-                this.btn_avatar_state = 1;
-                this.close_pop();
-                return;
-            }
-            this.avatar = "";
-            this.close_pop();
-        },10);
-
-
-    }
-
     select(item) {
         this.close_pop();
         this.avatar = item;
         this.btn_avatar_state = 2;
+    }
+
+    //选择自己的图片
+    selectPhoto() {
+        let options = {
+            maximumImagesCount: 1,
+            quality: 100,
+            outputType: 0
+        }
+        this.imagesServ.picker(options)
+            .then(uris => {
+                console.log(uris)
+                this.avatar = uris[0];
+                this.btn_avatar_state = 3;
+                this.close_pop();
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
     //<<<<<<<<<<<<<<< 选择头像 <<<<<<<<<<<<<<<

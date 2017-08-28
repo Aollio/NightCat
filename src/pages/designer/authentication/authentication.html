@@ -56,12 +56,12 @@
         </ion-item>
         <ion-item-divider></ion-item-divider>
         <div class="upload" tappable (click)="upload_postion_img()">
-            <input type="image" value="图片"/>
             <div class="upload-icon">
                 <ion-icon name="ios-camera-outline"></ion-icon>
             </div>
             <div class="desc">请上传职称证书</div>
         </div>
+        <img *ngIf="info.position_img_url!=''" src="{{info.position_img_url}}"/>
     </div>
 
     <div *ngIf="state === 2">
@@ -78,12 +78,15 @@
             <!--</ion-select>-->
         </ion-item>
         <ion-item-divider></ion-item-divider>
+
         <div class="upload" tappable (click)="upload_school_img()">
             <div class="upload-icon">
                 <ion-icon name="ios-camera-outline"></ion-icon>
             </div>
             <div class="desc">请上传学历证书</div>
         </div>
+        <img *ngIf="info.school_img_url!=''" src="{{info.school_img_url}}"/>
+
     </div>
 
     <div *ngIf="state === 3" class="only-center-text">
