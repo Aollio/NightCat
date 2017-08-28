@@ -31,21 +31,15 @@ page-modifyprofile {
   }
 
   .summary-label {
-    padding-top: 5%;
+    //padding-top: 5%;
     margin-top: 0;
     margin-bottom: 0;
-    margin-left: 5%;
-    font-size: 1.2em;
+    //margin-left: 5%;
+    //font-size: 1.2em;
   }
 
-  .summary-textarea {
-    width: 96%;
-    height: 6em;
-    border-radius: 10px !important;
-    border-color: #c9cacf;
-    resize: none;
-    padding: 2%;
-    margin: 2%;
+  .summary-textarea textarea {
+    height: 7rem;
   }
   .spancss {
     float: right;

@@ -7,6 +7,7 @@ import {ChatPage} from "../../../im/chat/chat";
 import {AlertController} from 'ionic-angular';
 import {Util} from "../../../../service/util";
 import {UsersService} from "../../../../service/ajax/users.service";
+import {ProjectService} from "../../../../service/ajax/projects.service";
 
 
 @Component({
@@ -44,6 +45,7 @@ export class DesignerMeDetailPage {
                 public alertCtrl: AlertController,
                 public navParams: NavParams,
                 private util: Util,
+                private projServ:ProjectService,
                 private userServ: UsersService) {
 
         this.user = navParams.get('designer');

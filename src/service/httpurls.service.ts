@@ -40,7 +40,7 @@ export class HttpUrls {
     // user_cover_get:string= this._users+"/cover";
     //todo 获取用户案例(已完成项目)
     /**
-     *  获取⼯工作经历
+     * 获取⼯工作经历
      * params:UID
      * response:
      */
@@ -65,7 +65,7 @@ export class HttpUrls {
      * response:tokens
      */
     user_login_post: string = this.server_url + "/tokens";
-    //todo 修改⽤用户信息
+
     //todo 上传案例(无)
     //上传荣耀
     /**
@@ -96,10 +96,13 @@ export class HttpUrls {
 
     user_exp_comments_get: string = this.user_experience_get + "/comments";
 
-   // 关注
-    user_folowing_get:string=this._users+"/following";
+    // 关注
+    user_folowing_get: string = this._users + "/following";
     user_follow_post: string = this._users + "/follow";
-    user_unfollow_post:string = this._users + "/unfollow";
+    user_unfollow_post: string = this._users + "/unfollow";
+
+    //用户修改资料
+    user_profile_post: string = this._users + "/profile";
 
     //end 用户
 

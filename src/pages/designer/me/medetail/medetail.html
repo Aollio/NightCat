@@ -1,6 +1,6 @@
 <ion-content>
     <div class="my-bac">
-        <img src="assets/img/BG_01.png">
+        <img src="assets/img/SelectOption.png">
     </div>
     <div class="header1">
         <button ion-button class="menu-item" clear icon-only item-start navPop>
@@ -39,14 +39,13 @@
     <div class="row_buttons" *ngIf="!shared.isDesModule()">
         <button ion-button round tappable class="attention_btn"
                 (click)="favoriteHim()" [disabled]="follow_disabled">
-            <div *ngIf="!follow">
-                <ion-icon name="ios-heart-outline"></ion-icon>
-                &nbsp; 关 注 他
-            </div>
-            <div *ngIf="follow">
-                <ion-icon name="ios-heart"></ion-icon>
-                &nbsp;取消关注
-            </div>
+
+            <ion-icon *ngIf="!follow" name="ios-heart-outline"></ion-icon>
+            <ion-label *ngIf="!follow">&nbsp; 关 注 他</ion-label>
+
+            <ion-icon *ngIf="follow" name="ios-heart"></ion-icon>
+            <ion-label *ngIf="follow">&nbsp;取消关注</ion-label>
+
         </button>
         <button ion-button round icon-only class="sed_msg_btn"
                 tappable (click)="openChat(user)">
@@ -63,19 +62,16 @@
             <div class="desc-header-name">
                 {{user&&user.nickname||"未填写"}}
                 <span class="desc-header-type">
-                                    类型：{{user && shared.designTypes[user.type] ||"未填写"}}
-                    </span>
+                    类型：{{user && projServ.type[user.type] ||"未填写"}}
+                </span>
             </div>
-            <!--<div>-->
 
-            <!--</div>-->
-            <div class="touch-expand-div" tappable (click)="modify()">
-                <div class="desc-header-modify" *ngIf="isDesigner">修改
+            <div class="touch-expand-div" *ngIf="shared.isDesModule()"
+                 tappable (click)="modify()">
+                <div class="desc-header-modify">修改
                     <ion-icon class="desc-header-modify-icon" name="md-create"></ion-icon>
                 </div>
             </div>
-
-            <!--</div>-->
 
             <p class="desc-head-experience">
                 工时：{{user&&user.service_length||0}}
@@ -85,24 +81,21 @@
             </p>
             <p class="desc-head-position">
                 <!--todo position??-->
-                职位：{{user&&user.position||"未填写"}} &nbsp;&nbsp;&nbsp;
+                职位：{{user&&user.position&&shared.position[user.position]||"未填写"}} &nbsp;&nbsp;&nbsp;
                 <ion-icon name="ios-star"></ion-icon>
                 <ion-icon name="ios-star"></ion-icon>
                 <ion-icon name="ios-star"></ion-icon>
                 <ion-icon name="ios-star"></ion-icon>
                 <ion-icon name="ios-star"></ion-icon>
-                <!--todo  button 图标提示-->
-                <!--<ion-icon class="help-btn" tappable (click)="showHelp()" name="md-help-circle"></ion-icon>-->
                 <!--todo  button 星级图标提示 -->
-                <!--<ion-icon class="help-btn"     tappable (click)="showHelp()" name="md-help-circle"></ion-icon>-->
+                <ion-icon class="help-btn" tappable (click)="showHelp()" name="md-help-circle"></ion-icon>
             </p>
-
 
         </ion-item>
         <ion-item>
-            <!--todo-->
-            <p class="desc-middle-introduce">
-                简介：{{user&&user.summary||"未填写"}}
+            <p class="desc-middle-introduce">简介：</p>
+            <p class="desc-middle-introduce_content">
+                {{user&&user.summary||"未填写"}}
             </p>
         </ion-item>
 
@@ -122,6 +115,22 @@
     <ion-card class="case-card">
         <ion-list *ngIf="btnState===1">
             <p class="have-no-case">暂无案例</p>
+        </ion-list>
+        <ion-list *ngIf="btnState===2">
+            <p class="have-no-case" *ngIf="honors && honors.length == 0">暂无荣誉</p>
+            <ion-card-content *ngFor="let honor of honors" class="case-item">
+                <div class="case-item-main-div">
+                    <div class="case-item-avatar">
+                        <img [src]=" honor.img_url || 'assets/img/first.png' "/>
+                    </div>
+                    <div class="case-item-desc-main">
+                        <p class="case-item-title">{{ honor.name || "用户未填写" }}</p>
+                        <p class="case-item-desc-word">
+                            {{ honor.description || "用户未填写" }}
+                        </p>
+                    </div>
+                </div>
+            </ion-card-content>
         </ion-list>
         <ion-list *ngIf="btnState===3">
             <p class="have-no-case" *ngIf="experiences && experiences.length == 0">暂无经历</p>
@@ -159,21 +168,6 @@
                         </button>
                     </ion-col>
                 </ion-row>
-            </ion-card-content>
-        </ion-list>
-        <ion-list *ngIf="btnState===2">
-            <ion-card-content *ngFor="let honor of honors" class="case-item">
-                <div class="case-item-main-div">
-                    <div class="case-item-avatar">
-                        <img [src]=" honor.img_url || 'assets/img/first.png' "/>
-                    </div>
-                    <div class="case-item-desc-main">
-                        <p class="case-item-title">{{ honor.name || "用户未填写" }}</p>
-                        <p class="case-item-desc-word">
-                            {{ honor.description || "用户未填写" }}
-                        </p>
-                    </div>
-                </div>
             </ion-card-content>
         </ion-list>
     </ion-card>

@@ -4,6 +4,7 @@ import {UsersService} from "../../service/ajax/users.service";
 import {Util} from "../../service/util";
 import {NavController} from "ionic-angular";
 import {SharedService} from "../../service/share.service";
+import {ProjectService} from "../../service/ajax/projects.service";
 
 declare let initializeFontSize: any
 
@@ -18,6 +19,7 @@ export class DesignerItemMax {
     constructor(private userServ: UsersService,
                 private navCtrl: NavController,
                 private  util: Util,
+                private projServ:ProjectService,
                 private shared: SharedService) {
     }
 

@@ -20,7 +20,7 @@
             </span>
 
             <div style="  position: absolute;right: 1rem;top: 0.5rem;">
-                {{designer && shared.designTypes[designer.type] ||"未填写"}}
+                {{designer && designer.type && projServ.type[designer.type] ||"未填写"}}
             </div>
 
             <div class="my-ol">

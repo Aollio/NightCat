@@ -2,63 +2,66 @@
     <ion-navbar>
         <ion-title color="primary">编辑资料</ion-title>
         <ion-buttons end>
-            <button ion-button     tappable (click)="savemess()" >确认</button>
+            <button ion-button tappable (click)="beforeSave()">确认</button>
         </ion-buttons>
     </ion-navbar>
-
 </ion-header>
+
 <ion-content style="background-color: #f7f7f9;height: 100%">
     <div class="top1"></div>
     <div>
         <ion-item>
             <ion-label fixed>昵称</ion-label>
-            <ion-input type="text" value="" placeholder="填写昵称"></ion-input>
+            <ion-input type="text" [(ngModel)]="profile.nickname"></ion-input>
         </ion-item>
         <ion-item>
-            <ion-label fixed>年限</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-label fixed>工时</ion-label>
+            <ion-input type="text" [(ngModel)]="profile.service_length"></ion-input>
         </ion-item>
         <ion-item>
             <ion-label fixed>职称</ion-label>
-            <ion-select [(ngModel)]="position" interface="popover">
-                <ion-option value="01">初级工程师</ion-option>
-                <ion-option value="02">中级工程师</ion-option>
-                <ion-option value="03">高级工程师</ion-option>
-
+            <ion-select [(ngModel)]="profile.position" interface="popover">
+                <div *ngFor="let item of shared.position;let i=index">
+                    <ion-option *ngIf="i>0" value={{i}}>{{item}}</ion-option>
+                </div>
             </ion-select>
         </ion-item>
         <ion-item>
-            <ion-label fixed>毕业院校</ion-label>
-            <ion-input type="text" placeholder="请输入院校名称"></ion-input>
+            <ion-label fixed>学历</ion-label>
+            <ion-input type="text" [(ngModel)]="profile.school"></ion-input>
         </ion-item>
         <ion-item>
             <ion-label fixed>时薪</ion-label>
-            <ion-input type="text" placeholder="请输入时薪"></ion-input>
+            <ion-input type="text" [(ngModel)]="profile.hourly_wage"></ion-input>
             <ion-note style="color: #171817" item-end>元</ion-note>
         </ion-item>
     </div>
-    <ion-item no-lines class="money-detail"     tappable (click)="open(consumeDetail)">
-        <ion-label fixed>设计师类别</ion-label>
-        <ion-select [(ngModel)]="desclass" interface="popover" >
-            <ion-option *ngFor="let item of desclassarray" value="{{item.val}}">{{item.name}}</ion-option>
-
-
-        </ion-select>con>
+    <ion-item no-lines class="money-detail" tappable (click)="open(consumeDetail)">
+        <ion-label fixed>设计类别</ion-label>
+        <ion-select [(ngModel)]="profile.type" interface="popover">
+            <ion-option *ngFor="let type of projServ.type;let i = index" value="{{i}}">{{type}}</ion-option>
+        </ion-select>
+        con>
     </ion-item>
-    <div class="blank"></div>
-    <ion-item class="money-detail"     tappable (click)="open(addhonor)">
+    <ion-item-divider></ion-item-divider>
+    <ion-item>
+        <!--<div class="summary-input-group">-->
+        <!--<p class="summary-label">-->
+        <ion-label>个人说明</ion-label>
+        <!--</p>-->
+        <ion-textarea class="summary-textarea" [(ngModel)]="profile.summary"></ion-textarea>
+        <!--</div>-->
+        <div class="spancss"> 剩余字数:<span>{{ 200 - (profile.summary&&profile.summary.length)||0 }}/50</span></div>
+    </ion-item>
+
+    <ion-item-divider></ion-item-divider>
+    <ion-item class="money-detail" tappable (click)="open(addhonor)">
         添加荣誉
         <ion-icon class="ion-icon" style="color:#b1b1b1  " name="arrow-forward" item-end></ion-icon>
     </ion-item>
-    <ion-item no-lines class="money-detail"     tappable (click)="open(addcase)">
+    <ion-item no-lines class="money-detail" tappable (click)="open(addcase)">
         添加案例
         <ion-icon class="ion-icon" style="color:#b1b1b1  " name="arrow-forward" item-end></ion-icon>
     </ion-item>
-    <div class="summary-input-group">
-        <p class="summary-label">个人说明</p>
-        <textarea class="summary-textarea" [(ngModel)]="description"></textarea>
-    </div>
-    <div class="spancss"> 剩余字数:<span>{{ 200 -description.length }}/50</span></div>
-
 
 </ion-content>

@@ -264,4 +264,15 @@ export class UsersService {
 
     //<<<<<<<<<<<<<<<<<雇主关注的设计师列表<<<<<<<<<<<<<<<<<<<
 
+
+    //用户修改资料
+    async modify_profile(profile) {
+        console.log(">>>>修改用户信息")
+        let data = await this.http.postWithToken(this.urls.user_profile_post, profile);
+
+        if (data.status != 200) throw data;
+        console.log("<<<<修改用户信息")
+        return data.content;
+    }
+
 }
