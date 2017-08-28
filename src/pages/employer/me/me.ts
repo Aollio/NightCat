@@ -11,6 +11,8 @@ import {NetworkService} from "../../../service/network.service";
 import {AboutPage} from "../../common/about/about";
 import {SupportPage} from "../../common/support/support";
 import {HelpPage} from "../../common/help/help";
+import {Util} from "../../../service/util";
+
 @Component({
     selector: 'page-me-employer',
     templateUrl: 'me.html'
@@ -27,7 +29,8 @@ export class EmployerMePage {
                 public shared: SharedService,
                 private alert: AlertController,
                 private http: NetworkService,
-                public modalCtrl: ModalController) {
+                public modalCtrl: ModalController,
+                private util: Util) {
 
     }
 
@@ -52,7 +55,11 @@ export class EmployerMePage {
     }
 
     openComments() {
-        this.navCtrl.push(CommentPage, {})
+        if (this.shared.isLogin()) {
+            this.navCtrl.push(CommentPage, {})
+        } else {
+            this.util.presentLoginPage(this.navCtrl);
+        }
     }
 
     openHelpPage() {
@@ -60,11 +67,21 @@ export class EmployerMePage {
     }
 
     openNotifications() {
-        this.navCtrl.push(NotificationsPage, {})
+        if(this.shared.isLogin()){
+            this.navCtrl.push(NotificationsPage, {})
+        }else{
+            this.util.presentLoginPage(this.navCtrl)
+        }
+
     }
 
     openPayProjects() {
-        this.navCtrl.push(PayProjectsListPage, {})
+        if(this.shared.isLogin()){
+            this.navCtrl.push(PayProjectsListPage, {})
+        }else{
+            this.util.presentLoginPage(this.navCtrl)
+        }
+
     }
 
     exitApp() {

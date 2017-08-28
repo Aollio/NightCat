@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {Events, NavController, NavParams, PopoverController} from 'ionic-angular';
 import {LoginPage} from "../login/login";
 import {SharedService} from "../../../service/share.service";
@@ -9,6 +9,8 @@ import {Util} from "../../../service/util";
 import {UsersService} from "../../../service/ajax/users.service";
 import {NoticesService} from "../../../service/ajax/notices.serveic";
 import {FileService} from "../../../service/ajax/files.service";
+import {ImageInputComponent} from "../../../component/image-input/image-input";
+import {ImageService} from "../../../service/ajax/imgs.service";
 
 declare let md5: any;
 
@@ -32,6 +34,7 @@ export class RegisterPage {
                 public util: Util,
                 private event: Events,
                 private fileServ: FileService,
+                private imagesServ: ImageService,
                 private noticesServ: NoticesService,
                 public usersServ: UsersService) {
         this.current = navParams.get("current") || 1;
@@ -102,19 +105,17 @@ export class RegisterPage {
         //设置头像
         if (this.btn_avatar_state == 2) {
             this.user.img_url = this.avatar;
-            this.register();                                //开始注册
+            this.register();                        //开始注册
         } else if (this.btn_avatar_state == 3) {
-
-            this.fileServ.upload({  //上传图片
-                type: this.imgInfo['type'],
-                file: this.imgInfo['base64']
-            }).then(url => {
-                this.user.img_url = url;
-                this.register();                            //开始注册
-            }).catch((err) => {
-                console.log(err);
-                this.util.toast("图片上传失败，请稍后再试");
-            })
+            this.imagesServ.upload([this.avatar])
+                .then((urls) => {
+                    this.user.img_url = urls[0];
+                    this.register();                //开始注册
+                })
+                .catch(error => {
+                    console.log(error);
+                    this.util.toast("图片上传失败，请稍后再试");
+                })
         }
     }
 
@@ -128,7 +129,6 @@ export class RegisterPage {
 
         // 密码加密
         this.user.password = md5(this.password);
-
         this.usersServ.register(this.user)
             .then(user => {
                 loading.setContent('正在登录...');
@@ -205,20 +205,23 @@ export class RegisterPage {
         this.btn_avatar_state = 2;
     }
 
-    //自定义图片
-    private localAvatar = "";
-    //自定义图片信息
-    private imgInfo = '';
-
-    setImgs(imgsInfo) {
-        console.log("img load",imgsInfo);
-        let imgInfo = imgsInfo[0];
-        if (imgInfo) {
-            this.close_pop();
-            this.btn_avatar_state = 3;
-            this.avatar = imgInfo.url;
-            this.imgInfo = imgInfo;
+    //选择自己的图片
+    selectPhoto() {
+        let options = {
+            maximumImagesCount: 1,
+            quality: 100,
+            outputType: 0
         }
+        this.imagesServ.picker(options)
+            .then(uris => {
+                console.log(uris)
+                this.avatar = uris[0];
+                this.btn_avatar_state = 3;
+                this.close_pop();
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
     //<<<<<<<<<<<<<<< 选择头像 <<<<<<<<<<<<<<<

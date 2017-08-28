@@ -1,12 +1,11 @@
-import {Component} from "@angular/core";
+import {Component, ViewChild} from "@angular/core";
 import {SharedService} from "../../../service/share.service";
 import {AlertController, ModalController, NavController, NavParams} from "ionic-angular";
 import {Util} from "../../../service/util";
 import {ProjectService} from "../../../service/ajax/projects.service";
 import {LoginPage} from "../login/login";
-import {ImagePicker} from "@ionic-native/image-picker";
-import {FileService} from "../../../service/ajax/files.service";
 import {ImageService} from "../../../service/ajax/imgs.service";
+import {ImageInputComponent} from "../../../component/image-input/image-input";
 
 @Component({
     selector: "page-pulishtask",
@@ -16,9 +15,9 @@ export class PublishTaskPage {
 
     designer: boolean;
 
+    @ViewChild(ImageInputComponent) image_input: ImageInputComponent
+
     constructor(public util: Util,
-                private imagePicker: ImagePicker,
-                private files: FileService,
                 public shared: SharedService,
                 public navCtrl: NavController,
                 private navParams: NavParams,
@@ -64,6 +63,13 @@ export class PublishTaskPage {
             ]
         });
         this.modal.create(LoginPage).present();
+
+
+
+    //    todo
+        setInterval(()=>{
+            console.log("publish"+this.project.img_urls.toString());
+        },1000);
 
     }
 
@@ -138,13 +144,14 @@ export class PublishTaskPage {
 
         return true;
     }
-pub(){
+
+    pub() {
         let regularResult = this.projectIsRegular();
-        if(regularResult !=true){
+        if (regularResult != true) {
             this.util.toast(regularResult);
             return;
         }
-}
+    }
 
     publish() {
         let regularResult = this.projectIsRegular();
@@ -172,7 +179,7 @@ pub(){
     }
 
     publishTask() {
-        let loading = this.util.createLoading("", {});
+        let loading = this.util.createLoading("准备发布...", {});
         loading.present();
 
 
@@ -180,38 +187,44 @@ pub(){
         this.project.start_time = Date.parse(this.project.start_time);
         this.project.end_time = Date.parse(this.project.end_time);
 
-        this.projectServ.publishProj(this.project)
-            .then(project => {
-                let alert = this.alertCtrl.create({
-                    title: "发布成功！",
-                    buttons: [
-                        {
-                            text: 'Ok',
-                            handler: () => {
-                                loading.dismiss();
-                                this.navCtrl.pop();
+        //todo
+        loading.setContent("上传图片...")
+        this.image_input.upload().then(() => {
+            loading.setContent("发布项目...")
+            console.log("发布项目:", this.project)
+            this.projectServ.publishProj(this.project)
+                .then(project => {
+                    let alert = this.alertCtrl.create({
+                        title: "发布成功！",
+                        buttons: [
+                            {
+                                text: 'Ok',
+                                handler: () => {
+                                    loading.dismiss();
+                                    this.navCtrl.pop();
+                                }
                             }
-                        }
-                    ]
-                });
-                alert.present();
-            })
-            .catch(error => {
-                loading.dismiss();
-                if (error.status == 401) {
-                    this.util.toast("未登陆，不能发布项目！");
-                } else {
-                    this.util.toast("发布失败！");
-                }
-            });
+                        ]
+                    });
+                    alert.present();
+                })
+            ;
+        }).catch(error => {
+            loading.dismiss();
+            if (error.status == 401) {
+                this.util.toast("未登陆，不能发布项目！");
+            } else {
+                this.util.toast("发布失败！");
+            }
+        })
+
+
     }
 
     uploading_img() {
-
         this.imagesServ.picker({}).then(result => {
             this.project.img_urls = result
         }).catch(error => console.log(error))
-
     }
 
 

@@ -16,9 +16,10 @@
 
             <!--项目图片显示-->
             <ion-slide class="ion-slide" *ngFor="let img of project.img_urls">
-                <img [src]="img"/>
+                <img class="imgBox" [src]="img"/>
             </ion-slide>
 
+            <!--没有图片时-->
             <ion-slide class="ion-slide" *ngIf="project && project.imgs && project.imgs.length == 0">
                 <img src="assets/img/home-default.png"/>
             </ion-slide>

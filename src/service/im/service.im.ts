@@ -66,8 +66,9 @@ export class ImService {
     //初始化NIM
     initializeNim(user) {
         console.log(this.state)
-        this.options.token = user.imtoken;
+        this.options.token = user.im_token;
         this.options.account = user.accid;
+        //todo 消息暂不能用
         this.state.nim = NIM.getInstance(this.options)
     }
 

@@ -2,6 +2,7 @@ import {Component} from "@angular/core";
 import {NavController} from "ionic-angular";
 import {DesignerMeDetailPage} from "../../../designer/me/medetail/medetail";
 import {UsersService} from "../../../../service/ajax/users.service";
+import {SharedService} from "../../../../service/share.service";
 @Component({
     templateUrl: 'favorite-designer.html',
     selector: 'page-favorite-designer'
@@ -11,8 +12,8 @@ export class EmpFavoriteDesignerPage {
     users = [];
 
     // favorite-designer
-    constructor(private navCtrl: NavController, private usersServ: UsersService) {
-        this.usersServ.getDesigners().then(users => {
+    constructor(private navCtrl: NavController, private usersServ: UsersService,private share:SharedService) {
+        this.usersServ.following_list().then(users => {
             for (let user of users) {
                 this.users.push(user)
             }

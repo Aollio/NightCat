@@ -42,7 +42,7 @@ export class SharedService {
     ROLE_SERVER_EMPLOYER = 1;
 
     getFullStackType() {
-        return 11;
+        return 10;
     }
 
     constructor(private event: Events,
@@ -52,7 +52,7 @@ export class SharedService {
         event.subscribe('backdoor', (user) => {
             console.log('receive \'backdoor\' event');
             this.keynote.initDefaultUser(true, this);
-        })
+        });
     }
 
     //获取导航栏的颜色

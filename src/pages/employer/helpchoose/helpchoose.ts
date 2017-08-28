@@ -10,14 +10,12 @@ import {DesignerListPage} from "../home/designer/designer-list";
 })
 export class HelpChoosePage {
     employerhome: any = EmployerHomePage;
-
+    type = 0;
+    position = 0;
+    official = 0;
 
     state: number = 1;
 
-    position: number = -1;
-
-    authenticate: number = -1;
-    chooseType: any;
 
     constructor(public navCtrl: NavController, private param: NavParams) {
     }
@@ -83,14 +81,18 @@ export class HelpChoosePage {
     }
 
     selectAuthenticate(authenticate) {
-        this.authenticate = authenticate;
+        this.official = authenticate;
     }
 
     nextOrFinish() {
         this.state++;
         if (this.state > 3) {
             this.state = 3
-            this.navCtrl.push(DesignerListPage);
+            this.navCtrl.push(DesignerListPage,{
+                type: this.type,
+                official:this.official,
+                position:this.position
+            });
         }
     }
 
@@ -120,7 +122,7 @@ export class HelpChoosePage {
         this.navCtrl.push(EmployerModulePage, {})
     }
 
-    setChooseType(name) {
-        this.chooseType = name;
+    setChooseType(index) {
+        this.type =index+1;
     }
 }

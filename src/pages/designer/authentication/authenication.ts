@@ -3,6 +3,7 @@ import {Component} from "@angular/core";
 import {ImageService} from "../../../service/ajax/imgs.service";
 import {UsersService} from "../../../service/ajax/users.service";
 import {Util} from "../../../service/util";
+
 // import {ImagePicker} from '@ionic-native/image-picker';
 @Component({
     selector: 'page-authentication',
@@ -15,9 +16,9 @@ export class AuthenticationPage {
         realname: "",
         id_card: "",
         position: "",
-        position_img_url: "http://images.adsttc.com/media/images/594c/30ba/b2…uben_Muedra_Casa_Brise-Soleil_(40).jpg",
+        position_img_url: "",
         school: "",
-        school_img_url: "http://images.adsttc.com/media/images/594c/30ba/b2…uben_Muedra_Casa_Brise-Soleil_(40).jpg",
+        school_img_url: "",
     }
 
     //检查输入是否正确
@@ -44,7 +45,7 @@ export class AuthenticationPage {
 
     nextOrFinish() {
         if (this.state == 2) {//上传
-            this.upLoad_authentication();
+            this.before_upLoad_authentication();
             return;
         }
 
@@ -55,19 +56,43 @@ export class AuthenticationPage {
         this.state++;
     }
 
+
     //todo 测试 上传认证信息
-    //上传认证信息
-    upLoad_authentication() {
+
+    before_upLoad_authentication() {
         let checkResult = this.checkInputValue();
         if (checkResult !== true) {//输入不正确
             this.util.toast(checkResult);
             return;
         }
 
+
+        let loading = this.util.createLoading("上传图片中");
+        loading.present();
+        this.imagesServ.upload([this.info.position_img_url]).then(urls => {
+            this.info.position_img_url = urls[0];
+            this.imagesServ.upload([this.info.school_img_url]).then(urls => {
+                this.info.school_img_url = urls[0];
+                loading.dismiss();
+                this.upLoad_authentication();  //上传认证信息
+
+            }).catch(err => {
+                console.log(err);
+                this.util.toast("图片上传失败");
+            })
+        }).catch(err => {
+            console.log(err);
+            this.util.toast("图片上传失败");
+        })
+    }
+
+    //上传认证信息
+    upLoad_authentication() {
         let loading = this.util.createLoading("上传中");
         loading.present();
         this.userServ.setAuthentication(this.info).then(info => {
             loading.dismiss();
+
             this.state++;
         }).catch(err => {
             console.log(err);
@@ -80,29 +105,31 @@ export class AuthenticationPage {
         this.state = state;
     }
 
+    //上传职称证书
     upload_postion_img() {
-        this.uploading_img().then(img_url => {
-            this.info.position_img_url = img_url;
+        this.uploading_img().then(img_uri => {
+            this.info.position_img_url = img_uri;
         }).catch(err => {
             console.log("上传图片出错", err);
         })
     }
 
+    //上传学历证书
     upload_school_img() {
-        this.uploading_img().then(img_url => {
-            this.info.school_img_url = img_url;
+        this.uploading_img().then(img_uri => {
+            this.info.school_img_url = img_uri;
         }).catch(err => {
             console.log("上传图片出错", err);
         })
     }
 
     async uploading_img() {
-        let img_urls = await this.imagesServ.picker({
+        let img_uris = await this.imagesServ.picker({
             maximumImagesCount: 1,
             quality: 100,
-            outputType: 1
+            outputType: 0
         });
-        return img_urls[0];
+        return img_uris[0];
     }
 
 }

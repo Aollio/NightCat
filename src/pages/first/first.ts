@@ -27,7 +27,9 @@ export class FirstPage {
                 private noticesServ: NoticesService,
                 private alertCtrl: AlertController,
                 private util: Util) {
-        imgBox.bindImg(".imgBox");
+
+        //有class imgBox 的图片 能够点击放大
+        imgBox.bindImg("img.imgBox");
 
 
         event.subscribe('gotologin', () => {
@@ -40,7 +42,6 @@ export class FirstPage {
         //监听新消息事件
         event.subscribe(this.noticesServ.s_has_new_notices, () => {
             if (this.shared.isLogin()) {
-                this.showAlert();
                 this.showAlert();
             }
         })

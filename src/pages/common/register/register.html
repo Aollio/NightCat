@@ -39,7 +39,7 @@
         <div class="null-only-height">欢迎来夜猫</div>
         <div class="avatar" tappable (click)="open_pop()">
             <div *ngIf="btn_avatar_state===1">选择头像</div>
-            <img *ngIf="btn_avatar_state != 1" src="{{avatar}}">
+            <img *ngIf="btn_avatar_state != 1" [src]="avatar">
         </div>
 
         <!--弹出选择头像-->
@@ -50,10 +50,8 @@
                     <img *ngFor="let item of emojiarray" [src]="item" tappable (click)="select(item)"/>
 
                     <!--选择图片-->
-                    <a class="select-img">
+                    <a class="select-img" (click)="selectPhoto()">
                         <img src="assets/img/photo.png"/>
-
-                        <image-picker [max-count]="1" (onload)="setImgs($event)"></image-picker>
                     </a>
                 </div>
                 <div class="buttons">

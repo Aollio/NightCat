@@ -69,8 +69,8 @@ export class DesingerTypePage {
         this.miancolor = this.shared.getPrimaryColor();
     }
 
-    open(page) {
-        this.navCtrl.push(page, {});
+    open(page,option) {
+        this.navCtrl.push(page, option);
     }
 }
 

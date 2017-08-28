@@ -1,8 +1,8 @@
-<div class="images-upload" *ngIf="show()">
-    <div *ngFor="let img_url of imgs">
-        <img [src]=img_url>
+<div class="images-upload">
+    <div *ngFor="let img of imgs">
+        <img [src]='img'>
     </div>
-    <div class="add" (click)="uploading_img()">
+    <div class="add" (click)="pick_image()">
         <ion-icon name="add"></ion-icon>
     </div>
 </div>

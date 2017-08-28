@@ -63,7 +63,7 @@ export class BlankPage {
     imgsInfo = ''
 
     set(imgsInfo) {
-        console.log("setImg", imgsInfo.toString());
+        console.log("setImg", imgsInfo);
         for (let imgInfo of imgsInfo) {
             console.log("imgName:", imgInfo.name);
         }

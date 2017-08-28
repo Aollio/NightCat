@@ -5,6 +5,9 @@ import {Component, Input, Output, EventEmitter} from "@angular/core"
     selector: "image-picker",
     template: `<input type="file" accept="image/*" [multiple]="count > 1" (change)="change($event)"/>`,
 })
+
+
+//todo delete
 export class ImagePickerComponent {
 
     //选择最大数量
@@ -43,11 +46,13 @@ export class ImagePickerComponent {
                 console.log("图片加载回调，开始处理");
                 let data = e.target['result'];
                 let imgInfo = {
-                    // url: URL.createObjectURL(img),    //本地url  blob网页保错
+                    data: data,
                     url: data,
-                    name: img.name,               //图片名称  中文上传有问题
-                    type: /\/(\w+);/.exec(data)[1],  //图片格式
-                    base64: data.split(",")[1],        //base64 图片内容
+                    // url: URL.createObjectURL(img),  //本地url  blob网页保错
+                    length: data.length,
+                    // name: img.name,               //图片名称  中文上传有问题
+                    // type: /\/(\w+);/.exec(data)[1],  //图片格式
+                    // base64: data.split(",")[1],        //base64 图片内容
                 };
                 this.imgsInfo.push(imgInfo);
 
@@ -59,6 +64,12 @@ export class ImagePickerComponent {
                 console.log("图片处理成功");
             }
             reader.readAsDataURL(img);
+            // reader.readAsArrayBuffer(img);
+            // reader.readAsText(img);
+            // reader.readAsBinaryString(img);
+
+            // reader.read(img);
+
         }
     }
 

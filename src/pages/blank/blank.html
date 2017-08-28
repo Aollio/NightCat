@@ -19,6 +19,6 @@
 
     <image-picker [max-count]="9" (onload)="set($event)"></image-picker>
     <image-picker [max-count]="1" (onload)="set($event)"></image-picker>
-    <img class="imgBox" *ngFor="let imgInfo of imgsInfo" src="{{imgInfo.url}}"/>
+    <img class="imgBox" *ngFor="let imgInfo of imgsInfo" [src]="imgInfo.url  "/>
 
 </ion-content>
