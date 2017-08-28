@@ -16,16 +16,6 @@ export class FileService {
     }
 
 
-    // async upload(fileInfo) {
-    //     console.log("文件上传。。。")
-    //     let data = await this.http.post(this.urls.upload, fileInfo);
-    //
-    //     if (data.status != 200) {
-    //         throw data;
-    //     }
-    //     return data.content
-    // }
-
     async upload(file_uri) {
         console.log("文件上传......")
         let options: FileUploadOptions = {
